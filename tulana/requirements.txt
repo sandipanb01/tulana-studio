@@ -1,0 +1,10 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+PyMuPDF>=1.24
+Pillow>=10.0          # JPEG export of clippings
+requests>=2.31        # fetching textbook archives from a link
+
+# Optional — the studio runs without these and says so.
+# gradio       # only for share_gradio.py (public link)
+# playwright   # only for browser testing

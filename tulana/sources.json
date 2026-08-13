@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Where the textbook PDFs and corpus archives come from.",
+    "On startup the studio checks whether the data folder holds any textbooks.",
+    "If it does not, it works through this list: archives already sitting in the",
+    "data folder are unpacked first (nothing is downloaded that you already",
+    "have), and only what is still missing is fetched.",
+    "Google Drive links must be shared as 'Anyone with the link'."
+  ],
+  "sources": [
+    {
+      "name": "Board-wise Class 10 textbooks (all state boards)",
+      "file": "Boardwise_PDF_class10_Maths_2.7z",
+      "url": "https://drive.google.com/file/d/1aWrm8VVhQmqTEijfkS36MXxxBQGG0O9P/view?usp=sharing",
+      "provides": "31 state-board textbook PDFs, English and target languages",
+      "enabled": true
+    },
+    {
+      "name": "NCERT chapter PDFs (English and Hindi, classes 10-12)",
+      "file": "dataset.zip",
+      "url": "",
+      "provides": "82 NCERT chapter PDFs",
+      "enabled": true
+    },
+    {
+      "name": "Additional ground-truth textbooks and page images",
+      "file": "",
+      "url": "https://drive.google.com/file/d/1DzF24tS3PaeX93Liz_vGgac2vd8H1J7-/view?usp=sharing",
+      "provides": "further board textbooks and scanned page images",
+      "enabled": true
+    },
+    {
+      "name": "Parallel MT datasets (reference only, not required for clipping)",
+      "file": "JSON.zip",
+      "url": "",
+      "provides": "existing sentence-level parallel data",
+      "enabled": false
+    },
+    {
+      "name": "OCR extractions (reference only, not required for clipping)",
+      "file": "OCR_Output.zip",
+      "url": "",
+      "provides": "machine-read text for the same textbooks",
+      "enabled": false
+    }
+  ]
+}

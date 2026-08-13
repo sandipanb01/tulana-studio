@@ -1,0 +1,15 @@
+﻿studio/
+tulana/data/
+.venv/
+__pycache__/
+*.pyc
+.gradio/
+*.db
+*.sqlite
+*.sqlite3
+.env
+*.zip
+*.7z
+*.rar
+.vscode/
+.idea/
