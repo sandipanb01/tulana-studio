@@ -2,28 +2,48 @@
 
 Tulana Studio is a document-processing, OCR/alignment, PDF-ground-truth, and translation-quality research platform.
 
-## Repository
+The repository contains both the application source code and the board textbook PDF corpus, kept as separate components within the same repository.
+
+## Repository Structure
 
 ```text
 tulana-studio/
-├── tulana/        # Application code
-└── board_pdfs/    # Board textbook PDF corpus
-````
+├── README.md
+├── .gitignore
+├── .gitattributes
+│
+├── tulana/
+│   ├── app.py
+│   ├── config.py
+│   ├── db.py
+│   ├── fetcher.py
+│   ├── library.py
+│   ├── pdflib.py
+│   ├── share_gradio.py
+│   ├── requirements.txt
+│   ├── selftest.py
+│   ├── check_sources.py
+│   ├── docs/
+│   └── static/
+│
+└── board_pdfs/
+    └── board textbook PDF corpus
+```
 
-The application and PDF corpus are kept separate inside the same repository.
+The application code and PDF corpus are intentionally separated.
 
 ---
 
 # Quick Start
 
-## 1. Clone
+## 1. Clone the repository
 
 ```bash
-git clone <REPOSITORY_URL>
+git clone https://github.com/sandipanb01/tulana-studio.git
 cd tulana-studio
 ```
 
-## 2. Download the PDFs
+## 2. Download the PDF corpus
 
 The board PDFs are stored using Git LFS.
 
@@ -32,123 +52,133 @@ git lfs install
 git lfs pull
 ```
 
-Verify:
+Verify the corpus.
+
+### Windows
+
+```text
+(Get-ChildItem ".\board_pdfs" -Recurse -File -Filter "*.pdf").Count
+```
+
+### Linux
 
 ```bash
-# Windows
-(Get-ChildItem ".\board_pdfs" -Recurse -File -Filter "*.pdf").Count
-
-# Linux
 find board_pdfs -type f -iname "*.pdf" | wc -l
 ```
+
+The current repository contains 144 board PDFs.
 
 ---
 
 # Windows
 
-Run these commands in PowerShell **from the repository root**:
+PowerShell is NOT required by Tulana. Any terminal capable of running Python can be used.
 
-```powershell
+## 1. Enter the application
+
+```text
 cd tulana
 ```
 
-Create the virtual environment:
+## 2. Create the Python environment
 
-```powershell
+```text
 python -m venv .venv
 ```
 
-Activate it:
+## 3. Install dependencies
 
-```powershell
-.\.venv\Scripts\Activate.ps1
+The complete Python dependency list is stored in `requirements.txt`.
+
+```text
+.venv\Scripts\python.exe -m pip install --upgrade pip
+.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-If PowerShell blocks activation:
+## 4. Verify Gradio and PyMuPDF
 
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\.venv\Scripts\Activate.ps1
+```text
+.venv\Scripts\python.exe -c "import gradio; print('Gradio:', gradio.__version__)"
+.venv\Scripts\python.exe -c "import fitz; print('PyMuPDF:', fitz.__version__)"
 ```
 
-Install all dependencies:
+## 5. Connect the PDF corpus
 
-```powershell
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+Tulana expects the PDF corpus to be accessible through:
+
+```text
+tulana/data
 ```
 
-Verify the important dependencies:
+Create a Windows directory junction from `tulana/data` to `board_pdfs`.
 
-```powershell
-python -c "import gradio; print('Gradio:', gradio.__version__)"
-python -c "import fitz; print('PyMuPDF:', fitz.__version__)"
+From a Windows terminal:
+
+```text
+mklink /J data ..\board_pdfs
 ```
 
-Connect the PDF corpus:
+Verify:
 
-```powershell
-New-Item -ItemType Junction -Path ".\data" -Target "..\board_pdfs"
-```
-
-Verify that Tulana can see the PDFs:
-
-```powershell
+```text
 (Get-ChildItem ".\data" -Recurse -File -Filter "*.pdf").Count
 ```
 
-Run the application:
+Expected:
 
-```powershell
-python app.py
+```text
+144
 ```
 
-Or run the Gradio interface:
+## 6. Run the application
 
-```powershell
-$env:GRADIO_SERVER_PORT="7870"
-python share_gradio.py
+```text
+.venv\Scripts\python.exe app.py
 ```
 
-The terminal will print the local URL and, when sharing is enabled, a temporary public `gradio.live` URL.
+## 7. Run the Gradio interface
+
+```text
+.venv\Scripts\python.exe share_gradio.py
+```
+
+The terminal will display the local URL and, when sharing is enabled, a temporary `gradio.live` URL.
+
+No PowerShell-specific activation step is required.
 
 ---
 
 # Linux / Cluster
 
-Run from the repository root:
+## 1. Enter the application
 
 ```bash
 cd tulana
 ```
 
-Create the environment:
+## 2. Create the Python environment
 
 ```bash
 python3 -m venv .venv
 ```
 
-Activate:
+## 3. Install dependencies
 
 ```bash
-source .venv/bin/activate
+.venv/bin/python -m pip install --upgrade pip
+.venv/bin/python -m pip install -r requirements.txt
 ```
 
-Install dependencies:
+## 4. Verify Gradio and PyMuPDF
 
 ```bash
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+.venv/bin/python -c "import gradio; print('Gradio:', gradio.__version__)"
+.venv/bin/python -c "import fitz; print('PyMuPDF:', fitz.__version__)"
 ```
 
-Verify:
+## 5. Connect the PDF corpus
 
-```bash
-python -c "import gradio; print('Gradio:', gradio.__version__)"
-python -c "import fitz; print('PyMuPDF:', fitz.__version__)"
-```
-
-Connect the PDF corpus:
+From inside `tulana/`:
 
 ```bash
 ln -s ../board_pdfs data
@@ -160,25 +190,154 @@ Verify:
 find data -type f -iname "*.pdf" | wc -l
 ```
 
-Run:
+Expected:
 
-```bash
-python app.py
+```text
+144
 ```
 
-Or:
+## 6. Run the application
 
 ```bash
-python share_gradio.py
+.venv/bin/python app.py
 ```
 
-For permanent deployment, use the target cluster/server's normal process manager and networking configuration rather than a temporary Gradio share.
+## 7. Run the Gradio interface
+
+```bash
+.venv/bin/python share_gradio.py
+```
+
+For permanent deployment, use the target server or cluster's normal process manager and networking configuration rather than relying on a temporary Gradio share.
+
+---
+
+# Dependencies
+
+All Python dependencies are declared in:
+
+```text
+tulana/requirements.txt
+```
+
+The environment should be created from this file rather than manually installing individual packages.
+
+Important runtime dependencies include:
+
+* Python
+* Gradio
+* PyMuPDF
+* other packages listed in `requirements.txt`
+
+Install everything with:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+---
+
+# Application and PDF Layout
+
+The repository uses the following structure:
+
+```text
+tulana/
+    application source code
+
+board_pdfs/
+    board textbook PDF corpus
+```
+
+Tulana accesses the PDF corpus through:
+
+```text
+tulana/data
+```
+
+which points to:
+
+```text
+../board_pdfs
+```
+
+The application and corpus therefore remain separate while being distributed together.
+
+---
+
+# Validation
+
+## Verify Python
+
+```bash
+python --version
+```
+
+## Verify Gradio
+
+Windows:
+
+```text
+.venv\Scripts\python.exe -c "import gradio; print(gradio.__version__)"
+```
+
+Linux:
+
+```bash
+.venv/bin/python -c "import gradio; print(gradio.__version__)"
+```
+
+## Verify PyMuPDF
+
+Windows:
+
+```text
+.venv\Scripts\python.exe -c "import fitz; print(fitz.__version__)"
+```
+
+Linux:
+
+```bash
+.venv/bin/python -c "import fitz; print(fitz.__version__)"
+```
+
+## Verify the PDF corpus
+
+Windows:
+
+```text
+(Get-ChildItem ".\board_pdfs" -Recurse -File -Filter "*.pdf").Count
+```
+
+Linux:
+
+```bash
+find board_pdfs -type f -iname "*.pdf" | wc -l
+```
+
+## Verify Git LFS
+
+```bash
+git lfs ls-files
+```
+
+## Run repository validation scripts
+
+If present:
+
+```bash
+python selftest.py
+```
+
+```bash
+python check_sources.py
+```
 
 ---
 
 # Updating the Application
 
-Change files inside:
+Modify files inside:
 
 ```text
 tulana/
@@ -191,6 +350,8 @@ git add tulana/
 git commit -m "Update Tulana"
 git push
 ```
+
+---
 
 # Updating the PDF Corpus
 
@@ -208,7 +369,7 @@ git commit -m "Update board PDF corpus"
 git push
 ```
 
-Pull updated PDFs on another machine:
+To retrieve updated PDFs on another machine:
 
 ```bash
 git lfs pull
@@ -224,59 +385,200 @@ The following are intentionally not stored in GitHub:
 .venv/
 .gradio/
 __pycache__/
+*.pyc
 *.db
 *.sqlite
 .env
 ```
 
-They are local/generated/runtime files and are recreated when the application is installed on a new machine.
+These are local environments, generated files, runtime state, caches, or secrets.
 
-The application should use relative paths and should not depend on machine-specific paths such as `D:\Tulana`.
+They are recreated or configured on the target machine.
+
+---
+
+# Portability
+
+Tulana should not depend on developer-specific filesystem paths.
+
+Avoid hard-coded paths such as:
+
+```text
+D:\Tulana
+D:\Bodhan-Tulana-Studio
+C:\Users\...
+```
+
+Use repository-relative paths or configuration wherever machine-specific paths are required.
 
 ---
 
 # Troubleshooting
 
-### PyMuPDF missing
+## PyMuPDF is missing
 
-```bash
-python -m pip install -r requirements.txt
-python -c "import fitz; print(fitz.__version__)"
+Windows:
+
+```text
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\python.exe -c "import fitz; print(fitz.__version__)"
 ```
 
-### Gradio missing
+Linux:
 
 ```bash
-python -m pip install -r requirements.txt
-python -c "import gradio; print(gradio.__version__)"
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -c "import fitz; print(fitz.__version__)"
 ```
 
-### PDFs missing
+## Gradio is missing
+
+Windows:
+
+```text
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\python.exe -c "import gradio; print(gradio.__version__)"
+```
+
+Linux:
+
+```bash
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -c "import gradio; print(gradio.__version__)"
+```
+
+## PDFs are missing
 
 ```bash
 git lfs install
 git lfs pull
 ```
 
-### Gradio port busy on Windows
+## Tulana cannot see the PDFs
 
-```powershell
-$env:GRADIO_SERVER_PORT="7871"
-python share_gradio.py
+Check that:
+
+```text
+tulana/data
+```
+
+exists and points to:
+
+```text
+../board_pdfs
+```
+
+Windows:
+
+```text
+dir data
+```
+
+Linux:
+
+```bash
+ls -la data
+```
+
+## Gradio port is busy
+
+Choose another port using the mechanism supported by the application environment.
+
+Example:
+
+```text
+set GRADIO_SERVER_PORT=7870
+```
+
+or use the equivalent environment-variable syntax for the shell being used.
+
+---
+
+# Complete Windows Setup
+
+```text
+git clone https://github.com/sandipanb01/tulana-studio.git
+cd tulana-studio
+git lfs install
+git lfs pull
+cd tulana
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install --upgrade pip
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+mklink /J data ..\board_pdfs
+.venv\Scripts\python.exe app.py
+```
+
+For Gradio:
+
+```text
+.venv\Scripts\python.exe share_gradio.py
 ```
 
 ---
 
-# Current Repository Layout
+# Complete Linux / Cluster Setup
+
+```bash
+git clone https://github.com/sandipanb01/tulana-studio.git
+cd tulana-studio
+git lfs install
+git lfs pull
+cd tulana
+python3 -m venv .venv
+.venv/bin/python -m pip install --upgrade pip
+.venv/bin/python -m pip install -r requirements.txt
+ln -s ../board_pdfs data
+.venv/bin/python app.py
+```
+
+For Gradio:
+
+```bash
+.venv/bin/python share_gradio.py
+```
+
+---
+
+# Workflow
+
+```text
+Clone repository
+      ↓
+git lfs pull
+      ↓
+Create .venv
+      ↓
+Install requirements.txt
+      ↓
+Connect tulana/data → board_pdfs
+      ↓
+Verify the PDF corpus
+      ↓
+Run app.py
+      ↓
+Run share_gradio.py when needed
+```
+
+---
+
+# Repository Layout
 
 ```text
 tulana-studio/
+│
+├── README.md
+├── .gitignore
+├── .gitattributes
 │
 ├── tulana/
 │   ├── app.py
 │   ├── requirements.txt
 │   ├── config.py
 │   ├── db.py
+│   ├── fetcher.py
+│   ├── library.py
+│   ├── pdflib.py
 │   ├── share_gradio.py
 │   ├── docs/
 │   └── static/
@@ -285,36 +587,4 @@ tulana-studio/
     └── board textbook PDFs
 ```
 
-The basic workflow is:
-
-```text
-Clone
-  ↓
-git lfs pull
-  ↓
-cd tulana
-  ↓
-create .venv
-  ↓
-activate .venv
-  ↓
-pip install -r requirements.txt
-  ↓
-connect data → board_pdfs
-  ↓
-python app.py
-  ↓
-or: python share_gradio.py
-```
-
-````
-
-Then just update GitHub:
-
-```powershell
-cd "D:\Bodhan-Tulana-Studio"
-git add README.md
-git commit -m "Improve README"
-git push
-````
-
+The repository is designed to run on Windows, Linux, and server/cluster environments without requiring PowerShell or any other specific shell as part of the application itself.
