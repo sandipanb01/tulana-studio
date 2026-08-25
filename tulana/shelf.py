@@ -318,15 +318,46 @@ def cmd_doctor(args):
     with db.tx() as con:
         combos, groups = visibility_report(con)
     print(f"\n{C['b']}What the dropdown will show right now{C['_']}")
+    # A NULL language sorts against strings, so never sort raw language values.
+    # app.py line 125 does exactly that and 500s the whole endpoint; the same
+    # rows are flagged below so they can be fixed before that happens.
+    def lang_summary(members):
+        bits = []
+        for l, n in sorted(members, key=lambda x: (x[0] is None, str(x[0]))):
+            bits.append(f"{l} ×{n}" if l else f"{C['bad']}(no language) ×{n}{C['_']}")
+        return ", ".join(bits)
+
+    landmines = []
     if combos:
         for c in combos:
-            langs = ", ".join(f"{l} ×{n}" for l, n in
-                              sorted(groups.get((c["board"], c["class"],
-                                                 c["subject"]), [])))
+            members = groups.get((c["board"], c["class"], c["subject"]), [])
+            if any(l is None for l, _ in members):
+                landmines.append(c)
             print(f"  {C['ok']}✓{C['_']} {config.board_name(c['board'])} · "
-                  f"Class {c['class']} · {c['subject']}  {C['dim']}[{langs}]{C['_']}")
+                  f"Class {c['class']} · {c['subject']}  "
+                  f"{C['dim']}[{lang_summary(members)}]{C['_']}")
     else:
         print(f"  {C['bad']}nothing — the dropdown will be empty{C['_']}")
+
+    if landmines:
+        print(f"\n{C['bad']}{C['b']}These will crash /api/library — "
+              f"{len(landmines)} group(s){C['_']}")
+        print(f"  {C['dim']}A visible group holding a row with no language makes "
+              f"app.py sort None against a string. The endpoint 500s and the "
+              f"whole interface reports \"Backend unreachable\".{C['_']}")
+        for c in landmines:
+            members = groups.get((c["board"], c["class"], c["subject"]), [])
+            print(f"    {config.board_name(c['board'])} · Class {c['class']} · "
+                  f"{c['subject']}")
+            with db.tx() as con:
+                bad = con.execute(
+                    """SELECT path FROM documents WHERE board=? AND class=?
+                       AND subject=? AND language IS NULL""",
+                    (c["board"], c["class"], c["subject"])).fetchall()
+            for r in bad:
+                print(f"      {C['bad']}·{C['_']} {r['path']}")
+                print(f"        {C['dim']}python shelf.py add \"{r['path']}\" "
+                      f"--board … --class … --lang …{C['_']}")
 
     shown = {(c["board"], c["class"], c["subject"]) for c in combos}
     unpaired = [(k, v) for k, v in groups.items()
@@ -336,7 +367,7 @@ def cmd_doctor(args):
         print(f"  {C['dim']}A board/class/subject group appears only when it holds "
               f"an English edition and at least one other language.{C['_']}")
         for (b, cl, sub), langs in unpaired[:15]:
-            names = ", ".join(l for l, _ in langs)
+            names = ", ".join(str(l) if l else "(no language)" for l, _ in langs)
             need = "add an English edition" if "English" not in dict(langs) \
                 else "add a non-English edition"
             print(f"    {config.board_name(b)} · Class {cl} · {sub} "
