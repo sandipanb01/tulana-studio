@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """shelf.py — make a newly added textbook PDF visible in Tulana Studio.
 
-Drop this file next to app.py (inside the `tulana/` folder) and run it from
-there. It imports the studio's own config/db/library modules, so it always
+Put this file either in the repository root or in the `tulana/` folder — it
+finds the studio's own config/db/library modules on its own, so it always
 agrees with the running application about where the data folder is and how a
 document row is shaped.
 
@@ -35,7 +35,33 @@ import time
 from pathlib import Path
 
 HERE = Path(__file__).parent.resolve()
-sys.path.insert(0, str(HERE))
+
+
+def _find_studio():
+    """Locate the folder holding config.py / db.py / library.py.
+
+    The file gets dropped either next to app.py or at the repository root, and
+    it is run from whichever directory the person happens to be standing in.
+    Rather than insist on one layout, look in the obvious places.
+    """
+    seen, cands = set(), []
+    for base in (HERE, Path.cwd().resolve(), *HERE.parents):
+        for c in (base, base / "tulana"):
+            if c not in seen:
+                seen.add(c)
+                cands.append(c)
+    for c in cands:
+        if all((c / f).is_file() for f in ("config.py", "db.py", "library.py")):
+            return c
+    return None
+
+
+_STUDIO = _find_studio()
+if _STUDIO is None:
+    sys.exit("Could not find the studio modules (config.py, db.py, library.py).\n"
+             "Put shelf.py in the repository root or in the tulana/ folder, "
+             "and run it from inside the repository.")
+sys.path.insert(0, str(_STUDIO))
 
 try:
     import config
@@ -43,9 +69,9 @@ try:
     import library
     from pdflib import fitz
 except ImportError as e:
-    sys.exit(f"Run this from inside the tulana/ folder (next to app.py). {e}")
+    sys.exit(f"Found {_STUDIO} but could not import from it: {e}")
 
-OVERRIDES = HERE / "shelf_overrides.json"
+OVERRIDES = _STUDIO / "shelf_overrides.json"
 LFS_MAGIC = b"version https://git-lfs.github.com"
 
 C = {"ok": "\033[32m", "bad": "\033[31m", "warn": "\033[33m",
@@ -273,6 +299,21 @@ def cmd_doctor(args):
         for p in phantom[:10]:
             tag = " (has clips — do not remove)" if rows[p]["id"] in used else ""
             print(f"    {p}{tag}")
+
+    pending = [e for e in ok if not e["row"]]
+    if pending:
+        print(f"\n{C['warn']}{C['b']}Ready, but not indexed yet — "
+              f"{len(pending)} file(s){C['_']}")
+        print(f"  {C['dim']}Metadata reads cleanly; the library simply has not "
+              f"been rescanned since these appeared.{C['_']}")
+        for e in pending[:8]:
+            g = e["eff"]
+            print(f"      {e['rel']}   {C['dim']}{g['board']} · Class "
+                  f"{g['class']} · {g['language']}{C['_']}")
+        if len(pending) > 8:
+            print(f"      {C['dim']}… and {len(pending) - 8} more{C['_']}")
+        print(f"  {C['dim']}→ restart the studio, or: "
+              f"curl -X POST http://localhost:{config.PORT}/api/rescan{C['_']}")
 
     with db.tx() as con:
         combos, groups = visibility_report(con)
