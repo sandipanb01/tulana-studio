@@ -84,16 +84,27 @@ def _index_on_startup():
     Doing this only in the __main__ block meant that running under `uvicorn
     app:app` — which is how it is deployed and tested — started the studio with
     an empty library and no explanation."""
+    # Two separate concerns, so a failure in one cannot silently take the other
+    # down with it. Wrapping both in a single try meant that any error while
+    # unpacking archives — including a missing optional module — skipped the
+    # indexing entirely, and the studio came up with an empty dropdown.
     try:
         import sources as srcmod
-        if not any(config.DATA_DIR.rglob("*.pdf")) if config.DATA_DIR.is_dir() else True:
+        if config.DATA_DIR.is_dir() and not any(config.DATA_DIR.rglob("*.pdf")):
             # Nothing to work with yet: unpack whatever archives are here.
             # Downloading is left to an explicit request so startup is never
             # blocked on a slow link.
             srcmod.extract_all(config.DATA_DIR, log=lambda m: print("[studio]", m))
+    except Exception as e:
+        print(f"[studio] could not unpack archives in {config.DATA_DIR}: {e}")
+
+    try:
         with db.tx() as con:
             n = library.scan(con, config.DATA_DIR, log=lambda m: None)
         print(f"[studio] {n} textbook PDF(s) available from {config.DATA_DIR}")
+        if n == 0:
+            print(f"[studio] nothing indexed — check TULANA_DATA_DIR, currently "
+                  f"{config.DATA_DIR}")
     except Exception as e:                      # never block startup
         print(f"[studio] could not index {config.DATA_DIR}: {e}")
 
@@ -107,6 +118,13 @@ def health():
     return {"ok": True, "documents": n, "pairs": p,
             "data_dir": str(config.DATA_DIR), "pymupdf": version(),
             "pdf_ready": available()}
+
+
+@app.get("/api/library/diagnose")
+def library_diagnose():
+    """Every PDF found, and for anything not in the dropdown, the reason why."""
+    with db.tx() as con:
+        return library.diagnose(con, config.DATA_DIR)
 
 
 @app.get("/api/library")
