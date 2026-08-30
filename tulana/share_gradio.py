@@ -11,6 +11,7 @@ import os
 import sys
 import time
 import webbrowser
+from urllib.parse import urljoin
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -23,7 +24,8 @@ except ImportError:
 
 from app import app as studio_app  # noqa: E402
 
-PORT = int(os.environ.get("TULANA_PORT", "7862"))
+MOUNT = "/studio"
+PORT = config.free_port(int(os.environ.get("TULANA_PORT", "7862")))
 
 LANDING = """
 <div style="max-width:640px;margin:9vh auto;text-align:center;
@@ -47,17 +49,43 @@ server_app, local_url, share_url = demo.launch(
     server_name="0.0.0.0", server_port=PORT, share=True,
     prevent_thread_lock=True, inbrowser=False)
 
-server_app.mount("/studio", studio_app)
+# A sub-application mounted onto a server that has already started never
+# receives startup events, so index explicitly — otherwise the studio comes up
+# with an empty textbook list and an interface waiting for data that never
+# arrives.
+try:
+    from app import initialise
+    initialise()
+except ImportError:
+    pass
+
+server_app.mount(MOUNT, studio_app)
+
+
+def at(base: str) -> str:
+    """Join a base URL to the mount point.
+
+    Gradio returns the share URL without a trailing slash and the local URL
+    with one, depending on version. Concatenating blindly produced
+    `https://xxxx.gradio.livestudio/` — a dead link printed as the headline
+    instruction."""
+    if not base:
+        return ""
+    return urljoin(base if base.endswith("/") else base + "/", MOUNT.lstrip("/") + "/")
+
+
+public_url = at(share_url)
+machine_url = at(local_url)
 
 print(f"""
 {'=' * 70}
   Tulana Studio is live.
 
   Public link (share this):
-      {(share_url + 'studio/') if share_url else '(tunnel unavailable — see note)'}
+      {public_url or '(tunnel unavailable — see note below)'}
 
   On this machine:
-      {local_url.rstrip('/')}/studio/
+      {machine_url}
 
   Textbooks: {config.DATA_DIR}
   Your work: {config.STATE_DIR}
@@ -68,7 +96,7 @@ if not share_url:
           "  no route to Gradio's tunnel service. The studio still works locally.\n")
 else:
     try:
-        webbrowser.open(share_url + "studio/")
+        webbrowser.open(public_url)
     except Exception:
         pass
 
