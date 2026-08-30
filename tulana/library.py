@@ -30,55 +30,122 @@ def tokens(path: Path, root: Path):
     return [t.lower() for t in re.split(r"[^A-Za-z0-9]+", str(rel)) if t]
 
 
+ROMAN = {"i": 1, "ii": 2, "iii": 3, "iv": 4, "v": 5, "vi": 6, "vii": 7,
+         "viii": 8, "ix": 9, "x": 10, "xi": 11, "xii": 12}
+CLASS_WORDS = ("class", "std", "standard", "grade", "cls", "kaksha")
+
+
+def _split_glued(items):
+    """Separate a word glued to its number: `class10` -> `class`, `10`.
+
+    People write `Kerala_Class10_Malayalam.pdf` at least as often as
+    `Kerala_Class_10_...`. Splitting only on separators dropped the class for
+    every such file, and a file with no class never reaches the dropdown — which
+    is how a textbook can sit in the folder, be indexed, and still be invisible.
+    """
+    out = []
+    for t in items:
+        m = re.fullmatch(r"([A-Za-z]+)(\d{1,2})", t)
+        if m:
+            out.extend([m.group(1), m.group(2)]); continue
+        m = re.fullmatch(r"(\d{1,2})([A-Za-z]+)", t)
+        if m:
+            out.extend([m.group(1), m.group(2)]); continue
+        out.append(t)
+    return out
+
+
+def _class_from(items):
+    """A class number written in any of the ways people write one."""
+    tk = [t.lower() for t in items]
+    for i, t in enumerate(tk):
+        if t in CLASS_WORDS and i + 1 < len(tk):
+            nxt = tk[i + 1]
+            if nxt.isdigit() and 1 <= int(nxt) <= 12:
+                return int(nxt)
+            if nxt in ROMAN:
+                return ROMAN[nxt]
+        m = re.fullmatch(r"(?:%s)(\d{1,2})" % "|".join(CLASS_WORDS), t)
+        if m and 1 <= int(m.group(1)) <= 12:
+            return int(m.group(1))
+    for t in tk:
+        if re.fullmatch(r"\d{1,2}", t) and 1 <= int(t) <= 12:
+            return int(t)
+    for t in tk:
+        # Digits were preferred above, so a roman numeral here is the only
+        # candidate. `i` and `v` alone are far more often an initial or a part
+        # marker; `x` is kept, because "Class X" is very common.
+        if t in ROMAN and t not in ("i", "v"):
+            return ROMAN[t]
+    return None
+
+
 def infer(path: Path, root: Path) -> dict:
-    """Board, class, language and volume from a file's own path.
+    """Board, class, language, subject and volume from a file's own path.
 
     Board and language vocabularies overlap — `guj` names both Gujarat and
-    Gujarati, `pun` both Punjab and Punjabi — so the board token is identified
-    and consumed first. Reading them in plain token order made `GUJ_EN_10.pdf`
-    a Gujarati book, which silently removed every Gujarat English edition from
-    the pairing list.
+    Gujarati, `pun` both Punjab and Punjabi — so the board is identified and
+    consumed before languages are read. Tokens come from the whole relative
+    path, so a file organised into folders works as well as a long file name.
     """
-    stem = [t for t in re.split(r"[^A-Za-z0-9]+", path.stem) if t]
-    folder = tokens(path.parent, root)
-    board, rest = None, list(stem)
+    stem_tokens = _split_glued([t for t in re.split(r"[^A-Za-z0-9]+", path.stem) if t])
+    folder_tokens = _split_glued(tokens(path.parent, root))
+    rest = list(stem_tokens)
+    board = None
 
-    # a leading segment that names a board is the board, not a language
-    if rest and rest[0].lower() in config.BOARD_TOKENS:
+    # Two-word board names first. "Tamil Nadu" splits into `tamil` + `nadu`,
+    # and `tamil` is a language token — reading it as the language would lose
+    # both the board and the book.
+    phrases = getattr(config, "BOARD_PHRASES", {})
+
+    def consume(pool, phrase):
+        low = [t.lower() for t in pool]
+        for w in phrase:
+            if w in low:
+                i = low.index(w); pool.pop(i); low.pop(i)
+
+    for pool in (stem_tokens, folder_tokens):
+        low = [t.lower() for t in pool]
+        for phrase, code in phrases.items():
+            n = len(phrase)
+            if any(tuple(low[i:i + n]) == phrase for i in range(len(low) - n + 1)):
+                board = code
+                consume(pool, phrase)
+                if pool is stem_tokens:
+                    consume(rest, phrase)
+                break
+        if board:
+            break
+
+    if board is None and rest and rest[0].lower() in config.BOARD_TOKENS:
         board = config.BOARD_TOKENS[rest[0].lower()]
         rest = rest[1:]
     if board is None:
-        board = next((config.BOARD_TOKENS[t] for t in folder + [x.lower() for x in stem]
-                      if t in config.BOARD_TOKENS), None)
+        for t in folder_tokens + [x.lower() for x in stem_tokens]:
+            if t in config.BOARD_TOKENS:
+                board = config.BOARD_TOKENS[t]
+                break
         if board is not None:
-            # consume the first occurrence so it cannot also be read as a language
             for n, t in enumerate(rest):
                 if config.BOARD_TOKENS.get(t.lower()) == board:
-                    rest.pop(n)
-                    break
+                    rest.pop(n); break
 
-    langs = [config.LANG_TOKENS[t.lower()] for t in rest if t.lower() in config.LANG_TOKENS]
+    langs = [config.LANG_TOKENS[t.lower()] for t in rest
+             if t.lower() in config.LANG_TOKENS]
     if not langs:
-        langs = [config.LANG_TOKENS[t] for t in folder if t in config.LANG_TOKENS]
+        langs = [config.LANG_TOKENS[t] for t in folder_tokens
+                 if t in config.LANG_TOKENS]
     language = langs[0] if langs else None
 
-    all_tk = folder + [t.lower() for t in stem]
-    cls = None
-    for i, t in enumerate(all_tk):
-        if t in ("class", "std", "standard", "grade") and i + 1 < len(all_tk) and all_tk[i + 1].isdigit():
-            cls = int(all_tk[i + 1]); break
+    all_tk = folder_tokens + [t.lower() for t in stem_tokens]
+    cls = _class_from(stem_tokens) or _class_from(folder_tokens)
     if cls is None:
-        for t in all_tk:
-            if re.fullmatch(r"\d{1,2}", t) and 3 <= int(t) <= 12:
-                cls = int(t); break
-    if cls is None:
-        # NCERT chapter files encode class in the first two digits: 1001, 1101
-        m = re.fullmatch(r"(\d{2})(\d{2})", path.stem)
+        m = re.fullmatch(r"(\d{2})(\d{2})", path.stem)      # NCERT 1001, 1201
         if m and 1 <= int(m.group(1)) <= 12:
             cls = int(m.group(1))
 
     vol = None
-    for t in rest + folder:
+    for t in rest + folder_tokens:
         m = re.fullmatch(r"(?:sem|semester)(\d)", t.lower())
         if m:
             vol = "Semester " + m.group(1); break
@@ -88,17 +155,33 @@ def infer(path: Path, root: Path) -> dict:
     if vol is None and rest and re.fullmatch(r"[1-4]", rest[-1]):
         vol = "Part " + rest[-1]
 
-    subject = "Mathematics"
+    subject = None
     ts = set(all_tk)
-    for name, words in (("Science", ("science", "vigyan")),
-                        ("Social Science", ("social", "sst"))):
+    for name, words in (("Mathematics", ("math", "maths", "mathematics", "ganit",
+                                         "ganita", "kanakku")),
+                        ("Science", ("science", "vigyan", "vignan")),
+                        ("Physics", ("physics", "bhautiki")),
+                        ("Chemistry", ("chemistry", "rasayan")),
+                        ("Biology", ("biology", "bio", "jeev")),
+                        ("Social Science", ("social", "sst", "samajik")),
+                        ("History", ("history", "itihas")),
+                        ("Geography", ("geography", "bhugol")),
+                        ("English", ("english",))):
         if ts & set(words):
-            subject = name
+            subject = name; break
+    if subject is None:
+        subject = "Mathematics"          # the corpus default, stated not hidden
 
-    # The NCERT chapter set carries no board token anywhere in its path; it is
-    # the only English/Hindi collection organised that way.
+    # The NCERT chapter set carries no board token anywhere in its path, so it
+    # needs a fallback — but only when the path actually looks like that set.
+    # Assuming "English with no board" means NCERT silently relabelled an Assam
+    # or Odisha textbook as NCERT, which is worse than leaving it unresolved.
     if board is None and language in ("English", "Hindi"):
-        board = "NCERT"
+        looks_like_ncert = (re.fullmatch(r"\d{4}", path.stem) is not None
+                            or any(t in ("input", "ncert", "cbse") for t in folder_tokens))
+        if looks_like_ncert:
+            board = "NCERT"
+
     return {"board": board, "class": cls, "language": language,
             "volume": vol, "subject": subject,
             "all_languages": list(dict.fromkeys(langs))}
@@ -170,3 +253,54 @@ def is_excluded(text: str) -> tuple:
         if term in t:
             return True, term
     return False, ""
+
+
+def diagnose(con, root: Path = None) -> dict:
+    """Why is a textbook not in the dropdown?
+
+    Silence was the real bug: a PDF could sit in the folder, be indexed, and
+    still never appear, with nothing anywhere saying why. Every file is
+    accounted for here as exactly one of usable, unpaired, or unreadable, and
+    every rejection carries the reason and the fix.
+    """
+    root = Path(root or config.DATA_DIR)
+    usable, unpaired, unreadable = [], [], []
+    rows = con.execute("""SELECT id, path, board, class, subject, language,
+                          script, volume, pages FROM documents ORDER BY path""").fetchall()
+    groups = {}
+    for r in rows:
+        groups.setdefault((r["board"], r["class"], r["subject"]), []).append(dict(r))
+
+    for r in rows:
+        d = dict(r)
+        missing = [k for k in ("board", "class", "language") if not d.get(k)]
+        if missing:
+            unreadable.append({**d, "reason":
+                f"could not work out the {', '.join(missing)} from the file name "
+                f"or its folders",
+                "fix": "rename it like BOARD_LANG_CLASS — for example KER_ML_10.pdf, "
+                       "or Kerala_Class10_Malayalam.pdf, or put it in "
+                       "Kerala/Class 10/Malayalam/"})
+            continue
+        peers = groups.get((d["board"], d["class"], d["subject"]), [])
+        has_en = any(p["language"] == "English" for p in peers)
+        has_other = any(p["language"] != "English" for p in peers)
+        if has_en and has_other:
+            usable.append(d)
+        else:
+            want = "an English edition" if not has_en else "a target-language edition"
+            have = sorted({p["language"] for p in peers if p["language"]})
+            unpaired.append({**d, "reason":
+                f"{config.board_name(d['board'])} · Class {d['class']} · "
+                f"{d['subject']} has only {', '.join(have)}, so there is no pair to clip",
+                "fix": f"add {want} for the same board, class and subject — the "
+                       f"subject has to match as well ({d['subject']} here)"})
+    return {
+        "data_dir": str(root), "documents": len(rows), "usable": len(usable),
+        "unpaired": unpaired, "unreadable": unreadable,
+        "groups": [{"board": k[0], "class": k[1], "subject": k[2],
+                    "languages": sorted({p["language"] for p in v if p["language"]}),
+                    "pairable": any(p["language"] == "English" for p in v)
+                                and bool({p["language"] for p in v} - {"English"})}
+                   for k, v in sorted(groups.items(), key=lambda kv: str(kv[0]))],
+    }
