@@ -196,6 +196,7 @@ def title_for(meta: dict) -> str:
 
 def scan(con, root: Path = None, log=print) -> int:
     """Index every PDF under the data folder. Idempotent and cheap to re-run."""
+    skipped = []
     root = root or config.DATA_DIR
     if not root.is_dir():
         log(f"  data folder not found: {root}")
@@ -215,7 +216,11 @@ def scan(con, root: Path = None, log=print) -> int:
             with fitz.open(pdf) as doc:
                 pages = doc.page_count
         except Exception as e:
-            log(f"  [skip] {pdf.name}: {e}")
+            # Say *why* rather than echoing PyMuPDF. A Git LFS pointer is by far
+            # the commonest cause and the least obvious from the error text.
+            why = file_problem(pdf) or str(e)
+            log(f"  [skip] {pdf.name}: {why}")
+            skipped.append((pdf.name, why))
             continue
         vals = (rel, meta["board"], meta["class"], meta["subject"], meta["language"],
                 config.script_of(meta["language"]), meta["volume"],
@@ -231,6 +236,13 @@ def scan(con, root: Path = None, log=print) -> int:
         found += 1
     con.commit()
     log(f"  [ok] {found} textbook PDF(s) indexed")
+    lfs = [x for x in skipped if "LFS" in x[1]]
+    if lfs:
+        log(f"  [warn] {len(lfs)} file(s) are Git LFS pointers, not PDFs, and were "
+            f"skipped — run `git lfs pull` to fetch them, then rescan")
+    elif skipped:
+        log(f"  [warn] {len(skipped)} file(s) could not be opened — "
+            f"see GET /api/library/diagnose for each one and why")
     return found
 
 
@@ -255,6 +267,56 @@ def is_excluded(text: str) -> tuple:
     return False, ""
 
 
+
+LFS_MAGIC = b"version https://git-lfs.github.com/spec/v1"
+
+
+def file_problem(path: Path) -> str | None:
+    """Why this file cannot be used, or None if it looks like a real PDF.
+
+    The commonest cause in practice is not a bad name at all: `git clone`
+    without `git lfs pull` — or an exhausted LFS bandwidth quota — leaves a
+    132-byte text pointer where the PDF should be. It has the right name and
+    the right extension, so it looks present in every listing, and the scanner
+    quietly skips it. That is how a textbook can be in the repository, be on
+    disk, and still never appear in the dropdown.
+    """
+    try:
+        size = path.stat().st_size
+    except OSError as e:
+        return f"cannot be read from disk ({e.strerror or e})"
+    if size == 0:
+        return "the file is empty (0 bytes)"
+    try:
+        with open(path, "rb") as fh:
+            head = fh.read(200)
+    except OSError as e:
+        return f"cannot be opened ({e.strerror or e})"
+    if head.startswith(LFS_MAGIC):
+        return ("this is a Git LFS pointer, not the PDF itself — the file was "
+                "never downloaded")
+    if not head.startswith(b"%PDF-"):
+        snippet = head[:40].decode("utf-8", "replace").strip().replace("\n", " ")
+        return f"not a PDF — the file begins with {snippet!r}"
+    return None
+
+
+def scan_disk(root: Path = None) -> dict:
+    """Every candidate file on disk, and whether it is a usable PDF."""
+    root = Path(root or config.DATA_DIR)
+    good, bad = [], []
+    if not root.is_dir():
+        return {"root": str(root), "exists": False, "good": [], "bad": []}
+    for p in sorted(root.rglob("*")):
+        if not p.is_file() or p.suffix.lower() != ".pdf":
+            continue
+        problem = file_problem(p)
+        (bad if problem else good).append(
+            {"path": p.relative_to(root).as_posix(), "bytes": p.stat().st_size,
+             "problem": problem})
+    return {"root": str(root), "exists": True, "good": good, "bad": bad}
+
+
 def diagnose(con, root: Path = None) -> dict:
     """Why is a textbook not in the dropdown?
 
@@ -265,6 +327,20 @@ def diagnose(con, root: Path = None) -> dict:
     """
     root = Path(root or config.DATA_DIR)
     usable, unpaired, unreadable = [], [], []
+
+    # Start from the disk. A file that could not be opened never reached the
+    # documents table, so a database-only diagnosis cannot see it — which is
+    # precisely the case that was going unreported.
+    disk = scan_disk(root)
+    broken = [{"path": b["path"], "board": None, "class": None, "language": None,
+               "subject": None, "pages": None, "bytes": b["bytes"],
+               "reason": b["problem"],
+               "fix": ("run `git lfs pull` in the repository to fetch the real "
+                       "file, then rescan"
+                       if "LFS" in (b["problem"] or "")
+                       else "replace it with a readable PDF, then rescan")}
+              for b in disk["bad"]]
+
     rows = con.execute("""SELECT id, path, board, class, subject, language,
                           script, volume, pages FROM documents ORDER BY path""").fetchall()
     groups = {}
@@ -295,8 +371,13 @@ def diagnose(con, root: Path = None) -> dict:
                 f"{d['subject']} has only {', '.join(have)}, so there is no pair to clip",
                 "fix": f"add {want} for the same board, class and subject — the "
                        f"subject has to match as well ({d['subject']} here)"})
+    unreadable = broken + unreadable
     return {
-        "data_dir": str(root), "documents": len(rows), "usable": len(usable),
+        "data_dir": str(root),
+        "files_on_disk": len(disk["good"]) + len(disk["bad"]),
+        "files_unopenable": len(disk["bad"]),
+        "lfs_pointers": sum(1 for b in disk["bad"] if "LFS" in (b["problem"] or "")),
+        "documents": len(rows), "usable": len(usable),
         "unpaired": unpaired, "unreadable": unreadable,
         "groups": [{"board": k[0], "class": k[1], "subject": k[2],
                     "languages": sorted({p["language"] for p in v if p["language"]}),
