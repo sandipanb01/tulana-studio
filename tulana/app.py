@@ -115,6 +115,17 @@ def initialise():
     except Exception as e:
         print(f"[studio] could not unpack archives in {config.DATA_DIR}: {e}")
 
+    # Locate the corpus before scanning. Depending on a symlink the operator
+    # has to create by hand — and which .gitignore excludes — made an empty
+    # dropdown the default outcome of a fresh clone.
+    try:
+        found, note = config.discover_data_dir()
+        if note:
+            print(f"[studio] {note}")
+        config.DATA_DIR = found
+    except Exception as e:
+        print(f"[studio] could not locate the textbook folder: {e}")
+
     try:
         with db.tx() as con:
             # Suppress the routine per-file chatter but never the warnings:
@@ -123,8 +134,9 @@ def initialise():
             n = library.scan(con, config.DATA_DIR, log=_scan_log)
         print(f"[studio] {n} textbook PDF(s) available from {config.DATA_DIR}")
         if n == 0:
-            print(f"[studio] nothing indexed — check TULANA_DATA_DIR, currently "
-                  f"{config.DATA_DIR}")
+            print(f"[studio] nothing indexed. Checked {config.DATA_DIR} — set "
+                  f"TULANA_DATA_DIR to the folder holding your PDFs, or run "
+                  f"`git lfs pull` if the files are LFS pointers.")
     except Exception as e:                      # never block startup
         print(f"[studio] could not index {config.DATA_DIR}: {e}")
 
