@@ -53,11 +53,19 @@ server_app, local_url, share_url = demo.launch(
 # receives startup events, so index explicitly — otherwise the studio comes up
 # with an empty textbook list and an interface waiting for data that never
 # arrives.
+# Index before mounting. This must not fail quietly: an empty dropdown with no
+# message is the hardest kind of problem to diagnose from a shared link.
 try:
     from app import initialise
     initialise()
 except ImportError:
-    pass
+    # Older copies of app.py have no initialise(); scan directly so the studio
+    # is still usable rather than silently empty.
+    import db
+    import library
+    with db.tx() as _con:
+        _n = library.scan(_con, config.DATA_DIR, log=print)
+    print(f"[studio] {_n} textbook PDF(s) indexed from {config.DATA_DIR}")
 
 server_app.mount(MOUNT, studio_app)
 
