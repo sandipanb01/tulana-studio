@@ -167,9 +167,12 @@ def get_library():
         out = []
         for c in combos:
             docs = con.execute(
-                """SELECT id, language, title, pages, volume FROM documents
+                """SELECT id, language, title, pages, volume, path FROM documents
                    WHERE board=? AND class=? AND subject=? ORDER BY language, volume""",
                 (c["board"], c["class"], c["subject"])).fetchall()
+            # Same existence filter as pairable(): an edition whose file was
+            # removed by a pull must not be offered, or opening it 404s.
+            docs = [d for d in docs if library.present(config.DATA_DIR, d["path"])]
             english = [dict(d) for d in docs if d["language"] == "English"]
             targets = [dict(d) for d in docs if d["language"] != "English"]
             langs = sorted({d["language"] for d in targets})
