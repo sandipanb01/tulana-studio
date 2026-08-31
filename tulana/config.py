@@ -275,3 +275,64 @@ def free_port(preferred: int = None, tries: int = 20) -> int:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind((HOST if HOST != "0.0.0.0" else "", 0))
         return s.getsockname()[1]
+
+
+def discover_data_dir(preferred=None):
+    """Find the textbook corpus, rather than insisting the operator points at it.
+
+    `tulana/data` is a symlink the operator has to create, and `.gitignore`
+    excludes it, so after a fresh clone it does not exist. Creating it is easy
+    to get subtly wrong — run `ln -s ../board_pdfs data` twice, or from the
+    wrong directory, and you end up with an empty real directory instead of a
+    link. The studio then starts, indexes nothing, and shows an empty dropdown.
+
+    So: look where the corpus actually is. The repository layout puts it at
+    `../board_pdfs` relative to the application, which is checked directly.
+    Returns (path, note) where note explains any fallback, so the choice is
+    never silent.
+    """
+    def has_pdfs(p: Path) -> bool:
+        try:
+            return p.is_dir() and any(p.rglob("*.pdf"))
+        except OSError:
+            return False
+
+    env = os.environ.get("TULANA_DATA_DIR")
+    if env:
+        p = Path(env).resolve()
+        if has_pdfs(p):
+            return p, ""
+        # An explicit setting that is wrong deserves to be said out loud rather
+        # than quietly overridden.
+        for cand in (BASE_DIR.parent / "board_pdfs", BASE_DIR / "board_pdfs"):
+            if has_pdfs(cand.resolve()):
+                return cand.resolve(), (
+                    f"TULANA_DATA_DIR is set to {p} but no PDFs are there; "
+                    f"using {cand.resolve()} instead")
+        return p, f"TULANA_DATA_DIR is set to {p} but no PDFs were found there"
+
+    candidates = [
+        Path(preferred) if preferred else DATA_DIR,
+        BASE_DIR / "data",
+        BASE_DIR.parent / "board_pdfs",      # the repository layout
+        BASE_DIR / "board_pdfs",
+        BASE_DIR.parent / "data",
+        BASE_DIR.parent / "pdfs",
+    ]
+    seen = []
+    for cand in candidates:
+        try:
+            p = Path(cand).resolve()
+        except OSError:
+            continue
+        if p in seen:
+            continue
+        seen.append(p)
+        if has_pdfs(p):
+            note = "" if p == DATA_DIR else (
+                f"{DATA_DIR} holds no PDFs; found the corpus at {p}")
+            return p, note
+    return DATA_DIR, (
+        f"no PDFs found in {DATA_DIR} or beside it. Point TULANA_DATA_DIR at the "
+        f"folder holding the textbooks, or link it: "
+        f"ln -s ../board_pdfs {BASE_DIR / 'data'}")
