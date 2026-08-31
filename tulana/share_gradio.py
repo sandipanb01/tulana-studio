@@ -1,115 +1,117 @@
 #!/usr/bin/env python3
-"""Publish Tulana Studio on a public link.
+"""Naming robustness — every board, every language, every plausible file name.
 
-    python3 share_gradio.py
+A textbook that is in the folder but not in the dropdown is the worst kind of
+bug: nothing is broken, nothing errors, the work simply cannot be done. This
+suite exists so that adding a board or a language in future cannot reintroduce
+it silently.
 
-Prints an https://….gradio.live address serving the studio itself. The link is
-a tunnel, not a copy: everything is still stored in this machine's `state/`
-folder, so restarting — and getting a new link — never loses a clipping.
+    python3 test_naming.py
 """
-import os
 import sys
-import time
-import webbrowser
-from urllib.parse import urljoin
+from pathlib import Path
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import config
+import library
 
-import config  # noqa: E402
-
-try:
-    import gradio as gr
-except ImportError:
-    sys.exit("Gradio is not installed. Run:  pip install gradio")
-
-from app import app as studio_app  # noqa: E402
-
-MOUNT = "/studio"
-PORT = config.free_port(int(os.environ.get("TULANA_PORT", "7862")))
-
-LANDING = """
-<div style="max-width:640px;margin:9vh auto;text-align:center;
-            font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.6">
-  <div style="font-size:44px;font-weight:700">तुलना <span style="color:#0e7a72">Studio</span></div>
-  <p style="color:#556;font-size:17px">Clip parallel passages from textbooks,
-     side by side, in any Indian language.</p>
-  <a href="./studio/" target="_blank" style="display:inline-block;margin-top:18px;
-     background:#0e7a72;color:#fff;text-decoration:none;font-size:18px;font-weight:600;
-     padding:14px 34px;border-radius:10px">Open the clipping workspace →</a>
-  <p style="color:#889;font-size:13px;margin-top:26px">
-     Works on a phone or tablet as well as a laptop. Every pair you save is
-     written to the studio's database immediately.</p>
-</div>
-"""
-
-with gr.Blocks(title="Tulana Studio") as demo:
-    gr.HTML(LANDING)
-
-server_app, local_url, share_url = demo.launch(
-    server_name="0.0.0.0", server_port=PORT, share=True,
-    prevent_thread_lock=True, inbrowser=False)
-
-# A sub-application mounted onto a server that has already started never
-# receives startup events, so index explicitly — otherwise the studio comes up
-# with an empty textbook list and an interface waiting for data that never
-# arrives.
-# Index before mounting. This must not fail quietly: an empty dropdown with no
-# message is the hardest kind of problem to diagnose from a shared link.
-try:
-    from app import initialise
-    initialise()
-except ImportError:
-    # Older copies of app.py have no initialise(); scan directly so the studio
-    # is still usable rather than silently empty.
-    import db
-    import library
-    with db.tx() as _con:
-        _n = library.scan(_con, config.DATA_DIR, log=print)
-    print(f"[studio] {_n} textbook PDF(s) indexed from {config.DATA_DIR}")
-
-server_app.mount(MOUNT, studio_app)
+R = Path("/data")
+passed = failed = 0
 
 
-def at(base: str) -> str:
-    """Join a base URL to the mount point.
-
-    Gradio returns the share URL without a trailing slash and the local URL
-    with one, depending on version. Concatenating blindly produced
-    `https://xxxx.gradio.livestudio/` — a dead link printed as the headline
-    instruction."""
-    if not base:
-        return ""
-    return urljoin(base if base.endswith("/") else base + "/", MOUNT.lstrip("/") + "/")
+def check(name, ok, detail=""):
+    global passed, failed
+    if ok:
+        passed += 1
+    else:
+        failed += 1
+        print(f"FAIL  {name}  {detail}")
 
 
-public_url = at(share_url)
-machine_url = at(local_url)
+def infer(rel):
+    return library.infer(R / rel, R)
 
-print(f"""
-{'=' * 70}
-  Tulana Studio is live.
 
-  Public link (share this):
-      {public_url or '(tunnel unavailable — see note below)'}
+def main():
+    # ── every language, in the short-code convention already in use ─────────
+    codes = {"en": "English", "hi": "Hindi", "bn": "Bengali", "mr": "Marathi",
+             "ta": "Tamil", "te": "Telugu", "kn": "Kannada", "ml": "Malayalam",
+             "gu": "Gujarati", "pa": "Punjabi", "or": "Odia", "as": "Assamese",
+             "ur": "Urdu", "sa": "Sanskrit"}
+    for code, name in codes.items():
+        for board in ("KER", "PUN", "MH", "TM", "GUJ", "KT", "AP", "BA"):
+            m = infer(f"board_pdfs/{board}_{code}_10.pdf")
+            check(f"{board}_{code}_10 resolves language",
+                  m["language"] == name, f"got {m['language']}")
+            check(f"{board}_{code}_10 resolves board and class",
+                  m["board"] and m["class"] == 10,
+                  f"board={m['board']} class={m['class']}")
 
-  On this machine:
-      {machine_url}
+    # ── full language names, which people use at least as often ─────────────
+    for word, name in (("malayalam", "Malayalam"), ("punjabi", "Punjabi"),
+                       ("bengali", "Bengali"), ("assamese", "Assamese"),
+                       ("odia", "Odia"), ("kannada", "Kannada"),
+                       ("telugu", "Telugu"), ("tamil", "Tamil"),
+                       ("gujarati", "Gujarati"), ("marathi", "Marathi"),
+                       ("hindi", "Hindi"), ("urdu", "Urdu")):
+        m = infer(f"board_pdfs/Kerala_Class10_{word}_Maths.pdf")
+        check(f"full language name '{word}'", m["language"] == name, str(m["language"]))
 
-  Textbooks: {config.DATA_DIR}
-  Your work: {config.STATE_DIR}
-{'=' * 70}
-""")
-if not share_url:
-    print("  The gradio.live tunnel could not be created — this machine may have\n"
-          "  no route to Gradio's tunnel service. The studio still works locally.\n")
-else:
-    try:
-        webbrowser.open(public_url)
-    except Exception:
-        pass
+    # ── the ways people write a class ───────────────────────────────────────
+    for rel, want in (
+            ("board_pdfs/Kerala_Class10_Malayalam.pdf", 10),
+            ("board_pdfs/Kerala_Class_10_Malayalam.pdf", 10),
+            ("board_pdfs/Kerala-class-9-malayalam.pdf", 9),
+            ("board_pdfs/SCERT_Kerala_Std10_Malayalam.pdf", 10),
+            ("board_pdfs/Kerala_Grade7_Malayalam.pdf", 7),
+            ("board_pdfs/Kerala_Class_X_Malayalam.pdf", 10),
+            ("board_pdfs/kerala_XII_malayalam.pdf", 12),
+            ("board_pdfs/KER_ML_10_1.pdf", 10),
+            ("board_pdfs/Kerala/Class 10/Malayalam/maths.pdf", 10),
+            ("board_pdfs/Punjab/Grade 7/Punjabi/science.pdf", 7)):
+        check(f"class from {Path(rel).name}", infer(rel)["class"] == want,
+              f"got {infer(rel)['class']}")
 
-try:
-    while True:
-        time.sleep(3600)
-except KeyboardInterrupt:
-    print("Shutting down.")
+    # ── board and language codes that collide ───────────────────────────────
+    for rel, board, lang in (
+            ("board_pdfs/GUJ_EN_10.pdf", "GJ", "English"),
+            ("board_pdfs/GUJ_GJ_10.pdf", "GJ", "Gujarati"),
+            ("board_pdfs/PUN_EN_10.pdf", "PB", "English"),
+            ("board_pdfs/PUN_PU_10.pdf", "PB", "Punjabi"),
+            ("board_pdfs/KER_EN_10.pdf", "KL", "English"),
+            ("board_pdfs/KER_ML_10.pdf", "KL", "Malayalam")):
+        m = infer(rel)
+        check(f"{Path(rel).name} keeps board and language apart",
+              m["board"] == board and m["language"] == lang,
+              f"board={m['board']} lang={m['language']}")
+
+    # ── subjects ────────────────────────────────────────────────────────────
+    for word, want in (("maths", "Mathematics"), ("mathematics", "Mathematics"),
+                       ("science", "Science"), ("physics", "Physics"),
+                       ("chemistry", "Chemistry"), ("biology", "Biology"),
+                       ("history", "History"), ("geography", "Geography")):
+        m = infer(f"board_pdfs/Kerala_Class10_Malayalam_{word}.pdf")
+        check(f"subject '{word}'", m["subject"] == want, m["subject"])
+
+    # ── existing names must not regress ─────────────────────────────────────
+    for rel, board, cls, lang in (
+            ("Boardwise_PDF_class10_Maths/CLASS-10/MH_MR_9_1.pdf", "MH", 9, "Marathi"),
+            ("Boardwise_PDF_class10_Maths/CLASS-10/AP_EN-TEL_10_SEM1.pdf", "AP", 10, "English"),
+            ("input/eng/10/1001.pdf", "NCERT", 10, "English"),
+            ("input/hin/12/1205.pdf", "NCERT", 12, "Hindi")):
+        m = infer(rel)
+        check(f"existing name {Path(rel).name} still resolves",
+              m["board"] == board and m["class"] == cls and m["language"] == lang,
+              f"{m['board']} {m['class']} {m['language']}")
+
+    # ── a name with nothing usable must be reported, not silently dropped ───
+    m = infer("board_pdfs/random_textbook.pdf")
+    check("an unnameable file yields no false board or class",
+          not (m["board"] and m["class"] and m["language"]),
+          f"{m['board']} {m['class']} {m['language']}")
+
+    print(f"\n===== {passed} passed, {failed} failed =====")
+    return failed
+
+
+if __name__ == "__main__":
+    sys.exit(main())
