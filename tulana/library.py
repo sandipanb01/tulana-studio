@@ -235,6 +235,18 @@ def scan(con, root: Path = None, log=print) -> int:
                            VALUES(?,?,?,?,?,?,?,?,?,?,?)""", vals)
         found += 1
     con.commit()
+    # A `git pull` that renames or removes a textbook leaves its row behind —
+    # `state/` is gitignored, so the database survives the pull — and the
+    # dropdown went on offering a book that was not there. Report it; the rows
+    # are filtered out at query time rather than deleted, because `projects`
+    # and `clips` reference `documents` without a cascade and deleting would
+    # orphan real annotation work.
+    absent = [r["path"] for r in con.execute("SELECT path FROM documents")
+              if not (root / r["path"]).exists()]
+    if absent:
+        log(f"  [warn] {len(absent)} textbook(s) indexed earlier are no longer on "
+            f"disk and are hidden from the list; any annotations on them are kept")
+
     log(f"  [ok] {found} textbook PDF(s) indexed")
     lfs = [x for x in skipped if "LFS" in x[1]]
     if lfs:
@@ -246,16 +258,36 @@ def scan(con, root: Path = None, log=print) -> int:
     return found
 
 
-def pairable(con):
+def present(root: Path, rel: str) -> bool:
+    """Is this indexed file still on disk?"""
+    try:
+        return (Path(root) / rel).exists()
+    except OSError:
+        return False
+
+
+def pairable(con, root: Path = None):
     """Board/class combinations that have an English edition and at least one
-    other language — the combinations an annotator can actually work on."""
+    other language, and whose files are actually present."""
     rows = con.execute("""
-        SELECT board, class, subject FROM documents
+        SELECT board, class, subject, language, path FROM documents
         WHERE board IS NOT NULL AND class IS NOT NULL
-        GROUP BY board, class, subject
-        HAVING SUM(language='English') > 0 AND SUM(language!='English') > 0
         ORDER BY board, class""").fetchall()
-    return [dict(r) for r in rows]
+
+    # Filter on what is actually on disk, at query time. Doing this here rather
+    # than with a stored flag means no schema change — important when the
+    # database already holds annotation work — and it is self-correcting: a file
+    # that reappears after `git lfs pull` is offered again on the next request,
+    # with nothing to reset.
+    root = Path(root or config.DATA_DIR)
+    groups = {}
+    for r in rows:
+        if not (root / r["path"]).exists():
+            continue
+        groups.setdefault((r["board"], r["class"], r["subject"]), set()).add(r["language"])
+    return [{"board": b, "class": c, "subject": s_}
+            for (b, c, s_), langs in sorted(groups.items(), key=lambda kv: str(kv[0]))
+            if "English" in langs and langs - {"English"}]
 
 
 def is_excluded(text: str) -> tuple:
