@@ -77,9 +77,26 @@ def doc_row(con, doc_id: int):
 
 
 # ---------------------------------------------------------------- library ---
+def _scan_log(message: str):
+    """Print only what an operator needs to see from a scan."""
+    text = (message or "").strip()
+    if any(k in text for k in ("[warn]", "[skip]", "[error]")):
+        print(f"[studio] {text}")
+
+
 @app.on_event("startup")
 def _index_on_startup():
+    initialise()
+
+
+def initialise():
     """Index the textbook folder however the application was launched.
+
+    Deliberately a plain function as well as a startup hook. FastAPI does not
+    fire startup events for a sub-application mounted onto a server that is
+    already running, which is exactly what share_gradio.py does — so relying on
+    the hook alone brought the studio up with an empty dropdown and no
+    explanation. Idempotent, so calling it twice is harmless.
 
     Doing this only in the __main__ block meant that running under `uvicorn
     app:app` — which is how it is deployed and tested — started the studio with
@@ -100,7 +117,10 @@ def _index_on_startup():
 
     try:
         with db.tx() as con:
-            n = library.scan(con, config.DATA_DIR, log=lambda m: None)
+            # Suppress the routine per-file chatter but never the warnings:
+            # silencing the scan entirely hid the one line that explains an
+            # empty dropdown ("these files are Git LFS pointers").
+            n = library.scan(con, config.DATA_DIR, log=_scan_log)
         print(f"[studio] {n} textbook PDF(s) available from {config.DATA_DIR}")
         if n == 0:
             print(f"[studio] nothing indexed — check TULANA_DATA_DIR, currently "
