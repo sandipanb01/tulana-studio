@@ -34,6 +34,7 @@ from pydantic import BaseModel
 
 import config
 import db
+import layout
 import library
 from pdflib import fitz
 
@@ -67,6 +68,21 @@ def open_doc(rel_path: str):
         except Exception:
             pass
     return doc
+
+
+def resolve_path(rel_path: str) -> Path:
+    """The real file for a stored relative path.
+
+    Mirrors open_doc's fallback: if the recorded path no longer resolves —
+    the corpus moved, or auto-discovery picked a different folder — the file is
+    looked up by name before giving up."""
+    full = (config.DATA_DIR / Path(*str(rel_path).replace("\\", "/").split("/")))
+    if full.exists():
+        return full
+    found = next((p for p in config.DATA_DIR.rglob(Path(rel_path).name)), None)
+    if found is None:
+        raise HTTPException(404, f"Textbook file not found: {Path(rel_path).name}")
+    return found
 
 
 def doc_row(con, doc_id: int):
@@ -824,6 +840,265 @@ def rescan():
     with db.tx() as con:
         n = library.scan(con, config.DATA_DIR, log=lambda m: None)
     return {"documents": n}
+
+
+
+# ── layout annotation ──────────────────────────────────────────────────────
+# Additive throughout: `layout.ensure_schema()` only ever runs
+# CREATE TABLE IF NOT EXISTS, and nothing here writes to documents, projects,
+# clips, pairs, labels, pair_labels, exports or audit.
+
+@app.get("/api/layout/types")
+def layout_types():
+    with db.tx() as con:
+        return layout.region_types(con)
+
+
+class RegionTypeIn(BaseModel):
+    code: str
+    name: str
+    color: str = "#1f4e79"
+    shortcut: str = ""
+
+
+@app.post("/api/layout/types")
+def layout_add_type(body: RegionTypeIn, x_annotator: str = Header("")):
+    code = re.sub(r"[^a-z0-9-]", "-", body.code.strip().lower()).strip("-")
+    if not code:
+        raise HTTPException(400, "A region type needs a code")
+    with db.tx() as con:
+        layout.ensure_schema(con)
+        n = con.execute("SELECT COALESCE(MAX(ord),0)+1 FROM layout_region_types"
+                        ).fetchone()[0]
+        con.execute("""INSERT INTO layout_region_types(code, name, color, shortcut, ord)
+                       VALUES(?,?,?,?,?) ON CONFLICT(code) DO UPDATE SET
+                       name=excluded.name, color=excluded.color,
+                       shortcut=excluded.shortcut""",
+                    (code, body.name.strip() or code, body.color,
+                     body.shortcut.strip()[:1], n))
+        db.log(con, x_annotator, "layout_type_add", code)
+        return dict(con.execute("SELECT * FROM layout_region_types WHERE code=?",
+                                (code,)).fetchone())
+
+
+@app.get("/api/layout/page/{doc_id}/{page}")
+def layout_get_page(doc_id: int, page: int):
+    """The regions on one page, with the page's true size in PDF points."""
+    with db.tx() as con:
+        d = doc_row(con, doc_id)
+        path = resolve_path(d["path"])
+        try:
+            out = layout.get_page(con, doc_id, page, path)
+        except ValueError as e:
+            raise HTTPException(404, str(e))
+        out["document"] = dict(d)
+        return out
+
+
+class LayoutRegionIn(BaseModel):
+    type_code: str
+    x0: float
+    y0: float
+    x1: float
+    y1: float
+    seq: int | None = None
+    note: str = ""
+
+
+class LayoutSaveIn(BaseModel):
+    doc_id: int
+    page: int
+    regions: list[LayoutRegionIn] = []
+    status: str = "in_progress"
+    note: str = ""
+
+
+@app.put("/api/layout/page")
+def layout_save_page(body: LayoutSaveIn, x_annotator: str = Header("")):
+    with db.tx() as con:
+        d = doc_row(con, body.doc_id)
+        path = resolve_path(d["path"])
+        regions = [r.model_dump() for r in body.regions]
+        for i, r in enumerate(regions):
+            if r.get("seq") is None:
+                r["seq"] = i
+        try:
+            res = layout.save_page(con, body.doc_id, body.page, path, regions,
+                                   body.status, (x_annotator or "").strip(),
+                                   body.note)
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+        db.log(con, x_annotator, "layout_save", f"doc{body.doc_id}p{body.page}",
+               {"regions": res["regions"], "status": body.status})
+        return res
+
+
+class LayoutCompareIn(BaseModel):
+    src_doc: int
+    src_page: int
+    tgt_doc: int
+    tgt_page: int
+
+
+@app.post("/api/layout/compare")
+def layout_compare(body: LayoutCompareIn, x_annotator: str = Header("")):
+    """How far does the target page preserve the source page's layout?"""
+    with db.tx() as con:
+        sp = resolve_path(doc_row(con, body.src_doc)["path"])
+        tp = resolve_path(doc_row(con, body.tgt_doc)["path"])
+        try:
+            m = layout.compare_pages(con, body.src_doc, body.src_page, sp,
+                                     body.tgt_doc, body.tgt_page, tp,
+                                     (x_annotator or "").strip())
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+        db.log(con, x_annotator, "layout_compare",
+               f"{body.src_doc}p{body.src_page}->{body.tgt_doc}p{body.tgt_page}")
+        return m
+
+
+@app.get("/api/layout/progress")
+def layout_progress(doc_id: int = None):
+    with db.tx() as con:
+        return layout.progress(con, doc_id)
+
+
+@app.get("/api/layout/export.zip")
+def layout_export(doc_id: int = None, only_done: bool = False,
+                  x_annotator: str = Header("")):
+    """Layout annotations as COCO, JSONL and CSV.
+
+    COCO because DocLayNet, PubLayNet and DocBank all use it, so this corpus
+    can be trained on or merged with them rather than being a private format.
+    Boxes are emitted as [x, y, width, height] with a top-left origin, in PDF
+    points — independent of any rendering resolution.
+    """
+    import csv as _csv
+    with db.tx() as con:
+        layout.ensure_schema(con)
+        where = ["1=1"]
+        args = []
+        if doc_id:
+            where.append("lp.doc_id=?"); args.append(doc_id)
+        if only_done:
+            where.append("lp.status='done'")
+        pages = con.execute(f"""SELECT lp.*, d.title, d.path, d.board, d.class,
+            d.subject, d.language, d.script FROM layout_pages lp
+            JOIN documents d ON d.id=lp.doc_id WHERE {' AND '.join(where)}
+            ORDER BY lp.doc_id, lp.page""", args).fetchall()
+        if not pages:
+            raise HTTPException(400, "No layout annotations match that selection")
+        types = [dict(t) for t in con.execute(
+            "SELECT * FROM layout_region_types ORDER BY ord, id")]
+        regions = {p["id"]: [dict(r) for r in con.execute(
+            "SELECT * FROM layout_regions WHERE layout_page_id=? ORDER BY seq, id",
+            (p["id"],))] for p in pages}
+        comps = [dict(c) for c in con.execute("SELECT * FROM layout_comparisons")]
+
+    cat = {t["code"]: i + 1 for i, t in enumerate(types)}
+    coco = {"info": {"description": "Tulana Lipi layout annotations",
+                     "version": layout.METRICS_VERSION,
+                     "date_created": time.strftime("%Y-%m-%d"),
+                     "coordinate_units": "pdf_points_top_left_origin"},
+            "categories": [{"id": cat[t["code"]], "name": t["code"],
+                            "supercategory": "layout"} for t in types],
+            "images": [], "annotations": []}
+    rows, ann_id = [], 1
+    for img_id, p in enumerate(pages, 1):
+        coco["images"].append({
+            "id": img_id, "file_name": f"{Path(p['path']).stem}_p{p['page']:04d}.png",
+            "width": round(p["width"] or 0, 2), "height": round(p["height"] or 0, 2),
+            "document": p["title"], "page": p["page"], "board": p["board"],
+            "class": p["class"], "subject": p["subject"],
+            "language": p["language"], "script": p["script"]})
+        for r in regions[p["id"]]:
+            w, h = r["x1"] - r["x0"], r["y1"] - r["y0"]
+            typo = json.loads(r["typography"] or "{}")
+            space = json.loads(r["spacing"] or "{}")
+            coco["annotations"].append({
+                "id": ann_id, "image_id": img_id,
+                "category_id": cat.get(r["type_code"], 0),
+                "bbox": [round(r["x0"], 2), round(r["y0"], 2), round(w, 2), round(h, 2)],
+                "area": round(w * h, 2), "iscrowd": 0,
+                "reading_order": r["seq"], "text": r["text"],
+                "typography": typo, "spacing": space,
+                "annotator": r["annotator"]})
+            rows.append({"document": p["title"], "page": p["page"],
+                         "board": p["board"], "class": p["class"],
+                         "language": p["language"], "script": p["script"],
+                         "region_type": r["type_code"], "reading_order": r["seq"],
+                         "x0": round(r["x0"], 2), "y0": round(r["y0"], 2),
+                         "x1": round(r["x1"], 2), "y1": round(r["y1"], 2),
+                         "font": typo.get("dominant_font"),
+                         "size": typo.get("dominant_size"),
+                         "bold": typo.get("bold"), "italic": typo.get("italic"),
+                         "line_height": space.get("line_height"),
+                         "indent": space.get("first_line_indent"),
+                         "gap_above": space.get("gap_above"),
+                         "text": (r["text"] or "").replace("\n", " ")[:2000],
+                         "annotator": r["annotator"]})
+            ann_id += 1
+
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+        z.writestr("layout/coco.json", json.dumps(coco, ensure_ascii=False, indent=1))
+        z.writestr("layout/regions.jsonl",
+                   "\n".join(json.dumps(r, ensure_ascii=False) for r in rows))
+        sio = io.StringIO()
+        cols = ["document", "page", "board", "class", "language", "script",
+                "region_type", "reading_order", "x0", "y0", "x1", "y1", "font",
+                "size", "bold", "italic", "line_height", "indent", "gap_above",
+                "text", "annotator"]
+        w2 = _csv.DictWriter(sio, fieldnames=cols, extrasaction="ignore")
+        w2.writeheader()
+        for r in rows:
+            w2.writerow(r)
+        z.writestr("layout/regions.csv", sio.getvalue())
+        if comps:
+            z.writestr("layout/comparisons.jsonl", "\n".join(
+                json.dumps({**{k: c[k] for k in ("src_page_id", "tgt_page_id",
+                                                 "metrics_version", "created_by")},
+                            "metrics": json.loads(c["metrics"] or "{}")},
+                           ensure_ascii=False) for c in comps))
+        z.writestr("layout/README.md", _layout_readme(pages, rows, comps))
+    return Response(buf.getvalue(), media_type="application/zip",
+                    headers={"Content-Disposition":
+                             'attachment; filename="tulana_layout.zip"'})
+
+
+def _layout_readme(pages, rows, comps) -> str:
+    from collections import Counter
+    counts = Counter(r["region_type"] for r in rows)
+    langs = sorted({p["language"] for p in pages if p["language"]})
+    boards = sorted({p["board"] for p in pages if p["board"]})
+    lines = [
+        "# Layout annotations — Tulana Lipi", "",
+        f"{len(rows)} regions across {len(pages)} pages.", "",
+        f"- boards: {', '.join(boards) or '—'}",
+        f"- languages: {', '.join(langs) or '—'}",
+        f"- cross-language comparisons: {len(comps)}", "",
+        "## Region counts", "", "| type | regions |", "|---|---|",
+        *[f"| {code} | {n} |" for code, n in counts.most_common()], "",
+        "## Coordinates", "",
+        "Boxes are in **PDF points** with a top-left origin — the page's own",
+        "units — so they are independent of any rendering resolution. Rasterise",
+        "a page at any DPI and multiply by `dpi / 72` to get pixels.", "",
+        "`coco.json` follows the COCO detection layout with `bbox` as",
+        "`[x, y, width, height]`, so this corpus can be trained on or merged",
+        "with DocLayNet and PubLayNet. Four fields extend COCO: `reading_order`,",
+        "`text` (what was under the box where the PDF had a readable layer),",
+        "`typography` (font, size, weight from the PDF's own text layer) and",
+        "`spacing` (line height, indent, gap above, in points).", "",
+        "## Limitations, stated", "",
+        "- Typography and spacing come from the PDF text layer. A scanned page",
+        "  has none, and those fields are then empty — that means *not",
+        "  recoverable*, not *no formatting*.",
+        "- Reading order on a multi-column or sidebar-heavy page is one",
+        "  annotator's judgement and is genuinely ambiguous.",
+        "- Layout comparison scores over fewer than three regions a side are",
+        "  unstable and should not be quoted.", "",
+    ]
+    return "\n".join(lines)
 
 
 app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), name="static")
