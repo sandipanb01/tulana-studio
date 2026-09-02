@@ -16,6 +16,7 @@
   <nav id="tabs">
     <button data-page="Work" class="on">Clip</button>
     <button data-page="Pairs">Saved pairs</button>
+    <button data-page="Layout">Layout</button>
     <button data-page="Export">Export</button>
     <button data-page="Help">Guide</button>
   </nav>
@@ -34,6 +35,8 @@
       <select id="selSrcDoc" aria-label="English edition"></select>
       <select id="selTgtDoc" aria-label="Target edition"></select>
       <button class="btn primary wide" id="btnOpen">Open side by side</button>
+      <button class="btn wide" id="btnDiagnose" style="margin-top:4px">Why is a textbook missing?</button>
+      <div id="diagOut"></div>
     </div>
     <div class="grp" id="grpNav" hidden>
       <label class="lbl">Go to page</label>
@@ -92,6 +95,70 @@
 </section>
 
 <!-- ══════════════════════ EXPORT ══════════════════════ -->
+<!-- ══════════════════════ LAYOUT ANNOTATION ══════════════════════ -->
+<section class="page" id="pageLayout">
+  <aside id="lSide">
+    <div class="grp">
+      <label class="lbl">Textbook</label>
+      <select id="lCombo" aria-label="Board and class"></select>
+      <select id="lLang" aria-label="Target language"></select>
+      <select id="lSrcDoc" aria-label="English edition"></select>
+      <select id="lTgtDoc" aria-label="Target edition"></select>
+      <button class="btn primary wide" id="lOpen">Open side by side</button>
+    </div>
+    <div class="grp" id="lNav" hidden>
+      <label class="lbl">Page</label>
+      <div class="row">
+        <button class="btn" id="lPrev">‹</button>
+        <input id="lJumpSrc" type="number" min="1" placeholder="src">
+        <input id="lJumpTgt" type="number" min="1" placeholder="tgt">
+        <button class="btn" id="lNext">›</button>
+      </div>
+      <label class="row2"><input type="checkbox" id="lLock" checked> Turn both pages together</label>
+      <label class="row2"><input type="checkbox" id="lOrder" checked> Order numbers and path</label>
+    </div>
+    <div class="grp" id="lTools" hidden>
+      <label class="lbl">Block type <span class="faint">— press its key</span></label>
+      <div id="lTypes"></div>
+    </div>
+    <div class="grp" id="lLists" hidden>
+      <label class="lbl">Source blocks <span class="faint">— reading order</span></label>
+      <div id="lListSrc" class="rlist"></div>
+      <label class="lbl" style="margin-top:6px">Target blocks</label>
+      <div id="lListTgt" class="rlist"></div>
+    </div>
+    <div class="grp" id="lActions" hidden>
+      <div id="lSaveState" class="sm mut">No changes</div>
+      <div class="row">
+        <button class="btn" id="lClear">Clear both</button>
+        <button class="btn" id="lSave">Save</button>
+      </div>
+      <button class="btn primary wide" id="lDone">Mark done &amp; next page</button>
+      <button class="btn wide" id="lCompare">Compare layouts →</button>
+      <a class="btn wide" id="lExport" href="#" style="margin-top:4px">Export layout (COCO)</a>
+    </div>
+    <div class="grp" id="lMetrics" hidden></div>
+  </aside>
+
+  <div id="lPanes">
+    <div class="pane" id="lPaneSrc">
+      <div class="phead"><b id="lTitSrc">Source</b>
+        <span class="sm mut" id="lPosSrc"></span><span class="sp"></span>
+        <button class="mini" data-lzoom="src" data-d="-1">−</button>
+        <button class="mini" data-lzoom="src" data-d="1">+</button></div>
+      <div class="scroll" id="lScrSrc"><div class="lhost" id="lHostSrc"></div></div>
+    </div>
+    <div id="lSplit"></div>
+    <div class="pane" id="lPaneTgt">
+      <div class="phead"><b id="lTitTgt">Target</b>
+        <span class="sm mut" id="lPosTgt"></span><span class="sp"></span>
+        <button class="mini" data-lzoom="tgt" data-d="-1">−</button>
+        <button class="mini" data-lzoom="tgt" data-d="1">+</button></div>
+      <div class="scroll" id="lScrTgt"><div class="lhost" id="lHostTgt"></div></div>
+    </div>
+  </div>
+</section>
+
 <section class="page pad" id="pageExport">
   <h2>Export</h2>
   <div class="card" id="exportCard"></div>
