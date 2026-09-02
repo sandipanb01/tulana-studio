@@ -27,7 +27,7 @@ import time
 import zipfile
 from pathlib import Path
 
-from fastapi import Body, FastAPI, Header, HTTPException, Query
+from fastapi import Body, FastAPI, HTTPException, Header, Query, Request
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -1105,8 +1105,39 @@ app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), na
 
 
 @app.get("/", response_class=HTMLResponse)
-def index():
-    return (Path(__file__).parent / "static" / "index.html").read_text(encoding="utf-8")
+def index(request: Request):
+    """Serve the interface with a correct base URL and versioned assets.
+
+    Two faults this fixes, both of which look identical from the outside — the
+    page appears not to have changed.
+
+    **The base URL.** The HTML references `static/app.js` relatively. Mounted
+    under Gradio at `/studio`, that resolves correctly from `/studio/` but from
+    `/studio` (no trailing slash, which is what a pasted link often is) the
+    browser resolves it against `/` and gets a 404. The page then loads with no
+    script and no stylesheet. Emitting an explicit `<base>` built from the
+    mount prefix makes both forms work.
+
+    **Stale assets.** With only an ETag and no `Cache-Control`, browsers apply
+    heuristic freshness and can serve a cached `app.js` for hours without
+    revalidating — so a deployed change genuinely does not appear. Each asset
+    URL now carries a fingerprint of the file, so a changed file is a different
+    URL and can never be served from cache."""
+    static = Path(__file__).parent / "static"
+    html = (static / "index.html").read_text(encoding="utf-8")
+
+    root = (request.scope.get("root_path") or "").rstrip("/")
+    base = f"{root}/" if root else "/"
+    if "<base " not in html:
+        html = html.replace("<head>", f'<head>\n<base href="{base}">', 1)
+
+    for name in ("app.js", "style.css"):
+        f = static / name
+        if not f.exists():
+            continue
+        stamp = f"{int(f.stat().st_mtime)}-{f.stat().st_size}"
+        html = html.replace(f'"static/{name}"', f'"static/{name}?v={stamp}"')
+    return html
 
 
 if __name__ == "__main__":
