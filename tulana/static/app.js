@@ -41,7 +41,7 @@ const S = {
 };
 
 /* ── page navigation ───────────────────────────────────────────────────── */
-const LOADERS = { Pairs: loadPairs, Export: loadExport, Help: loadDocs };
+const LOADERS = { Pairs: loadPairs, Layout: loadLayout, Export: loadExport, Help: loadDocs };
 function show(name) {
   $$("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.page === name));
   $$(".page").forEach(p => p.classList.toggle("on", p.id === "page" + name));
@@ -599,3 +599,357 @@ $("#split").addEventListener("pointerdown", ev => {
     refreshSelInfo();
   } catch (e) { toast("Backend unreachable: " + e.message, true); }
 })();
+
+/* ══════════════ layout annotation ══════════════════════════════════════════
+   The clipping workspace applied to layout: pick a board, class and target
+   language, open both editions side by side, and mark up each page's blocks.
+   The two sides are annotated independently — a block belongs to one page of
+   one document — but shown together, because whether the translated edition
+   preserves the original's structure is exactly the question being asked. */
+const L = {
+  combo: null, types: [], type: null, dirty: false,
+  side: { src: { doc:null,page:1,pages:1,w:595,h:842,zoom:1,regions:[],sel:-1 },
+          tgt: { doc:null,page:1,pages:1,w:595,h:842,zoom:1,regions:[],sel:-1 } },
+};
+const LS = s => L.side[s];
+const host = s => $(s === "src" ? "#lHostSrc" : "#lHostTgt");
+
+async function loadLayout() {
+  if (!L.types.length) {
+    L.types = await api("/api/layout/types");
+    L.type = L.types[0] && L.types[0].code;
+    drawTypeChips();
+  }
+  if (!$("#lCombo").dataset.filled) {
+    if (!S.library || !S.library.length) S.library = await api("/api/library");
+    fill($("#lCombo"), S.library.map((c, i) => ({ value: i, label: c.label })),
+         "Choose a board and class…");
+    $("#lCombo").dataset.filled = "1";
+    $("#lCombo").onchange = onLayoutCombo;
+    $("#lLang").onchange = onLayoutLang;
+  }
+}
+function onLayoutCombo() {
+  const c = S.library[+$("#lCombo").value];
+  L.combo = c;
+  if (!c) { fill($("#lLang"), [], "—"); return; }
+  fill($("#lLang"), c.target_languages.map(l => ({ value: l, label: l })),
+       "Choose the target language…");
+  fill($("#lSrcDoc"), c.english_editions.map(d =>
+       ({ value: d.id, label: `${d.volume || "Full book"} · ${d.pages} pages` })), "");
+  fill($("#lTgtDoc"), [], "—");
+}
+function onLayoutLang() {
+  const c = L.combo, lang = $("#lLang").value;
+  if (!c || !lang) return;
+  fill($("#lTgtDoc"), c.target_editions.filter(d => d.language === lang).map(d =>
+       ({ value: d.id, label: `${d.volume || "Full book"} · ${d.pages} pages` })), "");
+}
+$("#lOpen").onclick = async () => {
+  const s = +$("#lSrcDoc").value, t = +$("#lTgtDoc").value;
+  if (!L.combo || !s || !t) { toast("Choose a board, class, language and both editions", true); return; }
+  LS("src").doc = s; LS("src").page = 1; LS("tgt").doc = t; LS("tgt").page = 1;
+  ["#lNav","#lTools","#lLists","#lActions"].forEach(x => $(x).hidden = false);
+  await Promise.all([openLayoutSide("src"), openLayoutSide("tgt")]);
+  $("#lSide").classList.remove("open");
+};
+
+async function openLayoutSide(side) {
+  const st = LS(side);
+  if (!st.doc) return;
+  try {
+    const d = await api(`/api/layout/page/${st.doc}/${st.page}`);
+    st.pages = d.pages; st.w = d.width; st.h = d.height; st.sel = -1;
+    st.regions = d.regions.map(r => ({ type_code: r.type_code, x0: r.x0, y0: r.y0,
+                                       x1: r.x1, y1: r.y1, seq: r.seq }));
+    $(side === "src" ? "#lTitSrc" : "#lTitTgt").textContent =
+      `${d.document.language} — ${d.document.title}`;
+    $(side === "src" ? "#lPosSrc" : "#lPosTgt").textContent =
+      `page ${st.page} of ${d.pages} · ${Math.round(d.width)}×${Math.round(d.height)} pt`
+      + (d.layout_page ? ` · ${d.layout_page.status}` : " · not annotated");
+    renderLayoutSide(side);
+  } catch (e) { toast(e.message, true); }
+}
+function renderLayoutSide(side) {
+  const st = LS(side), h = host(side);
+  const box = $(side === "src" ? "#lScrSrc" : "#lScrTgt");
+  const w = Math.round(Math.max(240, (box.clientWidth || 600) - 26) * st.zoom);
+  h.innerHTML = `<img width="${w}" src="${BASE}/api/doc/${st.doc}/page/${st.page}.png" alt="">`;
+  h.style.width = w + "px";
+  const img = h.querySelector("img");
+  img.onload = () => drawRegions(side);
+  drawRegions(side); drawRegionList(side);
+}
+function lScale(side) {
+  const img = host(side) && host(side).querySelector("img");
+  return ((img && img.clientWidth) || 600) / (LS(side).w || 595);
+}
+function drawRegions(side) {
+  const h = host(side);
+  if (!h) return;
+  [...h.querySelectorAll(".rgn, svg.path")].forEach(e => e.remove());
+  const st = LS(side), s = lScale(side), showOrder = $("#lOrder").checked;
+  const pts = [];
+  st.regions.forEach((r, i) => {
+    const t = L.types.find(x => x.code === r.type_code) || { color:"#666", name:r.type_code };
+    const el = document.createElement("div");
+    el.className = "rgn" + (i === st.sel ? " sel" : "");
+    el.style.cssText = `--c:${t.color};left:${r.x0*s}px;top:${r.y0*s}px;` +
+      `width:${(r.x1-r.x0)*s}px;height:${(r.y1-r.y0)*s}px`;
+    el.dataset.i = i;
+    el.innerHTML = `<span class="tag">${esc(t.name)}</span>` +
+      (showOrder ? `<span class="ord">${i + 1}</span>` : "") +
+      (i === st.sel ? `<i class="h nw"></i><i class="h se"></i>` : "");
+    h.appendChild(el);
+    pts.push([(r.x0 + r.x1) / 2 * s, (r.y0 + r.y1) / 2 * s]);
+  });
+  if (showOrder && pts.length > 1) {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("class", "path");
+    svg.innerHTML = `<polyline points="${pts.map(p => p.join(",")).join(" ")}"
+      fill="none" stroke="#c2404a" stroke-width="1.5" stroke-dasharray="5 4" opacity=".65"/>`;
+    h.appendChild(svg);
+  }
+}
+function drawRegionList(side) {
+  const st = LS(side);
+  const box = $(side === "src" ? "#lListSrc" : "#lListTgt");
+  box.innerHTML = st.regions.map((r, i) => {
+    const t = L.types.find(x => x.code === r.type_code) || { color:"#666", name:r.type_code };
+    return `<div class="ritem ${i === st.sel ? "sel" : ""}" data-i="${i}">
+      <i class="sw" style="background:${esc(t.color)}"></i>
+      <span class="nm">${i + 1}. ${esc(t.name)}</span>
+      <button data-up="${i}" title="Earlier in reading order">↑</button>
+      <button data-del="${i}" title="Delete">✕</button></div>`;
+  }).join("") || `<div class="sm faint">Nothing marked yet.</div>`;
+  [...box.querySelectorAll(".ritem")].forEach(el => el.onclick = ev => {
+    if (ev.target.dataset.del !== undefined || ev.target.dataset.up !== undefined) return;
+    st.sel = +el.dataset.i; drawRegions(side); drawRegionList(side);
+  });
+  [...box.querySelectorAll("[data-del]")].forEach(b => b.onclick = () => {
+    st.regions.splice(+b.dataset.del, 1); st.sel = -1; markLayoutDirty(side); });
+  [...box.querySelectorAll("[data-up]")].forEach(b => b.onclick = () => {
+    const i = +b.dataset.up; if (i === 0) return;
+    [st.regions[i-1], st.regions[i]] = [st.regions[i], st.regions[i-1]];
+    st.sel = i - 1; markLayoutDirty(side); });
+}
+function markLayoutDirty(side) {
+  L.dirty = true;
+  LS(side).regions.forEach((r, i) => r.seq = i);
+  drawRegions(side); drawRegionList(side);
+  $("#lSaveState").textContent = "Unsaved changes";
+}
+function drawTypeChips() {
+  $("#lTypes").innerHTML = L.types.map(t =>
+    `<button class="tchip ${t.code === L.type ? "on" : ""}" data-t="${esc(t.code)}"
+       style="--c:${esc(t.color)}"><i class="sw"></i>${esc(t.name)}${
+       t.shortcut ? `<kbd>${esc(t.shortcut)}</kbd>` : ""}</button>`).join("");
+  $$("#lTypes .tchip").forEach(b => b.onclick = () => { L.type = b.dataset.t; drawTypeChips(); });
+}
+
+["src","tgt"].forEach(side => {
+  const h = host(side);
+  if (!h) return;
+  let mode = null, start = null, origin = null, idx = -1;
+  const local = ev => { const r = h.getBoundingClientRect();
+    return { x: ev.clientX - r.left, y: ev.clientY - r.top, w: r.width, h: r.height }; };
+  h.addEventListener("pointerdown", ev => {
+    const st = LS(side);
+    if (!st.doc || ev.button === 2) return;
+    const handle = ev.target.closest(".h"), rgn = ev.target.closest(".rgn");
+    const p = local(ev), s = lScale(side);
+    if (handle && rgn) {
+      idx = +rgn.dataset.i; st.sel = idx;
+      mode = handle.classList.contains("se") ? "se" : "nw"; origin = { ...st.regions[idx] };
+    } else if (rgn) {
+      idx = +rgn.dataset.i; st.sel = idx; mode = "move";
+      origin = { ...st.regions[idx] }; start = p; drawRegions(side); drawRegionList(side);
+    } else {
+      if (!L.type) { toast("Choose a block type first", true); return; }
+      mode = "draw"; start = p;
+      st.regions.push({ type_code: L.type, x0: p.x/s, y0: p.y/s, x1: p.x/s, y1: p.y/s,
+                        seq: st.regions.length });
+      idx = st.regions.length - 1; st.sel = idx;
+    }
+    h.setPointerCapture(ev.pointerId); ev.preventDefault();
+  });
+  h.addEventListener("pointermove", ev => {
+    if (!mode || idx < 0) return;
+    const st = LS(side), s = lScale(side), p = local(ev);
+    const cx = v => Math.max(0, Math.min(p.w, v)) / s;
+    const cy = v => Math.max(0, Math.min(p.h, v)) / s;
+    const r = st.regions[idx];
+    if (mode === "draw") {
+      r.x0 = Math.min(start.x/s, cx(p.x)); r.x1 = Math.max(start.x/s, cx(p.x));
+      r.y0 = Math.min(start.y/s, cy(p.y)); r.y1 = Math.max(start.y/s, cy(p.y));
+    } else if (mode === "move") {
+      const dx = (p.x-start.x)/s, dy = (p.y-start.y)/s;
+      const w = origin.x1-origin.x0, ht = origin.y1-origin.y0;
+      r.x0 = Math.max(0, Math.min(st.w-w, origin.x0+dx)); r.x1 = r.x0+w;
+      r.y0 = Math.max(0, Math.min(st.h-ht, origin.y0+dy)); r.y1 = r.y0+ht;
+    } else if (mode === "se") {
+      r.x1 = Math.max(origin.x0+2, cx(p.x)); r.y1 = Math.max(origin.y0+2, cy(p.y));
+    } else {
+      r.x0 = Math.min(origin.x1-2, cx(p.x)); r.y0 = Math.min(origin.y1-2, cy(p.y));
+    }
+    drawRegions(side);
+  });
+  const end = () => {
+    if (!mode) return;
+    const drawing = mode === "draw"; mode = null;
+    const st = LS(side), r = st.regions[idx], s = lScale(side);
+    if (drawing && r && ((r.x1-r.x0)*s < 10 || (r.y1-r.y0)*s < 10)) {
+      st.regions.splice(idx, 1); st.sel = -1;      // a tap, not a drag
+    }
+    markLayoutDirty(side);
+  };
+  h.addEventListener("pointerup", end);
+  h.addEventListener("pointercancel", end);
+});
+
+$$("[data-lzoom]").forEach(b => b.onclick = () => {
+  const side = b.dataset.lzoom, st = LS(side);
+  st.zoom = Math.min(3, Math.max(0.4, st.zoom + 0.2 * (+b.dataset.d)));
+  renderLayoutSide(side);
+});
+$("#lOrder").onchange = () => { drawRegions("src"); drawRegions("tgt"); };
+function turnLayoutPage(delta) {
+  const both = $("#lLock").checked;
+  for (const side of (both ? ["src","tgt"] : ["src"])) {
+    const st = LS(side);
+    if (!st.doc) continue;
+    const n = st.page + delta;
+    if (n >= 1 && n <= st.pages) { st.page = n; openLayoutSide(side); }
+  }
+}
+$("#lPrev").onclick = () => turnLayoutPage(-1);
+$("#lNext").onclick = () => turnLayoutPage(1);
+["#lJumpSrc","#lJumpTgt"].forEach((sel, i) => $(sel).onchange = () => {
+  const side = i === 0 ? "src" : "tgt", st = LS(side), v = +$(sel).value;
+  if (v && st.doc) { st.page = Math.max(1, Math.min(st.pages, v)); openLayoutSide(side); }
+});
+$("#lClear").onclick = () => {
+  if (!LS("src").regions.length && !LS("tgt").regions.length) return;
+  if (!confirm("Remove every block on both pages?")) return;
+  ["src","tgt"].forEach(s => { LS(s).regions = []; LS(s).sel = -1; markLayoutDirty(s); });
+};
+async function saveLayoutBoth(status) {
+  const done = [];
+  $("#lSaveState").textContent = "Saving…";
+  for (const side of ["src","tgt"]) {
+    const st = LS(side);
+    if (!st.doc) continue;
+    try {
+      const r = await api("/api/layout/page", { method: "PUT", body: JSON.stringify({
+        doc_id: st.doc, page: st.page, status,
+        regions: st.regions.map((x, i) => ({ ...x, seq: i })) }) });
+      done.push(`${side === "src" ? "source" : "target"} ${r.regions}`);
+    } catch (e) { $("#lSaveState").textContent = e.message; toast(e.message, true); return false; }
+  }
+  L.dirty = false;
+  $("#lSaveState").textContent = `Saved · ${done.join(" · ")} block(s) · ${status}`;
+  toast(`Saved: ${done.join(", ")}`);
+  return true;
+}
+$("#lSave").onclick = () => saveLayoutBoth("in_progress");
+$("#lDone").onclick = async () => { if (await saveLayoutBoth("done")) turnLayoutPage(1); };
+$("#lExport").onclick = e => { e.preventDefault();
+  window.location = `${BASE}/api/layout/export.zip`; };
+
+$("#lCompare").onclick = async () => {
+  if (L.dirty && !await saveLayoutBoth("in_progress")) return;
+  const box = $("#lMetrics"); box.hidden = false;
+  box.innerHTML = `<div class="sm mut">Comparing…</div>`;
+  try {
+    const m = await api("/api/layout/compare", { method: "POST", body: JSON.stringify({
+      src_doc: LS("src").doc, src_page: LS("src").page,
+      tgt_doc: LS("tgt").doc, tgt_page: LS("tgt").page }) });
+    const row = (label, v, hint) => {
+      if (v === null || v === undefined)
+        return `<div class="mrow"><span>${esc(label)}</span>
+                <span class="faint sm">not measurable</span></div>`;
+      return `<div class="mrow" title="${esc(hint || "")}"><span>${esc(label)}</span>
+        <b>${(v * 100).toFixed(1)}%</b></div>
+        <div class="mbar"><i style="width:${Math.round(v * 100)}%"></i></div>`;
+    };
+    box.innerHTML = `<label class="lbl">Layout preservation</label>
+      ${row("Structure and order", m.structural_preservation,
+            "Same kinds of block in the same reading order")}
+      ${row("2D layout", m.layout_2d_similarity,
+            "Do corresponding blocks sit in the same places")}
+      ${row("Bounding boxes", m.bbox_preservation,
+            "Of the blocks that clearly correspond, how closely they align")}
+      ${row("Typography", m.typography_preservation,
+            "Relative size hierarchy; font names differ across scripts by necessity")}
+      ${row("Spacing", m.spacing_preservation, "Line height relative to the page")}
+      ${row("Visual similarity", m.visual_similarity,
+            "Coarse ink-density grid — is the page shaped the same")}
+      <div class="sm faint" style="margin-top:8px">
+        ${m.n_src_regions} source · ${m.n_tgt_regions} target · ${m.n_matched} matched</div>
+      ${(m.notes || []).map(n => `<div class="sm mut" style="margin-top:6px">${esc(n)}</div>`).join("")}`;
+  } catch (e) { box.innerHTML = `<div class="sm" style="color:var(--danger)">${esc(e.message)}</div>`; }
+};
+
+$("#lSplit").addEventListener("pointerdown", ev => {
+  ev.preventDefault(); $("#lSplit").setPointerCapture(ev.pointerId);
+  const move = e => {
+    const w = $("#lPanes").getBoundingClientRect();
+    const pct = Math.min(80, Math.max(20, ((e.clientX - w.left) / w.width) * 100));
+    $("#lPaneSrc").style.flex = `0 0 ${pct}%`;
+    $("#lPaneTgt").style.flex = `0 0 ${100 - pct}%`;
+  };
+  const up = () => { window.removeEventListener("pointermove", move);
+                     window.removeEventListener("pointerup", up); };
+  window.addEventListener("pointermove", move); window.addEventListener("pointerup", up);
+});
+
+document.addEventListener("keydown", e => {
+  if (!$("#pageLayout").classList.contains("on")) return;
+  if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName || "")) return;
+  if (e.ctrlKey || e.metaKey) {
+    if (e.key.toLowerCase() === "s") { e.preventDefault(); saveLayoutBoth("in_progress"); }
+    return;
+  }
+  const t = L.types.find(x => x.shortcut && x.shortcut === e.key);
+  if (t) { L.type = t.code; drawTypeChips(); return; }
+  if (e.key === "Delete" || e.key === "Backspace") {
+    for (const side of ["src","tgt"]) {
+      const st = LS(side);
+      if (st.sel >= 0) { st.regions.splice(st.sel, 1); st.sel = -1; markLayoutDirty(side); }
+    }
+  }
+  if (e.key === "ArrowRight") turnLayoutPage(1);
+  if (e.key === "ArrowLeft") turnLayoutPage(-1);
+});
+
+
+/* ── why is a textbook missing? ─────────────────────────────────────────────
+   Every PDF accounted for as exactly one of usable, unpaired or unreadable,
+   with the reason and the fix. Silence was the real bug: a file could sit in
+   the folder, be indexed, and still never appear, with nothing saying why. */
+if ($("#btnDiagnose")) $("#btnDiagnose").onclick = async () => {
+  const box = $("#diagOut");
+  box.innerHTML = `<div class="sm mut" style="margin-top:8px">Checking every PDF…</div>`;
+  try {
+    const d = await api("/api/library/diagnose");
+    const problems = [...(d.unpaired || []), ...(d.unreadable || [])];
+    box.innerHTML = `
+      <div class="sm" style="margin-top:8px">
+        <b>${d.files_on_disk ?? d.documents}</b> PDF(s) in
+        <code>${esc(d.data_dir)}</code> · <b>${d.usable}</b> usable
+        ${d.lfs_pointers ? ` · <b style="color:var(--danger)">${d.lfs_pointers}</b> Git LFS pointers` : ""}
+        ${problems.length ? ` · <b>${problems.length}</b> not usable` : ""}
+      </div>
+      ${problems.length ? problems.map(p => `
+        <div style="margin-top:8px;padding:8px;border:1px solid var(--line);
+                    border-radius:8px;background:var(--warn-soft,#fbf2dd)">
+          <div class="sm"><b>${esc((p.path || "").split("/").pop())}</b></div>
+          <div class="sm mut">${esc(p.reason || "")}</div>
+          <div class="sm" style="margin-top:3px">→ ${esc(p.fix || "")}</div>
+        </div>`).join("")
+        : `<div class="sm" style="margin-top:6px;color:var(--ok,#1a7f4b)">
+             Every PDF is usable and appears in the list above.</div>`}`;
+  } catch (e) {
+    box.innerHTML = `<div class="sm" style="color:var(--danger);margin-top:8px">${esc(e.message)}</div>`;
+  }
+};
