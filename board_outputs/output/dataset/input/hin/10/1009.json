@@ -1,0 +1,1941 @@
+{
+  "book": "1009",
+  "relpath": "dataset/input/hin/10/1009.pdf",
+  "num_pages": 11,
+  "pages": [
+    {
+      "image": "0119_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            547.2,
+            217.9,
+            759.1,
+            444.8
+          ],
+          "conf": 0.905,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            607.0,
+            409.4,
+            702.3,
+            444.6
+          ],
+          "conf": 0.659,
+          "text": "1063CH09"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            195.1,
+            479.2,
+            1179.0,
+            644.1
+          ],
+          "conf": 0.871,
+          "text": "त्रिकोणमिति के कुछ अनुप्रयोग 9"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.7,
+            709.8,
+            475.0,
+            772.0
+          ],
+          "conf": 0.925,
+          "text": "9.1 ऊँचाइयाँ और दूरियाँ"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            770.6,
+            1178.3,
+            874.8
+          ],
+          "conf": 0.95,
+          "text": "आइए हम अध्याय 8 में दी गई आकृति 8.1 पर विचार करें, जिसे नीचे आकृति 9.1 में\nपुन: खींचा गया है।"
+        },
+        {
+          "order": 5,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            119.3,
+            808.8,
+            1178.7,
+            1234.2
+          ],
+          "conf": 0.945,
+          "text": ""
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            562.4,
+            1239.9,
+            732.9,
+            1295.6
+          ],
+          "conf": 0.921,
+          "text": "आकृति 9.1"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            1302.1,
+            1180.8,
+            1497.2
+          ],
+          "conf": 0.969,
+          "text": "इस आकृति में, छात्र की आँख से मीनार के शिखर तक खींची गई रेखा AC को\nदृष्टि-रेखा (line of sight) कहा जाता है। छात्र मीनार के शिखर की ओर देख रहा है।\nदृष्टि-रेखा और क्षैतिज रेखा से बने कोण BAC को छात्र की आँख से मीनार के शिखर का\nउन्नयन कोण (angle of elevation) कहा जाता है।"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1500.2,
+            1180.1,
+            1740.4
+          ],
+          "conf": 0.975,
+          "text": "इस प्रकार, दृष्टि-रेखा प्रेक्षक की आँख के उस वस्तु के बिंदु को मिलाने वाली रेखा\nहोती है जिसे प्रेक्षक देखता है। देखे गए बिंदु का उन्नयन कोण उस स्थिति में, दृष्टि-रेखा\nऔर क्षैतिज रेखा से बना कोण होता है, जबकि देखा जा रहा बिंदु क्षैतिज स्तर से ऊपर होता\nहै अर्थात् वह स्थिति जबकि वस्तु को देखने के लिए हमें अपना सिर उठाना होता है।\n(देखिए आकृति 9.2)।"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0119_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.8,
+            193.8,
+            1177.0,
+            246.4
+          ],
+          "conf": 0.79,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.0,
+            192.9,
+            467.2,
+            245.5
+          ],
+          "conf": 0.562,
+          "text": "त्रिकोणमिति के कुछ अनुप्रयोग"
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            371.9,
+            264.5,
+            907.9,
+            600.2
+          ],
+          "conf": 0.957,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            563.9,
+            601.2,
+            732.9,
+            656.4
+          ],
+          "conf": 0.934,
+          "text": "आकृति 9.2"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            664.6,
+            1180.3,
+            857.9
+          ],
+          "conf": 0.979,
+          "text": "आइए अब हम आकृति 8.2 में दी गई स्थिति पर विचार करें। बालकनी में बैठी\nलड़की मंदिर की सीढ़ी पर रखे गमले को नीचे की ओर देख रही है। इस स्थिति में,\nदृष्टि-रेखा क्षैतिज स्तर से नीचे है। दृष्टि-रेखा और क्षैतिज रेखा से इस प्रकार बने कोण को\nअवनमन कोण (angle of depression) कहा जाता है।"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            862.6,
+            1179.4,
+            1056.0
+          ],
+          "conf": 0.978,
+          "text": "अतः देखी जा रही वस्तु पर स्थित बिंदु का अवनमन कोण उस स्थिति में दृष्टि-रेखा\nऔर क्षैतिज रेखा से बना कोण होता है जबकि बिंदु क्षैतिज रेखा से नीचे होता है अर्थात् वह\nस्थिति जबकि देखे जाने वाले बिंदु को देखने के लिए हमें अपना सिर नीचे झुकाना होता है\n(देखिए आकृति 9.3)।"
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            300.4,
+            1063.6,
+            1055.3,
+            1424.8
+          ],
+          "conf": 0.945,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            563.3,
+            1462.4,
+            733.2,
+            1517.9
+          ],
+          "conf": 0.902,
+          "text": "आकृति 9.3"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1524.9,
+            1179.4,
+            1624.5
+          ],
+          "conf": 0.94,
+          "text": "अब आप आकृति 8.3 में बनी दृष्टि-रेखाएँ और इस तरह बने कोणों को पहचान सकते\nहैं। ये कोण उन्नयन कोण हैं या अवनमन कोण?"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1630.8,
+            1179.9,
+            1775.2
+          ],
+          "conf": 0.959,
+          "text": "आइए हम आकृति 9.1 को पुनः देखें। यदि आप सही मायने में बिना मापे ही मीनार\nकी ऊँचाई CD ज्ञात करना चाहते हैं तो इसके लिए आपको किस जानकारी की आवश्यकता\nहोती है? इसके लिए निम्नलिखित तथ्यों का ज्ञान होना आवश्यक होता है:"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0119_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            201.6,
+            259.0,
+            1017.8,
+            406.2
+          ],
+          "conf": 0.97,
+          "text": "(i) दूरी DE जहाँ छात्र मीनार के पाद-बिंदु से इस दूरी पर खड़ा है।\n(ii) मीनार के शिखर का उन्नयन कोण $\\angle BAC$\n(iii) छात्र की ऊँचाई AE"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            409.6,
+            1180.0,
+            509.8
+          ],
+          "conf": 0.961,
+          "text": "यह मानकर कि ऊपर बतायी गयीं तीनों जानकारियाँ हमें ज्ञात हैं तो हम किस प्रकार\nमीनार की ऊँचाई ज्ञात कर सकते हैं?"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.9,
+            510.2,
+            1076.8,
+            566.2
+          ],
+          "conf": 0.91,
+          "text": "आकृति में CD = CB + BD यहाँ BD = AE है जो कि छात्र की ऊँचाई है।"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            565.6,
+            1179.1,
+            620.9
+          ],
+          "conf": 0.91,
+          "text": "BC ज्ञात करने के लिए हम $\\angle BAC$ या $\\angle A$ के त्रिकोणमिति अनुपातों का प्रयोग करेंगे।"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            624.9,
+            1180.1,
+            845.1
+          ],
+          "conf": 0.975,
+          "text": "$\\Delta ABC$ में, भुजा BC ज्ञात कोण $\\angle A$ के संबंध में सम्मुख भुजा है। यहाँ हम किन-किन\nत्रिकोणमिति अनुपातों का प्रयोग कर सकते हैं? इनमें से किसके दो मान हमें ज्ञात है और हमें\nकिसका मान ज्ञात करने की आवश्यकता होती है? $\\tan A$ या $\\cot A$ का प्रयोग करने से हमारी\nखोज का क्षेत्र कम हो जाता है, क्योंकि इन अनुपातों में AB और BC का प्रयोग होता है।"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            865.3,
+            1143.0,
+            960.6
+          ],
+          "conf": 0.801,
+          "text": "अतः $\\tan A = \\frac{BC}{AB}$ या $\\cot A = \\frac{AB}{BC}$, जिसे हल करने पर हमें BC प्राप्त हो जाएगा।"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            962.0,
+            814.2,
+            1017.4
+          ],
+          "conf": 0.891,
+          "text": "BC और AE जोड़ने पर मीनार की ऊँचाई प्राप्त हो जाएगी।"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1008.7,
+            1180.1,
+            1106.6
+          ],
+          "conf": 0.918,
+          "text": "आइए अब हम कुछ उदाहरण हल करके अभी-अभी चर्चित किए गए प्रक्रम की\nव्याख्या करें।"
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1131.5,
+            781.0,
+            1639.5
+          ],
+          "conf": 0.531,
+          "text": "उदाहरण 1 : धरती पर एक मीनार ऊर्ध्वाधर खड़ी है।\nधरती के एक बिंदु से, जो मीनार के पाद-बिंदु से 15 m\nदूर है, मीनार के शिखर का उन्नयन कोण $60^{\\circ}$ है। मीनार\nकी ऊँचाई ज्ञात कीजिए।\n\nहल : आइए पहले हम प्रश्न को निरूपित करने के लिए\nएक सरल आरेख बनाएँ (देखिए आकृति 9.4)। यहाँ\nAB मीनार को निरूपित करता है, CB मीनार से बिंदु की\nदूरी है और $\\angle ACB$ उन्नयन कोण है। हम मीनार की\nऊँचाई अर्थात् AB ज्ञात करना चाहते हैं और, यहाँ ACB\nएक त्रिभुज है जो B पर समकोण है।"
+        },
+        {
+          "order": 9,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            790.7,
+            1102.4,
+            1177.4,
+            1631.9
+          ],
+          "conf": 0.9,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            883.0,
+            1638.4,
+            1052.2,
+            1693.8
+          ],
+          "conf": 0.89,
+          "text": "आकृति 9.4"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0119_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.5,
+            193.6,
+            1177.4,
+            245.7
+          ],
+          "conf": 0.785,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.6,
+            192.9,
+            467.6,
+            244.3
+          ],
+          "conf": 0.659,
+          "text": "त्रिकोणमिति के कुछ अनुप्रयोग"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            260.7,
+            1177.9,
+            364.2
+          ],
+          "conf": 0.959,
+          "text": "प्रश्न को हल करने के लिए हम त्रिकोणमितीय अनुपात $\\tan 60^{\\circ}$ (या $\\cot 60^{\\circ}$) लेते हैं, क्योंकि\nइस अनुपात में AB और BC दोनों होते हैं"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            373.4,
+            579.0,
+            465.5
+          ],
+          "conf": 0.911,
+          "text": "अब $\\tan 60^{\\circ} = \\frac{AB}{BC}$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            471.6,
+            580.1,
+            559.7
+          ],
+          "conf": 0.897,
+          "text": "अर्थात् $\\sqrt{3} = \\frac{AB}{15}$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.2,
+            563.9,
+            595.3,
+            620.7
+          ],
+          "conf": 0.88,
+          "text": "अर्थात् $AB = 15\\sqrt{3}$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            618.8,
+            555.4,
+            675.4
+          ],
+          "conf": 0.883,
+          "text": "अतः मीनार की ऊँचाई $15\\sqrt{3}$ m है।"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            699.6,
+            780.4,
+            1254.8
+          ],
+          "conf": 0.87,
+          "text": "उदाहरण 2 : एक बिजली मिस्त्री को एक 5m ऊँचे खंभे\nपर आ गई खराबी की मरम्मत करनी है। मरम्मत का\nकाम करने के लिए उसे खंभे के शिखर से 1.3m\nनीचे एक बिंदु तक वह पहुँचना चाहती है (देखिए\nआकृति 9.5)। यहाँ तक पहुँचने के लिए प्रयुक्त सीढ़ी\nकी लंबाई कितनी होनी चाहिए जिससे कि क्षैतिज से $60^{\\circ}$\nके कोण से झुकाने पर वह अपेक्षित स्थिति तक पहुँच\nजाए? और यह भी बताइए कि खंभे का पाद-बिंदु कितनी\nदूरी पर सीढ़ी के पाद-बिंदु से होना चाहिए? (यहाँ आप\n$\\sqrt{3} = 1.73$ ले सकते हैं।)"
+        },
+        {
+          "order": 8,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            787.0,
+            683.4,
+            1130.5,
+            1210.9
+          ],
+          "conf": 0.836,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            894.8,
+            1190.9,
+            1063.9,
+            1244.5
+          ],
+          "conf": 0.91,
+          "text": "आकृति 9.5"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1260.5,
+            1057.4,
+            1317.8
+          ],
+          "conf": 0.874,
+          "text": "हल : आकृति 9.5 में, बिजली मिस्त्री को खंभे AD पर बिंदु B तक पहुँचना है।"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            1322.4,
+            756.0,
+            1374.8
+          ],
+          "conf": 0.823,
+          "text": "अतः $BD = AD - AB = (5 - 1.3)m = 3.7 \\text{ m}$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1376.7,
+            1179.6,
+            1475.5
+          ],
+          "conf": 0.923,
+          "text": "यहाँ BC सीढ़ी को प्रकट करता है। हमें इसकी लंबाई अर्थात् समकोण त्रिभुज BDC का कर्ण\nज्ञात करना है।"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1480.3,
+            1178.6,
+            1590.3
+          ],
+          "conf": 0.782,
+          "text": "अब, क्या आप यह बता सकते हैं कि हमें किस त्रिकोणमिति अनुपात का प्रयोग करना चाहिए?\nयह त्रिकोणमिति अनुपात $\\sin 60^{\\circ}$ होना चाहिए।"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.5,
+            1597.0,
+            803.9,
+            1693.3
+          ],
+          "conf": 0.884,
+          "text": "अतः $\\frac{\\text{BD}}{\\text{BC}} = \\sin 60^{\\circ}$ या $\\frac{3.7}{\\text{BC}} = \\frac{\\sqrt{3}}{2}$"
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0119_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            272.3,
+            861.9,
+            366.5
+          ],
+          "conf": 0.92,
+          "text": "$$ \\text{इसलिए} \\quad \\text{BC} = \\frac{3.7 \\times 2}{\\sqrt{3}} = 4.28 \\text{ m (लगभग)} $$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            361.4,
+            661.8,
+            416.9
+          ],
+          "conf": 0.934,
+          "text": "अर्थात् सीढ़ी की लंबाई 4.28 m होनी चाहिए।"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            414.4,
+            695.0,
+            508.6
+          ],
+          "conf": 0.915,
+          "text": "अब $\\frac{\\mathrm{DC}}{\\mathrm{BD}} = \\cot 60^{\\circ} = \\frac{1}{\\sqrt{3}}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            505.6,
+            813.4,
+            596.0
+          ],
+          "conf": 0.911,
+          "text": "अर्थात् $DC = \\frac{3.7}{\\sqrt{3}} = 2.14 \\text{ m (लगभग)}$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            602.9,
+            982.0,
+            659.3
+          ],
+          "conf": 0.932,
+          "text": "अतः उसे सीढ़ी के पाद को खंभे से 2.14 m की दूरी पर रखना चाहिए।"
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            676.6,
+            779.9,
+            821.8
+          ],
+          "conf": 0.89,
+          "text": "उदाहरण 3 : 1.5 m लंबा एक प्रेक्षक एक चिमनी से\n28.5 m की दूरी पर है। उसकी आँखों से चिमनी के\nशिखर का उन्नयन कोण $45^{\\circ}$ है। चिमनी की ऊँचाई बताइए।"
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            775.7,
+            653.0,
+            1196.5,
+            1067.8
+          ],
+          "conf": 0.907,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            825.4,
+            780.3,
+            1018.8
+          ],
+          "conf": 0.932,
+          "text": "हल : यहाँ AB चिमनी है, CD प्रेक्षक है और $\\angle ADE$\nउन्नयन कोण है (देखिए आकृति 9.6)। यहाँ ADE एक\nत्रिभुज है जिसमें कोण E समकोण है और हमें चिमनी की\nऊँचाई ज्ञात करनी है।"
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            889.3,
+            1060.6,
+            1060.4,
+            1114.5
+          ],
+          "conf": 0.931,
+          "text": "आकृति 9.6"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            1014.0,
+            743.5,
+            1068.8
+          ],
+          "conf": 0.865,
+          "text": "यहाँ $AB = AE + BE = (AE + 1.5) m$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            1072.4,
+            587.2,
+            1126.3
+          ],
+          "conf": 0.862,
+          "text": "और $DE = CB = 28.5 \\text{ m}$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1129.5,
+            1180.4,
+            1229.7
+          ],
+          "conf": 0.953,
+          "text": "AE ज्ञात करने के लिए हमें एक ऐसा त्रिकोणमिति अनुपात लेना चाहिए जिसमें AE और\nDE दोनों हो। इसके लिए आइए हम उन्नयन कोण का tangent लें।"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            1246.0,
+            579.1,
+            1338.0
+          ],
+          "conf": 0.891,
+          "text": "अब $\\tan 45^\\circ = \\frac{AE}{DE}$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1344.8,
+            590.3,
+            1433.9
+          ],
+          "conf": 0.892,
+          "text": "अर्थात् $1 = \\frac{\\text{AE}}{28.5}$"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1430.3,
+            580.5,
+            1483.3
+          ],
+          "conf": 0.832,
+          "text": "इसलिए $AE = 28.5$"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1477.2,
+            793.8,
+            1531.8
+          ],
+          "conf": 0.782,
+          "text": "अतः चिमनी की ऊँचाई (AB) = (28.5 + 1.5) m = 30 m"
+        },
+        {
+          "order": 16,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1533.3,
+            1179.6,
+            1733.9
+          ],
+          "conf": 0.904,
+          "text": "उदाहरण 4 : भूमि के एक बिंदु P से एक 10 m ऊँचे भवन के शिखर का उन्नयन कोण 30°\nहै। भवन के शिखर पर एक ध्वज को लहराया गया है और P से ध्वज के शिखर का उन्नयन\nकोण 45° है। ध्वजदंड की लंबाई और बिंदु P से भवन की दूरी ज्ञात कीजिए। (यहाँ आप\n$\\sqrt{3} = 1.732$ ले सकते हैं।)"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0119_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.5,
+            194.4,
+            1178.5,
+            244.9
+          ],
+          "conf": 0.765,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.9,
+            193.2,
+            466.7,
+            244.0
+          ],
+          "conf": 0.708,
+          "text": "त्रिकोणमिति के कुछ अनुप्रयोग"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            265.4,
+            640.9,
+            632.7
+          ],
+          "conf": 0.981,
+          "text": "हल : आकृति 9.7 में, AB भवन की ऊँचाई\nप्रकट करता है, BD ध्वजदंड प्रकट करता है\nऔर P दिया हुआ बिंदु प्रकट करता है। ध्यान\nदीजिए कि यहाँ दो समकोण त्रिभुज PAB\nऔर PAD हैं। हमें ध्वजदंड की लंबाई अर्थात्\nDB और बिंदु P से भवन की दूरी अर्थात् PA\nज्ञात करना है।"
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            635.2,
+            263.3,
+            1183.1,
+            598.1
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            825.2,
+            600.0,
+            994.5,
+            654.9
+          ],
+          "conf": 0.943,
+          "text": "आकृति 9.7"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            640.7,
+            661.8,
+            740.2
+          ],
+          "conf": 0.956,
+          "text": "क्योंकि हमें भवन की ऊँचाई AB ज्ञात है इसलिए\nपहले हम समकोण $\\Delta$ PAB लेंगे।"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            762.7,
+            579.3,
+            852.3
+          ],
+          "conf": 0.912,
+          "text": "यहाँ $\\tan 30^{\\circ} = \\frac{\\text{AB}}{\\text{AP}}$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            871.7,
+            577.6,
+            964.1
+          ],
+          "conf": 0.913,
+          "text": "अर्थात् $\\frac{1}{\\sqrt{3}} = \\frac{10}{AP}$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            981.5,
+            595.7,
+            1037.2
+          ],
+          "conf": 0.884,
+          "text": "इसलिए $AP = 10\\sqrt{3}$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1051.7,
+            694.3,
+            1107.5
+          ],
+          "conf": 0.85,
+          "text": "अर्थात् P से भवन की दूरी $10\\sqrt{3}$ m = 17.32 m"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            1111.9,
+            934.4,
+            1165.1
+          ],
+          "conf": 0.875,
+          "text": "आइए अब हम यह मान लें कि DB = $x$ m है तब AD = $(10 + x)$ m"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.3,
+            1183.3,
+            821.2,
+            1275.1
+          ],
+          "conf": 0.903,
+          "text": "अब समकोण $\\Delta$ PAD में $\\tan 45^\\circ = \\frac{\\text{AD}}{\\text{AP}} = \\frac{10 + x}{10\\sqrt{3}}$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            1296.4,
+            736.5,
+            1388.9
+          ],
+          "conf": 0.9,
+          "text": "$$ इसलिए \\qquad 1 = \\frac{10 + x}{10\\sqrt{3}} $$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.4,
+            1411.3,
+            765.6,
+            1476.5
+          ],
+          "conf": 0.878,
+          "text": "अर्थात् $x = 10 (\\sqrt{3} - 1) = 7.32$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1486.6,
+            557.6,
+            1542.0
+          ],
+          "conf": 0.892,
+          "text": "अतः ध्वजदंड की लंबाई 7.32 m है।"
+        },
+        {
+          "order": 15,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1558.4,
+            1179.6,
+            1703.0
+          ],
+          "conf": 0.902,
+          "text": "उदाहरण 5 : एक समतल जमीन पर खड़ी मीनार की छाया उस स्थिति में 40 m अधिक लंबी\nहो जाती है जबकि सूर्य का उन्नतांश (altitude) $60^{\\circ}$ से घटकर $30^{\\circ}$ हो जाता है अर्थात् छाया\nके एक सिरे से मीनार के शिखर का उन्नयन कोण $60^{\\circ}$ है और DB छाया की लंबाई है"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0119_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            258.8,
+            664.6,
+            357.6
+          ],
+          "conf": 0.958,
+          "text": "जबकि उन्नयन कोण $30^{\\circ}$ है। मीनार की ऊँचाई\nज्ञात कीजिए।"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            362.9,
+            663.8,
+            508.4
+          ],
+          "conf": 0.96,
+          "text": "हल : मान लीजिए कि AB की लंबाई h मीटर है\nऔर BC, $x$ मीटर है। प्रश्न के अनुसार DB, BC\nसे 40m अधिक लंबा है।"
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            683.0,
+            261.1,
+            1179.5,
+            589.0
+          ],
+          "conf": 0.965,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            838.8,
+            599.3,
+            1009.8,
+            655.1
+          ],
+          "conf": 0.919,
+          "text": "आकृति 9.8"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            506.4,
+            514.8,
+            558.0
+          ],
+          "conf": 0.848,
+          "text": "अतः DB = $(40 + x) \\text{ m}$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            559.4,
+            608.0,
+            659.5
+          ],
+          "conf": 0.953,
+          "text": "अब, यहाँ दो समकोण त्रिभुज ABC और\nABD है।"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            659.1,
+            580.3,
+            750.7
+          ],
+          "conf": 0.874,
+          "text": "$\\Delta$ ABC में $\\tan 60^{\\circ} = \\frac{\\text{AB}}{\\text{BC}}$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            744.8,
+            1178.6,
+            822.9
+          ],
+          "conf": 0.849,
+          "text": "या $\\sqrt{3} = \\frac{h}{x}$ (1)"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            815.7,
+            579.8,
+            903.6
+          ],
+          "conf": 0.818,
+          "text": "$\\Delta$ ABD में $\\tan 30^{\\circ} = \\frac{\\text{AB}}{\\text{BD}}$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            899.3,
+            1177.8,
+            987.2
+          ],
+          "conf": 0.872,
+          "text": "अर्थात् $\\frac{1}{\\sqrt{3}} = \\frac{h}{x+40}$ (2)"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            989.1,
+            496.9,
+            1044.8
+          ],
+          "conf": 0.88,
+          "text": "(1) से हमें यह प्राप्त होता है"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            446.4,
+            1037.6,
+            587.7,
+            1093.1
+          ],
+          "conf": 0.853,
+          "text": "$$h = x\\sqrt{3}$$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1087.6,
+            1183.0,
+            1186.7
+          ],
+          "conf": 0.927,
+          "text": "इस मान को (2) में प्रतिस्थापित करने पर हमें यह प्राप्त होता है $(x\\sqrt{3})\\sqrt{3} = x + 40$, अर्थात्\n$$3x = x + 40$$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            1181.0,
+            1175.5,
+            1277.2
+          ],
+          "conf": 0.564,
+          "text": "अर्थात् $x = 20$\nइसलिए $h = 20\\sqrt{3}$                                                                                                                                [[1) से]]"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1276.2,
+            550.2,
+            1333.2
+          ],
+          "conf": 0.891,
+          "text": "अतः मीनार की ऊँचाई $20\\sqrt{3}$ m है।"
+        },
+        {
+          "order": 15,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            1344.1,
+            1179.5,
+            1772.1
+          ],
+          "conf": 0.637,
+          "text": "उदाहरण 6 : एक बहुमंजिल भवन के शिखर से देखने पर एक 8 m ऊँचे भवन के शिखर\nऔर तल के अवनमन-कोण क्रमशः $30^{\\circ}$ और $45^{\\circ}$ हैं। बहुमंजिल भवन की ऊँचाई और दो\nभवनों के बीच की दूरी ज्ञात कीजिए।\nहल : आकृति 9.9 में PC बहुमंजिल भवन को और AB, 8 m ऊँचे भवन को प्रकट करता\nहै। हम बहुमंजिल भवन की ऊँचाई, अर्थात् PC और दो भवनों के बीच की दूरी अर्थात् AC\nज्ञात करना चाहते हैं।\nआकृति को अच्छी तरह देखिए। आप यहाँ देखेंगे कि PB समांतर रेखाओं PQ और BD की\nएक तिर्यक-छेदी रेखा है। अतः $\\angle QPB$ और $\\angle PBD$ एकांतर कोण हैं और इसलिए\nबराबर हैं।"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0119_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            121.0,
+            194.8,
+            1179.1,
+            244.7
+          ],
+          "conf": 0.75,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.9,
+            193.2,
+            466.8,
+            244.5
+          ],
+          "conf": 0.617,
+          "text": "त्रिकोणमिति के कुछ अनुप्रयोग"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            260.5,
+            705.4,
+            313.9
+          ],
+          "conf": 0.779,
+          "text": "अतः $\\angle PBD = 30^\\circ$, इसी प्रकार, $\\angle PAC = 45^\\circ$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            317.1,
+            367.9,
+            368.8
+          ],
+          "conf": 0.834,
+          "text": "समकोण $\\Delta$ PBD में"
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            725.9,
+            259.9,
+            1143.7,
+            630.0
+          ],
+          "conf": 0.963,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            124.5,
+            369.9,
+            634.7,
+            463.4
+          ],
+          "conf": 0.91,
+          "text": "$$\\frac{\\text{PD}}{\\text{BD}} = \\tan 30^\\circ = \\frac{1}{\\sqrt{3}} \\text{ या } \\text{BD} = \\text{PD} \\sqrt{3}$$"
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            846.7,
+            633.3,
+            1017.0,
+            688.0
+          ],
+          "conf": 0.926,
+          "text": "आकृति 9.9"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            456.9,
+            505.4,
+            509.8
+          ],
+          "conf": 0.894,
+          "text": "समकोण $\\Delta$ PAC में हम पाते हैं"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            410.5,
+            530.1,
+            668.5,
+            621.3
+          ],
+          "conf": 0.91,
+          "text": "$$\\frac{\\mathrm{PC}}{\\mathrm{AC}} = \\tan 45^{\\circ} = 1$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.9,
+            630.2,
+            572.1,
+            682.5
+          ],
+          "conf": 0.816,
+          "text": "अर्थात् PC = AC"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            698.8,
+            706.2,
+            751.5
+          ],
+          "conf": 0.844,
+          "text": "और $\\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            748.4,
+            452.3,
+            799.9
+          ],
+          "conf": 0.803,
+          "text": "इसलिए PD + DC = AC"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            824.6,
+            1123.1,
+            879.7
+          ],
+          "conf": 0.883,
+          "text": "क्योंकि AC = BD और DC = AB = 8 m, इसलिए PD + 8 = BD = PD$\\sqrt{3}$ (क्यों?)"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            901.0,
+            1084.7,
+            1027.3
+          ],
+          "conf": 0.92,
+          "text": "इससे यह प्राप्त होता है: PD = $\\frac{8}{\\sqrt{3}-1} = \\frac{8(\\sqrt{3}+1)}{(\\sqrt{3}+1)(\\sqrt{3}-1)} = 4(\\sqrt{3}+1)$m"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1027.7,
+            1178.2,
+            1148.0
+          ],
+          "conf": 0.926,
+          "text": "अतः बहुमंजिल भवन की ऊँचाई $\\{4(\\sqrt{3} + 1) + 8\\}m = 4(3 + \\sqrt{3})m$ है और दो भवनों के\nबीच की दूरी भी $4(3 + \\sqrt{3})m$ है।"
+        },
+        {
+          "order": 15,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1165.1,
+            560.7,
+            1445.9
+          ],
+          "conf": 0.883,
+          "text": "उदाहरण 7 : एक नदी के पुल के\nएक बिंदु से नदी के सम्मुख किनारों\nके अवनमन कोण क्रमशः $30^{\\circ}$ और\n$45^{\\circ}$ हैं। यदि पुल किनारों से 3 m की\nऊँचाई पर हो तो नदी की चौड़ाई ज्ञात\nकीजिए।"
+        },
+        {
+          "order": 16,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            566.0,
+            1173.8,
+            1172.7,
+            1346.7
+          ],
+          "conf": 0.928,
+          "text": ""
+        },
+        {
+          "order": 17,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            779.4,
+            1359.5,
+            966.6,
+            1414.7
+          ],
+          "conf": 0.884,
+          "text": "आकृति 9.10"
+        },
+        {
+          "order": 18,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1454.3,
+            1180.7,
+            1644.1
+          ],
+          "conf": 0.942,
+          "text": "हल : आकृति 9.10 में, A और B नदी के सम्मुख किनारों के बिंदुओं को प्रकट करते हैं,\nजिससे कि AB नदी की चौड़ाई है। 3 m की ऊँचाई पर बने पुल पर एक बिंदु P है\nअर्थात् DP = 3 m है। हम नदी की चौड़ाई ज्ञात करना चाहते हैं जो कि $\\Delta$ APB की भुजा AB की\nलंबाई है।"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0119_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            263.3,
+            559.6,
+            313.1
+          ],
+          "conf": 0.899,
+          "text": "अब $AB = AD + DB$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            317.7,
+            503.6,
+            370.9
+          ],
+          "conf": 0.852,
+          "text": "समकोण $\\Delta$ APD में $\\angle A = 30^\\circ$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            379.1,
+            486.7,
+            468.0
+          ],
+          "conf": 0.927,
+          "text": "अतः $\\tan 30^{\\circ} = \\frac{\\text{PD}}{\\text{AD}}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.2,
+            476.1,
+            724.8,
+            568.1
+          ],
+          "conf": 0.936,
+          "text": "अर्थात् $\\frac{1}{\\sqrt{3}} = \\frac{3}{AD}$ या $AD = 3\\sqrt{3}$ m"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            564.9,
+            926.4,
+            618.5
+          ],
+          "conf": 0.854,
+          "text": "अतः समकोण $\\Delta PBD$ में, $\\angle B = 45^\\circ$ है। इसलिए $BD = PD = 3$ m"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            620.4,
+            1013.0,
+            674.9
+          ],
+          "conf": 0.918,
+          "text": "अब $AB = BD + AD = 3 + 3\\sqrt{3} = 3 (1 + \\sqrt{3} ) \\text{ m}$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            682.1,
+            642.2,
+            745.4
+          ],
+          "conf": 0.866,
+          "text": "इसलिए नदी की चौड़ाई $3(\\sqrt{3} + 1)$m है।"
+        },
+        {
+          "order": 7,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            546.8,
+            755.1,
+            750.5,
+            810.0
+          ],
+          "conf": 0.842,
+          "text": "प्रश्नावली 9.1"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.0,
+            830.3,
+            1178.6,
+            1652.2
+          ],
+          "conf": 0.786,
+          "text": "1. सर्कस का एक कलाकार एक 20m लंबी डोर पर चढ़\nरहा है जो अच्छी तरह से तनी हुई है और भूमि पर सीधे\nलगे खंभे के शिखर से बंधा हुआ है। यदि भूमि स्तर के\nसाथ डोर द्वारा बनाया गया कोण $30^{\\circ}$ का हो तो खंभे की\nऊँचाई ज्ञात कीजिए (देखिए आकृति 9.11)।\nआकृति 9.11\n\n2. आँधी आने से एक पेड़ टूट जाता है और टूटा हुआ भाग इस तरह मुड़ जाता है कि पेड़\nका शिखर जमीन को छूने लगता है और इसके साथ $30^{\\circ}$ का कोण बनाता है। पेड़ के\nपाद-बिंदु की दूरी, जहाँ पेड़ का शिखर जमीन को छूता है, 8m है। पेड़ की ऊँचाई\nज्ञात कीजिए।\n\n3. एक ठेकेदार बच्चों को खेलने के लिए एक पार्क में दो फिसलनपट्टी लगाना चाहती है। 5 वर्ष\nसे कम उम्र के बच्चों के लिए वह एक ऐसी फिसलनपट्टी लगाना चाहती है जिसका शिखर\n1.5 m की ऊँचाई पर हो और भूमि के साथ $30^{\\circ}$ के कोण पर झुका हुआ हो, जबकि इससे अधिक\nउम्र के बच्चों के लिए वह 3m की ऊँचाई पर एक अधिक ढाल की फिसलनपट्टी लगाना चाहती\nहै, जो भूमि के साथ $60^{\\circ}$ का कोण बनाती हो। प्रत्येक स्थिति में फिसलनपट्टी की लंबाई क्या\nहोनी चाहिए?\n\n4. भूमि के एक बिंदु से, जो मीनार के पाद-बिंदु से 30m की दूरी पर है, मीनार के शिखर का\nउन्नयन कोण $30^{\\circ}$ है। मीनार की ऊँचाई ज्ञात कीजिए।"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0119_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.4,
+            194.8,
+            1178.2,
+            244.9
+          ],
+          "conf": 0.784,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.7,
+            193.8,
+            467.5,
+            243.8
+          ],
+          "conf": 0.666,
+          "text": "त्रिकोणमिति के कुछ अनुप्रयोग"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.1,
+            259.2,
+            1179.4,
+            394.4
+          ],
+          "conf": 0.943,
+          "text": "5. भूमि से 60 m की ऊँचाई पर एक पतंग उड़ रही है। पतंग में लगी डोरी को अस्थायी रूप से भूमि\nके एक बिंदु से बांध दिया गया है। भूमि के साथ डोरी का झुकाव $60^{\\circ}$ है। यह मानकर कि डोरी\nमें कोई ढील नहीं है, डोरी की लंबाई ज्ञात कीजिए।"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.7,
+            399.8,
+            1180.5,
+            536.0
+          ],
+          "conf": 0.934,
+          "text": "6. 1.5 m लंबा एक लड़का 30 m ऊँचे एक भवन से कुछ दूरी पर खड़ा है। जब वह ऊँचे भवन की\nओर जाता है तब उसकी आँख से भवन के शिखर का उन्नयन कोण $30^{\\circ}$ से $60^{\\circ}$ हो जाता है। बताइए\nकि वह भवन की ओर कितनी दूरी तक चलकर गया है।"
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.1,
+            540.5,
+            1180.3,
+            634.6
+          ],
+          "conf": 0.922,
+          "text": "7. भूमि के एक बिंदु से एक 20 m ऊँचे भवन के शिखर पर लगी एक संचार मीनार के तल और\nशिखर के उन्नयन कोण क्रमशः $45^{\\circ}$ और $60^{\\circ}$ है। मीनार की ऊँचाई ज्ञात कीजिए।"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.6,
+            633.7,
+            1179.4,
+            755.4
+          ],
+          "conf": 0.924,
+          "text": "8. एक पेडस्टल के शिखर पर एक 1.6 m ऊँची मूर्ति लगी है। भूमि के एक बिंदु से मूर्ति के शिखर\nका उन्नयन कोण $60^{\\circ}$ है और उसी बिंदु से पेडस्टल के शिखर का उन्नयन कोण $45^{\\circ}$ है। पेडस्टल\nकी ऊँचाई ज्ञात कीजिए।"
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.3,
+            752.8,
+            1179.2,
+            874.2
+          ],
+          "conf": 0.926,
+          "text": "9. एक मीनार के पाद-बिंदु से एक भवन के शिखर का उन्नयन कोण $30^{\\circ}$ है और भवन के\nपाद-बिंदु से मीनार के शिखर का उन्नयन कोण $60^{\\circ}$ है। यदि मीनार $50\\text{m}$ ऊँची हो, तो भवन की\nऊँचाई ज्ञात कीजिए।"
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.8,
+            872.5,
+            1179.0,
+            1000.3
+          ],
+          "conf": 0.938,
+          "text": "10. एक 80 m चौड़ी सड़क के दोनों ओर आमने-सामने समान लंबाई वाले दो खंभे लगे हुए हैं। इन\nदोनों खंभों के बीच सड़क के एक बिंदु से खंभों के शिखर के उन्नयन कोण क्रमशः 60° और\n30° है। खंभों की ऊँचाई और खंभों से बिंदु की दूरी ज्ञात कीजिए।"
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            145.1,
+            1004.1,
+            661.2,
+            1399.9
+          ],
+          "conf": 0.959,
+          "text": "11. एक नहर के एक तट पर एक टीवी टॉवर\nऊर्ध्वाधरतः खड़ा है। टॉवर के ठीक सामने\nदूसरे तट के एक अन्य बिंदु से टॉवर के\nशिखर का उन्नयन कोण $60^{\\circ}$ है। इसी तट पर\nइस बिंदु से 20 m दूर और इस बिंदु को मीनार\nके पाद से मिलाने वाली रेखा पर स्थित एक\nअन्य बिंदु से टॉवर के शिखर का उन्नयन\nकोण $30^{\\circ}$ है। (देखिए आकृति 9.12)। टॉवर\nकी ऊँचाई और नहर की चौड़ाई ज्ञात कीजिए।"
+        },
+        {
+          "order": 9,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            663.4,
+            1008.1,
+            1175.5,
+            1333.0
+          ],
+          "conf": 0.967,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            822.8,
+            1331.1,
+            1008.9,
+            1385.1
+          ],
+          "conf": 0.871,
+          "text": "आकृति 9.12"
+        },
+        {
+          "order": 11,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.5,
+            1403.7,
+            1178.3,
+            1498.5
+          ],
+          "conf": 0.918,
+          "text": "12. $7 \\mathrm{~m}$ ऊँचे भवन के शिखर से एक केबल टॉवर के शिखर का उन्नयन कोण $60^{\\circ}$ है और इसके\nपाद का अवनमन कोण $45^{\\circ}$ है। टॉवर की ऊँचाई ज्ञात कीजिए।"
+        },
+        {
+          "order": 12,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            142.1,
+            1502.1,
+            1179.5,
+            1637.4
+          ],
+          "conf": 0.922,
+          "text": "13. समुद्र-तल से 75 m ऊँची लाइट हाउस के शिखर से देखने पर दो समुद्री जहाजों के अवनमन\nकोण $30^{\\circ}$ और $45^{\\circ}$ हैं। यदि लाइट हाउस के एक ही ओर एक जहाज दूसरे जहाज के ठीक पीछे\nहो तो दो जहाजों के बीच की दूरी ज्ञात कीजिए।"
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0119_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.1,
+            261.4,
+            620.9,
+            655.1
+          ],
+          "conf": 0.914,
+          "text": "14. 1.2 m लंबी एक लड़की भूमि से 88.2\nm की ऊँचाई पर एक क्षैतिज रेखा में\nहवा में उड़ रहे गुब्बारे को देखती है।\nकिसी भी क्षण लड़की की आँख से\nगुब्बारे का उन्नयन कोण $60^{\\circ}$ है। कुछ\nसमय बाद उन्नयन कोण घटकर $30^{\\circ}$ हो\nजाता है (देखिए आकृति 9.13)। इस\nअंतराल के दौरान गुब्बारे द्वारा तय की\nगई दूरी ज्ञात कीजिए।"
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            626.5,
+            258.6,
+            1187.3,
+            589.6
+          ],
+          "conf": 0.956,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            790.9,
+            593.9,
+            978.0,
+            649.2
+          ],
+          "conf": 0.924,
+          "text": "आकृति 9.13"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.7,
+            659.5,
+            1179.9,
+            839.2
+          ],
+          "conf": 0.924,
+          "text": "15. एक सीधा राजमार्ग एक मीनार के पाद तक जाता है। मीनार के शिखर पर खड़ा एक आदमी\nएक कार को $30^{\\circ}$ के अवनमन कोण पर देखता है जो कि मीनार के पाद की ओर एक समान\nचाल से जाता है। छः सेकेंड बाद कार का अवनमन कोण $60^{\\circ}$ हो गया। इस बिंदु से मीनार के\nपाद तक पहुँचने में कार द्वारा लिया गया समय ज्ञात कीजिए।"
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.1,
+            872.1,
+            289.0,
+            924.5
+          ],
+          "conf": 0.91,
+          "text": "9.2 सारांश"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            929.7,
+            829.1,
+            981.5
+          ],
+          "conf": 0.915,
+          "text": "इस अध्याय में, आपने निम्नलिखित तथ्यों का अध्ययन किया है :"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.6,
+            984.0,
+            1180.3,
+            1453.3
+          ],
+          "conf": 0.925,
+          "text": "1. (i) दृष्टि-रेखा प्रेक्षक की आँख से प्रेक्षक द्वारा देखी गई वस्तु के बिंदु को मिलाने वाली रेखा\nहोती है।\n\n(ii) देखी गई वस्तु का उन्नयन कोण दृष्टि-रेखा और क्षैतिज रेखा से बना कोण होता है जबकि\nयह क्षैतिज स्तर से ऊपर होता है अर्थात् वह स्थिति जबकि वस्तु को देखने के लिए हमें\nअपने सिर को ऊपर उठाना होता है।\n\n(iii) देखी गई वस्तु का अवनमन कोण दृष्टि-रेखा और क्षैतिज रेखा से बना कोण होता है जबकि\nक्षैतिज रेखा क्षैतिज स्तर से नीचे होती है अर्थात् वह स्थिति जबकि वस्तु को देखने के लिए\nहमें अपने सिर को झुकाना पड़ता है।\n\n2. त्रिकोणमितीय अनुपातों की सहायता से किसी वस्तु की ऊँचाई या लंबाई या दो सुदूर वस्तुओं\nके बीच की दूरी ज्ञात की जा सकती है।"
+        }
+      ],
+      "page": 10
+    }
+  ]
+}

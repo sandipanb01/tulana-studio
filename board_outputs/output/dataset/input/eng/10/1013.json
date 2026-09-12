@@ -1,0 +1,4545 @@
+{
+  "book": "1013",
+  "relpath": "dataset/input/eng/10/1013.pdf",
+  "num_pages": 31,
+  "pages": [
+    {
+      "image": "0082_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            547.2,
+            217.6,
+            758.8,
+            444.8
+          ],
+          "conf": 0.878,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            608.4,
+            410.2,
+            701.2,
+            444.6
+          ],
+          "conf": 0.624,
+          "text": "$1062\\text{CH}14$"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            654.8,
+            478.0,
+            1180.0,
+            645.8
+          ],
+          "conf": 0.901,
+          "text": "STATISTICS 13"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.0,
+            719.1,
+            388.1,
+            770.5
+          ],
+          "conf": 0.895,
+          "text": "13.1 Introduction"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.0,
+            770.6,
+            1176.9,
+            1148.4
+          ],
+          "conf": 0.985,
+          "text": "In Class IX, you have studied the classification of given data into ungrouped as well as\ngrouped frequency distributions. You have also learnt to represent the data pictorially\nin the form of various graphs such as bar graphs, histograms (including those of varying\nwidths) and frequency polygons. In fact, you went a step further by studying certain\nnumerical representatives of the ungrouped data, also called measures of central\ntendency, namely, $mean$, $median$ and $mode$. In this chapter, we shall extend the study\nof these three measures, i.e., mean, median and mode from ungrouped data to that of\n$grouped$ $data$. We shall also discuss the concept of cumulative frequency, the\ncumulative frequency distribution and how to draw cumulative frequency curves, called\n$ogives$."
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            117.9,
+            1161.5,
+            542.9,
+            1213.0
+          ],
+          "conf": 0.891,
+          "text": "13.2 Mean of Grouped Data"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.3,
+            1212.8,
+            1176.2,
+            1374.1
+          ],
+          "conf": 0.965,
+          "text": "The mean (or average) of observations, as we know, is the sum of the values of all the\nobservations divided by the total number of observations. From Class IX, recall that if\n$x_1, x_2, . . ., x_n$ are observations with respective frequencies $f_1, f_2, . . ., f_n$, then this\nmeans observation $x_1$ occurs $f_1$ times, $x_2$ occurs $f_2$ times, and so on."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.9,
+            1370.1,
+            1176.0,
+            1461.3
+          ],
+          "conf": 0.93,
+          "text": "Now, the sum of the values of all the observations $= f_1x_1 + f_{\\mathcal{X}}x_2 + \\dots + f_nx_n$, and\nthe number of observations $= f_1 + f_2 + \\dots + f_n$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            183.7,
+            1461.9,
+            684.3,
+            1511.5
+          ],
+          "conf": 0.902,
+          "text": "So, the mean $\\bar{x}$ of the data is given by"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            438.5,
+            1505.4,
+            820.9,
+            1603.6
+          ],
+          "conf": 0.925,
+          "text": "$$ \\bar{x} = \\frac{f_1 x_1 + f_2 x_2 + \\cdots + f_n x_n}{f_1 + f_2 + \\cdots + f_n} $$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.0,
+            1595.0,
+            1175.8,
+            1680.9
+          ],
+          "conf": 0.934,
+          "text": "Recall that we can write this in short form by using the Greek letter $\\Sigma$ (capital\nsigma) which means summation. That is,"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0082_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            439.9,
+            266.8,
+            619.8,
+            436.1
+          ],
+          "conf": 0.937,
+          "text": "$$ \\overline{x} = \\frac{\\sum_{i=1}^{n} f_i x_i}{\\sum_{i=1}^{n} f_i} $$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            427.5,
+            1178.1,
+            538.6
+          ],
+          "conf": 0.924,
+          "text": "which, more briefly, is written as $\\bar{x} = \\frac{\\sum f_i x_i}{\\sum f_i}$ , if it is understood that $i$ varies from\n1 to $n$."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            539.2,
+            971.8,
+            589.8
+          ],
+          "conf": 0.931,
+          "text": "Let us apply this formula to find the mean in the following example."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            600.6,
+            1178.6,
+            721.2
+          ],
+          "conf": 0.873,
+          "text": "Example 1 : The marks obtained by 30 students of Class X of a certain school in a\nMathematics paper consisting of 100 marks are presented in table below. Find the\nmean of the marks obtained by the students."
+        },
+        {
+          "order": 4,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            120.8,
+            716.9,
+            1178.5,
+            941.5
+          ],
+          "conf": 0.977,
+          "text": "<table>\n<thead>\n<tr>\n<th>Marks obtained<br/>(x<sub>i</sub>)</th>\n<th>10</th>\n<th>20</th>\n<th>36</th>\n<th>40</th>\n<th>50</th>\n<th>56</th>\n<th>60</th>\n<th>70</th>\n<th>72</th>\n<th>80</th>\n<th>88</th>\n<th>92</th>\n<th>95</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<th>Number of<br/>students (f<sub>i</sub>)</th>\n<td>1</td>\n<td>1</td>\n<td>3</td>\n<td>4</td>\n<td>3</td>\n<td>2</td>\n<td>4</td>\n<td>4</td>\n<td>1</td>\n<td>1</td>\n<td>2</td>\n<td>3</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            945.8,
+            1178.5,
+            1032.8
+          ],
+          "conf": 0.939,
+          "text": "Solution: Recall that to find the mean marks, we require the product of each $x_i$ with\nthe corresponding frequency $f_i$. So, let us put them in a column as shown in Table 13.1."
+        },
+        {
+          "order": 6,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            567.3,
+            1044.0,
+            732.7,
+            1092.7
+          ],
+          "conf": 0.909,
+          "text": "Table 13.1"
+        },
+        {
+          "order": 7,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            119.7,
+            1087.2,
+            1178.1,
+            1741.7
+          ],
+          "conf": 0.987,
+          "text": "<table>\n<thead>\n<tr>\n<th>Marks obtained (x_i)</th>\n<th>Number of students (f_i)</th>\n<th>f_ix_i</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>10</td>\n<td>1</td>\n<td>10</td>\n</tr>\n<tr>\n<td>20</td>\n<td>1</td>\n<td>20</td>\n</tr>\n<tr>\n<td>36</td>\n<td>3</td>\n<td>108</td>\n</tr>\n<tr>\n<td>40</td>\n<td>4</td>\n<td>160</td>\n</tr>\n<tr>\n<td>50</td>\n<td>3</td>\n<td>150</td>\n</tr>\n<tr>\n<td>56</td>\n<td>2</td>\n<td>112</td>\n</tr>\n<tr>\n<td>60</td>\n<td>4</td>\n<td>240</td>\n</tr>\n<tr>\n<td>70</td>\n<td>4</td>\n<td>280</td>\n</tr>\n<tr>\n<td>72</td>\n<td>1</td>\n<td>72</td>\n</tr>\n<tr>\n<td>80</td>\n<td>1</td>\n<td>80</td>\n</tr>\n<tr>\n<td>88</td>\n<td>2</td>\n<td>176</td>\n</tr>\n<tr>\n<td>92</td>\n<td>3</td>\n<td>276</td>\n</tr>\n<tr>\n<td>95</td>\n<td>1</td>\n<td>95</td>\n</tr>\n</tbody>\n<tfoot>\n<tr>\n<td>Total</td>\n<td>\\Sigma f_i = 30</td>\n<td>\\Sigma f_ix_i = 1779</td>\n</tr>\n</tfoot>\n</table>"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0082_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.5,
+            190.2,
+            1177.7,
+            239.4
+          ],
+          "conf": 0.845,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.9,
+            191.0,
+            248.4,
+            237.7
+          ],
+          "conf": 0.519,
+          "text": "STATISTICS"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            270.0,
+            862.9,
+            367.8
+          ],
+          "conf": 0.895,
+          "text": "Now, $\\bar{x} = \\frac{\\Sigma f_i x_i}{\\Sigma f_i} = \\frac{1779}{30} = 59.3$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            379.1,
+            689.0,
+            429.0
+          ],
+          "conf": 0.922,
+          "text": "Therefore, the mean marks obtained is 59.3."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            433.2,
+            1178.5,
+            565.6
+          ],
+          "conf": 0.964,
+          "text": "In most of our real life situations, data is usually so large that to make a meaningful\nstudy it needs to be condensed as grouped data. So, we need to convert given ungrouped\ndata into grouped data and devise some method to find its mean."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            569.6,
+            1179.5,
+            826.7
+          ],
+          "conf": 0.977,
+          "text": "Let us convert the ungrouped data of Example 1 into grouped data by forming\nclass-intervals of width, say 15. Remember that, while allocating frequencies to each\nclass-interval, students falling in any upper class-limit would be considered in the next\nclass, e.g., 4 students who have obtained 40 marks would be considered in the class-\ninterval 40-55 and not in 25-40. With this convention in our mind, let us form a grouped\nfrequency distribution table (see Table 13.2)."
+        },
+        {
+          "order": 6,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            567.6,
+            839.2,
+            733.1,
+            888.8
+          ],
+          "conf": 0.909,
+          "text": "Table 13.2"
+        },
+        {
+          "order": 7,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            120.5,
+            893.4,
+            1178.1,
+            1060.6
+          ],
+          "conf": 0.974,
+          "text": "<table>\n<thead>\n<tr>\n<th>Class interval</th>\n<th>10 - 25</th>\n<th>25 - 40</th>\n<th>40 - 55</th>\n<th>55 - 70</th>\n<th>70 - 85</th>\n<th>85 - 100</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Number of students</td>\n<td>2</td>\n<td>3</td>\n<td>7</td>\n<td>6</td>\n<td>6</td>\n<td>6</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1079.2,
+            1179.2,
+            1362.5
+          ],
+          "conf": 0.976,
+          "text": "Now, for each class-interval, we require a point which would serve as the\nrepresentative of the whole class. It is assumed that the frequency of each class-\ninterval is centred around its mid-point. So the mid-point (or class mark) of each\nclass can be chosen to represent the observations falling in the class. Recall that we\nfind the mid-point of a class (or its class mark) by finding the average of its upper and\nlower limits. That is,"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            308.4,
+            1367.0,
+            995.4,
+            1458.6
+          ],
+          "conf": 0.895,
+          "text": "Class mark = $\\frac{\\text{Upper class limit} + \\text{Lower class limit}}{2}$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.5,
+            1465.1,
+            1178.5,
+            1553.8
+          ],
+          "conf": 0.848,
+          "text": "With reference to Table 13.2, for the class 10-25, the class mark is $\\frac{10+25}{2}$, i.e.,"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1551.0,
+            1179.0,
+            1715.7
+          ],
+          "conf": 0.897,
+          "text": "17.5. Similarly, we can find the class marks of the remaining class intervals. We put\nthem in Table 13.3. These class marks serve as our $x_i$'s. Now, in general, for the $i$th\nclass interval, we have the frequency $f_i$ corresponding to the class mark $x_i$. We can\nnow proceed to compute the mean in the same manner as in Example 1."
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0082_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            566.5,
+            256.1,
+            733.2,
+            305.1
+          ],
+          "conf": 0.919,
+          "text": "Table 13.3"
+        },
+        {
+          "order": 1,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            119.6,
+            299.2,
+            1178.3,
+            734.4
+          ],
+          "conf": 0.99,
+          "text": "<table>\n<thead>\n<tr>\n<th>Class interval</th>\n<th>Number of students ($f_i$)</th>\n<th>Class mark ($x_i$)</th>\n<th>$f_ix_i$</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>10 - 25</td>\n<td>2</td>\n<td>17.5</td>\n<td>35.0</td>\n</tr>\n<tr>\n<td>25 - 40</td>\n<td>3</td>\n<td>32.5</td>\n<td>97.5</td>\n</tr>\n<tr>\n<td>40 - 55</td>\n<td>7</td>\n<td>47.5</td>\n<td>332.5</td>\n</tr>\n<tr>\n<td>55 - 70</td>\n<td>6</td>\n<td>62.5</td>\n<td>375.0</td>\n</tr>\n<tr>\n<td>70 - 85</td>\n<td>6</td>\n<td>77.5</td>\n<td>465.0</td>\n</tr>\n<tr>\n<td>85 - 100</td>\n<td>6</td>\n<td>92.5</td>\n<td>555.0</td>\n</tr>\n</tbody>\n<tfoot>\n<tr>\n<td>Total</td>\n<td>$\\Sigma f_i = 30$</td>\n<td><td></td>\n<td>$\\Sigma f_ix_i = 1860.0$</td>\n</tr>\n</tfoot>\n</table>"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            728.6,
+            1177.0,
+            814.9
+          ],
+          "conf": 0.952,
+          "text": "The sum of the values in the last column gives us $\\Sigma f_i x_i$. So, the mean $\\bar{x}$ of the\ngiven data is given by"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            440.8,
+            794.2,
+            786.4,
+            886.9
+          ],
+          "conf": 0.933,
+          "text": "$$\\bar{x} = \\frac{\\Sigma f_i x_i}{\\Sigma f_i} = \\frac{1860.0}{30} = 62$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.7,
+            882.7,
+            1086.9,
+            932.3
+          ],
+          "conf": 0.926,
+          "text": "This new method of finding the mean is known as the **Direct Method**."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            932.1,
+            1177.8,
+            1135.8
+          ],
+          "conf": 0.976,
+          "text": "We observe that Tables 13.1 and 13.3 are using the same data and employing the\nsame formula for the calculation of the mean but the results obtained are different.\nCan you think why this is so, and which one is more accurate? The difference in the\ntwo values is because of the mid-point assumption in Table 13.3, 59.3 being the exact\nmean, while 62 an approximate mean."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1137.9,
+            1178.8,
+            1264.3
+          ],
+          "conf": 0.962,
+          "text": "Sometimes when the numerical values of $x_i$ and $f_i$ are large, finding the product\nof $x_i$ and $f_i$ becomes tedious and time consuming. So, for such situations, let us think of\na method of reducing these calculations."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1266.2,
+            1178.5,
+            1392.7
+          ],
+          "conf": 0.96,
+          "text": "We can do nothing with the $f_i$'s, but we can change each $x_i$ to a smaller number\nso that our calculations become easy. How do we do this? What about subtracting a\nfixed number from each of these $x_i$'s? Let us try this method."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1394.0,
+            1178.7,
+            1557.4
+          ],
+          "conf": 0.963,
+          "text": "The first step is to choose one among the $x_i$'s as the $assumed$ $mean$, and denote\nit by '$a$'. Also, to further reduce our calculation work, we may take '$a$' to be that $x_i$\nwhich lies in the centre of $x_1, x_2, \\dots, x_n$. So, we can choose $a = 47.5$ or $a = 62.5$. Let\nus choose $a = 47.5$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1558.6,
+            1177.3,
+            1649.0
+          ],
+          "conf": 0.904,
+          "text": "The next step is to find the difference $d_i$ between $a$ and each of the $x_i$'s, that is,\nthe **deviation** of '$a$' from each of the $x_i$'s."
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            1646.5,
+            742.4,
+            1698.8
+          ],
+          "conf": 0.749,
+          "text": "i.e., $d_i = x_i - a = x_i - 47.5$"
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0082_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.1,
+            190.6,
+            1178.3,
+            239.0
+          ],
+          "conf": 0.85,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.3,
+            191.5,
+            248.6,
+            237.1
+          ],
+          "conf": 0.529,
+          "text": "STATISTICS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            256.7,
+            1178.6,
+            346.0
+          ],
+          "conf": 0.953,
+          "text": "The third step is to find the product of $d_i$ with the corresponding $f_i$, and take the sum\nof all the $f_i d_i$'s. The calculations are shown in Table 13.4."
+        },
+        {
+          "order": 3,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            566.1,
+            354.2,
+            733.9,
+            404.1
+          ],
+          "conf": 0.927,
+          "text": "Table 13.4"
+        },
+        {
+          "order": 4,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            120.1,
+            403.0,
+            1178.3,
+            826.3
+          ],
+          "conf": 0.988,
+          "text": "<table>\n<thead>\n<tr>\n<th>Class interval</th>\n<th>Number of<br/>students ($f_i$)</th>\n<th>Class mark<br/>($x_i$)</th>\n<th>$d_i = x_i - 47.5$</th>\n<th>$f_i d_i$</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>10 - 25</td>\n<td>2</td>\n<td>17.5</td>\n<td>-30</td>\n<td>-60</td>\n</tr>\n<tr>\n<td>25 - 40</td>\n<td>3</td>\n<td>32.5</td>\n<td>-15</td>\n<td>-45</td>\n</tr>\n<tr>\n<td>40 - 55</td>\n<td>7</td>\n<td>47.5</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr>\n<td>55 - 70</td>\n<td>6</td>\n<td>62.5</td>\n<td>15</td>\n<td>90</td>\n</tr>\n<tr>\n<td>70 - 85</td>\n<td>6</td>\n<td>77.5</td>\n<td>30</td>\n<td>180</td>\n</tr>\n<tr>\n<td>85 - 100</td>\n<td>6</td>\n<td>92.5</td>\n<td>45</td>\n<td>270</td>\n</tr>\n</tbody>\n<tfoot>\n<tr>\n<td>Total</td>\n<td>$\\Sigma f_i = 30$</td>\n<td></td>\n<td></td>\n<td>$\\Sigma f_i d_i = 435$</td>\n</tr>\n</tfoot>\n</table>"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.5,
+            855.2,
+            951.2,
+            956.6
+          ],
+          "conf": 0.889,
+          "text": "So, from Table 13.4, the mean of the deviations, $\\bar{d} = \\frac{\\Sigma f_i d_i}{\\Sigma f_i}$."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            125.5,
+            965.4,
+            1177.0,
+            1106.0
+          ],
+          "conf": 0.884,
+          "text": "Now, let us find the relation between $\\overline{d}$ and $\\overline{x}$.\nSince in obtaining $d$, we subtracted '$a$' from each $x$, so, in order to get the mean\n$\\overline{x}$, we need to add '$a$' to $\\overline{d}$. This can be explained mathematically as:"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.3,
+            1118.5,
+            720.3,
+            1218.5
+          ],
+          "conf": 0.882,
+          "text": "Mean of deviations, $\\bar{d} = \\frac{\\Sigma f_i d_i}{\\Sigma f_i}$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            192.9,
+            1223.8,
+            810.0,
+            1545.3
+          ],
+          "conf": 0.882,
+          "text": "So,\n$$\\begin{aligned} \\bar{d} &= \\frac{\\Sigma f_i (x_i - a)}{\\Sigma f_i} \\\\ &= \\frac{\\Sigma f_i x_i}{\\Sigma f_i} - \\frac{\\Sigma f_i a}{\\Sigma f_i} \\\\ &= \\bar{x} - a \\frac{\\Sigma f_i}{\\Sigma f_i} \\\\ &= \\bar{x} - a \\end{aligned}$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            594.0,
+            1500.6,
+            724.6,
+            1551.2
+          ],
+          "conf": 0.615,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            1550.2,
+            724.9,
+            1609.5
+          ],
+          "conf": 0.825,
+          "text": "So, $\\bar{x} = a + \\bar{d}$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.9,
+            1610.1,
+            771.7,
+            1704.7
+          ],
+          "conf": 0.876,
+          "text": "i.e., $\\bar{x} = a + \\frac{\\Sigma f_i d_i}{\\Sigma f_i}$"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0082_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.5,
+            256.7,
+            1019.6,
+            310.3
+          ],
+          "conf": 0.923,
+          "text": "Substituting the values of $a$, $\\Sigma f_i d_i$ and $\\Sigma f_i$ from Table 13.4, we get"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            397.3,
+            319.2,
+            873.5,
+            410.6
+          ],
+          "conf": 0.935,
+          "text": "$$\\bar{x} = 47.5 + \\frac{435}{30} = 47.5 + 14.5 = 62.$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            415.3,
+            937.4,
+            463.8
+          ],
+          "conf": 0.927,
+          "text": "Therefore, the mean of the marks obtained by the students is 62."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.6,
+            462.8,
+            1066.3,
+            513.4
+          ],
+          "conf": 0.929,
+          "text": "The method discussed above is called the **Assumed Mean Method**."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            523.5,
+            1178.5,
+            646.2
+          ],
+          "conf": 0.924,
+          "text": "Activity 1 : From the Table 13.3 find the mean by taking each of $x_i$ (i.e., 17.5, 32.5,\nand so on) as ‘$a$’. What do you observe? You will find that the mean determined in\neach case is the same, i.e., 62. (Why ?)"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            645.4,
+            1177.9,
+            730.6
+          ],
+          "conf": 0.942,
+          "text": "So, we can say that the value of the mean obtained does not depend on the\nchoice of '$a$'."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            728.8,
+            1178.8,
+            853.9
+          ],
+          "conf": 0.96,
+          "text": "Observe that in Table 13.4, the values in Column 4 are all multiples of 15. So, if\nwe divide the values in the entire Column 4 by 15, we would get smaller numbers to\nmultiply with $f_i$. (Here, 15 is the class size of each class interval.)"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.2,
+            868.3,
+            1104.7,
+            952.7
+          ],
+          "conf": 0.83,
+          "text": "So, let $u_i = \\frac{x_i - a}{h}$, where $a$ is the assumed mean and $h$ is the class size."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            958.5,
+            1178.2,
+            1047.7
+          ],
+          "conf": 0.94,
+          "text": "Now, we calculate $u_i$ in this way and continue as before (i.e., find $f_i u_i$ and\nthen $\\Sigma f_i u_i$). Taking $h = 15$, let us form Table 13.5."
+        },
+        {
+          "order": 9,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            566.4,
+            1057.0,
+            733.7,
+            1105.6
+          ],
+          "conf": 0.911,
+          "text": "Table 13.5"
+        },
+        {
+          "order": 10,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            120.2,
+            1099.0,
+            1177.5,
+            1545.7
+          ],
+          "conf": 0.98,
+          "text": "<table>\n<thead>\n<tr>\n<th>Class interval</th>\n<th>$f_i$</th>\n<th>$x_i$</th>\n<th>$d_i = x_i - a$</th>\n<th>$u_i = \\frac{x_i - a}{h}$</th>\n<th>$f_i u_i$</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>10 - 25</td>\n<td>2</td>\n<td>17.5</td>\n<td>-30</td>\n<td>-2</td>\n<td>-4</td>\n</tr>\n<tr>\n<td>25 - 40</td>\n<td>3</td>\n<td>32.5</td>\n<td>-15</td>\n<td>-1</td>\n<td>-3</td>\n</tr>\n<tr>\n<td>40 - 55</td>\n<td>7</td>\n<td>47.5</td>\n<td>0</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr>\n<td>55 - 70</td>\n<td>6</td>\n<td>62.5</td>\n<td>15</td>\n<td>1</td>\n<td>6</td>\n</tr>\n<tr>\n<td>70 - 85</td>\n<td>6</td>\n<td>77.5</td>\n<td>30</td>\n<td>2</td>\n<td>12</td>\n</tr>\n<tr>\n<td>85 - 100</td>\n<td>6</td>\n<td>92.5</td>\n<td>45</td>\n<td>3</td>\n<td>18</td>\n</tr>\n</tbody>\n<tfoot>\n<tr>\n<td>Total</td>\n<td>$\\Sigma f_i = 30$</td>\n<td></td>\n<td></td>\n<td></td>\n<td>$\\Sigma f_i u_i = 29$</td>\n</tr>\n</tfoot>\n</table>"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            1566.0,
+            719.2,
+            1663.4
+          ],
+          "conf": 0.83,
+          "text": "Let $\\bar{u} = \\frac{\\Sigma f_i u_i}{\\Sigma f_i}$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1669.0,
+            805.9,
+            1717.6
+          ],
+          "conf": 0.885,
+          "text": "Here, again let us find the relation between $\\overline{u}$ and $\\overline{x}$."
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0082_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.6,
+            190.4,
+            1178.6,
+            239.2
+          ],
+          "conf": 0.84,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.7,
+            191.1,
+            248.7,
+            237.1
+          ],
+          "conf": 0.534,
+          "text": "STATISTICS"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            275.5,
+            735.9,
+            362.9
+          ],
+          "conf": 0.915,
+          "text": "We have, $u_i = \\frac{x_i - a}{h}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            382.9,
+            1053.5,
+            516.0
+          ],
+          "conf": 0.932,
+          "text": "Therefore, $$\\bar{u} = \\frac{\\Sigma f_i \\frac{(x_i - a)}{h}}{\\Sigma f_i} = \\frac{1}{h} \\left[ \\frac{\\Sigma f_i x_i - a \\Sigma f_i}{\\Sigma f_i} \\right]$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            595.0,
+            528.8,
+            874.0,
+            637.6
+          ],
+          "conf": 0.871,
+          "text": "$$ = \\frac{1}{h} \\left[ \\frac{\\Sigma f_i x_i}{\\Sigma f_i} - a \\frac{\\Sigma f_i}{\\Sigma f_i} \\right] $$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            595.4,
+            643.0,
+            770.0,
+            732.8
+          ],
+          "conf": 0.84,
+          "text": "$$ = \\frac{1}{h} [\\bar{x} - a] $$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            741.0,
+            724.9,
+            791.9
+          ],
+          "conf": 0.869,
+          "text": "So, $h\\overline{u} = \\overline{x} - a$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            796.7,
+            743.1,
+            850.1
+          ],
+          "conf": 0.872,
+          "text": "i.e., $\\bar{x} = a + h\\bar{u}$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            864.7,
+            819.6,
+            968.8
+          ],
+          "conf": 0.919,
+          "text": "So, $\\bar{x} = a + h \\left( \\frac{\\Sigma f_i u_i}{\\Sigma f_i} \\right)$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            966.1,
+            1067.4,
+            1016.9
+          ],
+          "conf": 0.928,
+          "text": "Now, substituting the values of $a$, $h$, $\\Sigma f_i u_i$ and $\\Sigma f_i$ from Table 14.5, we get"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            565.8,
+            1029.4,
+            869.4,
+            1128.8
+          ],
+          "conf": 0.86,
+          "text": "$$ \\bar{x} = 47.5 + 15 \\times \\left( \\frac{29}{30} \\right) $$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            594.9,
+            1132.2,
+            853.6,
+            1181.4
+          ],
+          "conf": 0.838,
+          "text": "$$= 47.5 + 14.5 = 62$$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1181.8,
+            730.1,
+            1231.2
+          ],
+          "conf": 0.907,
+          "text": "So, the mean marks obtained by a student is 62."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1230.1,
+            966.2,
+            1279.3
+          ],
+          "conf": 0.919,
+          "text": "The method discussed above is called the **Step-deviation** method."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.3,
+            1278.1,
+            385.3,
+            1325.4
+          ],
+          "conf": 0.882,
+          "text": "We note that :"
+        },
+        {
+          "order": 15,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            197.5,
+            1325.1,
+            1179.6,
+            1664.8
+          ],
+          "conf": 0.938,
+          "text": "$\\bullet$ the step-deviation method will be convenient to apply if all the $d_i$'s have a\ncommon factor.\n\n$\\bullet$ The mean obtained by all the three methods is the same.\n\n$\\bullet$ The assumed mean method and step-deviation method are just simplified\nforms of the direct method.\n\n$\\bullet$ The formula $\\bar{x} = a + h\\bar{u}$ still holds if $a$ and $h$ are not as given above, but are\n\nany non-zero numbers such that $u_i = \\frac{x_i - a}{h}$."
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            234.0,
+            1589.4,
+            810.7,
+            1673.5
+          ],
+          "conf": 0.746,
+          "text": ""
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            184.9,
+            1664.6,
+            796.5,
+            1713.8
+          ],
+          "conf": 0.879,
+          "text": "Let us apply these methods in another example."
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0082_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            261.4,
+            1178.6,
+            431.3
+          ],
+          "conf": 0.91,
+          "text": "Example 2 : The table below gives the percentage distribution of female teachers in\nthe primary schools of rural areas of various states and union territories (U.T.) of\nIndia. Find the mean percentage of female teachers by all the three methods discussed\nin this section."
+        },
+        {
+          "order": 1,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            120.5,
+            424.5,
+            1178.5,
+            647.5
+          ],
+          "conf": 0.978,
+          "text": "<table>\n<thead>\n<tr>\n<th>Percentage of<br/>female teachers</th>\n<th>15 - 25</th>\n<th>25 - 35</th>\n<th>35 - 45</th>\n<th>45 - 55</th>\n<th>55 - 65</th>\n<th>65 - 75</th>\n<th>75 - 85</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Number of<br/>States/U.T.</td>\n<td>6</td>\n<td>11</td>\n<td>7</td>\n<td>4</td>\n<td>4</td>\n<td>2</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            667.5,
+            1119.7,
+            719.0
+          ],
+          "conf": 0.917,
+          "text": "**Source :** *Seventh All India School Education Survey conducted by NCERT*"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            735.3,
+            1177.5,
+            825.7
+          ],
+          "conf": 0.947,
+          "text": "Solution : Let us find the class marks, $x_i$, of each class, and put them in a column\n(see Table 13.6):"
+        },
+        {
+          "order": 4,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            566.4,
+            852.7,
+            733.9,
+            900.8
+          ],
+          "conf": 0.918,
+          "text": "Table 13.6"
+        },
+        {
+          "order": 5,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            120.4,
+            899.6,
+            1178.5,
+            1507.3
+          ],
+          "conf": 0.984,
+          "text": "<table>\n<thead>\n<tr>\n<th>Percentage of female<br/>teachers</th>\n<th>Number of<br/>States /U.T. (f_i)</th>\n<th>x_i</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>15 - 25</td>\n<td>6</td>\n<td>20</td>\n</tr>\n<tr>\n<td>25 - 35</td>\n<td>11</td>\n<td>30</td>\n</tr>\n<tr>\n<td>35 - 45</td>\n<td>7</td>\n<td>40</td>\n</tr>\n<tr>\n<td>45 - 55</td>\n<td>4</td>\n<td>50</td>\n</tr>\n<tr>\n<td>55 - 65</td>\n<td>4</td>\n<td>60</td>\n</tr>\n<tr>\n<td>65 - 75</td>\n<td>2</td>\n<td>70</td>\n</tr>\n<tr>\n<td>75 - 85</td>\n<td>1</td>\n<td>80</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.5,
+            1532.7,
+            980.7,
+            1617.9
+          ],
+          "conf": 0.805,
+          "text": "Here we take $a = 50$, $h = 10$, then $d_i = x_i - 50$ and $u_i = \\frac{x_i - 50}{10}$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            1632.7,
+            823.8,
+            1683.8
+          ],
+          "conf": 0.874,
+          "text": "We now find $d_i$ and $u_i$ and put them in Table 13.7."
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0082_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            121.0,
+            191.0,
+            1178.2,
+            239.0
+          ],
+          "conf": 0.838,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.7,
+            191.3,
+            248.2,
+            237.1
+          ],
+          "conf": 0.5,
+          "text": "STATISTICS"
+        },
+        {
+          "order": 2,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            566.4,
+            256.3,
+            732.9,
+            305.1
+          ],
+          "conf": 0.901,
+          "text": "Table 13.7"
+        },
+        {
+          "order": 3,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            119.2,
+            306.3,
+            1178.8,
+            852.5
+          ],
+          "conf": 0.989,
+          "text": "<table>\n<thead>\n<tr>\n<th>Percentage of<br/>female<br/>teachers</th>\n<th>Number of<br/>states/U.T.<br/>(f_i)</th>\n<th>x_i</th>\n<th>d_i = x_i - 50</th>\n<th>u_i = \\frac{x_i - 50}{10}</th>\n<th>f_i x_i</th>\n<th>f_i d_i</th>\n<th>f_i u_i</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>15 - 25</td>\n<td>6</td>\n<td>20</td>\n<td>-30</td>\n<td>-3</td>\n<td>120</td>\n<td>-180</td>\n<td>-18</td>\n</tr>\n<tr>\n<td>25 - 35</td>\n<td>11</td>\n<td>30</td>\n<td>-20</td>\n<td>-2</td>\n<td>330</td>\n<td>-220</td>\n<td>-22</td>\n</tr>\n<tr>\n<td>35 - 45</td>\n<td>7</td>\n<td>40</td>\n<td>-10</td>\n<td>-1</td>\n<td>280</td>\n<td>-70</td>\n<td>-7</td>\n</tr>\n<tr>\n<td>45 - 55</td>\n<td>4</td>\n<td>50</td>\n<td>0</td>\n<td>0</td>\n<td>200</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr>\n<td>55 - 65</td>\n<td>4</td>\n<td>60</td>\n<td>10</td>\n<td>1</td>\n<td>240</td>\n<td>40</td>\n<td>4</td>\n</tr>\n<tr>\n<td>65 - 75</td>\n<td>2</td>\n<td>70</td>\n<td>20</td>\n<td>2</td>\n<td>140</td>\n<td>40</td>\n<td>4</td>\n</tr>\n<tr>\n<td>75 - 85</td>\n<td>1</td>\n<td>80</td>\n<td>30</td>\n<td>3</td>\n<td>80</td>\n<td>30</td>\n<td>3</td>\n</tr>\n</tbody>\n<tfoot>\n<tr>\n<td>Total</td>\n<td>35</td>\n<td></td>\n<td></td>\n<td></td>\n<td>1390</td>\n<td>-360</td>\n<td>-36</td>\n</tr>\n</tfoot>\n</table>"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.4,
+            861.6,
+            907.0,
+            916.6
+          ],
+          "conf": 0.858,
+          "text": "From the table above, we obtain $\\Sigma f_i = 35$, $\\Sigma f_i x_i = 1390$,"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            509.7,
+            914.1,
+            886.1,
+            970.3
+          ],
+          "conf": 0.875,
+          "text": "$$\\Sigma f_i d_i = -360, \\quad \\Sigma f_i u_i = -36.$$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.6,
+            983.4,
+            838.1,
+            1080.3
+          ],
+          "conf": 0.911,
+          "text": "Using the direct method, $\\bar{x} = \\frac{\\Sigma f_i x_i}{\\Sigma f_i} = \\frac{1390}{35} = 39.71$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.5,
+            1072.5,
+            622.8,
+            1121.6
+          ],
+          "conf": 0.914,
+          "text": "Using the assumed mean method,"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            416.1,
+            1134.5,
+            918.5,
+            1232.5
+          ],
+          "conf": 0.935,
+          "text": "$$\\bar{x} = a + \\frac{\\Sigma f_i d_i}{\\Sigma f_i} = 50 + \\frac{(-360)}{35} = 39.71$$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.3,
+            1228.9,
+            610.6,
+            1277.9
+          ],
+          "conf": 0.91,
+          "text": "Using the step-deviation method,"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            417.2,
+            1287.6,
+            1070.8,
+            1393.7
+          ],
+          "conf": 0.938,
+          "text": "$$ \\bar{x} = a + \\left( \\frac{\\Sigma f_i u_i}{\\Sigma f_i} \\right) \\times h = 50 + \\left( \\frac{-36}{35} \\right) \\times 10 = 39.71 $$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1394.0,
+            1179.4,
+            1477.2
+          ],
+          "conf": 0.939,
+          "text": "Therefore, the mean percentage of female teachers in the primary schools of\nrural areas is 39.71."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1477.2,
+            1178.3,
+            1708.7
+          ],
+          "conf": 0.93,
+          "text": "**Remark :** The result obtained by all the three methods is the same. So the choice of\nmethod to be used depends on the numerical values of $x_i$ and $f_i$. If $x_i$ and $f_i$ are\nsufficiently small, then the direct method is an appropriate choice. If $x_i$ and $f_i$ are\nnumerically large numbers, then we can go for the assumed mean method or\nstep-deviation method. If the class sizes are unequal, and $x_i$ are large numerically, we\ncan still apply the step-deviation method by taking $h$ to be a suitable divisor of all the $d_i$'s."
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0082_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            257.8,
+            1178.2,
+            379.4
+          ],
+          "conf": 0.896,
+          "text": "Example 3 : The distribution below shows the number of wickets taken by bowlers in\none-day cricket matches. Find the mean number of wickets by choosing a suitable\nmethod. What does the mean signify?"
+        },
+        {
+          "order": 1,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            120.1,
+            392.3,
+            1178.6,
+            626.2
+          ],
+          "conf": 0.976,
+          "text": "<table>\n<thead>\n<tr>\n<th>Number of<br/>wickets</th>\n<th>20 - 60</th>\n<th>60 - 100</th>\n<th>100 - 150</th>\n<th>150 - 250</th>\n<th>250 - 350</th>\n<th>350 - 450</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<th>Number of<br/>bowlers</th>\n<td>7</td>\n<td>5</td>\n<td>16</td>\n<td>12</td>\n<td>2</td>\n<td>3</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            639.7,
+            1177.9,
+            724.1
+          ],
+          "conf": 0.947,
+          "text": "**Solution :** Here, the class size varies, and the $x_i$s are large. Let us still apply the step-\ndeviation method with $a = 200$ and $h = 20$. Then, we obtain the data as in Table 13.8."
+        },
+        {
+          "order": 3,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            566.1,
+            737.6,
+            733.2,
+            784.9
+          ],
+          "conf": 0.923,
+          "text": "Table 13.8"
+        },
+        {
+          "order": 4,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            120.1,
+            789.4,
+            1178.1,
+            1377.5
+          ],
+          "conf": 0.984,
+          "text": "<table>\n<thead>\n<tr>\n<th>Number of<br/>wickets<br/>taken</th>\n<th>Number of<br/>bowlers<br/>(f_i)</th>\n<th>x_i</th>\n<th>d_i = x_i - 200</th>\n<th>u_i = \\frac{d_i}{20}</th>\n<th>u_i f_i</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>20 - 60</td>\n<td>7</td>\n<td>40</td>\n<td>-160</td>\n<td>-8</td>\n<td>-56</td>\n</tr>\n<tr>\n<td>60 - 100</td>\n<td>5</td>\n<td>80</td>\n<td>-120</td>\n<td>-6</td>\n<td>-30</td>\n</tr>\n<tr>\n<td>100 - 150</td>\n<td>16</td>\n<td>125</td>\n<td>-75</td>\n<td>-3.75</td>\n<td>-60</td>\n</tr>\n<tr>\n<td>150 - 250</td>\n<td>12</td>\n<td>200</td>\n<td>0</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr>\n<td>250 - 350</td>\n<td>2</td>\n<td>300</td>\n<td>100</td>\n<td>5</td>\n<td>10</td>\n</tr>\n<tr>\n<td>350 - 450</td>\n<td>3</td>\n<td>400</td>\n<td>200</td>\n<td>10</td>\n<td>30</td>\n</tr>\n</tbody>\n<tfoot>\n<tr>\n<td>Total</td>\n<td>45</td>\n<td></td>\n<td></td>\n<td></td>\n<td>-106</td>\n</tr>\n</tfoot>\n</table>"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.8,
+            1407.0,
+            1123.7,
+            1506.9
+          ],
+          "conf": 0.916,
+          "text": "So, $\\bar{u} = \\frac{-106}{45}$. Therefore, $\\bar{x} = 200 + 20\\left(\\frac{-106}{45}\\right) = 200 - 47.11 = 152.89$."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1538.4,
+            1178.2,
+            1628.3
+          ],
+          "conf": 0.94,
+          "text": "This tells us that, on an average, the number of wickets taken by these 45 bowlers\nin one-day cricket is 152.89."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.8,
+            1643.5,
+            1174.0,
+            1693.1
+          ],
+          "conf": 0.892,
+          "text": "Now, let us see how well you can apply the concepts discussed in this section!"
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0082_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.0,
+            190.2,
+            1176.8,
+            239.6
+          ],
+          "conf": 0.833,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.5,
+            191.5,
+            248.7,
+            237.1
+          ],
+          "conf": 0.55,
+          "text": "STATISTICS"
+        },
+        {
+          "order": 2,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.7,
+            256.7,
+            294.2,
+            306.9
+          ],
+          "conf": 0.893,
+          "text": "Activity 2 :"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            306.3,
+            1177.4,
+            390.8
+          ],
+          "conf": 0.949,
+          "text": "Divide the students of your class into three groups and ask each group to do one of the\nfollowing activities."
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            148.6,
+            389.7,
+            1178.3,
+            680.0
+          ],
+          "conf": 0.961,
+          "text": "1. Collect the marks obtained by all the students of your class in Mathematics in the\nlatest examination conducted by your school. Form a grouped frequency distribution\nof the data obtained.\n\n2. Collect the daily maximum temperatures recorded for a period of 30 days in your\ncity. Present this data as a grouped frequency table.\n\n3. Measure the heights of all the students of your class (in cm) and form a grouped\nfrequency distribution table of this data."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            679.2,
+            1178.6,
+            803.3
+          ],
+          "conf": 0.955,
+          "text": "After all the groups have collected the data and formed grouped frequency\ndistribution tables, the groups should find the mean in each case by the method which\nthey find appropriate."
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            517.0,
+            838.1,
+            780.7,
+            890.7
+          ],
+          "conf": 0.789,
+          "text": "EXERCISE 13.1"
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.1,
+            896.8,
+            1177.5,
+            1009.8
+          ],
+          "conf": 0.931,
+          "text": "1. A survey was conducted by a group of students as a part of their environment awareness\nprogramme, in which they collected the following data regarding the number of plants in\n20 houses in a locality. Find the mean number of plants per house."
+        },
+        {
+          "order": 8,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            198.1,
+            1003.2,
+            1161.8,
+            1140.0
+          ],
+          "conf": 0.962,
+          "text": "<table>\n<thead>\n<tr>\n<th>Number of plants</th>\n<th>0 - 2</th>\n<th>2 - 4</th>\n<th>4 - 6</th>\n<th>6 - 8</th>\n<th>8 - 10</th>\n<th>10 - 12</th>\n<th>12 - 14</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<th>Number of houses</th>\n<td>1</td>\n<td>2</td>\n<td>1</td>\n<td>5</td>\n<td>6</td>\n<td>2</td>\n<td>3</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            195.8,
+            1148.7,
+            879.7,
+            1197.2
+          ],
+          "conf": 0.777,
+          "text": "Which method did you use for finding the mean, and why?"
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.7,
+            1192.6,
+            1076.8,
+            1241.5
+          ],
+          "conf": 0.863,
+          "text": "2. Consider the following distribution of daily wages of 50 workers of a factory."
+        },
+        {
+          "order": 11,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            198.2,
+            1245.6,
+            1160.9,
+            1382.1
+          ],
+          "conf": 0.956,
+          "text": "<table>\n<thead>\n<tr>\n<th>Daily wages (in ₹)</th>\n<th>500 - 520</th>\n<th>520 - 540</th>\n<th>540 - 560</th>\n<th>560 - 580</th>\n<th>580 - 600</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Number of workers</td>\n<td>12</td>\n<td>14</td>\n<td>8</td>\n<td>6</td>\n<td>10</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            195.8,
+            1392.5,
+            1175.7,
+            1440.6
+          ],
+          "conf": 0.799,
+          "text": "Find the mean daily wages of the workers of the factory by using an appropriate method."
+        },
+        {
+          "order": 13,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.5,
+            1437.5,
+            1178.5,
+            1517.7
+          ],
+          "conf": 0.866,
+          "text": "{\\bf 3.} The following distribution shows the daily pocket allowance of children of a locality.\nThe mean pocket allowance is Rs 18. Find the missing frequency $f$."
+        },
+        {
+          "order": 14,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            197.9,
+            1511.3,
+            1180.5,
+            1685.5
+          ],
+          "conf": 0.955,
+          "text": "<table>\n<thead>\n<tr>\n<th>Daily pocket<br/>allowance (in ₹)</th>\n<th>11 - 13</th>\n<th>13 - 15</th>\n<th>15 - 17</th>\n<th>17 - 19</th>\n<th>19 - 21</th>\n<th>21 - 23</th>\n<th>23 - 25</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Number of children</td>\n<td>7</td>\n<td>6</td>\n<td>9</td>\n<td>13</td>\n<td>f</td>\n<td>5</td>\n<td>4</td>\n</tr>\n</tbody>\n</table>"
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0082_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.2,
+            257.6,
+            1178.6,
+            370.1
+          ],
+          "conf": 0.937,
+          "text": "4. Thirty women were examined in a hospital by a doctor and the number of heartbeats per\nminute were recorded and summarised as follows. Find the mean heartbeats per minute\nfor these women, choosing a suitable method."
+        },
+        {
+          "order": 1,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            195.8,
+            378.1,
+            1177.5,
+            556.9
+          ],
+          "conf": 0.973,
+          "text": "<table>\n<thead>\n<tr>\n<th>Number of heartbeats<br/>per minute</th>\n<th>65 - 68</th>\n<th>68 - 71</th>\n<th>71 - 74</th>\n<th>74 - 77</th>\n<th>77 - 80</th>\n<th>80 - 83</th>\n<th>83 - 86</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Number of women</td>\n<td>2</td>\n<td>4</td>\n<td>3</td>\n<td>8</td>\n<td>7</td>\n<td>4</td>\n<td>2</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.2,
+            561.3,
+            1179.6,
+            674.9
+          ],
+          "conf": 0.941,
+          "text": "**5.** In a retail market, fruit vendors were selling mangoes kept in packing boxes. These\nboxes contained varying number of mangoes. The following was the distribution of\nmangoes according to the number of boxes."
+        },
+        {
+          "order": 3,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            195.5,
+            666.7,
+            1177.8,
+            824.0
+          ],
+          "conf": 0.973,
+          "text": "<table>\n<thead>\n<tr>\n<th>Number of mangoes</th>\n<th>50 - 52</th>\n<th>53 - 55</th>\n<th>56 - 58</th>\n<th>59 - 61</th>\n<th>62 - 64</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<th>Number of boxes</th>\n<td>15</td>\n<td>110</td>\n<td>135</td>\n<td>115</td>\n<td>25</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            196.4,
+            816.2,
+            1177.9,
+            896.8
+          ],
+          "conf": 0.914,
+          "text": "Find the mean number of mangoes kept in a packing box. Which method of finding\nthe mean did you choose?"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.8,
+            906.3,
+            1153.4,
+            956.3
+          ],
+          "conf": 0.897,
+          "text": "{\\bf 6.} The table below shows the daily expenditure on food of 25 households in a locality."
+        },
+        {
+          "order": 6,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            195.3,
+            950.4,
+            1178.1,
+            1149.3
+          ],
+          "conf": 0.975,
+          "text": "<table>\n<thead>\n<tr>\n<th>Daily expenditure<br/>(in ₹)</th>\n<th>100 - 150</th>\n<th>150 - 200</th>\n<th>200 - 250</th>\n<th>250 - 300</th>\n<th>300 - 350</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Number of<br/>households</td>\n<td>4</td>\n<td>5</td>\n<td>12</td>\n<td>2</td>\n<td>2</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            250.5,
+            1149.3,
+            971.5,
+            1197.6
+          ],
+          "conf": 0.881,
+          "text": "Find the mean daily expenditure on food by a suitable method."
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.7,
+            1193.8,
+            1178.3,
+            1273.8
+          ],
+          "conf": 0.908,
+          "text": "7. To find out the concentration of $\\text{SO}_2$ in the air (in parts per million, i.e., ppm), the data\nwas collected for 30 localities in a certain city and is presented below:"
+        },
+        {
+          "order": 9,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            227.4,
+            1265.0,
+            1046.0,
+            1643.9
+          ],
+          "conf": 0.978,
+          "text": "<table>\n<thead>\n<tr>\n<th>Concentration of SO$_2$ (in ppm)</th>\n<th>Frequency</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0.00 - 0.04</td>\n<td>4</td>\n</tr>\n<tr>\n<td>0.04 - 0.08</td>\n<td>9</td>\n</tr>\n<tr>\n<td>0.08 - 0.12</td>\n<td>9</td>\n</tr>\n<tr>\n<td>0.12 - 0.16</td>\n<td>2</td>\n</tr>\n<tr>\n<td>0.16 - 0.20</td>\n<td>4</td>\n</tr>\n<tr>\n<td>0.20 - 0.24</td>\n<td>2</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            250.4,
+            1649.6,
+            780.0,
+            1698.6
+          ],
+          "conf": 0.864,
+          "text": "Find the mean concentration of $\\text{SO}_2$ in the air."
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0082_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.5,
+            191.3,
+            1177.5,
+            238.4
+          ],
+          "conf": 0.85,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.0,
+            192.1,
+            248.3,
+            236.7
+          ],
+          "conf": 0.516,
+          "text": "STATISTICS"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.2,
+            257.6,
+            1178.6,
+            337.8
+          ],
+          "conf": 0.927,
+          "text": "**8.** A class teacher has the following absentee record of 40 students of a class for the whole\nterm. Find the mean number of days a student was absent."
+        },
+        {
+          "order": 3,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            196.3,
+            331.5,
+            1083.3,
+            538.5
+          ],
+          "conf": 0.972,
+          "text": "<table>\n<thead>\n<tr>\n<th>Number of<br/>days</th>\n<th>0 - 6</th>\n<th>6 - 10</th>\n<th>10 - 14</th>\n<th>14 - 20</th>\n<th>20 - 28</th>\n<th>28 - 38</th>\n<th>38 - 40</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<th>Number of<br/>students</th>\n<td>11</td>\n<td>10</td>\n<td>7</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.1,
+            545.5,
+            1178.1,
+            626.2
+          ],
+          "conf": 0.915,
+          "text": "9. The following table gives the literacy rate (in percentage) of 35 cities. Find the mean\nliteracy rate."
+        },
+        {
+          "order": 5,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            196.4,
+            616.4,
+            1105.7,
+            785.5
+          ],
+          "conf": 0.967,
+          "text": "<table>\n<thead>\n<tr>\n<th>Literacy rate (in %)</th>\n<th>45 - 55</th>\n<th>55 - 65</th>\n<th>65 - 75</th>\n<th>75 - 85</th>\n<th>85 - 95</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Number of cities</td>\n<td>3</td>\n<td>10</td>\n<td>11</td>\n<td>8</td>\n<td>3</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.2,
+            819.9,
+            544.6,
+            871.2
+          ],
+          "conf": 0.896,
+          "text": "13.3 Mode of Grouped Data"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            873.4,
+            1178.8,
+            1162.6
+          ],
+          "conf": 0.973,
+          "text": "Recall from Class IX, a mode is that value among the observations which occurs most\noften, that is, the value of the observation having the maximum frequency. Further, we\ndiscussed finding the mode of ungrouped data. Here, we shall discuss ways of obtaining\na mode of grouped data. It is possible that more than one value may have the same\nmaximum frequency. In such situations, the data is said to be multimodal. Though\ngrouped data can also be multimodal, we shall restrict ourselves to problems having a\nsingle mode only."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1165.1,
+            1178.5,
+            1253.6
+          ],
+          "conf": 0.926,
+          "text": "Let us first recall how we found the mode for ungrouped data through the following\nexample."
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1270.0,
+            1154.1,
+            1378.5
+          ],
+          "conf": 0.635,
+          "text": "Example 4 : The wickets taken by a bowler in 10 cricket matches are as follows:\n\n$$2 \\quad 6 \\quad 4 \\quad 5 \\quad 0 \\quad 2 \\quad 1 \\quad 3 \\quad 2 \\quad 3$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1374.7,
+            467.1,
+            1423.5
+          ],
+          "conf": 0.824,
+          "text": "Find the mode of the data."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1423.7,
+            1164.7,
+            1473.6
+          ],
+          "conf": 0.868,
+          "text": "Solution : Let us form the frequency distribution table of the given data as follows:"
+        },
+        {
+          "order": 12,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            121.5,
+            1479.5,
+            1178.5,
+            1701.8
+          ],
+          "conf": 0.967,
+          "text": "<table>\n<tbody>\n<tr>\n<th>Number of<br/>wickets</th>\n<td>0</td>\n<td>1</td>\n<td>2</td>\n<td>3</td>\n<td>4</td>\n<td>5</td>\n<td>6</td>\n</tr>\n<tr>\n<th>Number of<br/>matches</th>\n<td>1</td>\n<td>1</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>"
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0082_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            257.8,
+            1178.5,
+            343.1
+          ],
+          "conf": 0.956,
+          "text": "Clearly, 2 is the number of wickets taken by the bowler in the maximum number\n(i.e., 3) of matches. So, the mode of this data is 2."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            343.1,
+            1178.6,
+            501.2
+          ],
+          "conf": 0.969,
+          "text": "In a grouped frequency distribution, it is not possible to determine the mode by\nlooking at the frequencies. Here, we can only locate a class with the maximum\nfrequency, called the **modal class**. The mode is a value inside the modal class, and is\ngiven by the formula:"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            223.5,
+            503.1,
+            652.5,
+            611.4
+          ],
+          "conf": 0.936,
+          "text": "$$\\text{Mode} = l + \\left( \\frac{f_1 - f_0}{2f_1 - f_0 - f_2} \\right) \\times h$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.6,
+            619.4,
+            1117.7,
+            885.4
+          ],
+          "conf": 0.706,
+          "text": "where $l =$ lower limit of the modal class,\n$h =$ size of the class interval (assuming all class sizes to be equal),\n$f_1 =$ frequency of the modal class,\n$f_0 =$ frequency of the class preceding the modal class,\n$f_2 =$ frequency of the class succeeding the modal class.\nLet us consider the following examples to illustrate the use of this formula."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.5,
+            856.7,
+            1122.9,
+            906.9
+          ],
+          "conf": 0.891,
+          "text": "Let us consider the following examples to illustrate the use of this formula."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            918.1,
+            1177.7,
+            1039.1
+          ],
+          "conf": 0.904,
+          "text": "Example 5 : A survey conducted on 20 households in a locality by a group of students\nresulted in the following frequency table for the number of family members in a\nhousehold:"
+        },
+        {
+          "order": 6,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            200.5,
+            1048.6,
+            1118.3,
+            1260.3
+          ],
+          "conf": 0.972,
+          "text": "<table>\n<thead>\n<tr>\n<th>Family size</th>\n<th>1 - 3</th>\n<th>3 - 5</th>\n<th>5 - 7</th>\n<th>7 - 9</th>\n<th>9 - 11</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Number of<br/>families</td>\n<td>7</td>\n<td>8</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.7,
+            1269.0,
+            538.5,
+            1318.4
+          ],
+          "conf": 0.886,
+          "text": "Find the mode of this data."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1318.0,
+            1177.9,
+            1406.4
+          ],
+          "conf": 0.889,
+          "text": "Solution : Here the maximum class frequency is $8$, and the class corresponding to this\nfrequency is $3 - 5$. So, the modal class is $3 - 5$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1406.8,
+            205.8,
+            1453.9
+          ],
+          "conf": 0.833,
+          "text": "Now"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.7,
+            1456.9,
+            1111.8,
+            1655.7
+          ],
+          "conf": 0.555,
+          "text": "modal class $= 3 - 5$, lower limit $(l)$ of modal class $= 3$, class size $(h) = 2$\nfrequency $(f_1)$ of the modal class $= 8$,\nfrequency $(f_0)$ of class preceding the modal class $= 7$,\nfrequency $(f_2)$ of class succeeding the modal class $= 2$."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1656.8,
+            759.5,
+            1706.0
+          ],
+          "conf": 0.871,
+          "text": "Now, let us substitute these values in the formula :"
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0082_p0014.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            121.0,
+            190.8,
+            1178.2,
+            239.0
+          ],
+          "conf": 0.839,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.9,
+            190.4,
+            248.4,
+            236.9
+          ],
+          "conf": 0.514,
+          "text": "STATISTICS"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            392.1,
+            271.1,
+            820.6,
+            381.7
+          ],
+          "conf": 0.923,
+          "text": "$$\\text{Mode} = l + \\left( \\frac{f_1 - f_0}{2f_1 - f_0 - f_2} \\right) \\times h$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            470.9,
+            402.0,
+            1028.2,
+            505.2
+          ],
+          "conf": 0.917,
+          "text": "$$= 3 + \\left( \\frac{8 - 7}{2 \\times 8 - 7 - 2} \\right) \\times 2 = 3 + \\frac{2}{7} = 3.286$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            515.7,
+            730.0,
+            565.6
+          ],
+          "conf": 0.936,
+          "text": "Therefore, the mode of the data above is 3.286."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            576.3,
+            1177.1,
+            1052.0
+          ],
+          "conf": 0.552,
+          "text": "Example 6 : The marks distribution of 30 students in a mathematics examination are\ngiven in Table 13.3 of Example 1. Find the mode of this data. Also compare and\ninterpret the mode and the mean.\n\nSolution : Refer to Table 13.3 of Example 1. Since the maximum number of students\n(i.e., 7) have got marks in the interval 40 - 55, the modal class is 40 - 55. Therefore,\n\nthe lower limit ($l$) of the modal class $= 40$,\n\nthe class size ($h$) $= 15$,\n\nthe frequency ($f_1$) of modal class $= 7$,\n\nthe frequency ($f_0$) of the class preceding the modal class $= 3$,\n\nthe frequency ($f_2$) of the class succeeding the modal class $= 6$."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1044.8,
+            436.3,
+            1094.4
+          ],
+          "conf": 0.901,
+          "text": "Now, using the formula:"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            522.9,
+            1091.0,
+            957.3,
+            1198.9
+          ],
+          "conf": 0.913,
+          "text": "Mode = $l + \\left( \\frac{f_1 - f_0}{2f_1 - f_0 - f_2} \\right) \\times h$,"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.4,
+            1201.2,
+            1005.4,
+            1304.7
+          ],
+          "conf": 0.699,
+          "text": "we get $\\text{Mode} = 40 + \\left( \\frac{7 - 3}{14 - 6 - 3} \\right) \\times 15 = 52$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1305.5,
+            459.3,
+            1356.0
+          ],
+          "conf": 0.899,
+          "text": "So, the mode marks is 52."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1356.6,
+            882.3,
+            1407.3
+          ],
+          "conf": 0.9,
+          "text": "Now, from Example 1, you know that the mean marks is 62."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1406.6,
+            1178.3,
+            1493.6
+          ],
+          "conf": 0.93,
+          "text": "So, the maximum number of students obtained 52 marks, while on an average a\nstudent obtained 62 marks."
+        },
+        {
+          "order": 12,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.8,
+            1493.0,
+            288.2,
+            1542.4
+          ],
+          "conf": 0.822,
+          "text": "Remarks :"
+        },
+        {
+          "order": 13,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1543.8,
+            1178.6,
+            1713.4
+          ],
+          "conf": 0.947,
+          "text": "1. In Example 6, the mode is less than the mean. But for some other problems it may\nbe equal or more than the mean also.\n\n2. It depends upon the demand of the situation whether we are interested in finding the\naverage marks obtained by the students or the average of the marks obtained by most"
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0082_p0015.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            257.6,
+            1177.5,
+            342.9
+          ],
+          "conf": 0.953,
+          "text": "of the students. In the first situation, the mean is required and in the second situation,\nthe mode is required."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            355.5,
+            1177.4,
+            477.3
+          ],
+          "conf": 0.926,
+          "text": "Activity 3 : Continuing with the same groups as formed in Activity 2 and the situations\nassigned to the groups. Ask each group to find the mode of the data. They should also\ncompare this with the mean, and interpret the meaning of both."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            478.6,
+            1177.4,
+            562.2
+          ],
+          "conf": 0.934,
+          "text": "Remark : The mode can also be calculated for grouped data with unequal class sizes.\nHowever, we shall not be discussing it."
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            520.3,
+            588.0,
+            778.6,
+            638.8
+          ],
+          "conf": 0.836,
+          "text": "EXERCISE 13.2"
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            153.9,
+            643.5,
+            1177.8,
+            694.8
+          ],
+          "conf": 0.834,
+          "text": "1. The following table shows the ages of the patients admitted in a hospital during a year:"
+        },
+        {
+          "order": 5,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            192.7,
+            685.3,
+            1178.1,
+            826.7
+          ],
+          "conf": 0.962,
+          "text": "<table>\n<thead>\n<tr>\n<th>Age (in years)</th>\n<th>5 - 15</th>\n<th>15 - 25</th>\n<th>25 - 35</th>\n<th>35 - 45</th>\n<th>45 - 55</th>\n<th>55 - 65</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Number of patients</td>\n<td>6</td>\n<td>11</td>\n<td>21</td>\n<td>23</td>\n<td>14</td>\n<td>5</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            194.7,
+            828.6,
+            1178.2,
+            909.7
+          ],
+          "conf": 0.905,
+          "text": "Find the mode and the mean of the data given above. Compare and interpret the two\nmeasures of central tendency."
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.1,
+            906.7,
+            1178.3,
+            989.1
+          ],
+          "conf": 0.872,
+          "text": "**2.** The following data gives the information on the observed lifetimes (in hours) of 225\nelectrical components :"
+        },
+        {
+          "order": 8,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            192.8,
+            985.9,
+            1178.3,
+            1127.3
+          ],
+          "conf": 0.961,
+          "text": "<table>\n<thead>\n<tr>\n<th>Lifetimes (in hours)</th>\n<th>0 - 20</th>\n<th>20 - 40</th>\n<th>40 - 60</th>\n<th>60 - 80</th>\n<th>80 - 100</th>\n<th>100 - 120</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Frequency</td>\n<td>10</td>\n<td>35</td>\n<td>52</td>\n<td>61</td>\n<td>38</td>\n<td>29</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            194.6,
+            1139.8,
+            772.9,
+            1187.1
+          ],
+          "conf": 0.87,
+          "text": "Determine the modal lifetimes of the components."
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.1,
+            1184.1,
+            1178.6,
+            1297.3
+          ],
+          "conf": 0.855,
+          "text": "3. The following data gives the distribution of total monthly household expenditure of 200\nfamilies of a village. Find the modal monthly expenditure of the families. Also, find the\nmean monthly expenditure :"
+        },
+        {
+          "order": 11,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            241.8,
+            1293.9,
+            1096.2,
+            1699.0
+          ],
+          "conf": 0.973,
+          "text": "<table>\n<thead>\n<tr>\n<th>Expenditure (in ₹)</th>\n<th>Number of families</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1000 - 1500</td>\n<td>24</td>\n</tr>\n<tr>\n<td>1500 - 2000</td>\n<td>40</td>\n</tr>\n<tr>\n<td>2000 - 2500</td>\n<td>33</td>\n</tr>\n<tr>\n<td>2500 - 3000</td>\n<td>28</td>\n</tr>\n<tr>\n<td>3000 - 3500</td>\n<td>30</td>\n</tr>\n<tr>\n<td>3500 - 4000</td>\n<td>22</td>\n</tr>\n<tr>\n<td>4000 - 4500</td>\n<td>16</td>\n</tr>\n<tr>\n<td>4500 - 5000</td>\n<td>7</td>\n</tr>\n</tbody>\n</table>"
+        }
+      ],
+      "page": 15
+    },
+    {
+      "image": "0082_p0016.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.4,
+            191.0,
+            1177.9,
+            239.4
+          ],
+          "conf": 0.849,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.1,
+            191.9,
+            248.0,
+            236.9
+          ],
+          "conf": 0.56,
+          "text": "STATISTICS"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.2,
+            261.2,
+            1178.3,
+            375.4
+          ],
+          "conf": 0.949,
+          "text": "4. The following distribution gives the state-wise teacher-student ratio in higher\nsecondary schools of India. Find the mode and mean of this data. Interpret the two\nmeasures."
+        },
+        {
+          "order": 3,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            241.9,
+            365.6,
+            1095.8,
+            819.9
+          ],
+          "conf": 0.987,
+          "text": "<table>\n<thead>\n<tr>\n<th>Number of students per teacher</th>\n<th>Number of states / U .T.</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>15 - 20</td>\n<td>3</td>\n</tr>\n<tr>\n<td>20 - 25</td>\n<td>8</td>\n</tr>\n<tr>\n<td>25 - 30</td>\n<td>9</td>\n</tr>\n<tr>\n<td>30 - 35</td>\n<td>10</td>\n</tr>\n<tr>\n<td>35 - 40</td>\n<td>3</td>\n</tr>\n<tr>\n<td>40 - 45</td>\n<td>0</td>\n</tr>\n<tr>\n<td>45 - 50</td>\n<td>0</td>\n</tr>\n<tr>\n<td>50 - 55</td>\n<td>2</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.6,
+            821.4,
+            1176.9,
+            901.9
+          ],
+          "conf": 0.94,
+          "text": "**5.** The given distribution shows the number of runs scored by some top batsmen of the\nworld in one-day international cricket matches."
+        },
+        {
+          "order": 5,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            296.5,
+            902.1,
+            1058.3,
+            1349.4
+          ],
+          "conf": 0.982,
+          "text": "<table>\n<thead>\n<tr>\n<th>Runs scored</th>\n<th>Number of batsmen</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>3000 - 4000</td>\n<td>4</td>\n</tr>\n<tr>\n<td>4000 - 5000</td>\n<td>18</td>\n</tr>\n<tr>\n<td>5000 - 6000</td>\n<td>9</td>\n</tr>\n<tr>\n<td>6000 - 7000</td>\n<td>7</td>\n</tr>\n<tr>\n<td>7000 - 8000</td>\n<td>6</td>\n</tr>\n<tr>\n<td>8000 - 9000</td>\n<td>3</td>\n</tr>\n<tr>\n<td>9000 - 10000</td>\n<td>1</td>\n</tr>\n<tr>\n<td>10000 - 11000</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            195.3,
+            1355.3,
+            512.2,
+            1402.2
+          ],
+          "conf": 0.846,
+          "text": "Find the mode of the data."
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.3,
+            1413.0,
+            1177.8,
+            1527.0
+          ],
+          "conf": 0.937,
+          "text": "6. A student noted the number of cars passing through a spot on a road for 100\nperiods each of 3 minutes and summarised it in the table given below. Find the mode\nof the data :"
+        },
+        {
+          "order": 8,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            196.6,
+            1526.3,
+            1177.9,
+            1663.3
+          ],
+          "conf": 0.961,
+          "text": "<table>\n<thead>\n<tr>\n<th>Number of cars</th>\n<th>0 - 10</th>\n<th>10 - 20</th>\n<th>20 - 30</th>\n<th>30 - 40</th>\n<th>40 - 50</th>\n<th>50 - 60</th>\n<th>60 - 70</th>\n<th>70 - 80</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<th>Frequency</th>\n<td>7</td>\n<td>14</td>\n<td>13</td>\n<td>12</td>\n<td>20</td>\n<td>11</td>\n<td>15</td>\n<td>8</td>\n</tr>\n</tbody>\n</table>"
+        }
+      ],
+      "page": 16
+    },
+    {
+      "image": "0082_p0017.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.6,
+            257.1,
+            570.3,
+            308.9
+          ],
+          "conf": 0.885,
+          "text": "13.4 Median of Grouped Data"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            308.9,
+            1178.6,
+            431.1
+          ],
+          "conf": 0.953,
+          "text": "As you have studied in Class IX, the median is a measure of central tendency which\ngives the value of the middle-most observation in the data. Recall that for finding the\nmedian of ungrouped data, we first arrange the data values of the observations in"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            433.4,
+            1178.3,
+            536.0
+          ],
+          "conf": 0.86,
+          "text": "ascending order. Then, if $n$ is odd, the median is the $\\left( \\frac{n+1}{2} \\right)$th observation. And, if $n$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            544.5,
+            1177.1,
+            641.2
+          ],
+          "conf": 0.873,
+          "text": "is even, then the median will be the average of the $\\frac{n}{2}$ th and the $\\left( \\frac{n}{2} + 1 \\right)$ th observations."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            658.9,
+            1177.9,
+            744.6
+          ],
+          "conf": 0.942,
+          "text": "Suppose, we have to find the median of the following data, which gives the\nmarks, out of 50, obtained by 100 students in a test :"
+        },
+        {
+          "order": 5,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            152.1,
+            745.6,
+            1132.0,
+            924.4
+          ],
+          "conf": 0.973,
+          "text": "<table>\n<tbody>\n<tr>\n<th>Marks obtained</th>\n<td>20</td>\n<td>29</td>\n<td>28</td>\n<td>33</td>\n<td>42</td>\n<td>38</td>\n<td>43</td>\n<td>25</td>\n</tr>\n<tr>\n<th>Number of students</th>\n<td>6</td>\n<td>28</td>\n<td>24</td>\n<td>15</td>\n<td>2</td>\n<td>4</td>\n<td>1</td>\n<td>20</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            922.6,
+            1177.4,
+            1008.1
+          ],
+          "conf": 0.941,
+          "text": "First, we arrange the marks in ascending order and prepare a frequency table as\nfollows :"
+        },
+        {
+          "order": 7,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            565.6,
+            1007.2,
+            733.3,
+            1054.3
+          ],
+          "conf": 0.918,
+          "text": "Table 13.9"
+        },
+        {
+          "order": 8,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            282.8,
+            1051.3,
+            1068.3,
+            1705.4
+          ],
+          "conf": 0.984,
+          "text": "<table>\n<thead>\n<tr>\n<th>Marks obtained</th>\n<th>Number of students<br/>(Frequency)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>20</td>\n<td>6</td>\n</tr>\n<tr>\n<td>25</td>\n<td>20</td>\n</tr>\n<tr>\n<td>28</td>\n<td>24</td>\n</tr>\n<tr>\n<td>29</td>\n<td>28</td>\n</tr>\n<tr>\n<td>33</td>\n<td>15</td>\n</tr>\n<tr>\n<td>38</td>\n<td>4</td>\n</tr>\n<tr>\n<td>42</td>\n<td>2</td>\n</tr>\n<tr>\n<td>43</td>\n<td>1</td>\n</tr>\n</tbody>\n<tfoot>\n<tr>\n<td>Total</td>\n<td>100</td>\n</tr>\n</tfoot>\n</table>"
+        }
+      ],
+      "page": 17
+    },
+    {
+      "image": "0082_p0018.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.4,
+            253.8,
+            1178.2,
+            335.2
+          ],
+          "conf": 0.861,
+          "text": "Here $n = 100$, which is even. The median will be the average of the $\\frac{n}{2}$ th and the"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            340.7,
+            1177.7,
+            484.5
+          ],
+          "conf": 0.907,
+          "text": "$\\left( \\frac{n}{2} + 1 \\right)$th observations, i.e., the 50th and 51st observations. To find these\n\nobservations, we proceed as follows:"
+        },
+        {
+          "order": 2,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            557.3,
+            483.0,
+            741.6,
+            530.7
+          ],
+          "conf": 0.924,
+          "text": "Table 13.10"
+        },
+        {
+          "order": 3,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            258.4,
+            524.8,
+            1086.8,
+            1021.6
+          ],
+          "conf": 0.985,
+          "text": "<table>\n<thead>\n<tr>\n<th>Marks obtained</th>\n<th>Number of students</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>20</td>\n<td>6</td>\n</tr>\n<tr>\n<td>upto 25</td>\n<td>6 + 20 = 26</td>\n</tr>\n<tr>\n<td>upto 28</td>\n<td>26 + 24 = 50</td>\n</tr>\n<tr>\n<td>upto 29</td>\n<td>50 + 28 = 78</td>\n</tr>\n<tr>\n<td>upto 33</td>\n<td>78 + 15 = 93</td>\n</tr>\n<tr>\n<td>upto 38</td>\n<td>93 + 4 = 97</td>\n</tr>\n<tr>\n<td>upto 42</td>\n<td>97 + 2 = 99</td>\n</tr>\n<tr>\n<td>upto 43</td>\n<td>99 + 1 = 100</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1030.6,
+            1177.8,
+            1117.4
+          ],
+          "conf": 0.939,
+          "text": "Now we add another column depicting this information to the frequency table\nabove and name it as $cumulative$ $frequency$ $column$."
+        },
+        {
+          "order": 5,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            557.7,
+            1128.0,
+            739.4,
+            1176.7
+          ],
+          "conf": 0.902,
+          "text": "Table 13.11"
+        },
+        {
+          "order": 6,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            120.1,
+            1167.4,
+            1178.7,
+            1705.8
+          ],
+          "conf": 0.983,
+          "text": "<table>\n<thead>\n<tr>\n<th>Marks obtained</th>\n<th>Number of students</th>\n<th>Cumulative frequency</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>20</td>\n<td>6</td>\n<td>6</td>\n</tr>\n<tr>\n<td>25</td>\n<td>20</td>\n<td>26</td>\n</tr>\n<tr>\n<td>28</td>\n<td>24</td>\n<td>50</td>\n</tr>\n<tr>\n<td>29</td>\n<td>28</td>\n<td>78</td>\n</tr>\n<tr>\n<td>33</td>\n<td>15</td>\n<td>93</td>\n</tr>\n<tr>\n<td>38</td>\n<td>4</td>\n<td>97</td>\n</tr>\n<tr>\n<td>42</td>\n<td>2</td>\n<td>99</td>\n</tr>\n<tr>\n<td>43</td>\n<td>1</td>\n<td>100</td>\n</tr>\n</tbody>\n</table>"
+        }
+      ],
+      "page": 18
+    },
+    {
+      "image": "0082_p0019.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            259.7,
+            567.5,
+            308.8
+          ],
+          "conf": 0.919,
+          "text": "From the table above, we see that:"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            501.9,
+            307.6,
+            939.6,
+            407.2
+          ],
+          "conf": 0.571,
+          "text": "50th observaton is 28      (Why?)\n51st observation is 29"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            420.5,
+            721.5,
+            512.6
+          ],
+          "conf": 0.911,
+          "text": "So, $\\text{Median} = \\frac{28 + 29}{2} = 28.5$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            517.8,
+            1178.6,
+            683.4
+          ],
+          "conf": 0.959,
+          "text": "**Remark :** The part of Table 13.11 consisting Column 1 and Column 3 is known as\n*Cumulative Frequency Table*. The median marks 28.5 conveys the information that\nabout 50% students obtained marks less than 28.5 and another 50% students obtained\nmarks more than 28.5."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            685.1,
+            1178.6,
+            772.7
+          ],
+          "conf": 0.935,
+          "text": "Now, let us see how to obtain the median of grouped data, through the following\nsituation."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            774.2,
+            1177.3,
+            863.2
+          ],
+          "conf": 0.927,
+          "text": "Consider a grouped frequency distribution of marks obtained, out of 100, by 53\nstudents, in a certain examination, as follows:"
+        },
+        {
+          "order": 6,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            557.3,
+            887.5,
+            741.1,
+            936.7
+          ],
+          "conf": 0.932,
+          "text": "Table 13.12"
+        },
+        {
+          "order": 7,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            290.8,
+            931.4,
+            1072.9,
+            1590.9
+          ],
+          "conf": 0.985,
+          "text": "<table>\n<thead>\n<tr>\n<th>Marks</th>\n<th>Number of students</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - 10</td>\n<td>5</td>\n</tr>\n<tr>\n<td>10 - 20</td>\n<td>3</td>\n</tr>\n<tr>\n<td>20 - 30</td>\n<td>4</td>\n</tr>\n<tr>\n<td>30 - 40</td>\n<td>3</td>\n</tr>\n<tr>\n<td>40 - 50</td>\n<td>3</td>\n</tr>\n<tr>\n<td>50 - 60</td>\n<td>4</td>\n</tr>\n<tr>\n<td>60 - 70</td>\n<td>7</td>\n</tr>\n<tr>\n<td>70 - 80</td>\n<td>9</td>\n</tr>\n<tr>\n<td>80 - 90</td>\n<td>7</td>\n</tr>\n<tr>\n<td>90 - 100</td>\n<td>8</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1600.9,
+            878.0,
+            1650.3
+          ],
+          "conf": 0.871,
+          "text": "From the table above, try to answer the following questions:"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.6,
+            1649.2,
+            1169.1,
+            1698.4
+          ],
+          "conf": 0.883,
+          "text": "How many students have scored marks less than 10? The answer is clearly 5."
+        }
+      ],
+      "page": 19
+    },
+    {
+      "image": "0082_p0020.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            258.6,
+            1178.6,
+            453.0
+          ],
+          "conf": 0.973,
+          "text": "How many students have scored less than 20 marks? Observe that the number\nof students who have scored less than 20 include the number of students who have\nscored marks from 0 - 10 as well as the number of students who have scored marks\nfrom 10 - 20. So, the total number of students with marks less than 20 is $5 + 3$, i.e., 8.\nWe say that the cumulative frequency of the class 10 -20 is 8."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            455.6,
+            1179.0,
+            582.9
+          ],
+          "conf": 0.962,
+          "text": "Similarly, we can compute the cumulative frequencies of the other classes, i.e.,\nthe number of students with marks less than 30, less than 40, . . ., less than 100. We\ngive them in Table 13.13 given below:"
+        },
+        {
+          "order": 2,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            557.0,
+            594.9,
+            741.4,
+            643.5
+          ],
+          "conf": 0.925,
+          "text": "Table 13.13"
+        },
+        {
+          "order": 3,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            205.5,
+            649.0,
+            1117.4,
+            1279.3
+          ],
+          "conf": 0.986,
+          "text": "<table>\n<thead>\n<tr>\n<th>Marks obtained</th>\n<th>Number of students<br/>(Cumulative frequency)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Less than 10</td>\n<td>5</td>\n</tr>\n<tr>\n<td>Less than 20</td>\n<td>5 + 3 = 8</td>\n</tr>\n<tr>\n<td>Less than 30</td>\n<td>8 + 4 = 12</td>\n</tr>\n<tr>\n<td>Less than 40</td>\n<td>12 + 3 = 15</td>\n</tr>\n<tr>\n<td>Less than 50</td>\n<td>15 + 3 = 18</td>\n</tr>\n<tr>\n<td>Less than 60</td>\n<td>18 + 4 = 22</td>\n</tr>\n<tr>\n<td>Less than 70</td>\n<td>22 + 7 = 29</td>\n</tr>\n<tr>\n<td>Less than 80</td>\n<td>29 + 9 = 38</td>\n</tr>\n<tr>\n<td>Less than 90</td>\n<td>38 + 7 = 45</td>\n</tr>\n<tr>\n<td>Less than 100</td>\n<td>45 + 8 = 53</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1285.9,
+            1179.2,
+            1413.6
+          ],
+          "conf": 0.946,
+          "text": "The distribution given above is called the *cumulative frequency distribution of*\n*the less than type*. Here $10, 20, 30, \\dots 100$, are the upper limits of the respective\nclass intervals."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1417.4,
+            1178.2,
+            1710.4
+          ],
+          "conf": 0.911,
+          "text": "We can similarly make the table for the number of students with scores, more\nthan or equal to 0, more than or equal to 10, more than or equal to 20, and so on. From\nTable 13.12, we observe that all 53 students have scored marks more than or equal to\n0. Since there are 5 students scoring marks in the interval 0 - 10, this means that there\nare $53 - 5 = 48$ students getting more than or equal to 10 marks. Continuing in the\nsame manner, we get the number of students scoring 20 or above as $48 - 3 = 45$, 30 or\nabove as $45 - 4 = 41$, and so on, as shown in Table 13.14."
+        }
+      ],
+      "page": 20
+    },
+    {
+      "image": "0082_p0021.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            557.3,
+            256.5,
+            741.8,
+            304.9
+          ],
+          "conf": 0.922,
+          "text": "Table 13.14"
+        },
+        {
+          "order": 1,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            222.0,
+            302.5,
+            1135.6,
+            841.5
+          ],
+          "conf": 0.988,
+          "text": "<table>\n<thead>\n<tr>\n<th>Marks obtained</th>\n<th>Number of students<br/>(Cumulative frequency)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>More than or equal to 0</td>\n<td>53</td>\n</tr>\n<tr>\n<td>More than or equal to 10</td>\n<td>53 – 5 = 48</td>\n</tr>\n<tr>\n<td>More than or equal to 20</td>\n<td>48 – 3 = 45</td>\n</tr>\n<tr>\n<td>More than or equal to 30</td>\n<td>45 – 4 = 41</td>\n</tr>\n<tr>\n<td>More than or equal to 40</td>\n<td>41 – 3 = 38</td>\n</tr>\n<tr>\n<td>More than or equal to 50</td>\n<td>38 – 3 = 35</td>\n</tr>\n<tr>\n<td>More than or equal to 60</td>\n<td>35 – 4 = 31</td>\n</tr>\n<tr>\n<td>More than or equal to 70</td>\n<td>31 – 7 = 24</td>\n</tr>\n<tr>\n<td>More than or equal to 80</td>\n<td>24 – 9 = 15</td>\n</tr>\n<tr>\n<td>More than or equal to 90</td>\n<td>15 – 7 = 8</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            848.4,
+            1178.6,
+            934.8
+          ],
+          "conf": 0.932,
+          "text": "The table above is called a cumulative frequency distribution of the more\nthan type. Here $0, 10, 20, \\dots, 90$ give the lower limits of the respective class intervals."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            933.1,
+            1177.7,
+            1018.6
+          ],
+          "conf": 0.936,
+          "text": "Now, to find the median of grouped data, we can make use of any of these\ncumulative frequency distributions."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.6,
+            1017.6,
+            1081.6,
+            1067.6
+          ],
+          "conf": 0.907,
+          "text": "Let us combine Tables 13.12 and 13.13 to get Table 13.15 given below:"
+        },
+        {
+          "order": 5,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            556.8,
+            1077.9,
+            741.6,
+            1125.8
+          ],
+          "conf": 0.92,
+          "text": "Table 13.15"
+        },
+        {
+          "order": 6,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            119.9,
+            1123.7,
+            1178.7,
+            1615.6
+          ],
+          "conf": 0.985,
+          "text": "<table>\n<thead>\n<tr>\n<th>Marks</th>\n<th>Number of students (f)</th>\n<th>Cumulative frequency (cf)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - 10</td>\n<td>5</td>\n<td>5</td>\n</tr>\n<tr>\n<td>10 - 20</td>\n<td>3</td>\n<td>8</td>\n</tr>\n<tr>\n<td>20 - 30</td>\n<td>4</td>\n<td>12</td>\n</tr>\n<tr>\n<td>30 - 40</td>\n<td>3</td>\n<td>15</td>\n</tr>\n<tr>\n<td>40 - 50</td>\n<td>3</td>\n<td>18</td>\n</tr>\n<tr>\n<td>50 - 60</td>\n<td>4</td>\n<td>22</td>\n</tr>\n<tr>\n<td>60 - 70</td>\n<td>7</td>\n<td>29</td>\n</tr>\n<tr>\n<td>70 - 80</td>\n<td>9</td>\n<td>38</td>\n</tr>\n<tr>\n<td>80 - 90</td>\n<td>7</td>\n<td>45</td>\n</tr>\n<tr>\n<td>90 - 100</td>\n<td>8</td>\n<td>53</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1620.7,
+            1177.9,
+            1705.2
+          ],
+          "conf": 0.922,
+          "text": "Now in a grouped data, we may not be able to find the middle observation by\nlooking at the cumulative frequencies as the middle observation will be some value in"
+        }
+      ],
+      "page": 21
+    },
+    {
+      "image": "0082_p0022.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.4,
+            190.6,
+            1177.9,
+            238.6
+          ],
+          "conf": 0.846,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.6,
+            191.3,
+            248.4,
+            236.9
+          ],
+          "conf": 0.547,
+          "text": "STATISTICS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            257.6,
+            1178.7,
+            343.3
+          ],
+          "conf": 0.954,
+          "text": "a class interval. It is, therefore, necessary to find the value inside a class that divides\nthe whole distribution into two halves. But which class should this be?"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            357.6,
+            1177.5,
+            680.2
+          ],
+          "conf": 0.833,
+          "text": "To find this class, we find the cumulative frequencies of all the classes and $\\frac{n}{2}$.\n\nWe now locate the class whose cumulative frequency is greater than (and nearest to)\n\n$\\frac{n}{2}$. This is called the $median$ $class$. In the distribution above, $n = 53$. So, $\\frac{n}{2} = 26.5$.\n\nNow $60 - 70$ is the class whose cumulative frequency $29$ is greater than (and nearest\n\nto) $\\frac{n}{2}$, i.e., $26.5$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            691.0,
+            640.2,
+            741.2
+          ],
+          "conf": 0.922,
+          "text": "Therefore, $60 - 70$ is the median class."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            743.3,
+            1178.1,
+            829.4
+          ],
+          "conf": 0.947,
+          "text": "After finding the median class, we use the following formula for calculating the\nmedian."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            371.5,
+            836.2,
+            759.6,
+            1004.9
+          ],
+          "conf": 0.93,
+          "text": "$$ \\text{Median} = l + \\left( \\frac{\\frac{n}{2} - \\text{cf}}{f} \\right) \\times h, $$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            1005.1,
+            1090.4,
+            1244.7
+          ],
+          "conf": 0.701,
+          "text": "where $l =$ lower limit of median class,\n$n =$ number of observations,\ncf $=$ cumulative frequency of class preceding the median class,\n$f =$ frequency of median class,\n$h =$ class size (assuming class size to be equal)."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1255.5,
+            907.7,
+            1337.8
+          ],
+          "conf": 0.769,
+          "text": "Substituting the values $\\frac{n}{2} = 26.5, l = 60, \\text{cf} = 22, f = 7, h = 10$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1334.9,
+            496.2,
+            1384.2
+          ],
+          "conf": 0.865,
+          "text": "in the formula above, we get"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            371.8,
+            1384.0,
+            823.2,
+            1632.7
+          ],
+          "conf": 0.744,
+          "text": "$$Median = 60 + \\left( \\frac{26.5 - 22}{7} \\right) \\times 10$$\n\n$$= 60 + \\frac{45}{7}$$\n\n$$= 66.4$$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1633.8,
+            1178.3,
+            1718.9
+          ],
+          "conf": 0.914,
+          "text": "So, about half the students have scored marks less than 66.4, and the other half have\nscored marks more than 66.4."
+        }
+      ],
+      "page": 22
+    },
+    {
+      "image": "0082_p0023.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            256.9,
+            1178.6,
+            342.2
+          ],
+          "conf": 0.892,
+          "text": "Example 7 : A survey regarding the heights (in cm) of 51 girls of Class X of a school\nwas conducted and the following data was obtained:"
+        },
+        {
+          "order": 1,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            257.9,
+            338.0,
+            1079.3,
+            771.2
+          ],
+          "conf": 0.987,
+          "text": "<table>\n<thead>\n<tr>\n<th>Height (in cm)</th>\n<th>Number of girls</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Less than 140</td>\n<td>4</td>\n</tr>\n<tr>\n<td>Less than 145</td>\n<td>11</td>\n</tr>\n<tr>\n<td>Less than 150</td>\n<td>29</td>\n</tr>\n<tr>\n<td>Less than 155</td>\n<td>40</td>\n</tr>\n<tr>\n<td>Less than 160</td>\n<td>46</td>\n</tr>\n<tr>\n<td>Less than 165</td>\n<td>51</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            779.9,
+            429.1,
+            829.2
+          ],
+          "conf": 0.919,
+          "text": "Find the median height."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            832.0,
+            1178.1,
+            917.1
+          ],
+          "conf": 0.931,
+          "text": "Solution : To calculate the median height, we need to find the class intervals and their\ncorresponding frequencies."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            917.5,
+            1178.7,
+            1258.2
+          ],
+          "conf": 0.977,
+          "text": "The given distribution being of the $less$ $than$ $type$, $140, 145, 150, \\dots, 165$ give the\nupper limits of the corresponding class intervals. So, the classes should be below $140$,\n$140 - 145, 145 - 150, \\dots, 160 - 165$. Observe that from the given distribution, we find\nthat there are $4$ girls with height less than $140$, i.e., the frequency of class interval\nbelow $140$ is $4$. Now, there are $11$ girls with heights less than $145$ and $4$ girls with\nheight less than $140$. Therefore, the number of girls with height in the interval\n$140 - 145$ is $11 - 4 = 7$. Similarly, the frequency of $145 - 150$ is $29 - 11 = 18$, for\n$150 - 155$, it is $40 - 29 = 11$, and so on. So, our frequency distribution table with the\ngiven cumulative frequencies becomes:"
+        },
+        {
+          "order": 5,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            556.8,
+            1270.0,
+            741.9,
+            1317.8
+          ],
+          "conf": 0.901,
+          "text": "Table 13.16"
+        },
+        {
+          "order": 6,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            120.0,
+            1313.3,
+            1178.1,
+            1723.7
+          ],
+          "conf": 0.981,
+          "text": "<table>\n<thead>\n<tr>\n<th>Class intervals</th>\n<th>Frequency</th>\n<th>Cumulative frequency</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Below 140</td>\n<td>4</td>\n<td>4</td>\n</tr>\n<tr>\n<td>140 - 145</td>\n<td>7</td>\n<td>11</td>\n</tr>\n<tr>\n<td>145 - 150</td>\n<td>18</td>\n<td>29</td>\n</tr>\n<tr>\n<td>150 - 155</td>\n<td>11</td>\n<td>40</td>\n</tr>\n<tr>\n<td>155 - 160</td>\n<td>6</td>\n<td>46</td>\n</tr>\n<tr>\n<td>160 - 165</td>\n<td>5</td>\n<td>51</td>\n</tr>\n</tbody>\n</table>"
+        }
+      ],
+      "page": 23
+    },
+    {
+      "image": "0082_p0024.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.2,
+            189.8,
+            1178.6,
+            239.0
+          ],
+          "conf": 0.84,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.3,
+            191.1,
+            248.8,
+            237.5
+          ],
+          "conf": 0.521,
+          "text": "STATISTICS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            274.4,
+            1171.8,
+            364.2
+          ],
+          "conf": 0.841,
+          "text": "Now $n = 51$. So, $\\frac{n}{2} = \\frac{51}{2} = 25.5$. This observation lies in the class 145 - 150. Then,"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            335.8,
+            365.0,
+            661.7,
+            417.2
+          ],
+          "conf": 0.778,
+          "text": "$$l \\text{ (the lower limit)} = 145,$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            319.9,
+            422.4,
+            1178.1,
+            474.8
+          ],
+          "conf": 0.885,
+          "text": "cf (the cumulative frequency of the class preceding 145 - 150) = 11,"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            327.5,
+            475.2,
+            1010.5,
+            527.6
+          ],
+          "conf": 0.865,
+          "text": "$$f \\text{ (the frequency of the median class } 145 - 150) = 18,$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            327.1,
+            523.8,
+            621.4,
+            573.0
+          ],
+          "conf": 0.79,
+          "text": "$$h \\text{ (the class size)} = 5.$$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            157.4,
+            581.2,
+            903.9,
+            743.1
+          ],
+          "conf": 0.936,
+          "text": "Using the formula, Median $= l + \\left( \\frac{\\frac{n}{2} - \\text{cf}}{f} \\right) \\times h$ , we have"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            396.1,
+            761.5,
+            804.3,
+            865.5
+          ],
+          "conf": 0.886,
+          "text": "$$Median = 145 + \\left( \\frac{25.5 - 11}{18} \\right) \\times 5$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            495.3,
+            870.6,
+            817.4,
+            963.9
+          ],
+          "conf": 0.892,
+          "text": "$$= 145 + \\frac{72.5}{18} = 149.03.$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            954.9,
+            717.1,
+            1005.7
+          ],
+          "conf": 0.905,
+          "text": "So, the median height of the girls is 149.03 cm."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1001.9,
+            1178.5,
+            1088.5
+          ],
+          "conf": 0.942,
+          "text": "This means that the height of about $50\\%$ of the girls is less than this height, and\n$50\\%$ are taller than this height."
+        },
+        {
+          "order": 12,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1084.7,
+            1177.3,
+            1171.4
+          ],
+          "conf": 0.87,
+          "text": "Example 8 : The median of the following data is 525. Find the values of $x$ and $y$, if the\ntotal frequency is 100."
+        },
+        {
+          "order": 13,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            243.8,
+            1169.6,
+            1020.8,
+            1711.3
+          ],
+          "conf": 0.983,
+          "text": "<table>\n<thead>\n<tr>\n<th>Class intervals</th>\n<th>Frequency</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - 100</td>\n<td>2</td>\n</tr>\n<tr>\n<td>100 - 200</td>\n<td>5</td>\n</tr>\n<tr>\n<td>200 - 300</td>\n<td>x</td>\n</tr>\n<tr>\n<td>300 - 400</td>\n<td>12</td>\n</tr>\n<tr>\n<td>400 - 500</td>\n<td>17</td>\n</tr>\n<tr>\n<td>500 - 600</td>\n<td>20</td>\n</tr>\n<tr>\n<td>600 - 700</td>\n<td>y</td>\n</tr>\n<tr>\n<td>700 - 800</td>\n<td>9</td>\n</tr>\n<tr>\n<td>800 - 900</td>\n<td>7</td>\n</tr>\n<tr>\n<td>900 - 1000</td>\n<td>4</td>\n</tr>\n</tbody>\n</table>"
+        }
+      ],
+      "page": 24
+    },
+    {
+      "image": "0082_p0025.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.6,
+            257.1,
+            273.4,
+            306.7
+          ],
+          "conf": 0.807,
+          "text": "Solution :"
+        },
+        {
+          "order": 1,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            119.6,
+            302.5,
+            1177.4,
+            884.1
+          ],
+          "conf": 0.991,
+          "text": "<table>\n<thead>\n<tr>\n<th>Class intervals</th>\n<th>Frequency</th>\n<th>Cumulative frequency</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - 100</td>\n<td>2</td>\n<td>2</td>\n</tr>\n<tr>\n<td>100 - 200</td>\n<td>5</td>\n<td>7</td>\n</tr>\n<tr>\n<td>200 - 300</td>\n<td>x</td>\n<td>7 + x</td>\n</tr>\n<tr>\n<td>300 - 400</td>\n<td>12</td>\n<td>19 + x</td>\n</tr>\n<tr>\n<td>400 - 500</td>\n<td>17</td>\n<td>36 + x</td>\n</tr>\n<tr>\n<td>500 - 600</td>\n<td>20</td>\n<td>56 + x</td>\n</tr>\n<tr>\n<td>600 - 700</td>\n<td>y</td>\n<td>56 + x + y</td>\n</tr>\n<tr>\n<td>700 - 800</td>\n<td>9</td>\n<td>65 + x + y</td>\n</tr>\n<tr>\n<td>800 - 900</td>\n<td>7</td>\n<td>72 + x + y</td>\n</tr>\n<tr>\n<td>900 - 1000</td>\n<td>4</td>\n<td>76 + x + y</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            887.3,
+            422.9,
+            936.9
+          ],
+          "conf": 0.891,
+          "text": "It is given that $n = 100$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            935.8,
+            1178.3,
+            986.3
+          ],
+          "conf": 0.891,
+          "text": "So, $76 + x + y = 100$, i.e., $x + y = 24$ (1)"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            982.9,
+            780.8,
+            1033.0
+          ],
+          "conf": 0.91,
+          "text": "The median is 525, which lies in the class 500 – 600"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1031.3,
+            716.0,
+            1082.0
+          ],
+          "conf": 0.834,
+          "text": "So, $l = 500$, $f = 20$, cf $= 36 + x$, $h = 100$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            1103.1,
+            972.7,
+            1260.3
+          ],
+          "conf": 0.925,
+          "text": "Using the formula : $\\text{Median} = l + \\left( \\frac{\\frac{n}{2} - \\text{cf}}{f} \\right) h$, we get"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            573.6,
+            1293.7,
+            1018.3,
+            1392.1
+          ],
+          "conf": 0.804,
+          "text": "$$525 = 500 + \\left( \\frac{50 - 36 - x}{20} \\right) \\times 100$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.2,
+            1403.2,
+            828.4,
+            1453.1
+          ],
+          "conf": 0.866,
+          "text": "i.e., $525 - 500 = (14 - x) \\times 5$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.0,
+            1456.9,
+            774.4,
+            1506.7
+          ],
+          "conf": 0.849,
+          "text": "i.e., $25 = 70 - 5x$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.0,
+            1509.0,
+            835.9,
+            1558.6
+          ],
+          "conf": 0.864,
+          "text": "i.e., $5x = 70 - 25 = 45$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.6,
+            1563.7,
+            698.5,
+            1611.8
+          ],
+          "conf": 0.844,
+          "text": "So, $x=9$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.2,
+            1610.2,
+            711.9,
+            1660.2
+          ],
+          "conf": 0.762,
+          "text": "Therefore, from (1), we get $9 + y = 24$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.3,
+            1659.5,
+            711.4,
+            1707.5
+          ],
+          "conf": 0.861,
+          "text": "i.e., $y = 15$"
+        }
+      ],
+      "page": 25
+    },
+    {
+      "image": "0082_p0026.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.4,
+            190.8,
+            1178.3,
+            239.2
+          ],
+          "conf": 0.85,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.9,
+            191.5,
+            248.0,
+            236.6
+          ],
+          "conf": 0.536,
+          "text": "STATISTICS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            262.0,
+            1179.0,
+            356.6
+          ],
+          "conf": 0.959,
+          "text": "Now, that you have studied about all the three measures of central tendency, let\nus discuss **which measure would be best suited for a particular requirement.**"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            363.5,
+            1178.8,
+            632.7
+          ],
+          "conf": 0.981,
+          "text": "The mean is the most frequently used measure of central tendency because it\ntakes into account all the observations, and lies between the extremes, i.e., the largest\nand the smallest observations of the entire data. It also enables us to compare two or\nmore distributions. For example, by comparing the average (mean) results of students\nof different schools of a particular examination, we can conclude which school has a\nbetter performance."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            640.3,
+            1178.7,
+            866.6
+          ],
+          "conf": 0.98,
+          "text": "However, extreme values in the data affect the mean. For example, the mean of\nclasses having frequencies more or less the same is a good representative of the data.\nBut, if one class has frequency, say 2, and the five others have frequency 20, 25, 20,\n21, 18, then the mean will certainly not reflect the way the data behaves. So, in such\ncases, the mean is not a good representative of the data."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            873.6,
+            1178.6,
+            1099.3
+          ],
+          "conf": 0.975,
+          "text": "In problems where individual observations are not important, and we wish to find\nout a ‘typical’ observation, the median is more appropriate, e.g., finding the typical\nproductivity rate of workers, average wage in a country, etc. These are situations\nwhere extreme values may be there. So, rather than the mean, we take the median as\na better measure of central tendency."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1107.9,
+            1178.1,
+            1289.3
+          ],
+          "conf": 0.966,
+          "text": "In situations which require establishing the most frequent value or most popular\nitem, the mode is the best choice, e.g., to find the most popular T.V. programme being\nwatched, the consumer item in greatest demand, the colour of the vehicle used by\nmost of the people, etc."
+        },
+        {
+          "order": 7,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.0,
+            1306.8,
+            288.7,
+            1356.2
+          ],
+          "conf": 0.8,
+          "text": "Remarks :"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1362.7,
+            1178.2,
+            1557.0
+          ],
+          "conf": 0.923,
+          "text": "1. There is a empirical relationship between the three measures of central tendency :\n$$ \\mathbf{3 \\ Median = Mode + 2 Mean} $$\n\n2. The median of grouped data with unequal class sizes can also be calculated. However,\nwe shall not discuss it here."
+        }
+      ],
+      "page": 26
+    },
+    {
+      "image": "0082_p0027.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            520.6,
+            278.5,
+            779.1,
+            329.6
+          ],
+          "conf": 0.782,
+          "text": "EXERCISE 13.3"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.6,
+            335.7,
+            1179.0,
+            448.8
+          ],
+          "conf": 0.928,
+          "text": "1. The following frequency distribution gives the monthly consumption of electricity of\n68 consumers of a locality. Find the median, mean and mode of the data and compare\nthem."
+        },
+        {
+          "order": 2,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            196.7,
+            444.4,
+            1100.3,
+            980.6
+          ],
+          "conf": 0.989,
+          "text": "<table>\n<thead>\n<tr>\n<th>Monthly consumption (in units)</th>\n<th>Number of consumers</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>65 - 85</td>\n<td>4</td>\n</tr>\n<tr>\n<td>85 - 105</td>\n<td>5</td>\n</tr>\n<tr>\n<td>105 - 125</td>\n<td>13</td>\n</tr>\n<tr>\n<td>125 - 145</td>\n<td>20</td>\n</tr>\n<tr>\n<td>145 - 165</td>\n<td>14</td>\n</tr>\n<tr>\n<td>165 - 185</td>\n<td>8</td>\n</tr>\n<tr>\n<td>185 - 205</td>\n<td>4</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.2,
+            985.9,
+            1091.4,
+            1033.6
+          ],
+          "conf": 0.89,
+          "text": "2. If the median of the distribution given below is 28.5, find the values of $x$ and $y$."
+        },
+        {
+          "order": 4,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            274.4,
+            1031.1,
+            1049.0,
+            1563.9
+          ],
+          "conf": 0.983,
+          "text": "<table>\n<thead>\n<tr>\n<th>Class interval</th>\n<th>Frequency</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - 10</td>\n<td>5</td>\n</tr>\n<tr>\n<td>10 - 20</td>\n<td>x</td>\n</tr>\n<tr>\n<td>20 - 30</td>\n<td>20</td>\n</tr>\n<tr>\n<td>30 - 40</td>\n<td>15</td>\n</tr>\n<tr>\n<td>40 - 50</td>\n<td>y</td>\n</tr>\n<tr>\n<td>50 - 60</td>\n<td>5</td>\n</tr>\n</tbody>\n<tfoot>\n<tr>\n<td>Total</td>\n<td>60</td>\n</tr>\n</tfoot>\n</table>"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.3,
+            1575.5,
+            1178.1,
+            1703.9
+          ],
+          "conf": 0.912,
+          "text": "{\\bf 3.} A life insurance agent found the following data for distribution of ages of 100 policy\nholders. Calculate the median age, if policies are given only to persons having age 18\nyears onwards but less than 60 year."
+        }
+      ],
+      "page": 27
+    },
+    {
+      "image": "0082_p0028.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            260.0,
+            258.0,
+            1118.3,
+            908.0
+          ],
+          "conf": 0.988,
+          "text": "<table>\n<thead>\n<tr>\n<th>Age (in years)</th>\n<th>Number of policy holders</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Below 20</td>\n<td>2</td>\n</tr>\n<tr>\n<td>Below 25</td>\n<td>6</td>\n</tr>\n<tr>\n<td>Below 30</td>\n<td>24</td>\n</tr>\n<tr>\n<td>Below 35</td>\n<td>45</td>\n</tr>\n<tr>\n<td>Below 40</td>\n<td>78</td>\n</tr>\n<tr>\n<td>Below 45</td>\n<td>89</td>\n</tr>\n<tr>\n<td>Below 50</td>\n<td>92</td>\n</tr>\n<tr>\n<td>Below 55</td>\n<td>98</td>\n</tr>\n<tr>\n<td>Below 60</td>\n<td>100</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.2,
+            925.3,
+            1177.0,
+            1005.3
+          ],
+          "conf": 0.901,
+          "text": "4. The lengths of 40 leaves of a plant are measured correct to the nearest millimetre, and\nthe data obtained is represented in the following table :"
+        },
+        {
+          "order": 2,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            264.5,
+            1006.8,
+            1085.4,
+            1543.4
+          ],
+          "conf": 0.984,
+          "text": "<table>\n<thead>\n<tr>\n<th>Length (in mm)</th>\n<th>Number of leaves</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>118 - 126</td>\n<td>3</td>\n</tr>\n<tr>\n<td>127 - 135</td>\n<td>5</td>\n</tr>\n<tr>\n<td>136 - 144</td>\n<td>9</td>\n</tr>\n<tr>\n<td>145 - 153</td>\n<td>12</td>\n</tr>\n<tr>\n<td>154 - 162</td>\n<td>5</td>\n</tr>\n<tr>\n<td>163 - 171</td>\n<td>4</td>\n</tr>\n<tr>\n<td>172 - 180</td>\n<td>2</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            194.0,
+            1548.5,
+            631.9,
+            1596.4
+          ],
+          "conf": 0.882,
+          "text": "Find the median length of the leaves."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            193.7,
+            1592.6,
+            1178.6,
+            1707.9
+          ],
+          "conf": 0.939,
+          "text": "(**Hint :** The data needs to be converted to continuous classes for finding the median,\nsince the formula assumes continuous classes. The classes then change to\n117.5 - 126.5, 126.5 - 135.5, ..., 171.5 - 180.5.)"
+        }
+      ],
+      "page": 28
+    },
+    {
+      "image": "0082_p0029.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.0,
+            256.5,
+            1070.0,
+            305.5
+          ],
+          "conf": 0.898,
+          "text": "5. The following table gives the distribution of the life time of 400 neon lamps :"
+        },
+        {
+          "order": 1,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            245.6,
+            307.8,
+            1077.3,
+            769.7
+          ],
+          "conf": 0.986,
+          "text": "<table>\n<thead>\n<tr>\n<th>Life time (in hours)</th>\n<th>Number of lamps</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1500 - 2000</td>\n<td>14</td>\n</tr>\n<tr>\n<td>2000 - 2500</td>\n<td>56</td>\n</tr>\n<tr>\n<td>2500 - 3000</td>\n<td>60</td>\n</tr>\n<tr>\n<td>3000 - 3500</td>\n<td>86</td>\n</tr>\n<tr>\n<td>3500 - 4000</td>\n<td>74</td>\n</tr>\n<tr>\n<td>4000 - 4500</td>\n<td>62</td>\n</tr>\n<tr>\n<td>4500 - 5000</td>\n<td>48</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            196.2,
+            772.7,
+            604.5,
+            820.6
+          ],
+          "conf": 0.862,
+          "text": "Find the median life time of a lamp."
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.5,
+            819.1,
+            1177.9,
+            931.2
+          ],
+          "conf": 0.924,
+          "text": "**6.** 100 surnames were randomly picked up from a local telephone directory and the\nfrequency distribution of the number of letters in the English alphabets in the surnames\nwas obtained as follows:"
+        },
+        {
+          "order": 4,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            193.0,
+            924.0,
+            1178.6,
+            1075.8
+          ],
+          "conf": 0.968,
+          "text": "<table>\n<tbody>\n<tr>\n<th>Number of letters</th>\n<td>1 - 4</td>\n<td>4 - 7</td>\n<td>7 - 10</td>\n<td>10 - 13</td>\n<td>13 - 16</td>\n<td>16 - 19</td>\n</tr>\n<tr>\n<th>Number of surnames</th>\n<td>6</td>\n<td>30</td>\n<td>40</td>\n<td>16</td>\n<td>4</td>\n<td>4</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            195.0,
+            1079.2,
+            1179.0,
+            1160.0
+          ],
+          "conf": 0.917,
+          "text": "Determine the median number of letters in the surnames. Find the mean number of\nletters in the surnames? Also, find the modal size of the surnames."
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.3,
+            1157.1,
+            1178.5,
+            1238.0
+          ],
+          "conf": 0.889,
+          "text": "7. The distribution below gives the weights of 30 students of a class. Find the median\nweight of the students."
+        },
+        {
+          "order": 7,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            192.8,
+            1235.4,
+            1177.9,
+            1396.1
+          ],
+          "conf": 0.966,
+          "text": "<table>\n<thead>\n<tr>\n<th>Weight (in kg)</th>\n<th>40 - 45</th>\n<th>45 - 50</th>\n<th>50 - 55</th>\n<th>55 - 60</th>\n<th>60 - 65</th>\n<th>65 - 70</th>\n<th>70 - 75</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<th>Number of students</th>\n<td>2</td>\n<td>3</td>\n<td>8</td>\n<td>6</td>\n<td>6</td>\n<td>3</td>\n<td>2</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 8,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.6,
+            1424.1,
+            350.0,
+            1476.1
+          ],
+          "conf": 0.835,
+          "text": "13.5 Summary"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1475.5,
+            752.3,
+            1523.6
+          ],
+          "conf": 0.895,
+          "text": "In this chapter, you have studied the following points:"
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.4,
+            1519.2,
+            761.4,
+            1728.8
+          ],
+          "conf": 0.88,
+          "text": "1. The mean for grouped data can be found by :\n\n(i) the direct method : $\\bar{x} = \\frac{\\Sigma f_i x_i}{\\Sigma f_i}$\n\n(ii) the assumed mean method : $\\bar{x} = a + \\frac{\\Sigma f_i d_i}{\\Sigma f_i}$"
+        }
+      ],
+      "page": 29
+    },
+    {
+      "image": "0082_p0030.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.8,
+            190.0,
+            1176.4,
+            238.4
+          ],
+          "conf": 0.82,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.0,
+            191.1,
+            248.0,
+            237.1
+          ],
+          "conf": 0.573,
+          "text": "STATISTICS"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            202.8,
+            270.6,
+            841.6,
+            373.0
+          ],
+          "conf": 0.87,
+          "text": "(iii) the step deviation method : $\\bar{x} = a + \\left( \\frac{\\Sigma f_i u_i}{\\Sigma f_i} \\right) \\times h$,"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            195.8,
+            377.3,
+            1177.0,
+            457.5
+          ],
+          "conf": 0.945,
+          "text": "with the assumption that the frequency of a class is centred at its mid-point, called its\nclass mark."
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.6,
+            456.2,
+            923.6,
+            504.3
+          ],
+          "conf": 0.9,
+          "text": "2. The mode for grouped data can be found by using the formula:"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            484.1,
+            512.4,
+            884.1,
+            611.6
+          ],
+          "conf": 0.92,
+          "text": "$$\\text{Mode} = l + \\left( \\frac{f_1 - f_0}{2f_1 - f_0 - f_2} \\right) \\times h$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            194.5,
+            601.0,
+            692.9,
+            647.5
+          ],
+          "conf": 0.889,
+          "text": "where symbols have their usual meanings."
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            153.9,
+            645.1,
+            1177.4,
+            725.6
+          ],
+          "conf": 0.929,
+          "text": "3. The cumulative frequency of a class is the frequency obtained by adding the frequencies\nof all the classes preceding the given class."
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.4,
+            723.5,
+            898.0,
+            770.6
+          ],
+          "conf": 0.907,
+          "text": "4. The median for grouped data is formed by using the formula:"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            503.8,
+            787.9,
+            868.3,
+            938.4
+          ],
+          "conf": 0.928,
+          "text": "$$ \\text{Median} = l + \\left( \\frac{\\frac{n}{2} - \\text{cf}}{f} \\right) \\times h, $$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            195.3,
+            956.3,
+            693.3,
+            1004.1
+          ],
+          "conf": 0.9,
+          "text": "where symbols have their usual meanings."
+        },
+        {
+          "order": 11,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1035.1,
+            1177.7,
+            1321.3
+          ],
+          "conf": 0.919,
+          "text": "A NOTE TO THE READER\n\nFor calculating mode and median for grouped data, it should be\nensured that the class intervals are continuous before applying the\nformulae. Same condition also apply for construction of an ogive.\nFurther, in case of ogives, the scale may not be the same on both the axes."
+        }
+      ],
+      "page": 30
+    }
+  ]
+}

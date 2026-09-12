@@ -1,0 +1,1746 @@
+{
+  "book": "1009",
+  "relpath": "dataset/input/eng/10/1009.pdf",
+  "num_pages": 11,
+  "pages": [
+    {
+      "image": "0078_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            544.8,
+            217.2,
+            756.1,
+            443.8
+          ],
+          "conf": 0.897,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            604.8,
+            410.4,
+            698.4,
+            444.4
+          ],
+          "conf": 0.698,
+          "text": "$1062\\text{CH}09$"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            289.2,
+            466.3,
+            1178.6,
+            643.2
+          ],
+          "conf": 0.914,
+          "text": "SOME APPLICATIONS OF\nTRIGONOMETRY 9"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.4,
+            734.4,
+            517.3,
+            786.0
+          ],
+          "conf": 0.916,
+          "text": "9.1 Heights and Distances"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            786.2,
+            1178.8,
+            906.3
+          ],
+          "conf": 0.958,
+          "text": "In the previous chapter, you have studied about trigonometric ratios. In this chapter,\nyou will be studying about some ways in which trigonometry is used in the life around\nyou."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            167.4,
+            895.5,
+            1162.1,
+            945.1
+          ],
+          "conf": 0.895,
+          "text": "Let us consider Fig. 8.1 of previous chapter, which is redrawn below in Fig. 9.1."
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            119.2,
+            969.8,
+            1175.2,
+            1401.6
+          ],
+          "conf": 0.951,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            582.5,
+            1427.5,
+            712.3,
+            1478.4
+          ],
+          "conf": 0.899,
+          "text": "Fig. 9.1"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1485.2,
+            1179.8,
+            1642.7
+          ],
+          "conf": 0.957,
+          "text": "In this figure, the line AC drawn from the eye of the student to the top of the\nminar is called the \\textit{line of sight}. The student is looking at the top of the minar. The\nangle BAC, so formed by the line of sight with the horizontal, is called the \\textit{angle of}\n\\textit{elevation} of the top of the minar from the eye of the student."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1643.1,
+            1179.4,
+            1728.2
+          ],
+          "conf": 0.916,
+          "text": "Thus, the **line of sight** is the line drawn from the eye of an observer to the point\nin the object viewed by the observer. The **angle of elevation** of the point viewed is"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0078_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            257.3,
+            1178.6,
+            379.2
+          ],
+          "conf": 0.963,
+          "text": "the angle formed by the line of sight with the horizontal when the point being viewed is\nabove the horizontal level, i.e., the case when we raise our head to look at the object\n(see Fig. 9.2).\n\n**Object**"
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            394.6,
+            357.6,
+            945.5,
+            688.2
+          ],
+          "conf": 0.959,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            584.2,
+            686.7,
+            711.9,
+            737.0
+          ],
+          "conf": 0.922,
+          "text": "Fig. 9.2"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            745.4,
+            1179.9,
+            903.6
+          ],
+          "conf": 0.968,
+          "text": "Now, consider the situation given in Fig. 8.2. The girl sitting on the balcony is\nlooking down at a flower pot placed on a stair of the temple. In this case, the line of\nsight is below the horizontal level. The angle so formed by the line of sight with the\nhorizontal is called the angle of depression."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            903.1,
+            1178.2,
+            1061.7
+          ],
+          "conf": 0.966,
+          "text": "Thus, the **angle of depression** of a point on the object being viewed is the angle\nformed by the line of sight with the horizontal when the point is below the horizontal\nlevel, i.e., the case when we lower our head to look at the point being viewed\n(see Fig. 9.3)."
+        },
+        {
+          "order": 5,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            278.3,
+            1062.9,
+            1049.6,
+            1423.9
+          ],
+          "conf": 0.943,
+          "text": ""
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            583.7,
+            1428.2,
+            711.8,
+            1478.6
+          ],
+          "conf": 0.896,
+          "text": "Fig. 9.3"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1486.0,
+            1177.9,
+            1572.4
+          ],
+          "conf": 0.918,
+          "text": "Now, you may identify the lines of sight, and the angles so formed in Fig. 8.3.\nAre they angles of elevation or angles of depression?"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1571.5,
+            1178.3,
+            1691.8
+          ],
+          "conf": 0.937,
+          "text": "Let us refer to Fig. 9.1 again. If you want to find the height CD of the minar\nwithout actually measuring it, what information do you need? You would need to know\nthe following:"
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            211.0,
+            1692.7,
+            1179.1,
+            1740.4
+          ],
+          "conf": 0.864,
+          "text": "(i) the distance DE at which the student is standing from the foot of the minar"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0078_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            200.6,
+            257.3,
+            945.1,
+            355.1
+          ],
+          "conf": 0.947,
+          "text": "(ii) the angle of elevation, $\\angle$ BAC, of the top of the minar\n(iii) the height AE of the student."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            353.4,
+            1177.7,
+            438.0
+          ],
+          "conf": 0.953,
+          "text": "Assuming that the above three conditions are known, how can we determine the\nheight of the minar?"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.2,
+            436.8,
+            1177.8,
+            487.5
+          ],
+          "conf": 0.908,
+          "text": "In the figure, CD = CB + BD. Here, BD = AE, which is the height of the student."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.4,
+            484.9,
+            988.1,
+            535.4
+          ],
+          "conf": 0.904,
+          "text": "To find BC, we will use trigonometric ratios of $\\angle$ BAC or $\\angle$ A."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            533.3,
+            1178.5,
+            692.2
+          ],
+          "conf": 0.967,
+          "text": "In $\\Delta$ ABC, the side BC is the opposite side in relation to the known $\\angle$ A. Now,\nwhich of the trigonometric ratios can we use? Which one of them has the two values\nthat we have and the one we need to determine? Our search narrows down to using\neither $\\tan A$ or $\\cot A$, as these ratios involve AB and BC."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            702.6,
+            1133.6,
+            798.0
+          ],
+          "conf": 0.81,
+          "text": "Therefore, $\\tan A = \\frac{BC}{AB}$ or $\\cot A = \\frac{AB}{BC}$, which on solving would give us BC."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            800.7,
+            845.9,
+            851.4
+          ],
+          "conf": 0.91,
+          "text": "By adding AE to BC, you will get the height of the minar."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.7,
+            860.9,
+            1177.8,
+            912.2
+          ],
+          "conf": 0.914,
+          "text": "Now let us explain the process, we have just discussed, by solving some problems."
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            918.5,
+            1177.9,
+            1676.6
+          ],
+          "conf": 0.559,
+          "text": "**Example 1 :** A tower stands vertically on the ground. From a point on the ground,\nwhich is 15 m away from the foot of the tower, the angle of elevation of the top of the\ntower is found to be $60^{\\circ}$. Find the height of the tower.\n\n**Solution :** First let us draw a simple diagram to\nrepresent the problem (see Fig. 9.4). Here AB\nrepresents the tower, CB is the distance of the point\nfrom the tower and $\\angle ACB$ is the angle of elevation.\nWe need to determine the height of the tower, i.e.,\nAB. Also, ACB is a triangle, right-angled at B.\n\nTo solve the problem, we choose the trigonometric\nratio $\\tan 60^{\\circ}$ (or $\\cot 60^{\\circ}$), as the ratio involves AB\nand BC.\n\nNow, $\\tan 60^{\\circ} = \\frac{AB}{BC}$\n\ni.e., $\\sqrt{3} = \\frac{AB}{15}$\n\ni.e., $AB = 15\\sqrt{3}$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1687.2,
+            671.6,
+            1740.8
+          ],
+          "conf": 0.878,
+          "text": "Hence, the height of the tower is $15\\sqrt{3}$ m."
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0078_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            259.2,
+            750.9,
+            668.0
+          ],
+          "conf": 0.91,
+          "text": "Example 2 : An electrician has to repair an\nelectric fault on a pole of height 5 m. She needs\nto reach a point 1.3m below the top of the pole\nto undertake the repair work (see Fig. 9.5). What\nshould be the length of the ladder that she should\nuse which, when inclined at an angle of $60^{\\circ}$ to\nthe horizontal, would enable her to reach the\nrequired position? Also, how far from the foot\nof the pole should she place the foot of the\nladder? (You may take $\\sqrt{3} = 1.73$)"
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            777.0,
+            259.5,
+            1117.0,
+            785.8
+          ],
+          "conf": 0.915,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            902.9,
+            768.7,
+            1031.4,
+            818.5
+          ],
+          "conf": 0.91,
+          "text": "Fig. 9.5"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            676.8,
+            750.4,
+            762.3
+          ],
+          "conf": 0.909,
+          "text": "Solution : In Fig. 9.5, the electrician is required to\nreach the point B on the pole AD."
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            761.1,
+            749.2,
+            811.5
+          ],
+          "conf": 0.825,
+          "text": "So, $\\text{BD} = \\text{AD} - \\text{AB} = (5 - 1.3)\\text{m} = 3.7 \\text{ m.}$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            810.2,
+            828.2,
+            894.1
+          ],
+          "conf": 0.91,
+          "text": "Here, BC represents the ladder. We need to find\nits length, i.e., the hypotenuse of the right triangle BDC."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            893.9,
+            945.1,
+            942.6
+          ],
+          "conf": 0.852,
+          "text": "Now, can you think which trigonometric ratio should we consider?"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            943.2,
+            389.0,
+            989.7
+          ],
+          "conf": 0.836,
+          "text": "It should be $\\sin 60^{\\circ}$."
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            1003.2,
+            804.8,
+            1098.8
+          ],
+          "conf": 0.904,
+          "text": "So, $\\frac{\\mathrm{BD}}{\\mathrm{BC}} = \\sin 60^{\\circ}$ or $\\frac{3.7}{\\mathrm{BC}} = \\frac{\\sqrt{3}}{2}$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1119.9,
+            866.7,
+            1211.4
+          ],
+          "conf": 0.873,
+          "text": "Therefore, $\\text{BC} = \\frac{3.7 \\times 2}{\\sqrt{3}} = 4.28 \\text{ m (approx.)}$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1217.9,
+            705.1,
+            1267.3
+          ],
+          "conf": 0.879,
+          "text": "i.e., the length of the ladder should be 4.28 m."
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1277.2,
+            694.5,
+            1372.8
+          ],
+          "conf": 0.895,
+          "text": "Now, $\\frac{\\text{DC}}{\\text{BD}} = \\cot 60^\\circ = \\frac{1}{\\sqrt{3}}$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.4,
+            1393.1,
+            819.8,
+            1485.6
+          ],
+          "conf": 0.889,
+          "text": "i.e., $DC = \\frac{3.7}{\\sqrt{3}} = 2.14 \\text{ m (approx.)}$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1496.8,
+            1178.6,
+            1585.5
+          ],
+          "conf": 0.922,
+          "text": "Therefore, she should place the foot of the ladder at a distance of $2.14 \\text{ m}$ from\nthe pole."
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0078_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.8,
+            191.5,
+            1177.1,
+            237.1
+          ],
+          "conf": 0.753,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.2,
+            192.5,
+            551.6,
+            236.7
+          ],
+          "conf": 0.571,
+          "text": "SOME APPLICATIONS OF TRIGONOMETRY"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            260.9,
+            754.8,
+            432.6
+          ],
+          "conf": 0.923,
+          "text": "Example 3 : An observer 1.5 m tall is 28.5 m away\nfrom a chimney. The angle of elevation of the top\nof the chimney from her eyes is $45^\\circ$. What is the\nheight of the chimney?"
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            753.4,
+            264.7,
+            1176.0,
+            679.6
+          ],
+          "conf": 0.955,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            439.1,
+            755.2,
+            653.6
+          ],
+          "conf": 0.923,
+          "text": "Solution : Here, AB is the chimney, CD the\nobserver and $\\angle$ ADE the angle of elevation (see\nFig. 9.6). In this case, ADE is a triangle, right-angled\nat E and we are required to find the height of the\nchimney."
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            889.9,
+            674.9,
+            1018.7,
+            724.9
+          ],
+          "conf": 0.92,
+          "text": "Fig. 9.6"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            658.5,
+            726.8,
+            706.8
+          ],
+          "conf": 0.834,
+          "text": "We have $AB = AE + BE = AE + 1.5$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            711.4,
+            623.0,
+            759.8
+          ],
+          "conf": 0.85,
+          "text": "and $DE = CB = 28.5 \\text{ m}$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            764.9,
+            1178.5,
+            854.1
+          ],
+          "conf": 0.943,
+          "text": "To determine AE, we choose a trigonometric ratio, which involves both AE and\nDE. Let us choose the tangent of the angle of elevation."
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            869.2,
+            579.4,
+            958.5
+          ],
+          "conf": 0.889,
+          "text": "Now, $\\tan 45^{\\circ} = \\frac{AE}{DE}$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            977.0,
+            591.2,
+            1068.9
+          ],
+          "conf": 0.885,
+          "text": "i.e., $1 = \\frac{\\text{AE}}{28.5}$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            1072.5,
+            579.7,
+            1122.3
+          ],
+          "conf": 0.821,
+          "text": "Therefore, $AE = 28.5$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1121.6,
+            881.7,
+            1171.9
+          ],
+          "conf": 0.831,
+          "text": "So the height of the chimney (AB) = (28.5 + 1.5) m = 30 m."
+        },
+        {
+          "order": 13,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1186.2,
+            1178.3,
+            1360.2
+          ],
+          "conf": 0.877,
+          "text": "Example 4 : From a point P on the ground the angle of elevation of the top of a 10 m\ntall building is $30^{\\circ}$. A flag is hoisted at the top of the building and the angle of elevation\nof the top of the flagstaff from P is $45^{\\circ}$. Find the length of the flagstaff and the\ndistance of the building from the point P. (You may take $\\sqrt{3} = 1.732$)"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1364.0,
+            1179.1,
+            1535.2
+          ],
+          "conf": 0.907,
+          "text": "Solution : In Fig. 9.7, AB denotes the height of the building, BD the flagstaff and P\nthe given point. Note that there are two right triangles PAB and PAD. We are required\nto find the length of the flagstaff, i.e., DB and the distance of the building from the\npoint P, i.e., PA."
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0078_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            261.1,
+            778.3,
+            350.7
+          ],
+          "conf": 0.945,
+          "text": "Since, we know the height of the building AB, we\nwill first consider the right $\\Delta$ PAB."
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            365.6,
+            579.9,
+            457.5
+          ],
+          "conf": 0.902,
+          "text": "We have $\\tan 30^{\\circ} = \\frac{AB}{AP}$"
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            627.2,
+            257.1,
+            1179.2,
+            594.9
+          ],
+          "conf": 0.959,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            839.4,
+            596.4,
+            968.4,
+            647.0
+          ],
+          "conf": 0.909,
+          "text": "Fig. 9.7"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            476.7,
+            577.7,
+            571.9
+          ],
+          "conf": 0.895,
+          "text": "i.e., $\\frac{1}{\\sqrt{3}} = \\frac{10}{AP}$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            587.9,
+            596.6,
+            642.6
+          ],
+          "conf": 0.834,
+          "text": "Therefore, $AP = 10\\sqrt{3}$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            687.2,
+            900.8,
+            740.8
+          ],
+          "conf": 0.889,
+          "text": "i.e., the distance of the building from P is $10\\sqrt{3}$ m = 17.32 m."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            750.1,
+            826.5,
+            800.5
+          ],
+          "conf": 0.888,
+          "text": "Next, let us suppose $\\text{DB} = x \\text{ m}$. Then $\\text{AD} = (10 + x) \\text{ m}$."
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            826.7,
+            822.0,
+            920.2
+          ],
+          "conf": 0.902,
+          "text": "Now, in right $\\Delta$ PAD, $\\tan 45^{\\circ} = \\frac{\\text{AD}}{\\text{AP}} = \\frac{10 + x}{10\\sqrt{3}}$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            943.2,
+            737.5,
+            1034.5
+          ],
+          "conf": 0.879,
+          "text": "Therefore, $1 = \\frac{10 + x}{10\\sqrt{3}}$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            1053.7,
+            764.8,
+            1118.9
+          ],
+          "conf": 0.862,
+          "text": "i.e., $x = 10 \\left(\\sqrt{3} - 1\\right) = 7.32$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            1129.0,
+            628.8,
+            1180.5
+          ],
+          "conf": 0.887,
+          "text": "So, the length of the flagstaff is $7.32$ m."
+        },
+        {
+          "order": 12,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1190.5,
+            680.4,
+            1615.0
+          ],
+          "conf": 0.58,
+          "text": "**Example 5 :** The shadow of a tower standing\non a level ground is found to be 40 m longer\nwhen the Sun’s altitude is $30^\\circ$ than when it is\n$60^\\circ$. Find the height of the tower.\n\n**Solution :** In Fig. 9.8, AB is the tower and\nBC is the length of the shadow when the\nSun’s altitude is $60^\\circ$, i.e., the angle of\nelevation of the top of the tower from the tip\nof the shadow is $60^\\circ$ and DB is the length of\nthe shadow, when the angle of elevation\nis $30^\\circ$."
+        },
+        {
+          "order": 13,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            683.1,
+            1141.9,
+            1180.5,
+            1462.6
+          ],
+          "conf": 0.959,
+          "text": ""
+        },
+        {
+          "order": 14,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            858.8,
+            1475.0,
+            988.6,
+            1526.1
+          ],
+          "conf": 0.846,
+          "text": "Fig. 9.8"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1628.9,
+            1179.0,
+            1713.0
+          ],
+          "conf": 0.897,
+          "text": "Now, let AB be $h$ m and BC be $x$ m. According to the question, DB is 40 m longer\nthan BC."
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0078_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            273.2,
+            657.1,
+            324.3
+          ],
+          "conf": 0.878,
+          "text": "So, $\\text{DB} = (40 + x) \\text{ m}$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            321.7,
+            758.4,
+            371.8
+          ],
+          "conf": 0.919,
+          "text": "Now, we have two right triangles ABC and ABD."
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            375.6,
+            580.5,
+            465.5
+          ],
+          "conf": 0.893,
+          "text": "In $\\Delta$ ABC, $\\tan 60^{\\circ} = \\frac{\\text{AB}}{\\text{BC}}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            467.8,
+            1179.4,
+            551.4
+          ],
+          "conf": 0.886,
+          "text": "or, $\\qquad \\qquad \\qquad \\sqrt{3} = \\frac{h}{x} \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad (1)$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            550.6,
+            580.3,
+            639.5
+          ],
+          "conf": 0.851,
+          "text": "In $\\Delta$ ABD, $\\tan 30^{\\circ} = \\frac{\\text{AB}}{\\text{BD}}$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            641.1,
+            1178.6,
+            733.0
+          ],
+          "conf": 0.896,
+          "text": "$$ \\text{i.e.,} \\qquad \\qquad \\qquad \\frac{1}{\\sqrt{3}} = \\frac{h}{x+40} \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            740.8,
+            588.1,
+            795.9
+          ],
+          "conf": 0.876,
+          "text": "From (1), we have $h = x\\sqrt{3}$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            806.5,
+            983.4,
+            867.9
+          ],
+          "conf": 0.785,
+          "text": "Putting this value in (2), we get $(x\\sqrt{3})\\sqrt{3} = x + 40$, i.e., $3x = x + 40$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            879.1,
+            558.6,
+            928.5
+          ],
+          "conf": 0.861,
+          "text": "i.e.,                                                                    $x = 20$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.3,
+            940.7,
+            1177.4,
+            996.2
+          ],
+          "conf": 0.871,
+          "text": "So, $h = 20\\sqrt{3}$ [From (1)]"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            998.4,
+            706.9,
+            1051.1
+          ],
+          "conf": 0.89,
+          "text": "Therefore, the height of the tower is $20\\sqrt{3}$ m."
+        },
+        {
+          "order": 11,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1065.9,
+            1180.4,
+            1665.3
+          ],
+          "conf": 0.682,
+          "text": "Example 6 : The angles of depression of the top and the bottom of an 8 m tall building\nfrom the top of a multi-storeyed building are $30^{\\circ}$\nand $45^{\\circ}$, respectively. Find the height of the multi-\nstoreyed building and the distance between the\ntwo buildings.\n\nSolution : In Fig. 9.9, PC denotes the multi-\nstoreyed building and AB denotes the 8 m tall\nbuilding. We are interested to determine the height\nof the multi-storeyed building, i.e., PC and the\ndistance between the two buildings, i.e., AC.\nLook at the figure carefully. Observe that PB is\na transversal to the parallel lines PQ and BD.\nTherefore, $\\angle QPB$ and $\\angle PBD$ are alternate\nangles, and so are equal.\nSo $\\angle PBD = 30^{\\circ}$. Similarly, $\\angle PAC = 45^{\\circ}$.\nIn right $\\Delta PBD$, we have"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0078_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            410.0,
+            273.2,
+            934.4,
+            367.8
+          ],
+          "conf": 0.92,
+          "text": "$$\\frac{\\mathrm{PD}}{\\mathrm{BD}} = \\tan 30^{\\circ} = \\frac{1}{\\sqrt{3}} \\quad \\text{or} \\quad \\mathrm{BD} = \\mathrm{PD} \\sqrt{3}$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            371.6,
+            461.5,
+            420.7
+          ],
+          "conf": 0.91,
+          "text": "In right $\\Delta$ PAC, we have"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            409.5,
+            433.8,
+            668.8,
+            524.8
+          ],
+          "conf": 0.901,
+          "text": "$$\\frac{\\mathrm{PC}}{\\mathrm{AC}} = \\tan 45^{\\circ} = 1$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            528.4,
+            572.9,
+            576.8
+          ],
+          "conf": 0.815,
+          "text": "i.e.,                                     $PC = AC$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.3,
+            576.3,
+            1011.5,
+            625.5
+          ],
+          "conf": 0.813,
+          "text": "Also, $\\text{PC} = \\text{PD} + \\text{DC}$, therefore, $\\text{PD} + \\text{DC} = \\text{AC}$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            637.1,
+            1140.5,
+            689.7
+          ],
+          "conf": 0.893,
+          "text": "Since, $\\mathrm{AC} = \\mathrm{BD}$ and $\\mathrm{DC} = \\mathrm{AB} = 8 \\mathrm{~m}$, we get $\\mathrm{PD} + 8 = \\mathrm{BD} = \\mathrm{PD}\\sqrt{3}$ (Why?)"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            707.2,
+            1085.9,
+            834.9
+          ],
+          "conf": 0.915,
+          "text": "This gives $\\quad \\text{PD} = \\frac{8}{\\sqrt{3} - 1} = \\frac{8(\\sqrt{3} + 1)}{(\\sqrt{3} + 1)(\\sqrt{3} - 1)} = 4(\\sqrt{3} + 1) \\text{ m.}$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            837.7,
+            1169.7,
+            957.4
+          ],
+          "conf": 0.691,
+          "text": "So, the height of the multi-storeyed building is $\\{4(\\sqrt{3} + 1) + 8\\}m = 4(3 + \\sqrt{3})m$\n\nand the distance between the two buildings is also $4(3 + \\sqrt{3})m$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            903.4,
+            968.5,
+            963.9
+          ],
+          "conf": 0.786,
+          "text": "and the distance between the two buildings is also $4(3 + \\sqrt{3})\\mathrm{m}$."
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            977.0,
+            1178.2,
+            1098.8
+          ],
+          "conf": 0.891,
+          "text": "Example 7 : From a point on a bridge across a river, the angles of depression of\nthe banks on opposite sides of the river are $30^{\\circ}$ and $45^{\\circ}$, respectively. If the bridge\nis at a height of 3 m from the banks, find the width of the river."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1097.1,
+            554.1,
+            1437.9
+          ],
+          "conf": 0.936,
+          "text": "**Solution :** In Fig 9.10, A and B\nrepresent points on the bank on\nopposite sides of the river, so that\nAB is the width of the river. P is a\npoint on the bridge at a height of 3\nm, i.e., DP = 3 m. We are\ninterested to determine the width\nof the river, which is the length of\nthe side AB of the D APB."
+        },
+        {
+          "order": 11,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            560.3,
+            1116.2,
+            1173.0,
+            1291.6
+          ],
+          "conf": 0.921,
+          "text": ""
+        },
+        {
+          "order": 12,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            799.5,
+            1310.0,
+            946.0,
+            1360.0
+          ],
+          "conf": 0.867,
+          "text": "Fig. 9.10"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            1438.1,
+            558.9,
+            1487.7
+          ],
+          "conf": 0.776,
+          "text": "Now, $AB = AD + DB$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.0,
+            1486.4,
+            494.8,
+            1536.0
+          ],
+          "conf": 0.779,
+          "text": "In right $\\Delta$ APD, $\\angle A = 30^\\circ$."
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            1547.7,
+            486.3,
+            1637.8
+          ],
+          "conf": 0.871,
+          "text": "So, $\\tan 30^{\\circ} = \\frac{\\text{PD}}{\\text{AD}}$"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0078_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.3,
+            273.6,
+            726.8,
+            365.6
+          ],
+          "conf": 0.917,
+          "text": "$$ \\text{i.e.,} \\qquad \\frac{1}{\\sqrt{3}} = \\frac{3}{\\text{AD}} \\text{ or } \\text{AD} = 3\\sqrt{3} \\text{ m} $$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            370.7,
+            839.7,
+            421.2
+          ],
+          "conf": 0.852,
+          "text": "Also, in right $\\Delta$ PBD, $\\angle \\text{B} = 45^\\circ$. So, $\\text{BD} = \\text{PD} = 3 \\text{ m}$."
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            430.9,
+            1020.1,
+            485.6
+          ],
+          "conf": 0.884,
+          "text": "Now, $\\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            502.9,
+            764.8,
+            568.7
+          ],
+          "conf": 0.833,
+          "text": "Therefore, the width of the river is $3(\\sqrt{3}+1)\\mathrm{m}$."
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.8,
+            616.0,
+            772.6,
+            665.8
+          ],
+          "conf": 0.884,
+          "text": "EXERCISE 9.1"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.7,
+            677.4,
+            1176.6,
+            1647.3
+          ],
+          "conf": 0.807,
+          "text": "1. A circus artist is climbing a 20 m long rope, which is\ntightly stretched and tied from the top of a vertical\npole to the ground. Find the height of the pole, if\nthe angle made by the rope with the ground level is\n$30^{\\circ}$ (see Fig. 9.11).\n\n2. A tree breaks due to storm and the broken part\nbends so that the top of the tree touches the ground\nmaking an angle $30^{\\circ}$ with it. The distance between\nthe foot of the tree to the point where the top\ntouches the ground is 8 m. Find the height of\nthe tree.\n\n3. A contractor plans to install two slides for the children to play in a park. For the children\nbelow the age of 5 years, she prefers to have a slide whose top is at a height of 1.5 m, and\nis inclined at an angle of $30^{\\circ}$ to the ground, whereas for elder children, she wants to have\na steep slide at a height of 3m, and inclined at an angle of $60^{\\circ}$ to the ground. What\nshould be the length of the slide in each case?\n\n4. The angle of elevation of the top of a tower from a point on the ground, which is 30 m\naway from the foot of the tower, is $30^{\\circ}$. Find the height of the tower.\n\n5. A kite is flying at a height of 60 m above the ground. The string attached to the kite is\ntemporarily tied to a point on the ground. The inclination of the string with the ground\nis $60^{\\circ}$. Find the length of the string, assuming that there is no slack in the string.\n\n6. A 1.5 m tall boy is standing at some distance from a 30 m tall building. The angle of\nelevation from his eyes to the top of the building increases from $30^{\\circ}$ to $60^{\\circ}$ as he walks\ntowards the building. Find the distance he walked towards the building.\n\n7. From a point on the ground, the angles of elevation of the bottom and the top of a\ntransmission tower fixed at the top of a 20 m high building are $45^{\\circ}$ and $60^{\\circ}$ respectively.\nFind the height of the tower."
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0078_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.1,
+            257.6,
+            1179.0,
+            369.2
+          ],
+          "conf": 0.947,
+          "text": "**8.** A statue, 1.6 m tall, stands on the top of a pedestal. From a point on the ground, the\nangle of elevation of the top of the statue is $60^{\\circ}$ and from the same point the angle of\nelevation of the top of the pedestal is $45^{\\circ}$. Find the height of the pedestal."
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.1,
+            368.6,
+            1177.8,
+            481.1
+          ],
+          "conf": 0.946,
+          "text": "9. The angle of elevation of the top of a building from the foot of the tower is $30^{\\circ}$ and the\nangle of elevation of the top of the tower from the foot of the building is $60^{\\circ}$. If the tower\nis 50 m high, find the height of the building."
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.8,
+            479.8,
+            1178.6,
+            624.7
+          ],
+          "conf": 0.955,
+          "text": "10. Two poles of equal heights are standing opposite each other on either side of the road,\nwhich is 80 m wide. From a point between them on the road, the angles of elevation of\nthe top of the poles are $60^{\\circ}$ and $30^{\\circ}$, respectively. Find the height of the poles and the\ndistances of the point from the poles.\nA"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            143.3,
+            624.1,
+            640.1,
+            1001.1
+          ],
+          "conf": 0.968,
+          "text": "11. A TV tower stands vertically on a bank\nof a canal. From a point on the other\nbank directly opposite the tower, the\nangle of elevation of the top of the\ntower is $60^{\\circ}$. From another point 20 m\naway from this point on the line joining\nthis point to the foot of the tower, the\nangle of elevation of the top of the\ntower is $30^{\\circ}$ (see Fig. 9.12). Find the\nheight of the tower and the width of\nthe canal."
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            663.0,
+            594.9,
+            1176.2,
+            920.5
+          ],
+          "conf": 0.963,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            843.6,
+            920.4,
+            988.4,
+            969.4
+          ],
+          "conf": 0.872,
+          "text": "Fig. 9.12"
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.9,
+            1002.1,
+            1178.5,
+            1081.5
+          ],
+          "conf": 0.937,
+          "text": "**12.** From the top of a 7 m high building, the angle of elevation of the top of a cable tower is\n$60^{\\circ}$ and the angle of depression of its foot is $45^{\\circ}$. Determine the height of the tower."
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.3,
+            1080.3,
+            1178.5,
+            1192.4
+          ],
+          "conf": 0.941,
+          "text": "13. As observed from the top of a 75 m high lighthouse from the sea-level, the angles of\ndepression of two ships are $30^{\\circ}$ and $45^{\\circ}$. If one ship is exactly behind the other on the\nsame side of the lighthouse, find the distance between the two ships."
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            142.1,
+            1197.2,
+            640.1,
+            1573.0
+          ],
+          "conf": 0.966,
+          "text": "**14.** A $1.2 \\text{ m}$ tall girl spots a balloon moving\nwith the wind in a horizontal line at a\nheight of $88.2 \\text{ m}$ from the ground. The\nangle of elevation of the balloon from\nthe eyes of the girl at any instant is\n$60^{\\circ}$. After some time, the angle of\nelevation reduces to $30^{\\circ}$ (see Fig. 9.13).\nFind the distance travelled by the\nballoon during the interval."
+        },
+        {
+          "order": 9,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            625.4,
+            1184.8,
+            1177.9,
+            1509.5
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            810.4,
+            1516.0,
+            955.6,
+            1566.0
+          ],
+          "conf": 0.822,
+          "text": "Fig. 9.13"
+        },
+        {
+          "order": 11,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.8,
+            1577.8,
+            1178.2,
+            1658.9
+          ],
+          "conf": 0.913,
+          "text": "**15.** A straight highway leads to the foot of a tower. A man standing at the top of the tower\nobserves a car at an angle of depression of $30^{\\circ}$, which is approaching the foot of the"
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0078_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.8,
+            191.1,
+            1177.3,
+            238.6
+          ],
+          "conf": 0.766,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.9,
+            192.3,
+            552.2,
+            237.1
+          ],
+          "conf": 0.543,
+          "text": "SOME APPLICATIONS OF TRIGONOMETRY"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            193.6,
+            259.0,
+            1178.6,
+            341.8
+          ],
+          "conf": 0.961,
+          "text": "tower with a uniform speed. Six seconds later, the angle of depression of the car is found\nto be $60^{\\circ}$. Find the time taken by the car to reach the foot of the tower from this point."
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.7,
+            366.1,
+            335.1,
+            418.9
+          ],
+          "conf": 0.907,
+          "text": "9.2 Summary"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.9,
+            418.2,
+            758.9,
+            464.9
+          ],
+          "conf": 0.934,
+          "text": "In this chapter, you have studied the following points :"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.1,
+            462.5,
+            1179.4,
+            839.4
+          ],
+          "conf": 0.977,
+          "text": "**1. (i) The line of sight** is the line drawn from the eye of an observer to the point in the\nobject viewed by the observer.\n\n(ii) The **angle of elevation** of an object viewed, is the angle formed by the line of sight\nwith the horizontal when it is above the horizontal level, i.e., the case when we raise\nour head to look at the object.\n\n(iii) The **angle of depression** of an object viewed, is the angle formed by the line of sight\nwith the horizontal when it is below the horizontal level, i.e., the case when we lower\nour head to look at the object.\n\n**2. The height or length of an object or the distance between two distant objects can be**\ndetermined with the help of trigonometric ratios."
+        }
+      ],
+      "page": 10
+    }
+  ]
+}

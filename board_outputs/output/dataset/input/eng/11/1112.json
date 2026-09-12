@@ -1,0 +1,5761 @@
+{
+  "book": "1112",
+  "relpath": "dataset/input/eng/11/1112.pdf",
+  "num_pages": 40,
+  "pages": [
+    {
+      "image": "0095_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            640.4,
+            101.6,
+            1178.1,
+            330.8
+          ],
+          "conf": 0.881,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            698.0,
+            294.3,
+            799.4,
+            330.4
+          ],
+          "conf": 0.568,
+          "text": "11076CH13"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            901.4,
+            236.6,
+            1170.9,
+            325.1
+          ],
+          "conf": 0.534,
+          "text": "Chapter 12"
+        },
+        {
+          "order": 3,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            183.0,
+            399.0,
+            1124.0,
+            518.1
+          ],
+          "conf": 0.823,
+          "text": "LIMITS AND DERIVATIVES"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            137.0,
+            608.0,
+            1164.3,
+            699.4
+          ],
+          "conf": 0.822,
+          "text": "❖ With the Calculus as a key, Mathematics can be successfully applied to the\nexplanation of the course of Nature – WHITEHEAD ❖"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.2,
+            730.9,
+            389.5,
+            780.9
+          ],
+          "conf": 0.89,
+          "text": "12.1 Introduction"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            780.9,
+            848.6,
+            1138.5
+          ],
+          "conf": 0.979,
+          "text": "This chapter is an introduction to Calculus. Calculus is that\nbranch of mathematics which mainly deals with the study\nof change in the value of a function as the points in the\ndomain change. First, we give an intuitive idea of derivative\n(without actually defining it). Then we give a naive definition\nof limit and study some algebra of limits. Then we come\nback to a definition of derivative and study some algebra\nof derivatives. We also obtain derivatives of certain\nstandard functions."
+        },
+        {
+          "order": 7,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            843.6,
+            733.4,
+            1176.8,
+            1170.4
+          ],
+          "conf": 0.963,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            906.2,
+            1162.4,
+            1116.0,
+            1235.2
+          ],
+          "conf": 0.949,
+          "text": "Sir Issac Newton\n(1642-1727)"
+        },
+        {
+          "order": 9,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.7,
+            1145.1,
+            614.0,
+            1197.2
+          ],
+          "conf": 0.845,
+          "text": "12.2 Intuitive Idea of Derivatives"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1193.0,
+            1177.0,
+            1357.5
+          ],
+          "conf": 0.925,
+          "text": "Physical experiments have confirmed that the body dropped (1642-1727)\nfrom a tall cliff covers a distance of $4.9t^2$ metres in $t$ seconds,\ni.e., distance $s$ in metres covered by the body as a function of time $t$ in seconds is given\nby $s = 4.9t^2$."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1349.8,
+            1178.1,
+            1436.8
+          ],
+          "conf": 0.919,
+          "text": "The adjoining Table 13.1 gives the distance travelled in metres at various intervals\nof time in seconds of a body dropped from a tall cliff."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1426.3,
+            1178.2,
+            1589.9
+          ],
+          "conf": 0.949,
+          "text": "The objective is to find the veloctiy of the body at time $t = 2$ seconds from this\ndata. One way to approach this problem is to find the average velocity for various\nintervals of time ending at $t = 2$ seconds and hope that these throw some light on the\nvelocity at $t = 2$ seconds."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1579.9,
+            1179.0,
+            1704.7
+          ],
+          "conf": 0.929,
+          "text": "Average velocity between $t = t_1$ and $t = t_2$ equals distance travelled between\n$t = t_1$ and $t = t_2$ seconds divided by $(t_2 - t_1)$. Hence the average velocity in the first\ntwo seconds"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0095_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.4,
+            274.0,
+            785.6,
+            372.2
+          ],
+          "conf": 0.932,
+          "text": "$$ = \\frac{\\text{Distance travelled between } t_2 = 2 \\text{ and } t_1 = 0}{\\text{Time interval } (t_2 - t_1)} $$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.8,
+            390.3,
+            522.9,
+            492.3
+          ],
+          "conf": 0.927,
+          "text": "$$= \\frac{(19.6 - 0)m}{(2 - 0)s} = 9.8 m/s.$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.5,
+            495.7,
+            753.7,
+            580.4
+          ],
+          "conf": 0.932,
+          "text": "Similarly, the average velocity between $t = 1$\nand $t = 2$ is"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            202.2,
+            592.2,
+            534.9,
+            691.8
+          ],
+          "conf": 0.911,
+          "text": "$$ \\frac{(19.6 - 4.9)m}{(2 - 1)s} = 14.7 \\ m/s $$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            696.5,
+            770.5,
+            861.3
+          ],
+          "conf": 0.961,
+          "text": "Likewise we compute the average velocitiy\nbetween $t = t_1$ and $t = 2$ for various $t_1$. The following\nTable 13.2 gives the average velocity ($v$), $t = t_1$\nseconds and $t = 2$ seconds."
+        },
+        {
+          "order": 5,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            911.8,
+            258.2,
+            1053.8,
+            304.2
+          ],
+          "conf": 0.865,
+          "text": "Table 12.1"
+        },
+        {
+          "order": 6,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            785.9,
+            294.5,
+            1182.2,
+            928.9
+          ],
+          "conf": 0.973,
+          "text": "<table>\n<thead>\n<tr>\n<th>$t$</th>\n<th>$s$</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr>\n<td>1</td>\n<td>4.9</td>\n</tr>\n<tr>\n<td>1.5</td>\n<td>11.025</td>\n</tr>\n<tr>\n<td>1.8</td>\n<td>15.876</td>\n</tr>\n<tr>\n<td>1.9</td>\n<td>17.689</td>\n</tr>\n<tr>\n<td>1.95</td>\n<td>18.63225</td>\n</tr>\n<tr>\n<td>2</td>\n<td>19.6</td>\n</tr>\n<tr>\n<td>2.05</td>\n<td>20.59225</td>\n</tr>\n<tr>\n<td>2.1</td>\n<td>21.609</td>\n</tr>\n<tr>\n<td>2.2</td>\n<td>23.716</td>\n</tr>\n<tr>\n<td>2.5</td>\n<td>30.625</td>\n</tr>\n<tr>\n<td>3</td>\n<td>44.1</td>\n</tr>\n<tr>\n<td>4</td>\n<td>78.4</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 7,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            578.5,
+            925.7,
+            719.5,
+            971.7
+          ],
+          "conf": 0.914,
+          "text": "Table 12.2"
+        },
+        {
+          "order": 8,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            147.0,
+            960.3,
+            1155.7,
+            1097.2
+          ],
+          "conf": 0.975,
+          "text": "<table>\n<thead>\n<tr>\n<th>$t_1$</th>\n<th>0</th>\n<th>1</th>\n<th>1.5</th>\n<th>1.8</th>\n<th>1.9</th>\n<th>1.95</th>\n<th>1.99</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$v$</td>\n<td>9.8</td>\n<td>14.7</td>\n<td>17.15</td>\n<td>18.62</td>\n<td>19.11</td>\n<td>19.355</td>\n<td>19.551</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1122.5,
+            1178.5,
+            1323.9
+          ],
+          "conf": 0.969,
+          "text": "From Table 12.2, we observe that the average velocity is gradually increasing.\nAs we make the time intervals ending at $t = 2$ smaller, we see that we get a better idea\nof the velocity at $t = 2$. Hoping that nothing really dramatic happens between 1.99\nseconds and 2 seconds, we conclude that the average velocity at $t = 2$ seconds is just\nabove $19.551m/s$."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1315.8,
+            1178.8,
+            1441.5
+          ],
+          "conf": 0.941,
+          "text": "This conclusion is somewhat strengthened by the following set of computation.\nCompute the average velocities for various time intervals starting at $t = 2$ seconds. As\nbefore the average velocity $v$ between $t = 2$ seconds and $t = t_2$ seconds is"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            305.2,
+            1462.6,
+            977.7,
+            1558.2
+          ],
+          "conf": 0.883,
+          "text": "$$ = \\frac{\\text{Distance travelled between 2 seconds and } t_2 \\text{ seconds}}{t_2 - 2} $$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            275.5,
+            1573.8,
+            1143.7,
+            1670.9
+          ],
+          "conf": 0.888,
+          "text": "$$ = \\frac{\\text{Distance travelled in } t_2 \\text{ seconds } - \\text{ Distance travelled in } 2 \\text{ seconds}}{t_2 - 2} $$"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0095_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.5,
+            274.5,
+            862.7,
+            372.2
+          ],
+          "conf": 0.94,
+          "text": "$$ = \\frac{\\text{Distance travelled in } t_2 \\text{ seconds } - 19.6}{t_2 - 2} $$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            371.3,
+            1178.1,
+            459.8
+          ],
+          "conf": 0.957,
+          "text": "The following Table 12.3 gives the average velocity $v$ in metres per second\nbetween $t = 2$ seconds and $t_2$ seconds."
+        },
+        {
+          "order": 2,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            577.7,
+            471.0,
+            719.7,
+            515.3
+          ],
+          "conf": 0.921,
+          "text": "Table 12.3"
+        },
+        {
+          "order": 3,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            264.3,
+            515.3,
+            981.8,
+            647.5
+          ],
+          "conf": 0.963,
+          "text": "<table>\n<thead>\n<tr>\n<th>$t_2$</th>\n<th>4</th>\n<th>3</th>\n<th>2.5</th>\n<th>2.2</th>\n<th>2.1</th>\n<th>2.05</th>\n<th>2.01</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$v$</td>\n<td>29.4</td>\n<td>24.5</td>\n<td>22.05</td>\n<td>20.58</td>\n<td>20.09</td>\n<td>19.845</td>\n<td>19.649</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            681.3,
+            1177.9,
+            769.9
+          ],
+          "conf": 0.94,
+          "text": "Here again we note that if we take smaller time intervals starting at $t=2$, we get\nbetter idea of the velocity at $t=2$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            761.3,
+            1178.3,
+            1350.0
+          ],
+          "conf": 0.837,
+          "text": "In the first set of computations, what we have done is to find average velocities\nin increasing time intervals ending at $t=2$ and then hope that nothing dramatic happens\njust before $t=2$. In the second set of computations, we have found the average velocities\ndecreasing in time intervals ending at $t=2$ and then hope that nothing dramatic happens\njust after $t=2$. Purely on the physical grounds, both these sequences of average\nvelocities must approach a common limit. We can safely conclude that the velocity of\nthe body at $t=2$ is between $19.551 m/s$ and $19.649 m/s$. Technically, we say that the\ninstantaneous velocity at $t=2$ is between $19.551 m/s$ and $19.649 m/s$. As is\nwell-known, $velocity$ $is$ $the$ $rate$ $of$ $change$ $of$ $displacement$. Hence what we have\naccomplished is the following. From the given data of distance covered at various time\ninstants we have estimated the rate of\nchange of the distance at a given instant\nof time. We say that the $derivative$ of\nthe distance function $s=4.9t^2$ at $t=2$\nis between $19.551$ and $19.649$."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1347.3,
+            604.6,
+            1706.6
+          ],
+          "conf": 0.958,
+          "text": "An alternate way of viewing this\nlimiting process is shown in Fig 12.1.\nThis is a plot of distance $s$ of the body\nfrom the top of the cliff versus the time\n$t$ elapsed. In the limit as the sequence\nof time intervals $h_1, h_2, ...,$ approaches\nzero, the sequence of average velocities\napproaches the same limit as does the\nsequence of ratios"
+        },
+        {
+          "order": 7,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            602.2,
+            1169.5,
+            1183.1,
+            1657.0
+          ],
+          "conf": 0.956,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            829.8,
+            1657.2,
+            948.7,
+            1703.5
+          ],
+          "conf": 0.85,
+          "text": "Fig 12.1"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0095_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            492.2,
+            276.4,
+            803.7,
+            374.1
+          ],
+          "conf": 0.932,
+          "text": "$$ \\frac{\\mathbf{C}_1\\mathbf{B}_1}{\\mathbf{AC}_1}, \\frac{\\mathbf{C}_2\\mathbf{B}_2}{\\mathbf{AC}_2}, \\frac{\\mathbf{C}_3\\mathbf{B}_3}{\\mathbf{AC}_3}, \\dots $$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            373.7,
+            1179.2,
+            574.9
+          ],
+          "conf": 0.978,
+          "text": "where $\\mathrm{C}_1\\mathrm{B}_1 = s_1 - s_0$ is the distance travelled by the body in the time interval $h_1 = \\mathrm{AC}_1$,\netc. From the Fig 12.1 it is safe to conclude that this latter sequence approaches the\nslope of the tangent to the curve at point A. In other words, the instantaneous velocity\n$v(t)$ of a body at time $t = 2$ is equal to the slope of the tangent of the curve $s = 4.9t^2$ at\n$t = 2$."
+        },
+        {
+          "order": 2,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.2,
+            583.9,
+            299.7,
+            634.2
+          ],
+          "conf": 0.825,
+          "text": "12.3 Limits"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            633.7,
+            1178.6,
+            759.6
+          ],
+          "conf": 0.953,
+          "text": "The above discussion clearly points towards the fact that we need to understand limit-\ning process in greater clarity. We study a few illustrative examples to gain some famil-\niarity with the concept of limits."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            749.4,
+            1177.8,
+            838.9
+          ],
+          "conf": 0.935,
+          "text": "Consider the function $f(x) = x^2$. Observe that as $x$ takes values very close to 0,\nthe value of $f(x)$ also moves towards 0 (See Fig 2.10 Chapter 2). We say"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            556.1,
+            838.3,
+            741.4,
+            907.1
+          ],
+          "conf": 0.887,
+          "text": "$$ \\lim_{x \\to 0} f(x) = 0 $$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            903.4,
+            1177.8,
+            991.2
+          ],
+          "conf": 0.938,
+          "text": "(to be read as limit of $f(x)$ as $x$ tends to zero equals zero). The limit of $f(x)$ as $x$ tends\nto zero is to be thought of as the value $f(x)$ should assume at $x = 0$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            980.0,
+            1178.5,
+            1094.6
+          ],
+          "conf": 0.93,
+          "text": "In general as $x \\rightarrow a, f(x) \\rightarrow l$, then $l$ is called limit of the function $f(x)$ which is\nsymbolically written as $\\lim_{x \\rightarrow a} f(x) = l$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1095.9,
+            1174.5,
+            1371.8
+          ],
+          "conf": 0.728,
+          "text": "Consider the following function $g(x) = |x|, x \\neq 0$. Observe that $g(0)$ is not defined.\nComputing the value of $g(x)$ for values of $x$ very\nnear to 0, we see that the value of $g(x)$ moves\ntowards 0. So, $\\lim_{x \\to 0} g(x) = 0$. This is intuitively\nclear from the graph of $y = |x|$ for $x \\neq 0$.\n(See Fig 2.13, Chapter 2)."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            1363.2,
+            600.2,
+            1411.7
+          ],
+          "conf": 0.862,
+          "text": "Consider the following function."
+        },
+        {
+          "order": 10,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            706.5,
+            1148.2,
+            1177.8,
+            1652.1
+          ],
+          "conf": 0.895,
+          "text": ""
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            275.5,
+            1418.4,
+            561.7,
+            1512.0
+          ],
+          "conf": 0.904,
+          "text": "$$h(x) = \\frac{x^2 - 4}{x - 2}, x \\neq 2.$$"
+        },
+        {
+          "order": 12,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            883.1,
+            1656.8,
+            1003.3,
+            1703.7
+          ],
+          "conf": 0.868,
+          "text": "Fig 12.2"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1508.6,
+            716.3,
+            1711.9
+          ],
+          "conf": 0.944,
+          "text": "Compute the value of $h(x)$ for values of\n$x$ very near to 2 (but not at 2). Convince yourself\nthat all these values are near to 4. This is\nsomewhat strengthened by considering the graph\nof the function $y = h(x)$ given here (Fig 12.2)."
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0095_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.9,
+            258.8,
+            1178.7,
+            528.2
+          ],
+          "conf": 0.976,
+          "text": "In all these illustrations the value which the function should assume at a given\npoint $x = a$ did not really depend on how is $x$ tending to $a$. Note that there are essentially\ntwo ways $x$ could approach a number $a$ either from left or from right, i.e., all the\nvalues of $x$ near $a$ could be less than $a$ or could be greater than $a$. This naturally leads\nto two limits – the \\textit{right hand limit} and the \\textit{left hand limit}. \\textit{Right hand limit} of a\nfunction $f(x)$ is that value of $f(x)$ which is dictated by the values of $f(x)$ when $x$ tends\nto $a$ from the right. Similarly, the \\textit{left hand limit}. To illustrate this, consider the function"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            355.7,
+            534.8,
+            604.5,
+            635.0
+          ],
+          "conf": 0.925,
+          "text": "$$f(x) = \\begin{cases} 1, & x \\le 0 \\\\ 2, & x > 0 \\end{cases}$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            643.0,
+            837.7,
+            770.8
+          ],
+          "conf": 0.963,
+          "text": "Graph of this function is shown in the Fig 12.3. It is\nclear that the value of $f$ at 0 dictated by values of $f(x)$ with\n$x \\le 0$ equals 1, i.e., the left hand limit of $f(x)$ at 0 is"
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            833.8,
+            595.6,
+            1174.0,
+            972.0
+          ],
+          "conf": 0.959,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            392.5,
+            776.5,
+            569.8,
+            841.7
+          ],
+          "conf": 0.888,
+          "text": "$$ \\lim_{x \\to 0} f(x) = 1. $$"
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            952.2,
+            1002.6,
+            1071.8,
+            1048.4
+          ],
+          "conf": 0.896,
+          "text": "Fig 12.3"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            843.8,
+            839.4,
+            969.8
+          ],
+          "conf": 0.957,
+          "text": "Similarly, the value of $f$ at 0 dictated by values of\n$f(x)$ with $x > 0$ equals 2, i.e., the right hand limit of $f(x)$\nat 0 is"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            381.7,
+            971.8,
+            571.7,
+            1039.9
+          ],
+          "conf": 0.861,
+          "text": "$$ \\lim_{x \\to 0^+} f(x) = 2. $$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.2,
+            1042.3,
+            1177.3,
+            1131.3
+          ],
+          "conf": 0.933,
+          "text": "In this case the right and left hand limits are different, and hence we say that the\nlimit of $f(x)$ as $x$ tends to zero does not exist (even though the function is defined at 0)."
+        },
+        {
+          "order": 9,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            1136.8,
+            1179.0,
+            1543.8
+          ],
+          "conf": 0.953,
+          "text": "Summary\n\nWe say $\\lim_{x \\to a^-} f(x)$ is the expected value of $f$ at $x = a$ given the values of $f$ near\n$x$ to the left of $a$. This value is called the left hand limit of $f$ at $a$.\n\nWe say $\\lim_{x \\to a^+} f(x)$ is the expected value of $f$ at $x = a$ given the values of\n$f$ near $x$ to the right of $a$. This value is called the right hand limit of $f(x)$ at $a$.\nIf the right and left hand limits coincide, we call that common value as the limit\nof $f(x)$ at $x = a$ and denote it by $\\lim_{x \\to a} f(x)$."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.7,
+            1546.4,
+            1177.8,
+            1710.2
+          ],
+          "conf": 0.804,
+          "text": "Illustration 1 Consider the function $f(x) = x + 10$. We want to find the limit of this\nfunction at $x = 5$. Let us compute the value of the function $f(x)$ for $x$ very near to 5.\nSome of the points near and to the left of 5 are 4.9, 4.95, 4.99, 4.995. . . , etc. Values\nof the function at these points are tabulated below. Similarly, the real number 5.001,"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0095_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            261.6,
+            1177.9,
+            349.2
+          ],
+          "conf": 0.954,
+          "text": "5.01, 5.1 are also points near and to the right of 5. Values of the function at these points\nare also given in the Table 12.4."
+        },
+        {
+          "order": 1,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            578.2,
+            342.4,
+            720.6,
+            386.8
+          ],
+          "conf": 0.908,
+          "text": "Table 12.4"
+        },
+        {
+          "order": 2,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            160.2,
+            384.4,
+            1145.2,
+            528.6
+          ],
+          "conf": 0.968,
+          "text": "<table>\n<thead>\n<tr>\n<th>x</th>\n<th>4.9</th>\n<th>4.95</th>\n<th>4.99</th>\n<th>4.995</th>\n<th>5.001</th>\n<th>5.01</th>\n<th>5.1</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>f(x)</td>\n<td>14.9</td>\n<td>14.95</td>\n<td>14.99</td>\n<td>14.995</td>\n<td>15.001</td>\n<td>15.01</td>\n<td>15.1</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            544.5,
+            1178.1,
+            711.4
+          ],
+          "conf": 0.974,
+          "text": "From the Table 12.4, we deduce that value of $f(x)$ at $x = 5$ should be greater than\n14.995 and less than 15.001 assuming nothing dramatic happens between $x = 4.995$\nand 5.001. It is reasonable to assume that the value of the $f(x)$ at $x = 5$ as dictated by\nthe numbers to the left of 5 is 15, i.e.,"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            545.4,
+            720.5,
+            744.5,
+            790.8
+          ],
+          "conf": 0.9,
+          "text": "$$ \\lim_{x \\to 5^-} f(x) = 15. $$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.4,
+            792.1,
+            1177.3,
+            845.5
+          ],
+          "conf": 0.909,
+          "text": "Similarly, when $x$ approaches 5 from the right, $f(x)$ should be taking value 15, i.e.,"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            545.7,
+            852.9,
+            748.0,
+            920.4
+          ],
+          "conf": 0.873,
+          "text": "$$\\lim_{x \\to 5^+} f(x) = 15$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            916.0,
+            1177.9,
+            1004.5
+          ],
+          "conf": 0.948,
+          "text": "Hence, it is likely that the left hand limit of $f(x)$ and the right hand limit of $f(x)$ are\nboth equal to 15. Thus,"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            403.6,
+            1006.2,
+            898.7,
+            1079.6
+          ],
+          "conf": 0.912,
+          "text": "$$ \\lim_{x \\to 5^-} f(x) = \\lim_{x \\to 5^+} f(x) = \\lim_{x \\to 5} f(x) = 15. $$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.6,
+            1078.2,
+            1178.7,
+            1243.2
+          ],
+          "conf": 0.962,
+          "text": "This conclusion about the limit being equal to 15 is somewhat strengthened by\nseeing the graph of this function which is given in Fig 2.16, Chapter 2. In this figure, we\nnote that as $x$ approaches 5 from either right or left, the graph of the function\n$f(x) = x + 10$ approaches the point $(5, 15)$."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.8,
+            1233.7,
+            1177.4,
+            1284.2
+          ],
+          "conf": 0.889,
+          "text": "We observe that the value of the function at $x = 5$ also happens to be equal to 15."
+        },
+        {
+          "order": 11,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1287.6,
+            1178.3,
+            1413.8
+          ],
+          "conf": 0.847,
+          "text": "Illustration 2 Consider the function $f(x) = x^3$. Let us try to find the limit of this\nfunction at $x = 1$. Proceeding as in the previous case, we tabulate the value of $f(x)$ at\n$x$ near 1. This is given in the Table 12.5."
+        },
+        {
+          "order": 12,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            579.0,
+            1405.4,
+            720.3,
+            1450.6
+          ],
+          "conf": 0.893,
+          "text": "Table 12.5"
+        },
+        {
+          "order": 13,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            122.6,
+            1445.5,
+            1177.9,
+            1588.6
+          ],
+          "conf": 0.957,
+          "text": "<table>\n<thead>\n<tr>\n<th>$x$</th>\n<th>0.9</th>\n<th>0.99</th>\n<th>0.999</th>\n<th>1.001</th>\n<th>1.01</th>\n<th>1.1</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$f(x)$</td>\n<td>0.729</td>\n<td>0.970299</td>\n<td>0.997002999</td>\n<td>1.003003001</td>\n<td>1.030301</td>\n<td>1.331</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1609.7,
+            1178.5,
+            1700.1
+          ],
+          "conf": 0.925,
+          "text": "From this table, we deduce that value of $f(x)$ at $x = 1$ should be greater than\n$0.997002999$ and less than $1.003003001$ assuming nothing dramatic happens between"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0095_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            259.5,
+            1179.0,
+            346.8
+          ],
+          "conf": 0.946,
+          "text": "$x = 0.999$ and $1.001$. It is reasonable to assume that the value of the $f(x)$ at $x = 1$ as\ndictated by the numbers to the left of $1$ is $1$, i.e.,"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            554.3,
+            349.4,
+            748.3,
+            416.9
+          ],
+          "conf": 0.899,
+          "text": "$$ \\lim_{x \\to 1^-} f(x) = 1. $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            193.7,
+            412.5,
+            1178.3,
+            463.0
+          ],
+          "conf": 0.916,
+          "text": "Similarly, when $x$ approaches 1 from the right, $f(x)$ should be taking value 1, i.e.,"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            554.8,
+            465.3,
+            747.0,
+            529.7
+          ],
+          "conf": 0.9,
+          "text": "$$ \\lim_{x \\to 1^+} f(x) = 1. $$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            527.2,
+            1178.1,
+            613.7
+          ],
+          "conf": 0.953,
+          "text": "Hence, it is likely that the left hand limit of $f(x)$ and the right hand limit of $f(x)$ are\nboth equal to 1. Thus,"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            413.7,
+            616.6,
+            889.7,
+            688.6
+          ],
+          "conf": 0.923,
+          "text": "$$ \\lim_{x \\to 1^-} f(x) = \\lim_{x \\to 1^+} f(x) = \\lim_{x \\to 1} f(x) = 1. $$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.6,
+            681.5,
+            1178.7,
+            846.8
+          ],
+          "conf": 0.96,
+          "text": "This conclusion about the limit being equal to 1 is somewhat strengthened by\nseeing the graph of this function which is given in Fig 2.11, Chapter 2. In this figure, we\nnote that as $x$ approaches 1 from either right or left, the graph of the function\n$f(x) = x^3$ approaches the point $(1, 1)$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.2,
+            835.4,
+            1178.1,
+            921.7
+          ],
+          "conf": 0.914,
+          "text": "We observe, again, that the value of the function at $x=1$ also happens to be\nequal to 1."
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            929.1,
+            1177.8,
+            1016.7
+          ],
+          "conf": 0.863,
+          "text": "Illustration 3 Consider the function $f(x) = 3x$. Let us try to find the limit of this\nfunction at $x = 2$. The following Table 12.6 is now self-explanatory."
+        },
+        {
+          "order": 9,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            578.6,
+            1017.1,
+            720.3,
+            1062.9
+          ],
+          "conf": 0.921,
+          "text": "Table 12.6"
+        },
+        {
+          "order": 10,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            152.8,
+            1057.3,
+            1145.3,
+            1198.3
+          ],
+          "conf": 0.961,
+          "text": "<table>\n<thead>\n<tr>\n<th>$x$</th>\n<th>1.9</th>\n<th>1.95</th>\n<th>1.99</th>\n<th>1.999</th>\n<th>2.001</th>\n<th>2.01</th>\n<th>2.1</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$f(x)$</td>\n<td>5.7</td>\n<td>5.85</td>\n<td>5.97</td>\n<td>5.997</td>\n<td>6.003</td>\n<td>6.03</td>\n<td>6.3</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            1220.0,
+            770.0,
+            1345.4
+          ],
+          "conf": 0.944,
+          "text": "As before we observe that as $x$ approaches 2\nfrom either left or right, the value of $f(x)$ seem to\napproach 6. We record this as"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            283.1,
+            1347.5,
+            758.3,
+            1418.7
+          ],
+          "conf": 0.9,
+          "text": "$$ \\lim_{x \\to 2^-} f(x) = \\lim_{x \\to 2^+} f(x) = \\lim_{x \\to 2} f(x) = 6 $$"
+        },
+        {
+          "order": 13,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            761.3,
+            1203.8,
+            1176.8,
+            1663.3
+          ],
+          "conf": 0.963,
+          "text": ""
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            1412.3,
+            770.4,
+            1498.1
+          ],
+          "conf": 0.917,
+          "text": "Its graph shown in Fig 12.4 strengthens this\nfact."
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1490.0,
+            770.4,
+            1576.0
+          ],
+          "conf": 0.908,
+          "text": "Here again we note that the value of the function\nat $x = 2$ coincides with the limit at $x = 2$."
+        },
+        {
+          "order": 16,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            921.3,
+            1660.4,
+            1041.8,
+            1706.6
+          ],
+          "conf": 0.867,
+          "text": "Fig 12.4"
+        },
+        {
+          "order": 17,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.9,
+            1590.3,
+            770.9,
+            1715.5
+          ],
+          "conf": 0.847,
+          "text": "Illustration 4 Consider the constant function\n$f(x) = 3$. Let us try to find its limit at $x = 2$. This\nfunction being the constant function takes the same"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0095_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            259.7,
+            1107.6,
+            309.7
+          ],
+          "conf": 0.922,
+          "text": "value (3, in this case) everywhere, i.e., its value at points close to 2 is 3. Hence"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            282.0,
+            311.2,
+            748.5,
+            379.8
+          ],
+          "conf": 0.921,
+          "text": "$$ \\lim_{x \\to \\overline{2}} f(x) = \\lim_{x \\to 2^+} f(x) = \\lim_{x \\to 2} f(x) = 3 $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            374.1,
+            1177.9,
+            525.4
+          ],
+          "conf": 0.883,
+          "text": "Graph of $f(x) = 3$ is anyway the line parallel to $x$-axis passing through $(0, 3)$ and\nis shown in Fig 2.9, Chapter 2. From this also it is clear that the required limit is 3. In\nfact, it is easily observed that $\\lim_{x \\to a} f(x) = 3$ for any real number $a$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            563.5,
+            1178.1,
+            669.9
+          ],
+          "conf": 0.849,
+          "text": "Illustration 5 Consider the function $f(x) = x^2 + x$. We want to find $\\lim_{x \\to 1} f(x)$. We\ntabulate the values of $f(x)$ near $x = 1$ in Table 12.7."
+        },
+        {
+          "order": 4,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            578.8,
+            677.4,
+            719.8,
+            722.4
+          ],
+          "conf": 0.918,
+          "text": "Table 12.7"
+        },
+        {
+          "order": 5,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            175.8,
+            715.9,
+            1133.1,
+            866.6
+          ],
+          "conf": 0.969,
+          "text": "<table>\n<thead>\n<tr>\n<th>$x$</th>\n<th>0.9</th>\n<th>0.99</th>\n<th>0.999</th>\n<th>1.01</th>\n<th>1.1</th>\n<th>1.2</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$f(x)$</td>\n<td>1.71</td>\n<td>1.9701</td>\n<td>1.997001</td>\n<td>2.0301</td>\n<td>2.31</td>\n<td>2.64</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            880.5,
+            632.2,
+            930.8
+          ],
+          "conf": 0.892,
+          "text": "From this it is reasonable to deduce that"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            124.5,
+            931.8,
+            603.7,
+            1002.8
+          ],
+          "conf": 0.896,
+          "text": "$$ \\lim_{x \\to 1^-} f(x) = \\lim_{x \\to 1^+} f(x) = \\lim_{x \\to 1} f(x) = 2. $$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1010.2,
+            646.6,
+            1139.2
+          ],
+          "conf": 0.865,
+          "text": "From the graph of $f(x) = x^2 + x$\nshown in the Fig 12.5, it is clear that as $x$\napproaches 1, the graph approaches (1, 2)."
+        },
+        {
+          "order": 9,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            634.3,
+            893.6,
+            1175.5,
+            1318.2
+          ],
+          "conf": 0.899,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            198.4,
+            1127.7,
+            615.4,
+            1176.7
+          ],
+          "conf": 0.785,
+          "text": "Here, again we observe that the"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            281.4,
+            1180.9,
+            499.1,
+            1243.0
+          ],
+          "conf": 0.863,
+          "text": "$$ \\lim_{x \\to 1} f(x) = f(1) $$"
+        },
+        {
+          "order": 12,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            813.4,
+            1275.5,
+            995.8,
+            1323.7
+          ],
+          "conf": 0.623,
+          "text": "Y'   Fig 12.5"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            1255.9,
+            590.6,
+            1343.9
+          ],
+          "conf": 0.914,
+          "text": "Now, convince yourself of the\nfollowing three facts:"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            282.1,
+            1387.2,
+            751.9,
+            1459.0
+          ],
+          "conf": 0.878,
+          "text": "$$\\lim_{x \\to 1} x^2 = 1, \\lim_{x \\to 1} x = 1 \\text{ and } \\lim_{x \\to 1} x + 1 = 2$$"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.3,
+            1481.2,
+            791.2,
+            1553.8
+          ],
+          "conf": 0.828,
+          "text": "Then $\\lim_{x \\to 1} x^2 + \\lim_{x \\to 1} x = 1 + 1 = 2 = \\lim_{x \\to 1} \\left[ x^2 + x \\right].$"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.2,
+            1578.7,
+            998.7,
+            1652.1
+          ],
+          "conf": 0.826,
+          "text": "Also $\\lim_{x \\to 1} x \\cdot \\lim_{x \\to 1} (x+1) = 1.2 = 2 = \\lim_{x \\to 1} [x(x+1)] = \\lim_{x \\to 1} [x^2 + x].$"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0095_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            278.0,
+            1177.1,
+            364.2
+          ],
+          "conf": 0.85,
+          "text": "Illustration 6 Consider the function $f(x) = \\sin x$. We are interested in $\\lim_{x \\to \\frac{\\pi}{2}} \\sin x$,"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            363.3,
+            628.4,
+            412.7
+          ],
+          "conf": 0.857,
+          "text": "where the angle is measured in radians."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            422.4,
+            1177.9,
+            548.7
+          ],
+          "conf": 0.94,
+          "text": "Here, we tabulate the (approximate) value of $f(x)$ near $\\frac{\\pi}{2}$ (Table 12.8). From\nthis, we may deduce that"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            281.4,
+            554.4,
+            778.8,
+            655.1
+          ],
+          "conf": 0.929,
+          "text": "$$\\lim_{x \\to \\frac{\\pi^-}{2}} f(x) = \\lim_{x \\to \\frac{\\pi^+}{2}} f(x) = \\lim_{x \\to \\frac{\\pi}{2}} f(x) = 1$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            650.6,
+            1177.5,
+            755.2
+          ],
+          "conf": 0.904,
+          "text": "Further, this is supported by the graph of $f(x) = \\sin x$ which is given in the Fig 3.8\n(Chapter 3). In this case too, we observe that $\\lim_{\\pi} \\sin x = 1$."
+        },
+        {
+          "order": 5,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            566.3,
+            814.1,
+            731.6,
+            862.0
+          ],
+          "conf": 0.91,
+          "text": "Table 12.8"
+        },
+        {
+          "order": 6,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            185.0,
+            868.7,
+            1113.2,
+            1030.2
+          ],
+          "conf": 0.966,
+          "text": "<table>\n<thead>\n<tr>\n<th>$x$</th>\n<th>$\\frac{\\pi}{2} - 0.1$</th>\n<th>$\\frac{\\pi}{2} - 0.01$</th>\n<th>$\\frac{\\pi}{2} + 0.01$</th>\n<th>$\\frac{\\pi}{2} + 0.1$</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$f(x)$</td>\n<td>0.9950</td>\n<td>0.9999</td>\n<td>0.9999</td>\n<td>0.9950</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.2,
+            1055.5,
+            1169.0,
+            1172.3
+          ],
+          "conf": 0.694,
+          "text": "Illustration 7 Consider the function $f(x) = x + \\cos x$. We want to find the $\\lim_{x \\to 0} f(x)$.\n\nHere we tabulate the (approximate) value of $f(x)$ near 0 (Table 12.9)."
+        },
+        {
+          "order": 8,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            567.3,
+            1178.0,
+            732.0,
+            1226.1
+          ],
+          "conf": 0.895,
+          "text": "Table 12.9"
+        },
+        {
+          "order": 9,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            140.7,
+            1221.3,
+            1161.4,
+            1375.6
+          ],
+          "conf": 0.954,
+          "text": "<table>\n<thead>\n<tr>\n<th>$x$</th>\n<th>$-0.1$</th>\n<th>$-0.01$</th>\n<th>$-0.001$</th>\n<th>$0.001$</th>\n<th>$0.01$</th>\n<th>$0.1$</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$f(x)$</td>\n<td>0.9850</td>\n<td>0.98995</td>\n<td>0.9989995</td>\n<td>1.0009995</td>\n<td>1.00995</td>\n<td>1.0950</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1389.1,
+            653.8,
+            1439.8
+          ],
+          "conf": 0.887,
+          "text": "From the Table 13.9, we may deduce that"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            284.6,
+            1441.5,
+            750.8,
+            1511.3
+          ],
+          "conf": 0.898,
+          "text": "$$ \\lim_{x \\to 0^-} f(x) = \\lim_{x \\to 0^+} f(x) = \\lim_{x \\to 0} f(x) = 1 $$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            194.5,
+            1519.4,
+            872.6,
+            1577.4
+          ],
+          "conf": 0.866,
+          "text": "In this case too, we observe that $\\lim_{x \\to 0} f(x) = f(0) = 1.$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            194.0,
+            1578.7,
+            666.9,
+            1628.1
+          ],
+          "conf": 0.864,
+          "text": "Now, can you convince yourself that"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            280.7,
+            1631.2,
+            887.8,
+            1698.0
+          ],
+          "conf": 0.893,
+          "text": "$$\\lim_{x \\to 0} [x + \\cos x] = \\lim_{x \\to 0} x + \\lim_{x \\to 0} \\cos x \\text{ is indeed true?}$$"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0095_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            278.7,
+            1177.0,
+            366.1
+          ],
+          "conf": 0.811,
+          "text": "Illustration 8 Consider the function $f(x)=\\frac{1}{x^{2}}$ for $x>0$. We want to know $\\lim _{x \\rightarrow 0} f(x)$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            363.1,
+            1180.0,
+            528.0
+          ],
+          "conf": 0.96,
+          "text": "Here, observe that the domain of the function is given to be all positive real\nnumbers. Hence, when we tabulate the values of $f(x)$, it does not make sense to talk of\n$x$ approaching $0$ from the left. Below we tabulate the values of the function for positive\n$x$ close to $0$ (in this table $n$ denotes any positive integer)."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            518.1,
+            1178.6,
+            643.7
+          ],
+          "conf": 0.952,
+          "text": "From the Table 12.10 given below, we see that as $x$ tends to 0, $f(x)$ becomes\nlarger and larger. What we mean here is that the value of $f(x)$ may be made larger than\nany given number."
+        },
+        {
+          "order": 3,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            571.1,
+            636.3,
+            727.1,
+            680.8
+          ],
+          "conf": 0.937,
+          "text": "Table 12.10"
+        },
+        {
+          "order": 4,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            186.4,
+            685.3,
+            1153.1,
+            828.8
+          ],
+          "conf": 0.967,
+          "text": "<table>\n<tbody>\n<tr>\n<td>$x$</td>\n<td>1</td>\n<td>0.1</td>\n<td>0.01</td>\n<td>$10^{-n}$</td>\n</tr>\n<tr>\n<td>$f(x)$</td>\n<td>1</td>\n<td>100</td>\n<td>10000</td>\n<td>$10^{2n}$</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            825.7,
+            432.8,
+            875.7
+          ],
+          "conf": 0.917,
+          "text": "Mathematically, we say"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            281.1,
+            877.4,
+            489.2,
+            942.4
+          ],
+          "conf": 0.898,
+          "text": "$$ \\lim_{x \\to 0} f(x) = +\\infty $$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            939.4,
+            1008.7,
+            989.7
+          ],
+          "conf": 0.912,
+          "text": "We also remark that we will not come across such limits in this course."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            996.5,
+            743.7,
+            1056.0
+          ],
+          "conf": 0.769,
+          "text": "Illustration 9 We want to find $\\lim_{x \\to 0} f(x)$, where"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            281.8,
+            1075.6,
+            575.2,
+            1222.5
+          ],
+          "conf": 0.931,
+          "text": "$$f(x) = \\begin{cases} x - 2, & x < 0 \\\\ 0, & x = 0 \\\\ x + 2, & x > 0 \\end{cases}$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1232.3,
+            1179.5,
+            1321.5
+          ],
+          "conf": 0.934,
+          "text": "As usual we make a table of $x$ near 0 with $f(x)$. Observe that for negative values of $x$\nwe need to evaluate $x-2$ and for positive values, we need to evaluate $x+2$."
+        },
+        {
+          "order": 11,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            572.3,
+            1331.9,
+            724.8,
+            1377.3
+          ],
+          "conf": 0.904,
+          "text": "Table 12.11"
+        },
+        {
+          "order": 12,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            140.8,
+            1380.4,
+            1160.9,
+            1534.6
+          ],
+          "conf": 0.957,
+          "text": "<table>\n<tbody>\n<tr>\n<td>$x$</td>\n<td>$-0.1$</td>\n<td>$-0.01$</td>\n<td>$-0.001$</td>\n<td>$0.001$</td>\n<td>$0.01$</td>\n<td>$0.1$</td>\n</tr>\n<tr>\n<td>$f(x)$</td>\n<td>$-2.1$</td>\n<td>$-2.01$</td>\n<td>$-2.001$</td>\n<td>$2.001$</td>\n<td>$2.01$</td>\n<td>$2.1$</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.8,
+            1543.6,
+            1178.3,
+            1631.0
+          ],
+          "conf": 0.923,
+          "text": "From the first three entries of the Table 12.11, we deduce that the value of the\nfunction is decreasing to $-2$ and hence."
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            546.8,
+            1635.1,
+            751.4,
+            1700.1
+          ],
+          "conf": 0.869,
+          "text": "$$ \\lim_{x \\to 0^-} f(x) = -2 $$"
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0095_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            259.5,
+            1178.6,
+            345.2
+          ],
+          "conf": 0.953,
+          "text": "From the last three entires of the table we deduce that the value of the function\nis increasing from 2 and hence"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            388.4,
+            349.6,
+            576.8,
+            416.7
+          ],
+          "conf": 0.881,
+          "text": "$$ \\lim_{x \\to 0^+} f(x) = 2 $$"
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            836.8,
+            303.4,
+            1180.8,
+            639.4
+          ],
+          "conf": 0.957,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            412.7,
+            843.0,
+            500.3
+          ],
+          "conf": 0.862,
+          "text": "Since the left and right hand limits at $0$ do not coincide,\nwe say that the limit of the function at $0$ does not exist."
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            959.9,
+            643.5,
+            1081.3,
+            690.1
+          ],
+          "conf": 0.901,
+          "text": "Fig 12.6"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            488.7,
+            845.5,
+            652.8
+          ],
+          "conf": 0.87,
+          "text": "Graph of this function is given in the Fig12.6. Here,\nwe remark that the value of the function at $x = 0$ is well\ndefined and is, indeed, equal to 0, but the limit of the function\nat $x = 0$ is not even defined."
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            660.2,
+            844.6,
+            878.6
+          ],
+          "conf": 0.531,
+          "text": "Illustration 10 As a final illustration, we find $\\lim_{x \\to 1} f(x)$,\n\nwhere\n\n$$f(x) = \\begin{cases} x + 2 & x \\neq 1 \\\\ 0 & x = 1 \\end{cases}$$"
+        },
+        {
+          "order": 7,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            572.3,
+            891.7,
+            726.4,
+            939.2
+          ],
+          "conf": 0.907,
+          "text": "Table 12.12"
+        },
+        {
+          "order": 8,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            159.0,
+            940.5,
+            1150.2,
+            1090.8
+          ],
+          "conf": 0.964,
+          "text": "<table>\n<thead>\n<tr>\n<th>$x$</th>\n<th>0.9</th>\n<th>0.99</th>\n<th>0.999</th>\n<th>1.001</th>\n<th>1.01</th>\n<th>1.1</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$f(x)$</td>\n<td>2.9</td>\n<td>2.99</td>\n<td>2.999</td>\n<td>3.001</td>\n<td>3.01</td>\n<td>3.1</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1112.6,
+            1178.2,
+            1200.8
+          ],
+          "conf": 0.936,
+          "text": "As usual we tabulate the values of $f(x)$ for $x$ near 1. From the values of $f(x)$ for\n$x$ less than 1, it seems that the function should take value 3 at $x = 1.$, i.e.,"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            325.4,
+            1203.3,
+            517.5,
+            1270.7
+          ],
+          "conf": 0.868,
+          "text": "$$\\lim_{x \\to 1^-} f(x) = 3.$$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1267.1,
+            758.8,
+            1354.7
+          ],
+          "conf": 0.915,
+          "text": "Similarly, the value of $f(x)$ should be 3 as dic-\ntated by values of $f(x)$ at $x$ greater than 1. i.e."
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            326.3,
+            1357.0,
+            519.7,
+            1419.3
+          ],
+          "conf": 0.84,
+          "text": "$$\\lim_{x \\to 1^+} f(x) = 3.$$"
+        },
+        {
+          "order": 13,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            757.5,
+            1240.1,
+            1176.6,
+            1655.5
+          ],
+          "conf": 0.962,
+          "text": ""
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1420.2,
+            759.6,
+            1506.3
+          ],
+          "conf": 0.911,
+          "text": "But then the left and right hand limits coin-\ncide and hence"
+        },
+        {
+          "order": 15,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            931.7,
+            1654.1,
+            1051.7,
+            1700.5
+          ],
+          "conf": 0.851,
+          "text": "Fig 12.7"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            268.1,
+            1545.3,
+            747.0,
+            1615.8
+          ],
+          "conf": 0.868,
+          "text": "$$ \\lim_{x \\to 1^-} f(x) = \\lim_{x \\to 1^+} f(x) = \\lim_{x \\to 1} f(x) = 3. $$"
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            1612.2,
+            760.8,
+            1698.4
+          ],
+          "conf": 0.892,
+          "text": "Graph of function given in Fig 12.7 strength-\nens our deduction about the limit. Here, we"
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0095_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            260.1,
+            1178.5,
+            348.8
+          ],
+          "conf": 0.958,
+          "text": "note that  in general, at a given point the value of the function and its limit may be\ndifferent (even when both are defined)."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            358.0,
+            1178.2,
+            525.9
+          ],
+          "conf": 0.957,
+          "text": "12.3.1 *Algebra of limits* In the above illustrations, we have observed that the limiting\nprocess respects addition, subtraction, multiplication and division as long as the limits\nand functions under consideration are well defined. This is not a coincidence. In fact,\nbelow we formalise these as a theorem without proof."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            547.4,
+            1176.4,
+            611.2
+          ],
+          "conf": 0.76,
+          "text": "Theorem 1 Let $f$ and $g$ be two functions such that both $\\lim_{x \\to a} f(x)$ and $\\lim_{x \\to a} g(x)$ exist."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            607.8,
+            208.0,
+            654.7
+          ],
+          "conf": 0.859,
+          "text": "Then"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            128.4,
+            654.2,
+            1179.8,
+            1077.1
+          ],
+          "conf": 0.901,
+          "text": "(i) Limit of sum of two functions is sum of the limits of the functions, i.e.,\n$$\\lim_{x \\to a} [f(x) + g(x)] = \\lim_{x \\to a} f(x) + \\lim_{x \\to a} g(x).$$\n(ii) Limit of difference of two functions is difference of the limits of the functions, i.e.,\n$$\\lim_{x \\to a} [f(x) - g(x)] = \\lim_{x \\to a} f(x) - \\lim_{x \\to a} g(x).$$\n(iii) Limit of product of two functions is product of the limits of the functions, i.e.,\n$$\\lim_{x \\to a} [f(x) \\cdot g(x)] = \\lim_{x \\to a} f(x) \\cdot \\lim_{x \\to a} g(x).$$\n(iv) Limit of quotient of two functions is quotient of the limits of the functions (whenever\nthe denominator is non zero), i.e.,"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            506.4,
+            1089.7,
+            790.9,
+            1211.2
+          ],
+          "conf": 0.892,
+          "text": "$$ \\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\frac{\\lim_{x \\to a} f(x)}{\\lim_{x \\to a} g(x)} $$"
+        },
+        {
+          "order": 6,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            1229.1,
+            1178.3,
+            1349.2
+          ],
+          "conf": 0.903,
+          "text": "Note In particular as a special case of (iii), when $g$ is the constant function\nsuch that $g(x) = \\lambda$, for some real number $\\lambda$, we have"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            454.3,
+            1352.2,
+            847.1,
+            1427.3
+          ],
+          "conf": 0.876,
+          "text": "$$\\lim_{x \\to a} [(\\lambda.f)(x)] = \\lambda. \\lim_{x \\to a} f(x).$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1429.2,
+            1178.8,
+            1517.1
+          ],
+          "conf": 0.928,
+          "text": "In the next two subsections, we illustrate how to exploit this theorem to evaluate\nlimits of special types of functions."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1523.8,
+            1177.8,
+            1653.8
+          ],
+          "conf": 0.878,
+          "text": "12.3.2 *Limits of polynomials and rational functions* A function $f$ is said to be a\npolynomial function of degree $n$ $f(x) = a_0 + a_1x + a_2x^2 + \\dots + a_nx^n$, where $a_is$ are real\nnumbers such that $a_n \\neq 0$ for some natural number $n$."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            198.6,
+            1657.9,
+            622.0,
+            1722.7
+          ],
+          "conf": 0.82,
+          "text": "We know that $\\lim_{x \\to a} x = a$. Hence"
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0095_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            324.0,
+            273.8,
+            854.1,
+            347.3
+          ],
+          "conf": 0.919,
+          "text": "$$\\lim_{x \\to a} x^2 = \\lim_{x \\to a} (x.x) = \\lim_{x \\to a} x. \\lim_{x \\to a} x = a. a = a^2$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            351.3,
+            712.3,
+            398.4
+          ],
+          "conf": 0.929,
+          "text": "An easy exercise in induction on $n$ tells us that"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            281.2,
+            413.2,
+            440.7,
+            482.6
+          ],
+          "conf": 0.892,
+          "text": "$$ \\lim_{x \\to a} x^n = a^n $$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            491.7,
+            1178.6,
+            608.4
+          ],
+          "conf": 0.926,
+          "text": "Now, let $f(x)=a_{0}+a_{1}x+a_{2}x^{2}+...+a_{n}x^{n}$ be a polynomial function. Thinking\nof each of $a_{0}, a_{1}x, a_{2}x^{2},...,a_{n}x^{n}$ as a function, we have"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            289.5,
+            618.8,
+            958.8,
+            1016.3
+          ],
+          "conf": 0.838,
+          "text": "$$\\lim_{x \\to a} f(x) = \\lim_{x \\to a} \\left[ a_0 + a_1 x + a_2 x^2 + ... + a_n x^n \\right]$$\n\n$$= \\lim_{x \\to a} a_0 + \\lim_{x \\to a} a_1 x + \\lim_{x \\to a} a_2 x^2 + ... + \\lim_{x \\to a} a_n x^n$$\n\n$$= a_0 + a_1 \\lim_{x \\to a} x + a_2 \\lim_{x \\to a} x^2 + ... + a_n \\lim_{x \\to a} x^n$$\n\n$$= a_0 + a_1 a + a_2 a^2 + ... + a_n a^n$$\n\n$$= f(a)$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.4,
+            1021.6,
+            1139.3,
+            1071.8
+          ],
+          "conf": 0.913,
+          "text": "(Make sure that you understand the justification for each step in the above!)"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1083.6,
+            1178.2,
+            1226.8
+          ],
+          "conf": 0.872,
+          "text": "A function $f$ is said to be a rational function, if $f(x) = \\frac{g(x)}{h(x)}$, where $g(x)$ and $h(x)$\n\nare polynomials such that $h(x) \\neq 0$. Then"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1182.8,
+            643.2,
+            1232.3
+          ],
+          "conf": 0.653,
+          "text": "are polynomials such that $h(x) \\neq 0$. Then"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            385.4,
+            1242.4,
+            906.4,
+            1364.2
+          ],
+          "conf": 0.913,
+          "text": "$$\\lim_{x \\to a} f(x) = \\lim_{x \\to a} \\frac{g(x)}{h(x)} = \\frac{\\lim_{x \\to a} g(x)}{\\lim_{x \\to a} h(x)} = \\frac{g(a)}{h(a)}$$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1367.8,
+            1179.4,
+            1541.5
+          ],
+          "conf": 0.951,
+          "text": "However, if $h(a)=0$, there are two scenarios – (i) when $g(a) \\neq 0$ and (ii) when\n$g(a)=0$. In the former case we say that the limit does not exist. In the latter case we\ncan write $g(x)=(x-a)^{k} g_{1}(x)$, where $k$ is the maximum of powers of $(x-a)$ in $g(x)$\nSimilarly, $h(x)=(x-a)^{l} h_{1}(x)$ as $h(a)=0$. Now, if $k>l$, we have"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            383.0,
+            1556.1,
+            912.3,
+            1689.9
+          ],
+          "conf": 0.915,
+          "text": "$$ \\lim_{x \\to a} f(x) = \\frac{\\lim_{x \\to a} g(x)}{\\lim_{x \\to a} h(x)} = \\frac{\\lim_{x \\to a} (x - a)^k g_1(x)}{\\lim_{x \\to a} (x - a)^l h_1(x)} $$"
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0095_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            400.3,
+            282.0,
+            892.3,
+            413.8
+          ],
+          "conf": 0.922,
+          "text": "$$ = \\frac{\\lim_{x \\to a} (x - a)^{(k-l)} g_1(x)}{\\lim_{x \\to a} h_1(x)} = \\frac{0 \\cdot g_1(a)}{h_1(a)} = 0 $$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            416.3,
+            523.0,
+            466.1
+          ],
+          "conf": 0.927,
+          "text": "If $k < l$, the limit is not defined."
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            467.4,
+            1180.5,
+            1008.7
+          ],
+          "conf": 0.597,
+          "text": "Example 1 Find the limits: (i) $\\lim_{x \\to 1} \\left[ x^3 - x^2 + 1 \\right]$ (ii) $\\lim_{x \\to 3} \\left[ x(x+1) \\right]$\n\n(iii) $\\lim_{x \\to -1} \\left[ 1 + x + x^2 + ... + x^{10} \\right]$.\n\nSolution The required limits are all limits of some polynomial functions. Hence the\nlimits are the values of the function at the prescribed points. We have\n\n(i) $\\lim_{x \\to 1} \\left[ x^3 - x^2 + 1 \\right] = 1^3 - 1^2 + 1 = 1$\n\n(ii) $\\lim_{x \\to 3} \\left[ x(x+1) \\right] = 3(3+1) = 3(4) = 12$\n\n(iii) $\\lim_{x \\to -1} \\left[ 1 + x + x^2 + ... + x^{10} \\right] = 1 + (-1) + (-1)^2 + ... + (-1)^{10}$\n$= 1 - 1 + 1 ... + 1 = 1$."
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1001.3,
+            472.6,
+            1050.1
+          ],
+          "conf": 0.69,
+          "text": "Example 2 Find the limits:"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            192.8,
+            1050.9,
+            997.1,
+            1406.8
+          ],
+          "conf": 0.561,
+          "text": "(i) $\\lim_{x \\to 1} \\left[ \\frac{x^2 + 1}{x + 100} \\right]$\n(ii) $\\lim_{x \\to 2} \\left[ \\frac{x^3 - 4x^2 + 4x}{x^2 - 4} \\right]$\n\n(iii) $\\lim_{x \\to 2} \\left[ \\frac{x^2 - 4}{x^3 - 4x^2 + 4x} \\right]$\n(iv) $\\lim_{x \\to 2} \\left[ \\frac{x^3 - 2x^2}{x^2 - 5x + 6} \\right]$\n\n(v) $\\lim_{x \\to 1} \\left[ \\frac{x - 2}{x^2 - x} - \\frac{1}{x^3 - 3x^2 + 2x} \\right]$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1419.5,
+            1181.3,
+            1692.3
+          ],
+          "conf": 0.964,
+          "text": "Solution All the functions under consideration are rational functions. Hence, we first\nevaluate these functions at the prescribed points. If this is of the form $\\frac{0}{0}$, we try to\nrewrite the function cancelling the factors which are causing the limit to be of\nthe form $\\frac{0}{0}$."
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0095_p0014.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            201.1,
+            275.3,
+            727.5,
+            373.5
+          ],
+          "conf": 0.761,
+          "text": "(i) We have $\\lim_{x \\to 1} \\frac{x^2 + 1}{x + 100} = \\frac{1^2 + 1}{1 + 100} = \\frac{2}{101}$"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.7,
+            382.3,
+            861.1,
+            464.9
+          ],
+          "conf": 0.719,
+          "text": "(ii) Evaluating the function at 2, it is of the form $\\frac{0}{0}$."
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.2,
+            490.2,
+            935.4,
+            856.3
+          ],
+          "conf": 0.648,
+          "text": "Hence $\\lim_{x \\to 2} \\frac{x^3 - 4x^2 + 4x}{x^2 - 4} = \\lim_{x \\to 2} \\frac{x(x-2)^2}{(x+2)(x-2)}$\n\n$= \\lim_{x \\to 2} \\frac{x(x-2)}{(x+2)}$ as $x \\neq 2$\n\n$= \\frac{2(2-2)}{2+2} = \\frac{0}{4} = 0.$"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.7,
+            878.9,
+            923.5,
+            960.1
+          ],
+          "conf": 0.728,
+          "text": "(iii) Evaluating the function at 2, we get it of the form $\\frac{0}{0}$."
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            188.0,
+            978.5,
+            923.3,
+            1225.5
+          ],
+          "conf": 0.55,
+          "text": "Hence $\\lim_{x \\to 2} \\frac{x^2 - 4}{x^3 - 4x^2 + 4x} = \\lim_{x \\to 2} \\frac{(x + 2)(x - 2)}{x(x - 2)^2}$\n\n$= \\lim_{x \\to 2} \\frac{(x + 2)}{x(x - 2)} = \\frac{2 + 2}{2(2 - 2)} = \\frac{4}{0}$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1234.0,
+            396.0,
+            1283.8
+          ],
+          "conf": 0.848,
+          "text": "which is not defined."
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.8,
+            1300.5,
+            933.8,
+            1387.4
+          ],
+          "conf": 0.742,
+          "text": "(iv) Evaluating the function at 2, we get it of the form $\\frac{0}{0}$."
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.1,
+            1407.5,
+            965.0,
+            1655.7
+          ],
+          "conf": 0.576,
+          "text": "Hence $\\lim_{x \\to 2} \\frac{x^3 - 2x^2}{x^2 - 5x + 6} = \\lim_{x \\to 2} \\frac{x^2(x - 2)}{(x - 2)(x - 3)}$\n\n\n$= \\lim_{x \\to 2} \\frac{x^2}{(x - 3)} = \\frac{(2)^2}{2 - 3} = \\frac{4}{-1} = -4.$"
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0095_p0015.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            190.6,
+            259.2,
+            903.8,
+            308.8
+          ],
+          "conf": 0.85,
+          "text": "(v) First, we rewrite the function as a rational function."
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            188.9,
+            313.5,
+            903.0,
+            833.9
+          ],
+          "conf": 0.772,
+          "text": "$$ \\left[ \\frac{x-2}{x^2-x} - \\frac{1}{x^3-3x^2+2x} \\right] = \\left[ \\frac{x-2}{x(x-1)} - \\frac{1}{x(x^2-3x+2)} \\right] $$\n\n\n$$ = \\left[ \\frac{x-2}{x(x-1)} - \\frac{1}{x(x-1)(x-2)} \\right] $$\n\n\n$$ = \\left[ \\frac{x^2-4x+4-1}{x(x-1)(x-2)} \\right] $$\n\n\n$$ = \\frac{x^2-4x+3}{x(x-1)(x-2)} $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            851.2,
+            787.7,
+            937.5
+          ],
+          "conf": 0.899,
+          "text": "Evaluating the function at 1, we get it of the form $\\frac{0}{0}$."
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.2,
+            951.5,
+            1077.4,
+            1299.8
+          ],
+          "conf": 0.733,
+          "text": "Hence $\\lim_{x \\to 1} \\left[ \\frac{x^2 - 2}{x^2 - x} - \\frac{1}{x^3 - 3x^2 + 2x} \\right] = \\lim_{x \\to 1} \\frac{x^2 - 4x + 3}{x(x-1)(x-2)}$\n$= \\lim_{x \\to 1} \\frac{(x-3)(x-1)}{x(x-1)(x-2)}$\n$= \\lim_{x \\to 1} \\frac{x-3}{x(x-2)} = \\frac{1-3}{1(1-2)} = 2.$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            1301.3,
+            1179.0,
+            1392.7
+          ],
+          "conf": 0.92,
+          "text": "We remark that we could cancel the term $(x - 1)$ in the above evaluation because\n$x \\neq 1$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1384.7,
+            1179.0,
+            1470.6
+          ],
+          "conf": 0.904,
+          "text": "Evaluation of an important limit which will be used in the sequel is given as a\ntheorem below."
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.0,
+            1461.1,
+            784.9,
+            1614.0
+          ],
+          "conf": 0.61,
+          "text": "Theorem 2 For any positive integer $n$,\n\n$$\\lim_{x \\to a} \\frac{x^n - a^n}{x - a} = n a^{n-1}.$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1623.4,
+            1178.5,
+            1710.4
+          ],
+          "conf": 0.871,
+          "text": "Remark The expression in the above theorem for the limit is true even if $n$ is any\nrational number and $a$ is positive."
+        }
+      ],
+      "page": 15
+    },
+    {
+      "image": "0095_p0016.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            125.7,
+            260.1,
+            969.7,
+            636.7
+          ],
+          "conf": 0.508,
+          "text": "Proof Dividing $(x^n - a^n)$ by $(x - a)$, we see that\n\n$$x^n - a^n = (x-a) \\left(x^{n-1} + x^{n-2} a + x^{n-3} a^2 + ... + x a^{n-2} + a^{n-1}\\right)$$\n\nThus, $\\lim_{x \\to a} \\frac{x^n - a^n}{x - a} = \\lim_{x \\to a} \\left(x^{n-1} + x^{n-2} a + x^{n-3} a^2 + ... + x a^{n-2} + a^{n-1}\\right)$\n\n$$= a^{n-1} + a a^{n-2} + ... + a^{n-2} (a) + a^{n-1}$$\n\n$$= a^{n-1} + a^{n-1} + ... + a^{n-1} + a^{n-1} \\text{ (}n \\text{ terms)}$$\n\n$$= n a^{n-1}$$"
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            649.8,
+            409.5,
+            697.5
+          ],
+          "conf": 0.67,
+          "text": "Example 3 Evaluate:"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.8,
+            658.3,
+            1087.1,
+            1699.7
+          ],
+          "conf": 0.53,
+          "text": "Example 3 Evaluate:\n\n(i) $\\lim_{x \\to 1} \\frac{x^{15} - 1}{x^{10} - 1}$ (ii) $\\lim_{x \\to 0} \\frac{\\sqrt{1+x} - 1}{x}$\n\nSolution (i) We have\n\n$$\\lim_{x \\to 1} \\frac{x^{15} - 1}{x^{10} - 1} = \\lim_{x \\to 1} \\left[ \\frac{x^{15} - 1}{x - 1} \\div \\frac{x^{10} - 1}{x - 1} \\right]$$\n\n$$= \\lim_{x \\to 1} \\left[ \\frac{x^{15} - 1}{x - 1} \\right] \\div \\lim_{x \\to 1} \\left[ \\frac{x^{10} - 1}{x - 1} \\right]$$\n\n$$= 15(1)^{14} \\div 10(1)^9 \\text{ (by the theorem above)}$$\n\n$$= 15 \\div 10 = \\frac{3}{2}$$\n\n(ii) Put $y = 1 + x$, so that $y \\to 1$ as $x \\to 0$.\n\nThen $\\lim_{x \\to 0} \\frac{\\sqrt{1+x} - 1}{x} = \\lim_{y \\to 1} \\frac{\\sqrt{y} - 1}{y - 1}$\n\n$$= \\lim_{y \\to 1} \\frac{y^{\\frac{1}{2}} - 1^{\\frac{1}{2}}}{y - 1}$$\n\n$$= \\frac{1}{2} (1)^{\\frac{1}{2} - 1} \\text{ (by the remark above)} = \\frac{1}{2}$$"
+        }
+      ],
+      "page": 16
+    },
+    {
+      "image": "0095_p0017.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.2,
+            258.4,
+            677.3,
+            309.3
+          ],
+          "conf": 0.874,
+          "text": "12.4 Limits of Trigonometric Functions"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            297.5,
+            1178.6,
+            385.9
+          ],
+          "conf": 0.948,
+          "text": "The following facts (stated as theorems) about functions in general come in handy in\ncalculating limits of some trigonometric functions."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.5,
+            392.9,
+            1178.7,
+            584.2
+          ],
+          "conf": 0.933,
+          "text": "Theorem 3 Let $f$ and $g$ be two real valued functions with the same domain such that\n\n\n$f(x) \\leq g(x)$ for all $x$ in the domain of definition, For some $a$, if both $\\lim_{x \\to a} f(x)$ and\n\n\n$\\lim_{x \\to a} g(x)$ exist, then $\\lim_{x \\to a} f(x) \\leq \\lim_{x \\to a} g(x)$. This is illustrated in Fig 12.8."
+        },
+        {
+          "order": 3,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            410.9,
+            589.4,
+            883.9,
+            919.8
+          ],
+          "conf": 0.858,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            593.7,
+            909.3,
+            713.8,
+            956.6
+          ],
+          "conf": 0.917,
+          "text": "Fig 12.8"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.5,
+            965.6,
+            1179.0,
+            1124.6
+          ],
+          "conf": 0.904,
+          "text": "Theorem 4 (Sandwich Theorem) Let $f$, $g$ and $h$ be real functions such that\n$f(x) \\leq g(x) \\leq h(x)$ for all $x$ in the common domain of definition. For some real number\n$a$, if $\\lim_{x \\to a} f(x) = l = \\lim_{x \\to a} h(x)$, then $\\lim_{x \\to a} g(x) = l$. This is illustrated in Fig 12.9."
+        },
+        {
+          "order": 6,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            377.5,
+            1124.6,
+            916.9,
+            1483.9
+          ],
+          "conf": 0.828,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            611.9,
+            1470.0,
+            733.6,
+            1517.5
+          ],
+          "conf": 0.876,
+          "text": "Fig 12.9"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1521.3,
+            1179.2,
+            1610.6
+          ],
+          "conf": 0.907,
+          "text": "Given below is a beautiful geometric proof of the following important\ninequality relating trigonometric functions."
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            202.4,
+            1616.5,
+            1047.5,
+            1707.1
+          ],
+          "conf": 0.875,
+          "text": "$$ \\cos x < \\frac{\\sin x}{x} < 1 \\quad \\text{for } 0 < |x| < \\frac{\\pi}{2} \\tag{*} $$"
+        }
+      ],
+      "page": 17
+    },
+    {
+      "image": "0095_p0018.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            259.2,
+            1178.5,
+            309.9
+          ],
+          "conf": 0.839,
+          "text": "Proof We know that $\\sin (-x) = -\\sin x$ and $\\cos(-x) = \\cos x$. Hence, it is sufficient"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            319.4,
+            596.1,
+            403.6
+          ],
+          "conf": 0.766,
+          "text": "to prove the inequality for $0 < x < \\frac{\\pi}{2}$."
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            936.0,
+            306.1,
+            1182.1,
+            581.8
+          ],
+          "conf": 0.957,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            400.7,
+            944.5,
+            588.6
+          ],
+          "conf": 0.758,
+          "text": "In the Fig 12.10, O is the centre of the unit circle such that\n\n\nthe angle AOC is $x$ radians and $0 < x < \\frac{\\pi}{2}$. Line segments B A and\n\n\nCD are perpendiculars to OA. Further, join AC. Then"
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            984.4,
+            588.8,
+            1120.0,
+            637.3
+          ],
+          "conf": 0.92,
+          "text": "Fig 12.10"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            195.5,
+            585.2,
+            936.9,
+            636.9
+          ],
+          "conf": 0.797,
+          "text": "Area of $\\Delta OAC <$ Area of sector $OAC <$ Area of $\\Delta OAB$."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            640.5,
+            682.5,
+            733.6
+          ],
+          "conf": 0.807,
+          "text": "i.e., $\\frac{1}{2}\\text{OA.CD} < \\frac{x}{2\\pi}\\pi.(\\text{OA})^2 < \\frac{1}{2}\\text{OA.AB}.$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            727.7,
+            467.2,
+            776.5
+          ],
+          "conf": 0.764,
+          "text": "i.e., CD $< x$. OA $< AB$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            772.9,
+            322.1,
+            821.2
+          ],
+          "conf": 0.849,
+          "text": "From $\\Delta$ OCD,"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            815.7,
+            1178.6,
+            1080.2
+          ],
+          "conf": 0.505,
+          "text": "$$\\sin x = \\frac{\\text{CD}}{\\text{OA}} \\text{ (since } \\text{OC} = \\text{OA) and hence } \\text{CD} = \\text{OA} \\sin x. \\text{ Also } \\tan x = \\frac{\\text{AB}}{\\text{OA}} \\text{ and}$$\n$$\\text{hence} \\quad \\text{AB} = \\text{OA. } \\tan x. \\text{ Thus}$$\n$$\\text{OA } \\sin x < \\text{OA. } x < \\text{OA. } \\tan x.$$\n$$\\text{Since length } \\text{OA is positive, we have}$$\n$$\\sin x < x < \\tan x.$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1089.7,
+            1139.1,
+            1176.1
+          ],
+          "conf": 0.811,
+          "text": "Since $0 < x < \\frac{\\pi}{2}$, $\\sin x$ is positive and thus by dividing throughout by $\\sin x$, we have"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            200.7,
+            1187.1,
+            939.0,
+            1277.9
+          ],
+          "conf": 0.807,
+          "text": "$1 < \\frac{x}{\\sin x} < \\frac{1}{\\cos x}$. Taking reciprocals throughout, we have"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            203.4,
+            1289.5,
+            420.7,
+            1380.5
+          ],
+          "conf": 0.812,
+          "text": "$$\\cos x < \\frac{\\sin x}{x} < 1$$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1375.2,
+            462.5,
+            1424.8
+          ],
+          "conf": 0.81,
+          "text": "which complete the proof."
+        },
+        {
+          "order": 14,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.5,
+            1425.4,
+            796.0,
+            1568.3
+          ],
+          "conf": 0.683,
+          "text": "Theorem 5 The following are two important limits.\n\n(i) $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$. (ii) $\\lim_{x \\to 0} \\frac{1 - \\cos x}{x} = 0$."
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1584.6,
+            1178.2,
+            1713.4
+          ],
+          "conf": 0.838,
+          "text": "Proof (i) The inequality in (*) says that the function $\\frac{\\sin x}{x}$ is sandwiched between the\nfunction $\\cos x$ and the constant function which takes value 1."
+        }
+      ],
+      "page": 18
+    },
+    {
+      "image": "0095_p0019.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            273.6,
+            1178.5,
+            382.1
+          ],
+          "conf": 0.943,
+          "text": "Further, since $\\lim_{x \\to 0} \\cos x = 1$, we see that the proof of (i) of the theorem is\ncomplete by sandwich theorem."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            390.8,
+            1095.5,
+            530.5
+          ],
+          "conf": 0.844,
+          "text": "To prove (ii), we recall the trigonometric identity $1 - \\cos x = 2 \\sin^2 \\left( \\frac{x}{2} \\right)$.\n\nThen"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            257.3,
+            546.1,
+            925.3,
+            928.0
+          ],
+          "conf": 0.538,
+          "text": "$$\\lim_{x \\to 0} \\frac{1 - \\cos x}{x} = \\lim_{x \\to 0} \\frac{2 \\sin^2 \\left( \\frac{x}{2} \\right)}{x} = \\lim_{x \\to 0} \\frac{\\sin \\left( \\frac{x}{2} \\right)}{\\frac{x}{2}} \\cdot \\sin \\left( \\frac{x}{2} \\right)$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            960.1,
+            1178.8,
+            1139.6
+          ],
+          "conf": 0.888,
+          "text": "Observe that we have implicitly used the fact that $x \\rightarrow 0$ is equivalent to $\\frac{x}{2} \\rightarrow 0$. This\n\nmay be justified by putting $y = \\frac{x}{2}$."
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.9,
+            1174.0,
+            1003.2,
+            1695.0
+          ],
+          "conf": 0.715,
+          "text": "Example 4 Evaluate: (i) $\\lim_{x \\to 0} \\frac{\\sin 4x}{\\sin 2x}$ (ii) $\\lim_{x \\to 0} \\frac{\\tan x}{x}$\n\n\nSolution (i) $\\lim_{x \\to 0} \\frac{\\sin 4x}{\\sin 2x} = \\lim_{x \\to 0} \\left[ \\frac{\\sin 4x}{4x} \\cdot \\frac{2x}{\\sin 2x} \\cdot 2 \\right]$\n\n\n$= 2 \\cdot \\lim_{x \\to 0} \\left[ \\frac{\\sin 4x}{4x} \\right] \\div \\left[ \\frac{\\sin 2x}{2x} \\right]$\n\n\n$= 2 \\cdot \\lim_{4x \\to 0} \\left[ \\frac{\\sin 4x}{4x} \\right] \\div \\lim_{2x \\to 0} \\left[ \\frac{\\sin 2x}{2x} \\right]$\n\n\n$= 2 \\cdot 1.1 = 2$ (as $x \\to 0$, $4x \\to 0$ and $2x \\to 0$)"
+        }
+      ],
+      "page": 19
+    },
+    {
+      "image": "0095_p0020.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.8,
+            274.5,
+            1090.7,
+            367.1
+          ],
+          "conf": 0.921,
+          "text": "(ii) We have $\\lim_{x \\to 0} \\frac{\\tan x}{x} = \\lim_{x \\to 0} \\frac{\\sin x}{x \\cos x} = \\lim_{x \\to 0} \\frac{\\sin x}{x} \\cdot \\lim_{x \\to 0} \\frac{1}{\\cos x} = 1.1 = 1$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.5,
+            370.1,
+            1178.5,
+            419.1
+          ],
+          "conf": 0.917,
+          "text": "A general rule that needs to be kept in mind while evaluating limits is the following."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            427.1,
+            1177.5,
+            532.0
+          ],
+          "conf": 0.82,
+          "text": "Say, given that the limit $\\lim_{x \\to a} \\frac{f(x)}{g(x)}$ exists and we want to evaluate this. First we check"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.9,
+            529.7,
+            1178.2,
+            698.4
+          ],
+          "conf": 0.907,
+          "text": "the value of $f(a)$ and $g(a)$. If both are 0, then we see if we can get the factor which\nis causing the terms to vanish, i.e., see if we can write $f(x) = f_1 (x) f_2(x)$ so that\n$f_1 (a) = 0$ and $f_2 (a) \\neq 0$. Similarly, we write $g(x) = g_1 (x) g_2(x)$, where $g_1(a) = 0$ and\n$g_2(a) \\neq 0$. Cancel out the common factors from $f(x)$ and $g(x)$ (if possible) and write"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            360.8,
+            703.8,
+            783.1,
+            807.5
+          ],
+          "conf": 0.925,
+          "text": "$$ \\frac{f(x)}{g(x)} = \\frac{p(x)}{q(x)} \\text{ , where } q(x) \\neq 0. $$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            825.7,
+            602.9,
+            929.3
+          ],
+          "conf": 0.876,
+          "text": "Then $\\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\frac{p(a)}{q(a)}.$"
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            518.7,
+            949.2,
+            783.6,
+            1003.8
+          ],
+          "conf": 0.813,
+          "text": "EXERCISE 12.1"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1011.9,
+            741.5,
+            1061.3
+          ],
+          "conf": 0.887,
+          "text": "Evaluate the following limits in Exercises 1 to 22."
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            129.1,
+            1073.9,
+            1151.5,
+            1704.5
+          ],
+          "conf": 0.793,
+          "text": "1. $\\lim_{x \\to 3} x + 3$\n2. $\\lim_{x \\to \\pi} \\left( x - \\frac{22}{7} \\right)$\n3. $\\lim_{r \\to 1} \\pi r^2$\n\n4. $\\lim_{x \\to 4} \\frac{4x + 3}{x - 2}$\n5. $\\lim_{x \\to -1} \\frac{x^{10} + x^5 + 1}{x - 1}$\n6. $\\lim_{x \\to 0} \\frac{(x + 1)^5 - 1}{x}$\n\n7. $\\lim_{x \\to 2} \\frac{3x^2 - x - 10}{x^2 - 4}$\n8. $\\lim_{x \\to 3} \\frac{x^4 - 81}{2x^2 - 5x - 3}$\n9. $\\lim_{x \\to 0} \\frac{ax + b}{cx + 1}$\n\n10. $\\lim_{z \\to 1} \\frac{z^{\\frac{1}{3}} - 1}{z^6 - 1}$\n11. $\\lim_{x \\to 1} \\frac{ax^2 + bx + c}{cx^2 + bx + a}, a + b + c \\neq 0$\n\n12. $\\lim_{x \\to -2} \\frac{\\frac{1}{x} + \\frac{1}{2}}{x + 2}$\n13. $\\lim_{x \\to 0} \\frac{\\sin ax}{bx}$\n14. $\\lim_{x \\to 0} \\frac{\\sin ax}{\\sin bx}, a, b \\neq 0$"
+        }
+      ],
+      "page": 20
+    },
+    {
+      "image": "0095_p0021.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.6,
+            275.7,
+            381.3,
+            380.8
+          ],
+          "conf": 0.869,
+          "text": "15. $\\lim_{x \\to \\pi} \\frac{\\sin(\\pi - x)}{\\pi(\\pi - x)}$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            578.1,
+            292.4,
+            773.9,
+            379.6
+          ],
+          "conf": 0.86,
+          "text": "16. $\\lim_{x \\to 0} \\frac{\\cos x}{\\pi - x}$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            836.4,
+            288.0,
+            1079.9,
+            379.2
+          ],
+          "conf": 0.865,
+          "text": "17. $\\lim_{x \\to 0} \\frac{\\cos 2x - 1}{\\cos x - 1}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            401.1,
+            391.4,
+            490.0
+          ],
+          "conf": 0.856,
+          "text": "18. $\\lim_{x \\to 0} \\frac{ax + x \\cos x}{b \\sin x}$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            578.9,
+            414.6,
+            784.8,
+            481.3
+          ],
+          "conf": 0.829,
+          "text": "19. $\\lim_{x \\to 0} x \\sec x$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            500.8,
+            571.5,
+            595.6
+          ],
+          "conf": 0.847,
+          "text": "20. $\\lim_{x \\to 0} \\frac{\\sin ax + bx}{ax + \\sin bx} a, b, a + b \\neq 0,$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            577.5,
+            514.3,
+            907.3,
+            583.9
+          ],
+          "conf": 0.849,
+          "text": "21. $\\lim_{x \\to 0} (\\csc x - \\cot x)$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            609.1,
+            347.8,
+            735.7
+          ],
+          "conf": 0.862,
+          "text": "$$22. \\quad \\lim_{x \\to \\frac{\\pi}{2}} \\frac{\\tan 2x}{x - \\frac{\\pi}{2}}$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.0,
+            752.4,
+            970.6,
+            862.0
+          ],
+          "conf": 0.839,
+          "text": "23. Find $\\lim_{x \\to 0} f(x)$ and $\\lim_{x \\to 1} f(x)$, where $f(x) = \\begin{cases} 2x + 3, & x \\le 0 \\\\ 3(x + 1), & x > 0 \\end{cases}$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            879.3,
+            776.9,
+            995.2
+          ],
+          "conf": 0.867,
+          "text": "24. Find $\\lim_{x \\to 1} f(x)$, where $f(x) = \\begin{cases} x^2 - 1, & x \\le 1 \\\\ -x^2 - 1, & x > 1 \\end{cases}$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            1019.3,
+            794.0,
+            1160.1
+          ],
+          "conf": 0.855,
+          "text": "25. Evaluate $\\lim_{x \\to 0} f(x)$, where $f(x) = \\begin{cases} \\frac{|x|}{x}, & x \\neq 0 \\\\ 0, & x = 0 \\end{cases}$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            1188.8,
+            739.6,
+            1332.1
+          ],
+          "conf": 0.856,
+          "text": "26. Find $\\lim_{x \\to 0} f(x)$, where $f(x) = \\begin{cases} \\frac{x}{|x|}, & x \\neq 0 \\\\ 0, & x = 0 \\end{cases}$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.6,
+            1354.7,
+            655.5,
+            1421.8
+          ],
+          "conf": 0.822,
+          "text": "27. Find $\\lim_{x \\to 5} f(x)$, where $f(x) = |x| - 5$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            1437.0,
+            589.4,
+            1581.8
+          ],
+          "conf": 0.864,
+          "text": "28. Suppose $f(x)=\\begin{cases}a+bx, & x<1\\\\4, & x=1\\\\b-ax, & x>1\\end{cases}$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1600.0,
+            869.4,
+            1662.9
+          ],
+          "conf": 0.786,
+          "text": "and if $\\lim_{x \\to 1} f(x) = f(1)$ what are possible values of $a$ and $b$?"
+        }
+      ],
+      "page": 21
+    },
+    {
+      "image": "0095_p0022.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            259.9,
+            965.9,
+            375.2
+          ],
+          "conf": 0.518,
+          "text": "29. Let $a_1, a_2, \\dots, a_n$ be fixed real numbers and define a function\n\n$$f(x) = (x - a_1)(x - a_2) \\dots (x - a_n).$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.7,
+            393.7,
+            1040.5,
+            463.4
+          ],
+          "conf": 0.86,
+          "text": "What is $\\lim_{x \\to a_1} f(x)$ ? For some $a \\neq a_1, a_2, ..., a_n$, compute $\\lim_{x \\to a} f(x)$."
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            482.0,
+            549.4,
+            637.8
+          ],
+          "conf": 0.813,
+          "text": "30. If $f(x) = \\begin{cases} |x| + 1, & x < 0 \\\\ 0, & x = 0 \\\\ |x| - 1, & x > 0 \\end{cases}$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.2,
+            669.4,
+            763.9,
+            730.7
+          ],
+          "conf": 0.847,
+          "text": "For what value (s) of $a$ does $\\lim_{x \\to a} f(x)$ exists?"
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            759.8,
+            1019.6,
+            861.3
+          ],
+          "conf": 0.849,
+          "text": "31. If the function $f(x)$ satisfies $\\lim_{x \\to 1} \\frac{f(x)-2}{x^2-1} = \\pi$, evaluate $\\lim_{x \\to 1} f(x)$."
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            889.8,
+            1172.9,
+            1046.1
+          ],
+          "conf": 0.857,
+          "text": "32. If $f(x) = \\begin{cases} mx^2 + n, & x < 0 \\\\ nx + m, & 0 \\le x \\le 1. \\text{ For what integers } m \\text{ and } n \\text{ does both } \\lim_{x \\to 0} f(x) \\\\ nx^3 + m, & x > 1 \\end{cases}$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.9,
+            1068.4,
+            454.5,
+            1134.7
+          ],
+          "conf": 0.785,
+          "text": "and $\\lim_{x \\to 1} f(x)$ exist?"
+        },
+        {
+          "order": 7,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.5,
+            1148.0,
+            382.3,
+            1198.3
+          ],
+          "conf": 0.884,
+          "text": "12.5 Derivatives"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1197.6,
+            1179.2,
+            1705.1
+          ],
+          "conf": 0.98,
+          "text": "We have seen in the Section 13.2, that by knowing the position of a body at various\ntime intervals it is possible to find the rate at which the position of the body is changing.\nIt is of very general interest to know a certain parameter at various instants of time and\ntry to finding the rate at which it is changing. There are several real life situations\nwhere such a process needs to be carried out. For instance, people maintaining a\nreservoir need to know when will a reservoir overflow knowing the depth of the water\nat several instances of time, Rocket Scientists need to compute the precise velocity\nwith which the satellite needs to be shot out from the rocket knowing the height of the\nrocket at various times. Financial institutions need to predict the changes in the value of\na particular stock knowing its present value. In these, and many such cases it is desirable\nto know how a particular parameter is changing with respect to some other parameter.\nThe heart of the matter is derivative of a function at a given point in its domain\nof definition."
+        }
+      ],
+      "page": 22
+    },
+    {
+      "image": "0095_p0023.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            257.5,
+            1184.6,
+            533.0
+          ],
+          "conf": 0.605,
+          "text": "Definition 1 Suppose $f$ is a real valued function and $a$ is a point in its domain of\ndefinition. The derivative of $f$ at $a$ is defined by\n\n$$\\lim_{h \\to 0} \\frac{f(a+h) - f(a)}{h}$$\n\nprovided this limit exists. Derivative of $f(x)$ at $a$ is denoted by $f'(a)$.\nObserve that $f'(a)$ quantifies the change in $f(x)$ at $a$ with respect to $x$."
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            539.0,
+            1029.6,
+            868.7
+          ],
+          "conf": 0.575,
+          "text": "Example 5 Find the derivative at $x=2$ of the function $f(x)=3x$.\n\nSolution We have\n\n$$f'(2) = \\lim_{h \\to 0} \\frac{f(2+h) - f(2)}{h} = \\lim_{h \\to 0} \\frac{3(2+h) - 3(2)}{h}$$\n\n$$= \\lim_{h \\to 0} \\frac{6 + 3h - 6}{h} = \\lim_{h \\to 0} \\frac{3h}{h} = \\lim_{h \\to 0} 3 = 3$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            869.8,
+            701.6,
+            922.1
+          ],
+          "conf": 0.867,
+          "text": "The derivative of the function $3x$ at $x = 2$ is 3."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            922.6,
+            1182.2,
+            1695.2
+          ],
+          "conf": 0.647,
+          "text": "Example 6 Find the derivative of the function $f(x) = 2x^2 + 3x - 5$ at $x = -1$. Also prove\nthat $f'(0) + 3f'(-1) = 0$.\n\nSolution We first find the derivatives of $f(x)$ at $x = -1$ and at $x = 0$. We have\n\n$$f'(-1) = \\lim_{h \\to 0} \\frac{f(-1+h) - f(-1)}{h}$$\n\n$$= \\lim_{h \\to 0} \\frac{\\left[ 2(-1+h)^2 + 3(-1+h) - 5 \\right] - \\left[ 2(-1)^2 + 3(-1) - 5 \\right]}{h}$$\n\n$$= \\lim_{h \\to 0} \\frac{2h^2 - h}{h} = \\lim_{h \\to 0} (2h - 1) = 2(0) - 1 = -1$$\n\nand\n\n$$f'(0) = \\lim_{h \\to 0} \\frac{f(0+h) - f(0)}{h}$$\n\n$$= \\lim_{h \\to 0} \\frac{\\left[ 2(0+h)^2 + 3(0+h) - 5 \\right] - \\left[ 2(0)^2 + 3(0) - 5 \\right]}{h}$$"
+        }
+      ],
+      "page": 23
+    },
+    {
+      "image": "0095_p0024.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            368.5,
+            278.0,
+            931.5,
+            370.9
+          ],
+          "conf": 0.927,
+          "text": "$$ = \\lim_{h \\to 0} \\frac{2h^2 + 3h}{h} = \\lim_{h \\to 0} (2h + 3) = 2(0) + 3 = 3 $$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            388.2,
+            549.5,
+            442.7
+          ],
+          "conf": 0.79,
+          "text": "Clearly $f'(0) + 3f'(-1) = 0$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            454.7,
+            1178.2,
+            542.4
+          ],
+          "conf": 0.838,
+          "text": "$\\underline{\\text{Remark}}$ At this stage note that evaluating derivative at a point involves effective use\nof various rules, limits are subjected to. The following illustrates this."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.5,
+            548.9,
+            900.6,
+            857.5
+          ],
+          "conf": 0.651,
+          "text": "Example 7 Find the derivative of $\\sin x$ at $x = 0$.\n\nSolution Let $f(x) = \\sin x$. Then\n\n$$f'(0) = \\lim_{h \\to 0} \\frac{f(0+h) - f(0)}{h}$$\n\n$$= \\lim_{h \\to 0} \\frac{\\sin(0+h) - \\sin(0)}{h} = \\lim_{h \\to 0} \\frac{\\sin h}{h} = 1$$"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            868.7,
+            1181.0,
+            1247.7
+          ],
+          "conf": 0.542,
+          "text": "Example 8 Find the derivative of $f(x) = 3$ at $x = 0$ and at $x = 3$.\n\nSolution Since the derivative measures the change in function, intuitively it is clear\nthat the derivative of the constant function must be zero at every point. This is indeed,\nsupported by the following computation.\n\n$$f'(0) = \\lim_{h \\to 0} \\frac{f(0+h) - f(0)}{h} = \\lim_{h \\to 0} \\frac{3-3}{h} = \\lim_{h \\to 0} \\frac{0}{h} = 0.$$\n\nSimilarly $f'(3) = \\lim_{h \\to 0} \\frac{f(3+h) - f(3)}{h} = \\lim_{h \\to 0} \\frac{3-3}{h} = 0$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1252.3,
+            563.3,
+            1592.4
+          ],
+          "conf": 0.965,
+          "text": "We now present a geomet-\nric interpretation of derivative of a\nfunction at a point. Let $y = f(x)$ be\na function and let $\\mathrm{P} = (a, f(a))$ and\n$\\mathrm{Q} = (a + h, f(a + h)$ be two points\nclose to each other on the graph\nof this function. The Fig 12.11 is\nnow self explanatory."
+        },
+        {
+          "order": 6,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            554.1,
+            1247.7,
+            1179.9,
+            1671.0
+          ],
+          "conf": 0.933,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            778.1,
+            1662.7,
+            927.9,
+            1712.5
+          ],
+          "conf": 0.85,
+          "text": "Fig 12.11"
+        }
+      ],
+      "page": 24
+    },
+    {
+      "image": "0095_p0025.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            272.6,
+            694.3,
+            370.7
+          ],
+          "conf": 0.921,
+          "text": "$$ \\text{We know that } f'(a) = \\lim_{h \\to 0} \\frac{f(a+h) - f(a)}{h} $$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            366.3,
+            1178.3,
+            492.5
+          ],
+          "conf": 0.959,
+          "text": "From the triangle PQR, it is clear that the ratio whose limit we are taking is\nprecisely equal to $\\tan(\\text{QPR})$ which is the slope of the chord PQ. In the limiting process,\nas $h$ tends to 0, the point Q tends to P and we have"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            281.3,
+            498.0,
+            698.5,
+            592.4
+          ],
+          "conf": 0.935,
+          "text": "$$ \\lim_{h \\to 0} \\frac{f(a+h) - f(a)}{h} = \\lim_{\\mathrm{Q} \\to \\mathrm{P}} \\frac{\\mathrm{QR}}{\\mathrm{PR}} $$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            590.3,
+            1177.9,
+            679.4
+          ],
+          "conf": 0.935,
+          "text": "This is equivalent to the fact that the chord PQ tends to the tangent at P of the\ncurve $y = f(x)$. Thus the limit turns out to be equal to the slope of the tangent. Hence"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            281.1,
+            679.1,
+            486.9,
+            733.8
+          ],
+          "conf": 0.88,
+          "text": "$$f'(a) = \\tan \\psi .$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            730.2,
+            1178.8,
+            856.1
+          ],
+          "conf": 0.961,
+          "text": "For a given function $f$ we can find the derivative at every point. If the derivative\nexists at every point, it defines a new function called the derivative of $f$. Formally, we\ndefine derivative of a function as follows."
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            862.2,
+            1093.8,
+            914.1
+          ],
+          "conf": 0.76,
+          "text": "Definition 2 Suppose $f$ is a real valued function, the function defined by"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            281.7,
+            915.6,
+            556.0,
+            1011.4
+          ],
+          "conf": 0.883,
+          "text": "$$ \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} $$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.7,
+            1009.5,
+            1179.4,
+            1097.4
+          ],
+          "conf": 0.918,
+          "text": "wherever the limit exists is defined to be the derivative of $f$ at $x$ and is denoted by\n$f'(x)$. This definition of derivative is also called the first principle of derivative."
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            1098.8,
+            662.9,
+            1197.6
+          ],
+          "conf": 0.887,
+          "text": "Thus $f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1193.8,
+            1179.2,
+            1525.1
+          ],
+          "conf": 0.7,
+          "text": "Clearly the domain of definition of $f'(x)$ is wherever the above limit exists. There\nare different notations for derivative of a function. Sometimes $f'(x)$ is denoted by\n\n$\\frac{d}{dx}(f(x))$ or if $y = f(x)$, it is denoted by $\\frac{dy}{dx}$. This is referred to as derivative of $f(x)$\nor $y$ with respect to $x$. It is also denoted by D ($f(x)$ ). Further, derivative of $f$ at $x = a$\n\nis also denoted by $\\left. \\frac{d}{dx} f(x) \\right|_a$ or $\\left. \\frac{df}{dx} \\right|_a$ or even $\\left( \\frac{df}{dx} \\right)_{x=a}$."
+        },
+        {
+          "order": 11,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1543.2,
+            699.5,
+            1692.5
+          ],
+          "conf": 0.676,
+          "text": "Example 9 Find the derivative of $f(x) = 10x$.\n\n\nSolution Since $f' ( x) = \\lim_{h \\to 0} \\frac{f (x + h) - f (x)}{h}$"
+        }
+      ],
+      "page": 25
+    },
+    {
+      "image": "0095_p0026.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            379.9,
+            274.5,
+            698.9,
+            371.3
+          ],
+          "conf": 0.856,
+          "text": "$$ = \\lim_{h \\to 0} \\frac{10(x+h) - 10(x)}{h} $$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            380.4,
+            383.8,
+            743.1,
+            472.1
+          ],
+          "conf": 0.845,
+          "text": "$$ = \\lim_{h \\to 0} \\frac{10h}{h} = \\lim_{h \\to 0} (10) = 10. $$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            485.3,
+            691.5,
+            535.8
+          ],
+          "conf": 0.83,
+          "text": "Example 10 Find the derivative of $f(x) = x^2$."
+        },
+        {
+          "order": 3,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            555.4,
+            878.1,
+            764.8
+          ],
+          "conf": 0.8,
+          "text": "Solution We have, $f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$\n\n$$= \\lim_{h \\to 0} \\frac{(x+h)^2 - (x)^2}{h} = \\lim_{h \\to 0} (h+2x) = 2x$$"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            778.8,
+            1177.3,
+            1068.9
+          ],
+          "conf": 0.591,
+          "text": "Example 11 Find the derivative of the constant function $f(x) = a$ for a fixed real\nnumber $a$.\n\nSolution We have, $f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$\n\n$= \\lim_{h \\to 0} \\frac{a - a}{h} = \\lim_{h \\to 0} \\frac{0}{h} = 0$ as $h \\neq 0$"
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1089.7,
+            691.7,
+            1172.3
+          ],
+          "conf": 0.754,
+          "text": "Example 12 Find the derivative of $f(x) = \\frac{1}{x}$"
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.0,
+            1100.1,
+            1031.9,
+            1688.5
+          ],
+          "conf": 0.67,
+          "text": "Example 12 Find the derivative of $f(x) = \\frac{1}{x}$\n\n\nSolution We have $f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$\n\n\n$$= \\lim_{h \\to 0} \\frac{(x+h)}{h} - \\frac{1}{x}$$\n\n\n$$= \\lim_{h \\to 0} \\frac{1}{h} \\left[ \\frac{x - (x+h)}{x(x+h)} \\right]$$\n\n\n$$= \\lim_{h \\to 0} \\frac{1}{h} \\left[ \\frac{-h}{x(x+h)} \\right] \\quad = \\lim_{h \\to 0} \\frac{-1}{x(x+h)} = -\\frac{1}{x^2}$$"
+        }
+      ],
+      "page": 26
+    },
+    {
+      "image": "0095_p0027.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            259.7,
+            1178.8,
+            383.8
+          ],
+          "conf": 0.929,
+          "text": "12.5.1 Algebra of derivative of functions Since the very definition of derivatives\ninvolve limits in a rather direct fashion, we expect the rules for derivatives to follow\nclosely that of limits. We collect these in the following theorem."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            385.7,
+            1179.2,
+            472.7
+          ],
+          "conf": 0.916,
+          "text": "Theorem 5 Let $f$ and $g$ be two functions such that their derivatives are defined in a\ncommon domain. Then"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            194.5,
+            471.0,
+            1180.0,
+            1272.8
+          ],
+          "conf": 0.873,
+          "text": "(i) Derivative of sum of two functions is sum of the derivatives of the\nfunctions.\n\n$$\\frac{d}{dx}[f(x)+g(x)]=\\frac{d}{dx}f(x)+\\frac{d}{dx}g(x).$$\n\n(ii) Derivative of difference of two functions is difference of the derivatives of\nthe functions.\n\n$$\\frac{d}{dx}[f(x)-g(x)]=\\frac{d}{dx}f(x)-\\frac{d}{dx}g(x).$$\n\n(iii) Derivative of product of two functions is given by the following $product$\n$rule.$\n\n$$\\frac{d}{dx}[f(x).g(x)]=\\frac{d}{dx}f(x).g(x)+f(x).\\frac{d}{dx}g(x)$$\n\n(iv) Derivative of quotient of two functions is given by the following $quotient$\n$rule$ (whenever the denominator is non-zero).\n\n$$\\frac{d}{dx}\\left(\\frac{f(x)}{g(x)}\\right)=\\frac{\\frac{d}{dx}f(x).g(x)-f(x)}{\\left(g(x)\\right)^{2}}\\frac{d}{dx}g(x)$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1294.5,
+            1179.4,
+            1464.1
+          ],
+          "conf": 0.96,
+          "text": "The proofs of these follow essentially from the analogous theorem for limits. We\nwill not prove these here. As in the case of limits this theorem tells us how to compute\nderivatives of special types of functions. The last two statements in the theorem may\nbe restated in the following fashion which aids in recalling them easily:"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            1466.8,
+            630.6,
+            1521.9
+          ],
+          "conf": 0.833,
+          "text": "Let $u = f(x)$ and $v = g(x)$. Then"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            370.5,
+            1537.3,
+            600.6,
+            1596.6
+          ],
+          "conf": 0.866,
+          "text": "$$(uv)' = u'v + uv'$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1602.3,
+            1179.0,
+            1690.2
+          ],
+          "conf": 0.929,
+          "text": "This is referred to a Leibnitz rule for differentiating product of functions or the\nproduct rule. Similarly, the quotient rule is"
+        }
+      ],
+      "page": 27
+    },
+    {
+      "image": "0095_p0028.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            353.9,
+            283.1,
+            580.8,
+            384.0
+          ],
+          "conf": 0.932,
+          "text": "$$ \\left( \\frac{u}{v} \\right)' = \\frac{u'v - uv'}{v^2} $$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            385.3,
+            915.3,
+            435.1
+          ],
+          "conf": 0.843,
+          "text": "Now, let us tackle derivatives of some standard functions."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.2,
+            423.3,
+            1177.9,
+            474.6
+          ],
+          "conf": 0.85,
+          "text": "It is easy to see that the derivative of the function $f(x) = x$ is the constant"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            477.9,
+            1030.6,
+            573.2
+          ],
+          "conf": 0.873,
+          "text": "function 1. This is because $f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} = \\lim_{h \\to 0} \\frac{x+h-x}{h}$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            530.0,
+            581.6,
+            704.2,
+            648.3
+          ],
+          "conf": 0.885,
+          "text": "$$ = \\lim_{h \\to 0} 1 = 1 . $$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            114.9,
+            643.5,
+            994.0,
+            732.3
+          ],
+          "conf": 0.948,
+          "text": "We use this and the above theorem to compute the derivative of\n$f(x) = 10x = x + .... + x$ (ten terms). By $(i)$ of the above theorem"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            430.8,
+            734.5,
+            936.3,
+            979.1
+          ],
+          "conf": 0.818,
+          "text": "$$ \\frac{df(x)}{dx} = \\frac{d}{dx} (x + ... + x) \\text{ (ten terms)} $$\n\n$$ = \\frac{d}{dx} x + ... + \\frac{d}{dx} x \\text{ (ten terms)} $$\n\n$$ = 1 + ... + 1 \\text{ (ten terms)} = 10. $$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.2,
+            971.1,
+            1178.6,
+            1135.8
+          ],
+          "conf": 0.972,
+          "text": "We note that this limit may be evaluated using product rule too. Write\n$f(x) = 10x = uv$, where $u$ is the constant function taking value 10 everywhere and\n$v(x) = x$. Here, $f(x) = 10x = uv$ we know that the derivative of $u$ equals 0. Also\nderivative of $v(x) = x$ equals 1. Thus by the product rule we have"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            334.9,
+            1144.2,
+            973.3,
+            1203.6
+          ],
+          "conf": 0.912,
+          "text": "$$f'(x) = (10x)' = (uv)' = u'v + uv' = 0.x + 10.1 = 10$$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            115.2,
+            1200.8,
+            1177.7,
+            1289.7
+          ],
+          "conf": 0.943,
+          "text": "On similar lines the derivative of $f(x) = x^2$ may be evaluated. We have\n$f(x) = x^2 = x \\text{ ..} x$ and hence"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            469.7,
+            1291.2,
+            942.6,
+            1432.2
+          ],
+          "conf": 0.86,
+          "text": "$$ \\frac{df}{dx} = \\frac{d}{dx}(x.x) = \\frac{d}{dx}(x).x + x.\\frac{d}{dx}(x) $$\n$$ = 1.x + x.1 = 2x . $$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.2,
+            1424.6,
+            794.0,
+            1475.5
+          ],
+          "conf": 0.87,
+          "text": "More generally, we have the following theorem."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1480.7,
+            1000.7,
+            1531.8
+          ],
+          "conf": 0.729,
+          "text": "Theorem 6 Derivative of $f(x) = x^n$ is $nx^{n-1}$ for any positive integer $n$."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1536.9,
+            811.7,
+            1585.9
+          ],
+          "conf": 0.867,
+          "text": "Proof By definition of the derivative function, we have"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            340.5,
+            1591.4,
+            962.1,
+            1689.1
+          ],
+          "conf": 0.909,
+          "text": "$$ f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} = \\lim_{h \\to 0} \\frac{(x+h)^n - x^n}{h} . $$"
+        }
+      ],
+      "page": 28
+    },
+    {
+      "image": "0095_p0029.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            274.0,
+            1177.5,
+            386.6
+          ],
+          "conf": 0.889,
+          "text": "Binomial theorem tells that $(x+h)^n = \\left( \\begin{array}{c} n \\\\ \\end{array} \\right) \\mathrm{C}_0 x^n + \\left( \\begin{array}{c} n \\\\ \\end{array} \\right) \\mathrm{C}_1 x^{n-1} h + ... + \\left( \\begin{array}{c} n \\\\ \\end{array} \\right) \\mathrm{C}_n h^n$ and\nhence $(x+h)^n - x^n = h(nx^{n-1} + ... + h^{n-1})$. Thus"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            292.5,
+            395.6,
+            811.6,
+            701.9
+          ],
+          "conf": 0.902,
+          "text": "$$ \\frac{df(x)}{dx} = \\lim_{h \\to 0} \\frac{(x+h)^n - x^n}{h} $$\n\n$$ = \\lim_{h \\to 0} \\frac{h(nx^{n-1} + ... + h^{n-1})}{h} $$\n\n$$ = \\lim_{h \\to 0} (nx^{n-1} + ... + h^{n-1}) = nx^{n-1}. $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            699.8,
+            1178.3,
+            787.5
+          ],
+          "conf": 0.947,
+          "text": "Alternatively, we may also prove this by induction on $n$ and the product rule as\nfollows. The result is true for $n = 1$, which has been proved earlier. We have"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            273.8,
+            790.0,
+            1024.5,
+            1128.0
+          ],
+          "conf": 0.901,
+          "text": "$$ \\frac{d}{dx}\\left(x^n\\right) = \\frac{d}{dx}\\left(x.x^{n-1}\\right) $$\n\n$$ = \\frac{d}{dx}(x).(x^{n-1}) + x.\\frac{d}{dx}\\left(x^{n-1}\\right) \\text{ (by product rule)} $$\n\n$$ = 1.x^{n-1} + x.\\left((n-1)x^{n-2}\\right) \\text{ (by induction hypothesis)} $$\n\n$$ = x^{n-1} + (n-1)x^{n-1} = nx^{n-1}. $$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1123.3,
+            1179.0,
+            1211.2
+          ],
+          "conf": 0.923,
+          "text": "Remark The above theorem is true for all powers of $x$, i.e., $n$ can be any real number\n(but we will not prove it here)."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1213.3,
+            1177.9,
+            1305.9
+          ],
+          "conf": 0.84,
+          "text": "12.5.2 Derivative of polynomials and trigonometric functions We start with the\nfollowing theorem which tells us the derivative of a polynomial function."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1319.9,
+            1178.2,
+            1421.0
+          ],
+          "conf": 0.906,
+          "text": "Theorem 7 Let $f(x) = a_n x^n + a_{n-1} x^{n-1} + .... + a_1 x + a_0$ be a polynomial function, where\n$a_i s$ are all real numbers and $a_n \\neq 0$. Then, the derivative function is given by"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            281.3,
+            1423.3,
+            920.8,
+            1515.4
+          ],
+          "conf": 0.865,
+          "text": "$$ \\frac{df(x)}{dx} = n a_n x^{n-1} + (n-1) a_{n-1} x^{x-2} + ... + 2 a_2 x + a_1. $$"
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.5,
+            1512.8,
+            1177.7,
+            1712.1
+          ],
+          "conf": 0.644,
+          "text": "Proof of this theorem is just putting together part (i) of Theorem 5 and Theorem 6.\n\nExample 13 Compute the derivative of $6x^{100} - x^{55} + x$.\n\nSolution A direct application of the above theorem tells that the derivative of the\nabove function is $600x^{99} - 55x^{54} + 1$."
+        }
+      ],
+      "page": 29
+    },
+    {
+      "image": "0095_p0030.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            257.5,
+            1068.5,
+            310.7
+          ],
+          "conf": 0.788,
+          "text": "Example 14 Find the derivative of $f(x) = 1 + x + x^2 + x^3 +... + x^{50}$ at $x = 1$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            313.5,
+            1179.0,
+            402.6
+          ],
+          "conf": 0.741,
+          "text": "Solution A direct application of the above Theorem 6 tells that the derivative of the\nabove function is $1 + 2x + 3x^2 + \\dots + 50x^{49}$. At $x = 1$ the value of this function equals"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            405.6,
+            1059.9,
+            502.6
+          ],
+          "conf": 0.861,
+          "text": "$$1 + 2(1) + 3(1)^2 + \\dots + 50(1)^{49} = 1 + 2 + 3 + \\dots + 50 = \\frac{(50)(51)}{2} = 1275.$$"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            520.2,
+            1180.5,
+            798.0
+          ],
+          "conf": 0.629,
+          "text": "Example 15 Find the derivative of $f(x) = \\frac{x+1}{x}$\n\nSolution Clearly this function is defined everywhere except at $x = 0$. We use the\nquotient rule with $u = x + 1$ and $v = x$. Hence $u' = 1$ and $v' = 1$. Therefore\n\n$$\\frac{df(x)}{dx} = \\frac{d}{dx} \\left( \\frac{x+1}{x} \\right) = \\frac{d}{dx} \\left( \\frac{u}{v} \\right) = \\frac{u'v - uv'}{v^2} = \\frac{1(x) - (x+1)1}{x^2} = \\frac{1}{x^2}$$"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.2,
+            810.5,
+            1143.3,
+            1351.5
+          ],
+          "conf": 0.586,
+          "text": "Example 16 Compute the derivative of $\\sin x$.\n\nSolution Let $f(x) = \\sin x$. Then\n\n$$ \\frac{df(x)}{dx} = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} = \\lim_{h \\to 0} \\frac{\\sin(x+h) - \\sin(x)}{h} $$\n\n$$ = \\lim_{h \\to 0} \\frac{2 \\cos \\left( \\frac{2x+h}{2} \\right) \\sin \\left( \\frac{h}{2} \\right)}{h} \\text{ (using formula for } \\sin A - \\sin B) $$\n\n$$ = \\lim_{h \\to 0} \\cos \\left( x + \\frac{h}{2} \\right) \\lim_{h \\to 0} \\frac{\\sin \\frac{h}{2}}{\\frac{h}{2}} = \\cos x.1 = \\cos x. $$"
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1358.1,
+            973.7,
+            1687.8
+          ],
+          "conf": 0.661,
+          "text": "Example 17 Compute the derivative of $\\tan x$.\nSolution Let $f(x) = \\tan x$. Then\n$$\\frac{df(x)}{dx} = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} = \\lim_{h \\to 0} \\frac{\\tan(x+h) - \\tan(x)}{h}$$\n$$= \\lim_{h \\to 0} \\frac{1}{h} \\left[ \\frac{\\sin(x+h)}{\\cos(x+h)} - \\frac{\\sin x}{\\cos x} \\right]$$"
+        }
+      ],
+      "page": 30
+    },
+    {
+      "image": "0095_p0031.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            317.6,
+            274.5,
+            853.3,
+            385.9
+          ],
+          "conf": 0.908,
+          "text": "$$ = \\lim_{h \\to 0} \\left[ \\frac{\\sin(x+h)\\cos x - \\cos(x+h)\\sin x}{h\\cos(x+h)\\cos x} \\right] $$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.0,
+            414.2,
+            1023.1,
+            515.5
+          ],
+          "conf": 0.9,
+          "text": "$$= \\lim_{h \\to 0} \\frac{\\sin(x + h - x)}{h \\cos(x + h) \\cos x} \\text{ (using formula for } \\sin \\text{ (A + B)})$$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.2,
+            545.3,
+            740.9,
+            639.7
+          ],
+          "conf": 0.895,
+          "text": "$$ = \\lim_{h \\to 0} \\frac{\\sin h}{h} \\cdot \\lim_{h \\to 0} \\frac{1}{\\cos(x+h)\\cos x} $$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.6,
+            662.9,
+            593.7,
+            750.7
+          ],
+          "conf": 0.882,
+          "text": "$$= 1 \\cdot \\frac{1}{\\cos^2 x} = \\sec^2 x$$"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            763.8,
+            862.2,
+            1160.3
+          ],
+          "conf": 0.612,
+          "text": "Example 18 Compute the derivative of $f(x) = \\sin^2 x$.\n\nSolution We use the Leibnitz product rule to evaluate this.\n\n$$ \\frac{df(x)}{dx} = \\frac{d}{dx} (\\sin x \\sin x) $$\n\n$$ = (\\sin x)' \\sin x + \\sin x (\\sin x)' $$\n\n$$ = (\\cos x) \\sin x + \\sin x (\\cos x) $$\n\n$$ = 2 \\sin x \\cos x = \\sin 2x \\cdot $$"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            515.6,
+            1176.1,
+            782.1,
+            1231.6
+          ],
+          "conf": 0.786,
+          "text": "EXERCISE 12.2"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.8,
+            1236.9,
+            992.8,
+            1706.2
+          ],
+          "conf": 0.816,
+          "text": "1. Find the derivative of $x^2 - 2$ at $x = 10$.\n2. Find the derivative of $x$ at $x = 1$.\n3. Find the derivative of $99x$ at $x = 100$.\n4. Find the derivative of the following functions from first principle.\n\n(i) $x^3 - 27$                                     (ii) $(x - 1)(x - 2)$\n\n(iii) $\\frac{1}{x^2}$                                     (iv) $\\frac{x + 1}{x - 1}$\n\n5. For the function\n\n$$f(x) = \\frac{x^{100}}{100} + \\frac{x^{99}}{99} + \\dots + \\frac{x^2}{2} + x + 1.$$"
+        }
+      ],
+      "page": 31
+    },
+    {
+      "image": "0095_p0032.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            270.0,
+            504.3,
+            325.7
+          ],
+          "conf": 0.892,
+          "text": "Prove that $f'(1)=100f'(0)$."
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.2,
+            333.4,
+            1178.1,
+            431.5
+          ],
+          "conf": 0.936,
+          "text": "6. Find the derivative of $x^n + ax^{n-1} + a^2x^{n-2} + \\dots + a^{n-1}x + a^n$ for some fixed real\nnumber $a$."
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.5,
+            421.8,
+            821.9,
+            472.0
+          ],
+          "conf": 0.872,
+          "text": "7. For some constants $a$ and $b$, find the derivative of"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            193.0,
+            482.0,
+            1061.5,
+            563.4
+          ],
+          "conf": 0.741,
+          "text": "(i) $(x-a)(x-b)$          (ii) $(ax^2+b)^2$          (iii) $\\frac{x-a}{x-b}$"
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.6,
+            582.7,
+            845.6,
+            672.8
+          ],
+          "conf": 0.914,
+          "text": "8. Find the derivative of $\\frac{x^n - a^n}{x - a}$ for some constant $a$."
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.4,
+            669.4,
+            472.7,
+            719.0
+          ],
+          "conf": 0.891,
+          "text": "9. Find the derivative of"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            192.7,
+            725.2,
+            928.6,
+            995.2
+          ],
+          "conf": 0.832,
+          "text": "(i) $2x - \\frac{3}{4}$                                     (ii) $(5x^3 + 3x - 1)(x - 1)$\n\n(iii) $x^{-3}(5 + 3x)$                                (iv) $x^5(3 - 6x^{-9})$\n\n(v) $x^{-4}(3 - 4x^{-5})$                                (vi) $\\frac{2}{x + 1} - \\frac{x^2}{3x - 1}$"
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            998.6,
+            782.3,
+            1050.5
+          ],
+          "conf": 0.888,
+          "text": "10. Find the derivative of $\\cos x$ from first principle."
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1046.1,
+            762.1,
+            1096.7
+          ],
+          "conf": 0.873,
+          "text": "11. Find the derivative of the following functions:"
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.2,
+            1094.4,
+            1171.3,
+            1245.1
+          ],
+          "conf": 0.877,
+          "text": "(i) $\\sin x \\cos x$\n(ii) $\\sec x$\n(iii) $5 \\sec x + 4 \\cos x$\n(iv) $\\operatorname{cosec} x$\n(v) $3 \\cot x + 5 \\operatorname{cosec} x$\n(vi) $5 \\sin x - 6 \\cos x + 7$\n(vii) $2 \\tan x - 7 \\sec x$"
+        },
+        {
+          "order": 10,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            464.8,
+            1267.5,
+            832.9,
+            1320.7
+          ],
+          "conf": 0.743,
+          "text": "Miscellaneous Examples"
+        },
+        {
+          "order": 11,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1325.1,
+            1117.0,
+            1675.0
+          ],
+          "conf": 0.516,
+          "text": "Example 19 Find the derivative of $f$ from the first principle, where $f$ is given by\n\n\n(i) $f(x) = \\frac{2x + 3}{x - 2}$ (ii) $f(x) = x + \\frac{1}{x}$\n\n\nSolution (i) Note that function is not defined at $x = 2$. But, we have\n\n\n$$f'(x) = \\lim_{h \\to 0} \\frac{f(x + h) - f(x)}{h} = \\lim_{h \\to 0} \\frac{\\frac{2(x + h) + 3}{x + h - 2} - \\frac{2x + 3}{x - 2}}{h}$$"
+        }
+      ],
+      "page": 32
+    },
+    {
+      "image": "0095_p0033.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            291.7,
+            273.2,
+            1088.8,
+            624.9
+          ],
+          "conf": 0.587,
+          "text": "$$= \\lim_{h \\to 0} \\frac{(2x + 2h + 3)(x - 2) - (2x + 3)(x + h - 2)}{h(x - 2)(x + h - 2)}$$\n\n$$= \\lim_{h \\to 0} \\frac{(2x + 3)(x - 2) + 2h(x - 2) - (2x + 3)(x - 2) - h(2x + 3)}{h(x - 2)(x + h - 2)}$$\n\n$$= \\lim_{h \\to 0} \\frac{-7}{(x - 2)(x + h - 2)} = -\\frac{7}{(x - 2)^2}$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.2,
+            638.0,
+            943.9,
+            691.2
+          ],
+          "conf": 0.916,
+          "text": "Again, note that the function $f'$ is also not defined at $x=2$."
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            684.9,
+            819.3,
+            735.9
+          ],
+          "conf": 0.895,
+          "text": "(ii) The function is not defined at $x = 0$. But, we have"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            190.6,
+            740.1,
+            979.2,
+            1257.2
+          ],
+          "conf": 0.787,
+          "text": "$$f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} = \\lim_{h \\to 0} \\frac{\\left(x+h + \\frac{1}{x+h}\\right) - \\left(x + \\frac{1}{x}\\right)}{h}$$\n\n$$= \\lim_{h \\to 0} \\frac{1}{h} \\left[ h + \\frac{1}{x+h} - \\frac{1}{x} \\right]$$\n\n$$= \\lim_{h \\to 0} \\frac{1}{h} \\left[ h + \\frac{x - x - h}{x(x+h)} \\right] = \\lim_{h \\to 0} \\frac{1}{h} \\left[ h \\left( 1 - \\frac{1}{x(x+h)} \\right) \\right]$$\n\n$$= \\lim_{h \\to 0} \\left[ 1 - \\frac{1}{x(x+h)} \\right] = 1 - \\frac{1}{x^2}$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1266.3,
+            821.5,
+            1319.4
+          ],
+          "conf": 0.876,
+          "text": "Again, note that the function $f'$ is not defined at $x = 0$."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            1311.4,
+            1144.9,
+            1719.3
+          ],
+          "conf": 0.656,
+          "text": "Example 20 Find the derivative of $f(x)$ from the first principle, where $f(x)$ is\n(i) $\\sin x + \\cos x$                                     (ii) $x \\sin x$\n\nSolution (i) we have $f'(x) = \\frac{f(x+h) - f(x)}{h}$\n\n$$= \\lim_{h \\to 0} \\frac{\\sin(x+h) + \\cos(x+h) - \\sin x - \\cos x}{h}$$\n\n$$= \\lim_{h \\to 0} \\frac{\\sin x \\cos h + \\cos x \\sin h + \\cos x \\cos h - \\sin x \\sin h - \\sin x - \\cos x}{h}$$"
+        }
+      ],
+      "page": 33
+    },
+    {
+      "image": "0095_p0034.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            218.5,
+            275.9,
+            971.4,
+            371.8
+          ],
+          "conf": 0.918,
+          "text": "$$ = \\lim_{h \\to 0} \\frac{\\sin h(\\cos x - \\sin x) + \\sin x(\\cos h - 1) + \\cos x(\\cos h - 1)}{h} $$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            218.0,
+            385.7,
+            1088.1,
+            482.4
+          ],
+          "conf": 0.889,
+          "text": "$$ = \\lim_{h \\to 0} \\frac{\\sin h}{h} (\\cos x - \\sin x) + \\lim_{h \\to 0} \\sin x \\frac{(\\cos h - 1)}{h} + \\lim_{h \\to 0} \\cos x \\frac{(\\cos h - 1)}{h} $$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            218.9,
+            483.9,
+            418.1,
+            528.6
+          ],
+          "conf": 0.807,
+          "text": "$$= \\cos x - \\sin x$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            530.5,
+            1139.6,
+            999.4
+          ],
+          "conf": 0.509,
+          "text": "(ii) $f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} = \\lim_{h \\to 0} \\frac{(x+h)\\sin(x+h) - x\\sin x}{h}$\n\n$= \\lim_{h \\to 0} \\frac{(x+h)(\\sin x \\cos h + \\sin h \\cos x) - x\\sin x}{h}$\n\n$= \\lim_{h \\to 0} \\frac{x \\sin x(\\cos h - 1) + x \\cos x \\sin h + h(\\sin x \\cos h + \\sin h \\cos x)}{h}$\n\n$= \\lim_{h \\to 0} \\frac{x \\sin x(\\cos h - 1)}{h} + \\lim_{h \\to 0} x \\cos x \\frac{\\sin h}{h} + \\lim_{h \\to 0} (\\sin x \\cos h + \\sin h \\cos x)$\n\n$= x \\cos x + \\sin x$"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            126.1,
+            998.4,
+            1034.8,
+            1488.5
+          ],
+          "conf": 0.513,
+          "text": "Example 21 Compute derivative of\n(i) $f(x) = \\sin 2x$ (ii) $g(x) = \\cot x$\n\nSolution (i) Recall the trigonometric formula $\\sin 2x = 2 \\sin x \\cos x$. Thus\n\n$$\\frac{df(x)}{dx} = \\frac{d}{dx}(2 \\sin x \\cos x) = 2 \\frac{d}{dx}(\\sin x \\cos x)$$\n\n$$= 2 \\left[ (\\sin x)' \\cos x + \\sin x (\\cos x)' \\right]$$\n\n$$= 2 \\left[ (\\cos x) \\cos x + \\sin x (-\\sin x) \\right]$$\n\n$$= 2 \\left( \\cos^2 x - \\sin^2 x \\right)$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1506.5,
+            1179.2,
+            1591.2
+          ],
+          "conf": 0.776,
+          "text": "(ii) By definition, $g(x) = \\cot x = \\frac{\\cos x}{\\sin x}$. We use the quotient rule on this function"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            1603.0,
+            784.0,
+            1700.5
+          ],
+          "conf": 0.795,
+          "text": "$$ \\text{wherever it is defined. } \\frac{dg}{dx} = \\frac{d}{dx} (\\cot x) = \\frac{d}{dx} \\left( \\frac{\\cos x}{\\sin x} \\right) $$"
+        }
+      ],
+      "page": 34
+    },
+    {
+      "image": "0095_p0035.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            391.6,
+            273.2,
+            821.2,
+            600.4
+          ],
+          "conf": 0.783,
+          "text": "$$ = \\frac{(\\cos x)'(\\sin x) - (\\cos x)(\\sin x)'}{(\\sin x)^2} $$\n\n$$ = \\frac{(-\\sin x)(\\sin x) - (\\cos x)(\\cos x)}{(\\sin x)^2} $$\n\n$$ = -\\frac{\\sin^2 x + \\cos^2 x}{\\sin^2 x} = -\\csc^2 x $$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            615.0,
+            1178.7,
+            787.0
+          ],
+          "conf": 0.923,
+          "text": "Alternatively, this may be computed by noting that $\\cot x = \\frac{1}{\\tan x}$. Here, we use the fact\nthat the derivative of $\\tan x$ is $sec^2 x$ which we saw in Example 17 and also that the\nderivative of the constant function is 0."
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            342.4,
+            793.2,
+            745.3,
+            1235.4
+          ],
+          "conf": 0.783,
+          "text": "$$\\frac{dg}{dx} = \\frac{d}{dx}(\\cot x) = \\frac{d}{dx}\\left(\\frac{1}{\\tan x}\\right)$$\n\n$$= \\frac{(1)'(\\tan x) - (1)(\\tan x)'}{(\\tan x)^2}$$\n\n$$= \\frac{(0)(\\tan x) - (\\sec x)^2}{(\\tan x)^2}$$\n\n$$= \\frac{-\\sec^2 x}{\\tan^2 x} = -\\csc^2 x$$"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            1250.8,
+            1182.1,
+            1679.8
+          ],
+          "conf": 0.632,
+          "text": "Example 22 Find the derivative of\n\n\n$$ \\text{(i)} \\quad \\frac{x^5 - \\cos x}{\\sin x} \\qquad \\qquad \\qquad \\text{(ii)} \\quad \\frac{x + \\cos x}{\\tan x} $$\n\n\nSolution (i) Let $h(x) = \\frac{x^5 - \\cos x}{\\sin x}$ . We use the quotient rule on this function wherever\nit is defined.\n\n\n$$ h'(x) = \\frac{(x^5 - \\cos x)' \\sin x - (x^5 - \\cos x)(\\sin x)'}{(\\sin x)^2} $$"
+        }
+      ],
+      "page": 35
+    },
+    {
+      "image": "0095_p0036.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            393.6,
+            277.2,
+            895.3,
+            377.9
+          ],
+          "conf": 0.912,
+          "text": "$$ = \\frac{(5x^4 + \\sin x)\\sin x - (x^5 - \\cos x)\\cos x}{\\sin^2 x} $$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            393.1,
+            391.8,
+            740.9,
+            489.8
+          ],
+          "conf": 0.912,
+          "text": "$$ = \\frac{-x^5 \\cos x + 5x^4 \\sin x + 1}{(\\sin x)^2} $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            124.7,
+            509.8,
+            1058.7,
+            595.3
+          ],
+          "conf": 0.83,
+          "text": "(ii) We use quotient rule on the function $\\frac{x + \\cos x}{\\tan x}$ wherever it is defined."
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            321.1,
+            607.4,
+            888.9,
+            707.0
+          ],
+          "conf": 0.922,
+          "text": "$$h'(x) = \\frac{(x + \\cos x)' \\tan x - (x + \\cos x)(\\tan x)'}{(\\tan x)^2}$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            392.5,
+            726.4,
+            855.1,
+            823.6
+          ],
+          "conf": 0.911,
+          "text": "$$ = \\frac{(1 - \\sin x) \\tan x - (x + \\cos x) \\sec^2 x}{(\\tan x)^2} $$"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            370.0,
+            846.8,
+            931.2,
+            898.5
+          ],
+          "conf": 0.815,
+          "text": "Miscellaneous Exercise on Chapter 12"
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.5,
+            899.8,
+            992.8,
+            949.2
+          ],
+          "conf": 0.813,
+          "text": "1. Find the derivative of the following functions from first principle:"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            184.3,
+            965.0,
+            1118.3,
+            1036.1
+          ],
+          "conf": 0.802,
+          "text": "(i) $-x$ (ii) $(-x)^{-1}$ (iii) $\\sin (x+1)$ (iv) $\\cos \\left(x-\\frac{\\pi}{8}\\right)$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            881.7,
+            960.6,
+            1117.9,
+            1042.9
+          ],
+          "conf": 0.709,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.6,
+            1041.6,
+            1176.8,
+            1131.1
+          ],
+          "conf": 0.942,
+          "text": "Find the derivative of the following functions (it is to be understood that $a$, $b$, $c$, $d$,\n$p$, $q$, $r$ and $s$ are fixed non-zero constants and $m$ and $n$ are integers):"
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            139.2,
+            1147.2,
+            1086.2,
+            1228.5
+          ],
+          "conf": 0.569,
+          "text": "2. $(x + a)$ 3. $(px + q) \\left( \\frac{r}{x} + s \\right)$ 4. $(ax + b)(cx + d)^2$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            448.0,
+            1141.3,
+            719.7,
+            1232.5
+          ],
+          "conf": 0.74,
+          "text": ""
+        },
+        {
+          "order": 12,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            129.9,
+            1157.7,
+            1100.3,
+            1710.6
+          ],
+          "conf": 0.545,
+          "text": "2. $(x+a)$\n3. $(px+q)\\left(\\frac{r}{x}+s\\right)$\n4. $(ax+b)(cx+d)^2$\n\n5. $\\frac{ax+b}{cx+d}$\n6. $\\frac{1+\\frac{1}{x}}{1-\\frac{1}{x}}$\n7. $\\frac{1}{ax^2+bx+c}$\n\n8. $\\frac{ax+b}{px^2+qx+r}$\n9. $\\frac{px^2+qx+r}{ax+b}$\n10. $\\frac{a}{x^4}-\\frac{b}{x^2}+\\cos x$\n\n11. $4\\sqrt{x}-2$\n12. $(ax+b)^n$\n13. $(ax+b)^n(cx+d)^m$\n\n14. $\\sin(x+a)$\n15. $\\text{cosec } x \\cot x$\n16. $\\frac{\\cos x}{1+\\sin x}$"
+        }
+      ],
+      "page": 36
+    },
+    {
+      "image": "0095_p0037.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            278.5,
+            357.0,
+            367.3
+          ],
+          "conf": 0.854,
+          "text": "17. $\\frac{\\sin x + \\cos x}{\\sin x - \\cos x}$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            470.6,
+            278.3,
+            658.7,
+            367.3
+          ],
+          "conf": 0.843,
+          "text": "18. $\\frac{\\sec x - 1}{\\sec x + 1}$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            379.1,
+            338.3,
+            469.9
+          ],
+          "conf": 0.845,
+          "text": "20. $\\frac{a + b \\sin x}{c + d \\cos x}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            849.3,
+            300.0,
+            1000.7,
+            353.0
+          ],
+          "conf": 0.793,
+          "text": "19. $\\sin^n x$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            469.7,
+            379.1,
+            681.1,
+            468.7
+          ],
+          "conf": 0.843,
+          "text": "21. $\\frac{\\sin(x+a)}{\\cos x}$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            849.0,
+            400.5,
+            1158.4,
+            452.8
+          ],
+          "conf": 0.845,
+          "text": "22. $x^4(5\\sin x - 3\\cos x)$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            480.1,
+            364.7,
+            542.4
+          ],
+          "conf": 0.79,
+          "text": "23. $(x^2 + 1)\\cos x$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            469.8,
+            479.6,
+            864.6,
+            542.4
+          ],
+          "conf": 0.858,
+          "text": "24. $(ax^2 + \\sin x)(p + q \\cos x)$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            610.5,
+            471.2,
+            667.8
+          ],
+          "conf": 0.786,
+          "text": "25. $(x + \\cos x)(x - \\tan x)$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            470.2,
+            592.0,
+            699.3,
+            682.9
+          ],
+          "conf": 0.846,
+          "text": "26. $\\frac{4x + 5\\sin x}{3x + 7\\cos x}$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            849.2,
+            563.2,
+            1066.0,
+            697.5
+          ],
+          "conf": 0.881,
+          "text": "27. $\\frac{x^2 \\cos \\left( \\frac{\\pi}{4} \\right)}{\\sin x}$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            718.0,
+            309.0,
+            803.5
+          ],
+          "conf": 0.835,
+          "text": "28. $\\frac{x}{1 + \\tan x}$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            470.3,
+            734.5,
+            815.6,
+            790.6
+          ],
+          "conf": 0.837,
+          "text": "29. $(x + \\sec x)(x - \\tan x)$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            847.6,
+            717.2,
+            1025.7,
+            808.4
+          ],
+          "conf": 0.834,
+          "text": "$$30. \\quad \\frac{x}{\\sin^n x}$$"
+        },
+        {
+          "order": 14,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            110.9,
+            810.9,
+            1177.7,
+            1712.7
+          ],
+          "conf": 0.711,
+          "text": "Summary\n\nThe expected value of the function as dictated by the points to the left of a\npoint defines the left hand limit of the function at that point. Similarly the right\nhand limit.\nLimit of a function at a point is the common value of the left and right hand\nlimits, if they coincide.\n\nFor a function $f$ and a real number $a$, $\\lim_{x \\to a} f(x)$ and $f(a)$ may not be same (In\nfact, one may be defined and not the other one).\nFor functions $f$ and $g$ the following holds:\n\n$$\\lim_{x \\to a} [f(x) \\pm g(x)] = \\lim_{x \\to a} f(x) \\pm \\lim_{x \\to a} g(x)$$\n\n$$\\lim_{x \\to a} [f(x) \\cdot g(x)] = \\lim_{x \\to a} f(x) \\cdot \\lim_{x \\to a} g(x)$$\n\n$$\\lim_{x \\to a} \\left[ \\frac{f(x)}{g(x)} \\right] = \\lim_{x \\to a} \\frac{f(x)}{\\lim_{x \\to a} g(x)}$$\n\nFollowing are some of the standard limits\n\n$$\\lim_{x \\to a} \\frac{x^n - a^n}{x - a} = n a^{n-1}$$"
+        }
+      ],
+      "page": 37
+    },
+    {
+      "image": "0095_p0038.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            189.7,
+            279.7,
+            355.6,
+            364.8
+          ],
+          "conf": 0.911,
+          "text": "$$ \\lim_{x \\to 0} \\frac{\\sin x}{x} = 1 $$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            189.8,
+            380.4,
+            403.5,
+            466.4
+          ],
+          "conf": 0.924,
+          "text": "$$ \\lim_{x \\to 0} \\frac{1 - \\cos x}{x} = 0 $$"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.5,
+            465.5,
+            786.5,
+            515.5
+          ],
+          "conf": 0.853,
+          "text": "The derivative of a function $f$ at $a$ is defined by"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            190.7,
+            518.3,
+            547.9,
+            609.1
+          ],
+          "conf": 0.921,
+          "text": "$$f'(a)=\\lim_{h\\to0}\\frac{f(a+h)-f(a)}{h}$$"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            157.4,
+            607.4,
+            856.7,
+            658.2
+          ],
+          "conf": 0.854,
+          "text": "$\\diamond$ Derivative of a function $f$ at any point $x$ is defined by"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            190.6,
+            661.0,
+            641.2,
+            753.4
+          ],
+          "conf": 0.928,
+          "text": "$$f'(x)=\\frac{df(x)}{dx}=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}$$"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            157.7,
+            750.9,
+            713.7,
+            800.1
+          ],
+          "conf": 0.843,
+          "text": "For functions $u$ and $v$ the following holds:"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            189.9,
+            799.3,
+            395.5,
+            849.1
+          ],
+          "conf": 0.872,
+          "text": "$$(u \\pm v)' = u' \\pm v'$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            189.5,
+            854.1,
+            392.7,
+            904.0
+          ],
+          "conf": 0.887,
+          "text": "$$(uv)' = u'v + uv'$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            189.8,
+            923.4,
+            713.3,
+            1025.0
+          ],
+          "conf": 0.864,
+          "text": "$$\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2} \\text{ provided all are defined.}$$"
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.7,
+            1026.8,
+            788.5,
+            1076.7
+          ],
+          "conf": 0.855,
+          "text": "Following are some of the standard derivatives."
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            191.6,
+            1082.8,
+            392.5,
+            1172.9
+          ],
+          "conf": 0.898,
+          "text": "$$ \\frac{d}{dx}(x^n) = nx^{n-1} $$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            191.8,
+            1186.4,
+            415.6,
+            1275.1
+          ],
+          "conf": 0.908,
+          "text": "$$ \\frac{d}{dx}(\\sin x) = \\cos x $$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            192.1,
+            1289.5,
+            440.7,
+            1377.9
+          ],
+          "conf": 0.899,
+          "text": "$$ \\frac{d}{dx}(\\cos x) = -\\sin x $$"
+        },
+        {
+          "order": 14,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1414.7,
+            1179.2,
+            1706.4
+          ],
+          "conf": 0.859,
+          "text": "Historical Note\n\nIn the history of mathematics two names are prominent to share the credit for\ninventing calculus, Issac Newton (1642 – 1727) and G.W. Leibnitz (1646 – 1717).\nBoth of them independently invented calculus around the seventeenth century.\nAfter the advent of calculus many mathematicians contributed for further\ndevelopment of calculus. The rigorous concept is mainly attributed to the great"
+        }
+      ],
+      "page": 38
+    },
+    {
+      "image": "0095_p0039.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.0,
+            259.0,
+            1176.5,
+            948.7
+          ],
+          "conf": 0.778,
+          "text": "mathematicians, A.L. Cauchy, J.L.Lagrange and Karl Weierstrass. Cauchy gave\nthe foundation of calculus as we have now generally accepted in our textbooks.\nCauchy used D’ Alembert’s limit concept to define the derivative of a function.\nStarting with definition of a limit, Cauchy gave examples such as the limit of\n\n$$ \\frac{\\sin \\alpha}{\\alpha} \\text{ for } \\alpha = 0. \\text{ He wrote } \\frac{\\Delta y}{\\Delta x} = \\frac{f(x+i) - f(x)}{i}, \\text{ and called the limit for} $$\n\n$i \\rightarrow 0$, the “function derive’e, $y'$ for $f'(x)$”.\n\nBefore 1900, it was thought that calculus is quite difficult to teach. So calculus\nbecame beyond the reach of youngsters. But just in 1900, John Perry and others\nin England started propagating the view that essential ideas and methods of calculus\nwere simple and could be taught even in schools. F.L. Griffin, pioneered the\nteaching of calculus to first year students. This was regarded as one of the most\ndaring act in those days.\n\nToday not only the mathematics but many other subjects such as Physics,\nChemistry, Economics and Biological Sciences are enjoying the fruits of calculus."
+        }
+      ],
+      "page": 39
+    }
+  ]
+}

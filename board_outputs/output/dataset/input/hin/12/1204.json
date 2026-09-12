@@ -1,0 +1,4519 @@
+{
+  "book": "1204",
+  "relpath": "dataset/input/hin/12/1204.pdf",
+  "num_pages": 31,
+  "pages": [
+    {
+      "image": "0142_p0000.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            125.5,
+            336.1,
+            224.5,
+            369.7
+          ],
+          "conf": 0.714,
+          "text": "$12081\\text{CH}04$"
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            252.1,
+            350.8,
+            951.1,
+            474.3
+          ],
+          "conf": 0.773,
+          "text": "सारणिक (Determinants)"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            83.4,
+            515.9,
+            1115.9,
+            567.2
+          ],
+          "conf": 0.762,
+          "text": "❖All Mathematical truths are relative and conditional — C.P. STEINMETZ ❖"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.2,
+            595.3,
+            446.6,
+            650.3
+          ],
+          "conf": 0.915,
+          "text": "4.1 भूमिका (Introduction)"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            651.8,
+            799.2,
+            841.5
+          ],
+          "conf": 0.974,
+          "text": "पिछले अध्याय में, हमने आव्यूह और आव्यूहों के बीजगणित के विषय\nमें अध्ययन किया है। हमने बीजगणितीय समीकरणों के निकाय को\nआव्यूहों के रूप में व्यक्त करना भी सीखा है। इसके अनुसार रैखिक\nसमीकरणों के निकाय"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            385.4,
+            849.2,
+            603.4,
+            950.0
+          ],
+          "conf": 0.921,
+          "text": "$$a_1 x + b_1 y = c_1$$\n$$a_2 x + b_2 y = c_2$$"
+        },
+        {
+          "order": 6,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            792.0,
+            649.6,
+            1130.0,
+            1084.5
+          ],
+          "conf": 0.971,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            876.1,
+            1086.1,
+            1032.0,
+            1156.9
+          ],
+          "conf": 0.945,
+          "text": "P.S. Laplace\n(1749-1827)"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            960.3,
+            800.6,
+            1166.0
+          ],
+          "conf": 0.589,
+          "text": "को $\\begin{pmatrix} a_1 & b_1 \\\\ a_2 & b_2 \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} c_1 \\\\ c_2 \\end{pmatrix}$ के रूप में व्यक्त कर सकते हैं। अब\nइन समीकरणों के निकाय का अद्वितीय हल है अथवा नहीं, इसको\n$a_1 b_2 - a_2 b_1$ संख्या द्वारा ज्ञात किया जाता है। (स्मरण कीजिए कि"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.7,
+            1182.1,
+            1132.4,
+            1492.9
+          ],
+          "conf": 0.711,
+          "text": "यदि $\\frac{a_1}{a_2} \\neq \\frac{b_1}{b_2}$ या $a_1 b_2 - a_2 b_1 \\neq 0$, हो तो समीकरणों के निकाय का हल अद्वितीय होता है) यह\nसंख्या $a_1 b_2 - a_2 b_1$ जो समीकरणों के निकाय के अद्वितीय हल ज्ञात करती है, वह आव्यूह\n$\\mathbf{A} = \\begin{bmatrix} a_1 & b_1 \\\\ a_2 & b_2 \\end{bmatrix}$ से संबंधित है और इसे $\\mathbf{A}$ का **सारणिक या det A** कहते हैं। सारणिकों का\nइंजीनियरिंग, विज्ञान, अर्थशास्त्र, सामाजिक विज्ञान इत्यादि में विस्तृत अनुप्रयोग हैं।"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            1507.7,
+            1132.4,
+            1652.6
+          ],
+          "conf": 0.95,
+          "text": "इस अध्याय में, हम केवल वास्तविक प्रविष्टियों के 3 कोटि तक के सारणिकों पर विचार करेंगे।\nइस अध्याय में सारणिकों के गुण धर्म, उपसारणिक, सह-खण्ड और त्रिभुज का क्षेत्रफल ज्ञात करने\nमें सारणिकों का अनुप्रयोग, एक वर्ग आव्यूह के सहखंडज और व्युत्क्रम, रैखिक समीकरण के निकायों"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0142_p0001.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.9,
+            211.1,
+            1128.5,
+            307.6
+          ],
+          "conf": 0.962,
+          "text": "की संगतता और असंगतता और एक आव्यूह के व्युत्क्रम का प्रयोग कर दो अथवा तीन चरांकों के\nरैखिक समीकरणों के हल का अध्ययन करेंगे।"
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            68.8,
+            315.9,
+            473.8,
+            369.2
+          ],
+          "conf": 0.887,
+          "text": "4.2 सारणिक (Determinant)"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            367.0,
+            1129.2,
+            502.0
+          ],
+          "conf": 0.962,
+          "text": "हम $n$ कोटि के प्रत्येक वर्ग आव्यूह $A = [a_{ij}]$ को एक संख्या (वास्तविक या सम्मिश्र) द्वारा संबंधित करा\nसकते हैं जिसे वर्ग आव्यूह का सारणिक कहते हैं। इसे एक फलन की तरह सोचा जा सकता है जो\nप्रत्येक आव्यूह को एक अद्वितीय संख्या (वास्तविक या सम्मिश्र) से संबंधित करता है।"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            495.7,
+            1129.6,
+            632.3
+          ],
+          "conf": 0.962,
+          "text": "यदि M वर्ग आव्यूहों का समुच्चय है, $k$ सभी संख्याओं (वास्तविक या सम्मिश्र) का समुच्चय है\nऔर $f : \\mathrm{M} \\rightarrow \\mathrm{K}, f(\\mathrm{A}) = k$, के द्वारा परिभाषित है जहाँ $\\mathrm{A} \\in \\mathrm{M}$ और $k \\in \\mathrm{K}$ तब $f(\\mathrm{A}), \\mathrm{A}$ का\nसारणिक कहलाता है। इसे $|\\mathrm{A}|$ या $\\det (\\mathrm{A})$ या $\\Delta$ के द्वारा भी निरूपित किया जाता है।"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.4,
+            671.9,
+            1046.6,
+            779.8
+          ],
+          "conf": 0.919,
+          "text": "यदि $A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$, तो $A$ के सारणिक को $|A| = \\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = \\det (A)$ द्वारा लिखा जाता है।"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.9,
+            771.5,
+            181.1,
+            820.4
+          ],
+          "conf": 0.839,
+          "text": "टिप्पणी"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            88.6,
+            816.1,
+            743.9,
+            911.0
+          ],
+          "conf": 0.946,
+          "text": "(i) आव्यूह A के लिए, |A| को A का सारणिक पढ़ते हैं।\n(ii) केवल वर्ग आव्यूहों के सारणिक होते हैं।"
+        },
+        {
+          "order": 7,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.2,
+            918.5,
+            1097.3,
+            972.9
+          ],
+          "conf": 0.887,
+          "text": "4.2.1 एक कोटि के आव्यूह का सारणिक (Determinant of a matrix of order one)"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            971.6,
+            1128.2,
+            1024.0
+          ],
+          "conf": 0.93,
+          "text": "माना एक कोटि का आव्यूह $A = [a]$ हो तो $A$ के सारणिक को $a$ के बराबर परिभाषित किया जाता है।"
+        },
+        {
+          "order": 9,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.4,
+            1031.2,
+            1123.9,
+            1086.1
+          ],
+          "conf": 0.89,
+          "text": "4.2.2 द्वितीय कोटि के आव्यूह का सारणिक (Determinant of a matrix of order two)"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.5,
+            1097.1,
+            769.2,
+            1191.6
+          ],
+          "conf": 0.916,
+          "text": "माना $2 \\times 2$ कोटि का आव्यूह $A = \\begin{bmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{bmatrix}$ है।"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            1196.8,
+            804.0,
+            1249.2
+          ],
+          "conf": 0.908,
+          "text": "तो A के सारणिक को इस प्रकार से परिभाषित किया जा सकता है:"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            270.1,
+            1256.0,
+            895.0,
+            1385.6
+          ],
+          "conf": 0.93,
+          "text": "$$\\det (A) = |A| = \\Delta = \\left| \\begin{matrix} a_{11} & a_{12} \\\\ A_{21} & A_{22} \\end{matrix} \\right| = a_{11}a_{22} - a_{21}a_{12}$$"
+        },
+        {
+          "order": 13,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            1406.3,
+            583.8,
+            1503.2
+          ],
+          "conf": 0.738,
+          "text": "उदाहरण 1 $\\begin{vmatrix} 2 & 4 \\\\ -1 & 2 \\end{vmatrix}$ का मान ज्ञात कीजिए।"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.5,
+            1540.1,
+            594.8,
+            1641.8
+          ],
+          "conf": 0.875,
+          "text": "हल $\\begin{vmatrix} 2 & 4 \\\\ -1 & 2 \\end{vmatrix} = 2(2) - 4(-1) = 4 + 4 = 8$"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0142_p0002.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.9,
+            209.9,
+            666.0,
+            304.0
+          ],
+          "conf": 0.812,
+          "text": "उदाहरण 2 $\\begin{vmatrix} x & x+1 \\\\ x-1 & x \\end{vmatrix}$ का मान ज्ञात कीजिए।"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.9,
+            298.4,
+            1026.6,
+            396.7
+          ],
+          "conf": 0.888,
+          "text": "हल $\\left| \\begin{array}{cc} x & x+1 \\\\ x-1 & x \\end{array} \\right| = x(x) - (x+1)(x-1) = x^2 - (x^2-1) = x^2 - x^2 + 1 = 1$"
+        },
+        {
+          "order": 2,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            68.3,
+            403.4,
+            1128.2,
+            455.4
+          ],
+          "conf": 0.838,
+          "text": "4.2.3 $3 \\times 3$ कोटि के आव्यूह का सारणिक (Determinant of a matrix of order $3 \\times 3$)"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            453.2,
+            1130.2,
+            671.2
+          ],
+          "conf": 0.963,
+          "text": "तृतीय कोटि के आव्यूह के सारणिक को द्वितीय कोटि के सारणिकों में व्यक्त करके ज्ञात किया जाता\nहै। यह एक सारणिक का एक पंक्ति (या एक स्तंभ) के अनुदिश प्रसरण कहलाता है। तृतीय कोटि\nके सारणिक को छः प्रकार से प्रसारित किया जाता है तीनों पंक्तियों ($R_1, R_2$ तथा $R_3$) में से प्रत्येक\nके संगत और तीनों स्तंभ ($C_1, C_2$ तथा $C_3$) में से प्रत्येक के संगत दर्शाए गए प्रसरण समान परिणाम\nदेते हैं जैसा कि निम्नलिखित स्थितियों में स्पष्ट किया गया है।"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.0,
+            671.2,
+            726.4,
+            728.1
+          ],
+          "conf": 0.9,
+          "text": "वर्ग आव्यूह $A = [a_{ij}]_{3 \\times 3}$, के सारणिक पर विचार करते हैं।"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.7,
+            730.6,
+            458.5,
+            869.6
+          ],
+          "conf": 0.925,
+          "text": "जहाँ $|A| = \\begin{vmatrix} a_{11} & a_{12} & a_{13} \\\\ a_{21} & a_{22} & a_{23} \\\\ a_{31} & a_{32} & a_{33} \\end{vmatrix}$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            875.5,
+            516.7,
+            929.0
+          ],
+          "conf": 0.922,
+          "text": "प्रथम पंक्ति ($R_1$) के अनुदिश प्रसरण"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            74.6,
+            924.8,
+            370.2,
+            1058.6
+          ],
+          "conf": 0.917,
+          "text": "$$|A| = \\begin{vmatrix} a_{11} & a_{12} & a_{13} \\\\ a_{21} & a_{22} & a_{23} \\\\ a_{31} & a_{32} & a_{33} \\end{vmatrix}$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1048.9,
+            1129.7,
+            1191.6
+          ],
+          "conf": 0.928,
+          "text": "चरण 1 $\\mathrm{R}_1$ के पहले अवयव $a_{11}$ को $(-1)^{(1+1)} [(-1)^{a_{11}}$ में अनुलग्नों का योग] और सारणिक |A| की पहली\nपंक्ति ($\\mathrm{R}_1$) तथा पहला स्तंभ ($\\mathrm{C}_1$) के अवयवों को हटाने से प्राप्त द्वितीय कोटि के सारणिक से गुणा\nकीजिए क्योंकि $a_{11}, \\mathrm{R}_1$ और $\\mathrm{C}_1$ में स्थित है"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.9,
+            1191.4,
+            665.5,
+            1287.2
+          ],
+          "conf": 0.906,
+          "text": "अर्थात् $(-1)^{1+1} a_{11} \\begin{vmatrix} a_{22} & a_{23} \\\\ a_{32} & a_{33} \\end{vmatrix}$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            1280.7,
+            1130.3,
+            1431.2
+          ],
+          "conf": 0.95,
+          "text": "चरण 2 क्योंकि $a_{12}$, $R_1$ तथा $C_2$ में स्थित है इसलिए $R_1$ के दूसरे अवयव $a_{12}$ को $(-1)^{1+2}$\n$[(-1)^{4/2} \\text{ में अनुलम्नों का योग}]$ और सारणिक $|A|$ की पहली पंक्ति $(R_1)$ व दूसरे स्तंभ $(C_2)$ को हटाने से प्राप्त\nद्वितीय क्रम के सारणिक से गुणा कीजिए"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.4,
+            1424.0,
+            652.8,
+            1518.7
+          ],
+          "conf": 0.899,
+          "text": "अर्थात् $(-1)^{1+2}a_{12} \\begin{vmatrix} a_{21} & a_{23} \\\\ a_{31} & a_{33} \\end{vmatrix}$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            1509.5,
+            1129.9,
+            1660.9
+          ],
+          "conf": 0.944,
+          "text": "चरण 3 क्योंकि $a_{13}$, $\\mathrm{R}_1$ तथा $\\mathrm{C}_3$ में स्थित है इसलिए $\\mathrm{R}_1$ के तीसरे अवयव को $(-1)^{1+3}$\n$[(-1)^{4_{13}}$ में अनुलग्नों का योग] और सारणिक $|\\mathrm{A}|$ की पहली पंक्ति $(\\mathrm{R}_1)$ व तीसरे स्तंभ $(\\mathrm{C}_3)$ को हटाने से प्राप्त\nतृतीय कोटि के सारणिक से गुणा कीजिए"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0142_p0003.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.2,
+            223.2,
+            664.0,
+            321.8
+          ],
+          "conf": 0.926,
+          "text": "अर्थात् $(-1)^{1+3} a_{13} \\begin{vmatrix} a_{21} & a_{22} \\\\ a_{31} & a_{32} \\end{vmatrix}$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            325.3,
+            1129.4,
+            418.7
+          ],
+          "conf": 0.935,
+          "text": "चरण 4 अब A का सारणिक अर्थात् |A| के व्यंजक को उपरोक्त चरण 1, 2 व 3 से प्राप्त तीनों\nपदों का योग करके लिखिए अर्थात्"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.0,
+            428.6,
+            931.6,
+            535.5
+          ],
+          "conf": 0.909,
+          "text": "$$\\det A = |A| = (-1)^{1+1} a_{11} \\begin{vmatrix} a_{22} & a_{23} \\\\ a_{32} & a_{33} \\end{vmatrix} + (-1)^{1+2} a_{12} \\begin{vmatrix} a_{21} & a_{23} \\\\ a_{31} & a_{33} \\end{vmatrix}$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            285.7,
+            551.5,
+            601.0,
+            654.3
+          ],
+          "conf": 0.87,
+          "text": "$$ + (-1)^{1+3} a_{13} \\begin{vmatrix} a_{21} & a_{22} \\\\ a_{31} & a_{32} \\end{vmatrix} $$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.1,
+            660.8,
+            1127.9,
+            854.1
+          ],
+          "conf": 0.935,
+          "text": "या\n$$\n\\begin{aligned}\n|\\mathbf{A}| &= a_{11} \\left( a_{22} \\ a_{33} - a_{32} \\ a_{23} \\right) - a_{12} \\left( a_{21} \\ a_{33} - a_{31} \\ a_{23} \\right) \\\\\n&\\quad + a_{13} \\left( a_{21} \\ a_{32} - a_{31} \\ a_{22} \\right) \\\\\n&= a_{11} \\ a_{22} \\ a_{33} - a_{11} \\ a_{32} \\ a_{23} - a_{12} \\ a_{21} \\ a_{33} + a_{12} \\ a_{31} \\ a_{23} + a_{13} \\ a_{21} \\ a_{32} \\\\\n&\\quad - a_{13} \\ a_{31} \\ a_{22} \\hspace{180pt} ... (1)\n\\end{aligned}\n$$"
+        },
+        {
+          "order": 5,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            851.0,
+            1128.5,
+            924.3
+          ],
+          "conf": 0.857,
+          "text": "टिप्पणी हम चारों चरणों का एक साथ प्रयोग करेंगे।"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            931.1,
+            526.0,
+            986.0
+          ],
+          "conf": 0.856,
+          "text": "द्वितीय पंक्ति ($R_2$) के अनुदिश प्रसरण"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            470.4,
+            989.8,
+            774.0,
+            1135.3
+          ],
+          "conf": 0.888,
+          "text": "$$|A| = \\begin{vmatrix} a_{11} & a_{12} & a_{13} \\\\ \\boldsymbol{a_{21}} & \\boldsymbol{a_{22}} & \\boldsymbol{a_{23}} \\\\ a_{31} & a_{32} & a_{33} \\end{vmatrix}$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            1129.3,
+            625.3,
+            1182.4
+          ],
+          "conf": 0.907,
+          "text": "$R_2$ के अनुदिश प्रसरण करने पर, हमें प्राप्त होता है"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            203.3,
+            1176.8,
+            1127.9,
+            1649.0
+          ],
+          "conf": 0.886,
+          "text": "$$|A| = (-1)^{2+1} a_{21} \\begin{vmatrix} a_{12} & a_{13} \\\\ a_{32} & a_{33} \\end{vmatrix} + (-1)^{2+2} a_{22} \\begin{vmatrix} a_{11} & a_{13} \\\\ a_{31} & a_{33} \\end{vmatrix}$$\n\n$$+(-1)^{2+3} a_{23} \\begin{vmatrix} a_{11} & a_{12} \\\\ a_{31} & a_{32} \\end{vmatrix}$$\n\n$$= - a_{21} (a_{12} a_{33} - a_{32} a_{13}) + a_{22} (a_{11} a_{33} - a_{31} a_{13})$$\n\n$$- a_{23} (a_{11} a_{32} - a_{31} a_{12})$$\n\n$$|A| = - a_{21} a_{12} a_{33} + a_{21} a_{32} a_{13} + a_{22} a_{11} a_{33} - a_{22} a_{31} a_{13} - a_{23} a_{11} a_{32}$$\n\n$$+ a_{23} a_{31} a_{12}$$\n\n$$= a_{11} a_{22} a_{33} - a_{11} a_{23} a_{32} - a_{12} a_{21} a_{33} + a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32}$$\n\n$$- a_{13} a_{31} a_{22} \\dots (2)$$"
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0142_p0004.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            208.4,
+            508.7,
+            261.5
+          ],
+          "conf": 0.797,
+          "text": "पहले स्तंभ $(C_1)$ के अनुदिश प्रसरण"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            471.8,
+            274.3,
+            774.8,
+            421.2
+          ],
+          "conf": 0.928,
+          "text": "$$|\\mathrm{A}| = \\begin{vmatrix} \\boldsymbol{a_{11}} & a_{12} & a_{13} \\\\ \\boldsymbol{a_{21}} & a_{22} & a_{23} \\\\ \\boldsymbol{a_{31}} & a_{32} & a_{33} \\end{vmatrix}$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            424.3,
+            626.9,
+            478.4
+          ],
+          "conf": 0.925,
+          "text": "$C_1$, के अनुदिश प्रसरण करने पर हमें प्राप्त होता है"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            205.0,
+            477.5,
+            1129.6,
+            999.9
+          ],
+          "conf": 0.647,
+          "text": "$$|A| = a_{11} (-1)^{1+1} \\left| \\begin{matrix} a_{22} & a_{23} \\\\ a_{32} & a_{33} \\end{matrix} \\right| + a_{21} (-1)^{2+1} \\left| \\begin{matrix} a_{12} & a_{13} \\\\ a_{32} & a_{33} \\end{matrix} \\right|$$\n\n$$+ a_{31} (-1)^{3+1} \\left| \\begin{matrix} a_{12} & a_{13} \\\\ a_{22} & a_{23} \\end{matrix} \\right|$$\n\n$$= a_{11} (a_{22} a_{33} - a_{23} a_{32}) - a_{21} (a_{12} a_{33} - a_{13} a_{32}) + a_{31} (a_{12} a_{23} - a_{13} a_{22})$$\n\n$$|A| = a_{11} a_{22} a_{33} - a_{11} a_{23} a_{32} - a_{21} a_{12} a_{33} + a_{21} a_{13} a_{32} + a_{31} a_{12} a_{23}$$\n\n$$- a_{31} a_{13} a_{22}$$\n\n$$= a_{11} a_{22} a_{33} - a_{11} a_{23} a_{32} - a_{12} a_{21} a_{33} + a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32}$$\n\n$$- a_{13} a_{31} a_{22} \\dots (3)$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            283.4,
+            954.9,
+            1127.2,
+            1006.2
+          ],
+          "conf": 0.752,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.9,
+            1005.3,
+            1128.2,
+            1143.4
+          ],
+          "conf": 0.958,
+          "text": "(1), (2) और (3) से स्पष्ट है कि $|A|$ का मान समान है। यह पाठकों के अभ्यास के लिए छोड़\nदिया गया है कि वे यह सत्यापित करें कि $|A|$ का $R_3$, $C_2$ और $C_3$ के अनुदिश प्रसरण (1), (2)\nऔर (3) से प्राप्त परिणामों के समान है।"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            1147.7,
+            1129.8,
+            1243.1
+          ],
+          "conf": 0.942,
+          "text": "अतः एक सारणिक को किसी भी पंक्ति या स्तंभ के अनुदिश प्रसरण करने पर समान मान प्राप्त\nहोता है।"
+        },
+        {
+          "order": 7,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            72.1,
+            1253.3,
+            180.4,
+            1302.3
+          ],
+          "conf": 0.872,
+          "text": "टिप्पणी"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            86.3,
+            1308.4,
+            1129.0,
+            1659.2
+          ],
+          "conf": 0.962,
+          "text": "(i) गणना को सरल करने के लिए हम सारणिक का उस पंक्ति या स्तंभ के अनुदिश प्रसरण करेंगे\nजिसमें शून्यों की संख्या अधिकतम होती है।\n(ii) सारणिकों का प्रसरण करते समय $(-1)^{i+j}$ से गुणा करने के स्थान पर, हम $(i+j)$ के सम या\nविषम होने के अनुसार $+1$ या $-1$ से गुणा कर सकते हैं।\n(iii) मान लीजिए $A = \\begin{bmatrix} 2 & 2 \\\\ 4 & 0 \\end{bmatrix}$ और $B = \\begin{bmatrix} 1 & 1 \\\\ 2 & 0 \\end{bmatrix}$ तो यह सिद्ध करना सरल है कि\n$A = 2B$. किंतु $|A| = 0 - 8 = -8$ और $|B| = 0 - 2 = -2$ है।"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0142_p0005.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            210.8,
+            1128.2,
+            303.7
+          ],
+          "conf": 0.939,
+          "text": "अवलोकन कीजिए कि $|A| = 4(-2) = 2^2|B| या $|A| = 2^n|B|$, जहाँ $n = 2$, वर्ग आव्यूहों A\nव B की कोटि है।"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.8,
+            304.4,
+            1130.9,
+            401.8
+          ],
+          "conf": 0.947,
+          "text": "व्यापक रूप में, यदि $\\mathrm{A} = k\\mathrm{B}$, जहाँ $\\mathrm{A}$ व $\\mathrm{B}$ वर्ग आव्यूहों की कोटि $n$ है, तब $|\\mathrm{A}| = k^n |\\mathrm{B}|$, जहाँ\n$n = 1, 2, 3$ है।"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.3,
+            421.0,
+            768.6,
+            565.9
+          ],
+          "conf": 0.892,
+          "text": "उदाहरण 3 सारणिक $\\Delta =$ $\\begin{vmatrix} 1 & 2 & 4 \\\\ -1 & 3 & 0 \\\\ 4 & 1 & 0 \\end{vmatrix}$ का मान ज्ञात कीजिए।"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            585.0,
+            1129.6,
+            680.8
+          ],
+          "conf": 0.936,
+          "text": "हल ध्यान दीजिए कि तीसरे स्तंभ में दो प्रविष्टियाँ शून्य हैं। इसलिए तीसरे स्तंभ ($C_3$) के अनुदिश\nप्रसरण करने पर हमें प्राप्त होता है कि"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            500.4,
+            684.9,
+            987.4,
+            840.2
+          ],
+          "conf": 0.898,
+          "text": "$$\\Delta = 4 \\begin{vmatrix} -1 & 3 \\\\ 4 & 1 \\end{vmatrix} - 0 \\begin{vmatrix} 1 & 2 \\\\ 4 & 1 \\end{vmatrix} + 0 \\begin{vmatrix} 1 & 2 \\\\ -1 & 3 \\end{vmatrix}$$\n$$= 4 (-1 - 12) - 0 + 0 = -52$$"
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            67.8,
+            865.3,
+            873.2,
+            1010.7
+          ],
+          "conf": 0.871,
+          "text": "उदाहरण 4 $\\Delta =$ $\\begin{vmatrix} 0 & \\sin \\alpha & -\\cos \\alpha \\\\ -\\sin \\alpha & 0 & \\sin \\beta \\\\ \\cos \\alpha & -\\sin \\beta & 0 \\end{vmatrix}$ का मान ज्ञात कीजिए।"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.0,
+            1030.3,
+            726.8,
+            1084.7
+          ],
+          "conf": 0.878,
+          "text": "हल $R_1$ के अनुदिश प्रसरण करने पर हमें प्राप्त होता है कि"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            175.9,
+            1093.5,
+            1093.8,
+            1295.1
+          ],
+          "conf": 0.815,
+          "text": "$$\\Delta = 0 \\begin{vmatrix} 0 & \\sin \\beta \\\\ -\\sin \\beta & 0 \\end{vmatrix} - \\sin \\alpha \\begin{vmatrix} -\\sin \\alpha & \\sin \\beta \\\\ \\cos \\alpha & 0 \\end{vmatrix} - \\cos \\alpha \\begin{vmatrix} -\\sin \\alpha & 0 \\\\ \\cos \\alpha & -\\sin \\beta \\end{vmatrix}$$\n$$= 0 - \\sin \\alpha (0 - \\sin \\beta \\cos \\alpha) - \\cos \\alpha (\\sin \\alpha \\sin \\beta - 0)$$\n$$= \\sin \\alpha \\sin \\beta \\cos \\alpha - \\cos \\alpha \\sin \\alpha \\sin \\beta = 0$$"
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            1298.9,
+            792.0,
+            1660.3
+          ],
+          "conf": 0.695,
+          "text": "उदाहरण 5 यदि $\\begin{vmatrix} 3 & x \\\\ x & 1 \\end{vmatrix} = \\begin{vmatrix} 3 & 2 \\\\ 4 & 1 \\end{vmatrix}$ तो $x$ के मान ज्ञात कीजिए।\n\nहल दिया है कि $\\begin{vmatrix} 3 & x \\\\ x & 1 \\end{vmatrix} = \\begin{vmatrix} 3 & 2 \\\\ 4 & 1 \\end{vmatrix}$\n\nअर्थात् $3 - x^2 = 3 - 8$\nअर्थात् $x^2 = 8$\nअतः $x = \\pm 2\\sqrt{2}$"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0142_p0006.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            483.1,
+            211.3,
+            715.3,
+            272.5
+          ],
+          "conf": 0.798,
+          "text": "प्रश्नावली 4.1"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            287.1,
+            655.2,
+            338.9
+          ],
+          "conf": 0.841,
+          "text": "प्रश्न 1 से 2 तक में सारणिकों का मान ज्ञात कीजिए"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            93.8,
+            355.7,
+            284.8,
+            458.1
+          ],
+          "conf": 0.845,
+          "text": "1. $\\begin{vmatrix} 2 & 4 \\\\ -5 & -1 \\end{vmatrix}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            93.7,
+            482.2,
+            909.5,
+            591.1
+          ],
+          "conf": 0.73,
+          "text": "2. (i) $\\begin{vmatrix} \\cos \\theta & -\\sin \\theta \\\\ \\sin \\theta & \\cos \\theta \\end{vmatrix}$ (ii) $\\begin{vmatrix} x^2 - x + 1 & x - 1 \\\\ x + 1 & x + 1 \\end{vmatrix}$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            93.6,
+            612.0,
+            705.2,
+            720.5
+          ],
+          "conf": 0.805,
+          "text": "3. यदि $A = \\begin{bmatrix} 1 & 2 \\\\ 4 & 2 \\end{bmatrix}$, तो दिखाइए $| 2A | = 4 | A |$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            93.5,
+            744.3,
+            816.0,
+            893.9
+          ],
+          "conf": 0.832,
+          "text": "4. यदि $A = \\begin{bmatrix} 1 & 0 & 1 \\\\ 0 & 1 & 2 \\\\ 0 & 0 & 4 \\end{bmatrix}$ हो, तो दिखाइए $|3A| = 27|A|$"
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            93.6,
+            906.7,
+            637.1,
+            959.9
+          ],
+          "conf": 0.835,
+          "text": "5. निम्नलिखित सारणिकों का मान ज्ञात कीजिए"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            176.8,
+            980.5,
+            1004.3,
+            1131.1
+          ],
+          "conf": 0.685,
+          "text": "(i) $\\begin{vmatrix} 3 & -1 & -2 \\\\ 0 & 0 & -1 \\\\ 3 & -5 & 0 \\end{vmatrix}$ (ii) $\\begin{vmatrix} 3 & -4 & 5 \\\\ 1 & 1 & -2 \\\\ 2 & 3 & 1 \\end{vmatrix}$ (iii) $\\begin{vmatrix} 0 & 1 & 2 \\\\ -1 & 0 & -3 \\\\ -2 & 3 & 0 \\end{vmatrix}$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            160.8,
+            1163.0,
+            403.6,
+            1310.0
+          ],
+          "conf": 0.867,
+          "text": "(iv) $\\begin{vmatrix} 2 & -1 & -2 \\\\ 0 & 2 & -1 \\\\ 3 & -5 & 0 \\end{vmatrix}$"
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.1,
+            1337.2,
+            737.4,
+            1484.5
+          ],
+          "conf": 0.811,
+          "text": "6. यदि $A = \\begin{bmatrix} 1 & 1 & 2 \\\\ 2 & 1 & 3 \\\\ 5 & 4 & 9 \\end{bmatrix}$, हो तो $|A|$ ज्ञात कीजिए।"
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            93.8,
+            1493.3,
+            465.1,
+            1544.6
+          ],
+          "conf": 0.806,
+          "text": "7. $x$ के मान ज्ञात कीजिए यदि"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            175.8,
+            1548.5,
+            874.4,
+            1656.4
+          ],
+          "conf": 0.707,
+          "text": "(i) $\\begin{vmatrix} 2 & 4 \\\\ 5 & 1 \\end{vmatrix} = \\begin{vmatrix} 2x & 4 \\\\ 6 & x \\end{vmatrix}$ \\qquad (ii) $\\begin{vmatrix} 2 & 3 \\\\ 4 & 5 \\end{vmatrix} = \\begin{vmatrix} x & 3 \\\\ 2x & 5 \\end{vmatrix}$"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0142_p0007.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            93.6,
+            219.4,
+            944.2,
+            368.3
+          ],
+          "conf": 0.694,
+          "text": "8. यदि $\\begin{vmatrix} x & 2 \\\\ 18 & x \\end{vmatrix} = \\begin{vmatrix} 6 & 2 \\\\ 18 & 6 \\end{vmatrix}$ हो तो $x$ बराबर है:\n\n(A) $6$ (B) $\\pm 6$ (C) $-6$ (D) $0$"
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.0,
+            372.1,
+            676.2,
+            427.1
+          ],
+          "conf": 0.92,
+          "text": "4.3 त्रिभुज का क्षेत्रफल (Area of a Triangle)"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            424.8,
+            1128.6,
+            605.0
+          ],
+          "conf": 0.949,
+          "text": "हमने पिछली कक्षाओं में सीखा है कि एक त्रिभुज जिसके शीर्षबिंदु $(x_1, y_1), (x_2, y_2)$ तथा $(x_3, y_3)$,\nहों तो उसका क्षेत्रफल व्यंजक $\\frac{1}{2}[x_1(y_2-y_3) + x_2(y_3-y_1) + x_3(y_1-y_2)]$ द्वारा व्यक्त किया जाता\nहै। अब इस व्यंजक को सारणिक के रूप में इस प्रकार लिखा जा सकता है:"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            499.9,
+            618.1,
+            1128.7,
+            767.7
+          ],
+          "conf": 0.931,
+          "text": "$$ \\Delta = \\frac{1}{2} \\begin{vmatrix} x_1 & y_1 & 1 \\\\ x_2 & y_2 & 1 \\\\ x_3 & y_3 & 1 \\end{vmatrix} \\qquad \\dots (1) $$"
+        },
+        {
+          "order": 4,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            72.1,
+            780.5,
+            180.5,
+            829.3
+          ],
+          "conf": 0.886,
+          "text": "टिप्पणी"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            88.3,
+            833.0,
+            1129.1,
+            1079.6
+          ],
+          "conf": 0.959,
+          "text": "(i) क्योंकि क्षेत्रफल एक धनात्मक राशि होती है इसलिए हम सदैव (1) में सारणिक का निरपेक्ष\nमान लेते हैं।\n(ii) यदि क्षेत्रफल दिया हो तो गणना के लिए सारणिक का धनात्मक और ऋणात्मक दोनों मानों का\nप्रयोग कीजिए।\n(iii) तीन संरेख बिंदुओं से बने त्रिभुज का क्षेत्रफल शून्य होगा।"
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.5,
+            1091.0,
+            1112.8,
+            1490.0
+          ],
+          "conf": 0.743,
+          "text": "उदाहरण 6 एक त्रिभुज का क्षेत्रफल ज्ञात कीजिए जिसके शीर्ष $(3, 8), (-4, 2)$ और $(5, 1)$ हैं।\n\nहल त्रिभुज का क्षेत्रफल:\n\n$$\\Delta = \\frac{1}{2} \\begin{vmatrix} 3 & 8 & 1 \\\\ -4 & 2 & 1 \\\\ 5 & 1 & 1 \\end{vmatrix} = \\frac{1}{2} [3(2-1) - 8(-4-5) + 1(-4-10)]$$\n\n$$= \\frac{1}{2} (3 + 72 - 14) = \\frac{61}{2}$$"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            1505.2,
+            1129.7,
+            1644.1
+          ],
+          "conf": 0.892,
+          "text": "उदाहरण 7 सारणिकों का प्रयोग करके A(1, 3) और B (0, 0) को जोड़ने वाली रेखा का समीकरण\nज्ञात कीजिए और $k$ का मान ज्ञात कीजिए यदि एक बिंदु D($k$, 0) इस प्रकार है कि $\\Delta$ ABD का\nक्षेत्रफल 3 वर्ग इकाई है।"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0142_p0008.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            210.6,
+            1034.2,
+            264.2
+          ],
+          "conf": 0.918,
+          "text": "हल मान लीजिए AB पर कोई बिंदु P $(x, y)$ है तब $\\Delta$ ABP का क्षेत्रफल $= 0$ (क्यों?)"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            281.3,
+            610.8,
+            430.7
+          ],
+          "conf": 0.881,
+          "text": "इसलिए\n$$ \\frac{1}{2} \\begin{vmatrix} 0 & 0 & 1 \\\\ 1 & 3 & 1 \\\\ x & y & 1 \\end{vmatrix} = 0 $$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.1,
+            457.2,
+            709.8,
+            541.1
+          ],
+          "conf": 0.88,
+          "text": "इससे प्राप्त है $\\frac{1}{2}(y-3x) = 0$ या $y = 3x$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            545.9,
+            687.4,
+            642.2
+          ],
+          "conf": 0.819,
+          "text": "जो अभीष्ट रेखा AB का समीकरण है।\nकिंतु $\\Delta$ ABD का क्षेत्रफल 3 वर्ग इकाई दिया है अतः"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            377.5,
+            655.4,
+            1072.0,
+            803.3
+          ],
+          "conf": 0.949,
+          "text": "$$ \\frac{1}{2} \\begin{vmatrix} 1 & 3 & 1 \\\\ 0 & 0 & 1 \\\\ k & 0 & 1 \\end{vmatrix} = \\pm 3 \\text{ हमें प्राप्त है } \\frac{-3k}{2} = \\pm 3, \\text{ i.e., } k = 2 $$"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            491.5,
+            861.5,
+            703.7,
+            914.6
+          ],
+          "conf": 0.775,
+          "text": "प्रश्नावली 4.2"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            95.6,
+            944.8,
+            1060.6,
+            1101.2
+          ],
+          "conf": 0.644,
+          "text": "1. निम्नलिखित प्रत्येक में दिए गए शीर्ष बिंदुओं वाले त्रिभुजों का क्षेत्रफल ज्ञात कीजिए।\n(i) $(1, 0), (6, 0), (4, 3)$ (ii) $(2, 7), (1, 1), (10, 8)$\n(iii) $(-2, -3), (3, 2), (-1, -8)$"
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.0,
+            1111.5,
+            972.2,
+            1164.6
+          ],
+          "conf": 0.821,
+          "text": "2. दर्शाइए कि बिंदु A ($a, b + c$), B ($b, c + a$) और C ($c, a + b$) संरेख हैं।"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.8,
+            1169.6,
+            1129.0,
+            1297.3
+          ],
+          "conf": 0.589,
+          "text": "3. प्रत्येक में $k$ का मान ज्ञात कीजिए यदि त्रिभुजों का क्षेत्रफल 4 वर्ग इकाई है जहाँ शीर्षबिंदु\nनिम्नलिखित हैं:\n(i) $(k, 0), (4, 0), (0, 2)$ (ii) $(-2, 0), (0, 4), (0, k)$"
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            95.2,
+            1301.6,
+            1129.3,
+            1480.1
+          ],
+          "conf": 0.748,
+          "text": "4. (i) सारणिकों का प्रयोग करके $(1, 2)$ और $(3, 6)$ को मिलाने वाली रेखा का समीकरण ज्ञात\nकीजिए।\n(ii) सारणिकों का प्रयोग करके $(3, 1)$ और $(9, 3)$ को मिलाने वाली रेखा का समीकरण ज्ञात\nकीजिए।"
+        },
+        {
+          "order": 10,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            95.4,
+            1487.7,
+            1128.2,
+            1625.4
+          ],
+          "conf": 0.638,
+          "text": "5. यदि शीर्ष $(2, -6), (5, 4)$ और $(k, 4)$ वाले त्रिभुज का क्षेत्रफल 35 वर्ग इकाई हो तो $k$ का\nमान है:\n(A) 12          (B) -2          (C) -12, -2          (D) 12, -2"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0142_p0009.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.0,
+            209.3,
+            794.9,
+            261.4
+          ],
+          "conf": 0.922,
+          "text": "4.4 उपसारणिक और सहखंड (Minor and Co-factor)"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            259.6,
+            1129.4,
+            348.1
+          ],
+          "conf": 0.964,
+          "text": "इस अनुच्छेद में हम उपसारणिकों और सहखंडों का प्रयोग करके सारणिको के प्रसरण का विस्तृत रूप\nलिखना सीखेंगे।"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            347.4,
+            1129.7,
+            477.5
+          ],
+          "conf": 0.87,
+          "text": "परिभाषा 1 सारणिक के अवयव $a_{ij}$ का उपसारणिक एक सारणिक है जो $i$ वी पंक्ति और $j$ वाँ स्तंभ\nजिसमें अवयव $a_{ij}$ स्थित है, को हटाने से प्राप्त होता है। अवयव $a_{ij}$ के उपसारणिक को $M_{ij}$ के द्वारा\nव्यक्त करते हैं।"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            72.5,
+            480.8,
+            1128.0,
+            533.2
+          ],
+          "conf": 0.897,
+          "text": "टिप्पणी $n(n \\geq 2)$ क्रम के सारणिक के अवयव का उपसारणिक $n-1$ क्रम का सारणिक होता है।"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            544.5,
+            988.9,
+            684.7
+          ],
+          "conf": 0.822,
+          "text": "उदाहरण 8 सारणिक $\\Delta = \\begin{vmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\\\ 7 & 8 & 9 \\end{vmatrix}$ में अवयव 6 का उपसारणिक ज्ञात कीजिए।"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            680.0,
+            1127.8,
+            770.4
+          ],
+          "conf": 0.896,
+          "text": "हल क्योंकि 6 दूसरी पंक्ति एवं तृतीय स्तंभ में स्थित है। इसलिए इसका उपसारिणक $= M_{23}$\nनिम्नलिखित प्रकार से प्राप्त होता है।"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            205.0,
+            776.2,
+            876.6,
+            877.7
+          ],
+          "conf": 0.915,
+          "text": "$$M_{23} = \\begin{vmatrix} 1 & 2 \\\\ 7 & 8 \\end{vmatrix} = 8 - 14 = -6 (\\Delta \\text{ से } R_2 \\text{ और } C_3 \\text{ हटाने पर})$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            875.0,
+            908.8,
+            929.9
+          ],
+          "conf": 0.872,
+          "text": "परिभाषा 2 एक अवयव $a_{ij}$ का सहखंड जिसे $A_{ij}$ द्वारा व्यक्त करते हैं, जहाँ"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            486.4,
+            932.0,
+            716.2,
+            991.1
+          ],
+          "conf": 0.814,
+          "text": "$$ \\mathbf{A}_{ij} = (-1)^{i+j} \\mathbf{M}_{ij}, $$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            981.2,
+            728.6,
+            1037.2
+          ],
+          "conf": 0.891,
+          "text": "के द्वारा परिभाषित करते हैं जहाँ $a_{ij}$ का उपसारणिक $M_{ij}$ है।"
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.5,
+            1046.0,
+            1054.8,
+            1668.2
+          ],
+          "conf": 0.648,
+          "text": "उदाहरण 9 सारणिक $\\begin{vmatrix} 1 & -2 \\\\ 4 & 3 \\end{vmatrix}$ के सभी अवयवों के उपसारणिक व सहखंड ज्ञात कीजिए।\n\nहल अवयव $a_{ij}$ का उपसारणिक $\\mathbf{M}_{ij}$ है।\n\nयहाँ $a_{11} = 1$, इसलिए $\\mathbf{M}_{11} = a_{11}$ का उपसारणिक $= 3$\n$\\mathbf{M}_{12} =$ अवयव $a_{12}$ का उपसारणिक $= 4$\n$\\mathbf{M}_{21} =$ अवयव $a_{21}$ का उपसारणिक $= -2$\n$\\mathbf{M}_{22} =$ अवयव $a_{22}$ का उपसारणिक $= 1$\n\nअब $a_{ij}$ का सहखंड $\\mathbf{A}_{ij}$ है। इसलिए\n$\\mathbf{A}_{11} = (-1)^{1+1} \\quad \\mathbf{M}_{11} = (-1)^2 (3) = 3$\n$\\mathbf{A}_{12} = (-1)^{1+2} \\quad \\mathbf{M}_{12} = (-1)^3 (4) = -4$\n$\\mathbf{A}_{21} = (-1)^{2+1} \\quad \\mathbf{M}_{21} = (-1)^3 (-2) = 2$\n$\\mathbf{A}_{22} = (-1)^{2+2} \\quad \\mathbf{M}_{22} = (-1)^4 (1) = 1$"
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0142_p0010.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.3,
+            227.9,
+            1129.4,
+            379.8
+          ],
+          "conf": 0.821,
+          "text": "उदाहरण 10 $\\Delta = \\begin{vmatrix} a_{11} & a_{12} & a_{13} \\\\ a_{21} & a_{22} & a_{23} \\\\ a_{31} & a_{32} & a_{33} \\end{vmatrix}$ के अवयवों $a_{11}$ तथा $a_{21}$ के उपसारणिक और सहखंड"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            378.9,
+            229.0,
+            428.2
+          ],
+          "conf": 0.877,
+          "text": "ज्ञात कीजिए।"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            429.1,
+            734.0,
+            482.4
+          ],
+          "conf": 0.896,
+          "text": "हल उपसारणिक और सहखंड की परिभाषा द्वारा हम पाते हैं:"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.2,
+            487.8,
+            819.6,
+            595.8
+          ],
+          "conf": 0.912,
+          "text": "$$a_{11} \\text{ का उपसारणिक } = \\text{M}_{11} = \\begin{vmatrix} a_{22} & a_{23} \\\\ a_{32} & a_{33} \\end{vmatrix} = a_{22} a_{33} - a_{23} a_{32}$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.9,
+            593.3,
+            802.6,
+            653.4
+          ],
+          "conf": 0.89,
+          "text": "$$ a_{11} \\text{ का सहखंड } = A_{11} = (-1)^{1+1} \\quad M_{11} = a_{22} a_{33} - a_{23} a_{32} $$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            649.1,
+            827.9,
+            755.5
+          ],
+          "conf": 0.907,
+          "text": "$$a_{21} \\text{ का उपसारणिक } = \\text{M}_{21} = \\begin{vmatrix} a_{12} & a_{13} \\\\ a_{32} & a_{33} \\end{vmatrix} = a_{12} a_{33} - a_{13} a_{32}$$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            752.8,
+            1119.7,
+            812.3
+          ],
+          "conf": 0.884,
+          "text": "$$a_{21} \\text{ का सहखंड } = A_{21} = (-1)^{2+1} \\quad M_{21} = (-1) \\quad (a_{12} a_{33} - a_{13} a_{32}) = - a_{12} a_{33} + a_{13} a_{32}$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.8,
+            801.5,
+            1050.4,
+            855.0
+          ],
+          "conf": 0.896,
+          "text": "टिप्पणी उदाहरण 21 में सारणिक $\\Delta$ का $R_1$ के सापेक्ष प्रसरण करने पर हम पाते हैं कि"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            233.2,
+            850.1,
+            1120.3,
+            966.6
+          ],
+          "conf": 0.884,
+          "text": "$$\\Delta = (-1)^{1+1} a_{11} \\begin{vmatrix} a_{22} & a_{23} \\\\ a_{32} & a_{33} \\end{vmatrix} + (-1)^{1+2} a_{12} \\begin{vmatrix} a_{21} & a_{23} \\\\ a_{31} & a_{33} \\end{vmatrix} + (-1)^{1+3} a_{13} \\begin{vmatrix} a_{21} & a_{22} \\\\ a_{31} & a_{32} \\end{vmatrix}$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            259.4,
+            970.4,
+            927.8,
+            1030.5
+          ],
+          "conf": 0.83,
+          "text": "$$= a_{11} A_{11} + a_{12} A_{12} + a_{13} A_{13}, \\text{जहाँ } a_{ij} \\text{ का सहखंड } A_{ij} \\text{ हैं।}$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            259.8,
+            1021.7,
+            998.9,
+            1074.8
+          ],
+          "conf": 0.733,
+          "text": "$$ = R_1 \\text{ के अवयवों और उनके संगत सहखंडों के गुणनफल का योग। } $$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.5,
+            1072.6,
+            976.7,
+            1129.0
+          ],
+          "conf": 0.894,
+          "text": "इसी प्रकार $\\Delta$ का $\\mathrm{R}_2, \\mathrm{R}_3, \\mathrm{C}_1, \\mathrm{C}_2$ और $\\mathrm{C}_3$ के अनुदिश 5 प्रसरण अन्य प्रकार से हैं।"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.6,
+            1126.1,
+            1129.9,
+            1217.9
+          ],
+          "conf": 0.929,
+          "text": "अतः सारणिक $\\Delta$, किसी पंक्ति (या स्तंभ) के अवयवों और उनके संगत सहखंडों के गुणनफल\nका योग है।"
+        },
+        {
+          "order": 13,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.9,
+            1219.9,
+            1128.5,
+            1663.7
+          ],
+          "conf": 0.905,
+          "text": "टिप्पणी यदि एक पंक्ति (या स्तंभ) के अवयवों को अन्य पंक्ति (या स्तंभ) के सहखंडों\nसे गुणा किया जाए तो उनका योग शून्य होता है। उदाहरणतया, माना $\\Delta = a_{11} A_{21} + a_{12} A_{22}$\n$+ a_{13} A_{23}$ तब:\n$$\\Delta = a_{11} (-1)^{1+1} \\begin{vmatrix} a_{12} & a_{13} \\\\ a_{32} & a_{33} \\end{vmatrix} + a_{12} (-1)^{1+2} \\begin{vmatrix} a_{11} & a_{13} \\\\ a_{31} & a_{33} \\end{vmatrix} + a_{13} (-1)^{1+3} \\begin{vmatrix} a_{11} & a_{12} \\\\ a_{31} & a_{32} \\end{vmatrix}$$\n$$= \\begin{vmatrix} a_{11} & a_{12} & a_{13} \\\\ a_{11} & a_{12} & a_{13} \\\\ a_{31} & a_{32} & a_{33} \\end{vmatrix} = 0 \\text{ ( क्योंकि } R_1 \\text{ और } R_2 \\text{ समान हैं)}$$"
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0142_p0011.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.7,
+            208.3,
+            841.2,
+            259.6
+          ],
+          "conf": 0.935,
+          "text": "इसी प्रकार हम अन्य पंक्तियों और स्तंभों के लिए प्रयत्न कर सकते हैं।"
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            270.2,
+            1129.7,
+            414.5
+          ],
+          "conf": 0.88,
+          "text": "उदाहरण 11 सारणिक\n$$\\begin{vmatrix} 2 & -3 & 5 \\\\ 6 & 0 & 4 \\\\ 1 & 5 & -7 \\end{vmatrix} \\text{ के अवयवों के उपसारणिक और सहखंड ज्ञात कीजिए और}$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            420.1,
+            721.4,
+            477.4
+          ],
+          "conf": 0.884,
+          "text": "सत्यापित कीजिए कि $a_{11} A_{31} + a_{12} A_{32} + a_{13} A_{33} = 0$ है।"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.2,
+            475.6,
+            1016.9,
+            577.4
+          ],
+          "conf": 0.866,
+          "text": "हल यहाँ $M_{11} = \\begin{vmatrix} 0 & 4 \\\\ 5 & -7 \\end{vmatrix} = 0 -20 = -20$; इसलिए $A_{11} = (-1)^{1+1} (-20) = -20$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            194.2,
+            585.9,
+            1022.2,
+            690.1
+          ],
+          "conf": 0.924,
+          "text": "$$M_{12} = \\begin{vmatrix} 6 & 4 \\\\ 1 & -7 \\end{vmatrix} = -42 - 4 = -46; \\text{इसलिए } A_{12} = (-1)^{1+2} (-46) = 46$$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            195.0,
+            700.4,
+            978.4,
+            804.6
+          ],
+          "conf": 0.918,
+          "text": "$$M_{13} = \\begin{vmatrix} 6 & 0 \\\\ 1 & 5 \\end{vmatrix} = 30 - 0 = 30; \\text{ इसलिए } A_{13} = (-1)^{1+3} (30) = 30$$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            195.1,
+            814.1,
+            976.3,
+            916.6
+          ],
+          "conf": 0.924,
+          "text": "$$M_{21} = \\begin{vmatrix} -3 & 5 \\\\ 5 & -7 \\end{vmatrix} = 21 - 25 = -4; \\text{ इसलिए } A_{21} = (-1)^{2+1} (-4) = 4$$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            195.1,
+            928.1,
+            1022.0,
+            1030.1
+          ],
+          "conf": 0.918,
+          "text": "$$M_{22} = \\begin{vmatrix} 2 & 5 \\\\ 1 & -7 \\end{vmatrix} = -14 - 5 = -19; \\text{ इसलिए } A_{22} = (-1)^{2+2} (-19) = -19$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            194.8,
+            1040.8,
+            994.0,
+            1145.0
+          ],
+          "conf": 0.902,
+          "text": "$$M_{23} = \\begin{vmatrix} 2 & -3 \\\\ 1 & 5 \\end{vmatrix} = 10 + 3 = 13; \\text{ इसलिए } A_{23} = (-1)^{2+3} (13) = -13$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            195.0,
+            1155.1,
+            1022.2,
+            1258.9
+          ],
+          "conf": 0.898,
+          "text": "$$M_{31} = \\begin{vmatrix} -3 & 5 \\\\ 0 & 4 \\end{vmatrix} = -12 - 0 = -12; \\text{ इसलिए } A_{31} = (-1)^{3+1} (-12) = -12$$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            195.6,
+            1268.3,
+            994.0,
+            1374.1
+          ],
+          "conf": 0.875,
+          "text": "$$M_{32} = \\begin{vmatrix} 2 & 5 \\\\ 6 & 4 \\end{vmatrix} = 8 - 30 = -22; \\text{इसलिए } A_{32} = (-1)^{3+2} (-22) = 22$$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            73.0,
+            1385.5,
+            977.9,
+            1486.3
+          ],
+          "conf": 0.836,
+          "text": "और $M_{33} = \\begin{vmatrix} 2 & -3 \\\\ 6 & 0 \\end{vmatrix} = 0 + 18 = 18; \\text{ इसलिए } A_{33} = (-1)^{3+3} (18) = 18$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.6,
+            1493.3,
+            986.0,
+            1551.2
+          ],
+          "conf": 0.684,
+          "text": "अब $a_{11} = 2, a_{12} = -3, a_{13} = 5;$ तथा $A_{31} = -12, A_{32} = 22, A_{33} = 18$ है।"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.4,
+            1548.4,
+            836.9,
+            1645.2
+          ],
+          "conf": 0.816,
+          "text": "इसलिए $a_{11} \\mathrm{A}_{31} + a_{12} \\mathrm{A}_{32} + a_{13} \\mathrm{A}_{33}$\n$= 2 (-12) + (-3) (22) + 5 (18) = -24 - 66 + 90 = 0$"
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0142_p0012.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            486.2,
+            210.8,
+            711.4,
+            268.4
+          ],
+          "conf": 0.77,
+          "text": "प्रश्नावली 4.3"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            275.6,
+            859.9,
+            327.4
+          ],
+          "conf": 0.932,
+          "text": "निम्नलिखित सारणिकों के अवयवों के उपसारणिक एवं सहखंड लिखिए।"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            93.7,
+            334.1,
+            608.8,
+            600.8
+          ],
+          "conf": 0.571,
+          "text": "1. (i) $\\begin{vmatrix} 2 & -4 \\\\ 0 & 3 \\end{vmatrix}$ \\qquad (ii) $\\begin{vmatrix} a & c \\\\ b & d \\end{vmatrix}$\n\n\n2. (i) $\\begin{vmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{vmatrix}$ \\qquad (ii) $\\begin{vmatrix} 1 & 0 & 4 \\\\ 3 & 5 & -1 \\\\ 0 & 1 & 2 \\end{vmatrix}$"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            93.4,
+            621.7,
+            1128.7,
+            773.6
+          ],
+          "conf": 0.778,
+          "text": "3. दूसरी पंक्ति के अवयवों के सहखंडों का प्रयोग करके $\\Delta = \\begin{vmatrix} 5 & 3 & 8 \\\\ 2 & 0 & 1 \\\\ 1 & 2 & 3 \\end{vmatrix}$ का मान ज्ञात कीजिए।"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            93.7,
+            771.8,
+            1128.0,
+            917.8
+          ],
+          "conf": 0.776,
+          "text": "4. तीसरे स्तंभ के अवयवों के सहखंडों का प्रयोग करके $\\Delta = \\begin{vmatrix} 1 & x & yz \\\\ 1 & y & zx \\\\ 1 & z & xy \\end{vmatrix}$ का मान ज्ञात कीजिए।"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.4,
+            972.9,
+            1129.9,
+            1277.5
+          ],
+          "conf": 0.628,
+          "text": "5. यदि $\\Delta = \\begin{vmatrix} a_{11} & a_{12} & a_{13} \\\\ a_{21} & a_{22} & a_{23} \\\\ a_{31} & a_{32} & a_{33} \\end{vmatrix}$ और $a_{ij}$ का सहखंड $A_{ij}$ हो तो $\\Delta$ का मान निम्नलिखित रूप में\nव्यक्त किया जाता है:\n(A) $a_{11} A_{31} + a_{12} A_{32} + a_{13} A_{33}$ (B) $a_{11} A_{11} + a_{12} A_{21} + a_{13} A_{31}$\n(C) $a_{21} A_{11} + a_{22} A_{12} + a_{23} A_{13}$ (D) $a_{11} A_{11} + a_{21} A_{21} + a_{31} A_{31}$"
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.1,
+            1281.6,
+            1059.4,
+            1337.0
+          ],
+          "conf": 0.896,
+          "text": "4.5 आव्यूह के सहखंडज और व्युत्क्रम (Adjoint and Inverse of a Matrix)"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1344.4,
+            1129.4,
+            1445.2
+          ],
+          "conf": 0.905,
+          "text": "पिछले अध्याय में हमने एक आव्यूह के व्युत्क्रम का अध्ययन किया है। इस अनुच्छेद में हम एक\nआव्यूह के व्युत्क्रम के अस्तित्व के लिए शर्तों की भी व्याख्या करेंगे।"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            1447.6,
+            925.1,
+            1501.0
+          ],
+          "conf": 0.857,
+          "text": "$A^{-1}$ ज्ञात करने के लिए पहले हम एक आव्यूह का सहखंडज परिभाषित करेंगे।"
+        },
+        {
+          "order": 9,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            68.3,
+            1512.2,
+            701.9,
+            1565.5
+          ],
+          "conf": 0.884,
+          "text": "4.5.1 आव्यूह का सहखंडज (Adjoint of a matrix)"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            1566.7,
+            1130.2,
+            1667.0
+          ],
+          "conf": 0.935,
+          "text": "परिभाषा 3 एक वर्ग आव्यूह $A=[a_{ij}]$ का सहखंडज, आव्यूह $[A_{ij}]$ के परिवर्त के रूप में परिभाषित है,\nजहाँ $A_{ij}$, अवयव $a_{ij}$ का सहखंड है। आव्यूह $A$ के सहखंडज को $adj A$ के द्वारा व्यक्त करते हैं।"
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0142_p0013.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.7,
+            227.9,
+            552.6,
+            379.8
+          ],
+          "conf": 0.946,
+          "text": "मान लीजिए $A = \\begin{bmatrix} a_{11} & a_{12} & a_{13} \\\\ a_{21} & a_{22} & a_{23} \\\\ a_{31} & a_{32} & a_{33} \\end{bmatrix}$ है।"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.2,
+            414.5,
+            1019.9,
+            569.5
+          ],
+          "conf": 0.946,
+          "text": "तब $adj \\ A = \\begin{bmatrix} A_{11} & A_{12} & A_{13} \\\\ A_{21} & A_{22} & A_{23} \\\\ A_{31} & A_{32} & A_{33} \\end{bmatrix}$ का परिवर्त $= \\begin{bmatrix} A_{11} & A_{21} & A_{31} \\\\ A_{12} & A_{22} & A_{32} \\\\ A_{13} & A_{23} & A_{33} \\end{bmatrix}$ होता है।"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.5,
+            611.6,
+            783.0,
+            715.3
+          ],
+          "conf": 0.876,
+          "text": "उदाहरण 12 आव्यूह $A = \\begin{bmatrix} 2 & 3 \\\\ 1 & 4 \\end{bmatrix}$ का सहखंडज ज्ञात कीजिए।"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            744.3,
+            773.2,
+            804.1
+          ],
+          "conf": 0.841,
+          "text": "हल हम जानते हैं कि $A_{11} = 4, A_{12} = -1, A_{21} = -3, A_{22} = 2$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.8,
+            819.4,
+            890.2,
+            929.0
+          ],
+          "conf": 0.903,
+          "text": "अतः\n$$ adj A = \\begin{bmatrix} A_{11} & A_{21} \\\\ A_{12} & A_{22} \\end{bmatrix} = \\begin{bmatrix} 4 & -3 \\\\ -1 & 2 \\end{bmatrix} $$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            72.6,
+            963.2,
+            1130.4,
+            1067.4
+          ],
+          "conf": 0.785,
+          "text": "$$\\text{टिप्पणी } 2 \\times 2 \\text{ कोटि के वर्ग आव्यूह } A = \\begin{bmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{bmatrix} \\text{ का सहखंडज } adj \\ A, a_{11} \\text{ और } a_{22} \\text{ को परस्पर}$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            1066.5,
+            1129.3,
+            1165.9
+          ],
+          "conf": 0.907,
+          "text": "बदलने एवं $a_{12}$ और $a_{21}$ के चिह्न परिवर्तित कर देने से भी प्राप्त किया जा सकता है जैसा नीचे दर्शाया\nगया है।"
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            368.0,
+            1185.7,
+            841.8,
+            1397.0
+          ],
+          "conf": 0.904,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            1423.8,
+            694.9,
+            1476.7
+          ],
+          "conf": 0.906,
+          "text": "हम बिना उपपत्ति के निम्नलिखित प्रमेय निर्दिष्ट करते हैं।"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            1493.6,
+            1129.3,
+            1596.8
+          ],
+          "conf": 0.916,
+          "text": "प्रमेय 1 यदि A कोई $n$ कोटि का आव्यूह है तो, $A(adj \\ A) = (adj \\ A) \\ A = |A|I$, जहाँ I, $n$ कोटि\nका तत्समक आव्यूह है।"
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0142_p0014.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            211.9,
+            333.8,
+            261.5
+          ],
+          "conf": 0.903,
+          "text": "सत्यापन: मान लीजिए"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            415.4,
+            280.4,
+            1103.8,
+            436.9
+          ],
+          "conf": 0.945,
+          "text": "$$ \\mathrm{A} = \\begin{bmatrix} a_{11} & a_{12} & a_{13} \\\\ a_{21} & a_{22} & a_{23} \\\\ a_{31} & a_{32} & a_{33} \\end{bmatrix}, \\text{ है तब } adj \\ \\mathrm{A} = \\begin{bmatrix} \\mathrm{A}_{11} & \\mathrm{A}_{21} & \\mathrm{A}_{31} \\\\ \\mathrm{A}_{12} & \\mathrm{A}_{22} & \\mathrm{A}_{32} \\\\ \\mathrm{A}_{13} & \\mathrm{A}_{23} & \\mathrm{A}_{33} \\end{bmatrix} $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            436.7,
+            1129.1,
+            532.3
+          ],
+          "conf": 0.961,
+          "text": "क्योंकि एक पंक्ति या स्तंभ के अवयवों का संगत सहखंडों की गुणा का योग $|A|$ के समान होता\nहै अन्यथा शून्य होता है।"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.1,
+            548.5,
+            1006.2,
+            702.5
+          ],
+          "conf": 0.939,
+          "text": "इस प्रकार\n$$A (adj A) = \\begin{bmatrix} |A| & 0 & 0 \\\\ 0 & |A| & 0 \\\\ 0 & 0 & |A| \\end{bmatrix} = |A| \\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{bmatrix} = |A| I$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            712.1,
+            689.3,
+            764.6
+          ],
+          "conf": 0.915,
+          "text": "इसी प्रकार, हम दर्शा सकते हैं कि $(adj A) A = |A| I$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.2,
+            766.6,
+            844.0,
+            817.9
+          ],
+          "conf": 0.807,
+          "text": "अतः $A (adj A) = (adj A) A = |A| I सत्यापित है।"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            818.6,
+            1016.9,
+            872.3
+          ],
+          "conf": 0.923,
+          "text": "परिभाषा 4 एक वर्ग आव्यूह A अव्युत्क्रमणीय (singular) कहलाता है यदि $|A| = 0$ है।"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.3,
+            884.9,
+            1027.6,
+            988.6
+          ],
+          "conf": 0.87,
+          "text": "उदाहरण के लिए आव्यूह $A = \\begin{bmatrix} 1 & 2 \\\\ 4 & 8 \\end{bmatrix}$ का सारणिक शून्य है। अतः A अव्युत्क्रमणीय है।"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            1001.9,
+            1017.0,
+            1056.6
+          ],
+          "conf": 0.906,
+          "text": "परिभाषा 5 एक वर्ग आव्यूह A व्युत्क्रमणीय (non-singular) कहलाता है यदि $|A| \\neq 0$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.2,
+            1069.2,
+            846.5,
+            1175.8
+          ],
+          "conf": 0.894,
+          "text": "मान लीजिए $A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}$ हो तो $|A| = \\begin{vmatrix} 1 & 2 \\\\ 3 & 4 \\end{vmatrix} = 4 - 6 = -2 \\neq 0$ है।"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.7,
+            1180.1,
+            333.0,
+            1232.1
+          ],
+          "conf": 0.891,
+          "text": "अतः A व्युत्क्रमणीय है।"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            1230.8,
+            719.6,
+            1283.9
+          ],
+          "conf": 0.91,
+          "text": "हम निम्नलिखित प्रमेय बिना उपपत्ति के निर्दिष्ट कर रहे हैं।"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1283.0,
+            1129.2,
+            1378.8
+          ],
+          "conf": 0.916,
+          "text": "प्रमेय 2 यदि A तथा B दोनों एक ही कोटि के व्युत्क्रमणीय आव्यूह हों तो AB तथा BA भी उसी\nकोटि के व्युत्क्रमणीय आव्यूह होते हैं।"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            1386.4,
+            1129.2,
+            1492.9
+          ],
+          "conf": 0.927,
+          "text": "प्रमेय 3 आव्यूहों के गुणनफल का सारणिक उनके क्रमशः सारणिकों के गुणनफल के समान होता\nहै अर्थात् $|AB| = |A| \\ |B|$, जहाँ A तथा B समान कोटि के वर्ग आव्यूह हैं।"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            72.7,
+            1506.1,
+            817.8,
+            1659.6
+          ],
+          "conf": 0.909,
+          "text": "टिप्पणी हम जानते हैं कि $(adj A) A = |A| I = \\begin{bmatrix} |A| & 0 & 0 \\\\ 0 & |A| & 0 \\\\ 0 & 0 & |A| \\end{bmatrix}$"
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0142_p0015.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            207.9,
+            522.0,
+            259.7
+          ],
+          "conf": 0.929,
+          "text": "दोनों ओर आव्यूहों का सारणिक लेने पर,"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            388.1,
+            271.8,
+            756.2,
+            423.2
+          ],
+          "conf": 0.947,
+          "text": "$$|(adj \\ A) \\ A| = \\begin{vmatrix} |A| & 0 & 0 \\\\ 0 & |A| & 0 \\\\ 0 & 0 & |A| \\end{vmatrix}$$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.4,
+            447.8,
+            1128.6,
+            592.4
+          ],
+          "conf": 0.901,
+          "text": "अर्थात्\n$$|(adj A)| |A| = |A|^3 \\begin{vmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{vmatrix} \\qquad (क्यों?)$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.0,
+            610.0,
+            673.8,
+            668.5
+          ],
+          "conf": 0.871,
+          "text": "अर्थात् $|(adj A)| |A| = |A|^3 (1)$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.4,
+            677.5,
+            629.3,
+            736.0
+          ],
+          "conf": 0.887,
+          "text": "अर्थात् $|(adj A)| = |A|^2$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            735.1,
+            995.8,
+            788.9
+          ],
+          "conf": 0.928,
+          "text": "व्यापक रुप से, यदि $n$ कोटि का एक वर्ग आव्यूह $A$ हो तो $|adj A| = |A|^{n-1}$ होगा।"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            788.8,
+            1128.2,
+            842.6
+          ],
+          "conf": 0.905,
+          "text": "प्रमेय 4 एक वर्ग आव्यूह A के व्युत्क्रम का अस्तित्व है, यदि और केवल यदि A व्युत्क्रमणीय आव्यूह है।"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            846.5,
+            1103.6,
+            947.0
+          ],
+          "conf": 0.574,
+          "text": "उपपत्ति मान लीजिए $n$ कोटि का व्युत्क्रमणीय आव्यूह A है और $n$ कोटि का तत्समक आव्यूह I है।\nतब $n$ कोटि के एक वर्ग आव्यूह B का अस्तित्व इस प्रकार हो ताकि AB = BA = I"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            944.8,
+            1065.0,
+            1040.0
+          ],
+          "conf": 0.698,
+          "text": "अब $AB = I$ है तो $|AB| = |I|$ या $|A||B| = 1$ (क्योंकि $|I| = 1, |AB| = |A||B|$)\nइससे प्राप्त होता है $|A| \\neq 0$. अतः A व्युत्क्रमणीय है।"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            1037.9,
+            667.3,
+            1090.8
+          ],
+          "conf": 0.873,
+          "text": "विलोमत: मान लीजिए A व्युत्क्रमणीय है। तब $|A| \\neq 0$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.9,
+            1092.1,
+            893.6,
+            1145.3
+          ],
+          "conf": 0.881,
+          "text": "अब $A (adj A) = (adj A) A = |A|I$ (प्रमेय 1)"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            1161.5,
+            721.1,
+            1267.7
+          ],
+          "conf": 0.911,
+          "text": "या $A \\left( \\frac{1}{|A|} adj A \\right) = \\left( \\frac{1}{|A|} adj A \\right) A = I$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.7,
+            1273.7,
+            701.5,
+            1357.2
+          ],
+          "conf": 0.892,
+          "text": "या $$AB = BA = I, \\text{ जहाँ } B = \\frac{1}{|A|}adj A$$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.5,
+            1364.0,
+            869.4,
+            1450.1
+          ],
+          "conf": 0.865,
+          "text": "अतः $A$ के व्युत्क्रम का अस्तित्व है और $A^{-1} = \\frac{1}{|A|} adj A$"
+        },
+        {
+          "order": 14,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.8,
+            1444.9,
+            1127.8,
+            1647.5
+          ],
+          "conf": 0.764,
+          "text": "उदाहरण 13 यदि A = $\\begin{bmatrix} 1 & 3 & 3 \\\\ 1 & 4 & 3 \\\\ 1 & 3 & 4 \\end{bmatrix}$ हो तो सत्यापित कीजिए कि A. $adj$ A = $|A|$. I और A⁻¹\n\nज्ञात कीजिए।"
+        }
+      ],
+      "page": 15
+    },
+    {
+      "image": "0142_p0016.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            220.7,
+            877.6,
+            274.1
+          ],
+          "conf": 0.836,
+          "text": "हल हम पाते हैं कि $|A| = 1(16 - 9) - 3(4 - 3) + 3(3 - 4) = 1 \\neq 0$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            277.2,
+            1125.7,
+            335.5
+          ],
+          "conf": 0.835,
+          "text": "अब $A_{11} = 7$, $A_{12} = -1$, $A_{13} = -1$, $A_{21} = -3$, $A_{22} = 1$, $A_{23} = 0$, $A_{31} = -3$, $A_{32} = 0$, $A_{33} = 1$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            344.2,
+            760.1,
+            493.6
+          ],
+          "conf": 0.921,
+          "text": "इसलिए $adj A = \\begin{bmatrix} 7 & -3 & -3 \\\\ -1 & 1 & 0 \\\\ -1 & 0 & 1 \\end{bmatrix}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.4,
+            526.0,
+            892.8,
+            680.0
+          ],
+          "conf": 0.908,
+          "text": "$$ \\text{अब} \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\text{A.}(adj \\ A) = \\begin{bmatrix} 1 & 3 & 3 \\\\ 1 & 4 & 3 \\\\ 1 & 3 & 4 \\end{bmatrix} \\begin{bmatrix} 7 & -3 & -3 \\\\ -1 & 1 & 0 \\\\ -1 & 0 & 1 \\end{bmatrix} $$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            527.2,
+            711.7,
+            1007.5,
+            860.2
+          ],
+          "conf": 0.931,
+          "text": "$$ = \\begin{bmatrix} 7-3-3 & -3+3+0 & -3+0+3 \\\\ 7-4-3 & -3+4+0 & -3+0+3 \\\\ 7-3-4 & -3+3+0 & -3+0+4 \\end{bmatrix} $$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            527.5,
+            891.7,
+            1048.9,
+            1042.0
+          ],
+          "conf": 0.928,
+          "text": "$$ = \\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{bmatrix} = (1) \\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{bmatrix} = |A| . I $$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.2,
+            1073.5,
+            992.4,
+            1223.5
+          ],
+          "conf": 0.907,
+          "text": "और $$A^{-1} = \\frac{1}{|A|} \\cdot adj A = \\frac{1}{1} \\begin{bmatrix} 7 & -3 & -3 \\\\ -1 & 1 & 0 \\\\ -1 & 0 & 1 \\end{bmatrix} = \\begin{bmatrix} 7 & -3 & -3 \\\\ -1 & 1 & 0 \\\\ -1 & 0 & 1 \\end{bmatrix}$$"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            1247.4,
+            1128.6,
+            1352.5
+          ],
+          "conf": 0.702,
+          "text": "उदाहरण 14 यदि $A = \\begin{bmatrix} 2 & 3 \\\\ 1 & -4 \\end{bmatrix}$, $B = \\begin{bmatrix} 1 & -2 \\\\ -1 & 3 \\end{bmatrix}$, तो सत्यापित कीजिए कि $(AB)^{-1} = B^{-1}A^{-1}$ है।"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.5,
+            1368.7,
+            807.0,
+            1478.0
+          ],
+          "conf": 0.834,
+          "text": "हल हम जानते हैं कि AB = $\\begin{bmatrix} 2 & 3 \\\\ 1 & -4 \\end{bmatrix} \\begin{bmatrix} 1 & -2 \\\\ -1 & 3 \\end{bmatrix} = \\begin{bmatrix} -1 & 5 \\\\ 5 & -14 \\end{bmatrix}$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1489.1,
+            1129.6,
+            1591.9
+          ],
+          "conf": 0.911,
+          "text": "क्योंकि $|AB| = -11 \\neq 0, (AB)^{-1}$ का अस्तित्व है और इसे निम्नलिखित प्रकार से व्यक्त किया\nजाता है।"
+        }
+      ],
+      "page": 16
+    },
+    {
+      "image": "0142_p0017.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            238.4,
+            227.7,
+            952.9,
+            336.2
+          ],
+          "conf": 0.937,
+          "text": "$$(AB)^{-1} = \\frac{1}{|AB|} \\cdot adj(AB) = -\\frac{1}{11} \\begin{bmatrix} -14 & -5 \\\\ -5 & -1 \\end{bmatrix} = \\frac{1}{11} \\begin{bmatrix} 14 & 5 \\\\ 5 & 1 \\end{bmatrix}$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            346.0,
+            1129.0,
+            453.6
+          ],
+          "conf": 0.96,
+          "text": "और $|A| = -11 \\neq 0$ व $|B| = 1 \\neq 0$. इसलिए $A^{-1}$ और $B^{-1}$ दोनों का अस्तित्व है और जिसे\nनिम्नलिखित रूप में व्यक्त किया जा सकता है।"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            381.8,
+            465.5,
+            817.4,
+            569.9
+          ],
+          "conf": 0.944,
+          "text": "$$A^{-1}=-\\frac{1}{11}\\begin{bmatrix}-4 & -3 \\\\ -1 & 2\\end{bmatrix},B^{-1}=\\begin{bmatrix}3 & 2 \\\\ 1 & 1\\end{bmatrix}$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.5,
+            586.4,
+            1073.6,
+            693.0
+          ],
+          "conf": 0.925,
+          "text": "$$ \\text{इसलिए} \\quad \\mathrm{B}^{-1}\\mathrm{A}^{-1} = -\\frac{1}{11}\\begin{bmatrix} 3 & 2 \\\\ 1 & 1 \\end{bmatrix}\\begin{bmatrix} -4 & -3 \\\\ -1 & 2 \\end{bmatrix} = -\\frac{1}{11}\\begin{bmatrix} -14 & -5 \\\\ -5 & -1 \\end{bmatrix} = \\frac{1}{11}\\begin{bmatrix} 14 & 5 \\\\ 5 & 1 \\end{bmatrix} $$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.6,
+            703.3,
+            533.5,
+            753.3
+          ],
+          "conf": 0.818,
+          "text": "अतः $(AB)^{-1} = B^{-1} A^{-1}$ है।"
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.9,
+            778.1,
+            1129.1,
+            961.2
+          ],
+          "conf": 0.809,
+          "text": "उदाहरण 15 प्रदर्शित कीजिए कि आव्यूह $A = \\begin{bmatrix} 2 & 3 \\\\ 1 & 2 \\end{bmatrix}$ समीकरण $A^2 - 4A + I = 0$, जहाँ $I$\n$2 \\times 2$ कोटि का एक तत्समक आव्यूह है और $0$, $2 \\times 2$ कोटि का एक शून्य आव्यूह है। इसकी\nसहायता से $A^{-1}$ ज्ञात कीजिए।"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            968.8,
+            795.4,
+            1075.9
+          ],
+          "conf": 0.848,
+          "text": "हल हम जानते हैं कि $A^2=A.A=\\begin{bmatrix} 2 & 3 \\\\ 1 & 2 \\end{bmatrix}\\begin{bmatrix} 2 & 3 \\\\ 1 & 2 \\end{bmatrix}=\\begin{bmatrix} 7 & 12 \\\\ 4 & 7 \\end{bmatrix}$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.0,
+            1075.9,
+            1005.7,
+            1181.3
+          ],
+          "conf": 0.898,
+          "text": "अतः $A^2 - 4A + I = \\begin{bmatrix} 7 & 12 \\\\ 4 & 7 \\end{bmatrix} - \\begin{bmatrix} 8 & 12 \\\\ 4 & 8 \\end{bmatrix} + \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\end{bmatrix} = O$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.4,
+            1183.9,
+            484.1,
+            1231.6
+          ],
+          "conf": 0.826,
+          "text": "अब $A^2 - 4A + I = 0$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.1,
+            1232.8,
+            499.3,
+            1281.6
+          ],
+          "conf": 0.835,
+          "text": "इसलिए $A A - 4A = - I$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.0,
+            1280.9,
+            1090.7,
+            1333.1
+          ],
+          "conf": 0.834,
+          "text": "या $A A (A^{-1}) - 4 A A^{-1} = - I A^{-1}$ (दोनों ओर $A^{-1}$ से उत्तर गुणन द्वारा क्योंकि $|A| \\neq 0$)"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.4,
+            1330.9,
+            528.1,
+            1380.4
+          ],
+          "conf": 0.836,
+          "text": "या $A (A A^{-1}) - 4I = - A^{-1}$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.4,
+            1380.6,
+            526.9,
+            1429.4
+          ],
+          "conf": 0.84,
+          "text": "या $AI - 4I = - A^{-1}$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.6,
+            1436.0,
+            953.0,
+            1541.9
+          ],
+          "conf": 0.914,
+          "text": "या $$A^{-1} = 4I - A = \\begin{bmatrix} 4 & 0 \\\\ 0 & 4 \\end{bmatrix} - \\begin{bmatrix} 2 & 3 \\\\ 1 & 2 \\end{bmatrix} = \\begin{bmatrix} 2 & -3 \\\\ -1 & 2 \\end{bmatrix}$$"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.6,
+            1550.7,
+            583.7,
+            1654.2
+          ],
+          "conf": 0.894,
+          "text": "अतः $A^{-1} = \\begin{bmatrix} 2 & -3 \\\\ -1 & 2 \\end{bmatrix}$"
+        }
+      ],
+      "page": 17
+    },
+    {
+      "image": "0142_p0018.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            487.2,
+            219.4,
+            711.4,
+            279.9
+          ],
+          "conf": 0.779,
+          "text": "प्रश्नावली 4.4"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            299.9,
+            866.5,
+            353.0
+          ],
+          "conf": 0.82,
+          "text": "प्रश्न 1 और 2 में प्रत्येक आव्यूह का सहखंडज (adjoint) ज्ञात कीजिए"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            94.4,
+            370.8,
+            646.7,
+            519.5
+          ],
+          "conf": 0.72,
+          "text": "1. $\\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}$ 2. $\\begin{bmatrix} 1 & -1 & 2 \\\\ 2 & 3 & 5 \\\\ -2 & 0 & 1 \\end{bmatrix}$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            523.4,
+            943.2,
+            577.8
+          ],
+          "conf": 0.839,
+          "text": "प्रश्न 3 और 4 में सत्यापित कीजिए कि $A (adj A) = (adj A) .A = |A| . I$ है।"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            92.5,
+            583.6,
+            643.1,
+            730.6
+          ],
+          "conf": 0.733,
+          "text": "3. $\\begin{bmatrix} 2 & 3 \\\\ -4 & -6 \\end{bmatrix}$ 4. $\\begin{bmatrix} 1 & -1 & 2 \\\\ 3 & 0 & -2 \\\\ 1 & 0 & 3 \\end{bmatrix}$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.7,
+            728.5,
+            1055.8,
+            781.7
+          ],
+          "conf": 0.853,
+          "text": "प्रश्न 5 से 11 में दिए गए प्रत्येक आव्यूहों के व्युत्क्रम (जिनका अस्तित्व हो) ज्ञात कीजिए।"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            94.0,
+            790.7,
+            913.1,
+            934.6
+          ],
+          "conf": 0.669,
+          "text": "5. $\\begin{bmatrix} 2 & -2 \\\\ 4 & 3 \\end{bmatrix}$          6. $\\begin{bmatrix} -1 & 5 \\\\ -3 & 2 \\end{bmatrix}$          7. $\\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 2 & 4 \\\\ 0 & 0 & 5 \\end{bmatrix}$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            94.1,
+            950.2,
+            946.3,
+            1108.6
+          ],
+          "conf": 0.651,
+          "text": "8. $\\begin{bmatrix} 1 & 0 & 0 \\\\ 3 & 3 & 0 \\\\ 5 & 2 & -1 \\end{bmatrix}$ 9. $\\begin{bmatrix} 2 & 1 & 3 \\\\ 4 & -1 & 0 \\\\ -7 & 2 & 1 \\end{bmatrix}$ 10. $\\begin{bmatrix} 1 & -1 & 2 \\\\ 0 & 2 & -3 \\\\ 3 & -2 & 4 \\end{bmatrix}$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            82.1,
+            1108.6,
+            420.0,
+            1255.5
+          ],
+          "conf": 0.852,
+          "text": "11. $\\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & \\cos \\alpha & \\sin \\alpha \\\\ 0 & \\sin \\alpha & -\\cos \\alpha \\end{bmatrix}$"
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.1,
+            1267.9,
+            1113.6,
+            1379.5
+          ],
+          "conf": 0.826,
+          "text": "12. यदि $A = \\begin{bmatrix} 3 & 7 \\\\ 2 & 5 \\end{bmatrix}$ और $B = \\begin{bmatrix} 6 & 8 \\\\ 7 & 9 \\end{bmatrix}$ है तो सत्यापित कीजिए कि $(AB)^{-1} = B^{-1} A^{-1}$ है।"
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            80.3,
+            1384.0,
+            1128.5,
+            1489.7
+          ],
+          "conf": 0.828,
+          "text": "13. यदि $A = \\begin{bmatrix} 3 & 1 \\\\ -1 & 2 \\end{bmatrix}$ है तो दर्शाइए कि $A^2 - 5A + 7I = 0$ है इसकी सहायता से $A^{-1}$ ज्ञात कीजिए।"
+        },
+        {
+          "order": 11,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.5,
+            1502.1,
+            949.8,
+            1667.5
+          ],
+          "conf": 0.875,
+          "text": "14. आव्यूह $A = \\begin{bmatrix} 3 & 2 \\\\ 1 & 1 \\end{bmatrix}$ के लिए $a$ और $b$ ऐसी संख्याएँ ज्ञात कीजिए ताकि\n$A^2 + aA + bI = 0$ हो।"
+        }
+      ],
+      "page": 18
+    },
+    {
+      "image": "0142_p0019.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.0,
+            237.1,
+            1039.4,
+            385.9
+          ],
+          "conf": 0.889,
+          "text": "15. आव्यूह $A = \\begin{bmatrix} 1 & 1 & 1 \\\\ 1 & 2 & -3 \\\\ 2 & -1 & 3 \\end{bmatrix}$ के लिए दर्शाइए कि $A^3 - 6A^2 + 5A + 11 I = 0$ है।"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            144.2,
+            399.2,
+            545.0,
+            451.6
+          ],
+          "conf": 0.874,
+          "text": "इसकी सहायता से $A^{-1}$ ज्ञात कीजिए।"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.0,
+            470.7,
+            1129.1,
+            685.6
+          ],
+          "conf": 0.747,
+          "text": "16. यदि $A = \\begin{bmatrix} 2 & -1 & 1 \\\\ -1 & 2 & -1 \\\\ 1 & -1 & 2 \\end{bmatrix}$, तो सत्यापित कीजिए कि $A^3 - 6A^2 + 9A - 4I = 0$ है तथा\nइसकी सहायता से $A^{-1}$ ज्ञात कीजिए।"
+        },
+        {
+          "order": 3,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            77.8,
+            693.2,
+            988.0,
+            797.9
+          ],
+          "conf": 0.868,
+          "text": "17. यदि A, $3 \\times 3$ कोटि का वर्ग आव्यूह है तो $|adj A|$ का मान है:\n(A) $|A|$ (B) $|A|^2$ (C) $|A|^3$ (D) $3|A|$"
+        },
+        {
+          "order": 4,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            79.3,
+            800.1,
+            944.5,
+            959.2
+          ],
+          "conf": 0.811,
+          "text": "18. यदि A कोटि दो का व्युत्क्रमीय आव्यूह है तो $\\det (A^{-1})$ बराबर:\n\n(A) $\\det (A)$      (B) $\\frac{1}{\\det (A)}$      (C) 1      (D) 0"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            70.0,
+            992.2,
+            1128.5,
+            1089.9
+          ],
+          "conf": 0.946,
+          "text": "4.6 सारणिकों और आव्यूहों के अनुप्रयोग ( Applications of Determinants and\nMatrices)"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            1094.4,
+            1128.8,
+            1188.4
+          ],
+          "conf": 0.911,
+          "text": "इस अनुच्छेद में हम दो या तीन अज्ञात राशियों के रैखिक समीकरण निकाय के हल और रैखिक\nसमीकरणों के निकाय की संगतता की जाँच में सारणिकों और आव्यूहों के अनुप्रयोगों का वर्णन करेंगे।"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            1189.3,
+            1128.5,
+            1291.7
+          ],
+          "conf": 0.801,
+          "text": "संगत निकाय: निकाय संगत कहलाता है यदि इसके हलों (एक या अधिक) का अस्तित्व होता है।\nअसंगत निकाय: निकाय असंगत कहलाता है यदि इसके किसी भी हल का अस्तित्व नहीं होता है।"
+        },
+        {
+          "order": 8,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            1299.4,
+            1128.4,
+            1384.0
+          ],
+          "conf": 0.907,
+          "text": "टिप्पणी इस अध्याय में हम अद्वितीय हल के समीकरण निकाय तक सीमित रहेंगे।"
+        },
+        {
+          "order": 9,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.4,
+            1395.7,
+            1128.1,
+            1488.6
+          ],
+          "conf": 0.825,
+          "text": "4.6.1 आव्यूह के व्युत्क्रम द्वारा रैखिक समीकरणों के निकाय का हल (Solution of a system\nof linear equations using inverse of a matrix)"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            1492.0,
+            1128.5,
+            1585.6
+          ],
+          "conf": 0.908,
+          "text": "आइए हम रैखिक समीकरणों के निकाय को आव्यूह समीकरण के रूप में व्यक्त करते हैं और आव्यूह\nके व्युत्क्रम का प्रयोग करके उसे हल करते हैं।"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1587.2,
+            617.3,
+            1638.5
+          ],
+          "conf": 0.861,
+          "text": "निम्नलिखित समीकरण निकाय पर विचार कीजिए"
+        }
+      ],
+      "page": 19
+    },
+    {
+      "image": "0142_p0020.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            309.4,
+            211.0,
+            607.1,
+            350.6
+          ],
+          "conf": 0.935,
+          "text": "$$a_1 x + b_1 y + c_1 z = d_1$$\n$$a_2 x + b_2 y + c_2 z = d_2$$\n$$a_3 x + b_3 y + c_3 z = d_3$$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.5,
+            355.1,
+            787.3,
+            507.6
+          ],
+          "conf": 0.942,
+          "text": "मान लीजिए A = $\\begin{bmatrix} a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\\\ a_3 & b_3 & c_3 \\end{bmatrix}$, X = $\\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix}$ और B = $\\begin{bmatrix} d_1 \\\\ d_2 \\\\ d_3 \\end{bmatrix}$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            517.3,
+            1057.3,
+            568.3
+          ],
+          "conf": 0.93,
+          "text": "तब समीकरण निकाय $AX = B$ के रूप में निम्नलिखित प्रकार से व्यक्त की जा सकती है।"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            284.9,
+            580.0,
+            640.2,
+            731.3
+          ],
+          "conf": 0.95,
+          "text": "$$\n\\begin{bmatrix}\na_1 & b_1 & c_1 \\\\\na_2 & b_2 & c_2 \\\\\na_3 & b_3 & c_3\n\\end{bmatrix}\n\\begin{bmatrix}\nx \\\\\ny \\\\\nz\n\\end{bmatrix}\n=\n\\begin{bmatrix}\nd_1 \\\\\nd_2 \\\\\nd_3\n\\end{bmatrix}\n$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            747.7,
+            1129.8,
+            836.5
+          ],
+          "conf": 0.897,
+          "text": "स्थिति 1 यदि A एक व्युत्क्रमणीय आव्यूह है तब इसके व्युत्क्रम का अस्तित्व है। अतः AX = B से\nहम पाते हैं कि"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.8,
+            838.4,
+            1127.0,
+            1030.5
+          ],
+          "conf": 0.844,
+          "text": "$$ \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{या} \\qquad \\text{"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.8,
+            1039.5,
+            1129.6,
+            1170.5
+          ],
+          "conf": 0.966,
+          "text": "यह आव्यूह समीकरण दिए गए समीकरण निकाय का अद्वितीय हल प्रदान करता है क्योंकि एक\nआव्यूह का व्युत्क्रम अद्वितीय होता है। समीकरणों के निकाय के हल करने की यह विधि आव्यूह विधि\nकहलाती है।"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            1179.2,
+            826.2,
+            1232.3
+          ],
+          "conf": 0.859,
+          "text": "स्थिति 2 यदि A एक अव्युत्क्रमणीय आव्यूह है तब $|A| = 0 होता है।"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            1237.7,
+            563.6,
+            1289.5
+          ],
+          "conf": 0.898,
+          "text": "इस स्थिति में हम $(adj A) B$ ज्ञात करते हैं।"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.4,
+            1287.5,
+            1129.4,
+            1377.5
+          ],
+          "conf": 0.934,
+          "text": "यदि $(adj A) B \\neq 0, (O \\text{ शून्य आव्यूह है})$, तब कोई हल नहीं होता है और समीकरण निकाय\nअसंगत कहलाती है।"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1377.9,
+            1129.4,
+            1469.2
+          ],
+          "conf": 0.929,
+          "text": "यदि $(adj A) B = O$, तब निकाय संगत या असंगत होगी क्योंकि निकाय के अनंत हल होंगे या\nकोई भी हल नहीं होगा।"
+        },
+        {
+          "order": 11,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            1476.7,
+            763.0,
+            1614.8
+          ],
+          "conf": 0.773,
+          "text": "उदाहरण 16 निम्नलिखित समीकरण निकाय को हल कीजिए:\n$$2x + 5y = 1$$\n$$3x + 2y = 7$$"
+        }
+      ],
+      "page": 20
+    },
+    {
+      "image": "0142_p0021.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            210.6,
+            834.6,
+            261.4
+          ],
+          "conf": 0.923,
+          "text": "हल समीकरण निकाय $AX = B$ के रूप में लिखा जा सकता है, जहाँ"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            390.2,
+            268.0,
+            809.6,
+            374.0
+          ],
+          "conf": 0.945,
+          "text": "$$ \\mathrm{A}=\\begin{bmatrix} 2 & 5 \\\\ 3 & 2 \\end{bmatrix}, \\mathrm{X}=\\begin{bmatrix} x \\\\ y \\end{bmatrix} \\text{ और } \\mathrm{B}=\\begin{bmatrix} 1 \\\\ 7 \\end{bmatrix} $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            379.4,
+            1130.0,
+            476.1
+          ],
+          "conf": 0.959,
+          "text": "अब, $|A| = -11 \\neq 0$, अतः A व्युत्क्रमणीय आव्यूह है इसलिए इसके व्युत्क्रम का अस्तित्व है। और\nइसका एक अद्वितीय हल है।"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.9,
+            477.9,
+            757.4,
+            577.4
+          ],
+          "conf": 0.915,
+          "text": "ध्यान दीजिए कि $A^{-1} = -\\frac{1}{11}\\begin{bmatrix} 2 & -5 \\\\ -3 & 2 \\end{bmatrix}$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.4,
+            578.9,
+            802.4,
+            683.5
+          ],
+          "conf": 0.914,
+          "text": "$$ \\text{इसलिए} \\qquad \\qquad \\qquad X = A^{-1}B = -\\frac{1}{11}\\begin{bmatrix} 2 & -5 \\\\ -3 & 2 \\end{bmatrix}\\begin{bmatrix} 1 \\\\ 7 \\end{bmatrix} $$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.4,
+            682.6,
+            640.4,
+            787.7
+          ],
+          "conf": 0.911,
+          "text": "अर्थात् $\\begin{bmatrix} x \\\\ y \\end{bmatrix} = -\\frac{1}{11} \\begin{bmatrix} -33 \\\\ 11 \\end{bmatrix} = \\begin{bmatrix} 3 \\\\ -1 \\end{bmatrix}$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.7,
+            786.6,
+            695.5,
+            837.4
+          ],
+          "conf": 0.832,
+          "text": "अतः $x = 3, y = -1$"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            845.1,
+            569.6,
+            894.2
+          ],
+          "conf": 0.766,
+          "text": "उदाहरण 17 निम्नलिखित समीकरण निकाय"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            367.1,
+            904.5,
+            593.8,
+            1039.3
+          ],
+          "conf": 0.856,
+          "text": "$$3x - 2y + 3z = 8$$\n$$2x + y - z = 1$$\n$$4x - 3y + 2z = 4$$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            1030.3,
+            453.4,
+            1081.6
+          ],
+          "conf": 0.891,
+          "text": "को आव्यूह विधि से हल कीजिए।"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            1089.4,
+            936.2,
+            1141.0
+          ],
+          "conf": 0.904,
+          "text": "हल समीकरण निकाय को AX = B के रूप में व्यक्त किया जा सकता है जहाँ"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            338.6,
+            1157.2,
+            861.4,
+            1307.7
+          ],
+          "conf": 0.937,
+          "text": "$$A = \\begin{bmatrix} 3 & -2 & 3 \\\\ 2 & 1 & -1 \\\\ 4 & -3 & 2 \\end{bmatrix}, X = \\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix} \\text{ और } B = \\begin{bmatrix} 8 \\\\ 1 \\\\ 4 \\end{bmatrix}$$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            1316.0,
+            268.6,
+            1366.6
+          ],
+          "conf": 0.882,
+          "text": "हम देखते हैं कि"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            213.8,
+            1377.5,
+            882.4,
+            1430.6
+          ],
+          "conf": 0.883,
+          "text": "$$|A| = 3 (2 - 3) + 2(4 + 4) + 3 (- 6 - 4) = - 17 \\neq 0 \\text{ है।}$$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.5,
+            1429.0,
+            737.6,
+            1480.5
+          ],
+          "conf": 0.901,
+          "text": "अतः A व्युत्क्रमणीय है, और इसके व्युत्क्रम का अस्तित्व है।"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            209.5,
+            1480.3,
+            898.6,
+            1621.6
+          ],
+          "conf": 0.896,
+          "text": "$$ \\mathrm{A}_{11} = -1, \\qquad \\mathrm{A}_{12} = -8, \\qquad \\mathrm{A}_{13} = -10 $$\n$$ \\mathrm{A}_{21} = -5, \\qquad \\mathrm{A}_{22} = -6, \\qquad \\mathrm{A}_{23} = 1 $$\n$$ \\mathrm{A}_{31} = -1, \\qquad \\mathrm{A}_{32} = 9, \\qquad \\mathrm{A}_{33} = 7 $$"
+        }
+      ],
+      "page": 21
+    },
+    {
+      "image": "0142_p0022.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.9,
+            226.3,
+            575.2,
+            377.1
+          ],
+          "conf": 0.948,
+          "text": "इसलिए $A^{-1} = -\\frac{1}{17} \\begin{bmatrix} -1 & -5 & -1 \\\\ -8 & -6 & 9 \\\\ -10 & 1 & 7 \\end{bmatrix}$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.4,
+            390.8,
+            724.9,
+            542.5
+          ],
+          "conf": 0.942,
+          "text": "और $X = A^{-1}B = -\\frac{1}{17}\\begin{bmatrix} -1 & -5 & -1 \\\\ -8 & -6 & 9 \\\\ -10 & 1 & 7 \\end{bmatrix}\\begin{bmatrix} 8 \\\\ 1 \\\\ 4 \\end{bmatrix}$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.6,
+            554.6,
+            537.4,
+            707.0
+          ],
+          "conf": 0.928,
+          "text": "अतः $\\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix} = -\\frac{1}{17} \\begin{bmatrix} -17 \\\\ -34 \\\\ -51 \\end{bmatrix} = \\begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\end{bmatrix}$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.9,
+            708.5,
+            502.3,
+            756.9
+          ],
+          "conf": 0.791,
+          "text": "अतः $x=1, y=2$ व $z=3$"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            756.0,
+            1129.9,
+            893.5
+          ],
+          "conf": 0.915,
+          "text": "उदाहरण 18 तीन संख्याओं का योग 6 है। यदि हम तीसरी संख्या को 3 से गुणा करके दूसरी संख्या\nमें जोड़ दें तो हमें 11 प्राप्त होता है। पहली ओर तीसरी को जोड़ने से हमें दूसरी संख्या का दुगुना प्राप्त\nहोता है। इसका बीजगणितीय निरूपण कीजिए और आव्यूह विधि से संख्याएँ ज्ञात कीजिए।"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            910.6,
+            1129.0,
+            1004.0
+          ],
+          "conf": 0.93,
+          "text": "हल मान लीजिए पहली, दूसरी व तीसरी संख्या क्रमशः $x, y$ और $z$, द्वारा निरूपित है। तब दी गई\nशर्तों के अनुसार हमें प्राप्त होता है:"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            401.3,
+            1016.1,
+            607.2,
+            1151.6
+          ],
+          "conf": 0.813,
+          "text": "$$x + y + z = 6$$\n$$y + 3z = 11$$\n$$x + z = 2y$$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.4,
+            1153.1,
+            594.5,
+            1200.2
+          ],
+          "conf": 0.74,
+          "text": "या $x - 2y + z = 0$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.0,
+            1193.4,
+            754.0,
+            1244.2
+          ],
+          "conf": 0.906,
+          "text": "इस निकाय को $A X = B$ के रूप में लिखा जा सकता है जहाँ"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            302.8,
+            1252.8,
+            894.6,
+            1403.8
+          ],
+          "conf": 0.944,
+          "text": "$$A = \\begin{bmatrix} 1 & 1 & 1 \\\\ 0 & 1 & 3 \\\\ 1 & 2 & 1 \\end{bmatrix}, X = \\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix} \\text{ और } B = \\begin{bmatrix} 6 \\\\ 11 \\\\ 0 \\end{bmatrix} \\text{ है।}$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            1419.5,
+            957.6,
+            1474.6
+          ],
+          "conf": 0.893,
+          "text": "यहाँ $|A| = 1 (1+6) + 0 + 1 (3-1) = 9 \\neq 0$ है। अब हम $adj A$ ज्ञात करते हैं।"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            159.0,
+            1476.2,
+            1100.5,
+            1621.6
+          ],
+          "conf": 0.917,
+          "text": "$A_{11} = 1 (1 + 6) = 7, \\quad A_{12} = -(0 - 3) = 3, \\quad A_{13} = - 1$\n$A_{21} = -(1 + 2) = - 3, \\quad A_{22} = 0, \\quad A_{23} = - (- 2 - 1) = 3$\n$A_{31} = (3 - 1) = 2, \\quad A_{32} = -(3 - 0) = - 3, \\quad A_{33} = (1 - 0) = 1$"
+        }
+      ],
+      "page": 22
+    },
+    {
+      "image": "0142_p0023.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.0,
+            221.0,
+            449.0,
+            370.4
+          ],
+          "conf": 0.937,
+          "text": "अतः $adj A = \\begin{bmatrix} 7 & -3 & 2 \\\\ 3 & 0 & -3 \\\\ -1 & 3 & 1 \\end{bmatrix}$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.0,
+            380.7,
+            973.6,
+            528.7
+          ],
+          "conf": 0.859,
+          "text": "इस प्रकार $A^{-1} = \\frac{1}{|A|} \\ adj. (A) = \\frac{1}{9} \\begin{bmatrix} 7 & -3 & 2 \\\\ 3 & 0 & -3 \\\\ -1 & 3 & 1 \\end{bmatrix}$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.1,
+            534.6,
+            646.1,
+            585.2
+          ],
+          "conf": 0.821,
+          "text": "क्योंकि                                                                    $X = A^{-1} B$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            498.4,
+            597.2,
+            837.8,
+            748.1
+          ],
+          "conf": 0.932,
+          "text": "$$X = \\frac{1}{9} \\begin{bmatrix} 7 & -3 & 2 \\\\ 3 & 0 & -3 \\\\ -1 & 3 & 1 \\end{bmatrix} \\begin{bmatrix} 6 \\\\ 11 \\\\ 0 \\end{bmatrix}$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.4,
+            755.6,
+            1006.8,
+            909.7
+          ],
+          "conf": 0.867,
+          "text": "या $\\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix} = \\frac{1}{9} \\begin{bmatrix} 42 - 33 + 0 \\\\ 18 + 0 + 0 \\\\ -6 + 33 + 0 \\end{bmatrix} = \\frac{1}{9} \\begin{bmatrix} 9 \\\\ 18 \\\\ 27 \\end{bmatrix} = \\begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\end{bmatrix}$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.3,
+            925.0,
+            667.4,
+            972.2
+          ],
+          "conf": 0.772,
+          "text": "अतः $x=1, y=2, z=3$"
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            487.4,
+            995.6,
+            705.7,
+            1052.8
+          ],
+          "conf": 0.756,
+          "text": "प्रश्नावली 4.5"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            1075.7,
+            1129.2,
+            1170.9
+          ],
+          "conf": 0.95,
+          "text": "निम्नलिखित प्रश्नों 1 से 6 तक दी गई समीकरण निकायों का संगत अथवा असंगत के रूप में वर्गीकरण\nकीजिए"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            95.2,
+            1174.7,
+            992.4,
+            1416.6
+          ],
+          "conf": 0.874,
+          "text": "1. $x + 2y = 2$\n$2x + 3y = 3$\n4. $x + y + z = 1$\n$2x + 3y + 2z = 2$\n$ax + ay + 2az = 4$\n2. $2x - y = 5$\n$x + y = 4$\n5. $3x - y - 2z = 2$\n$2y - z = -1$\n$3x - 5y = 3$\n3. $x + 3y = 5$\n$2x + 6y = 8$\n6. $5x - y + 4z = 5$\n$2x + 3y + 5z = 2$\n$5x - 2y + 6z = -1$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            1425.1,
+            1074.2,
+            1477.6
+          ],
+          "conf": 0.916,
+          "text": "निम्नलिखित प्रश्न 7 से 14 तक प्रत्येक समीकरण निकाय को आव्यूह विधि से हल कीजिए।"
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            88.0,
+            1479.4,
+            929.3,
+            1623.4
+          ],
+          "conf": 0.859,
+          "text": "7. $5x + 2y = 4$          8. $2x - y = -2$          9. $4x - 3y = 3$\n   $7x + 3y = 5$               $3x + 4y = 3$               $3x - 5y = 7$\n10. $5x + 2y = 3$          11. $2x + y + z = 1$          12. $x - y + z = 4$"
+        }
+      ],
+      "page": 23
+    },
+    {
+      "image": "0142_p0024.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            144.6,
+            229.1,
+            961.8,
+            371.0
+          ],
+          "conf": 0.537,
+          "text": "$$3x + 2y = 5 \\qquad x - 2y - z = \\frac{3}{2} \\qquad 2x + y - 3z = 0$$\n$$\\qquad \\qquad \\qquad \\qquad 3y - 5z = 9 \\qquad \\qquad x + y + z = 2$$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            79.8,
+            371.9,
+            703.2,
+            516.4
+          ],
+          "conf": 0.601,
+          "text": "13. $2x + 3y + 3z = 5$\n$x - 2y + z = -4$\n$3x - y - 2z = 3$\n14. $x - y + 2z = 7$\n$3x + 4y - 5z = -5$\n$2x - y + 3z = 12$"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            538.4,
+            1129.6,
+            690.5
+          ],
+          "conf": 0.868,
+          "text": "15. यदि $A = \\begin{bmatrix} 2 & -3 & 5 \\\\ 3 & 2 & -4 \\\\ 1 & 1 & -2 \\end{bmatrix}$ है तो $A^{-1}$ ज्ञात कीजिए। $A^{-1}$ का प्रयोग करके निम्नलिखित"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            144.0,
+            701.6,
+            538.3,
+            752.4
+          ],
+          "conf": 0.9,
+          "text": "समीकरण निकाय को हल कीजिए।"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            143.5,
+            755.6,
+            394.4,
+            898.9
+          ],
+          "conf": 0.742,
+          "text": "$$2x - 3y + 5z = 11$$\n$$3x + 2y - 4z = -5$$\n$$x + y - 2z = -3$$"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.7,
+            900.7,
+            1129.9,
+            1047.2
+          ],
+          "conf": 0.916,
+          "text": "16. 4 kg प्याज, 3 kg गेहूँ और 2 kg चावल का मूल्य Rs 60 है। 2 kg प्याज, 4 kg गेहूँ और\n6 kg चावल का मूल्य Rs 90 है। 6 kg प्याज, 2 kg और 3 kg चावल का मूल्य\nRs 70 है। आव्यूह विधि द्वारा प्रत्येक का मूल्य प्रति kg ज्ञात कीजिए।"
+        },
+        {
+          "order": 6,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            486.2,
+            1072.3,
+            718.9,
+            1126.3
+          ],
+          "conf": 0.792,
+          "text": "विविध उदाहरण"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            1148.6,
+            1130.4,
+            1652.8
+          ],
+          "conf": 0.535,
+          "text": "उदाहरण 19 आव्यूहों के गुणनफल\n$$\\begin{bmatrix} 1 & 1 & 2 \\\\ 0 & 2 & 3 \\\\ 3 & 2 & 4 \\end{bmatrix} \\begin{bmatrix} 2 & 0 & 1 \\\\ 9 & 2 & 3 \\\\ 6 & 1 & 2 \\end{bmatrix} \\text{ का प्रयोग करते हुए निम्नलिखित}$$\nसमीकरण निकाय को हल कीजिए:\n$$x - y + 2z = 1$$\n$$2y - 3z = 1$$\n$$3x - 2y + 4z = 2$$\n\nहल दिया गया गुणनफल\n$$\\begin{bmatrix} 1 & -1 & 2 \\\\ 0 & 2 & -3 \\\\ 3 & -2 & 4 \\end{bmatrix} \\begin{bmatrix} -2 & 0 & 1 \\\\ 9 & 2 & -3 \\\\ 6 & 1 & -2 \\end{bmatrix}$$"
+        }
+      ],
+      "page": 24
+    },
+    {
+      "image": "0142_p0025.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            352.3,
+            221.0,
+            1015.2,
+            370.8
+          ],
+          "conf": 0.949,
+          "text": "$$ = \\begin{bmatrix} -2- & 9+12 & 0-2+2 & 1+3-4 \\\\ 0+18-18 & 0+4-3 & 0-6+6 \\\\ -6-18+24 & 0-4+4 & 3+6-8 \\end{bmatrix} = \\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{bmatrix} $$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.8,
+            385.0,
+            141.6,
+            428.9
+          ],
+          "conf": 0.855,
+          "text": "अत:"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            356.9,
+            396.2,
+            769.0,
+            544.1
+          ],
+          "conf": 0.95,
+          "text": "$$\n\\begin{bmatrix}\n1 & 1 & 2 \\\\\n0 & 2 & 3 \\\\\n3 & 2 & 4\n\\end{bmatrix}'\n=\n\\begin{bmatrix}\n2 & 0 & 1 \\\\\n9 & 2 & 3 \\\\\n6 & 1 & 2\n\\end{bmatrix}\n$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.9,
+            541.6,
+            1076.5,
+            593.8
+          ],
+          "conf": 0.926,
+          "text": "अब दिए गए समीकरण निकाय को आव्यूह के रूप निम्नलिखित रूप में लिखा जा सकता है"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            373.3,
+            598.1,
+            692.9,
+            747.5
+          ],
+          "conf": 0.944,
+          "text": "$$\n\\begin{bmatrix}\n1 & -1 & 2 \\\\\n0 & 2 & -3 \\\\\n3 & -2 & 4\n\\end{bmatrix}\n\\begin{bmatrix}\nx \\\\\ny \\\\\nz\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n1 \\\\\n1 \\\\\n2\n\\end{bmatrix}\n$$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.9,
+            777.2,
+            809.6,
+            930.1
+          ],
+          "conf": 0.932,
+          "text": "या $\\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix} = \\begin{bmatrix} 1 & -1 & 2 \\\\ 0 & 2 & -3 \\\\ 3 & -2 & 4 \\end{bmatrix}^{-1} \\begin{bmatrix} 1 \\\\ 1 \\\\ 2 \\end{bmatrix} = \\begin{bmatrix} 2 & 0 & 1 \\\\ 9 & 2 & 3 \\\\ 6 & 1 & 2 \\end{bmatrix} \\begin{bmatrix} 1 \\\\ 1 \\\\ 2 \\end{bmatrix}$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            261.8,
+            950.0,
+            540.2,
+            1100.0
+          ],
+          "conf": 0.934,
+          "text": "$$ = \\begin{bmatrix} -2 + 0 + 2 \\\\ 9 + 2 - 6 \\\\ 6 + 1 - 4 \\end{bmatrix} = \\begin{bmatrix} 0 \\\\ 5 \\\\ 3 \\end{bmatrix} $$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            72.5,
+            1103.0,
+            522.8,
+            1151.6
+          ],
+          "conf": 0.768,
+          "text": "अतः $x = 0, y = 5$ और $z = 3$"
+        },
+        {
+          "order": 8,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            387.7,
+            1198.4,
+            817.4,
+            1251.9
+          ],
+          "conf": 0.796,
+          "text": "अध्याय 4 पर विविध प्रश्नावली"
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            95.4,
+            1285.7,
+            911.4,
+            1611.4
+          ],
+          "conf": 0.649,
+          "text": "1. सिद्ध कीजिए कि सारणिक $\\begin{vmatrix} x & \\sin \\theta & \\cos \\theta \\\\ -\\sin \\theta & -x & 1 \\\\ \\cos \\theta & 1 & x \\end{vmatrix}$, $\\theta$ से स्वतंत्र है।\n\n\n2. $\\begin{vmatrix} \\cos \\alpha \\cos \\beta & \\cos \\alpha \\sin \\beta & -\\sin \\alpha \\\\ -\\sin \\beta & \\cos \\beta & 0 \\\\ \\sin \\alpha \\cos \\beta & \\sin \\alpha \\sin \\beta & \\cos \\alpha \\end{vmatrix}$ का मान ज्ञात कीजिए।"
+        }
+      ],
+      "page": 25
+    },
+    {
+      "image": "0142_p0026.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            93.4,
+            223.7,
+            1128.7,
+            378.5
+          ],
+          "conf": 0.839,
+          "text": "3. यदि $A^{-1} = \\begin{bmatrix} 3 & 1 & 1 \\\\ 15 & 6 & 5 \\\\ 5 & 2 & 2 \\end{bmatrix}$ और $B = \\begin{bmatrix} 1 & 2 & 2 \\\\ 1 & 3 & 0 \\\\ 0 & 2 & 1 \\end{bmatrix}$, हो तो $(AB)^{-1}$ का मान ज्ञात कीजिए।"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            93.8,
+            392.8,
+            842.4,
+            542.3
+          ],
+          "conf": 0.873,
+          "text": "4. मान लीजिए $A = \\begin{bmatrix} 1 & 2 & 1 \\\\ 2 & 3 & 1 \\\\ 1 & 1 & 5 \\end{bmatrix}$ हो तो सत्यापित कीजिए कि"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            176.5,
+            541.3,
+            800.5,
+            594.7
+          ],
+          "conf": 0.72,
+          "text": "(i) $[adj \\ A]^{-1} = adj \\ (A^{-1})$      (ii) $(A^{-1})^{-1} = A$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            93.6,
+            604.4,
+            666.8,
+            756.2
+          ],
+          "conf": 0.842,
+          "text": "5. $\\begin{vmatrix} x & y & x+y \\\\ y & x+y & x \\\\ x+y & x & y \\end{vmatrix}$ का मान ज्ञात कीजिए।"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            94.2,
+            767.9,
+            622.9,
+            914.9
+          ],
+          "conf": 0.846,
+          "text": "6. $\\begin{vmatrix} 1 & x & y \\\\ 1 & x+y & y \\\\ 1 & x & x+y \\end{vmatrix}$ का मान ज्ञात कीजिए।"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            93.8,
+            911.5,
+            670.0,
+            963.7
+          ],
+          "conf": 0.835,
+          "text": "7. निम्नलिखित समीकरण निकाय को हल कीजिए"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            149.3,
+            972.9,
+            375.0,
+            1066.5
+          ],
+          "conf": 0.864,
+          "text": "$$ \\frac{2}{x} + \\frac{3}{y} + \\frac{10}{z} = 4 $$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            149.0,
+            1070.1,
+            354.1,
+            1161.5
+          ],
+          "conf": 0.876,
+          "text": "$$ \\frac{4}{x} - \\frac{6}{y} + \\frac{5}{z} = 1 $$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            148.9,
+            1166.6,
+            371.3,
+            1259.5
+          ],
+          "conf": 0.871,
+          "text": "$$ \\frac{6}{x} + \\frac{9}{y} - \\frac{20}{z} = 2 $$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            1256.0,
+            728.9,
+            1309.1
+          ],
+          "conf": 0.886,
+          "text": "निम्नलिखित प्रश्नों 8 से 9 में सही उत्तर का चुनाव कीजिए।"
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.0,
+            1332.9,
+            1121.6,
+            1481.2
+          ],
+          "conf": 0.864,
+          "text": "8. यदि $x, y, z$ शून्येतर वास्तविक संख्याएँ हों तो आव्यूह $A = \\begin{bmatrix} x & 0 & 0 \\\\ 0 & y & 0 \\\\ 0 & 0 & z \\end{bmatrix}$ का व्युत्क्रम है:"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            141.8,
+            1484.6,
+            942.0,
+            1654.0
+          ],
+          "conf": 0.519,
+          "text": "(A) $\\begin{bmatrix} x^{-1} & 0 & 0 \\\\ 0 & y^{-1} & 0 \\\\ 0 & 0 & z^{-1} \\end{bmatrix}$ \\qquad \\qquad (B) $xyz \\begin{bmatrix} x^{-1} & 0 & 0 \\\\ 0 & y^{-1} & 0 \\\\ 0 & 0 & z^{-1} \\end{bmatrix}$"
+        }
+      ],
+      "page": 26
+    },
+    {
+      "image": "0142_p0027.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            144.1,
+            220.0,
+            430.6,
+            370.8
+          ],
+          "conf": 0.866,
+          "text": "(C) $\\frac{1}{xyz} \\begin{bmatrix} x & 0 & 0 \\\\ 0 & y & 0 \\\\ 0 & 0 & z \\end{bmatrix}$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            603.5,
+            221.2,
+            875.4,
+            371.9
+          ],
+          "conf": 0.863,
+          "text": "(D) $\\frac{1}{xyz} \\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{bmatrix}$"
+        },
+        {
+          "order": 2,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            147.6,
+            394.7,
+            892.4,
+            639.2
+          ],
+          "conf": 0.615,
+          "text": "9. यदि $A = \\begin{bmatrix} 1 & \\sin \\theta & 1 \\\\ -\\sin \\theta & 1 & \\sin \\theta \\\\ -1 & -\\sin \\theta & 1 \\end{bmatrix}$, जहाँ $0 \\le \\theta \\le 2\\pi$ हो तो:\n\n(A) $\\det (A) = 0$                                     (B) $\\det (A) \\in (2, \\infty)$\n(C) $\\det (A) \\in (2, 4)$                                   (D) $\\det (A) \\in [2, 4]$."
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            550.2,
+            670.1,
+            655.2,
+            720.9
+          ],
+          "conf": 0.829,
+          "text": "सारांश"
+        },
+        {
+          "order": 4,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            73.0,
+            696.4,
+            1120.6,
+            1662.3
+          ],
+          "conf": 0.592,
+          "text": "सारांश\nआव्यूह $A=[a_{11}]_{1\\times1}$ का सारणिक $|a_{11}|_{1\\times1}=a_{11}$ के द्वारा दिया जाता है।\nआव्यूह $A=\\begin{bmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{bmatrix}$ का सारणिक\n$$|A|=\\begin{vmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{vmatrix}=a_{11} a_{22}-a_{12} a_{21} \\text{ के द्वारा दिया जाता है।}$$\nआव्यूह $A=\\begin{bmatrix} a_{1} & b_{1} & c_{1} \\\\ a_{2} & b_{2} & c_{2} \\\\ a_{3} & b_{3} & c_{3} \\end{bmatrix}$ के सारणिक का मान ($R_{1}$ के अनुदिश प्रसरण से) निम्नलिखित\nरूप द्वारा दिया जाता है।\n$$|A|=\\begin{vmatrix} a_{1} & b_{1} & c_{1} \\\\ a_{2} & b_{2} & c_{2} \\\\ a_{3} & b_{3} & c_{3} \\end{vmatrix}=a_{1}\\begin{vmatrix} b_{2} & c_{2} \\\\ b_{3} & c_{3} \\end{vmatrix}-b_{1}\\begin{vmatrix} a_{2} & c_{2} \\\\ a_{3} & c_{3} \\end{vmatrix}+c_{1}\\begin{vmatrix} a_{2} & b_{2} \\\\ a_{3} & b_{3} \\end{vmatrix}$$\n$(x_{1}, y_{1}), (x_{2}, y_{2})$ और $(x_{3}, y_{3})$ शीर्षों वाली त्रिभुज का क्षेत्रफल निम्नलिखित रूप द्वारा\nदिया जाता है:\n$$\\Delta=\\frac{1}{2}\\begin{vmatrix} x_{1} & y_{1} & 1 \\\\ x_{2} & y_{2} & 1 \\\\ x_{3} & y_{3} & 1 \\end{vmatrix}$$"
+        }
+      ],
+      "page": 27
+    },
+    {
+      "image": "0142_p0028.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            107.5,
+            227.5,
+            1097.8,
+            1620.4
+          ],
+          "conf": 0.744,
+          "text": "◆ दिए गए आव्यूह A के सारणिक के एक अवयव $a_{ij}$ का उपसारणिक, $i$ वीं पंक्ति और\n$j$ वां स्तंभ हटाने से प्राप्त सारणिक होता है और इसे $M_{ij}$ द्वारा व्यक्त किया जाता है।\n◆ $a_{ij}$ का सहखंड $A_{ij} = (-1)^{i+j} M_{ij}$ द्वारा दिया जाता है।\n◆ A के सारणिक का मान $|A| = a_{11} A_{11} + a_{12} A_{12} + a_{13} A_{13}$ है और इसे एक पंक्ति या\nस्तंभ के अवयवों और उनके संगत सहखंडों के गुणनफल का योग करके प्राप्त किया\nजाता है।\n◆ यदि एक पंक्ति (या स्तंभ) के अवयवों और अन्य दूसरी पंक्ति (या स्तंभ) के सहखंडों\nकी गुणा कर दी जाए तो उनका योग शून्य होता है उदाहरणतया\n$$a_{11} A_{21} + a_{12} A_{22} + a_{13} A_{23} = 0$$\n◆ यदि आव्यूह $A = \\begin{bmatrix} a_{11} & a_{12} & a_{13} \\\\ a_{21} & a_{22} & a_{23} \\\\ a_{31} & a_{32} & a_{33} \\end{bmatrix}$, तो सहखंडज $adj A = \\begin{bmatrix} A_{11} & A_{21} & A_{31} \\\\ A_{12} & A_{22} & A_{32} \\\\ A_{13} & A_{23} & A_{33} \\end{bmatrix}$ होता\nहै, जहाँ $a_{ij}$ का सहखंड $A_{ij}$ है।\n◆ $A (adj A) = (adj A) A = |A| I$, जहाँ A, $n$ कोटि का वर्ग आव्यूह है।\n◆ यदि कोई वर्ग आव्यूह क्रमशः अव्युत्क्रमणीय या व्युत्क्रमणीय कहलाता है यदि $|A| = 0$\nया $|A| \\neq 0$\n◆ यदि $AB = BA = I$, जहाँ B एक वर्ग आव्यूह है तब A का व्युत्क्रम B होता है और\n$A^{-1} = B$ या $B^{-1} = A$ और इसलिए $(A^{-1})^{-1} = A$\n◆ किसी वर्ग आव्यूह A का व्युत्क्रम है यदि और केवल यदि A व्युत्क्रमणीय है।\n◆ $A^{-1} = \\frac{1}{|A|} (adj A)$\n◆ यदि $a_1 x + b_1 y + c_1 z = d_1$\n$a_2 x + b_2 y + c_2 z = d_2$\n$a_3 x + b_3 y + c_3 z = d_3$\nतब इन समीकरणों को $AX = B$ के रूप में लिखा जा सकता है।\nजहाँ $A = \\begin{bmatrix} a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\\\ a_3 & b_3 & c_3 \\end{bmatrix}, X = \\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix}$ और $B = \\begin{bmatrix} d_1 \\\\ d_2 \\\\ d_3 \\end{bmatrix}$"
+        }
+      ],
+      "page": 28
+    },
+    {
+      "image": "0142_p0029.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            107.3,
+            236.3,
+            1095.5,
+            615.2
+          ],
+          "conf": 0.93,
+          "text": "◆ समीकरण AX = B का अद्वितीय हल X = A⁻¹ B द्वारा दिया जाता है जहाँ |A|≠0\n◆ समीकरणों का एक निकाय संगत या असंगत होता है यदि इसके हल का अस्तित्व है अथवा\nनहीं है।\n◆ आव्यूह समीकरण AX = B में एक वर्ग आव्यूह A के लिए\n\n(i) यदि |A|≠0, तो अद्वितीय हल का अस्तित्व है।\n\n(ii) यदि |A| = 0 और (adj A) B ≠ O, तो किसी हल का अस्तित्व नहीं है।\n\n(iii) यदि |A| = 0 और (adj A) B = O, तो निकाय संगत या असंगत होती है।"
+        },
+        {
+          "order": 1,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            657.5,
+            1129.8,
+            1657.8
+          ],
+          "conf": 0.663,
+          "text": "ऐतिहासिक पृष्ठभूमि\n\nगणना बोर्ड पर छड़ों का प्रयोग करके कुछ रैखिक समीकरणों की अज्ञात राशियों के\nगुणांकों को निरूपित करने की चीनी विधि ने वास्तव में विलोपन की साधारण विधि की खोज\nकरने में सहायता की है। छड़ों की व्यवस्था क्रम एक सारणिक में संख्याओं की उचित व्यवस्था\nक्रम जैसी थी। इसलिए एक सारणिक की सरलीकरण में स्तंभों या पंक्तियों के घटाने का विचार\nउत्पन्न करने में चीनी प्रथम विचारकों में थे ('Mikami, China, pp 30, 93).\n\nसत्रहवीं शताब्दी के महान जापानी गणितज्ञ Seki Kowa द्वारा 1683 में लिखित पुस्तक\n'Kai Fukudai no Ho' से ज्ञात होता है कि उन्हें सारणिकों और उनके प्रसार का ज्ञान था। परंतु\nउन्होंने इस विधि का प्रयोग केवल दो समीकरणों से एक राशि के विलोपन में किया परंतु युगपत\nरैखिक समीकरणों के हल ज्ञात करने में इसका सीधा प्रयोग नहीं किया था। 'T. Hayashi,\n“The Fakudoi and Determinants in Japanese Mathematics,” in the proc. of the\nTokyo Math. Soc., V.\n\nVendermonde पहले व्यक्ति थे जिन्होनें सारणिकों को स्वतंत्र फलन की तरह से पहचाना\nइन्हें विधिवत इसका अन्वेषक (संस्थापक) कहा जा सकता है। Laplace (1772) ने सारणिकों\nको इसके पूरक उपसारणिकों के रूप में व्यक्त करके प्रसरण की व्यापक विधि दी। 1773 में\nLagrange ने दूसरे व तीसरे क्रम के सारणिकों को व्यवहृत किया और सारणिकों के हल के\nअतिरिक्त उनका अन्यत्र भी प्रयोग किया। 1801 में Gauss ने संख्या के सिद्धांतों में सारणिकों\nका प्रयोग किया।\n\nअगले महान योगदान देने वाले Jacques - Philippe - Marie Binet, (1812) थे जिन्होंने\n$m$-स्तंभों और $n$-पंक्तियों के दो आव्यूहों के गुणनफल से संबंधित प्रमेय का उल्लेख किया जो\nविशेष स्थिति $m=n$ में गुणनफल प्रमेय में बदल जाती है।"
+        }
+      ],
+      "page": 29
+    },
+    {
+      "image": "0142_p0030.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            66.8,
+            206.6,
+            1131.4,
+            497.5
+          ],
+          "conf": 0.688,
+          "text": "उसी दिन Cauchy (1812) ने भी उसी विषय-वस्तु पर शोध प्रस्तुत किए। उन्होंने आज\nके व्यावहारिक सारणिक शब्द का प्रयोग किया। उन्होंने Binet से अधिक संतुष्ट करने वाली\nगुणनफल प्रमेय की उपपत्ति दी।\nइन सिद्धांतों पर महानतम योगदान वाले Carl Gustav Jacob Jacobi थे। इसके पश्चात\nसारणिक शब्द को अंतिम स्वीकृति प्राप्त हुई।"
+        },
+        {
+          "order": 1,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            529.6,
+            509.6,
+            676.2,
+            556.7
+          ],
+          "conf": 0.8,
+          "text": ""
+        }
+      ],
+      "page": 30
+    }
+  ]
+}

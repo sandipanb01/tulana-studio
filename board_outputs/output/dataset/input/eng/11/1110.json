@@ -1,0 +1,5125 @@
+{
+  "book": "1110",
+  "relpath": "dataset/input/eng/11/1110.pdf",
+  "num_pages": 32,
+  "pages": [
+    {
+      "image": "0093_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            616.5,
+            103.2,
+            1178.6,
+            330.2
+          ],
+          "conf": 0.885,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            901.4,
+            236.0,
+            1173.9,
+            325.5
+          ],
+          "conf": 0.5,
+          "text": "Chapter 10"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            673.9,
+            295.1,
+            775.2,
+            331.0
+          ],
+          "conf": 0.533,
+          "text": "11076CHII"
+        },
+        {
+          "order": 3,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            323.1,
+            385.3,
+            979.2,
+            488.1
+          ],
+          "conf": 0.87,
+          "text": "CONIC SECTIONS"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            174.7,
+            567.9,
+            1127.4,
+            696.9
+          ],
+          "conf": 0.925,
+          "text": "❖ Let the relation of knowledge to real life be very visible to your pupils\nand let them understand how by knowledge the world could be\ntransformed. – BERTRAND RUSSELL ❖"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.2,
+            759.1,
+            414.1,
+            810.4
+          ],
+          "conf": 0.894,
+          "text": "10.1 Introduction"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            804.5,
+            1179.5,
+            1391.4
+          ],
+          "conf": 0.946,
+          "text": "In the preceding Chapter 10, we have studied various forms\nof the equations of a line. In this Chapter, we shall study\nabout some other curves, viz., circles, ellipses, parabolas\nand hyperbolas. The names parabola and hyperbola are\ngiven by Apollonius. These curves are in fact, known as\n*conic sections* or more commonly *conics* because they\ncan be obtained as intersections of a plane with a double\nnapped right circular cone. These curves have a very wide\nrange of applications in fields such as planetary motion,\ndesign of telescopes and antennas, reflectors in flashlights\nand automobile headlights, etc. Now, in the subsequent sections we will see how the\nintersection of a plane with a double napped right circular cone\nresults in different types of curves."
+        },
+        {
+          "order": 7,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.6,
+            1416.1,
+            503.8,
+            1470.2
+          ],
+          "conf": 0.855,
+          "text": "10.2 Sections of a Cone"
+        },
+        {
+          "order": 8,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            929.5,
+            1324.1,
+            1180.5,
+            1657.2
+          ],
+          "conf": 0.943,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1471.7,
+            937.2,
+            1565.6
+          ],
+          "conf": 0.911,
+          "text": "Let $l$ be a fixed vertical line and $m$ be another line intersecting it at\na fixed point V and inclined to it at an angle $\\alpha$ (Fig10.1)."
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            989.7,
+            1654.1,
+            1115.7,
+            1701.3
+          ],
+          "conf": 0.9,
+          "text": "Fig 10. 1"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1561.0,
+            935.9,
+            1696.5
+          ],
+          "conf": 0.915,
+          "text": "Suppose we rotate the line $m$ around the line $l$ in such a way\nthat the angle $\\alpha$ remains constant. Then the surface generated is\na double-napped right circular hollow cone herein after referred as"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0093_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            122.3,
+            319.4,
+            554.2,
+            789.3
+          ],
+          "conf": 0.957,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            256.0,
+            799.1,
+            382.5,
+            845.3
+          ],
+          "conf": 0.914,
+          "text": "Fig 10. 2"
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            690.6,
+            262.4,
+            1086.4,
+            797.8
+          ],
+          "conf": 0.952,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            818.0,
+            800.9,
+            943.4,
+            848.0
+          ],
+          "conf": 0.885,
+          "text": "Fig 10. 3"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            847.8,
+            902.3,
+            897.2
+          ],
+          "conf": 0.912,
+          "text": "cone and extending indefinitely far in both directions (Fig10.2)."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            891.7,
+            1177.7,
+            1014.4
+          ],
+          "conf": 0.952,
+          "text": "The point V is called the vertex; the line $l$ is the axis of the cone. The rotating line\n$m$ is called a generator of the cone. The vertex separates the cone into two parts\ncalled nappes."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1005.5,
+            1178.7,
+            1125.6
+          ],
+          "conf": 0.946,
+          "text": "If we take the intersection of a plane with a cone, the section so obtained is called\na conic section. Thus, conic sections are the curves obtained by intersecting a right\ncircular cone by a plane."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1114.2,
+            1179.1,
+            1271.1
+          ],
+          "conf": 0.954,
+          "text": "We obtain different kinds of conic sections depending on the position of the\nintersecting plane with respect to the cone and by the angle made by it with the vertical\naxis of the cone. Let $\\beta$ be the angle made by the intersecting plane with the vertical\naxis of the cone (Fig10.3)."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1262.2,
+            1181.3,
+            1345.6
+          ],
+          "conf": 0.931,
+          "text": "The intersection of the plane with the cone can take place either at the vertex of\nthe cone or at any other part of the nappe either below or above the vertex."
+        },
+        {
+          "order": 9,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.4,
+            1351.3,
+            1179.0,
+            1436.0
+          ],
+          "conf": 0.75,
+          "text": "10.2.1 Circle, ellipse, parabola and hyperbola When the plane cuts the nappe (other\nthan the vertex) of the cone, we have the following situations:"
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1426.5,
+            1181.2,
+            1705.1
+          ],
+          "conf": 0.861,
+          "text": "(a) When $\\beta = 90^{\\circ}$, the section is a $circle$ (Fig10.4).\n(b) When $\\alpha < \\beta < 90^{\\circ}$, the section is an $ellipse$ (Fig10.5).\n(c) When $\\beta = \\alpha$; the section is a $parabola$ (Fig10.6).\n(In each of the above three situations, the plane cuts entirely across one nappe of\nthe cone).\n\n(d) When $0 \\le \\beta < \\alpha$; the plane cuts through both the nappes and the curves of\nintersection is a $hyperbola$ (Fig10.7)."
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0093_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            233.6,
+            260.5,
+            534.7,
+            721.2
+          ],
+          "conf": 0.956,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            321.9,
+            720.9,
+            448.8,
+            768.0
+          ],
+          "conf": 0.91,
+          "text": "Fig 10. 4"
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            716.3,
+            261.6,
+            1020.2,
+            725.2
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            813.8,
+            727.9,
+            942.5,
+            774.8
+          ],
+          "conf": 0.918,
+          "text": "Fig 10. 5"
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            230.2,
+            759.6,
+            573.6,
+            1329.6
+          ],
+          "conf": 0.951,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            323.3,
+            1331.9,
+            450.8,
+            1378.8
+          ],
+          "conf": 0.898,
+          "text": "Fig 10. 6"
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            755.7,
+            802.4,
+            1073.3,
+            1309.7
+          ],
+          "conf": 0.948,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            815.9,
+            1310.0,
+            943.9,
+            1357.4
+          ],
+          "conf": 0.878,
+          "text": "Fig 10. 7"
+        },
+        {
+          "order": 8,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.6,
+            1375.8,
+            602.3,
+            1425.0
+          ],
+          "conf": 0.884,
+          "text": "10.2.2 Degenerated conic sections"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1412.3,
+            1178.1,
+            1464.1
+          ],
+          "conf": 0.826,
+          "text": "When the plane cuts at the vertex of the cone, we have the following different cases:"
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1418.0,
+            1178.5,
+            1707.7
+          ],
+          "conf": 0.635,
+          "text": "When the plane cuts at the vertex of the cone, we have the following different cases:\n(a) When $\\alpha < \\beta \\le 90^{\\circ}$, then the section is a point (Fig10.8).\n\n(b) When $\\beta = \\alpha$, the plane contains a generator of the cone and the section is a\nstraight line (Fig10.9).\nIt is the degenerated case of a parabola.\n\n(c) When $0 \\le \\beta < \\alpha$, the section is a pair of intersecting straight lines (Fig10.10).\nIt is the degenerated case of a $hyperbola$."
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0093_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            256.9,
+            1179.1,
+            340.5
+          ],
+          "conf": 0.957,
+          "text": "In the following sections, we shall obtain the equations of each of these conic\nsections in standard form by defining them based on geometric properties."
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            197.5,
+            341.1,
+            563.4,
+            833.7
+          ],
+          "conf": 0.955,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            322.4,
+            839.0,
+            449.7,
+            885.4
+          ],
+          "conf": 0.918,
+          "text": "Fig 10. 8"
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            674.2,
+            352.6,
+            1110.5,
+            862.4
+          ],
+          "conf": 0.951,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            846.8,
+            860.7,
+            975.4,
+            907.2
+          ],
+          "conf": 0.893,
+          "text": "Fig 10. 9"
+        },
+        {
+          "order": 5,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            269.4,
+            887.3,
+            549.4,
+            1451.0
+          ],
+          "conf": 0.899,
+          "text": ""
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            371.1,
+            1455.4,
+            434.3,
+            1505.0
+          ],
+          "conf": 0.55,
+          "text": "(a)"
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            752.6,
+            936.9,
+            1059.2,
+            1456.0
+          ],
+          "conf": 0.901,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            627.1,
+            1455.0,
+            931.6,
+            1505.2
+          ],
+          "conf": 0.507,
+          "text": "Fig 10. 10 (b)"
+        },
+        {
+          "order": 9,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.5,
+            1475.0,
+            329.2,
+            1527.4
+          ],
+          "conf": 0.785,
+          "text": "10.3 Circle"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1531.6,
+            1178.6,
+            1617.7
+          ],
+          "conf": 0.898,
+          "text": "Definition 1 A circle is the set of all points in a plane that are equidistant from a fixed\npoint in the plane."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1616.5,
+            1178.3,
+            1701.6
+          ],
+          "conf": 0.9,
+          "text": "The fixed point is called the centre of the circle and the distance from the centre\nto a point on the circle is called the radius of the circle (Fig 10.11)."
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0093_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            208.1,
+            260.9,
+            549.1,
+            590.3
+          ],
+          "conf": 0.905,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            231.4,
+            547.8,
+            443.2,
+            598.9
+          ],
+          "conf": 0.584,
+          "text": "$$OP_1=OP_2=OP_3$$"
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            303.4,
+            610.9,
+            441.2,
+            657.6
+          ],
+          "conf": 0.897,
+          "text": "Fig 10. 11"
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            685.5,
+            264.7,
+            1121.4,
+            621.5
+          ],
+          "conf": 0.936,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            841.5,
+            608.2,
+            982.3,
+            655.1
+          ],
+          "conf": 0.915,
+          "text": "Fig 10. 12"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            677.9,
+            1178.6,
+            798.6
+          ],
+          "conf": 0.955,
+          "text": "The equation of the circle is simplest if the centre of the circle is at the origin.\nHowever, we derive below the equation of the circle with a given centre and radius\n(Fig 10.12)."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            788.1,
+            1178.6,
+            907.6
+          ],
+          "conf": 0.947,
+          "text": "Given C ($h, k$) be the centre and $r$ the radius of circle. Let P($x, y$) be any point on\nthe circle (Fig10.12). Then, by the definition, | CP | = $r$ . By the distance formula,\nwe have"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            437.3,
+            909.1,
+            753.5,
+            1016.1
+          ],
+          "conf": 0.647,
+          "text": "$$\\sqrt{(x-h)^2 + (y-k)^2} = r$$\n$$(x-h)^2 + (y-k)^2 = r^2$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.3,
+            967.5,
+            736.5,
+            1017.3
+          ],
+          "conf": 0.657,
+          "text": "i.e. $$(x-h)^2 + (y-k)^2 = r^2$$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1017.4,
+            1059.2,
+            1067.0
+          ],
+          "conf": 0.893,
+          "text": "This is the required equation of the circle with centre at $(h,k)$ and radius $r$ ."
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1071.2,
+            1178.2,
+            1325.1
+          ],
+          "conf": 0.566,
+          "text": "Example 1 Find an equation of the circle with centre at $(0,0)$ and radius $r$.\n\nSolution Here $h = k = 0$. Therefore, the equation of the circle is $x^2 + y^2 = r^2$.\n\nExample 2 Find the equation of the circle with centre $(-3, 2)$ and radius 4.\n\nSolution Here $h = -3, k = 2$ and $r = 4$. Therefore, the equation of the required circle is\n\n$$(x + 3)^2 + (y - 2)^2 = 16$$"
+        },
+        {
+          "order": 11,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1328.5,
+            1135.4,
+            1686.6
+          ],
+          "conf": 0.589,
+          "text": "Example 3 Find the centre and the radius of the circle $x^2 + y^2 + 8x + 10y - 8 = 0$\n\nSolution The given equation is\n\n$$(x^2 + 8x) + (y^2 + 10y) = 8$$\n\nNow, completing the squares within the parenthesis, we get\n\n$$(x^2 + 8x + 16) + (y^2 + 10y + 25) = 8 + 16 + 25$$\n\ni.e. $$(x + 4)^2 + (y + 5)^2 = 49$$\n\ni.e. $\\{x - (-4)\\}^2 + \\{y - (-5)\\}^2 = 7^2$\n\nTherefore, the given circle has centre at $(-4, -5)$ and radius $7$."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1652.1,
+            913.0,
+            1702.0
+          ],
+          "conf": 0.847,
+          "text": "Therefore, the given circle has centre at $(-4, -5)$ and radius $7$."
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0093_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            257.8,
+            1178.7,
+            342.9
+          ],
+          "conf": 0.88,
+          "text": "Example 4 Find the equation of the circle which passes through the points $(2, -2)$, and\n$(3,4)$ and whose centre lies on the line $x + y = 2$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            346.9,
+            951.0,
+            398.1
+          ],
+          "conf": 0.847,
+          "text": "Solution Let the equation of the circle be $(x-h)^2 + (y-k)^2 = r^2$."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            398.2,
+            856.7,
+            448.4
+          ],
+          "conf": 0.884,
+          "text": "Since the circle passes through $(2, -2)$ and $(3,4)$, we have"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            197.5,
+            435.5,
+            686.7,
+            484.9
+          ],
+          "conf": 0.683,
+          "text": "$$(2 - h)^2 + (-2 - k)^2 = r^2 \\quad \\dots (1)$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            471.2,
+            686.1,
+            521.2
+          ],
+          "conf": 0.698,
+          "text": "and $(3 - h)^2 + (4 - k)^2 = r^2$ ... (2)"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            508.4,
+            822.1,
+            557.8
+          ],
+          "conf": 0.845,
+          "text": "Also since the centre lies on the line $x + y = 2$, we have"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            198.0,
+            546.1,
+            687.6,
+            593.9
+          ],
+          "conf": 0.788,
+          "text": "$$h + k = 2 \\qquad ... (3)$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            581.0,
+            689.1,
+            630.0
+          ],
+          "conf": 0.851,
+          "text": "Solving the equations (1), (2) and (3), we get"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            436.9,
+            618.8,
+            860.3,
+            666.5
+          ],
+          "conf": 0.79,
+          "text": "$h = 0.7, \\quad k = 1.3 \\text{ and } r^2 = 12.58$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            655.5,
+            678.6,
+            706.0
+          ],
+          "conf": 0.84,
+          "text": "Hence, the equation of the required circle is"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            197.5,
+            692.0,
+            599.3,
+            742.1
+          ],
+          "conf": 0.763,
+          "text": "$$(x - 0.7)^2 + (y - 1.3)^2 = 12.58.$$"
+        },
+        {
+          "order": 11,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            518.3,
+            755.6,
+            780.0,
+            814.1
+          ],
+          "conf": 0.792,
+          "text": "EXERCISE 10.1"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            818.7,
+            1069.5,
+            869.2
+          ],
+          "conf": 0.908,
+          "text": "In each of the following Exercises 1 to 5, find the equation of the circle with"
+        },
+        {
+          "order": 13,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            126.9,
+            867.9,
+            1176.0,
+            1705.2
+          ],
+          "conf": 0.8,
+          "text": "1. centre $(0,2)$ and radius 2\n2. centre $(-2,3)$ and radius 4\n3. centre $(\\frac{1}{2}, \\frac{1}{4})$ and radius $\\frac{1}{12}$\n4. centre $(1,1)$ and radius $\\sqrt{2}$\n5. centre $(-a, -b)$ and radius $\\sqrt{a^2 - b^2}$.\nIn each of the following Exercises 6 to 9, find the centre and radius of the circles.\n6. $(x + 5)^2 + (y - 3)^2 = 36$\n7. $x^2 + y^2 - 4x - 8y - 45 = 0$\n8. $x^2 + y^2 - 8x + 10y - 12 = 0$\n9. $2x^2 + 2y^2 - x = 0$\n10. Find the equation of the circle passing through the points $(4,1)$ and $(6,5)$ and\nwhose centre is on the line $4x + y = 16$.\n11. Find the equation of the circle passing through the points $(2,3)$ and $(-1,1)$ and\nwhose centre is on the line $x - 3y - 11 = 0$.\n12. Find the equation of the circle with radius 5 whose centre lies on $x$-axis and\npasses through the point $(2,3)$.\n13. Find the equation of the circle passing through $(0,0)$ and making intercepts $a$ and\n$b$ on the coordinate axes.\n14. Find the equation of a circle with centre $(2,2)$ and passes through the point $(4,5)$.\n15. Does the point $(-2.5, 3.5)$ lie inside, outside or on the circle $x^2 + y^2 = 25$?"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0093_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.5,
+            258.2,
+            344.0,
+            308.2
+          ],
+          "conf": 0.823,
+          "text": "10.4 Parabola"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            310.8,
+            694.1,
+            433.4
+          ],
+          "conf": 0.898,
+          "text": "Definition 2 A parabola is the set of all points\nin a plane that are equidistant from a fixed line\nand a fixed point (not on the line) in the plane."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.9,
+            422.2,
+            693.5,
+            616.0
+          ],
+          "conf": 0.899,
+          "text": "The fixed line is called the \\textit{directrix} of\nthe parabola and the fixed point F is called the\n\\textit{focus} (Fig 10.13). (‘Para’ means ‘for’ and\n‘bola’ means ‘throwing’, i.e., the shape\ndescribed when you throw a ball in the air)."
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            691.7,
+            256.7,
+            1182.1,
+            639.4
+          ],
+          "conf": 0.96,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            864.9,
+            671.8,
+            1006.2,
+            717.6
+          ],
+          "conf": 0.921,
+          "text": "Fig 10. 13"
+        },
+        {
+          "order": 5,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            609.3,
+            702.9,
+            892.6
+          ],
+          "conf": 0.958,
+          "text": "Note If the fixed point lies on the fixed\nline, then the set of points in the plane, which\nare equidistant from the fixed point and the\nfixed line is the straight line through the fixed\npoint and perpendicular to the fixed line. We\ncall this straight line as degenerate case of\nthe parabola."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            886.0,
+            696.1,
+            1082.0
+          ],
+          "conf": 0.963,
+          "text": "A line through the focus and perpendicular\nto the $directrix$ is called the $axis$ of the\nparabola. The point of intersection of parabola\nwith the axis is called the vertex of the parabola\n(Fig10.14)."
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            710.2,
+            738.1,
+            1175.5,
+            1087.9
+          ],
+          "conf": 0.94,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            874.4,
+            1099.5,
+            1012.7,
+            1146.1
+          ],
+          "conf": 0.892,
+          "text": "Fig 10.14"
+        },
+        {
+          "order": 9,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.6,
+            1083.6,
+            701.5,
+            1135.8
+          ],
+          "conf": 0.888,
+          "text": "10.4.1 Standard equations of parabola"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1123.1,
+            1179.1,
+            1247.0
+          ],
+          "conf": 0.907,
+          "text": "Fig 10.14\nThe equation of a parabola is simplest if the\nvertex is at the origin and the axis of symmetry is along the $x$-axis or $y$-axis. The four\npossible such orientations of parabola are shown below in  Fig10.15 (a) to (d)."
+        },
+        {
+          "order": 11,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            179.5,
+            1256.8,
+            1172.6,
+            1697.6
+          ],
+          "conf": 0.589,
+          "text": ""
+        },
+        {
+          "order": 12,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            334.0,
+            1650.3,
+            394.2,
+            1701.6
+          ],
+          "conf": 0.699,
+          "text": "(a)"
+        },
+        {
+          "order": 13,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            951.0,
+            1651.7,
+            1013.9,
+            1704.5
+          ],
+          "conf": 0.68,
+          "text": "(b)"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0093_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            221.5,
+            258.0,
+            1081.6,
+            763.4
+          ],
+          "conf": 0.893,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            549.8,
+            721.8,
+            932.9,
+            771.4
+          ],
+          "conf": 0.707,
+          "text": "Fig 10.15 (a) to (d)                                                              (d)"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            115.3,
+            798.4,
+            1178.2,
+            885.8
+          ],
+          "conf": 0.939,
+          "text": "We will derive the equation for the parabola shown above in Fig 10.15 (a) with\n$focus$ at $(a, 0)$ $a > 0$; and directricx $x = - a$ as below:"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            872.3,
+            734.8,
+            1285.7
+          ],
+          "conf": 0.928,
+          "text": "Let F be the focus and $l$ the directrix. Let\nFM be perpendicular to the directrix and bisect\nFM at the point O. Produce MO to X. By the\ndefinition of parabola, the mid-point O is on the\nparabola and is called the vertex of the parabola.\nTake O as origin, OX the $x$-axis and OY\nperpendicular to it as the $y$-axis. Let the distance\nfrom the directrix to the focus be $2a$. Then, the\ncoordinates of the focus are $(a, 0)$, and the\nequation of the directrix is $x + a = 0$ as in Fig10.16.\nLet P$(x, y)$ be any point on the parabola such that"
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            721.2,
+            870.4,
+            1177.7,
+            1230.6
+          ],
+          "conf": 0.936,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            854.5,
+            1232.3,
+            987.7,
+            1277.9
+          ],
+          "conf": 0.871,
+          "text": "Fig 10.16"
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            987.2,
+            1276.6,
+            1080.4,
+            1324.1
+          ],
+          "conf": 0.523,
+          "text": "... (1)"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            188.1,
+            1274.3,
+            324.0,
+            1322.6
+          ],
+          "conf": 0.591,
+          "text": "$$PF = PB,$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1297.9,
+            1177.8,
+            1395.4
+          ],
+          "conf": 0.797,
+          "text": "$$ ... (1) $$\nwhere PB is perpendicular to $l$. The coordinates of B are $(- a, y)$. By the distance\nformula, we have"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            1401.8,
+            726.4,
+            1502.7
+          ],
+          "conf": 0.663,
+          "text": "$\\text{PF} = \\sqrt{(x-a)^2 + y^2}$ and $\\text{PB} = \\sqrt{(x+a)^2}$\nSince $\\text{PF} = \\text{PB}$, we have"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            194.3,
+            1510.5,
+            544.3,
+            1577.8
+          ],
+          "conf": 0.851,
+          "text": "$$\\sqrt{(x-a)^2 + y^2} = \\sqrt{(x+a)^2}$$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            1566.2,
+            494.9,
+            1616.9
+          ],
+          "conf": 0.711,
+          "text": "i.e. $(x - a)^2 + y^2 = (x + a)^2$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            1607.8,
+            633.6,
+            1658.7
+          ],
+          "conf": 0.783,
+          "text": "or $x^2 - 2ax + a^2 + y^2 = x^2 + 2ax + a^2$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            1652.4,
+            426.1,
+            1701.8
+          ],
+          "conf": 0.737,
+          "text": "or $y^2 = 4ax \\ ( \\ a > 0).$"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0093_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            258.2,
+            1113.2,
+            345.0
+          ],
+          "conf": 0.803,
+          "text": "Hence, any point on the parabola satisfies\n$$y^2 = 4ax. \\hfill ... (2)$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            151.8,
+            347.5,
+            736.8,
+            398.6
+          ],
+          "conf": 0.904,
+          "text": "Conversely, let $P(x, y)$ satisfy the equation (2)"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.4,
+            405.6,
+            1114.8,
+            559.4
+          ],
+          "conf": 0.86,
+          "text": "$$ \\text{PF} \\quad = \\sqrt{(x-a)^2 + y^2} \\quad = \\sqrt{(x-a)^2 + 4ax} $$\n\n$$ = \\sqrt{(x+a)^2} = \\text{PB} \\quad \\dots (3) $$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            565.4,
+            576.3,
+            615.8
+          ],
+          "conf": 0.923,
+          "text": "and so $P(x,y)$ lies on the parabola."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            618.8,
+            1178.1,
+            706.0
+          ],
+          "conf": 0.95,
+          "text": "Thus, from (2) and (3) we have proved that the equation to the parabola with\nvertex at the origin, focus at $(a,0)$ and directrix $x = - a$ is $y^2 = 4ax$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            705.7,
+            1178.6,
+            828.2
+          ],
+          "conf": 0.945,
+          "text": "**Discussion** In equation (2), since $a > 0$, $x$ can assume any positive value or zero but\nno negative value and the curve extends indefinitely far into the first and the fourth\nquadrants. The axis of the parabola is the positive $x$-axis."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.8,
+            816.2,
+            908.3,
+            867.5
+          ],
+          "conf": 0.893,
+          "text": "Similarly, we can derive the equations of the parabolas in:"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.8,
+            870.0,
+            546.4,
+            1002.1
+          ],
+          "conf": 0.728,
+          "text": "Fig 11.15 (b) as $y^2 = -4ax$,\nFig 11.15 (c) as $x^2 = 4ay$,\nFig 11.15 (d) as $x^2 = -4ay$,"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1000.7,
+            996.7,
+            1050.7
+          ],
+          "conf": 0.911,
+          "text": "These four equations are known as standard equations of parabolas."
+        },
+        {
+          "order": 9,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            1048.6,
+            1178.2,
+            1240.9
+          ],
+          "conf": 0.963,
+          "text": "Note The standard equations of parabolas have focus on one of the coordinate\naxis; vertex at the origin and thereby the directrix is parallel to the other coordinate\naxis. However, the study of the equations of parabolas with focus at any point and\nany line as directrix is beyond the scope here."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1242.0,
+            1178.8,
+            1325.6
+          ],
+          "conf": 0.936,
+          "text": "From the standard equations of the parabolas, Fig10.15, we have the following\nobservations:"
+        },
+        {
+          "order": 11,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.7,
+            1330.6,
+            1177.8,
+            1702.6
+          ],
+          "conf": 0.973,
+          "text": "1. Parabola is symmetric with respect to the axis of the parabola.If the equation\nhas a $y^2$ term, then the axis of symmetry is along the $x$-axis and if the\nequation has an $x^2$ term, then the axis of symmetry is along the $y$-axis.\n2. When the axis of symmetry is along the $x$-axis the parabola opens to the\n(a) right if the coefficient of $x$ is positive,\n(b) left if the coefficient of $x$ is negative.\n3. When the axis of symmetry is along the $y$-axis the parabola opens\n(c) upwards if the coefficient of $y$ is positive.\n(d) downwards if the coefficient of $y$ is negative."
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0093_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.2,
+            259.2,
+            420.0,
+            308.4
+          ],
+          "conf": 0.887,
+          "text": "10.4.2 Latus rectum"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            316.5,
+            1180.9,
+            411.2
+          ],
+          "conf": 0.918,
+          "text": "Definition 3 Latus rectum of a parabola is a line segment perpendicular to the axis of\nthe parabola, through the focus and whose end points lie on the parabola (Fig10.17)."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            417.1,
+            1150.5,
+            468.9
+          ],
+          "conf": 0.839,
+          "text": "To find the Length of the latus rectum of the parabola $y^2 = 4ax$ (Fig 10.18)."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            468.2,
+            671.3,
+            517.0
+          ],
+          "conf": 0.835,
+          "text": "By the definition of the parabola, $\\mathrm{AF} = \\mathrm{AC}$."
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            521.4,
+            494.0,
+            619.8
+          ],
+          "conf": 0.576,
+          "text": "But $\\mathrm{AC} = \\mathrm{FM} = 2a$\nHence $\\mathrm{AF} = 2a.$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            621.9,
+            1063.4,
+            672.0
+          ],
+          "conf": 0.869,
+          "text": "And since the parabola is symmetric with respect to $x$-axis $AF = FB$ and so"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.4,
+            672.6,
+            683.9,
+            722.0
+          ],
+          "conf": 0.716,
+          "text": "$$AB = \\text{Length of the latus rectum} = 4a.$$"
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            143.7,
+            703.6,
+            1139.8,
+            1094.0
+          ],
+          "conf": 0.542,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            291.7,
+            1099.7,
+            426.4,
+            1148.4
+          ],
+          "conf": 0.887,
+          "text": "Fig 10.17"
+        },
+        {
+          "order": 9,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            799.5,
+            1100.9,
+            932.6,
+            1147.6
+          ],
+          "conf": 0.891,
+          "text": "Fig 10.18"
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1202.3,
+            1175.5,
+            1690.8
+          ],
+          "conf": 0.557,
+          "text": "Example 5 Find the coordinates of the focus, axis,\nthe equation of the directrix and latus rectum of\nthe parabola $y^2 = 8x$.\n\nSolution The given equation involves $y^2$, so the\naxis of symmetry is along the $x$-axis.\nThe coefficient of $x$ is positive so the parabola opens\nto the right. Comparing with the given equation\n$y^2 = 4ax$, we find that $a = 2$.\n\nThus, the focus of the parabola is $(2, 0)$ and the equation of the directrix of the parabola\nis $x = -2$ (Fig 10.19).\n\nLength of the latus rectum is $4a = 4 \\times 2 = 8$."
+        },
+        {
+          "order": 11,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            737.6,
+            1160.0,
+            1150.5,
+            1509.5
+          ],
+          "conf": 0.949,
+          "text": ""
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1651.7,
+            686.5,
+            1700.3
+          ],
+          "conf": 0.824,
+          "text": "Length of the latus rectum is $4a = 4 \\times 2 = 8.$"
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0093_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            260.3,
+            1161.5,
+            310.7
+          ],
+          "conf": 0.825,
+          "text": "Example 6 Find the equation of the parabola with focus $(2,0)$ and directrix $x = -2$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            313.5,
+            1179.0,
+            510.0
+          ],
+          "conf": 0.816,
+          "text": "Solution Since the focus $(2,0)$ lies on the $x$-axis, the $x$-axis itself is the axis of the\nparabola. Hence the equation of the parabola is of the form either\n$y^2 = 4ax$ or $y^2 = -4ax$. Since the directrix is $x = -2$ and the focus is $(2,0)$, the parabola\nis to be of the form $y^2 = 4ax$ with $a = 2$. Hence the required equation is\n$$y^2 = 4(2)x = 8x$$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            513.8,
+            1177.1,
+            565.2
+          ],
+          "conf": 0.718,
+          "text": "Example 7 Find the equation of the parabola with vertex at $(0, 0)$ and focus at $(0, 2)$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.9,
+            566.6,
+            1179.2,
+            690.1
+          ],
+          "conf": 0.822,
+          "text": "Solution Since the vertex is at $(0,0)$ and the focus is at $(0,2)$ which lies on $y$-axis, the\n$y$-axis is the axis of the parabola. Therefore, equation of the parabola is of the form\n$x^2 = 4ay$. thus, we have"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            493.2,
+            684.6,
+            801.2,
+            736.1
+          ],
+          "conf": 0.883,
+          "text": "$$x^2 = 4(2)y, \\text{ i.e., } x^2 = 8y.$$"
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            747.8,
+            1178.7,
+            834.1
+          ],
+          "conf": 0.836,
+          "text": "Example 8 Find the equation of the parabola which is symmetric about the $y$-axis, and\npasses through the point $(2,-3)$."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            837.7,
+            1180.0,
+            1032.8
+          ],
+          "conf": 0.86,
+          "text": "Solution Since the parabola is symmetric about $y$-axis and has its vertex at the origin,\nthe equation is of the form $x^2 = 4ay$ or $x^2 = - 4ay$, where the sign depends on whether\nthe parabola opens upwards or downwards. But the parabola passes through $(2,-3)$\nwhich lies in the fourth quadrant, it must open downwards. Thus the equation is of\nthe form $x^2 = - 4ay$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1027.9,
+            768.7,
+            1079.8
+          ],
+          "conf": 0.871,
+          "text": "Since the parabola passes through ( 2,−3), we have"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            431.9,
+            1100.7,
+            813.0,
+            1190.3
+          ],
+          "conf": 0.878,
+          "text": "$$2^2 = -4a (-3), \\text{ i.e., } a = \\frac{1}{3}$$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1193.6,
+            649.2,
+            1243.2
+          ],
+          "conf": 0.89,
+          "text": "Therefore, the equation of the parabola is"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            431.7,
+            1245.6,
+            851.2,
+            1340.1
+          ],
+          "conf": 0.9,
+          "text": "$$x^2 = -4 \\left( \\frac{1}{3} \\right) y, \\text{ i.e., } 3x^2 = -4y.$$"
+        },
+        {
+          "order": 11,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            521.0,
+            1367.2,
+            778.8,
+            1422.5
+          ],
+          "conf": 0.744,
+          "text": "EXERCISE 10.2"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1429.8,
+            1179.2,
+            1518.3
+          ],
+          "conf": 0.921,
+          "text": "In each of the following Exercises 1 to 6, find the coordinates of the focus, axis of the\nparabola, the equation of the directrix and the length of the latus rectum."
+        },
+        {
+          "order": 13,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.5,
+            1518.3,
+            951.6,
+            1619.8
+          ],
+          "conf": 0.94,
+          "text": "1. $y^2 = 12x$\n2. $x^2 = 6y$\n3. $y^2 = -8x$\n4. $x^2 = -16y$\n5. $y^2 = 10x$\n6. $x^2 = -9y$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1622.4,
+            1178.5,
+            1710.0
+          ],
+          "conf": 0.927,
+          "text": "In each of the Exercises 7 to 12, find the equation of the parabola that satisfies the\ngiven conditions:"
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0093_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            129.5,
+            256.5,
+            1117.9,
+            458.7
+          ],
+          "conf": 0.84,
+          "text": "7. Focus $(6,0)$; directrix $x = -6$\n9. Vertex $(0,0)$; focus $(3,0)$\n11. Vertex $(0,0)$ passing through $(2,3)$ and axis is along $x$-axis.\n12. Vertex $(0,0)$, passing through $(5,2)$ and symmetric with respect to $y$-axis.\n8. Focus $(0,-3)$; directrix $y = 3$\n10. Vertex $(0,0)$; focus $(-2,0)$"
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.9,
+            459.4,
+            339.4,
+            510.7
+          ],
+          "conf": 0.877,
+          "text": "10.5 Ellipse"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            513.4,
+            723.5,
+            636.3
+          ],
+          "conf": 0.942,
+          "text": "Definition 4 An $ellipse$ is the set of all points in\na plane, the sum of whose distances from two\nfixed points in the plane is a constant."
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            718.0,
+            483.4,
+            1175.7,
+            770.1
+          ],
+          "conf": 0.948,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            637.8,
+            723.1,
+            723.3
+          ],
+          "conf": 0.931,
+          "text": "The two fixed points are called the $foci$ (plural\nof '$focus$') of the ellipse (Fig10.20)."
+        },
+        {
+          "order": 5,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            725.4,
+            733.7,
+            908.4
+          ],
+          "conf": 0.936,
+          "text": "Note The constant which is the sum of\nthe distances of a point on the ellipse from the\ntwo fixed points is always greater than the\ndistance between the two fixed points."
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            724.4,
+            768.6,
+            1170.3,
+            861.3
+          ],
+          "conf": 0.578,
+          "text": "$$\\mathbf{P}_1\\mathbf{F}_1 + \\mathbf{P}_1\\mathbf{F}_2 = \\mathbf{P}_2\\mathbf{F}_1 + \\mathbf{P}_2\\mathbf{F}_2 = \\mathbf{P}_3\\mathbf{F}_1 + \\mathbf{P}_3\\mathbf{F}_2$$\nFig 10.20"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            914.5,
+            1178.8,
+            1085.8
+          ],
+          "conf": 0.964,
+          "text": "The mid point of the line segment joining the foci is called the $centre$ of the\nellipse. The line segment through the foci of the ellipse is called the $major$ $axis$ and the\nline segment through the centre and perpendicular to the major axis is called the $minor$\n$axis$. The end points of the major axis are called the $vertices$ of the ellipse(Fig 10.21)."
+        },
+        {
+          "order": 8,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            120.5,
+            1131.3,
+            701.1,
+            1499.3
+          ],
+          "conf": 0.919,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            324.6,
+            1517.0,
+            458.0,
+            1564.8
+          ],
+          "conf": 0.828,
+          "text": "Fig 10.21"
+        },
+        {
+          "order": 10,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            742.2,
+            1103.0,
+            1172.1,
+            1498.3
+          ],
+          "conf": 0.94,
+          "text": ""
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            846.3,
+            1516.4,
+            979.5,
+            1564.3
+          ],
+          "conf": 0.85,
+          "text": "Fig 10.22"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.1,
+            1576.0,
+            1175.5,
+            1706.8
+          ],
+          "conf": 0.954,
+          "text": "We denote the length of the major axis by $2a$, the length of the minor axis by $2b$\nand the distance between the foci by $2c$. Thus, the length of the semi major axis is $a$\nand semi-minor axis is $b$ (Fig10.22)."
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0093_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            260.9,
+            684.7,
+            419.9
+          ],
+          "conf": 0.919,
+          "text": "10.5.1 Relationship between semi-major\naxis, semi-minor axis and the distance of\nthe focus from the centre of the ellipse\n(Fig 10.23)."
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            682.4,
+            253.5,
+            1174.7,
+            600.6
+          ],
+          "conf": 0.96,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            828.0,
+            590.5,
+            962.4,
+            636.3
+          ],
+          "conf": 0.924,
+          "text": "Fig 10.23"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            424.1,
+            702.3,
+            556.5
+          ],
+          "conf": 0.784,
+          "text": "Take a point P at one end of the major axis. R\nSum of the distances of the point P to the\nfoci is $F_1 P + F_2 P = F_1 O + OP + F_2 P$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            218.9,
+            549.3,
+            682.0,
+            643.2
+          ],
+          "conf": 0.889,
+          "text": "(Since, $\\mathrm{F}_{1}\\mathrm{P} = \\mathrm{F}_{1}\\mathrm{O} + \\mathrm{OP}$)\n$= c + a + a - c = 2a$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            645.6,
+            777.5,
+            731.1
+          ],
+          "conf": 0.897,
+          "text": "Take a point Q at one end of the minor axis.\nSum of the distances from the point Q to the foci is"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            289.5,
+            749.2,
+            1010.1,
+            821.2
+          ],
+          "conf": 0.899,
+          "text": "$$F_1Q + F_2Q = \\sqrt{b^2 + c^2} + \\sqrt{b^2 + c^2} = 2\\sqrt{b^2 + c^2}$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            812.8,
+            611.4,
+            862.6
+          ],
+          "conf": 0.875,
+          "text": "Since both $P$ and $Q$ lies on the ellipse."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            863.0,
+            581.0,
+            913.1
+          ],
+          "conf": 0.9,
+          "text": "By the definition of ellipse, we have"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            268.7,
+            926.8,
+            921.8,
+            1002.2
+          ],
+          "conf": 0.855,
+          "text": "$$2\\sqrt{b^2 + c^2} = 2a, \\text{i.e.}, \\qquad a = \\sqrt{b^2 + c^2}$$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            1012.5,
+            834.6,
+            1082.4
+          ],
+          "conf": 0.822,
+          "text": "or $a^2 = b^2 + c^2$, i.e., $c = \\sqrt{a^2 - b^2}$."
+        },
+        {
+          "order": 11,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.9,
+            1116.4,
+            405.9,
+            1169.6
+          ],
+          "conf": 0.873,
+          "text": "10.5.2 Eccentricity"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            1174.2,
+            1180.3,
+            1350.9
+          ],
+          "conf": 0.692,
+          "text": "Definition 5 The eccentricity of an ellipse is the ratio of the distances from the centre\nof the ellipse to one of the foci and to one of the vertices of the ellipse (eccentricity is\ndenoted by $e$) i.e., $e = \\frac{c}{a}$."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1350.7,
+            1181.0,
+            1435.4
+          ],
+          "conf": 0.926,
+          "text": "Then since the focus is at a distance of $c$ from the centre, in terms of the eccentricity\nthe focus is at a distance of $ae$ from the centre."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1439.2,
+            1181.4,
+            1559.9
+          ],
+          "conf": 0.906,
+          "text": "10.5.3 *Standard equations of an ellipse* The equation of an ellipse is simplest if the\ncentre of the ellipse is at the origin and the foci are on the $x$-axis or $y$-axis. The two\nsuch possible orientations are shown in Fig 10.24."
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1550.2,
+            1181.4,
+            1634.2
+          ],
+          "conf": 0.887,
+          "text": "We will derive the equation for the ellipse shown above in Fig 10.24 (a) with foci\non the $x$-axis."
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0093_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            162.5,
+            259.5,
+            1172.9,
+            855.6
+          ],
+          "conf": 0.774,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            360.4,
+            774.8,
+            417.2,
+            818.3
+          ],
+          "conf": 0.633,
+          "text": "(a)"
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            534.7,
+            814.9,
+            985.1,
+            863.9
+          ],
+          "conf": 0.636,
+          "text": "Fig 10.24 (b)"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            899.8,
+            1178.1,
+            1134.3
+          ],
+          "conf": 0.911,
+          "text": "Let $\\mathrm{F}_1$ and $\\mathrm{F}_2$ be the foci and $\\mathrm{O}$ be the mid-point of the line segment $\\mathrm{F}_1\\mathrm{F}_2$. Let $\\mathrm{O}$\nbe the origin and the line from $\\mathrm{O}$ through $\\mathrm{F}_2$ be the positive\n$x$-axis and that through $\\mathrm{F}_1$ as the negative $x$-axis.\nLet, the line through $\\mathrm{O}$ perpendicular to the\n$x$-axis be the $y$-axis. Let the coordinates of $\\mathrm{F}_1$ be\n$(-c, 0)$ and $\\mathrm{F}_2$ be $(c, 0)$ (Fig 10.25)."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1122.0,
+            724.1,
+            1241.3
+          ],
+          "conf": 0.91,
+          "text": "Let $P(x, y)$ be any point on the ellipse such\nthat the sum of the distances from $P$ to the two\nfoci be $2a$ so given"
+        },
+        {
+          "order": 5,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            703.9,
+            978.1,
+            1172.1,
+            1397.1
+          ],
+          "conf": 0.93,
+          "text": ""
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.1,
+            1230.4,
+            721.6,
+            1281.5
+          ],
+          "conf": 0.859,
+          "text": "$$PF_1 + PF_2 = 2a. \\dots (1)$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            1269.6,
+            593.1,
+            1318.0
+          ],
+          "conf": 0.856,
+          "text": "Using the distance formula, we have"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            152.8,
+            1309.9,
+            1007.6,
+            1396.3
+          ],
+          "conf": 0.571,
+          "text": "$$\\sqrt{(x+c)^2 + y^2} + \\sqrt{(x-c)^2 + y^2} = 2a \\qquad \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$$"
+        },
+        {
+          "order": 9,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            833.9,
+            1413.8,
+            967.7,
+            1459.8
+          ],
+          "conf": 0.838,
+          "text": "Fig 10.25"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            1423.3,
+            718.1,
+            1495.3
+          ],
+          "conf": 0.86,
+          "text": "i.e., $\\sqrt{(x+c)^2 + y^2} = 2a - \\sqrt{(x-c)^2 + y^2}$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1496.4,
+            479.1,
+            1546.4
+          ],
+          "conf": 0.863,
+          "text": "Squaring both sides, we get"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            270.1,
+            1565.2,
+            1021.5,
+            1629.8
+          ],
+          "conf": 0.88,
+          "text": "$$(x + c)^2 + y^2 = 4a^2 - 4a \\sqrt{(x - c)^2 + y^2} + (x - c)^2 + y^2$$"
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0093_p0014.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.8,
+            260.9,
+            496.1,
+            309.7
+          ],
+          "conf": 0.923,
+          "text": "which on simplification gives"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            327.2,
+            316.9,
+            708.1,
+            407.6
+          ],
+          "conf": 0.923,
+          "text": "$$ \\sqrt{(x-c)^2 + y^2} = a - \\frac{c}{a} x $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.1,
+            400.9,
+            615.8,
+            451.2
+          ],
+          "conf": 0.934,
+          "text": "Squaring again and simplifying, we get"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            326.6,
+            453.0,
+            620.0,
+            556.1
+          ],
+          "conf": 0.928,
+          "text": "$$ \\frac{x^2}{a^2} + \\frac{y^2}{a^2 - c^2} = 1 $$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.4,
+            572.5,
+            990.1,
+            669.9
+          ],
+          "conf": 0.901,
+          "text": "i.e., $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$ (Since $c^2 = a^2 - b^2$)"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            667.5,
+            621.0,
+            717.1
+          ],
+          "conf": 0.935,
+          "text": "Hence any point on the ellipse satisfies"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            283.3,
+            718.2,
+            1082.5,
+            821.4
+          ],
+          "conf": 0.905,
+          "text": "$$\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1.$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.3,
+            826.1,
+            972.8,
+            877.8
+          ],
+          "conf": 0.928,
+          "text": "Conversely, let $\\mathrm{P} (x, y)$ satisfy the equation (2) with $0 < c < a$. Then"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            354.8,
+            879.7,
+            641.4,
+            991.2
+          ],
+          "conf": 0.905,
+          "text": "$$y^2 = b^2 \\left( 1 - \\frac{x^2}{a^2} \\right)$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            124.4,
+            1030.9,
+            1088.4,
+            1502.5
+          ],
+          "conf": 0.524,
+          "text": "Therefore, $PF_1$ $\\quad = \\sqrt{(x+c)^2 + y^2}$\n\n$\\quad \\quad \\quad \\quad \\quad \\quad = \\sqrt{(x+c)^2 + b^2 \\left( \\frac{a^2 - x^2}{a^2} \\right)}$\n\n$\\quad \\quad \\quad \\quad \\quad \\quad = \\sqrt{(x+c)^2 + (a^2 - c^2) \\left( \\frac{a^2 - x^2}{a^2} \\right)} \\text{ (since } b^2 = a^2 - c^2)$\n\n$\\quad \\quad \\quad \\quad \\quad \\quad = \\sqrt{\\left( a + \\frac{cx}{a} \\right)^2} = a + \\frac{c}{a}x$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            122.6,
+            1524.6,
+            566.5,
+            1610.1
+          ],
+          "conf": 0.857,
+          "text": "Similarly $\\text{PF}_2 = a - \\frac{c}{a}x$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.5,
+            1625.3,
+            1117.2,
+            1707.9
+          ],
+          "conf": 0.882,
+          "text": "Hence $\\qquad \\mathrm{PF}_1 + \\mathrm{PF}_2 = a + \\frac{c}{a}x + a - \\frac{c}{a}x = 2a \\qquad \\dots (3)$"
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0093_p0015.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            275.1,
+            1177.8,
+            396.0
+          ],
+          "conf": 0.801,
+          "text": "So, any point that satisfies $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$, satisfies the geometric condition and so\n\nP(x, y) lies on the ellipse"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            367.8,
+            453.4,
+            416.5
+          ],
+          "conf": 0.781,
+          "text": "$$ \\mathrm{P}(x, y) \\text{ lies on the ellipse.} $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            404.5,
+            1180.7,
+            491.3
+          ],
+          "conf": 0.928,
+          "text": "Hence from (2) and (3), we proved that the equation of an ellipse with centre of\nthe origin and major axis along the $x$-axis is"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            625.2,
+            493.2,
+            807.2,
+            590.1
+          ],
+          "conf": 0.928,
+          "text": "$$ \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1. $$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            585.8,
+            1177.9,
+            672.4
+          ],
+          "conf": 0.947,
+          "text": "**Discussion** From the equation of the ellipse obtained above, it follows that for every\npoint P $(x, y)$ on the ellipse, we have"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            309.4,
+            673.0,
+            990.2,
+            775.0
+          ],
+          "conf": 0.926,
+          "text": "$\\frac{x^2}{a^2} = 1 - \\frac{y^2}{b^2} \\le 1$, i.e., $x^2 \\le a^2$, so $-a \\le x \\le a$."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            783.0,
+            1177.1,
+            904.4
+          ],
+          "conf": 0.908,
+          "text": "Therefore, the ellipse lies between the lines $x = - a$ and $x = a$ and touches these lines.\nSimilarly, the ellipse lies between the lines $y = - b$ and $y = b$ and touches these\nlines."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.0,
+            908.0,
+            1176.8,
+            1006.2
+          ],
+          "conf": 0.798,
+          "text": "Similarly, we can derive the equation of the ellipse in Fig 10.24 (b) as $\\frac{x^2}{b^2} + \\frac{y^2}{a^2} = 1$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1001.7,
+            1010.0,
+            1050.7
+          ],
+          "conf": 0.847,
+          "text": "These two equations are known as standard equations of the ellipses."
+        },
+        {
+          "order": 9,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1059.4,
+            1178.5,
+            1293.7
+          ],
+          "conf": 0.96,
+          "text": "Note The standard equations of ellipses have centre at the origin and the\nmajor and minor axis are coordinate axes. However, the study of the ellipses with\ncentre at any other point, and any line through the centre as major and the minor\naxes passing through the centre and perpendicular to major axis are beyond the\nscope here."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1295.6,
+            1178.8,
+            1380.5
+          ],
+          "conf": 0.935,
+          "text": "From the standard equations of the ellipses (Fig10.24), we have the following\nobservations:"
+        },
+        {
+          "order": 11,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1381.7,
+            1178.8,
+            1662.3
+          ],
+          "conf": 0.959,
+          "text": "1. Ellipse is symmetric with respect to both the coordinate axes since if\n$(x, y)$ is a point on the ellipse, then $(-x, y)$, $(x, -y)$ and $(-x, -y)$ are also points on\nthe ellipse.\n\n2. The foci always lie on the major axis. The major axis can be determined by\nfinding the intercepts on the axes of symmetry. That is, major axis is along the $x$-axis\nif the coefficient of $x^2$ has the larger denominator and it is along the $y$-axis if the\ncoefficient of $y^2$ has the larger denominator."
+        }
+      ],
+      "page": 15
+    },
+    {
+      "image": "0093_p0016.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.4,
+            258.8,
+            419.9,
+            308.2
+          ],
+          "conf": 0.88,
+          "text": "10.5.4 Latus rectum"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            327.2,
+            709.5,
+            486.2
+          ],
+          "conf": 0.838,
+          "text": "Definition 6 Latus rectum of an ellipse is a\nline segment perpendicular to the major axis\nthrough any of the foci and whose end points\nlie on the ellipse (Fig 10.26)."
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            699.5,
+            254.0,
+            1168.0,
+            620.9
+          ],
+          "conf": 0.956,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            475.8,
+            647.5,
+            525.2
+          ],
+          "conf": 0.903,
+          "text": "To find the length of the latus rectum"
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            703.0,
+            580.1,
+            888.2,
+            622.6
+          ],
+          "conf": 0.688,
+          "text": "Latus rectum"
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            861.8,
+            643.2,
+            1009.8,
+            690.1
+          ],
+          "conf": 0.914,
+          "text": "Fig 10. 26"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.0,
+            527.1,
+            467.2,
+            624.9
+          ],
+          "conf": 0.914,
+          "text": "of the ellipse $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            633.1,
+            465.9,
+            684.9
+          ],
+          "conf": 0.896,
+          "text": "Let the length of $\\text{AF}_2$ be $l$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            686.5,
+            634.0,
+            773.7
+          ],
+          "conf": 0.921,
+          "text": "Then the coordinates of A are $(c, l)$,i.e.,\n$(ae, l)$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            775.6,
+            732.2,
+            872.5
+          ],
+          "conf": 0.876,
+          "text": "Since A lies on the ellipse $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$, we have"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            423.9,
+            882.9,
+            622.8,
+            981.2
+          ],
+          "conf": 0.863,
+          "text": "$$ \\frac{(ae)^2}{a^2} + \\frac{l^2}{b^2} = 1 $$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            419.2,
+            987.2,
+            665.7,
+            1041.4
+          ],
+          "conf": 0.835,
+          "text": "$$\\Rightarrow l^2 = b^2 (1 - e^2)$$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.5,
+            1038.7,
+            771.8,
+            1143.6
+          ],
+          "conf": 0.885,
+          "text": "But $e^2 = \\frac{c^2}{a^2} = \\frac{a^2 - b^2}{a^2} = 1 - \\frac{b^2}{a^2}$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.4,
+            1149.1,
+            689.1,
+            1247.5
+          ],
+          "conf": 0.858,
+          "text": "Therefore $l^2 = \\frac{b^4}{a^2}$, i.e., $l = \\frac{b^2}{a}$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1254.8,
+            1177.9,
+            1306.1
+          ],
+          "conf": 0.893,
+          "text": "Since the ellipse is symmetric with respect to $y$-axis (of course, it is symmetric w.r.t."
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1307.8,
+            1105.0,
+            1400.1
+          ],
+          "conf": 0.806,
+          "text": "both the coordinate axes), $\\text{AF}_2 = \\text{F}_2\\text{B}$ and so length of the latus rectum is $\\frac{2b^2}{a}$."
+        },
+        {
+          "order": 16,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1409.6,
+            1182.3,
+            1693.8
+          ],
+          "conf": 0.523,
+          "text": "Example 9 Find the coordinates of the foci, the vertices, the length of major axis, the\nminor axis, the eccentricity and the latus rectum of the ellipse\n\n$$\\frac{x^2}{25} + \\frac{y^2}{9} = 1$$\n\nSolution Since denominator of $\\frac{x^2}{25}$ is larger than the denominator of $\\frac{y^2}{9}$, the major"
+        }
+      ],
+      "page": 16
+    },
+    {
+      "image": "0093_p0017.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            272.8,
+            1125.5,
+            374.9
+          ],
+          "conf": 0.857,
+          "text": "axis is along the $x$-axis. Comparing the given equation with $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$, we get"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.9,
+            365.2,
+            604.9,
+            414.6
+          ],
+          "conf": 0.863,
+          "text": "$a=5$ and $b=3$. Also"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            323.1,
+            412.1,
+            681.3,
+            479.9
+          ],
+          "conf": 0.896,
+          "text": "$$c = \\sqrt{a^2 - b^2} = \\sqrt{25 - 9} = 4$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            470.8,
+            1178.5,
+            558.6
+          ],
+          "conf": 0.944,
+          "text": "Therefore, the coordinates of the foci are $(-4,0)$ and $(4,0)$, vertices are $(-5,0)$ and\n$(5,0)$. Length of the major axis is 10 units length of the minor axis $2b$ is 6 units and the"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            562.8,
+            743.6,
+            661.0
+          ],
+          "conf": 0.867,
+          "text": "eccentricity is $\\frac{4}{5}$ and latus rectum is $\\frac{2b^2}{a} = \\frac{18}{5}$ ."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            655.3,
+            1177.5,
+            742.0
+          ],
+          "conf": 0.863,
+          "text": "Example 10 Find the coordinates of the foci, the vertices, the lengths of major and\nminor axes and the eccentricity of the ellipse $9x^2 + 4y^2 = 36$."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            744.2,
+            1084.5,
+            796.5
+          ],
+          "conf": 0.866,
+          "text": "Solution The given equation of the ellipse can be written in standard form as"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            282.1,
+            797.2,
+            449.1,
+            891.1
+          ],
+          "conf": 0.894,
+          "text": "$$ \\frac{x^2}{4} + \\frac{y^2}{9} = 1 $$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            897.6,
+            1177.0,
+            1035.5
+          ],
+          "conf": 0.893,
+          "text": "Since the denominator of $\\frac{y^2}{9}$ is larger than the denominator of $\\frac{x^2}{4}$, the major axis is\nalong the $y$-axis. Comparing the given equation with the standard equation"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            324.6,
+            1038.9,
+            822.6,
+            1143.0
+          ],
+          "conf": 0.871,
+          "text": "$\\frac{x^2}{b^2} + \\frac{y^2}{a^2} = 1$, we have $b = 2$ and $a = 3$."
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            1140.8,
+            687.8,
+            1210.5
+          ],
+          "conf": 0.819,
+          "text": "Also $c = \\sqrt{a^2 - b^2} = \\sqrt{9 - 4} = \\sqrt{5}$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            1215.0,
+            445.6,
+            1314.4
+          ],
+          "conf": 0.843,
+          "text": "and $e = \\frac{c}{a} = \\frac{\\sqrt{5}}{3}$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1313.8,
+            1178.6,
+            1503.1
+          ],
+          "conf": 0.852,
+          "text": "Hence the foci are $(0, \\sqrt{5})$ and $(0, -\\sqrt{5})$, vertices are $(0,3)$ and $(0, -3)$, length of the\nmajor axis is 6 units, the length of the minor axis is 4 units and the eccentricity of the\nellipse is $\\frac{\\sqrt{5}}{3}$."
+        },
+        {
+          "order": 13,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1499.5,
+            1177.7,
+            1727.3
+          ],
+          "conf": 0.699,
+          "text": "Example 11 Find the equation of the ellipse whose vertices are $(\\pm 13, 0)$ and foci are\n$(\\pm 5, 0)$.\nSolution Since the vertices are on $x$-axis, the equation will be of the form\n\n$$\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1, \\text{ where } a \\text{ is the semi-major axis.}$$"
+        }
+      ],
+      "page": 17
+    },
+    {
+      "image": "0093_p0018.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            256.1,
+            475.9,
+            305.7
+          ],
+          "conf": 0.812,
+          "text": "Given that $a = 13$, $c = \\pm 5$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            294.1,
+            737.2,
+            345.0
+          ],
+          "conf": 0.849,
+          "text": "Therefore, from the relation $c^2 = a^2 - b^2$, we get"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            366.2,
+            338.6,
+            714.7,
+            388.4
+          ],
+          "conf": 0.867,
+          "text": "$$25 = 169 - b^2, \\text{ i.e., } b = 12$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            397.9,
+            763.9,
+            495.3
+          ],
+          "conf": 0.823,
+          "text": "Hence the equation of the ellipse is $\\frac{x^2}{169} + \\frac{y^2}{144} = 1$."
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            495.3,
+            1178.5,
+            581.4
+          ],
+          "conf": 0.865,
+          "text": "Example 12 Find the equation of the ellipse, whose length of the major axis is 20 and\nfoci are $(0, \\pm 5)$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            584.2,
+            1180.1,
+            636.3
+          ],
+          "conf": 0.829,
+          "text": "Solution Since the foci are on $y$-axis, the major axis is along the $y$-axis. So, equation"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            637.8,
+            649.6,
+            735.3
+          ],
+          "conf": 0.774,
+          "text": "of the ellipse is of the form $\\frac{x^2}{b^2} + \\frac{y^2}{a^2} = 1$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            746.3,
+            271.3,
+            793.6
+          ],
+          "conf": 0.87,
+          "text": "Given that"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            434.6,
+            798.2,
+            833.9,
+            886.7
+          ],
+          "conf": 0.879,
+          "text": "$$a = \\text{semi-major axis} = \\frac{20}{2} = 10$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            878.4,
+            771.3,
+            973.6
+          ],
+          "conf": 0.762,
+          "text": "and the relation $c^2 = a^2 - b^2$ gives\n$5^2 = 10^2 - b^2$ i.e., $b^2 = 75$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            971.5,
+            620.9,
+            1021.6
+          ],
+          "conf": 0.879,
+          "text": "Therefore, the equation of the ellipse is"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            559.8,
+            1020.9,
+            740.2,
+            1117.4
+          ],
+          "conf": 0.865,
+          "text": "$$\\frac{x^2}{75} + \\frac{y^2}{100} = 1$$"
+        },
+        {
+          "order": 12,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1122.9,
+            1183.1,
+            1693.1
+          ],
+          "conf": 0.508,
+          "text": "Example 13 Find the equation of the ellipse, with major axis along the $x$-axis and\npassing through the points $(4, 3)$ and $(-1, 4)$.\n\n\nSolution The standard form of the ellipse is $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$. Since the points $(4, 3)$\nand $(-1, 4)$ lie on the ellipse, we have\n$$\\frac{16}{a^2} + \\frac{9}{b^2} = 1 \\quad \\dots (1)$$\nand $$\\frac{1}{a^2} + \\frac{16}{b^2} = 1 \\quad \\dots (2)$$\n\n\nSolving equations (1) and (2), we find that $a^2 = \\frac{247}{7}$ and $b^2 = \\frac{247}{15}$.\nHence the required equation is"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1656.0,
+            518.6,
+            1705.4
+          ],
+          "conf": 0.838,
+          "text": "Hence the required equation is"
+        }
+      ],
+      "page": 18
+    },
+    {
+      "image": "0093_p0019.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            424.3,
+            278.9,
+            947.6,
+            417.4
+          ],
+          "conf": 0.953,
+          "text": "$$\\frac{x^2}{\\left(\\frac{247}{7}\\right)} + \\frac{y^2}{\\frac{247}{15}} = 1, \\text{ i.e., } 7x^2 + 15y^2 = 247.$$"
+        },
+        {
+          "order": 1,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            512.2,
+            441.0,
+            785.3,
+            498.8
+          ],
+          "conf": 0.762,
+          "text": "EXERCISE 10.3"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            502.7,
+            1178.7,
+            624.1
+          ],
+          "conf": 0.966,
+          "text": "In each of the Exercises 1 to 9, find the coordinates of the foci, the vertices, the length\nof major axis, the minor axis, the eccentricity and the length of the latus rectum of the\nellipse."
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.1,
+            625.5,
+            1039.2,
+            889.0
+          ],
+          "conf": 0.593,
+          "text": "1. $\\frac{x^2}{36} + \\frac{y^2}{16} = 1$\n2. $\\frac{x^2}{4} + \\frac{y^2}{25} = 1$\n3. $\\frac{x^2}{16} + \\frac{y^2}{9} = 1$\n\n4. $\\frac{x^2}{25} + \\frac{y^2}{100} = 1$\n5. $\\frac{x^2}{49} + \\frac{y^2}{36} = 1$\n6. $\\frac{x^2}{100} + \\frac{y^2}{400} = 1$\n\n7. $36x^2 + 4y^2 = 144$\n8. $16x^2 + y^2 = 16$\n9. $4x^2 + 9y^2 = 36$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            889.6,
+            1178.1,
+            975.3
+          ],
+          "conf": 0.932,
+          "text": "In each of the following Exercises 10 to 20, find the equation for the ellipse that satisfies\nthe given conditions:"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            988.6,
+            1180.3,
+            1551.3
+          ],
+          "conf": 0.633,
+          "text": "10. Vertices $(\\pm 5, 0)$, foci $(\\pm 4, 0)$\n11. Vertices $(0, \\pm 13)$, foci $(0, \\pm 5)$\n12. Vertices $(\\pm 6, 0)$, foci $(\\pm 4, 0)$\n13. Ends of major axis $(\\pm 3, 0)$, ends of minor axis $(0, \\pm 2)$\n\n14. Ends of major axis $(0, \\pm \\sqrt{5})$, ends of minor axis $(\\pm 1, 0)$\n15. Length of major axis 26, foci $(\\pm 5, 0)$\n16. Length of minor axis 16, foci $(0, \\pm 6)$.\n17. Foci $(\\pm 3, 0)$, $a = 4$\n18. $b = 3$, $c = 4$, centre at the origin; foci on the $x$ axis.\n19. Centre at $(0,0)$, major axis on the $y$-axis and passes through the points $(3, 2)$ and\n$(1,6)$.\n20. Major axis on the $x$-axis and passes through the points $(4,3)$ and $(6,2)$."
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.1,
+            1555.5,
+            387.4,
+            1605.1
+          ],
+          "conf": 0.778,
+          "text": "10.6 Hyperbola"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1608.5,
+            1178.1,
+            1693.8
+          ],
+          "conf": 0.913,
+          "text": "Definition 7 A hyperbola is the set of all points in a plane, the difference of whose\ndistances from two fixed points in the plane is a constant."
+        }
+      ],
+      "page": 19
+    },
+    {
+      "image": "0093_p0020.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            238.0,
+            256.9,
+            1058.2,
+            612.9
+          ],
+          "conf": 0.916,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            337.7,
+            607.1,
+            863.5,
+            663.5
+          ],
+          "conf": 0.769,
+          "text": "$$ \\mathbf{P}_1\\mathbf{F}_2 - \\mathbf{P}_1\\mathbf{F}_1 = \\mathbf{P}_2\\mathbf{F}_2 - \\mathbf{P}_2\\mathbf{F}_1 = \\mathbf{P}_3\\mathbf{F}_1 - \\mathbf{P}_3\\mathbf{F}_2 $$"
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            537.0,
+            659.3,
+            672.1,
+            707.6
+          ],
+          "conf": 0.889,
+          "text": "Fig 10.27"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            708.1,
+            1179.4,
+            1047.7
+          ],
+          "conf": 0.953,
+          "text": "The term “difference” that is used in the definition means the distance to the\nfarther point minus the distance to the closer point. The two fixed points are called the\nfoci of the hyperbola. The mid-point of the line segment joining the foci is called the\ncentre of the hyperbola. The line through the foci is called the transverse axis and\nthe line through the centre and perpendicular to the transverse axis is called the conjugate\naxis. The points at which the hyperbola\nintersects the transverse axis are called the\nvertices of the hyperbola (Fig 10.27)."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1041.0,
+            651.3,
+            1214.1
+          ],
+          "conf": 0.9,
+          "text": "We denote the distance between the\ntwo foci by $2c$, the distance between two\nvertices (the length of the transverse axis)\nby $2a$ and we define the quantity $b$ as"
+        },
+        {
+          "order": 5,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            640.6,
+            952.3,
+            1174.5,
+            1297.3
+          ],
+          "conf": 0.949,
+          "text": ""
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            827.8,
+            1294.1,
+            962.4,
+            1340.1
+          ],
+          "conf": 0.883,
+          "text": "Fig 10.28"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            1212.8,
+            318.4,
+            1277.6
+          ],
+          "conf": 0.84,
+          "text": "$$b = \\sqrt{c^2 - a^2}$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1274.5,
+            649.6,
+            1357.9
+          ],
+          "conf": 0.9,
+          "text": "Also $2b$ is the length of the conjugate axis\n(Fig 10.28)."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1363.2,
+            585.6,
+            1417.4
+          ],
+          "conf": 0.835,
+          "text": "To find the constant $\\mathrm{P}_1\\mathrm{F}_2 - \\mathrm{P}_1\\mathrm{F}_1$ :"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1417.0,
+            876.3,
+            1696.3
+          ],
+          "conf": 0.529,
+          "text": "By taking the point P at A and B in the Fig 10.28, we have\n\n$$BF_1 - BF_2 = AF_2 - AF_1 \\text{ (by the definition of the hyperbola)}$$\n\n$$BA + AF_1 - BF_2 = AB + BF_2 - AF_1$$\n\ni.e., $AF_1 = BF_2$\n\nSo that, $BF_1 - BF_2 = BA + AF_1 - BF_2 = BA = 2a$"
+        }
+      ],
+      "page": 20
+    },
+    {
+      "image": "0093_p0021.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.7,
+            258.2,
+            415.9,
+            309.5
+          ],
+          "conf": 0.891,
+          "text": "10.6.1 Eccentricity"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            325.7,
+            1178.5,
+            478.8
+          ],
+          "conf": 0.83,
+          "text": "Definition 8 Just like an ellipse, the ratio $e = \\frac{c}{a}$ is called the eccentricity of the\nhyperbola. Since $c \\ge a$, the eccentricity is never less than one. In terms of the\neccentricity, the foci are at a distance of $ae$ from the centre."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            482.0,
+            1180.3,
+            604.2
+          ],
+          "conf": 0.937,
+          "text": "10.6.2 *Standard equation of Hyperbola* The equation of a hyperbola is simplest if\nthe centre of the hyperbola is at the origin and the foci are on the $x$-axis or $y$-axis. The\ntwo such possible orientations are shown in Fig10.29."
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            135.1,
+            593.6,
+            1165.1,
+            1140.6
+          ],
+          "conf": 0.907,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            640.6,
+            1086.2,
+            774.5,
+            1134.1
+          ],
+          "conf": 0.87,
+          "text": "Fig 10.29"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1141.5,
+            1178.8,
+            1227.2
+          ],
+          "conf": 0.906,
+          "text": "We will derive the equation for the hyperbola shown in Fig 10.29(a) with $foci$ on\nthe $x$-axis."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1215.2,
+            1182.6,
+            1700.5
+          ],
+          "conf": 0.736,
+          "text": "Let $F_1$ and $F_2$ be the foci and $O$ be the mid-point of the line segment $F_1F_2$. Let $O$\nbe the origin and the line through $O$\nthrough $F_2$ be the positive $x$-axis and\nthat through $F_1$ as the negative\n$x$-axis. The line through $O$\nperpendicular to the $x$-axis be the\n$y$-axis. Let the coordinates of $F_1$ be $X'$\n$(-c,0)$ and $F_2$ be $(c,0)$ (Fig 10.30).\nLet $P(x,y)$ be any point on the\nhyperbola such that the difference\nof the distances from $P$ to the farther\npoint minus the closer point be $2a$.\nSo given, $PF_1 - PF_2 = 2a$\nFig 10.30"
+        }
+      ],
+      "page": 21
+    },
+    {
+      "image": "0093_p0022.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.3,
+            257.5,
+            658.7,
+            307.0
+          ],
+          "conf": 0.913,
+          "text": "Using the distance formula, we have"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            425.4,
+            304.4,
+            899.7,
+            372.0
+          ],
+          "conf": 0.91,
+          "text": "$$ \\sqrt{(x+c)^2 + y^2} - \\sqrt{(x-c)^2 + y^2} = 2a $$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            373.9,
+            896.7,
+            440.6
+          ],
+          "conf": 0.822,
+          "text": "i.e., $\\sqrt{(x+c)^2 + y^2} = 2a + \\sqrt{(x-c)^2 + y^2}$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            435.7,
+            465.7,
+            483.7
+          ],
+          "conf": 0.915,
+          "text": "Squaring both side, we get"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            287.7,
+            484.1,
+            1011.4,
+            544.5
+          ],
+          "conf": 0.914,
+          "text": "$$(x + c)^2 + y^2 = 4a^2 + 4a \\sqrt{(x - c)^2 + y^2} + (x - c)^2 + y^2$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            542.1,
+            462.1,
+            591.3
+          ],
+          "conf": 0.921,
+          "text": "and on simplifying, we get"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            423.2,
+            599.1,
+            754.8,
+            686.9
+          ],
+          "conf": 0.918,
+          "text": "$$ \\frac{cx}{a} - a = \\sqrt{(x-c)^2 + y^2} $$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            682.1,
+            745.4,
+            731.7
+          ],
+          "conf": 0.927,
+          "text": "On squaring again and further simplifying, we get"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            360.0,
+            734.5,
+            585.5,
+            830.9
+          ],
+          "conf": 0.922,
+          "text": "$$ \\frac{x^2}{a^2} - \\frac{y^2}{c^2 - a^2} = 1 $$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            847.4,
+            861.0,
+            939.5
+          ],
+          "conf": 0.864,
+          "text": "i.e., $\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$ (Since $c^2 - a^2 = b^2$)"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            954.0,
+            825.2,
+            1052.2
+          ],
+          "conf": 0.781,
+          "text": "Hence any point on the hyperbola satisfies $\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            1045.2,
+            1067.4,
+            1096.5
+          ],
+          "conf": 0.915,
+          "text": "Conversely, let $\\mathrm{P}(x, y)$ satisfy the above equation with $0 < a < c$. Then"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            417.4,
+            1093.5,
+            699.7,
+            1205.4
+          ],
+          "conf": 0.889,
+          "text": "$$y^2 = b^2 \\left( \\frac{x^2 - a^2}{a^2} \\right)$$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            1219.0,
+            667.0,
+            1288.6
+          ],
+          "conf": 0.753,
+          "text": "Therefore, $$PF_1 = + \\sqrt{(x+c)^2 + y^2}$$"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            397.3,
+            1292.2,
+            950.2,
+            1403.7
+          ],
+          "conf": 0.89,
+          "text": "$$= + \\sqrt{(x+c)^2 + b^2 \\left( \\frac{x^2 - a^2}{a^2} \\right)} = a + \\frac{c}{a} x$$"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            1423.9,
+            558.1,
+            1506.5
+          ],
+          "conf": 0.804,
+          "text": "Similarly, $\\text{PF}_2 = a - \\frac{a}{c}x$"
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1522.8,
+            1178.2,
+            1606.1
+          ],
+          "conf": 0.796,
+          "text": "In hyperbola $c > a$; and since P is to the right of the line $x = a, x > a, \\frac{c}{a}x > a$. Therefore,"
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            276.1,
+            1616.9,
+            939.5,
+            1704.3
+          ],
+          "conf": 0.873,
+          "text": "$a - \\frac{c}{a} x$ becomes negative. Thus, $\\text{PF}_2 = \\frac{c}{a} x - a$."
+        }
+      ],
+      "page": 22
+    },
+    {
+      "image": "0093_p0023.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            277.2,
+            939.2,
+            364.6
+          ],
+          "conf": 0.908,
+          "text": "Therefore $\\text{PF}_1 - \\text{PF}_2 = a + \\frac{c}{a}x - \\frac{cx}{a} + a = 2a$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            355.9,
+            817.4,
+            405.8
+          ],
+          "conf": 0.917,
+          "text": "Also, note that if P is to the left of the line $x = - a$, then"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            414.2,
+            407.6,
+            883.9,
+            506.9
+          ],
+          "conf": 0.934,
+          "text": "$$ \\mathrm{PF}_1 = -\\left( a + \\frac{c}{a} x \\right), \\quad \\mathrm{PF}_2 = a - \\frac{c}{a} x. $$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            516.0,
+            1177.8,
+            654.7
+          ],
+          "conf": 0.878,
+          "text": "In that case P $\\mathrm{F}_{2}-\\mathrm{PF}_{1}=2 a$. So, any point that satisfies $\\frac{x^{2}}{a^{2}}-\\frac{y^{2}}{b^{2}}=1$, lies on the\nhyperbola."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            643.7,
+            1179.1,
+            696.4
+          ],
+          "conf": 0.779,
+          "text": "Thus, we proved that the equation of hyperbola with origin $(0,0)$ and transverse axis"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            695.4,
+            494.8,
+            795.0
+          ],
+          "conf": 0.727,
+          "text": "along $x$-axis is $\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$."
+        },
+        {
+          "order": 6,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.5,
+            784.5,
+            1179.0,
+            861.3
+          ],
+          "conf": 0.887,
+          "text": "Note A hyperbola in which $a = b$ is called an equilateral hyperbola."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            856.5,
+            1177.8,
+            1008.7
+          ],
+          "conf": 0.83,
+          "text": "**Discussion** From the equation of the hyperbola we have obtained, it follows that, we\n\nhave for every point $(x, y)$ on the hyperbola, $\\frac{x^2}{a^2} = 1 + \\frac{y^2}{b^2} \\ge 1$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1033.8,
+            1178.5,
+            1174.4
+          ],
+          "conf": 0.872,
+          "text": "i.e, $\\left| \\frac{x}{a} \\right| \\geq 1$, i.e., $x \\leq -a$ or $x \\geq a$. Therefore, no portion of the curve lies between the\nlines $x = + a$ and $x = - a$, (i.e. no real intercept on the conjugate axis)."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1195.1,
+            1175.8,
+            1334.2
+          ],
+          "conf": 0.841,
+          "text": "Similarly, we can derive the equation of the hyperbola in Fig 11.31 (b) as $\\frac{y^2}{a^2} - \\frac{x^2}{b^2} = 1$\n\nThese two equations are known as the standard equations of hyperbolas."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1289.3,
+            1068.7,
+            1339.9
+          ],
+          "conf": 0.739,
+          "text": "These two equations are known as the \\textit{standard equations} of \\textit{hyperbolas}."
+        },
+        {
+          "order": 11,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.9,
+            1333.6,
+            1178.3,
+            1522.7
+          ],
+          "conf": 0.948,
+          "text": "Note The standard equations of hyperbolas have transverse and conjugate\naxes as the coordinate axes and the centre at the origin. However, there are\nhyperbolas with any two perpendicular lines as transverse and conjugate axes, but\nthe study of such cases will be dealt in higher classes."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1530.8,
+            1178.7,
+            1615.4
+          ],
+          "conf": 0.925,
+          "text": "From the standard equations of hyperbolas (Fig10.27), we have the following\nobservations:"
+        },
+        {
+          "order": 13,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            1616.1,
+            1177.8,
+            1703.5
+          ],
+          "conf": 0.91,
+          "text": "1. Hyperbola is symmetric with respect to both the axes, since if $(x, y)$ is a point on\nthe hyperbola, then $(-x, y)$, $(x, -y)$ and $(-x, -y)$ are also points on the hyperbola."
+        }
+      ],
+      "page": 23
+    },
+    {
+      "image": "0093_p0024.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            257.5,
+            1177.3,
+            549.1
+          ],
+          "conf": 0.732,
+          "text": "2.    The foci are always on the transverse axis.  It is the positive term whose\ndenominator gives the transverse axis.  For example, $\\frac{x^2}{9} - \\frac{y^2}{16} = 1$\nhas transverse axis along $x$-axis of length 6, while $\\frac{y^2}{25} - \\frac{x^2}{16} = 1$\nhas transverse axis along y-axis of length 10."
+        },
+        {
+          "order": 1,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.9,
+            568.1,
+            409.9,
+            616.4
+          ],
+          "conf": 0.89,
+          "text": "10.6.3 Latus rectum"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            620.0,
+            1178.5,
+            708.1
+          ],
+          "conf": 0.933,
+          "text": "Definition 9 Latus rectum of hyperbola is a line segment perpendicular to the transverse\naxis through any of the foci and whose end points lie on the hyperbola."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            710.0,
+            1176.9,
+            800.7
+          ],
+          "conf": 0.844,
+          "text": "As in ellipse, it is easy to show that the length of the latus rectum in hyperbola is $\\frac{2b^2}{a}$."
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            794.8,
+            1177.4,
+            979.4
+          ],
+          "conf": 0.745,
+          "text": "Example 14 Find the coordinates of the foci and the vertices, the eccentricity,the\nlength of the latus rectum of the hyperbolas:\n\n(i) $\\frac{x^2}{9} - \\frac{y^2}{16} = 1$, (ii) $y^2 - 16x^2 = 16$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            990.7,
+            1171.6,
+            1087.2
+          ],
+          "conf": 0.763,
+          "text": "Solution (i) Comparing the equation $\\frac{x^2}{9} - \\frac{y^2}{16} = 1$ with the standard equation"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            190.8,
+            1090.0,
+            358.9,
+            1187.9
+          ],
+          "conf": 0.873,
+          "text": "$$ \\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1 $$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1183.5,
+            763.9,
+            1252.7
+          ],
+          "conf": 0.779,
+          "text": "Here, $a=3$, $b=4$ and $c = \\sqrt{a^2 + b^2} = \\sqrt{9 + 16} = 5$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1259.9,
+            1178.3,
+            1312.7
+          ],
+          "conf": 0.857,
+          "text": "Therefore, the coordinates of the foci are $(\\pm 5, 0)$ and that of vertices are $(\\pm 3, 0)$.Also,"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1313.3,
+            854.6,
+            1410.2
+          ],
+          "conf": 0.776,
+          "text": "The eccentricity $e = \\frac{c}{a} = \\frac{5}{3}$. The latus rectum $= \\frac{2b^2}{a} = \\frac{32}{3}$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.3,
+            1415.3,
+            1024.9,
+            1508.6
+          ],
+          "conf": 0.725,
+          "text": "(ii) Dividing the equation by 16 on both sides, we have $\\frac{v^2}{16} - \\frac{x^2}{1} = 1$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1517.1,
+            1083.8,
+            1616.7
+          ],
+          "conf": 0.787,
+          "text": "Comparing the equation with the standard equation $\\frac{y^2}{a^2} - \\frac{x^2}{b^2} = 1$, we find that"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            1620.1,
+            739.0,
+            1686.6
+          ],
+          "conf": 0.737,
+          "text": "$$a=4, \\ b=1 \\text{ and } \\ c=\\sqrt{a^2+b^2} = \\sqrt{16+1} = \\sqrt{17}.$$"
+        }
+      ],
+      "page": 24
+    },
+    {
+      "image": "0093_p0025.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            269.6,
+            1178.5,
+            363.5
+          ],
+          "conf": 0.949,
+          "text": "Therefore, the coordinates of the foci are $(0, \\pm \\sqrt{17})$ and that of the vertices are\n$(0, \\pm 4)$. Also,"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            368.4,
+            884.4,
+            467.4
+          ],
+          "conf": 0.855,
+          "text": "The eccentricity $e = \\frac{c}{a} = \\frac{\\sqrt{17}}{4}$. The latus rectum $= \\frac{2b^2}{a} = \\frac{1}{2}$."
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            458.5,
+            1177.5,
+            601.7
+          ],
+          "conf": 0.821,
+          "text": "Example 15 Find the equation of the hyperbola with foci $(0, \\pm 3)$ and vertices\n$(0, \\pm \\frac{\\sqrt{11}}{2})$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            613.9,
+            1178.7,
+            666.5
+          ],
+          "conf": 0.84,
+          "text": "Solution Since the foci is on y-axis, the equation of the hyperbola is of the form"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            124.2,
+            668.2,
+            292.0,
+            764.4
+          ],
+          "conf": 0.859,
+          "text": "$$ \\frac{y^2}{a^2} - \\frac{x^2}{b^2} = 1 $$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            762.3,
+            685.1,
+            863.0
+          ],
+          "conf": 0.83,
+          "text": "Since vertices are $(0, \\pm \\frac{\\sqrt{11}}{2} ), \\quad a = \\frac{\\sqrt{11}}{2}$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            859.9,
+            847.2,
+            944.9
+          ],
+          "conf": 0.772,
+          "text": "Also, since foci are $(0, \\pm 3)$; $c = 3$ and $b^2 = c^2 - a^2 = \\frac{25}{4}$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            935.4,
+            664.4,
+            985.3
+          ],
+          "conf": 0.847,
+          "text": "Therefore, the equation of the hyperbola is"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            357.2,
+            989.3,
+            946.0,
+            1133.0
+          ],
+          "conf": 0.911,
+          "text": "$$\\frac{y^2}{\\left(\\frac{11}{4}\\right)} - \\frac{x^2}{\\left(\\frac{25}{4}\\right)} = 1, \\text{ i.e., } 100 y^2 - 44 x^2 = 275.$$"
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1147.8,
+            1182.7,
+            1725.2
+          ],
+          "conf": 0.704,
+          "text": "Example 16 Find the equation of the hyperbola where foci are $(0, \\pm 12)$ and the length\nof the latus rectum is 36.\n\nSolution Since foci are $(0, \\pm 12)$, it follows that $c = 12$.\n\nLength of the latus rectum = $\\frac{2b^2}{a} = 36$ or $b^2 = 18a$\nTherefore $c^2 = a^2 + b^2$; gives\n$144 = a^2 + 18a$\ni.e., $a^2 + 18a - 144 = 0$,\nSo $a = -24, 6$.\nSince $a$ cannot be negative, we take $a = 6$ and so $b^2 = 108$.\n\nTherefore, the equation of the required hyperbola is $\\frac{y^2}{36} - \\frac{x^2}{108} = 1$, i.e., $3y^2 - x^2 = 108$"
+        }
+      ],
+      "page": 25
+    },
+    {
+      "image": "0093_p0026.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            491.7,
+            261.1,
+            765.8,
+            320.7
+          ],
+          "conf": 0.814,
+          "text": "EXERCISE 10.4"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            323.8,
+            1179.1,
+            408.9
+          ],
+          "conf": 0.948,
+          "text": "In each of the Exercises 1 to 6, find the coordinates of the foci and the vertices, the\neccentricity and the length of the latus rectum of the hyperbolas."
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.8,
+            409.6,
+            1121.8,
+            548.3
+          ],
+          "conf": 0.858,
+          "text": "**1.** $\\frac{x^2}{16} - \\frac{y^2}{9} = 1$\n**2.** $\\frac{y^2}{9} - \\frac{x^2}{27} = 1$\n**3.** $9y^2 - 4x^2 = 36$\n**4.** $16x^2 - 9y^2 = 576$\n**5.** $5y^2 - 9x^2 = 36$\n**6.** $49y^2 - 16x^2 = 784.$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            544.0,
+            1178.8,
+            628.5
+          ],
+          "conf": 0.939,
+          "text": "In each of the Exercises 7 to 15, find the equations of the hyperbola satisfying the given\nconditions."
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.2,
+            625.3,
+            794.7,
+            1075.4
+          ],
+          "conf": 0.574,
+          "text": "7. Vertices $(\\pm 2, 0)$, foci $(\\pm 3, 0)$\n8. Vertices $(0, \\pm 5)$, foci $(0, \\pm 8)$\n9. Vertices $(0, \\pm 3)$, foci $(0, \\pm 5)$\n10. Foci $(\\pm 5, 0)$, the transverse axis is of length 8.\n11. Foci $(0, \\pm 13)$, the conjugate axis is of length 24.\n12. Foci $(\\pm 3 \\sqrt{5}, 0)$, the latus rectum is of length 8.\n13. Foci $(\\pm 4, 0)$, the latus rectum is of length 12\n\n\n14. vertices $(\\pm 7, 0)$, $e = \\frac{4}{3}$.\n15. Foci $(0, \\pm \\sqrt{10})$, passing through (2,3)"
+        },
+        {
+          "order": 5,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            467.0,
+            1096.1,
+            833.3,
+            1150.5
+          ],
+          "conf": 0.782,
+          "text": "Miscellaneous Examples"
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1154.2,
+            1181.7,
+            1629.4
+          ],
+          "conf": 0.792,
+          "text": "Example 17 The focus of a parabolic mirror as shown in Fig 10.31 is at a distance of\n5 cm from its vertex. If the mirror is 45 cm deep, find\nthe distance AB (Fig 10.31).\nSolution Since the distance from the focus to the\nvertex is 5 cm. We have, $a = 5$. If the origin is taken at\nthe vertex and the axis of the mirror lies along the\npositive $x$-axis, the equation of the parabolic section is\n$$y^2 = 4 \\quad (5) \\quad x = 20 \\ x$$\nNote that $x = 45$. Thus\n$$y^2 = 900$$\nTherefore $y = \\pm 30$\nHence $$AB = 2y = 2 \\times 30 = 60 \\text{ cm}.$$"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1627.2,
+            1179.5,
+            1713.8
+          ],
+          "conf": 0.864,
+          "text": "Example 18 A beam is supported at its ends by $\\mathbf{Fig}$ 10.31\nsupports which are 12 metres apart. Since the load is concentrated at its centre, there"
+        }
+      ],
+      "page": 26
+    },
+    {
+      "image": "0093_p0027.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            258.2,
+            1176.4,
+            343.5
+          ],
+          "conf": 0.952,
+          "text": "is a deflection of 3 cm at the centre and the deflected beam is in the shape of a\nparabola. How far from the centre is the deflection 1 cm?"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            348.1,
+            1175.8,
+            432.1
+          ],
+          "conf": 0.937,
+          "text": "Solution Let the vertex be at the lowest point and the axis vertical. Let the coordinate\naxis be chosen as shown in Fig 10.32."
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            274.8,
+            424.7,
+            1018.9,
+            758.9
+          ],
+          "conf": 0.955,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            580.2,
+            761.3,
+            714.0,
+            807.7
+          ],
+          "conf": 0.924,
+          "text": "Fig 10.32"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            126.1,
+            809.4,
+            1175.5,
+            960.4
+          ],
+          "conf": 0.8,
+          "text": "The equation of the parabola takes the form $x^2 = 4ay$. Since it passes through\n$\\left(6, \\frac{3}{100}\\right)$, we have $(6)^2 = 4a \\left(\\frac{3}{100}\\right)$, i.e., $a = \\frac{36 \\times 100}{12} = 300 \\text{ m}$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            969.8,
+            1173.9,
+            1064.2
+          ],
+          "conf": 0.859,
+          "text": "Let AB be the deflection of the beam which is $\\frac{1}{100}$ m. Coordinates of B are $(x, \\frac{2}{100})$."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            122.2,
+            1067.4,
+            829.9,
+            1213.9
+          ],
+          "conf": 0.56,
+          "text": "Therefore $x^2 = 4 \\times 300 \\times \\frac{2}{100} = 24$\ni.e. $x = \\sqrt{24} = 2\\sqrt{6}$ metres"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            1224.7,
+            1176.0,
+            1700.5
+          ],
+          "conf": 0.722,
+          "text": "Example 19 A rod AB of length 15 cm rests in between two coordinate axes in such\na way that the end point A lies on $x$-axis and end point B lies on\n$y$-axis. A point P$(x, y)$ is taken on the rod in such a way\nthat AP = 6 cm. Show that the locus of P is an ellipse.\nSolution Let AB be the rod making an angle $\\theta$ with\nOX as shown in Fig 10.33 and P $(x, y)$ the point on it\nsuch that AP = 6 cm.\nSince AB = 15 cm, we have\nPB = 9 cm.\nFrom P draw PQ and PR perpendiculars on $y$-axis and\n$x$-axis, respectively."
+        }
+      ],
+      "page": 27
+    },
+    {
+      "image": "0093_p0028.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            277.4,
+            682.0,
+            361.6
+          ],
+          "conf": 0.897,
+          "text": "From $\\Delta$ PBQ, $\\cos \\theta = \\frac{x}{9}$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            384.4,
+            675.7,
+            468.2
+          ],
+          "conf": 0.886,
+          "text": "From $\\Delta$ PRA, $\\sin \\theta = \\frac{y}{6}$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            468.5,
+            461.5,
+            518.1
+          ],
+          "conf": 0.795,
+          "text": "Since $\\cos^2 \\theta + \\sin^2 \\theta = 1$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            423.0,
+            529.0,
+            649.5,
+            632.3
+          ],
+          "conf": 0.917,
+          "text": "$$ \\left(\\frac{x}{9}\\right)^2 + \\left(\\frac{y}{6}\\right)^2 = 1 $$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            649.4,
+            579.7,
+            745.2
+          ],
+          "conf": 0.894,
+          "text": "or $$\\frac{x^2}{81} + \\frac{y^2}{36} = 1$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            746.7,
+            536.1,
+            796.1
+          ],
+          "conf": 0.921,
+          "text": "Thus the locus of P is an ellipse."
+        },
+        {
+          "order": 6,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            370.0,
+            817.0,
+            929.4,
+            869.4
+          ],
+          "conf": 0.793,
+          "text": "Miscellaneous Exercise on Chapter 10"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            874.0,
+            1179.1,
+            1704.5
+          ],
+          "conf": 0.981,
+          "text": "1. If a parabolic reflector is 20 cm in diameter and 5 cm deep, find the focus.\n2. An arch is in the form of a parabola with its axis vertical. The arch is 10 m high\nand 5 m wide at the base. How wide is it 2 m from the vertex of the parabola?\n3. The cable of a uniformly loaded suspension bridge hangs in the form of a parabola.\nThe roadway which is horizontal and 100 m long is supported by vertical wires\nattached to the cable, the longest wire being 30 m and the shortest being 6 m.\nFind the length of a supporting wire attached to the roadway 18 m from the\nmiddle.\n4. An arch is in the form of a semi-ellipse. It is 8 m wide and 2 m high at the centre.\nFind the height of the arch at a point 1.5 m from one end.\n5. A rod of length 12 cm moves with its ends always touching the coordinate axes.\nDetermine the equation of the locus of a point P on the rod, which is 3 cm from\nthe end in contact with the $x$-axis.\n6. Find the area of the triangle formed by the lines joining the vertex of the parabola\n$x^2 = 12y$ to the ends of its latus rectum.\n7. A man running a racecourse notes that the sum of the distances from the two flag\nposts from him is always 10 m and the distance between the flag posts is 8 m.\nFind the equation of the posts traced by the man.\n8. An equilateral triangle is inscribed in the parabola $y^2 = 4 \\ ax$, where one vertex is\nat the vertex of the parabola. Find the length of the side of the triangle."
+        }
+      ],
+      "page": 28
+    },
+    {
+      "image": "0093_p0029.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            569.5,
+            283.1,
+            729.2,
+            334.6
+          ],
+          "conf": 0.852,
+          "text": "Summary"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            357.0,
+            995.4,
+            407.9
+          ],
+          "conf": 0.921,
+          "text": "In this Chapter the following concepts and generalisations are studied."
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            157.2,
+            413.8,
+            1148.2,
+            1686.2
+          ],
+          "conf": 0.967,
+          "text": "A circle is the set of all points in a plane that are equidistant from a fixed point\nin the plane.\nThe equation of a circle with centre $(h, k)$ and the radius $r$ is\n$$(x - h)^2 + (y - k)^2 = r^2.$$\nA parabola is the set of all points in a plane that are equidistant from a fixed\nline and a fixed point in the plane.\nThe equation of the parabola with focus at $(a, 0)$ $a > 0$ and directrix $x = -a$ is\n$$y^2 = 4ax.$$\nLatus rectum of a parabola is a line segment perpendicular to the axis of the\nparabola, through the focus and whose end points lie on the parabola.\nLength of the latus rectum of the parabola $y^2 = 4ax$ is $4a$.\nAn $ellipse$ is the set of all points in a plane, the sum of whose distances from\ntwo fixed points in the plane is a constant.\n\nThe equation of an ellipse with foci on the $x$-axis is $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$.\n\nLatus rectum of an ellipse is a line segment perpendicular to the major axis\nthrough any of the foci and whose end points lie on the ellipse.\n\nLength of the latus rectum of the ellipse $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$ is $\\frac{2b^2}{a}$ .\n\nThe eccentricity of an ellipse is the ratio between the distances from the centre\nof the ellipse to one of the foci and to one of the vertices of the ellipse.\nA hyperbola is the set of all points in a plane, the difference of whose distances\nfrom two fixed points in the plane is a constant.\n\nThe equation of a hyperbola with foci on the $x$-axis is : $\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$"
+        }
+      ],
+      "page": 29
+    },
+    {
+      "image": "0093_p0030.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.9,
+            270.2,
+            1149.3,
+            635.7
+          ],
+          "conf": 0.927,
+          "text": "$\\diamond$ Latus rectum of hyperbola is a line segment perpendicular to the transverse\naxis through any of the foci and whose end points lie on the hyperbola.\n\n\n$\\diamond$ Length of the latus rectum of the hyperbola : $\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$ is : $\\frac{2b^2}{a}$ .\n\n\n$\\diamond$ The eccentricity of a hyperbola is the ratio of the distances from the centre of\nthe hyperbola to one of the foci and to one of the vertices of the hyperbola."
+        },
+        {
+          "order": 1,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.0,
+            688.4,
+            1162.8,
+            1689.7
+          ],
+          "conf": 0.726,
+          "text": "\\textit{Historical Note}\n\nGeometry is one of the most ancient branches of mathematics. The Greek\ngeometers investigated the properties of many curves that have theoretical and\npractical importance. Euclid wrote his treatise on geometry around 300 B.C. He\nwas the first who organised the geometric figures based on certain axioms\nsuggested by physical considerations. Geometry as initially studied by the ancient\nIndians and Greeks, who made essentially no use of the process of algebra. The\nsynthetic approach to the subject of geometry as given by Euclid and in\n\\textit{Sulbasutras}, etc., was continued for some 1300 years. In the 200 B.C., Apollonius\nwrote a book called ‘\\textit{The Conic}’ which was all about conic sections with many\nimportant discoveries that have remained unsurpassed for eighteen centuries.\nModern analytic geometry is called ‘\\textit{Cartesian}’ after the name of Rene\nDescartes (1596-1650) whose relevant ‘La Geometrie’ was published in 1637.\nBut the fundamental principle and method of analytical geometry were already\ndiscovered by Pierre de Fermat (1601-1665). Unfortunately, Fermats treatise on\nthe subject, entitled \\textit{Ad Locus Planos et So LIDOS Isagoge} (Introduction to\nPlane and Solid Loci) was published only posthumously in\n1679. So, Descartes came to be regarded as the unique inventor of the analytical\ngeometry.\nIsaac Barrow avoided using cartesian method. Newton used method of\nundetermined coefficients to find equations of curves. He used several types of\ncoordinates including polar and bipolar. Leibnitz used the terms ‘\\textit{abscissa}’,\n‘\\textit{ordinate}’ and ‘\\textit{coordinate}’. L’Hospital (about 1700) wrote an important textbook\non analytical geometry.\nClairaut (1729) was the first to give the distance formula although in clumsy\nform. He also gave the intercept form of the linear equation. Cramer (1750)"
+        }
+      ],
+      "page": 30
+    },
+    {
+      "image": "0093_p0031.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            151.3,
+            272.8,
+            1022.3,
+            321.1
+          ],
+          "conf": 0.883,
+          "text": "made formal use of the two axes and gave the equation of a circle as"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            619.7,
+            308.4,
+            924.2,
+            358.7
+          ],
+          "conf": 0.864,
+          "text": "$$(y - a)^2 + (b - x)^2 = r$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            218.0,
+            346.2,
+            1145.3,
+            431.3
+          ],
+          "conf": 0.939,
+          "text": "He gave the best exposition of the analytical geometry of his time. Monge\n(1781) gave the modern ‘point-slope’ form of equation of a line as"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            510.6,
+            419.5,
+            760.9,
+            469.5
+          ],
+          "conf": 0.865,
+          "text": "$$y - y' = a(x - x')$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            218.7,
+            456.4,
+            1024.3,
+            505.4
+          ],
+          "conf": 0.886,
+          "text": "and the condition of perpendicularity of two lines as $aa' + 1 = 0$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            151.6,
+            491.2,
+            1147.2,
+            613.7
+          ],
+          "conf": 0.949,
+          "text": "S.F. Lacroix (1765–1843) was a prolific textbook writer, but his contributions\nto analytical geometry are found scattered. He gave the ‘two-point’ form of\nequation of a line as"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            519.7,
+            615.4,
+            795.2,
+            707.6
+          ],
+          "conf": 0.921,
+          "text": "$$y - \\beta = \\frac{\\beta' - \\beta}{\\alpha' - \\alpha} (x - \\alpha)$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            151.3,
+            714.0,
+            1123.5,
+            821.4
+          ],
+          "conf": 0.78,
+          "text": "and the length of the perpendicular from $(\\alpha, \\beta)$ on $y = ax + b$ as $\\frac{(\\beta - a - b)}{\\sqrt{1 + a^2}}$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            150.9,
+            833.9,
+            1148.3,
+            938.0
+          ],
+          "conf": 0.791,
+          "text": "His formula for finding angle between two lines was $\\tan \\theta = \\left( \\frac{a' - a}{1 + aa'} \\right)$. It is, of"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            151.6,
+            935.0,
+            1146.0,
+            1092.1
+          ],
+          "conf": 0.934,
+          "text": "course, surprising that one has to wait for more than 150 years after the invention\nof analytical geometry before finding such essential basic formula. In 1818, C.\nLame, a civil engineer, gave $m\\mathrm{E} + m'\\mathrm{E}' = 0$ as the curve passing through the\npoints of intersection of two loci $\\mathrm{E} = 0$ and $\\mathrm{E}' = 0$."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            152.4,
+            1081.7,
+            1146.7,
+            1274.7
+          ],
+          "conf": 0.939,
+          "text": "Many important discoveries, both in Mathematics and Science, have been\nlinked to the conic sections. The Greeks particularly Archimedes (287–212 B.C.)\nand Apollonius (200 B.C.) studied conic sections for their own beauty. These\ncurves are important tools for present day exploration of outer space and also for\nresearch into behaviour of atomic particles."
+        },
+        {
+          "order": 11,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            567.8,
+            1516.6,
+            735.3,
+            1565.8
+          ],
+          "conf": 0.698,
+          "text": ""
+        }
+      ],
+      "page": 31
+    }
+  ]
+}

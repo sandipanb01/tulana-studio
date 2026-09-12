@@ -1,0 +1,1621 @@
+{
+  "book": "1012",
+  "relpath": "dataset/input/eng/10/1012.pdf",
+  "num_pages": 10,
+  "pages": [
+    {
+      "image": "0081_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            544.7,
+            217.2,
+            755.8,
+            445.0
+          ],
+          "conf": 0.894,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            605.4,
+            409.6,
+            698.1,
+            444.8
+          ],
+          "conf": 0.588,
+          "text": "$1062\\mathrm{CH}13$"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            370.1,
+            470.2,
+            1179.6,
+            641.1
+          ],
+          "conf": 0.912,
+          "text": "SURFACE AREAS AND\nVOLUMES 12"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.0,
+            709.3,
+            389.5,
+            760.4
+          ],
+          "conf": 0.905,
+          "text": "12.1 Introduction"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            765.9,
+            1176.6,
+            853.1
+          ],
+          "conf": 0.954,
+          "text": "From Class IX, you are familiar with some of the solids like cuboid, cone, cylinder, and\nsphere (see Fig. 12.1). You have also learnt how to find their surface areas and volumes."
+        },
+        {
+          "order": 5,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            138.4,
+            877.2,
+            1160.1,
+            1174.6
+          ],
+          "conf": 0.87,
+          "text": ""
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            575.0,
+            1217.5,
+            720.7,
+            1268.8
+          ],
+          "conf": 0.885,
+          "text": "Fig. 12.1"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1277.6,
+            1179.0,
+            1360.8
+          ],
+          "conf": 0.935,
+          "text": "In our day-to-day life, we come across a number of solids made up of combinations\nof two or more of the basic solids as shown above."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1362.7,
+            680.3,
+            1627.2
+          ],
+          "conf": 0.961,
+          "text": "You must have seen a truck with a\ncontainer fitted on its back (see Fig. 12.2),\ncarrying oil or water from one place to\nanother. Is it in the shape of any of the four\nbasic solids mentioned above? You may\nguess that it is made of a cylinder with two\nhemispheres as its ends."
+        },
+        {
+          "order": 9,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            676.5,
+            1357.7,
+            1176.1,
+            1633.8
+          ],
+          "conf": 0.88,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            844.0,
+            1640.8,
+            989.2,
+            1692.5
+          ],
+          "conf": 0.869,
+          "text": "Fig. 12.2"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0081_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            258.6,
+            778.7,
+            524.8
+          ],
+          "conf": 0.975,
+          "text": "Again, you may have seen an object like the\none in Fig. 12.3. Can you name it? A test tube, right!\nYou would have used one in your science laboratory.\nThis tube is also a combination of a cylinder and a\nhemisphere. Similarly, while travelling, you may have\nseen some big and beautiful buildings or monuments\nmade up of a combination of solids mentioned above."
+        },
+        {
+          "order": 1,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            926.0,
+            265.2,
+            1071.8,
+            618.6
+          ],
+          "conf": 0.824,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            891.7,
+            625.7,
+            1037.7,
+            675.4
+          ],
+          "conf": 0.908,
+          "text": "Fig. 12.3"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            527.6,
+            778.4,
+            682.9
+          ],
+          "conf": 0.955,
+          "text": "If for some reason you wanted to find the\nsurface areas, or volumes, or capacities of such\nobjects, how would you do it? We cannot classify\nthese under any of the solids you have already studied."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            684.4,
+            1178.3,
+            767.6
+          ],
+          "conf": 0.939,
+          "text": "In this chapter, you will see how to find surface areas and volumes of such\nobjects."
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.0,
+            781.3,
+            772.6,
+            832.8
+          ],
+          "conf": 0.899,
+          "text": "12.2 Surface Area of a Combination of Solids"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            834.3,
+            1179.1,
+            1027.5
+          ],
+          "conf": 0.973,
+          "text": "Let us consider the container seen in Fig. 12.2. How do we find the surface area of\nsuch a solid? Now, whenever we come across a new problem, we first try to see, if\nwe can break it down into smaller problems, we have earlier solved. We can see that\nthis solid is made up of a cylinder with two hemispheres stuck at either end. It would\nlook like what we have in Fig. 12.4, after we put the pieces all together."
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            166.8,
+            1044.4,
+            1130.0,
+            1162.8
+          ],
+          "conf": 0.894,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            575.9,
+            1175.9,
+            722.1,
+            1225.1
+          ],
+          "conf": 0.886,
+          "text": "Fig. 12.4"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1232.9,
+            1178.1,
+            1319.2
+          ],
+          "conf": 0.931,
+          "text": "If we consider the surface of the newly formed object, we would be able to see\nonly the curved surfaces of the two hemispheres and the curved surface of the cylinder."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1319.2,
+            1177.7,
+            1403.7
+          ],
+          "conf": 0.923,
+          "text": "So, the \\textit{total} surface area of the new solid is the sum of the \\textit{curved} surface\nareas of each of the individual parts. This gives,"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            188.2,
+            1403.0,
+            985.0,
+            1498.5
+          ],
+          "conf": 0.897,
+          "text": "TSA of new solid = CSA of one hemisphere + CSA of cylinder\n+ CSA of other hemisphere"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1497.6,
+            1175.3,
+            1582.9
+          ],
+          "conf": 0.914,
+          "text": "where TSA, CSA stand for ‘Total Surface Area’ and ‘Curved Surface Area’\nrespectively."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1582.9,
+            1178.7,
+            1702.8
+          ],
+          "conf": 0.928,
+          "text": "Let us now consider another situation. Suppose we are making a toy by putting\ntogether a hemisphere and a cone. Let us see the steps that we would be going\nthrough."
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0081_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            257.3,
+            1178.2,
+            415.7
+          ],
+          "conf": 0.973,
+          "text": "First, we would take a cone and a hemisphere and bring their flat faces together.\nHere, of course, we would take the base radius of the cone equal to the radius of the\nhemisphere, for the toy is to have a smooth surface. So, the steps would be as shown\nin Fig. 12.5."
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            122.3,
+            387.6,
+            1179.0,
+            690.8
+          ],
+          "conf": 0.948,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            575.8,
+            684.2,
+            721.2,
+            734.0
+          ],
+          "conf": 0.919,
+          "text": "Fig. 12.5"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            741.4,
+            1178.2,
+            899.5
+          ],
+          "conf": 0.963,
+          "text": "At the end of our trial, we have got ourselves a nice round-bottomed toy. Now if\nwe want to find how much paint we would require to colour the surface of this toy,\nwhat would we need to know? We would need to know the surface area of the toy,\nwhich consists of the CSA of the hemisphere and the CSA of the cone."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            900.6,
+            337.5,
+            947.3
+          ],
+          "conf": 0.883,
+          "text": "So, we can say:"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            235.3,
+            947.1,
+            1083.9,
+            996.9
+          ],
+          "conf": 0.752,
+          "text": "Total surface area of the toy = CSA of hemisphere + CSA of cone"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.8,
+            996.4,
+            668.1,
+            1045.2
+          ],
+          "conf": 0.849,
+          "text": "Now, let us consider some examples."
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1055.5,
+            1082.0,
+            1368.2
+          ],
+          "conf": 0.504,
+          "text": "Example 1 : Rasheed got a playing top ($lattu$) as his\nbirthday present, which surprisingly had no colour on\nit. He wanted to colour it with his crayons. The top is\nshaped like a cone surmounted by a hemisphere\n(see Fig 12.6). The entire top is 5 cm in height and\nthe diameter of the top is 3.5 cm. Find the area he\n\nhas to colour. (Take $\\pi = \\frac{22}{7}$ )"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            1287.2,
+            508.8,
+            1379.6
+          ],
+          "conf": 0.635,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1385.1,
+            1178.3,
+            1471.4
+          ],
+          "conf": 0.855,
+          "text": "Solution : This top is exactly like the object we have discussed in Fig. 12.5. So, we\ncan conveniently use the result we have arrived at there. That is :"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.8,
+            1469.5,
+            997.0,
+            1519.4
+          ],
+          "conf": 0.749,
+          "text": "TSA of the toy = CSA of hemisphere + CSA of cone"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            1519.4,
+            1091.1,
+            1713.6
+          ],
+          "conf": 0.759,
+          "text": "Now, the curved surface area of the hemisphere $= \\frac{1}{2}(4\\pi r^2) = 2\\pi r^2$\n\n$= \\left( 2 \\times \\frac{22}{7} \\times \\frac{3.5}{2} \\times \\frac{3.5}{2} \\right) \\text{cm}^2$"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0081_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            256.9,
+            1177.5,
+            419.1
+          ],
+          "conf": 0.641,
+          "text": "Also, the height of the cone = height of the top – height (radius) of the hemispherical part\n\n$$= \\left( 5 - \\frac{3.5}{2} \\right) \\text{cm} = 3.25 \\text{ cm}$$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            430.5,
+            1178.8,
+            546.8
+          ],
+          "conf": 0.914,
+          "text": "So, the slant height of the cone $(l) = \\sqrt{r^2 + h^2} = \\sqrt{\\left(\\frac{3.5}{2}\\right)^2 + (3.25)^2}$ cm $= 3.7$ cm (approx.)"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            556.1,
+            820.0,
+            653.8
+          ],
+          "conf": 0.916,
+          "text": "Therefore, CSA of cone = $\\pi rl = \\left( \\frac{22}{7} \\times \\frac{3.5}{2} \\times 3.7 \\right) \\text{ cm}^2$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            650.2,
+            640.6,
+            700.0
+          ],
+          "conf": 0.903,
+          "text": "This gives the surface area of the top as"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            200.3,
+            699.0,
+            1129.2,
+            897.9
+          ],
+          "conf": 0.792,
+          "text": "$$= \\left( 2 \\times \\frac{22}{7} \\times \\frac{3.5}{2} \\times \\frac{3.5}{2} \\right) \\text{cm}^2 + \\left( \\frac{22}{7} \\times \\frac{3.5}{2} \\times 3.7 \\right) \\text{cm}^2$$\n$$= \\frac{22}{7} \\times \\frac{3.5}{2} (3.5 + 3.7) \\text{ cm}^2 = \\frac{11}{2} \\times (3.5 + 3.7) \\text{ cm}^2 = 39.6 \\text{ cm}^2 \\text{ (approx.)}$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            892.4,
+            1178.1,
+            976.4
+          ],
+          "conf": 0.926,
+          "text": "You may note that ‘total surface area of the top’ is *not* the sum of the total\nsurface areas of the cone and hemisphere."
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            989.7,
+            678.9,
+            1312.3
+          ],
+          "conf": 0.891,
+          "text": "Example 2 : The decorative block shown\nin Fig. 12.7 is made of two solids — a cube\nand a hemisphere. The base of the block is a\ncube with edge 5 cm, and the hemisphere\nfixed on the top has a diameter of 4.2 cm.\nFind the total surface area of the block.\n(Take $\\pi = \\frac{22}{7}$ )"
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            732.5,
+            942.6,
+            1100.2,
+            1276.4
+          ],
+          "conf": 0.962,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            837.1,
+            1271.9,
+            981.9,
+            1321.8
+          ],
+          "conf": 0.907,
+          "text": "Fig. 12.7"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1329.4,
+            1176.6,
+            1459.4
+          ],
+          "conf": 0.842,
+          "text": "**Solution :** The total surface area of the cube $= 6 \\times (\\text{edge})^2 = 6 \\times 5 \\times 5 \\text{ cm}^2 = 150 \\text{ cm}^2$.\nNote that the part of the cube where the hemisphere is attached is not included in the\nsurface area."
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            1455.0,
+            1169.6,
+            1726.9
+          ],
+          "conf": 0.904,
+          "text": "So, the surface area of the block = TSA of cube – base area of hemisphere\n+ CSA of hemisphere\n= $150 - \\pi r^2 + 2 \\pi r^2 = (150 + \\pi r^2) \\text{ cm}^2$\n= $150 \\text{ cm}^2 + \\left( \\frac{22}{7} \\times \\frac{4.2}{2} \\times \\frac{4.2}{2} \\right) \\text{ cm}^2$\n= $(150 + 13.86) \\text{ cm}^2 = 163.86 \\text{ cm}^2$"
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0081_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.6,
+            191.5,
+            1177.1,
+            237.7
+          ],
+          "conf": 0.74,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.9,
+            192.3,
+            464.9,
+            237.5
+          ],
+          "conf": 0.508,
+          "text": "SURFACE AREAS AND VOLUMES"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            270.4,
+            678.9,
+            706.2
+          ],
+          "conf": 0.914,
+          "text": "Example 3 : A wooden toy rocket is in the\nshape of a cone mounted on a cylinder, as\nshown in Fig. 12.8. The height of the entire\nrocket is 26 cm, while the height of the conical\npart is 6 cm. The base of the conical portion\nhas a diameter of 5 cm, while the base\ndiameter of the cylindrical portion is 3 cm. If\nthe conical portion is to be painted orange\nand the cylindrical portion yellow, find the\narea of the rocket painted with each of these\ncolours. (Take $\\pi = 3.14$)"
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            670.9,
+            274.2,
+            1191.2,
+            840.8
+          ],
+          "conf": 0.966,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            856.7,
+            851.0,
+            1001.4,
+            899.1
+          ],
+          "conf": 0.907,
+          "text": "Fig. 12.8"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            708.5,
+            679.0,
+            913.1
+          ],
+          "conf": 0.937,
+          "text": "**Solution :** Denote radius of cone by $r$, slant\nheight of cone by $l$, height of cone by $h$, radius\nof cylinder by $r'$ and height of cylinder by $h'$.\nThen $r = 2.5 \\text{ cm}$, $h = 6 \\text{ cm}$, $r' = 1.5 \\text{ cm}$,\n$h' = 26 - 6 = 20 \\text{ cm}$ and"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            347.5,
+            921.1,
+            890.8,
+            992.0
+          ],
+          "conf": 0.904,
+          "text": "$$l = \\sqrt{r^2 + h^2} = \\sqrt{2.5^2 + 6^2} \\text{ cm} = 6.5 \\text{ cm}$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            995.4,
+            1178.3,
+            1116.8
+          ],
+          "conf": 0.964,
+          "text": "Here, the conical portion has its circular base resting on the base of the cylinder, but\nthe base of the cone is larger than the base of the cylinder. So, a part of the base of the\ncone (a ring) is to be painted."
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1116.1,
+            1158.0,
+            1392.5
+          ],
+          "conf": 0.902,
+          "text": "So, the area to be painted orange = CSA of the cone + base area of the cone\n- base area of the cylinder\n$= \\pi rl + \\pi r^2 - \\pi(r')^2$\n$= \\pi[(2.5 \\times 6.5) + (2.5)^2 - (1.5)^2] \\text{ cm}^2$\n$= \\pi[20.25] \\text{ cm}^2 = 3.14 \\times 20.25 \\text{ cm}^2$\n$= 63.585 \\text{ cm}^2$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.3,
+            1392.7,
+            1066.9,
+            1719.7
+          ],
+          "conf": 0.904,
+          "text": "Now, the area to be painted yellow = CSA of the cylinder\n+ area of one base of the cylinder\n$= 2\\pi r'h' + \\pi(r')^2$\n$= \\pi r' (2h' + r')$\n$= (3.14 \\times 1.5) (2 \\times 20 + 1.5) \\text{ cm}^2$\n$= 4.71 \\times 41.5 \\text{ cm}^2$\n$= 195.465 \\text{ cm}^2$"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0081_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.0,
+            259.0,
+            1133.1,
+            848.4
+          ],
+          "conf": 0.661,
+          "text": "Example 4 : Mayank made a bird-bath for his garden\nin the shape of a cylinder with a hemispherical\ndepression at one end (see Fig. 12.9). The height of\nthe cylinder is 1.45 m and its radius is 30 cm. Find the\ntotal surface area of the bird-bath. (Take $\\pi = \\frac{22}{7}$ )\n\nSolution : Let $h$ be height of the cylinder, and $r$ the\ncommon radius of the cylinder and hemisphere. Then,\nthe total surface area of the bird-bath = CSA of cylinder + CSA of hemisphere\n$$= 2\\pi rh + 2\\pi r^2 = 2\\pi r(h + r)$$\n$$= 2 \\times \\frac{22}{7} \\times 30(145 + 30) \\text{ cm}^2$$\n$$= 33000 \\text{ cm}^2 = 3.3 \\text{ m}^2$$"
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            517.0,
+            882.6,
+            781.0,
+            932.3
+          ],
+          "conf": 0.851,
+          "text": "EXERCISE 12.1"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            934.2,
+            562.9,
+            1014.2
+          ],
+          "conf": 0.862,
+          "text": "Unless stated otherwise, take $\\pi = \\frac{22}{7}$."
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.2,
+            1009.8,
+            1178.1,
+            1704.7
+          ],
+          "conf": 0.926,
+          "text": "**1.** 2 cubes each of volume $64\\text{ cm}^3$ are joined end to end. Find the surface area of the\nresulting cuboid.\n\n**2.** A vessel is in the form of a hollow hemisphere mounted by a hollow cylinder. The\ndiameter of the hemisphere is $14\\text{ cm}$ and the total height of the vessel is $13\\text{ cm}$. Find the\ninner surface area of the vessel.\n\n**3.** A toy is in the form of a cone of radius $3.5\\text{ cm}$ mounted on a hemisphere of same radius.\nThe total height of the toy is $15.5\\text{ cm}$. Find the total surface area of the toy.\n\n**4.** A cubical block of side $7\\text{ cm}$ is surmounted by a hemisphere. What is the greatest\ndiameter the hemisphere can have? Find the surface area of the solid.\n\n**5.** A hemispherical depression is cut out from one face of a cubical wooden block such\nthat the diameter $l$ of the hemisphere is equal to the edge of the cube. Determine the\nsurface area of the remaining solid.\n\n**6.** A medicine capsule is in the shape of a\ncylinder with two hemispheres stuck to each\nof its ends (see Fig. 12.10). The length of\nthe entire capsule is $14\\text{ mm}$ and the diameter\nof the capsule is $5\\text{ mm}$. Find its surface area.\n\n$\\begin{array}{c|c}\n\\hline\n\\end{array}$\n\n**5 mm**\n$\\begin{array}{c|c}\n\\hline\n\\end{array}$\n\n$\\xrightarrow{\\text{Fig. 12.10}}$"
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            844.1,
+            1666.1,
+            1006.6,
+            1716.3
+          ],
+          "conf": 0.852,
+          "text": "Fig. 12.10"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0081_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.5,
+            268.3,
+            1178.7,
+            463.8
+          ],
+          "conf": 0.882,
+          "text": "7. A tent is in the shape of a cylinder surmounted by a conical top. If the height and\ndiameter of the cylindrical part are 2.1 m and 4 m respectively, and the slant height of the\ntop is 2.8 m, find the area of the canvas used for making the tent. Also, find the cost of\nthe canvas of the tent at the rate of $ \\text{₹}500 \\text{ per m}^2 $. (Note that the base of the tent will not\nbe covered with canvas.)"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.7,
+            467.4,
+            1178.2,
+            587.3
+          ],
+          "conf": 0.834,
+          "text": "**8.** From a solid cylinder whose height is 2.4 cm and diameter 1.4 cm, a conical cavity of the\nsame height and same diameter is hollowed out. Find the total surface area of the\nremaining solid to the nearest $\\text{cm}^2$."
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.3,
+            590.7,
+            678.5,
+            822.7
+          ],
+          "conf": 0.868,
+          "text": "9. A wooden article was made by scooping\nout a hemisphere from each end of a solid\ncylinder, as shown in Fig. 12.11. If the\nheight of the cylinder is 10 cm, and its\nbase is of radius 3.5 cm, find the total\nsurface area of the article."
+        },
+        {
+          "order": 3,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            873.7,
+            562.2,
+            1052.7,
+            827.8
+          ],
+          "conf": 0.909,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            880.8,
+            827.3,
+            1039.0,
+            877.2
+          ],
+          "conf": 0.892,
+          "text": "Fig. 12.11"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.1,
+            838.1,
+            695.5,
+            890.0
+          ],
+          "conf": 0.875,
+          "text": "12.3 Volume of a Combination of Solids"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            890.7,
+            1178.6,
+            1156.7
+          ],
+          "conf": 0.974,
+          "text": "In the previous section, we have discussed how to find the surface area of solids made\nup of a combination of two basic solids. Here, we shall see how to calculate their\nvolumes. It may be noted that in calculating the surface area, we have not added the\nsurface areas of the two constituents, because some part of the surface area disappeared\nin the process of joining them. However, this will not be the case when we calculate\nthe volume. The volume of the solid formed by joining two basic solids will actually be\nthe sum of the volumes of the constituents, as we see in the examples below."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1169.5,
+            639.5,
+            1620.3
+          ],
+          "conf": 0.803,
+          "text": "Example 5 : Shanta runs an industry in\na shed which is in the shape of a cuboid\nsurmounted by a half cylinder (see Fig.\n12.12). If the base of the shed is of\ndimension $7 \\text{ m} \\times 15 \\text{ m}$, and the height of\nthe cuboidal portion is $8 \\text{ m}$, find the volume\nof air that the shed can hold. Further,\nsuppose the machinery in the shed\noccupies a total space of $300 \\text{ m}^3$, and\nthere are 20 workers, each of whom\noccupy about $0.08 \\text{ m}^3$ space on an\naverage. Then, how much air is in the"
+        },
+        {
+          "order": 8,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            632.6,
+            1244.7,
+            1175.7,
+            1572.2
+          ],
+          "conf": 0.922,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            822.4,
+            1590.9,
+            984.0,
+            1641.0
+          ],
+          "conf": 0.87,
+          "text": "Fig. 12.12"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.9,
+            1624.3,
+            416.9,
+            1713.2
+          ],
+          "conf": 0.838,
+          "text": "shed? (Take $\\pi = \\frac{22}{7}$)"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0081_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            269.6,
+            1178.7,
+            392.0
+          ],
+          "conf": 0.941,
+          "text": "**Solution :** The volume of air inside the shed (when there are no people or machinery)\nis given by the volume of air inside the cuboid and inside the half cylinder, taken\ntogether."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            390.6,
+            1178.2,
+            440.2
+          ],
+          "conf": 0.882,
+          "text": "Now, the length, breadth and height of the cuboid are $15\\text{ m}$, $7\\text{ m}$ and $8\\text{ m}$, respectively."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            439.1,
+            1008.8,
+            488.5
+          ],
+          "conf": 0.881,
+          "text": "Also, the diameter of the half cylinder is 7 m and its height is 15 m."
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            501.4,
+            1120.0,
+            592.4
+          ],
+          "conf": 0.888,
+          "text": "So, the required volume = volume of the cuboid + $\\frac{1}{2}$ volume of the cylinder"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            433.8,
+            610.1,
+            1146.7,
+            706.8
+          ],
+          "conf": 0.91,
+          "text": "$$ = \\left[ 15 \\times 7 \\times 8 + \\frac{1}{2} \\times \\frac{22}{7} \\times \\frac{7}{2} \\times \\frac{7}{2} \\times 15 \\right] \\mathrm{m}^3 = 1128.75 \\mathrm{m}^3 $$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            714.6,
+            891.3,
+            764.6
+          ],
+          "conf": 0.885,
+          "text": "Next, the total space occupied by the machinery $= 300 \\text{ m}^3$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            761.9,
+            1038.6,
+            813.0
+          ],
+          "conf": 0.791,
+          "text": "And the total space occupied by the workers $= 20 \\times 0.08 \\text{ m}^3 = 1.6 \\text{ m}^3$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            810.9,
+            1034.3,
+            859.8
+          ],
+          "conf": 0.863,
+          "text": "Therefore, the volume of the air, when there are machinery and workers"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            594.1,
+            856.7,
+            1146.7,
+            908.4
+          ],
+          "conf": 0.861,
+          "text": "$$= 1128.75 - (300.00 + 1.60) = 827.15 \\text{ m}^3$$"
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            906.1,
+            732.2,
+            1211.6
+          ],
+          "conf": 0.898,
+          "text": "Example 6 : A juice seller was serving his\ncustomers using glasses as shown in Fig. 12.13.\nThe inner diameter of the cylindrical glass was\n5 cm, but the bottom of the glass had a\nhemispherical raised portion which reduced the\ncapacity of the glass. If the height of a glass\nwas 10 cm, find the apparent capacity of the\nglass and its actual capacity. (Use $\\pi = 3.14$.)"
+        },
+        {
+          "order": 10,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            864.5,
+            909.7,
+            1011.9,
+            1161.9
+          ],
+          "conf": 0.911,
+          "text": ""
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            861.8,
+            1163.0,
+            1023.4,
+            1212.2
+          ],
+          "conf": 0.889,
+          "text": "Fig. 12.13"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            1211.2,
+            1073.0,
+            1261.2
+          ],
+          "conf": 0.833,
+          "text": "**Solution :** Since the inner diameter of the glass = 5 cm and height = 10 cm,"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            172.9,
+            1259.3,
+            1138.1,
+            1353.8
+          ],
+          "conf": 0.808,
+          "text": "the apparent capacity of the glass = $\\pi r^2 h$\n$= 3.14 \\times 2.5 \\times 2.5 \\times 10 \\text{ cm}^3 = 196.25 \\text{ cm}^3$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1354.3,
+            1178.1,
+            1439.1
+          ],
+          "conf": 0.906,
+          "text": "But the actual capacity of the glass is less by the volume of the hemisphere at the\nbase of the glass."
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            1442.9,
+            1146.3,
+            1533.9
+          ],
+          "conf": 0.859,
+          "text": "i.e., it is less by $\\frac{2}{3} \\pi r^3 = \\frac{2}{3} \\times 3.14 \\times 2.5 \\times 2.5 \\times 2.5 \\text{ cm}^3 = 32.71 \\text{ cm}^3$"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            1535.6,
+            1131.9,
+            1701.8
+          ],
+          "conf": 0.877,
+          "text": "So, the actual capacity of the glass = apparent capacity of glass – volume of the\nhemisphere\n= (196.25 – 32.71) cm³\n= 163.54 cm³"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0081_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.6,
+            191.9,
+            1177.5,
+            237.5
+          ],
+          "conf": 0.751,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.9,
+            192.9,
+            464.4,
+            236.9
+          ],
+          "conf": 0.603,
+          "text": "SURFACE AREAS AND VOLUMES"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            260.3,
+            778.4,
+            558.8
+          ],
+          "conf": 0.931,
+          "text": "Example 7 : A solid toy is in the form of a\nhemisphere surmounted by a right circular cone. The\nheight of the cone is 2 cm and the diameter of the\nbase is 4 cm. Determine the volume of the toy. If a\nright circular cylinder circumscribes the toy, find the\ndifference of the volumes of the cylinder and the toy.\n(Take $\\pi = 3.14$)"
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            854.4,
+            261.2,
+            1117.7,
+            513.0
+          ],
+          "conf": 0.962,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            908.4,
+            514.1,
+            1070.7,
+            563.2
+          ],
+          "conf": 0.921,
+          "text": "Fig. 12.14"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            561.6,
+            1178.5,
+            719.0
+          ],
+          "conf": 0.866,
+          "text": "**Solution :** Let BPC be the hemisphere and ABC be the cone standing on the base\nof the hemisphere (see Fig. 12.14). The radius BO of the hemisphere (as well as\nof the cone) = $\\frac{1}{2} \\times 4 \\text{ cm} = 2 \\text{ cm}$."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            709.6,
+            1161.4,
+            893.2
+          ],
+          "conf": 0.856,
+          "text": "So, volume of the toy = $\\frac{2}{3}\\pi r^3 + \\frac{1}{3}\\pi r^2h$\n$= \\left[ \\frac{2}{3} \\times 3.14 \\times (2)^3 + \\frac{1}{3} \\times 3.14 \\times (2)^2 \\times 2 \\right] \\text{cm}^3 = 25.12 \\text{ cm}^3$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            891.9,
+            1179.0,
+            975.6
+          ],
+          "conf": 0.931,
+          "text": "Now, let the right circular cylinder EFGH circumscribe the given solid. The radius of\nthe base of the right circular cylinder = HP = BO = 2 cm, and its height is"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            303.4,
+            980.2,
+            782.6,
+            1030.0
+          ],
+          "conf": 0.883,
+          "text": "$$EH = AO + OP = (2 + 2) \\text{ cm} = 4 \\text{ cm}$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.2,
+            1025.4,
+            1143.0,
+            1156.0
+          ],
+          "conf": 0.808,
+          "text": "So, the volume required = volume of the right circular cylinder – volume of the toy\n= $(3.14 \\times 2^2 \\times 4 - 25.12) \\text{ cm}^3$\n= $25.12 \\text{ cm}^3$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1161.5,
+            925.6,
+            1209.9
+          ],
+          "conf": 0.884,
+          "text": "Hence, the required difference of the two volumes $= 25.12 \\text{ cm}^3$."
+        },
+        {
+          "order": 11,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            517.0,
+            1247.5,
+            781.7,
+            1297.5
+          ],
+          "conf": 0.836,
+          "text": "EXERCISE 12.2"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1299.0,
+            562.2,
+            1378.3
+          ],
+          "conf": 0.822,
+          "text": "Unless stated otherwise, take $\\pi = \\frac{22}{7}$."
+        },
+        {
+          "order": 13,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            153.1,
+            1374.3,
+            1178.3,
+            1700.3
+          ],
+          "conf": 0.959,
+          "text": "1. A solid is in the shape of a cone standing on a hemisphere with both their radii being\nequal to 1 cm and the height of the cone is equal to its radius. Find the volume of the solid\nin terms of $\\pi$.\n\n2. Rachel, an engineering student, was asked to make a model shaped like a cylinder with\ntwo cones attached at its two ends by using a thin aluminium sheet. The diameter of the\nmodel is 3 cm and its length is 12 cm. If each cone has a height of 2 cm, find the volume\nof air contained in the model that Rachel made. (Assume the outer and inner dimensions\nof the model to be nearly the same.)"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0081_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.5,
+            259.5,
+            779.2,
+            437.0
+          ],
+          "conf": 0.901,
+          "text": "**3.** A *gulab jamun*, contains sugar syrup up to about\n30% of its volume. Find approximately how much\nsyrup would be found in 45 *gulab jamuns*, each\nshaped like a cylinder with two hemispherical ends\nwith length 5 cm and diameter 2.8 cm (see Fig. 12.15)."
+        },
+        {
+          "order": 1,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            875.9,
+            258.8,
+            1071.5,
+            533.5
+          ],
+          "conf": 0.944,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            885.0,
+            529.3,
+            1047.9,
+            577.8
+          ],
+          "conf": 0.92,
+          "text": "Fig. 12.15"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.0,
+            533.3,
+            779.5,
+            745.2
+          ],
+          "conf": 0.889,
+          "text": "4. A pen stand made of wood is in the shape of a\ncuboid with four conical depressions to hold pens.\nThe dimensions of the cuboid are 15 cm by 10 cm by\n3.5 cm. The radius of each of the depressions is 0.5\ncm and the depth is 1.4 cm. Find the volume of\nwood in the entire stand (see Fig. 12.16)."
+        },
+        {
+          "order": 4,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            796.3,
+            583.7,
+            1178.7,
+            921.9
+          ],
+          "conf": 0.89,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.0,
+            744.8,
+            778.8,
+            988.6
+          ],
+          "conf": 0.885,
+          "text": "5. A vessel is in the form of an inverted cone. Its\nheight is 8 cm and the radius of its top, which is\nopen, is 5 cm. It is filled with water up to the brim.\nWhen lead shots, each of which is a sphere of radius\n0.5 cm are dropped into the vessel, one-fourth of\nthe water flows out. Find the number of lead shots\ndropped in the vessel."
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            883.9,
+            928.3,
+            1045.2,
+            976.0
+          ],
+          "conf": 0.892,
+          "text": "Fig. 12.16"
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.5,
+            988.2,
+            1178.1,
+            1101.2
+          ],
+          "conf": 0.856,
+          "text": "**6.** A solid iron pole consists of a cylinder of height 220 cm and base diameter 24 cm, which\nis surmounted by another cylinder of height 60 cm and radius 8 cm. Find the mass of the\npole, given that 1 $\\text{cm}^3$ of iron has approximately 8g mass. (Use $\\pi = 3.14$)"
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.7,
+            1099.9,
+            1178.3,
+            1244.1
+          ],
+          "conf": 0.85,
+          "text": "7. A solid consisting of a right circular cone of height 120 cm and radius 60 cm standing on\na hemisphere of radius 60 cm is placed upright in a right circular cylinder full of water\nsuch that it touches the bottom. Find the volume of water left in the cylinder, if the radius\nof the cylinder is 60 cm and its height is 180 cm."
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.9,
+            1243.5,
+            1178.5,
+            1388.3
+          ],
+          "conf": 0.84,
+          "text": "**8.** A spherical glass vessel has a cylindrical neck 8 cm long, 2 cm in diameter; the diameter\nof the spherical part is 8.5 cm. By measuring the amount of water it holds, a child finds its\nvolume to be 345 $\\text{cm}^3$. Check whether she is correct, taking the above as the inside\nmeasurements, and $\\pi = 3.14$."
+        },
+        {
+          "order": 10,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.7,
+            1413.6,
+            350.4,
+            1464.1
+          ],
+          "conf": 0.839,
+          "text": "12.4 Summary"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1466.2,
+            750.8,
+            1512.8
+          ],
+          "conf": 0.885,
+          "text": "In this chapter, you have studied the following points:"
+        },
+        {
+          "order": 12,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.2,
+            1514.3,
+            1178.6,
+            1676.9
+          ],
+          "conf": 0.891,
+          "text": "**1.** To determine the surface area of an object formed by combining any two of the basic\nsolids, namely, cuboid, cone, cylinder, sphere and hemisphere.\n\n**2.** To find the volume of objects formed by combining any two of a cuboid, cone, cylinder,\nsphere and hemisphere."
+        }
+      ],
+      "page": 9
+    }
+  ]
+}

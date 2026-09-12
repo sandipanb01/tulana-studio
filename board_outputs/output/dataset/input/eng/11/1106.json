@@ -1,0 +1,3088 @@
+{
+  "book": "1106",
+  "relpath": "dataset/input/eng/11/1106.pdf",
+  "num_pages": 26,
+  "pages": [
+    {
+      "image": "0089_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            122.2,
+            361.0,
+            1177.5,
+            464.0
+          ],
+          "conf": 0.859,
+          "text": "PERMUTATIONS AND COMBINATIONS"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            177.8,
+            546.8,
+            1120.6,
+            640.1
+          ],
+          "conf": 0.805,
+          "text": "❖ Every body of discovery is mathematical in form because there is no\nother guidance we can have – DARWIN"
+        },
+        {
+          "order": 2,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.2,
+            678.1,
+            372.7,
+            729.2
+          ],
+          "conf": 0.901,
+          "text": "6.1 Introduction"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            732.5,
+            1181.4,
+            1414.9
+          ],
+          "conf": 0.958,
+          "text": "Suppose you have a suitcase with a number lock. The number\nlock has 4 wheels each labelled with 10 digits from 0 to 9.\nThe lock can be opened if 4 specific digits are arranged in a\nparticular sequence with no repetition. Some how, you have\nforgotten this specific sequence of digits. You remember only\nthe first digit which is 7. In order to open the lock, how\nmany sequences of 3-digits you may have to check with? To\nanswer this question, you may, immediately, start listing all\npossible arrangements of 9 remaining digits taken 3 at a\ntime. But, this method will be tedious, because the number\nof possible sequences may be large. Here, in this Chapter,\nwe shall learn some basic counting techniques which will\nenable us to answer this question without actually listing 3-digit arrangements. In fact,\nthese techniques will be useful in determining the number of different ways of arranging\nand selecting objects without actually listing them. As a first step, we shall examine a\nprinciple which is most fundamental to the learning of these techniques.\n\nJacob Bernoulli\n(1654-1705)"
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.6,
+            1440.6,
+            681.6,
+            1493.6
+          ],
+          "conf": 0.876,
+          "text": "6.2 Fundamental Principle of Counting"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1494.3,
+            1176.6,
+            1709.0
+          ],
+          "conf": 0.965,
+          "text": "Let us consider the following problem. Mohan has 3 pants and 2 shirts. How many\ndifferent pairs of a pant and a shirt, can he dress up with? There are 3 ways in which\na pant can be chosen, because there are 3 pants available. Similarly, a shirt can be\nchosen in 2 ways. For every choice of a pant, there are 2 choices of a shirt. Therefore,\nthere are $3 \\times 2 = 6$ pairs of a pant and a shirt."
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0089_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.3,
+            258.8,
+            1178.6,
+            345.8
+          ],
+          "conf": 0.951,
+          "text": "Let us name the three pants as $P_1$, $P_2$, $P_3$ and the two shirts as $S_1$, $S_2$. Then,\nthese six possibilities can be illustrated in the Fig. 6.1."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.6,
+            336.9,
+            620.2,
+            577.0
+          ],
+          "conf": 0.959,
+          "text": "Let us consider another problem\nof the same type.\nSabnam has 2 school bags, 3 tiffin boxes\nand 2 water bottles. In how many ways\ncan she carry these items (choosing one\neach)."
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            611.6,
+            335.9,
+            1175.2,
+            804.8
+          ],
+          "conf": 0.955,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            570.0,
+            1176.0,
+            964.1
+          ],
+          "conf": 0.886,
+          "text": "A school bag can be chosen in 2\ndifferent ways. After a school bag is\nchosen, a tiffin box can be chosen in 3\ndifferent ways. Hence, there are\n$2 \\times 3 = 6$ pairs of school bag and a tiffin\nbox. For each of these pairs a water\nbottle can be chosen in 2 different ways.\nHence, there are $6 \\times 2 = 12$ different ways in which, Sabnam can carry these items to\nschool. If we name the 2 school bags as $\\text{B}_1$, $\\text{B}_2$, the three tiffin boxes as $\\text{T}_1$, $\\text{T}_2$, $\\text{T}_3$ and\nthe two water bottles as $\\text{W}_1$, $\\text{W}_2$, these possibilities can be illustrated in the Fig. 6.2."
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            282.5,
+            959.5,
+            1003.3,
+            1650.7
+          ],
+          "conf": 0.938,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            587.5,
+            1658.5,
+            692.9,
+            1703.9
+          ],
+          "conf": 0.837,
+          "text": "Fig 6.2"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0089_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            262.2,
+            1179.0,
+            388.0
+          ],
+          "conf": 0.964,
+          "text": "In fact, the problems of the above types are solved by applying the following\nprinciple known as the *fundamental principle of counting*, or, simply, the *multiplication*\n*principle*, which states that"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            378.1,
+            1179.1,
+            502.2
+          ],
+          "conf": 0.962,
+          "text": "“If an event can occur in $m$ different ways, following which another event\ncan occur in $n$ different ways, then the total number of occurrence of the events\nin the given order is $m \\times n$.”"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            495.0,
+            1178.7,
+            583.9
+          ],
+          "conf": 0.946,
+          "text": "The above principle can be generalised for any finite number of events. For\nexample, for 3 events, the principle is as follows:"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            576.1,
+            1178.8,
+            703.2
+          ],
+          "conf": 0.961,
+          "text": "‘If an event can occur in $m$ different ways, following which another event can\noccur in $n$ different ways, following which a third event can occur in $p$ different ways,\nthen the total number of occurrence to ‘the events in the given order is $m \\times n \\times p$.’"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            695.6,
+            1178.3,
+            783.9
+          ],
+          "conf": 0.938,
+          "text": "In the first problem, the required number of ways of wearing a pant and a shirt\nwas the number of different ways of the occurence of the following events in succession:"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            204.2,
+            783.9,
+            645.1,
+            873.1
+          ],
+          "conf": 0.929,
+          "text": "(i) the event of choosing a pant\n(ii) the event of choosing a shirt."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            869.4,
+            1178.3,
+            956.6
+          ],
+          "conf": 0.939,
+          "text": "In the second problem, the required number of ways was the number of different\nways of the occurence of the following events in succession:"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            201.1,
+            955.3,
+            739.8,
+            1081.1
+          ],
+          "conf": 0.954,
+          "text": "(i) the event of choosing a school bag\n(ii) the event of choosing a tiffin box\n(iii) the event of choosing a water bottle."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1079.6,
+            1180.1,
+            1208.8
+          ],
+          "conf": 0.964,
+          "text": "Here, in both the cases, the events in each problem could occur in various possible\norders. But, we have to choose any one of the possible orders and count the number of\ndifferent ways of the occurence of the events in this chosen order."
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            1216.4,
+            1179.2,
+            1706.2
+          ],
+          "conf": 0.693,
+          "text": "Example 1 Find the number of 4 letter words, with or without meaning, which can be\nformed out of the letters of the word ROSE, where the repetition of the letters is not\nallowed.\n\nSolution There are as many words as there are ways of filling in 4 vacant places\n$\\square$ $\\square$ $\\square$ $\\square$ by the 4 letters, keeping in mind that the repetition is not allowed. The\nfirst place can be filled in 4 different ways by anyone of the 4 letters R,O,S,E. Following\nwhich, the second place can be filled in by anyone of the remaining 3 letters in 3\ndifferent ways, following which the third place can be filled in 2 different ways; following\nwhich, the fourth place can be filled in 1 way. Thus, the number of ways in which the\n4 places can be filled, by the multiplication principle, is $4 \\times 3 \\times 2 \\times 1 = 24$. Hence, the\nrequired number of words is 24."
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0089_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            261.6,
+            1178.2,
+            407.4
+          ],
+          "conf": 0.93,
+          "text": "**Note** If the repetition of the letters was allowed, how many words can be formed?\nOne can easily understand that each of the 4 vacant places can be filled in succession\nin 4 different ways. Hence, the required number of words $= 4 \\times 4 \\times 4 \\times 4 = 256$."
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            421.4,
+            1174.8,
+            510.2
+          ],
+          "conf": 0.795,
+          "text": "Example 2 Given 4 flags of different colours, how many different signals can be\ngenerated, if a signal requires the use of 2 flags one below the other?"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            515.7,
+            1174.7,
+            763.0
+          ],
+          "conf": 0.624,
+          "text": "Solution There will be as many signals as there are ways of filling in 2 vacant places\n$\\text{\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            768.4,
+            1175.7,
+            1137.9
+          ],
+          "conf": 0.599,
+          "text": "Example 3 How many 2 digit even numbers can be formed from the digits\n1, 2, 3, 4, 5 if the digits can be repeated?\n\nSolution There will be as many ways as there are ways of filling 2 vacant places\n$\\square \\square$ in succession by the five given digits. Here, in this case, we start filling in unit's\nplace, because the options for this place are 2 and 4 only and this can be done in 2\nways; following which the ten's place can be filled by any of the 5 digits in 5 different\nways as the digits can be repeated. Therefore, by the multiplication principle, the required\nnumber of two digits even numbers is $2 \\times 5$, i.e., 10."
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1144.2,
+            1176.9,
+            1683.2
+          ],
+          "conf": 0.615,
+          "text": "Example 4 Find the number of different signals that can be generated by arranging at\nleast 2 flags in order (one below the other) on a vertical staff, if five different flags are\navailable.\n\nSolution A signal can consist of either 2 flags, 3 flags, 4 flags or 5 flags. Now, let us\ncount the possible number of signals consisting of 2 flags, 3 flags, 4 flags and 5 flags\nseparately and then add the respective numbers.\nThere will be as many 2 flag signals as there are ways of filling in 2 vacant places\nin succession by the 5 flags available. By Multiplication rule, the number of\nways is $5 \\times 4 = 20$.\nSimilarly, there will be as many 3 flag signals as there are ways of filling in 3\nvacant places in succession by the 5 flags."
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0089_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            259.0,
+            615.2,
+            347.3
+          ],
+          "conf": 0.645,
+          "text": "The number of ways is $5 \\times 4 \\times 3 = 60$.\nContinuing the same way, we find that"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            342.8,
+            978.9,
+            472.3
+          ],
+          "conf": 0.716,
+          "text": "The number of 4 flag signals $= 5 \\times 4 \\times 3 \\times 2 = 120$\nand the number of 5 flag signals $= 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$\nTherefore, the required no of signals $= 20 + 60 + 120 + 120 = 320.$"
+        },
+        {
+          "order": 2,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.8,
+            492.5,
+            773.4,
+            550.2
+          ],
+          "conf": 0.794,
+          "text": "EXERCISE 6.1"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            559.0,
+            1183.1,
+            1146.8
+          ],
+          "conf": 0.932,
+          "text": "1. How many 3-digit numbers can be formed from the digits 1, 2, 3, 4 and 5\nassuming that\n(i) repetition of the digits is allowed?\n(ii) repetition of the digits is not allowed?\n2. How many 3-digit even numbers can be formed from the digits 1, 2, 3, 4, 5, 6 if the\ndigits can be repeated?\n3. How many 4-letter code can be formed using the first 10 letters of the English\nalphabet, if no letter can be repeated?\n4. How many 5-digit telephone numbers can be constructed using the digits 0 to 9 if\neach number starts with 67 and no digit appears more than once?\n5. A coin is tossed 3 times and the outcomes are recorded. How many possible\noutcomes are there?\n6. Given 5 flags of different colours, how many different signals can be generated if\neach signal requires the use of 2 flags, one below the other?"
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.5,
+            1157.9,
+            395.6,
+            1208.2
+          ],
+          "conf": 0.877,
+          "text": "6.3 Permutations"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1211.2,
+            1181.6,
+            1625.3
+          ],
+          "conf": 0.976,
+          "text": "In Example 1 of the previous Section, we are actually counting the different possible\narrangements of the letters such as ROSE, REOS, ..., etc. Here, in this list, each\narrangement is different from other. In other words, the order of writing the letters is\nimportant. Each arrangement is called a permutation of 4 different letters taken all\nat a time. Now, if we have to determine the number of 3-letter words, with or without\nmeaning, which can be formed out of the letters of the word NUMBER, where the\nrepetition of the letters is not allowed, we need to count the arrangements NUM,\nNMU, MUN, NUB, ..., etc. Here, we are counting the permutations of 6 different\nletters taken 3 at a time. The required number of words $= 6 \\times 5 \\times 4 = 120$ (by using\nmultiplication principle)."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1619.4,
+            1181.0,
+            1705.8
+          ],
+          "conf": 0.895,
+          "text": "If the repetition of the letters was allowed, the required number of words would\nbe $6 \\times 6 \\times 6 = 216$."
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0089_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            257.6,
+            1180.4,
+            424.7
+          ],
+          "conf": 0.603,
+          "text": "Definition 1 A permutation is an arrangement in a definite order of a number of\nobjects taken some or all at a time.\nIn the following sub-section, we shall obtain the formula needed to answer these\nquestions immediately."
+        },
+        {
+          "order": 1,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            121.4,
+            430.2,
+            823.0,
+            479.8
+          ],
+          "conf": 0.891,
+          "text": "6.3.1 Permutations when all the objects are distinct"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.9,
+            486.2,
+            1178.5,
+            612.4
+          ],
+          "conf": 0.921,
+          "text": "Theorem 1 The number of permutations of $n$ different objects taken $r$ at a time,\nwhere $0 < r \\le n$ and the objects do not repeat is $n ( n - 1) ( n - 2) . . . ( n - r + 1)$,\nwhich is denoted by $^nP_r$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.8,
+            616.7,
+            1178.3,
+            667.8
+          ],
+          "conf": 0.869,
+          "text": "Proof There will be as many permutations as there are ways of filling in $r$ vacant"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.2,
+            663.9,
+            612.6,
+            728.6
+          ],
+          "conf": 0.763,
+          "text": "places $\\square$ $\\square$ $\\square$ $\\dots$ $\\square$ by"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            206.1,
+            730.6,
+            493.4,
+            777.5
+          ],
+          "conf": 0.819,
+          "text": "$$ \\leftarrow r \\text{ vacant places } \\rightarrow $$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.2,
+            774.4,
+            1179.8,
+            978.3
+          ],
+          "conf": 0.968,
+          "text": "the $n$ objects. The first place can be filled in $n$ ways; following which, the second place\ncan be filled in $(n-1)$ ways, following which the third place can be filled in $(n-2)$\nways,..., the $r$th place can be filled in $(n-(r-1))$ ways. Therefore, the number of\nways of filling in $r$ vacant places in succession is $n(n-1)(n-2)\\dots(n-(r-1))$ or\n$n(n-1)(n-2)\\dots(n-r+1)$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            967.7,
+            1179.1,
+            1094.2
+          ],
+          "conf": 0.956,
+          "text": "This expression for $^nP_r$ is cumbersome and we need a notation which will help to\nreduce the size of this expression. The symbol $n!$ (read as factorial $n$ or $n$ factorial )\ncomes to our rescue. In the following text we will learn what actually $n!$ means."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            1100.3,
+            1178.5,
+            1225.3
+          ],
+          "conf": 0.915,
+          "text": "6.3.2 *Factorial notation*, The notation $n!$ represents the product of first $n$ natural\nnumbers, i.e., the product $1 \\times 2 \\times 3 \\times \\dots \\times (n-1) \\times n$ is denoted as $n!$. We read this\nsymbol as '$n$ factorial'. Thus, $1 \\times 2 \\times 3 \\times 4 \\dots \\times (n-1) \\times n = n$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            280.0,
+            1216.6,
+            663.3,
+            1377.3
+          ],
+          "conf": 0.832,
+          "text": "$1 = 1 !$\n$1 \\times 2 = 2 !$\n$1 \\times 2 \\times 3 = 3 !$\n$1 \\times 2 \\times 3 \\times 4 = 4 !$ and so on."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.8,
+            1378.6,
+            361.5,
+            1428.2
+          ],
+          "conf": 0.848,
+          "text": "We define $0 ! = 1$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            123.5,
+            1425.4,
+            863.7,
+            1510.1
+          ],
+          "conf": 0.779,
+          "text": "We can write $5 ! = 5 \\times 4 ! = 5 \\times 4 \\times 3 ! = 5 \\times 4 \\times 3 \\times 2 !$\n$= 5 \\times 4 \\times 3 \\times 2 \\times 1 !$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.9,
+            1503.5,
+            523.5,
+            1552.1
+          ],
+          "conf": 0.859,
+          "text": "Clearly, for a natural number $n$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            306.0,
+            1543.0,
+            1076.1,
+            1667.8
+          ],
+          "conf": 0.845,
+          "text": "$$\n\\begin{aligned}\nn ! &= n (n - 1) ! \\\\\n&= n (n - 1) (n - 2) ! && \\text{[provided } (n \\geq 2) \\text{]} \\\\\n&= n (n - 1) (n - 2) (n - 3) ! && \\text{[provided } (n \\geq 3) \\text{]}\n\\end{aligned}\n$$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.1,
+            1658.9,
+            272.2,
+            1704.5
+          ],
+          "conf": 0.833,
+          "text": "and so on."
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0089_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.2,
+            259.9,
+            882.8,
+            442.9
+          ],
+          "conf": 0.713,
+          "text": "Example 5 Evaluate (i) 5 !      (ii) 7 !           (iii) 7 ! $- 5$ !\n\nSolution      (i) $5 ! = 1 \\times 2 \\times 3 \\times 4 \\times 5 = 120$\n            (ii) $7 ! = 1 \\times 2 \\times 3 \\times 4 \\times 5 \\times 6 \\times 7 = 5040$\nand         (iii) $7 ! - 5 ! = 5040 - 120 = 4920.$"
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.0,
+            448.0,
+            871.1,
+            783.8
+          ],
+          "conf": 0.648,
+          "text": "Example 6 Compute (i) $\\frac{7!}{5!}$ (ii) $\\frac{12!}{(10!)(2!)}$\n\n\nSolution (i) We have $\\frac{7!}{5!} = \\frac{7 \\times 6 \\times 5!}{5!} = 7 \\times 6 = 42$\n\n\nand (ii) $\\frac{12!}{(10!)(2!)} = \\frac{12 \\times 11 \\times (10!)}{(10!) \\times (2)} = 6 \\times 11 = 66.$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.7,
+            799.9,
+            941.2,
+            1126.5
+          ],
+          "conf": 0.557,
+          "text": "Example 7 Evaluate $\\frac{n!}{r!(n-r)!}$, when $n=5, r=2$.\n\n\nSolution We have to evaluate $\\frac{5!}{2!(5-2)!}$ (since $n=5, r=2$)\n\n\nWe have $\\frac{5!}{2!(5-2)!} = \\frac{5!}{2! \\times 3!} = \\frac{5 \\times 4}{2} = 10$."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.1,
+            1149.3,
+            676.8,
+            1508.2
+          ],
+          "conf": 0.683,
+          "text": "Example 8 If $\\frac{1}{8!} + \\frac{1}{9!} = \\frac{x}{10!}$, find $x$.\n\n\nSolution We have $\\frac{1}{8!} + \\frac{1}{9 \\times 8!} = \\frac{x}{10 \\times 9 \\times 8!}$\n\n\nTherefore $1 + \\frac{1}{9} = \\frac{x}{10 \\times 9}$ or $\\frac{10}{9} = \\frac{x}{10 \\times 9}$\n\n\nSo $x = 100$."
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            523.9,
+            1517.5,
+            771.2,
+            1571.1
+          ],
+          "conf": 0.775,
+          "text": "EXERCISE 6.2"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.4,
+            1579.7,
+            677.3,
+            1668.2
+          ],
+          "conf": 0.714,
+          "text": "1. Evaluate\n(i) $8$ !                                     (ii) $4$ ! $- 3$ !"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0089_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            272.8,
+            1151.9,
+            369.2
+          ],
+          "conf": 0.731,
+          "text": "2. Is $3! + 4! = 7!$?      3. Compute $\\frac{8!}{6! \\times 2!}$      4. If $\\frac{1}{6!} + \\frac{1}{7!} = \\frac{x}{8!}$, find $x$"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            389.5,
+            737.1,
+            546.1
+          ],
+          "conf": 0.526,
+          "text": "5. Evaluate $\\frac{n!}{(n-r)!}$, when\n\n(i) $n=6, r=2$ (ii) $n=9, r=5$."
+        },
+        {
+          "order": 2,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.0,
+            551.4,
+            652.6,
+            603.1
+          ],
+          "conf": 0.909,
+          "text": "6.3.3 Derivation of the formula for \"$\\text{P}_{\\text{r}}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            323.2,
+            607.4,
+            648.0,
+            702.4
+          ],
+          "conf": 0.928,
+          "text": "$$ {}^n\\mathrm{P}_r = \\frac{n!}{(n-r)!}, 0 \\le r \\le n $$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            705.3,
+            1136.1,
+            754.5
+          ],
+          "conf": 0.929,
+          "text": "Let us now go back to the stage where we had determined the following formula:"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            356.5,
+            751.5,
+            853.1,
+            805.8
+          ],
+          "conf": 0.897,
+          "text": "$$^nP_r = n (n-1) (n-2) \\dots (n-r+1)$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            799.9,
+            1153.2,
+            850.4
+          ],
+          "conf": 0.91,
+          "text": "Multiplying numerator and denominator by $(n-r)(n-r-1)\\dots 3 \\times 2 \\times 1$, we get"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            201.2,
+            856.7,
+            1106.7,
+            961.8
+          ],
+          "conf": 0.927,
+          "text": "$$ ^n\\mathrm{P}_r = \\frac{n(n-1)(n-2)...(n-r+1)(n-r)(n-r-1)...3\\times2\\times1}{(n-r)(n-r-1)...3\\times2\\times1} = \\frac{n!}{(n-r)!}, $$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            978.3,
+            691.5,
+            1072.2
+          ],
+          "conf": 0.879,
+          "text": "Thus $${}^{n}\\mathrm{P}_{r}=\\frac{n!}{(n-r)!}$, where $0<r\\leq n$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1077.7,
+            1037.3,
+            1126.9
+          ],
+          "conf": 0.918,
+          "text": "This is a much more convenient expression for ${}^nP_r$ than the previous one."
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1133.2,
+            622.0,
+            1221.5
+          ],
+          "conf": 0.823,
+          "text": "In particular, when $r = n$, ${}^n\\mathrm{P}_n = \\frac{n!}{0!} = n!$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1217.9,
+            1179.2,
+            1380.9
+          ],
+          "conf": 0.965,
+          "text": "Counting permutations is merely counting the number of ways in which some or\nall objects at a time are rearranged. Arranging no object at all is the same as leaving\nbehind all the objects and we know that there is only one way of doing so. Thus, we\ncan have"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            276.9,
+            1386.4,
+            1081.9,
+            1478.6
+          ],
+          "conf": 0.891,
+          "text": "$$ {}^{n}\\mathrm{P}_{0}=1=\\frac{n!}{n!}=\\frac{n!}{(n-0)!} \\qquad \\dots (1) $$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1518.1,
+            799.4,
+            1568.3
+          ],
+          "conf": 0.888,
+          "text": "Therefore, the formula (1) is applicable for $r = 0$ also."
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1574.7,
+            609.6,
+            1668.2
+          ],
+          "conf": 0.868,
+          "text": "Thus $$\\ ^n\\mathrm{P}_r = \\frac{n!}{(n-r)!}, 0 \\le r \\le n. $$"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0089_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            258.6,
+            1177.9,
+            346.0
+          ],
+          "conf": 0.823,
+          "text": "Theorem 2 The number of permutations of $n$ different objects taken $r$ at a time,\nwhere repetition is allowed, is $n^r$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.0,
+            333.4,
+            1169.7,
+            387.4
+          ],
+          "conf": 0.829,
+          "text": "Proof is very similar to that of Theorem 1 and is left for the reader to arrive at."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            374.7,
+            1179.0,
+            462.1
+          ],
+          "conf": 0.9,
+          "text": "Here, we are solving some of the problems of the pervious Section using the\nformula for ${}^nP_r$ to illustrate its usefulness."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            450.5,
+            1178.5,
+            539.4
+          ],
+          "conf": 0.891,
+          "text": "In Example 1, the required number of words = ${}^4\\text{P}_4 = 4! = 24$. Here repetition is\nnot allowed. If repetition is allowed, the required number of words would be $4^4 = 256$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.9,
+            529.5,
+            1178.5,
+            580.3
+          ],
+          "conf": 0.868,
+          "text": "The number of 3-letter words which can be formed by the letters of the word"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            582.2,
+            1178.5,
+            678.9
+          ],
+          "conf": 0.841,
+          "text": "NUMBER = ${}^6\\text{P}_3 = \\frac{6!}{3!} = 4 \\times 5 \\times 6 = 120$. Here, in this case also, the repetition is not"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            678.9,
+            1177.1,
+            730.0
+          ],
+          "conf": 0.878,
+          "text": "allowed. If the repetition is allowed,the required number of words would be $6^3 = 216$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            719.5,
+            1178.5,
+            808.6
+          ],
+          "conf": 0.875,
+          "text": "The number of ways in which a Chairman and a Vice-Chairman can be chosen\nfrom amongst a group of 12 persons assuming that one person can not hold more than"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            812.1,
+            727.1,
+            906.3
+          ],
+          "conf": 0.87,
+          "text": "one position, clearly ${}^{12}\\mathrm{P}_{2} = \\frac{12!}{10!} = 11 \\times 12 = 132.$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            930.2,
+            1178.5,
+            1283.8
+          ],
+          "conf": 0.935,
+          "text": "6.3.4 *Permutations when all the objects are not distinct objects* Suppose we have\nto find the number of ways of rearranging the letters of the word ROOT. In this case,\nthe letters of the word are not all different. There are 2 Os, which are of the same kind.\nLet us treat, temporarily, the 2 Os as different, say, $\\text{O}_1$ and $\\text{O}_2$. The number of\npermutations of 4-different letters, in this case, taken all at a time\nis 4!. Consider one of these permutations say, $\\text{RO}_1\\text{O}_2\\text{T}$. Corresponding to this\npermutation,we have 2 ! permutations $\\text{RO}_1\\text{O}_2\\text{T}$ and $\\text{RO}_2\\text{O}_1\\text{T}$ which will be exactly the\nsame permutation if $\\text{O}_1$ and $\\text{O}_2$ are not treated as different, i.e., if $\\text{O}_1$ and $\\text{O}_2$ are the\nsame O at both places."
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            1289.7,
+            975.4,
+            1380.9
+          ],
+          "conf": 0.872,
+          "text": "Therefore, the required number of permutations = $\\frac{4!}{2!} = 3 \\times 4 = 12$."
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.0,
+            1382.8,
+            1065.7,
+            1698.4
+          ],
+          "conf": 0.592,
+          "text": "Permutations when $O_1, O_2$ are\ndifferent.\n$\\begin{bmatrix} R O_1 O_2 T \\\\ R O_2 O_1 T \\end{bmatrix}$ $\\longrightarrow$ R O O T\n\n$\\begin{bmatrix} T O_1 O_2 R \\\\ T O_2 O_1 R \\end{bmatrix}$ $\\longrightarrow$ T O O R"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0089_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            253.8,
+            276.1,
+            1057.3,
+            377.3
+          ],
+          "conf": 0.81,
+          "text": "$$\\text{RO}_1\\text{T O}_2$$\n$$\\text{RO}_2\\text{T O}_1$$\n$$ \\longrightarrow \\text{R O T O} $$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            250.0,
+            394.2,
+            1056.9,
+            495.3
+          ],
+          "conf": 0.823,
+          "text": "$$\n\\begin{bmatrix}\n\\mathrm{T} \\mathrm{O}_1 \\mathrm{R} \\mathrm{O}_2 \\\\\n\\mathrm{T} \\mathrm{O}_2 \\mathrm{R} \\mathrm{O}_1\n\\end{bmatrix} \\xrightarrow{\\hspace{3cm}} \\mathrm{T} \\mathrm{O} \\mathrm{R} \\mathrm{O}\n$$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            254.7,
+            512.4,
+            1056.8,
+            614.5
+          ],
+          "conf": 0.822,
+          "text": "$$ \\begin{bmatrix} \\text{RTO}_1\\text{O}_2 \\\\ \\text{RTO}_2\\text{O}_1 \\end{bmatrix} \\xrightarrow{\\hspace{3cm}} \\text{RTOO}$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            249.2,
+            630.4,
+            1057.9,
+            732.5
+          ],
+          "conf": 0.805,
+          "text": "$$\\left. \\begin{matrix} T R O_1 O_2 \\\\ T R O_2 O_1 \\end{matrix} \\right] \\xrightarrow{\\hspace{3cm}} T R O O$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            239.1,
+            748.2,
+            1057.5,
+            849.9
+          ],
+          "conf": 0.809,
+          "text": "$$ \\begin{bmatrix} O_1 & O_2 & R & T \\\\ O_2 & O_1 & T & R \\end{bmatrix} \\xrightarrow{\\hspace{3cm}} O \\text{ O } R \\text{ T} $$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            240.4,
+            866.8,
+            1058.2,
+            969.2
+          ],
+          "conf": 0.807,
+          "text": "$$ \\left. \\begin{matrix} O_1 R O_2 T \\\\ O_2 R O_1 T \\end{matrix} \\right] \\xrightarrow{\\hspace{3cm}} O R O T $$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            237.1,
+            986.1,
+            1056.4,
+            1086.2
+          ],
+          "conf": 0.792,
+          "text": "$$ \\begin{bmatrix} O_1 & T & O_2 & R \\\\ O_2 & T & O_1 & R \\end{bmatrix} \\xrightarrow{\\hspace{3cm}} O \\ T \\ O \\ R $$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            238.9,
+            1100.3,
+            1057.0,
+            1204.8
+          ],
+          "conf": 0.778,
+          "text": "$$ \\left. \\begin{matrix} O_1 & R & T & O_2 \\\\ O_2 & R & T & O_1 \\end{matrix} \\right] \\xrightarrow{\\text{---} \\text{---}} \\text{O} R T O $$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            239.2,
+            1222.6,
+            1056.6,
+            1324.9
+          ],
+          "conf": 0.767,
+          "text": "$$\n\\begin{bmatrix}\nO_1 & T & R & O_2 \\\\\nO_2 & T & R & O_1\n\\end{bmatrix}\n\\xrightarrow{\\text{C-C bond formation}}\nO \\ T \\ R \\ O\n$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            242.1,
+            1340.3,
+            1056.0,
+            1442.5
+          ],
+          "conf": 0.799,
+          "text": "$$ \\left. \\begin{matrix} O_1 & O_2 T & R \\\\ O_2 & O_1 & T & R \\end{matrix} \\right] \\xrightarrow{\\hspace{3cm}} O O T R $$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1458.8,
+            1179.5,
+            1581.4
+          ],
+          "conf": 0.942,
+          "text": "Let us now find the number of ways of rearranging the letters of the word\nINSTITUTE. In this case there are 9 letters, in which I appears 2 times and T appears\n3 times."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1574.0,
+            1178.6,
+            1701.1
+          ],
+          "conf": 0.931,
+          "text": "Temporarily, let us treat these letters different and name them as $I_1, I_2, T_1, T_2, T_3$.\nThe number of permutations of 9 different letters, in this case, taken all at a time is 9 !.\nConsider one such permutation, say, $I_1 NT_1 SI_2 T_2 U E T_3$. Here if $I_1, I_2$ are not same"
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0089_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            258.4,
+            1179.2,
+            477.5
+          ],
+          "conf": 0.878,
+          "text": "and $T_1$, $T_2$, $T_3$ are not same, then $I_1$, $I_2$ can be arranged in $2!$ ways and $T_1$, $T_2$, $T_3$ can\nbe arranged in $3!$ ways. Therefore, $2! \\times 3!$ permutations will be just the same permutation\ncorresponding to this chosen permutation $I_1NT_1SI_2T_2UET_3$. Hence, total number of\ndifferent permutations will be $\\frac{9!}{2!3!}$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.5,
+            487.0,
+            854.9,
+            538.1
+          ],
+          "conf": 0.912,
+          "text": "We can state (without proof) the following theorems:"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            543.6,
+            1176.8,
+            693.3
+          ],
+          "conf": 0.671,
+          "text": "Theorem 3 The number of permutations of $n$ objects, where $p$ objects are of the\n\n\nsame kind and rest are all different $= \\frac{n!}{p!}$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.3,
+            694.6,
+            719.7,
+            745.0
+          ],
+          "conf": 0.887,
+          "text": "In fact, we have a more general theorem."
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            749.0,
+            1176.6,
+            942.0
+          ],
+          "conf": 0.813,
+          "text": "Theorem 4 The number of permutations of $n$ objects, where $p_1$ objects are of one\nkind, $p_2$ are of second kind, ..., $p_k$ are of $k^{\\text{th}}$ kind and the rest, if any, are of different\n\nkind is $\\frac{n!}{p_1! \\ p_2! \\ ... \\ p_k!}$."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            957.0,
+            1176.5,
+            1197.0
+          ],
+          "conf": 0.766,
+          "text": "Example 9 Find the number of permutations of the letters of the word ALLAHABAD.\n\nSolution Here, there are 9 objects (letters) of which there are 4A's, 2 L's and rest are\nall different.\n\nTherefore, the required number of arrangements = $\\frac{9!}{4!2!} = \\frac{5 \\times 6 \\times 7 \\times 8 \\times 9}{2} = 7560$"
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1218.8,
+            1180.8,
+            1307.0
+          ],
+          "conf": 0.854,
+          "text": "Example 10 How many 4-digit numbers can be formed by using the digits 1 to 9 if\nrepetition of digits is not allowed?"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1312.7,
+            1178.8,
+            1437.5
+          ],
+          "conf": 0.777,
+          "text": "Solution Here order matters for example 1234 and 1324 are two different numbers.\nTherefore, there will be as many 4 digit numbers as there are permutations of 9 different\ndigits taken 4 at a time."
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            1440.2,
+            1177.9,
+            1543.8
+          ],
+          "conf": 0.819,
+          "text": "Therefore, the required 4 digit numbers $= {}^9\\text{P}_4 = \\frac{9!}{(9-4)!} = \\frac{9!}{5!} = 9 \\times 8 \\times 7 \\times 6 = 3024.$"
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1559.7,
+            1178.1,
+            1707.9
+          ],
+          "conf": 0.821,
+          "text": "Example 11 How many numbers lying between 100 and 1000 can be formed with the\ndigits 0, 1, 2, 3, 4, 5, if the repetition of the digits is not allowed?\n\nSolution Every number between 100 and 1000 is a 3-digit number. We, first, have to"
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0089_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            264.3,
+            1179.2,
+            540.4
+          ],
+          "conf": 0.98,
+          "text": "count the permutations of 6 digits taken 3 at a time. This number would be ${}^6\\text{P}_3$. But,\nthese permutations will include those also where 0 is at the 100's place. For example,\n092, 042, . . ., etc are such numbers which are actually 2-digit numbers and hence the\nnumber of such numbers has to be subtracted from ${}^6\\text{P}_3$ to get the required number. To\nget the number of such numbers, we fix 0 at the 100's place and rearrange the remaining\n5 digits taking 2 at a time. This number is ${}^5\\text{P}_2$. So"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.3,
+            549.1,
+            776.4,
+            692.0
+          ],
+          "conf": 0.849,
+          "text": "The required number $= {^6}\\text{P}_3 - {^5}\\text{P}_2 = \\frac{6!}{3!} - \\frac{5!}{3!}$\n$= 4 \\times 5 \\times 6 - 4 \\times 5 = 100$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            703.2,
+            1037.1,
+            1691.8
+          ],
+          "conf": 0.512,
+          "text": "Example 12 Find the value of $n$ such that\n\n(i) $^n\\text{P}_5 = 42 \\ ^n\\text{P}_3, \\ n > 4$\n(ii) $\\frac{^n\\text{P}_4}{n-1\\text{P}_4} = \\frac{5}{3}, \\ n > 4$\n\nSolution (i) Given that\n$^n\\text{P}_5 = 42 \\ ^n\\text{P}_3$\nor $n(n-1)(n-2)(n-3)(n-4) = 42 \\ n(n-1)(n-2)$\nSince $n > 4$ so $n(n-1)(n-2) \\neq 0$\nTherefore, by dividing both sides by $n(n-1)(n-2)$, we get\n$(n-3)(n-4) = 42$\nor $n^2 - 7n - 30 = 0$\nor $n^2 - 10n + 3n - 30$\nor $(n-10)(n+3) = 0$\nor $n - 10 = 0$ or $n + 3 = 0$\nor $n = 10$ or $n = -3$\nAs $n$ cannot be negative, so $n = 10$.\n\n(ii) Given that $\\frac{^n\\text{P}_4}{n-1\\text{P}_4} = \\frac{5}{3}$\n\nTherefore $3n(n-1)(n-2)(n-3) = 5(n-1)(n-2)(n-3)(n-4)$\nor $3n = 5(n-4)$ [as $(n-1)(n-2)(n-3) \\neq 0, \\ n > 4$]\nor $n = 10$."
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            1650.7,
+            415.2,
+            1696.5
+          ],
+          "conf": 0.55,
+          "text": ""
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0089_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            260.3,
+            768.6,
+            844.6
+          ],
+          "conf": 0.667,
+          "text": "Example 13 Find $r$, if $5 \\ ^4\\text{P}_r = 6 \\ ^5\\text{P}_{r-1}$.\n\nSolution We have $5 \\ ^4\\text{P}_r = 6 \\ ^5\\text{P}_{r-1}$\n\nor $$5 \\times \\frac{4!}{(4-r)!} = 6 \\times \\frac{5!}{(5-r+1)!}$$\n\nor $$\\frac{5!}{(4-r)!} = \\frac{6 \\times 5!}{(5-r+1)(5-r)(5-r-1)!}$$\n\nor $(6 - r)(5 - r) = 6$\nor $$r^2 - 11r + 24 = 0$$\nor $$r^2 - 8r - 3r + 24 = 0$$\nor $$(r - 8)(r - 3) = 0$$\nor $$r = 8 \\quad \\text{or} \\quad r = 3.$$\nHence $$r = 8, 3.$$"
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            846.1,
+            1183.0,
+            1564.1
+          ],
+          "conf": 0.624,
+          "text": "Example 14 Find the number of different 8-letter arrangements that can be made\nfrom the letters of the word DAUGHTER so that\n(i) all vowels occur together (ii) all vowels do not occur together.\n\nSolution (i) There are 8 different letters in the word DAUGHTER, in which there\nare 3 vowels, namely, A, U and E. Since the vowels have to occur together, we can for\nthe time being, assume them as a single object (AUE). This single object together with\n5 remaining letters (objects) will be counted as 6 objects. Then we count permutations\nof these 6 objects taken all at a time. This number would be $^6\\text{P}_6 = 6!$. Corresponding to\neach of these permutations, we shall have 3! permutations of the three vowels A, U, E\ntaken all at a time . Hence, by the multiplication principle the required number of\npermutations $= 6 ! \\times 3 ! = 4320$.\n(ii) If we have to count those permutations in which all vowels are never\ntogether, we first have to find all possible arrangements of 8 letters taken all at a time,\nwhich can be done in 8! ways. Then, we have to subtract from this number, the number\nof permutations in which the vowels are always together.\n\nTherefore, the required number $8 ! - 6 ! \\times 3 ! = 6 ! (7 \\times 8 - 6)$\n$= 2 \\times 6 ! (28 - 3)$\n$= 50 \\times 6 ! = 50 \\times 720 = 36000$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1559.7,
+            1181.4,
+            1648.4
+          ],
+          "conf": 0.762,
+          "text": "Example 15 In how many ways can 4 red, 3 yellow and 2 green discs be arranged in\na row if the discs of the same colour are indistinguishable ?"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1655.5,
+            1182.0,
+            1705.6
+          ],
+          "conf": 0.697,
+          "text": "Solution Total number of discs are $4 + 3 + 2 = 9$. Out of 9 discs, 4 are of the first kind"
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0089_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            259.4,
+            1051.4,
+            310.5
+          ],
+          "conf": 0.927,
+          "text": "(red), 3 are of the second kind (yellow) and 2 are of the third kind (green)."
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            315.6,
+            842.9,
+            407.9
+          ],
+          "conf": 0.894,
+          "text": "Therefore, the number of arrangements $\\frac{9!}{4! 3! 2!} = 1260$."
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            411.7,
+            1178.8,
+            659.9
+          ],
+          "conf": 0.638,
+          "text": "Example 16 Find the number of arrangements of the letters of the word\nINDEPENDENCE. In how many of these arrangements,\n(i) do the words start with P\n(ii) do all the vowels always occur together\n(iii) do the vowels never occur together\n(iv) do the words begin with I and end in P?"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            662.9,
+            1179.0,
+            750.7
+          ],
+          "conf": 0.915,
+          "text": "Solution There are 12 letters, of which N appears 3 times, E appears 4 times and D\nappears 2 times and the rest are all different. Therefore"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            753.5,
+            881.3,
+            850.2
+          ],
+          "conf": 0.882,
+          "text": "The required number of arrangements = $\\frac{12!}{3! 4! 2!} = 1663200$"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            134.7,
+            853.3,
+            1176.9,
+            942.4
+          ],
+          "conf": 0.853,
+          "text": "(i) Let us fix $P$ at the extreme left position, we, then, count the arrangements of the\nremaining 11 letters. Therefore, the required number of words starting with $P$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            511.4,
+            942.4,
+            779.5,
+            1039.7
+          ],
+          "conf": 0.85,
+          "text": "$$= \\frac{1!}{3! 2! 4!} = 138600$$"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            125.3,
+            1043.7,
+            1178.7,
+            1230.6
+          ],
+          "conf": 0.862,
+          "text": "(ii) There are 5 vowels in the given word, which are 4 Es and 1 I. Since, they have\nto always occur together, we treat them as a single object \\fbox{EEEI} for the time\nbeing. This single object together with 7 remaining objects will account for 8\nobjects. These 8 objects, in which there are 3Ns and 2 Ds, can be rearranged in"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            198.1,
+            1236.7,
+            1178.2,
+            1333.6
+          ],
+          "conf": 0.745,
+          "text": "$\\frac{8!}{3! \\ 2!}$ ways. Corresponding to each of these arrangements, the 5 vowels E, E, E,"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            194.3,
+            1351.5,
+            1178.5,
+            1480.9
+          ],
+          "conf": 0.699,
+          "text": "E and I can be rearranged in $\\frac{5!}{4!}$ ways. Therefore, by multiplication principle,\nthe required number of arrangements"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            359.6,
+            1489.4,
+            632.7,
+            1581.6
+          ],
+          "conf": 0.88,
+          "text": "$$= \\frac{8!}{3! \\, 2!} \\times \\frac{5!}{4!} = 16800$$"
+        },
+        {
+          "order": 11,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1586.9,
+            1123.2,
+            1711.5
+          ],
+          "conf": 0.895,
+          "text": "(iii) The required number of arrangements\n= the total number of arrangements (without any restriction) – the number\nof arrangements where all the vowels occur together."
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0089_p0014.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            444.5,
+            258.4,
+            850.5,
+            306.5
+          ],
+          "conf": 0.874,
+          "text": "$$= 1663200 - 16800 = 1646400$$"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            298.5,
+            1177.5,
+            421.2
+          ],
+          "conf": 0.584,
+          "text": "(iv) Let us fix I and P at the extreme ends (I at the left end and P at the right end).\nWe are left with 10 letters.\nHence, the required number of arrangements"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            434.3,
+            423.9,
+            675.6,
+            514.1
+          ],
+          "conf": 0.916,
+          "text": "$$= \\frac{10!}{3! 2! 4!} = 12600$$"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            521.3,
+            548.1,
+            776.4,
+            605.7
+          ],
+          "conf": 0.811,
+          "text": "EXERCISE 6.3"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.2,
+            614.5,
+            1179.6,
+            1495.3
+          ],
+          "conf": 0.838,
+          "text": "1. How many 3-digit numbers can be formed by using the digits 1 to 9 if no digit is\nrepeated?\n2. How many 4-digit numbers are there with no digit repeated?\n3. How many 3-digit even numbers can be made using the digits\n1, 2, 3, 4, 6, 7, if no digit is repeated?\n4. Find the number of 4-digit numbers that can be formed using the digits 1, 2, 3, 4,\n5 if no digit is repeated. How many of these will be even?\n5. From a committee of 8 persons, in how many ways can we choose a chairman\nand a vice chairman assuming one person can not hold more than one position?\n6. Find $n$ if ${}^{n-1}\\mathrm{P}_3 : {}^{n}\\mathrm{P}_4 = 1 : 9$.\n7. Find $r$ if (i) ${}^5\\mathrm{P}_r = 2{}^6\\mathrm{P}_{r-1}$ (ii) ${}^5\\mathrm{P}_r = {}^6\\mathrm{P}_{r-1}$.\n8. How many words, with or without meaning, can be formed using all the letters of\nthe word EQUATION, using each letter exactly once?\n9. How many words, with or without meaning can be made from the letters of the\nword MONDAY, assuming that no letter is repeated, if.\n(i) 4 letters are used at a time, (ii) all letters are used at a time,\n(iii) all letters are used but first letter is a vowel?\n10. In how many of the distinct permutations of the letters in MISSISSIPPI do the\nfour I's not come together?\n11. In how many ways can the letters of the word PERMUTATIONS be arranged if the\n(i) words start with P and end with S, (ii) vowels are all together,\n(iii) there are always 4 letters between P and S?"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.2,
+            1502.3,
+            401.4,
+            1552.7
+          ],
+          "conf": 0.86,
+          "text": "6.4 Combinations"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1552.7,
+            1178.6,
+            1715.1
+          ],
+          "conf": 0.955,
+          "text": "Let us now assume that there is a group of 3 lawn tennis players X, Y, Z. A team\nconsisting of 2 players is to be formed. In how many ways can we do so? Is the team\nof X and Y different from the team of Y and X ? Here, order is not important.\nIn fact, there are only 3 possible ways in which the team could be constructed."
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0089_p0015.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            155.1,
+            263.7,
+            1157.3,
+            429.8
+          ],
+          "conf": 0.93,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            600.9,
+            441.6,
+            711.4,
+            485.8
+          ],
+          "conf": 0.917,
+          "text": "Fig. 6.3"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.3,
+            478.0,
+            588.0,
+            527.6
+          ],
+          "conf": 0.908,
+          "text": "These are XY, YZ and ZX (Fig 6.3)."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.2,
+            518.5,
+            1180.1,
+            607.2
+          ],
+          "conf": 0.949,
+          "text": "Here, each selection is called a combination of 3 different objects taken 2 at a time.\nIn a combination, the order is not important."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            184.1,
+            599.5,
+            674.7,
+            648.1
+          ],
+          "conf": 0.914,
+          "text": "Now consider some more illustrations."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.1,
+            641.1,
+            1181.3,
+            811.5
+          ],
+          "conf": 0.973,
+          "text": "Twelve persons meet in a room and each shakes hand with all the others. How do\nwe determine the number of hand shakes. X shaking hands with Y and Y with X will\nnot be two different hand shakes. Here, order is not important. There will be as many\nhand shakes as there are combinations of 12 different things taken 2 at a time."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.3,
+            803.3,
+            1181.7,
+            933.9
+          ],
+          "conf": 0.964,
+          "text": "Seven points lie on a circle. How many chords can be drawn by joining these\npoints pairwise? There will be as many chords as there are combinations of 7 different\nthings taken 2 at a time."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.3,
+            926.6,
+            1182.0,
+            1016.7
+          ],
+          "conf": 0.946,
+          "text": "Now, we obtain the formula for finding the number of combinations of $n$ different\nobjects taken $r$ at a time, denoted by ${}^n\\text{C}_r...$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.9,
+            1007.6,
+            1181.3,
+            1220.0
+          ],
+          "conf": 0.975,
+          "text": "Suppose we have 4 different objects A, B, C and D. Taking 2 at a time, if we have\nto make combinations, these will be AB, AC, AD, BC, BD, CD. Here, AB and BA are\nthe same combination as order does not alter the combination. This is why we have not\nincluded BA, CA, DA, CB, DB and DC in this list. There are as many as 6 combinations\nof 4 different objects taken 2 at a time, i.e., $^4\\text{C}_2 = 6$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.6,
+            1212.0,
+            1182.9,
+            1344.6
+          ],
+          "conf": 0.958,
+          "text": "Corresponding to each combination in the list, we can arrive at 2! permutations as\n2 objects in each combination can be rearranged in 2! ways. Hence, the number of\npermutations $= ^4\\text{C}_2 \\times 2!$."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.7,
+            1343.5,
+            1181.8,
+            1436.0
+          ],
+          "conf": 0.94,
+          "text": "On the other hand, the number of permutations of 4 different things taken 2 at\na time $= ^4\\text{P}_2$."
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            183.6,
+            1436.6,
+            904.8,
+            1532.7
+          ],
+          "conf": 0.904,
+          "text": "Therefore $^4\\mathbf{P}_2 = ^4\\mathbf{C}_2 \\times 2!$ or $\\frac{4!}{(4-2)!2!} = ^4\\text{C}_2$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.1,
+            1538.2,
+            1181.4,
+            1706.8
+          ],
+          "conf": 0.962,
+          "text": "Now, let us suppose that we have 5 different objects A, B, C, D, E. Taking 3 at a\ntime, if we have to make combinations, these will be ABC, ABD, ABE, BCD, BCE,\nCDE, ACE, ACD, ADE, BDE. Corresponding to each of these $^5\\text{C}_3$ combinations, there\nare 3! permutations, because, the three objects in each combination can be"
+        }
+      ],
+      "page": 15
+    },
+    {
+      "image": "0089_p0016.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            271.7,
+            1002.9,
+            327.9
+          ],
+          "conf": 0.895,
+          "text": "rearranged in 3 ! ways. Therefore, the total of permutations = $^5\\text{C}_3 \\times 3!$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.3,
+            335.7,
+            850.5,
+            434.2
+          ],
+          "conf": 0.918,
+          "text": "Therefore $^5\\mathbf{P}_3 = ^5\\mathbf{C}_3 \\times \\mathbf{3}!$ or $\\frac{5!}{(5-3)! \\ 3!} = ^5\\text{C}_3$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            436.6,
+            1178.7,
+            525.0
+          ],
+          "conf": 0.949,
+          "text": "These examples suggest the following theorem showing relationship between\npermutaion and combination:"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            528.6,
+            601.5,
+            582.9
+          ],
+          "conf": 0.804,
+          "text": "Theorem 5 $^n\\mathrm{P}_r = ^n\\mathrm{C}_r \\ r!, \\ 0 < r \\le n.$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            592.4,
+            1181.3,
+            681.9
+          ],
+          "conf": 0.853,
+          "text": "Proof Corresponding to each combination of ${}^n\\text{C}_r$, we have $r$ ! permutations, because\n$r$ objects in every combination can be rearranged in $r$ ! ways."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.7,
+            671.8,
+            1164.5,
+            721.8
+          ],
+          "conf": 0.846,
+          "text": "Hence, the total number of permutations of $n$ different things taken $r$ at a time"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            730.0,
+            700.0,
+            783.9
+          ],
+          "conf": 0.867,
+          "text": "is ${}^n\\mathrm{C}_r \\times r!$. On the other hand, it is ${}^nP_r$ . Thus"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            280.1,
+            793.4,
+            613.3,
+            848.7
+          ],
+          "conf": 0.884,
+          "text": "$$ {}^n\\mathrm{P}_r = {}^n\\mathrm{C}_r \\times r!, \\ 0 < r \\le n. $$"
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            871.2,
+            998.4,
+            1081.5
+          ],
+          "conf": 0.704,
+          "text": "Remarks 1. From above $\\frac{n!}{(n-r)!} = {}^n\\text{C}_r \\times r!$, i.e., ${}^n\\text{C}_r = \\frac{n!}{r!(n-r)!}$.\n\n\nIn particular, if $r = n$, ${}^n\\text{C}_n = \\frac{n!}{n! \\cdot 0!} = 1$."
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1085.7,
+            1178.2,
+            1651.3
+          ],
+          "conf": 0.771,
+          "text": "2. We define $^n\\text{C}_0 = 1$, i.e., the number of combinations of $n$ different things taken\nnothing at all is considered to be 1. Counting combinations is merely counting the\nnumber of ways in which some or all objects at a time are selected. Selecting\nnothing at all is the same as leaving behind all the objects and we know that there\nis only one way of doing so. This way we define $^n\\text{C}_0 = 1$.\n\n3. As $\\frac{n!}{0!(n-0)!} = 1 = ^n\\text{C}_0$, the formula $^n\\text{C}_r = \\frac{n!}{r!(n-r)!}$ is applicable for $r = 0$ also.\n\nHence\n\n$$^n\\text{C}_r = \\frac{n!}{r!(n-r)!}, 0 \\le r \\le n.$$\n\n4. $^n\\text{C}_{n-r} = \\frac{n!}{(n-r)!(n-(n-r))!} = \\frac{n!}{(n-r)!r!} = ^n\\text{C}_r$,"
+        }
+      ],
+      "page": 16
+    },
+    {
+      "image": "0089_p0017.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            115.6,
+            265.1,
+            1055.0,
+            315.6
+          ],
+          "conf": 0.897,
+          "text": "i.e., selecting $r$ objects out of $n$ objects is same as rejecting $(n-r)$ objects."
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            115.2,
+            311.6,
+            801.7,
+            363.5
+          ],
+          "conf": 0.754,
+          "text": "\\textbf{5.} ${}^n\\mathrm{C}_a = {}^n\\mathrm{C}_b \\Rightarrow a = b$ or $a = n - b$, i.e., $n = a + b$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.5,
+            363.7,
+            984.9,
+            878.2
+          ],
+          "conf": 0.578,
+          "text": "Theorem 6 $^n\\text{C}_r + ^n\\text{C}_{r-1} = ^{n+1}\\text{C}_r$\n\n\nProof We have $^n\\text{C}_r + ^n\\text{C}_{r-1} = \\frac{n!}{r!(n-r)!} + \\frac{n!}{(r-1)!(n-r+1)!}$\n\n\n$$= \\frac{n!}{r \\times (r-1)!(n-r)!} + \\frac{n!}{(r-1)!(n-r+1)(n-r)!}$$\n\n\n$$= \\frac{n!}{(r-1)!(n-r)!} \\left[ \\frac{1}{r} + \\frac{1}{n-r+1} \\right]$$\n\n\n$$= \\frac{n!}{(r-1)!(n-r)!} \\times \\frac{n-r+1+r}{r(n-r+1)} = \\frac{(n+1)!}{r!(n+1-r)!} = ^{n+1}\\text{C}_r$$"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.5,
+            895.8,
+            800.7,
+            1292.6
+          ],
+          "conf": 0.688,
+          "text": "Example 17 If $^n\\text{C}_9 = ^n\\text{C}_8$, find $^n\\text{C}_{17}$.\n\nSolution We have $^n\\text{C}_9 = ^n\\text{C}_8$\n\ni.e., $\\frac{n!}{9!(n-9)!} = \\frac{n!}{(n-8)!8!}$\n\nor $\\frac{1}{9} = \\frac{1}{n-8}$ or $n-8 = 9$ or $n = 17$\n\nTherefore $^n\\text{C}_{17} = ^{17}\\text{C}_{17} = 1$."
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.0,
+            1301.3,
+            1181.0,
+            1701.6
+          ],
+          "conf": 0.655,
+          "text": "Example 18 A committee of 3 persons is to be constituted from a group of 2 men and\n3 women. In how many ways can this be done? How many of these committees would\nconsist of 1 man and 2 women?\n\nSolution Here, order does not matter. Therefore, we need to count combinations.\nThere will be as many committees as there are combinations of 5 different persons\n\ntaken 3 at a time. Hence, the required number of ways $= ^5\\text{C}_3 = \\frac{5!}{3! \\ 2!} = \\frac{4 \\times 5}{2} = 10$ .\n\nNow, 1 man can be selected from 2 men in $^2\\text{C}_1$ ways and 2 women can be\nselected from 3 women in $^3\\text{C}_2$ ways. Therefore, the required number of committees"
+        }
+      ],
+      "page": 17
+    },
+    {
+      "image": "0089_p0018.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.1,
+            274.7,
+            713.8,
+            368.2
+          ],
+          "conf": 0.93,
+          "text": "$$ = ^2\\text{C}_1 \\times ^3\\text{C}_2 = \\frac{2!}{1! \\ 1!} \\times \\frac{3!}{2! \\ 1!} = 6. $$"
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            384.9,
+            1177.4,
+            692.9
+          ],
+          "conf": 0.728,
+          "text": "Example 19 What is the number of ways of choosing 4 cards from a pack of 52\nplaying cards? In how many of these\n\n(i) four cards are of the same suit,\n(ii) four cards belong to four different suits,\n(iii) are face cards,\n(iv) two are red cards and two are black cards,\n(v) cards are of the same colour?"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            699.4,
+            1179.4,
+            792.9
+          ],
+          "conf": 0.918,
+          "text": "Solution There will be as many ways of choosing 4 cards from 52 cards as there are\ncombinations of 52 different things, taken 4 at a time. Therefore"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.9,
+            795.0,
+            943.2,
+            945.4
+          ],
+          "conf": 0.909,
+          "text": "$$ \\text{The required number of ways} = ^{52}\\text{C}_4 = \\frac{52!}{4! \\ 48!} = \\frac{49 \\times 50 \\times 51 \\times 52}{2 \\times 3 \\times 4} $$\n$$ = 270725 $$"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            137.0,
+            944.5,
+            1179.0,
+            1262.7
+          ],
+          "conf": 0.719,
+          "text": "(i) There are four suits: diamond, club, spade, heart and there are 13 cards of each\nsuit. Therefore, there are $^{13}\\text{C}_4$ ways of choosing 4 diamonds. Similarly, there are\n$^{13}\\text{C}_4$ ways of choosing 4 clubs, $^{13}\\text{C}_4$ ways of choosing 4 spades and $^{13}\\text{C}_4$ ways of\nchoosing 4 hearts. Therefore\nThe required number of ways $= ^{13}\\text{C}_4 + ^{13}\\text{C}_4 + ^{13}\\text{C}_4 + ^{13}\\text{C}_4$.\n$$= 4 \\times \\frac{13!}{4! \\ 9!} = 2860$$"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            125.1,
+            1275.3,
+            1179.6,
+            1555.0
+          ],
+          "conf": 0.697,
+          "text": "(ii) There are13 cards in each suit.\nTherefore, there are $^{13}\\text{C}_1$ ways of choosing 1 card from 13 cards of diamond,\n$^{13}\\text{C}_1$ ways of choosing 1 card from 13 cards of hearts, $^{13}\\text{C}_1$ ways of choosing 1\ncard from 13 cards of clubs, $^{13}\\text{C}_1$ ways of choosing 1 card from 13 cards of\nspades. Hence, by multiplication principle, the required number of ways\n$$= ^{13}\\text{C}_1 \\times ^{13}\\text{C}_1 \\times ^{13}\\text{C}_1 \\times ^{13}\\text{C}_1 = 13^4$$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            274.8,
+            1502.3,
+            676.5,
+            1562.9
+          ],
+          "conf": 0.772,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1563.3,
+            1177.4,
+            1707.9
+          ],
+          "conf": 0.75,
+          "text": "(iii) There are 12 face cards and 4 are to be selected out of these 12 cards. This can be\ndone in $^{12}\\text{C}_4$ ways. Therefore, the required number of ways = $\\frac{12!}{4! \\ 8!} = 495$."
+        }
+      ],
+      "page": 18
+    },
+    {
+      "image": "0089_p0019.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            259.9,
+            1181.0,
+            350.9
+          ],
+          "conf": 0.824,
+          "text": "(iv) There are 26 red cards and 26 black cards. Therefore, the required number of\nways $= {}^{26}\\text{C}_2 \\times {}^{26}\\text{C}_2$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            354.2,
+            355.5,
+            759.2,
+            465.1
+          ],
+          "conf": 0.913,
+          "text": "$$ = \\left( \\frac{26!}{2! 24!} \\right)^2 = (325)^2 = 105625 $$"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            470.1,
+            1178.6,
+            559.7
+          ],
+          "conf": 0.88,
+          "text": "(v) 4 red cards can be selected out of 26 red cards in $^{26}\\text{C}_4$ ways.\n4 black cards can be selected out of 26 black cards in $^{26}\\text{C}_4$ways."
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            554.6,
+            890.4,
+            701.9
+          ],
+          "conf": 0.803,
+          "text": "Therefore, the required number of ways $= {}^{26}\\mathrm{C}_4 + {}^{26}\\mathrm{C}_4$\n$= 2 \\times \\frac{26!}{4! \\ 22!} = 29900.$"
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            520.3,
+            737.6,
+            780.4,
+            793.4
+          ],
+          "conf": 0.812,
+          "text": "EXERCISE 6.4"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            801.2,
+            1179.0,
+            1464.5
+          ],
+          "conf": 0.906,
+          "text": "1. If ${}^n\\text{C}_8 = {}^n\\text{C}_2$, find ${}^n\\text{C}_2$.\n2. Determine $n$ if\n(i) ${}^{2n}\\text{C}_3 : {}^n\\text{C}_3 = 12 : 1$                                     (ii) ${}^{2n}\\text{C}_3 : {}^n\\text{C}_3 = 11 : 1$\n3. How many chords can be drawn through 21 points on a circle?\n4. In how many ways can a team of 3 boys and 3 girls be selected from 5 boys and\n4 girls?\n5. Find the number of ways of selecting 9 balls from 6 red balls, 5 white balls and 5\nblue balls if each selection consists of 3 balls of each colour.\n6. Determine the number of 5 card combinations out of a deck of 52 cards if there\nis exactly one ace in each combination.\n7. In how many ways can one select a cricket team of eleven from 17 players in\nwhich only 5 players can bowl if each cricket team of 11 must include exactly 4\nbowlers?\n8. A bag contains 5 black and 6 red balls. Determine the number of ways in which\n2 black and 3 red balls can be selected.\n9. In how many ways can a student choose a programme of 5 courses if 9 courses\nare available and 2 specific courses are compulsory for every student?"
+        },
+        {
+          "order": 6,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            464.9,
+            1489.2,
+            833.2,
+            1540.1
+          ],
+          "conf": 0.755,
+          "text": "Miscellaneous Examples"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1541.5,
+            1177.7,
+            1717.2
+          ],
+          "conf": 0.762,
+          "text": "Example 20 How many words, with or without meaning, each of 3 vowels and 2\nconsonants can be formed from the letters of the word INVOLUTE ?\n\nSolution In the word INVOLUTE, there are 4 vowels, namely, I,O,E,Uand 4\nconsonants, namely, N, V, L and T."
+        }
+      ],
+      "page": 19
+    },
+    {
+      "image": "0089_p0020.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            259.2,
+            1014.0,
+            347.9
+          ],
+          "conf": 0.896,
+          "text": "The number of ways of selecting 3 vowels out of 4 = $^4\\text{C}_3 = 4$.\nThe number of ways of selecting 2 consonants out of 4 = $^4\\text{C}_2 = 6$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            344.7,
+            1179.1,
+            427.7
+          ],
+          "conf": 0.941,
+          "text": "Therefore, the number of combinations of 3 vowels and 2 consonants is\n$4 \\times 6 = 24$."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            425.6,
+            1179.2,
+            550.0
+          ],
+          "conf": 0.966,
+          "text": "Now, each of these 24 combinations has 5 letters which can be arranged among\nthemselves in 5 ! ways. Therefore, the required number of different words is\n$$24 \\times 5 != 2880.$$"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            557.1,
+            1179.2,
+            685.1
+          ],
+          "conf": 0.875,
+          "text": "Example 21 A group consists of 4 girls and 7 boys. In how many ways can a team of\n5 members be selected if the team has (i) no girl ? (ii) at least one boy and one girl ?\n(iii) at least 3 girls ?"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            690.1,
+            1179.0,
+            779.8
+          ],
+          "conf": 0.898,
+          "text": "Solution (i) Since, the team will not include any girl, therefore, only boys are to be\nselected. 5 boys out of 7 boys can be selected in $^7\\text{C}_5$ ways. Therefore, the required"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            782.4,
+            688.5,
+            877.2
+          ],
+          "conf": 0.909,
+          "text": "$$ \\text{number of ways} = {}^{7}\\text{C}_{5} = \\frac{7!}{5! \\ 2!} = \\frac{6 \\times 7}{2} = 21 $$"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            880.1,
+            1178.5,
+            967.9
+          ],
+          "conf": 0.841,
+          "text": "(ii) Since, at least one boy and one girl are to be there in every team. Therefore, the\nteam can consist of"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.2,
+            966.9,
+            807.0,
+            1063.6
+          ],
+          "conf": 0.858,
+          "text": "(a) 1 boy and 4 girls\n(b) 2 boys and 3 girls\n(c) 3 boys and 2 girls\n(d) 4 boys and 1 girl."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            237.5,
+            1059.2,
+            907.1,
+            1249.4
+          ],
+          "conf": 0.738,
+          "text": "1 boy and 4 girls can be selected in $^7\\text{C}_1 \\times ^4\\text{C}_4$ ways.\n2 boys and 3 girls can be selected in $^7\\text{C}_2 \\times ^4\\text{C}_3$ ways.\n3 boys and 2 girls can be selected in $^7\\text{C}_3 \\times ^4\\text{C}_2$ ways.\n4 boys and 1 girl can be selected in $^7\\text{C}_4 \\times ^4\\text{C}_1$ ways."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.1,
+            1247.5,
+            701.7,
+            1297.9
+          ],
+          "conf": 0.851,
+          "text": "Therefore, the required number of ways"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            234.1,
+            1291.4,
+            836.8,
+            1388.0
+          ],
+          "conf": 0.846,
+          "text": "$$= {}^{7}\\mathrm{C}_{1} \\times {}^{4}\\mathrm{C}_{4} + {}^{7}\\mathrm{C}_{2} \\times {}^{4}\\mathrm{C}_{3} + {}^{7}\\mathrm{C}_{3} \\times {}^{4}\\mathrm{C}_{2} + {}^{7}\\mathrm{C}_{4} \\times {}^{4}\\mathrm{C}_{1}$$\n$$= 7 + 84 + 210 + 140 = 441$$"
+        },
+        {
+          "order": 11,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1380.4,
+            1083.7,
+            1469.5
+          ],
+          "conf": 0.868,
+          "text": "(iii) Since, the team has to consist of at least 3 girls, the team can consist of\n(a) 3 girls and 2 boys, or (b) 4 girls and 1 boy."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1473.5,
+            1089.3,
+            1524.8
+          ],
+          "conf": 0.893,
+          "text": "Note that the team cannot have all 5 girls, because, the group has only 4 girls."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.2,
+            1521.1,
+            855.9,
+            1609.9
+          ],
+          "conf": 0.825,
+          "text": "3 girls and 2 boys can be selected in $^4\\text{C}_3 \\times ^7\\text{C}_2$ ways.\n4 girls and 1 boy can be selected in $^4\\text{C}_4 \\times ^7\\text{C}_1$ ways."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1607.2,
+            634.5,
+            1656.4
+          ],
+          "conf": 0.862,
+          "text": "Therefore, the required number of ways"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            234.7,
+            1650.5,
+            720.7,
+            1707.1
+          ],
+          "conf": 0.857,
+          "text": "$$= ^4\\text{C}_3 \\times ^7\\text{C}_2 + ^4\\text{C}_4 \\times ^7\\text{C}_1 = 84 + 7 = 91$$"
+        }
+      ],
+      "page": 20
+    },
+    {
+      "image": "0089_p0021.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            263.0,
+            1177.8,
+            390.4
+          ],
+          "conf": 0.903,
+          "text": "Example 22 Find the number of words with or without meaning which can be made\nusing all the letters of the word AGAIN. If these words are written as in a dictionary,\nwhat will be the $50^{\\text{th}}$ word?"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            399.6,
+            1177.8,
+            449.7
+          ],
+          "conf": 0.846,
+          "text": "Solution There are 5 letters in the word AGAIN, in which A appears 2 times. Therefore,"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            453.1,
+            646.9,
+            544.3
+          ],
+          "conf": 0.892,
+          "text": "the required number of words = $\\frac{5!}{2!} = 60$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            543.6,
+            1179.0,
+            726.6
+          ],
+          "conf": 0.962,
+          "text": "To get the number of words starting with A, we fix the letter A at the extreme left\nposition, we then rearrange the remaining 4 letters taken all at a time. There will be as\nmany arrangements of these 4 letters taken 4 at a time as there are permutations of 4\ndifferent things taken 4 at a time. Hence, the number of words starting with"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            732.8,
+            1177.4,
+            824.6
+          ],
+          "conf": 0.867,
+          "text": "$A = 4! = 24$. Then, starting with G, the number of words $= \\frac{4!}{2!} = 12$ as after placing G"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            821.2,
+            1178.3,
+            950.0
+          ],
+          "conf": 0.941,
+          "text": "at the extreme left position, we are left with the letters A, A, I and N. Similarly, there\nare 12 words starting with the next letter I. Total number of words so far obtained\n$= 24 + 12 + 12 = 48.$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.8,
+            951.3,
+            848.6,
+            1001.7
+          ],
+          "conf": 0.897,
+          "text": "The $49^{\\text{th}}$ word is NAAGI. The $50^{\\text{th}}$ word is NAAIG."
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1007.9,
+            1178.5,
+            1095.9
+          ],
+          "conf": 0.856,
+          "text": "Example 23 How many numbers greater than 1000000 can be formed by using the\ndigits 1, 2, 0, 2, 4, 2, 4?"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1105.4,
+            1178.5,
+            1243.5
+          ],
+          "conf": 0.875,
+          "text": "Solution Since, 1000000 is a 7-digit number and the number of digits to be used is also\n7. Therefore, the numbers to be counted will be 7-digit only. Also, the numbers have to\nbe greater than 1000000, so they can begin either with 1, 2 or 4."
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.9,
+            1248.7,
+            1178.3,
+            1342.9
+          ],
+          "conf": 0.841,
+          "text": "The number of numbers beginning with $1 = \\frac{6!}{3! 2!} = \\frac{4 \\times 5 \\times 6}{2} = 60$, as when 1 is"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1346.5,
+            1178.6,
+            1435.3
+          ],
+          "conf": 0.898,
+          "text": "fixed at the extreme left position, the remaining digits to be rearranged will be $0, 2, 2, 2,$\n$4, 4,$ in which there are $3, \\ 2s$ and $2, 4s.$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            1440.8,
+            576.8,
+            1491.3
+          ],
+          "conf": 0.86,
+          "text": "Total numbers begining with 2"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.4,
+            1493.6,
+            550.5,
+            1588.6
+          ],
+          "conf": 0.884,
+          "text": "$$= \\frac{6!}{2! \\ 2!} = \\frac{3 \\times 4 \\times 5 \\times 6}{2} = 180$$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.4,
+            1605.9,
+            890.2,
+            1698.8
+          ],
+          "conf": 0.879,
+          "text": "and total numbers begining with $4 = \\frac{6!}{3!} = 4 \\times 5 \\times 6 = 120$"
+        }
+      ],
+      "page": 21
+    },
+    {
+      "image": "0089_p0022.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.4,
+            258.8,
+            1052.9,
+            309.7
+          ],
+          "conf": 0.901,
+          "text": "Therefore, the required number of numbers $= 60 + 180 + 120 = 360.$"
+        },
+        {
+          "order": 1,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            122.5,
+            313.3,
+            419.2,
+            362.7
+          ],
+          "conf": 0.852,
+          "text": "Alternative Method"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.3,
+            370.1,
+            1177.1,
+            600.8
+          ],
+          "conf": 0.78,
+          "text": "The number of 7-digit arrangements, clearly, $\\frac{7!}{3! \\ 2!} = 420$ . But, this will include those\nnumbers also, which have 0 at the extreme left position. The number of such\narrangements $\\frac{6!}{3! \\ 2!}$ (by fixing 0 at the extreme left position) $= 60$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.1,
+            608.8,
+            900.6,
+            659.7
+          ],
+          "conf": 0.894,
+          "text": "Therefore, the required number of numbers $= 420 - 60 = 360.$"
+        },
+        {
+          "order": 4,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            657.4,
+            1178.1,
+            844.9
+          ],
+          "conf": 0.953,
+          "text": "Note If one or more than one digits given in the list is repeated, it will be\nunderstood that in any number, the digits can be used as many times as is given in\nthe list, e.g., in the above example 1 and 0 can be used only once whereas 2 and 4\ncan be used 3 times and 2 times, respectively."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            847.6,
+            1177.1,
+            1287.8
+          ],
+          "conf": 0.512,
+          "text": "Example 24 In how many ways can 5 girls and 3 boys be seated in a row so that no\ntwo boys are together?\n\nSolution Let us first seat the 5 girls. This can be done in $5!$ ways. For each such\narrangement, the three boys can be seated only at the cross marked places.\n$$\\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times \\text{G} \\times"
+        },
+        {
+          "order": 6,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            379.5,
+            1311.2,
+            921.7,
+            1362.7
+          ],
+          "conf": 0.789,
+          "text": "Miscellaneous Exercise on Chapter 6"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            138.8,
+            1370.7,
+            1180.3,
+            1701.1
+          ],
+          "conf": 0.957,
+          "text": "1. How many words, with or without meaning, each of 2 vowels and 3 consonants\ncan be formed from the letters of the word DAUGHTER ?\n2. How many words, with or without meaning, can be formed using all the letters of\nthe word EQUATION at a time so that the vowels and consonants occur together?\n3. A committee of 7 has to be formed from 9 boys and 4 girls. In how many ways\ncan this be done when the committee consists of:\n(i) exactly 3 girls ? (ii) atleast 3 girls ? (iii) atmost 3 girls ?\n4. If the different permutations of all the letter of the word EXAMINATION are"
+        }
+      ],
+      "page": 22
+    },
+    {
+      "image": "0089_p0023.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.2,
+            259.7,
+            1170.1,
+            344.7
+          ],
+          "conf": 0.938,
+          "text": "listed as in a dictionary, how many words are there in this list before the first\nword starting with E ?"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            134.7,
+            336.5,
+            1169.9,
+            1034.9
+          ],
+          "conf": 0.814,
+          "text": "5. How many 6-digit numbers can be formed from the digits 0, 1, 3, 5, 7 and 9\nwhich are divisible by 10 and no digit is repeated ?\n6. The English alphabet has 5 vowels and 21 consonants. How many words with\ntwo different vowels and 2 different consonants can be formed from the\nalphabet ?\n7. In an examination, a question paper consists of 12 questions divided into two\nparts i.e., Part I and Part II, containing 5 and 7 questions, respectively. A student\nis required to attempt 8 questions in all, selecting at least 3 from each part. In\nhow many ways can a student select the questions ?\n8. Determine the number of 5-card combinations out of a deck of 52 cards if each\nselection of 5 cards has exactly one king.\n9. It is required to seat 5 men and 4 women in a row so that the women occupy the\neven places. How many such arrangements are possible ?\n10. From a class of 25 students, 10 are to be chosen for an excursion party. There\nare 3 students who decide that either all of them will join or none of them will\njoin. In how many ways can the excursion party be chosen ?\n11. In how many ways can the letters of the word ASSASSINATION be arranged\nso that all the S's are together ?"
+        },
+        {
+          "order": 2,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.6,
+            1066.3,
+            1180.9,
+            1702.0
+          ],
+          "conf": 0.877,
+          "text": "Summary\n\n$\\diamond$ Fundamental principle of counting If an event can occur in $m$ different\nways, following which another event can occur in $n$ different ways, then the\ntotal number of occurrence of the events in the given order is $m \\times n$.\n$\\diamond$ The number of permutations of $n$ different things taken $r$ at a time, where\n\nrepetition is not allowed, is denoted by $^nP_r$ and is given by $^nP_r = \\frac{n!}{(n-r)!}$,\n\nwhere $0 \\le r \\le n$.\n$\\diamond$ $n! = 1 \\times 2 \\times 3 \\times ... \\times n$\n$\\diamond$ $n! = n \\times (n-1)$ !\n$\\diamond$ The number of permutations of $n$ different things, taken $r$ at a time, where\nrepeation is allowed, is $n^r$.\n$\\diamond$ The number of permutations of $n$ objects taken all at a time, where $p_1$ objects"
+        }
+      ],
+      "page": 23
+    },
+    {
+      "image": "0089_p0024.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.5,
+            266.6,
+            1144.5,
+            413.6
+          ],
+          "conf": 0.662,
+          "text": "are of first kind, $p_2$ objects are of the second kind, ..., $p_k$ objects are of the $k^{\\text{th}}$\n\n\nkind and rest, if any, are all different is $\\frac{n!}{p_1! \\ p_2! \\ ... \\ p_k!}$."
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.3,
+            415.3,
+            1143.6,
+            560.7
+          ],
+          "conf": 0.718,
+          "text": "The number of combinations of $n$ different things taken $r$ at a time, denoted by\n\n\n${}^n\\text{C}_r$, is given by ${}^n\\text{C}_r = \\frac{n!}{r!(n-r)!}, 0 \\le r \\le n.$"
+        },
+        {
+          "order": 2,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            602.9,
+            1167.5,
+            1706.6
+          ],
+          "conf": 0.823,
+          "text": "Historical Note\n\nThe concepts of permutations and combinations can be traced back to the advent\nof Jainism in India and perhaps even earlier. The credit, however, goes to the\nJains who treated its subject matter as a self-contained topic in mathematics,\nunder the name Vikalpa.\nAmong the Jains, Mahavira, (around 850) is perhaps the world’s first\nmathematician credited with providing the general formulae for permutations and\ncombinations.\nIn the 6th century B.C., Sushruta, in his medicinal work, Sushruta Samhita,\nasserts that 63 combinations can be made out of 6 different tastes, taken one at a\ntime, two at a time, etc. Pingala, a Sanskrit scholar around third century B.C.,\ngives the method of determining the number of combinations of a given number\nof letters, taken one at a time, two at a time, etc. in his work Chhanda Sutra.\nBhaskaracharya (born 1114) treated the subject matter of permutations and\ncombinations under the name Anka Pasha in his famous work Lilavati. In addition\nto the general formulae for $^nC_r$ and $^nP_r$ already provided by Mahavira,\nBhaskaracharya gives several important theorems and results concerning the\nsubject.\nOutside India, the subject matter of permutations and combinations had its\nhumble beginnings in China in the famous book I–King (Book of changes). It is\ndifficult to give the approximate time of this work, since in 213 B.C., the emperor\nhad ordered all books and manuscripts in the country to be burnt which fortunately\nwas not completely carried out. Greeks and later Latin writers also did some\nscattered work on the theory of permutations and combinations.\nSome Arabic and Hebrew writers used the concepts of permutations and\ncombinations in studying astronomy. Rabbi ben Ezra, for instance, determined\nthe number of combinations of known planets taken two at a time, three at a time\nand so on. This was around 1140. It appears that Rabbi ben Ezra did not know"
+        }
+      ],
+      "page": 24
+    },
+    {
+      "image": "0089_p0025.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            145.1,
+            266.0,
+            1146.9,
+            540.7
+          ],
+          "conf": 0.614,
+          "text": "the formula for $^n\\text{C}_r$. However, he was aware that $^n\\text{C}_r = ^n\\text{C}_{n-r}$ for specific values\n$n$ and $r$. In 1321, *Levi Ben Gerson*, another Hebrew writer came up with the\nformulae for $^nP_r$, $^nP_n$ and the general formula for $^n\\text{C}_r$.\n    The first book which gives a complete treatment of the subject matter of\npermutations and combinations is Ars Conjectandi written by a Swiss, Jacob\nBernoulli (1654 – 1705), posthumously published in 1713. This book contains\nessentially the theory of permutations and combinations as is known today."
+        },
+        {
+          "order": 1,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            564.7,
+            1489.0,
+            733.3,
+            1540.0
+          ],
+          "conf": 0.695,
+          "text": ""
+        }
+      ],
+      "page": 25
+    }
+  ]
+}

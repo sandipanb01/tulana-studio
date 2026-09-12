@@ -1,0 +1,1866 @@
+{
+  "book": "1104",
+  "relpath": "dataset/input/eng/11/1104.pdf",
+  "num_pages": 13,
+  "pages": [
+    {
+      "image": "0087_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            658.7,
+            106.2,
+            1178.5,
+            335.5
+          ],
+          "conf": 0.849,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            905.8,
+            244.3,
+            1149.3,
+            321.7
+          ],
+          "conf": 0.597,
+          "text": "Chapter 4"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            715.1,
+            299.4,
+            818.3,
+            335.9
+          ],
+          "conf": 0.538,
+          "text": "[11076CH05"
+        },
+        {
+          "order": 3,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            191.2,
+            391.4,
+            1111.5,
+            586.7
+          ],
+          "conf": 0.818,
+          "text": "COMPLEX NUMBERS AND\nQUADRATIC EQUATIONS"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            175.2,
+            656.3,
+            1132.7,
+            745.0
+          ],
+          "conf": 0.791,
+          "text": "❖ Mathematics is the Queen of Sciences and Arithmetic is the Queen of\nMathematics. – GAUSS ❖"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.2,
+            782.2,
+            375.2,
+            832.6
+          ],
+          "conf": 0.87,
+          "text": "4.1 Introduction"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.3,
+            832.2,
+            833.7,
+            1224.0
+          ],
+          "conf": 0.98,
+          "text": "In earlier classes, we have studied linear equations in one\nand two variables and quadratic equations in one variable.\nWe have seen that the equation $x^2 + 1 = 0$ has no real\nsolution as $x^2 + 1 = 0$ gives $x^2 = - 1$ and square of every\nreal number is non-negative. So, we need to extend the\nreal number system to a larger system so that we can\nfind the solution of the equation $x^2 = - 1$. In fact, the main\nobjective is to solve the equation $ax^2 + bx + c = 0$, where\n$D = b^2 - 4ac < 0$, which is not possible in the system of\nreal numbers."
+        },
+        {
+          "order": 7,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            833.6,
+            804.3,
+            1175.2,
+            1220.9
+          ],
+          "conf": 0.962,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            922.6,
+            1210.7,
+            1115.3,
+            1286.7
+          ],
+          "conf": 0.945,
+          "text": "W. R. Hamilton\n(1805-1865)"
+        },
+        {
+          "order": 9,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.5,
+            1230.4,
+            465.0,
+            1282.7
+          ],
+          "conf": 0.833,
+          "text": "4.2 Complex Numbers"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            1294.5,
+            1177.5,
+            1385.3
+          ],
+          "conf": 0.897,
+          "text": "Let us denote $\\sqrt{-1}$ by the symbol $i$. Then, we have $i^2 = -1$. This means that $i$ is a\nsolution of the equation $x^2 + 1 = 0$."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.6,
+            1377.1,
+            1178.1,
+            1426.1
+          ],
+          "conf": 0.831,
+          "text": "A number of the form $a + ib$, where $a$ and $b$ are real numbers, is defined to be a"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.9,
+            1427.8,
+            1176.9,
+            1526.7
+          ],
+          "conf": 0.814,
+          "text": "complex number. For example, $2 + i3$, $(-1) + i\\sqrt{3}$ , $4 + i\\left(\\frac{-1}{11}\\right)$ are complex numbers."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.1,
+            1526.3,
+            1177.9,
+            1651.9
+          ],
+          "conf": 0.89,
+          "text": "For the complex number $z = a + ib$, $a$ is called the \\textit{real part}, denoted by $\\text{Re } z$ and\n$b$ is called the \\textit{imaginary part} denoted by $\\text{Im } z$ \\textit{of the complex number} $z$. For example,\nif $z = 2 + i5$, then $\\text{Re } z = 2$ and $\\text{Im } z = 5$."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.6,
+            1641.8,
+            1178.3,
+            1693.3
+          ],
+          "conf": 0.808,
+          "text": "Two complex numbers $z_1 = a + ib$ and $z_2 = c + id$ are equal if $a = c$ and $b = d$."
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0087_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.9,
+            255.2,
+            1178.5,
+            342.8
+          ],
+          "conf": 0.898,
+          "text": "Example 1 If $4x + i(3x - y) = 3 + i (- 6)$, where $x$ and $y$ are real numbers, then find\nthe values of $x$ and $y$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.5,
+            349.2,
+            376.7,
+            397.1
+          ],
+          "conf": 0.856,
+          "text": "Solution We have"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            360.4,
+            388.7,
+            1084.7,
+            439.1
+          ],
+          "conf": 0.857,
+          "text": "$$4x + i (3x - y) = 3 + i (-6) \\qquad \\dots (1)$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            124.3,
+            429.4,
+            826.3,
+            479.0
+          ],
+          "conf": 0.843,
+          "text": "Equating the real and the imaginary parts of (1), we get"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            359.7,
+            468.2,
+            632.3,
+            515.3
+          ],
+          "conf": 0.859,
+          "text": "$$4x = 3, 3x - y = -6,$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            124.2,
+            519.1,
+            858.3,
+            608.8
+          ],
+          "conf": 0.855,
+          "text": "which, on solving simultaneously, give $x = \\frac{3}{4}$ and $y = \\frac{33}{4}$."
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            121.8,
+            622.4,
+            626.1,
+            673.7
+          ],
+          "conf": 0.867,
+          "text": "4.3 Algebra of Complex Numbers"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.2,
+            664.8,
+            947.1,
+            713.6
+          ],
+          "conf": 0.933,
+          "text": "In this Section, we shall develop the algebra of complex numbers."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.5,
+            718.0,
+            1178.3,
+            804.5
+          ],
+          "conf": 0.919,
+          "text": "**4.3.1 *Addition of two complex numbers*** Let $z_1 = a + ib$ and $z_2 = c + id$ be any two\ncomplex numbers. Then, the sum $z_1 + z_2$ is defined as follows:"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.2,
+            792.5,
+            978.6,
+            843.6
+          ],
+          "conf": 0.759,
+          "text": "$z_1 + z_2 = (a + c) + i(b + d)$, which is again a complex number."
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            123.0,
+            831.6,
+            937.8,
+            881.4
+          ],
+          "conf": 0.775,
+          "text": "For example, $(2 + i3) + (- 6 +i5) = (2 - 6) + i (3 + 5) = - 4 + i 8$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            189.9,
+            878.6,
+            1008.4,
+            927.8
+          ],
+          "conf": 0.906,
+          "text": "The addition of complex numbers satisfy the following properties:"
+        },
+        {
+          "order": 12,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            197.6,
+            924.5,
+            1179.5,
+            1469.3
+          ],
+          "conf": 0.981,
+          "text": "(i) The closure law The sum of two complex numbers is a complex\nnumber, i.e., $z_1 + z_2$ is a complex number for all complex numbers\n$z_1$ and $z_2$.\n(ii) The commutative law For any two complex numbers $z_1$ and $z_2$,\n$z_1 + z_2 = z_2 + z_1$\n(iii) The associative law For any three complex numbers $z_1$, $z_2$, $z_3$,\n$(z_1 + z_2) + z_3 = z_1 + (z_2 + z_3)$.\n(iv) The existence of additive identity There exists the complex number\n$0 + i \\ 0$ (denoted as $0$), called the additive identity or the zero complex\nnumber; such that, for every complex number $z$, $z + 0 = z$.\n(v) The existence of additive inverse To every complex number\n$z = a + ib$, we have the complex number $- a + i(- b)$ (denoted as $- z$),\ncalled the additive inverse or negative of $z$. We observe that $z + (-z) = 0$\n(the additive identity)."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.8,
+            1477.1,
+            1178.6,
+            1563.5
+          ],
+          "conf": 0.834,
+          "text": "**4.3.2 Difference of two complex numbers** Given any two complex numbers $z_1$ and\n$z_2$, the difference $z_1 - z_2$ is defined as follows:"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            358.4,
+            1560.1,
+            631.1,
+            1610.8
+          ],
+          "conf": 0.838,
+          "text": "$$z_1 - z_2 = z_1 + (-z_2).$$"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.1,
+            1600.9,
+            1059.6,
+            1696.1
+          ],
+          "conf": 0.626,
+          "text": "For example, $$(6 + 3i) - (2 - i) = (6 + 3i) + (- 2 + i) = 4 + 4i$$\nand $$(2 - i) - (6 + 3i) = (2 - i) + (- 6 - 3i) = - 4 - 4i$$"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0087_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            261.8,
+            1177.5,
+            350.0
+          ],
+          "conf": 0.82,
+          "text": "**4.3.3 *Multiplication of two complex numbers*** Let $z_1 = a + ib$ and $z_2 = c + id$ be any\ntwo complex numbers. Then, the product $z_1 z_2$ is defined as follows:"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            184.2,
+            340.1,
+            585.0,
+            391.4
+          ],
+          "conf": 0.868,
+          "text": "$$z_1 z_2 = (ac - bd) + i(ad + bc)$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            377.0,
+            1093.7,
+            428.1
+          ],
+          "conf": 0.812,
+          "text": "For example, $(3 + i5) (2 + i6) = (3 \\times 2 - 5 \\times 6) + i(3 \\times 6 + 5 \\times 2) = - 24 + i28$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            415.9,
+            1178.5,
+            502.4
+          ],
+          "conf": 0.944,
+          "text": "The multiplication of complex numbers possesses the following properties, which\nwe state without proofs."
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            191.4,
+            492.7,
+            1179.1,
+            1283.1
+          ],
+          "conf": 0.96,
+          "text": "(i) The closure law The product of two complex numbers is a complex number,\nthe product $z_1 z_2$ is a complex number for all complex numbers $z_1$ and $z_2$.\n(ii) The commutative law For any two complex numbers $z_1$ and $z_2$,\n$$z_1 z_2 = z_2 z_1$$\n(iii) The associative law For any three complex numbers $z_1, z_2, z_3$,\n$$(z_1 z_2) z_3 = z_1 (z_2 z_3).$$\n(iv) The existence of multiplicative identity There exists the complex number\n$1 + i 0$ (denoted as 1), called the multiplicative identity such that $z.1 = z$,\nfor every complex number $z$.\n(v) The existence of multiplicative inverse For every non-zero complex\nnumber $z = a + ib$ or $a + bi (a \\neq 0, b \\neq 0)$, we have the complex number\n$$\\frac{a}{a^2 + b^2} + i \\frac{-b}{a^2 + b^2} \\text{ (denoted by } \\frac{1}{z} \\text{ or } z^{-1} \\text{), called the multiplicative inverse}$$\nof $z$ such that\n$$z. \\frac{1}{z} = 1 \\text{ (the multiplicative identity).}$$\n(vi) The distributive law For any three complex numbers $z_1, z_2, z_3$,\n(a) $z_1 (z_2 + z_3) = z_1 z_2 + z_1 z_3$\n(b) $(z_1 + z_2) z_3 = z_1 z_3 + z_2 z_3$"
+        },
+        {
+          "order": 5,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.7,
+            1276.4,
+            1177.7,
+            1327.2
+          ],
+          "conf": 0.752,
+          "text": "4.3.4 *Division of two complex numbers* Given any two complex numbers $z_1$ and $z_2$,"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1332.7,
+            680.0,
+            1419.7
+          ],
+          "conf": 0.866,
+          "text": "where $z_2 \\neq 0$, the quotient $\\frac{z_1}{z_2}$ is defined by"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            360.9,
+            1435.6,
+            503.5,
+            1524.8
+          ],
+          "conf": 0.881,
+          "text": "$$ \\frac{z_1}{z_2} = z_1 \\frac{1}{z_2} $$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1521.1,
+            691.3,
+            1575.3
+          ],
+          "conf": 0.824,
+          "text": "For example, let $z_1 = 6 + 3i$ and $z_2 = 2 - i$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.2,
+            1578.7,
+            1124.2,
+            1700.1
+          ],
+          "conf": 0.858,
+          "text": "Then $$\\frac{z_1}{z_2} = \\left( (6+3i) \\times \\frac{1}{2-i} \\right) = (6+3i) \\left( \\frac{2}{2^2 + (-1)^2} + i \\frac{-(-1)}{2^2 + (-1)^2} \\right)$$"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0087_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            418.3,
+            275.3,
+            1096.8,
+            373.0
+          ],
+          "conf": 0.935,
+          "text": "$$= (6+3i)\\left(\\frac{2+i}{5}\\right) = \\frac{1}{5}[12-3+i(6+6)] = \\frac{1}{5}(9+12i)$$"
+        },
+        {
+          "order": 1,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.4,
+            371.4,
+            544.3,
+            421.4
+          ],
+          "conf": 0.921,
+          "text": "4.3.5 Power of $i$ we know that"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            200.8,
+            428.3,
+            776.0,
+            496.5
+          ],
+          "conf": 0.908,
+          "text": "$$i^3 = i^2 i = (-1) i = -i, \\qquad i^4 = \\left(i^2\\right)^2 = (-1)^2 = 1$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            201.9,
+            509.0,
+            874.0,
+            580.3
+          ],
+          "conf": 0.915,
+          "text": "$$i^5 = \\left(i^2\\right)^2 i = (-1)^2 i = i, \\quad i^6 = \\left(i^2\\right)^3 = (-1)^3 = -1, \\text{ etc.}$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            219.4,
+            592.0,
+            988.0,
+            684.8
+          ],
+          "conf": 0.921,
+          "text": "Also, we have $i^{-1} = \\frac{1}{i} \\times \\frac{i}{i} = \\frac{i}{-1} = -i, \\quad i^{-2} = \\frac{1}{i^2} = \\frac{1}{-1} = -1,$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            464.4,
+            699.2,
+            988.8,
+            790.8
+          ],
+          "conf": 0.927,
+          "text": "$$i^{-3} = \\frac{1}{i^3} = \\frac{1}{-i} \\times \\frac{i}{i} = \\frac{i}{1} = i, \\quad i^{-4} = \\frac{1}{i^4} = \\frac{1}{1} = 1$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            786.4,
+            965.9,
+            838.7
+          ],
+          "conf": 0.909,
+          "text": "In general, for any integer $k$, $i^{4k} = 1$, $i^{4k+1} = i$, $i^{4k+2} = -1$, $i^{4k+3} = -i$"
+        },
+        {
+          "order": 7,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.3,
+            844.4,
+            794.6,
+            894.7
+          ],
+          "conf": 0.907,
+          "text": "4.3.6 The square roots of a negative real number"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            890.0,
+            625.4,
+            940.3
+          ],
+          "conf": 0.916,
+          "text": "Note that $i^2 = -1$ and $(-i)^2 = i^2 = -1$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            936.9,
+            1175.6,
+            1029.0
+          ],
+          "conf": 0.948,
+          "text": "Therefore, the square roots of $-1$ are $i, -i$. However, by the symbol $\\sqrt{-1}$, we would\nmean $i$ only."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.9,
+            1021.6,
+            1175.7,
+            1109.4
+          ],
+          "conf": 0.944,
+          "text": "Now, we can see that $i$ and $-i$ both are the solutions of the equation $x^2 + 1 = 0$ or\n$x^2 = -1$."
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1110.2,
+            794.4,
+            1189.0
+          ],
+          "conf": 0.852,
+          "text": "Similarly $(\\sqrt{3} i)^{2}=(\\sqrt{3})^{2} i^{2}=3(-1)=-3$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            359.2,
+            1203.3,
+            725.3,
+            1280.8
+          ],
+          "conf": 0.875,
+          "text": "$$ \\left(-\\sqrt{3} i\\right)^2 = \\left(-\\sqrt{3}\\right)^2 \\quad i^2 = -3 $$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1292.2,
+            836.4,
+            1346.5
+          ],
+          "conf": 0.906,
+          "text": "Therefore, the square roots of $-3$ are $\\sqrt{3} \\ i$ and $-\\sqrt{3} \\ i$."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            1354.1,
+            1122.2,
+            1410.4
+          ],
+          "conf": 0.89,
+          "text": "Again, the symbol $\\sqrt{-3}$ is meant to represent $\\sqrt{3}i$ only, i.e., $\\sqrt{-3} = \\sqrt{3}i$."
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.8,
+            1416.8,
+            1024.5,
+            1474.4
+          ],
+          "conf": 0.883,
+          "text": "Generally, if $a$ is a positive real number, $\\sqrt{-a} = \\sqrt{a} \\sqrt{-1} = \\sqrt{a} i$,"
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1481.4,
+            1175.8,
+            1625.5
+          ],
+          "conf": 0.926,
+          "text": "We already know that $\\sqrt{a} \\times \\sqrt{b} = \\sqrt{ab}$ for all positive real number $a$ and $b$. This\nresult also holds true when either $a > 0$, $b < 0$ or $a < 0$, $b > 0$. What if $a < 0$, $b < 0$?\nLet us examine."
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1636.3,
+            261.2,
+            1683.6
+          ],
+          "conf": 0.855,
+          "text": "Note that"
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0087_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            158.7,
+            269.4,
+            1173.4,
+            336.3
+          ],
+          "conf": 0.866,
+          "text": "$i^2 = \\sqrt{-1} \\sqrt{-1} = \\sqrt{(-1)(-1)}$ (by assuming $\\sqrt{a} \\times \\sqrt{b} = \\sqrt{ab}$ for all real numbers)"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.9,
+            342.8,
+            938.9,
+            401.5
+          ],
+          "conf": 0.854,
+          "text": "$= \\sqrt{1} = 1$, which is a contradiction to the fact that $i^2 = -1$."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.8,
+            399.0,
+            1070.4,
+            455.8
+          ],
+          "conf": 0.83,
+          "text": "Therefore, $\\sqrt{a} \\times \\sqrt{b} \\neq \\sqrt{ab}$ if both $a$ and $b$ are negative real numbers."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.5,
+            458.7,
+            1029.2,
+            515.7
+          ],
+          "conf": 0.87,
+          "text": "Further, if any of $a$ and $b$ is zero, then, clearly, $\\sqrt{a} \\times \\sqrt{b} = \\sqrt{ab} = 0$."
+        },
+        {
+          "order": 4,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.4,
+            509.6,
+            732.4,
+            562.0
+          ],
+          "conf": 0.846,
+          "text": "4.3.7 Identities We prove the following identity"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            191.8,
+            562.8,
+            978.6,
+            626.2
+          ],
+          "conf": 0.875,
+          "text": "$(z_1 + z_2)^2 = z_1^2 + z_2^2 + 2z_1z_2$, for all complex numbers $z_1$ and $z_2$."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            123.6,
+            633.5,
+            1140.6,
+            917.7
+          ],
+          "conf": 0.891,
+          "text": "Proof We have, $(z_1 + z_2)^2 = (z_1 + z_2) (z_1 + z_2)$,\n$= (z_1 + z_2) z_1 + (z_1 + z_2) z_2$ (Distributive law)\n$= z_1^2 + z_2 z_1 + z_1 z_2 + z_2^2$ (Distributive law)\n$= z_1^2 + z_1 z_2 + z_1 z_2 + z_2^2$ (Commutative law of multiplication)\n$= z_1^2 + 2 z_1 z_2 + z_2^2$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            189.0,
+            911.2,
+            782.7,
+            962.7
+          ],
+          "conf": 0.869,
+          "text": "Similarly, we can prove the following identities:"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            192.8,
+            962.2,
+            709.9,
+            1231.8
+          ],
+          "conf": 0.849,
+          "text": "(i) $(z_1 - z_2)^2 = z_1^2 - 2 z_1 z_2 + z_2^2$\n\n(ii) $(z_1 + z_2)^3 = z_1^3 + 3 z_1^2 z_2 + 3 z_1 z_2^2 + z_2^3$\n\n(iii) $(z_1 - z_2)^3 = z_1^3 - 3 z_1^2 z_2 + 3 z_1 z_2^2 - z_2^3$\n\n(iv) $z_1^2 - z_2^2 = (z_1 + z_2)(z_1 - z_2)$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.9,
+            1226.8,
+            1172.9,
+            1316.9
+          ],
+          "conf": 0.924,
+          "text": "In fact, many other identities which are true for all real numbers, can be proved\nto be true for all complex numbers."
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.3,
+            1320.7,
+            1074.2,
+            1711.1
+          ],
+          "conf": 0.669,
+          "text": "Example 2 Express the following in the form of $a + bi$:\n\n(i) $(-5i) \\left( \\frac{1}{8} i \\right)$                                     (ii) $(-i) (2i) \\left( -\\frac{1}{8} i \\right)^3$\n\n\nSolution (i) $(-5i) \\left( \\frac{1}{8} i \\right) = \\frac{-5}{8} i^2 = \\frac{-5}{8} (-1) = \\frac{5}{8} = \\frac{5}{8} + i0$\n\n\n(ii) $(-i) (2i) \\left( -\\frac{1}{8} i \\right)^3 = 2 \\times \\frac{1}{8 \\times 8 \\times 8} \\times i^5 = \\frac{1}{256} (i^2)^2 \\quad i = \\frac{1}{256} i.$"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0087_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            263.5,
+            734.5,
+            315.4
+          ],
+          "conf": 0.773,
+          "text": "Example 3 Express $(5 - 3i)^3$ in the form $a + ib$."
+        },
+        {
+          "order": 1,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            317.1,
+            1006.3,
+            415.3
+          ],
+          "conf": 0.808,
+          "text": "Solution We have, $(5 - 3i)^3 = 5^3 - 3 \\times 5^2 \\times (3i) + 3 \\times 5 (3i)^2 - (3i)^3$\n$= 125 - 225i - 135 + 27i = - 10 - 198i.$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            436.8,
+            939.6,
+            500.8
+          ],
+          "conf": 0.814,
+          "text": "Example 4 Express $(-\\sqrt{3}+\\sqrt{-2})(2\\sqrt{3}-i)$ in the form of $a+ib$"
+        },
+        {
+          "order": 3,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            530.5,
+            1119.4,
+            680.4
+          ],
+          "conf": 0.793,
+          "text": "Solution We have, $(-\\sqrt{3}+\\sqrt{-2})(2\\sqrt{3}-i) = (-\\sqrt{3}+\\sqrt{2}i)(2\\sqrt{3}-i)$\n\n$$= -6+\\sqrt{3}i+2\\sqrt{6}i-\\sqrt{2}i^2 = (-6+\\sqrt{2})+\\sqrt{3}(1+2\\sqrt{2})i$$"
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            117.8,
+            700.1,
+            962.0,
+            753.4
+          ],
+          "conf": 0.902,
+          "text": "4.4 The Modulus and the Conjugate of a Complex Number"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            750.9,
+            1182.2,
+            912.8
+          ],
+          "conf": 0.946,
+          "text": "Let $z = a + ib$ be a complex number. Then, the modulus of $z$, denoted by $|z|$, is defined\nto be the non-negative real number $\\sqrt{a^2 + b^2}$, i.e., $|z| = \\sqrt{a^2 + b^2}$ and the conjugate\nof $z$, denoted as $\\overline{z}$, is the complex number $a - ib$, i.e., $\\overline{z} = a - ib$."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            912.2,
+            1085.4,
+            1039.7
+          ],
+          "conf": 0.718,
+          "text": "For example, $\\quad|3+i|=\\sqrt{3^{2}+1^{2}}=\\sqrt{10}, \\quad|2-5 i|=\\sqrt{2^{2}+(-5)^{2}}=\\sqrt{29}$,\n\nand $\\quad \\overline{3+i}=3-i, \\quad \\overline{2-5 i}=2+5 i, \\quad \\overline{-3 i-5}=3 i-5$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1039.7,
+            1182.5,
+            1128.8
+          ],
+          "conf": 0.927,
+          "text": "Observe that the multiplicative inverse of the non-zero complex number $z$ is\ngiven by"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            275.9,
+            1128.8,
+            963.7,
+            1237.5
+          ],
+          "conf": 0.879,
+          "text": "$$z^{-1} = \\frac{1}{a + ib} = \\frac{a}{a^2 + b^2} + i \\frac{-b}{a^2 + b^2} = \\frac{a - ib}{a^2 + b^2} = \\frac{\\bar{z}}{|z|^2}$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            1253.6,
+            416.9,
+            1313.7
+          ],
+          "conf": 0.808,
+          "text": "or $z \\bar{z} = |z|^2$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1319.2,
+            894.9,
+            1415.9
+          ],
+          "conf": 0.87,
+          "text": "Furthermore, the following results can easily be derived.\nFor any two compex numbers $z_1$ and $z_2$ , we have"
+        },
+        {
+          "order": 11,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            196.2,
+            1454.4,
+            1170.3,
+            1690.8
+          ],
+          "conf": 0.617,
+          "text": "(i) $|z_1 z_2| = |z_1| |z_2|$ (ii) $\\left| \\frac{z_1}{z_2} \\right| = \\frac{|z_1|}{|z_2|}$ provided $|z_2| \\neq 0$\n\n\n(iii) $\\overline{z_1 z_2} = \\overline{z_1} \\overline{z_2}$ (iv) $\\overline{z_1 \\pm z_2} = \\overline{z_1} \\pm \\overline{z_2}$ (v) $\\left( \\overline{\\frac{z_1}{z_2}} \\right) = \\overline{\\frac{z_1}{z_2}}$ provided $z_2 \\neq 0$."
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0087_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            259.0,
+            789.0,
+            309.1
+          ],
+          "conf": 0.775,
+          "text": "Example 5 Find the multiplicative inverse of $2-3i$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            312.9,
+            482.6,
+            362.5
+          ],
+          "conf": 0.61,
+          "text": "Solution Let $z = 2 - 3i$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            122.7,
+            368.4,
+            822.2,
+            425.4
+          ],
+          "conf": 0.683,
+          "text": "Then $\\bar{z} = 2 + 3i$ and $|z|^2 = 2^2 + (-3)^2 = 13$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.2,
+            426.4,
+            847.3,
+            477.5
+          ],
+          "conf": 0.829,
+          "text": "Therefore, the multiplicative inverse of $2-3i$ is given by"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            277.4,
+            484.3,
+            671.3,
+            588.6
+          ],
+          "conf": 0.863,
+          "text": "$$z^{-1} = \\frac{\\overline{z}}{|z|^2} = \\frac{2+3i}{13} = \\frac{2}{13} + \\frac{3}{13}i$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.5,
+            592.4,
+            975.4,
+            642.4
+          ],
+          "conf": 0.886,
+          "text": "The above working can be reproduced in the following manner also,"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            267.7,
+            647.1,
+            719.2,
+            852.1
+          ],
+          "conf": 0.702,
+          "text": "$$z^{-1} = \\frac{1}{2 - 3i} = \\frac{2 + 3i}{(2 - 3i)(2 + 3i)}$$\n\n$$= \\frac{2 + 3i}{2^2 - (3i)^2} = \\frac{2 + 3i}{13} = \\frac{2}{13} + \\frac{3}{13}i$$"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.4,
+            853.1,
+            1060.8,
+            1392.1
+          ],
+          "conf": 0.602,
+          "text": "Example 6 Express the following in the form $a + ib$\n\n(i) $\\frac{5 + \\sqrt{2}i}{1 - \\sqrt{2}i}$                                                                    (ii) $i^{-35}$\n\nSolution (i) We have, $\\frac{5 + \\sqrt{2}i}{1 - \\sqrt{2}i} = \\frac{5 + \\sqrt{2}i}{1 - \\sqrt{2}i} \\times \\frac{1 + \\sqrt{2}i}{1 + \\sqrt{2}i} = \\frac{5 + 5\\sqrt{2}i + \\sqrt{2}i - 2}{1 - (\\sqrt{2}i)^2}$\n\n$$= \\frac{3 + 6\\sqrt{2}i}{1 + 2} = \\frac{3(1 + 2\\sqrt{2}i)}{3} = 1 + 2\\sqrt{2}i .$$\n\n(ii) $i^{-35} = \\frac{1}{i^{35}} = \\frac{1}{\\left(i^2\\right)^{17} i} = \\frac{1}{-i} \\times \\frac{i}{i} = \\frac{i}{-i^2} = i$"
+        },
+        {
+          "order": 8,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            522.3,
+            1430.7,
+            773.6,
+            1483.5
+          ],
+          "conf": 0.746,
+          "text": "EXERCISE 4.1"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.9,
+            1491.7,
+            1175.6,
+            1577.8
+          ],
+          "conf": 0.869,
+          "text": "Express each of the complex number given in the Exercises 1 to 10 in the\nform $a + ib$."
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            139.0,
+            1584.0,
+            896.1,
+            1678.8
+          ],
+          "conf": 0.758,
+          "text": "1. $(5i)\\left(-\\frac{3}{5}i\\right)$ 2. $i^9 + i^{19}$ 3. $i^{-39}$"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0087_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.7,
+            257.5,
+            789.1,
+            309.9
+          ],
+          "conf": 0.569,
+          "text": "4. $3(7+i7) + i(7+i7)$     5. $(1-i) - (-1+i6)$"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            137.2,
+            313.5,
+            973.1,
+            416.1
+          ],
+          "conf": 0.548,
+          "text": "6. $\\left(\\frac{1}{5}+i\\frac{2}{5}\\right)-\\left(4+i\\frac{5}{2}\\right)$ 7. $\\left[\\left(\\frac{1}{3}+i\\frac{7}{3}\\right)+\\left(4+i\\frac{1}{3}\\right)\\right]-\\left(-\\frac{4}{3}+i\\right)$"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.2,
+            430.5,
+            979.9,
+            530.7
+          ],
+          "conf": 0.647,
+          "text": "8. $(1-i)^4$          9. $\\left(\\frac{1}{3}+3i\\right)^3$          10. $\\left(-2-\\frac{1}{3}i\\right)^3$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            531.4,
+            1181.3,
+            618.3
+          ],
+          "conf": 0.943,
+          "text": "Find the multiplicative inverse of each of the complex numbers given in the\nExercises 11 to 13."
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            620.5,
+            879.4,
+            671.5
+          ],
+          "conf": 0.736,
+          "text": "11. $4-3i$          12. $\\sqrt{5}+3i$          13. $-i$"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            669.2,
+            883.9,
+            718.0
+          ],
+          "conf": 0.852,
+          "text": "14. Express the following expression in the form of $a + ib$ :"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            524.0,
+            727.7,
+            849.0,
+            850.8
+          ],
+          "conf": 0.895,
+          "text": "$$ \\frac{(3+i\\sqrt{5})(3-i\\sqrt{5})}{(\\sqrt{3}+\\sqrt{2}i)-(\\sqrt{3}-i\\sqrt{2})} $$"
+        },
+        {
+          "order": 7,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.2,
+            878.0,
+            751.7,
+            929.3
+          ],
+          "conf": 0.906,
+          "text": "4.5 Argand Plane and Polar Representation"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            933.1,
+            629.6,
+            1365.0
+          ],
+          "conf": 0.974,
+          "text": "We already know that corresponding to\neach ordered pair of real numbers\n$(x, y)$, we get a unique point in the XY-\nplane and vice-versa with reference to a\nset of mutually perpendicular lines known\nas the $x$-axis and the $y$-axis. The complex\nnumber $x + iy$ which corresponds to the\nordered pair $(x, y)$ can be represented\ngeometrically as the unique point $\\mathrm{P}(x, y)$\nin the XY-plane and vice-versa."
+        },
+        {
+          "order": 9,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            619.3,
+            935.2,
+            1180.1,
+            1423.3
+          ],
+          "conf": 0.951,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1364.8,
+            1181.8,
+            1622.4
+          ],
+          "conf": 0.914,
+          "text": "Some complex numbers such as\n$2+4i, -2+3i, 0+1i, 2+0i, -5-2i$ and\n$1-2i$ which correspond to the ordered\npairs $(2, 4), (-2, 3), (0, 1), (2, 0), (-5, -2)$, and $(1, -2)$, respectively, have been\nrepresented geometrically by the points A, B, C, D, E, and F, respectively in\nthe Fig 4.1."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1619.8,
+            1180.9,
+            1711.7
+          ],
+          "conf": 0.904,
+          "text": "The plane having a complex number assigned to each of its point is called the\n$complex$ $plane$ or the $Argand$ $plane$."
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0087_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            258.6,
+            1179.0,
+            457.3
+          ],
+          "conf": 0.851,
+          "text": "Obviously, in the Argand plane, the modulus of the complex number\n$x + iy = \\sqrt{x^2 + y^2}$ is the distance between the point P$(x, y)$ and the origin O $(0, 0)$\n(Fig 4.2). The points on the $x$-axis corresponds to the complex numbers of the form\n$a + i 0$ and the points on the $y$-axis corresponds to the complex numbers of the form"
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            365.7,
+            453.0,
+            953.2,
+            943.0
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            765.3,
+            886.0,
+            872.2,
+            933.7
+          ],
+          "conf": 0.793,
+          "text": "Fig 4.2"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            950.4,
+            1178.5,
+            1038.5
+          ],
+          "conf": 0.878,
+          "text": "$0 + i \\ b$. The $x$-axis and $y$-axis in the Argand plane are called, respectively, the $real \\ axis$\nand the $imaginary \\ axis$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1027.0,
+            1178.6,
+            1117.2
+          ],
+          "conf": 0.804,
+          "text": "The representation of a complex number $z = x + iy$ and its conjugate\n$z = x - iy$ in the Argand plane are, respectively, the points P $(x, y)$ and Q $(x, -y)$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1106.0,
+            1179.0,
+            1192.8
+          ],
+          "conf": 0.802,
+          "text": "Geometrically, the point $(x, -y)$ is the mirror image of the point $(x, y)$ on the real\naxis (Fig 4.3)."
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            391.9,
+            1210.1,
+            919.5,
+            1647.7
+          ],
+          "conf": 0.95,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            597.5,
+            1656.6,
+            703.8,
+            1703.7
+          ],
+          "conf": 0.835,
+          "text": "Fig 4.3"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0087_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            463.7,
+            259.5,
+            832.6,
+            311.2
+          ],
+          "conf": 0.823,
+          "text": "Miscellaneous Examples"
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            335.7,
+            854.9,
+            768.6
+          ],
+          "conf": 0.519,
+          "text": "Example 7 Find the conjugate of $\\frac{(3-2i)(2+3i)}{(1+2i)(2-i)}$.\n\n\nSolution We have , $\\frac{(3-2i)(2+3i)}{(1+2i)(2-i)}$\n\n\n$$= \\frac{6+9i-4i+6}{2-i+4i+2} = \\frac{12+5i}{4+3i} \\times \\frac{4-3i}{4-3i}$$\n\n\n$$= \\frac{48-36i+20i+15}{16+9} = \\frac{63-16i}{25} = \\frac{63}{25} - \\frac{16}{25}i$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            783.8,
+            769.5,
+            880.8
+          ],
+          "conf": 0.761,
+          "text": "Therefore, conjugate of $\\frac{(3-2i)(2+3i)}{(1+2i)(2-i)}$ is $\\frac{63}{25} + \\frac{16}{25}i$."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            900.0,
+            1127.8,
+            1441.5
+          ],
+          "conf": 0.525,
+          "text": "Example 8 If $x + iy = \\frac{a+ib}{a-ib}$, prove that $x^2 + y^2 = 1$.\n\n\nSolution We have,\n\n\n$$x + iy = \\frac{(a+ib)(a+ib)}{(a-ib)(a+ib)} = \\frac{a^2-b^2+2abi}{a^2+b^2} = \\frac{a^2-b^2}{a^2+b^2} + \\frac{2ab}{a^2+b^2}i$$\n\n\nSo that, $x - iy = \\frac{a^2-b^2}{a^2+b^2} - \\frac{2ab}{a^2+b^2}i$\n\n\nTherefore,\n\n\n$$x^2 + y^2 = (x + iy)(x - iy) = \\frac{(a^2-b^2)^2}{(a^2+b^2)^2} + \\frac{4a^2b^2}{(a^2+b^2)^2} = \\frac{(a^2+b^2)^2}{(a^2+b^2)^2} = 1$$"
+        },
+        {
+          "order": 4,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            376.3,
+            1476.9,
+            918.7,
+            1529.5
+          ],
+          "conf": 0.83,
+          "text": "Miscellaneous Exercise on Chapter 4"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.0,
+            1539.2,
+            836.0,
+            1765.1
+          ],
+          "conf": 0.895,
+          "text": "1. Evaluate: $\\left[ i^{18} + \\left( \\frac{1}{i} \\right)^{25} \\right]^3$.\n\n\n2. For any two complex numbers $z_1$ and $z_2$, prove that\n$\\text{Re} \\left( z_1 z_2 \\right) = \\text{Re} z_1 \\text{Re} z_2 - \\text{Im} z_1 \\text{Im} z_2$."
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0087_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.8,
+            268.7,
+            890.4,
+            372.2
+          ],
+          "conf": 0.925,
+          "text": "3. Reduce $\\left(\\frac{1}{1-4i}-\\frac{2}{1+i}\\right)\\left(\\frac{3-4i}{5+i}\\right)$ to the standard form ."
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.1,
+            379.8,
+            815.6,
+            486.8
+          ],
+          "conf": 0.929,
+          "text": "4. If $x-iy=\\sqrt{\\frac{a-ib}{c-id}}$ prove that $\\left(x^2+y^2\\right)^2=\\frac{a^2+b^2}{c^2+d^2}$."
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.8,
+            493.6,
+            691.3,
+            602.5
+          ],
+          "conf": 0.919,
+          "text": "5. If $z_1 = 2 - i, z_2 = 1 + i$, find $\\left| \\frac{z_1 + z_2 + 1}{z_1 - z_2 + 1} \\right|$."
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            620.5,
+            877.0,
+            743.3
+          ],
+          "conf": 0.923,
+          "text": "6. If $a + ib = \\frac{(x+i)^2}{2x^2+1}$, prove that $a^2 + b^2 = \\frac{(x^2+1)^2}{(2x^2+1)^2}$."
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            755.2,
+            724.0,
+            949.4
+          ],
+          "conf": 0.85,
+          "text": "7. Let $z_1 = 2 - i, z_2 = -2 + i$. Find\n\n\n(i) $\\text{Re}\\left(\\frac{z_1 z_2}{\\bar{z}_1}\\right)$, (ii) $\\text{Im}\\left(\\frac{1}{z_1 \\bar{z}_1}\\right)$."
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.0,
+            945.1,
+            1148.9,
+            999.6
+          ],
+          "conf": 0.896,
+          "text": "8. Find the real numbers $x$ and $y$ if $(x - iy) (3 + 5i)$ is the conjugate of $-6 - 24i$."
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            1002.1,
+            600.5,
+            1096.1
+          ],
+          "conf": 0.911,
+          "text": "9. Find the modulus of $\\frac{1+i}{1-i} - \\frac{1-i}{1+i}$."
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.9,
+            1109.2,
+            886.7,
+            1201.0
+          ],
+          "conf": 0.905,
+          "text": "10. If $(x+iy)^3 = u+iv$, then show that $\\frac{u}{x} + \\frac{v}{y} = 4(x^2-y^2)$."
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.3,
+            1217.5,
+            1106.8,
+            1321.8
+          ],
+          "conf": 0.886,
+          "text": "11. If $\\alpha$ and $\\beta$ are different complex numbers with $|\\beta|=1$, then find $\\left|\\frac{\\beta-\\alpha}{1-\\bar{\\alpha}\\beta}\\right|$."
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.3,
+            1348.8,
+            1124.2,
+            1406.6
+          ],
+          "conf": 0.887,
+          "text": "12. Find the number of non-zero integral solutions of the equation $|1-i|^x = 2^x$."
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            1401.1,
+            949.7,
+            1505.2
+          ],
+          "conf": 0.907,
+          "text": "13. If $(a + ib) (c + id) (e + if) (g + ih) = \\mathrm{A} + i\\mathrm{B}$, then show that\n$$(a^2 + b^2) (c^2 + d^2) (e^2 + f^2) (g^2 + h^2) = \\mathrm{A}^2 + \\mathrm{B}^2$$"
+        },
+        {
+          "order": 11,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1509.5,
+            966.2,
+            1621.7
+          ],
+          "conf": 0.893,
+          "text": "14. If $\\left(\\frac{1+i}{1-i}\\right)^m = 1$, then find the least positive integral value of $m$."
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0087_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            563.7,
+            298.5,
+            731.4,
+            351.5
+          ],
+          "conf": 0.836,
+          "text": "Summary"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            157.4,
+            371.3,
+            1145.4,
+            1061.2
+          ],
+          "conf": 0.923,
+          "text": "A number of the form $a + ib$, where $a$ and $b$ are real numbers, is called a\ncomplex number, $a$ is called the real part and $b$ is called the imaginary part\nof the complex number.\nLet $z_1 = a + ib$ and $z_2 = c + id$. Then\n(i) $z_1 + z_2 = (a + c) + i (b + d)$\n(ii) $z_1 z_2 = (ac - bd) + i (ad + bc)$\nFor any non-zero complex number $z = a + ib$ ($a \\neq 0, b \\neq 0$), there exists the\ncomplex number $\\frac{a}{a^2 + b^2} + i \\frac{-b}{a^2 + b^2}$, denoted by $\\frac{1}{z}$ or $z^{-1}$, called the\nmultiplicative inverse of $z$ such that $(a + ib) \\frac{a}{a^2 + b^2} + i \\frac{-b}{a^2 + b^2} = 1 + i0$\n$= 1$\nFor any integer $k$, $i^{4k} = 1$, $i^{4k + 1} = i$, $i^{4k + 2} = -1$, $i^{4k + 3} = -i$\nThe conjugate of the complex number $z = a + ib$, denoted by $\\overline{z}$, is given by\n$\\overline{z} = a - ib$."
+        },
+        {
+          "order": 2,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1133.4,
+            1174.8,
+            1670.3
+          ],
+          "conf": 0.793,
+          "text": "Historical Note\n\nThe fact that square root of a negative number does not exist in the real number\nsystem was recognised by the Greeks. But the credit goes to the Indian\nmathematician Mahavira (850) who first stated this difficulty clearly. “He\nmentions in his work ‘Ganitasara Sangraha’ as in the nature of things a negative\n(quantity) is not a square (quantity)’, it has, therefore, no square root”.\nBhaskara, another Indian mathematician, also writes in his work Bijaganita,\nwritten in 1150. “There is no square root of a negative quantity, for it is not a\nsquare.” Cardan (1545) considered the problem of solving\n\n$$x + y = 10, xy = 40.$$"
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0087_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            114.5,
+            251.4,
+            1185.0,
+            711.4
+          ],
+          "conf": 0.671,
+          "text": "He obtained $x = 5 + \\sqrt{-15}$ and $y = 5 - \\sqrt{-15}$ as the solution of it, which\nwas discarded by him by saying that these numbers are ‘useless’. Albert\nGirard (about 1625) accepted square root of negative numbers and said that\nthis will enable us to get as many roots as the degree of the polynomial equation.\nEuler was the first to introduce the symbol $i$ for $\\sqrt{-1}$ and W.R. Hamilton\n(about 1830) regarded the complex number $a + ib$ as an ordered pair of real\nnumbers $(a, b)$ thus giving it a purely mathematical definition and avoiding use\nof the so called ‘imaginary numbers’."
+        }
+      ],
+      "page": 12
+    }
+  ]
+}

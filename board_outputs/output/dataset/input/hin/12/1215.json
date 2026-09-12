@@ -1,0 +1,2834 @@
+{
+  "book": "1215",
+  "relpath": "dataset/input/hin/12/1215.pdf",
+  "num_pages": 17,
+  "pages": [
+    {
+      "image": "0149_p0000.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            94.9,
+            96.3,
+            1127.9,
+            322.0
+          ],
+          "conf": 0.564,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            153.5,
+            289.1,
+            251.3,
+            325.1
+          ],
+          "conf": 0.662,
+          "text": "12082CH11"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            177.8,
+            322.4,
+            1018.7,
+            519.7
+          ],
+          "conf": 0.836,
+          "text": "त्रि-विमीय ज्यामिति\n(Three Dimensional Geometry)"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            240.5,
+            598.0,
+            961.4,
+            690.5
+          ],
+          "conf": 0.824,
+          "text": "❖The moving power of mathematical invention is not\nreasoning but imagination. – A.DEMORGAN ❖"
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            70.7,
+            706.9,
+            461.5,
+            761.8
+          ],
+          "conf": 0.911,
+          "text": "11.1 भूमिका (Introduction)"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            753.8,
+            786.5,
+            1019.2
+          ],
+          "conf": 0.968,
+          "text": "कक्षा XI में, वैश्लेषिक ज्यामिति का अध्ययन करते समय द्वि-विमीय\nऔर त्रि-विमीय विषयों के परिचय में हमने स्वयं को केवल कार्तीय\nविधि तक सीमित रखा है। इस पुस्तक के पिछले अध्याय में हमने\nसदिशों की मूल संकल्पनाओं का अध्ययन किया है। अब हम सदिशों\nके बीजगणित का त्रि-विमीय ज्यामिति में उपयोग करेंगे। त्रि-विमीय\nज्यामिति में इस उपागम का उद्देश्य है कि यह इसके अध्ययन को\nअत्यंत सरल एवं सुरुचिपूर्ण (सुग्राहय) बना देता है।*"
+        },
+        {
+          "order": 6,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            814.2,
+            808.4,
+            1127.0,
+            1176.5
+          ],
+          "conf": 0.967,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            1008.0,
+            1128.6,
+            1341.9
+          ],
+          "conf": 0.934,
+          "text": "इस अध्याय में हम दो बिंदुओं को मिलाने वाली रेखा के\nदिक्-कोज्या व दिक्-अनुपात का अध्ययन करेंगे और विभिन्न\nस्थितियों में अंतरिक्ष में रेखाओं और तलों के समीकरणों, दो रेखाओं,\nदो तलों व एक रेखा और एक तल के बीच का कोण, दो\nविषमतलीय रेखाओं के बीच न्यूनतम दूरी व एक तल की एक बिंदु\nसे दूरी के विषय में भी विचार विमर्श करेंगे। उपरोक्त परिणामों में से\nअधिकांश परिणामों को सदिशों के रूप में प्राप्त करते हैं। तथापि हम\nइनका कार्तीय रूप में भी अनुवाद करेंगे जो कालांतर में स्थिति का स्पष्ट ज्यामितीय और विश्लेषणात्मक\nचित्रण प्रस्तुत कर सकेगा।"
+        },
+        {
+          "order": 8,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            71.0,
+            1347.7,
+            1128.6,
+            1436.2
+          ],
+          "conf": 0.923,
+          "text": "11.2 रेखा के दिक्-कोसाइन और दिक्-अनुपात (Direction Cosines and Direction\nRatios of a Line)"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            1427.4,
+            1129.1,
+            1550.5
+          ],
+          "conf": 0.952,
+          "text": "अध्याय 10 में, स्मरण कीजिए, कि मूल बिंदु से गुजरने वाली सदिश रेखा L द्वारा $x, y$ और $z$-अक्षों\nके साथ क्रमश $\\alpha, \\beta$ और $\\gamma$ बनाए गए कोण दिक्-कोण कहलाते हैं तब इन कोणों की कोसाइन नामतः\n$\\cos\\alpha, \\cos\\beta$ और $\\cos\\gamma$ रेखा L के दिक्-कोसाइन (direction cosines or dc's) कहलाती हैं।"
+        },
+        {
+          "order": 10,
+          "label": "Footnote",
+          "type": "Footnote",
+          "bbox_xyxy": [
+            71.4,
+            1565.6,
+            1127.4,
+            1656.7
+          ],
+          "conf": 0.902,
+          "text": "* For various activities in three dimensional geometry, one may refer to the Book\n“A Hand Book for designing Mathematics Laboratory in Schools”, NCERT, 2005"
+        },
+        {
+          "order": 11,
+          "label": "Footer",
+          "type": "PageFooter",
+          "bbox_xyxy": [
+            71.8,
+            1564.0,
+            1126.8,
+            1768.1
+          ],
+          "conf": 0.717,
+          "text": ""
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0149_p0001.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            208.6,
+            1129.4,
+            302.9
+          ],
+          "conf": 0.962,
+          "text": "यदि हम $L$ की दिशा विपरीत कर देते हैं तो दिक्-कोण, अपने संपूरकों में अर्थात् $\\pi$-$\\alpha$, $\\pi$-$\\beta$ और\n$\\pi$-$\\gamma$ से बदल जाते हैं। इस प्रकार, दिक्-कोसाइन के चिह्न बदल जाते हैं।"
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            380.2,
+            305.3,
+            816.0,
+            889.4
+          ],
+          "conf": 0.962,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            478.3,
+            871.9,
+            642.5,
+            920.3
+          ],
+          "conf": 0.926,
+          "text": "आकृति 11.1"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            925.4,
+            1129.7,
+            1105.2
+          ],
+          "conf": 0.977,
+          "text": "ध्यान दीजिए, अंतरिक्ष में दी गई रेखा को दो विपरीत दिशाओं में बढ़ा सकते हैं और इसलिए इसके\nदिक्-कोसाइन के दो समूह हैं। इसलिए अंतरिक्ष में ज्ञात रेखा के लिए दिक्-कोसाइन के अद्वितीय\nसमूह के लिए, हमें ज्ञात रेखा को एक सदिश रेखा लेना चाहिए। इन अद्वितीय दिक्-कोसाइन को\n$l, m$ और $n$ के द्वारा निर्दिष्ट किए जाते हैं।"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            1105.9,
+            1129.7,
+            1287.2
+          ],
+          "conf": 0.967,
+          "text": "टिप्पणी अंतरिक्ष में दी गई रेखा यदि मूल बिंदु से नहीं गुजरती है तो इसकी दिक्-कोसाइन को ज्ञात\nकरने के लिए, हम मूल बिंदु से दी गई रेखा के समांतर एक रेखा खींचते हैं। अब मूल बिंदु से इनमें\nसे एक सदिश रेखा के दिक्-अनुपात ज्ञात करते हैं क्योंकि दो समांतर रेखाओं के दिक्-अनुपातों के\nसमूह समान (वही) होते हैं।"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            1287.7,
+            1129.2,
+            1425.1
+          ],
+          "conf": 0.96,
+          "text": "एक रेखा के दिक्-कोसाइन के समानुपाती संख्याओं को रेखा के दिक्-अनुपात (direction\nratios or $dr$'s) कहते हैं। यदि एक रेखा के दिक्-कोसाइन $l, m, n$ व दिक्-अनुपात $a, b, c$ हों तब\nकिसी शून्येतर $\\lambda \\in \\mathbf{R}$ के लिए $a = \\lambda l, b = \\lambda m$ और $c = \\lambda n$"
+        },
+        {
+          "order": 6,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            1428.8,
+            1128.8,
+            1504.1
+          ],
+          "conf": 0.812,
+          "text": "टिप्पणी कुछ लेखक दिक्-अनुपातों को दिक्-संख्याएँ भी कहते हैं।"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            1498.1,
+            1078.6,
+            1551.4
+          ],
+          "conf": 0.874,
+          "text": "मान लीजिए एक रेखा के दिक्-अनुपात $a, b, c$ और रेखा की दिक्-कोसाइन $l, m, n$ है। तब"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            421.2,
+            1557.0,
+            989.5,
+            1646.6
+          ],
+          "conf": 0.894,
+          "text": "$$ \\frac{l}{a} = \\frac{m}{b} = \\frac{n}{c} = k \\text{ (मान लीजिए), } k \\text{ एक अचर है।} $$"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0149_p0002.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.3,
+            209.7,
+            1128.7,
+            263.0
+          ],
+          "conf": 0.89,
+          "text": "इसलिए $l = ak, m = bk, n = ck \\dots (1)$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.6,
+            261.5,
+            594.7,
+            312.8
+          ],
+          "conf": 0.854,
+          "text": "परंतु $l^2 + m^2 + n^2 = 1$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.4,
+            305.8,
+            594.2,
+            357.8
+          ],
+          "conf": 0.847,
+          "text": "इसलिए $k^2 (a^2 + b^2 + c^2) = 1$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.8,
+            363.2,
+            777.6,
+            465.3
+          ],
+          "conf": 0.916,
+          "text": "या $k = \\pm \\frac{1}{\\sqrt{a^2+b^2+c^2}}$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            443.7,
+            616.9,
+            498.6
+          ],
+          "conf": 0.905,
+          "text": "अतः (1) से, रेखा की दिक्-कोसाइन (d.c.'s)"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            227.4,
+            511.9,
+            965.0,
+            617.6
+          ],
+          "conf": 0.933,
+          "text": "$$l = \\pm \\frac{a}{\\sqrt{a^2 + b^2 + c^2}}, m = \\pm \\frac{b}{\\sqrt{a^2 + b^2 + c^2}}, n = \\pm \\frac{c}{\\sqrt{a^2 + b^2 + c^2}}$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            613.8,
+            1129.2,
+            751.3
+          ],
+          "conf": 0.969,
+          "text": "किसी रेखा के लिए यदि रेखा के दिक्-अनुपात क्रमशः $a, b, c$ है, तो $ka, kb, kc; k \\neq 0$ भी\nदिक्-अनुपातों का एक समूह है। इसलिए एक रेखा के दिक्-अनुपातों के दो समूह भी समानुपाती होंगे।\nअतः किसी एक रेखा के दिक्-अनुपातों के असंख्य समूह होते हैं।"
+        },
+        {
+          "order": 7,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            68.2,
+            767.9,
+            1128.0,
+            862.4
+          ],
+          "conf": 0.904,
+          "text": "11.2.1 दो बिंदुओं को मिलाने वाली रेखा की दिक्-कोसाइन (Direction cosines of a line\npassing through two points)"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.8,
+            856.4,
+            1130.2,
+            993.8
+          ],
+          "conf": 0.957,
+          "text": "क्योंकि दो दिए बिंदुओं से होकर जाने वाली रेखा अद्वितीय होती है। इसलिए दो दिए गए बिंदुओं\n$P(x_1, y_1, z_1)$ और $Q(x_2, y_2, z_2)$ से गुजरने वाली रेखा की दिक्-कोसाइन को निम्न प्रकार से ज्ञात\nकर सकते हैं (आकृति 11.3 (a))।"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            985.5,
+            1130.0,
+            1081.6
+          ],
+          "conf": 0.943,
+          "text": "मान लीजिए कि रेखा PQ की दिक्-कोसाइन $l, m, n$ हैं और यह $x, y$ और $z$-अक्ष के साथ कोण\nक्रमशः $\\alpha, \\beta, \\gamma$ बनाती हैं।"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            1081.3,
+            1130.2,
+            1219.7
+          ],
+          "conf": 0.958,
+          "text": "मान लीजिए P और Q से लंब खींचिए जो XY-तल को R तथा S पर मिलते हैं। P से एक\nअन्य लंब खींचिए जो QS को N पर मिलता है। अब समकोण त्रिभुज PNQ में, $\\angle PQN = \\gamma$\n(आकृति 11.2 (b)) इसलिए"
+        },
+        {
+          "order": 11,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            175.2,
+            1220.9,
+            1034.8,
+            1604.9
+          ],
+          "conf": 0.95,
+          "text": ""
+        },
+        {
+          "order": 12,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            525.2,
+            1610.8,
+            688.9,
+            1661.2
+          ],
+          "conf": 0.887,
+          "text": "आकृति 11.2"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0149_p0003.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            321.5,
+            223.9,
+            610.4,
+            315.4
+          ],
+          "conf": 0.926,
+          "text": "$$\\cos\\gamma = \\frac{\\mathrm{NQ}}{\\mathrm{PQ}} = \\frac{z_2 - z_1}{\\mathrm{PQ}}$$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.7,
+            339.1,
+            769.3,
+            424.4
+          ],
+          "conf": 0.911,
+          "text": "इसी प्रकार $\\cos\\alpha = \\frac{x_2 - x_1}{PQ}$ और $\\cos\\beta = \\frac{y_2 - y_1}{PQ}$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.6,
+            430.4,
+            1114.2,
+            487.6
+          ],
+          "conf": 0.906,
+          "text": "अतः बिंदुओं $P(x_1, y_1, z_1)$ तथा $Q(x_2, y_2, z_2)$ को जोड़ने वाले रेखाखंड PQ कि दिक्-कोसाइन"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            416.2,
+            502.9,
+            797.2,
+            589.3
+          ],
+          "conf": 0.918,
+          "text": "$$ \\frac{x_2 - x_1}{\\text{PQ}}, \\frac{y_2 - y_1}{\\text{PQ}}, \\frac{z_2 - z_1}{\\text{PQ}} \\text{ हैं।} $$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            608.0,
+            881.6,
+            681.7
+          ],
+          "conf": 0.881,
+          "text": "जहाँ $PQ = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            685.3,
+            1129.1,
+            779.0
+          ],
+          "conf": 0.95,
+          "text": "टिप्पणी बिंदुओं $P(x_1, y_1, z_1)$ तथा $Q(x_2, y_2, z_2)$ को जोड़ने वाले रेखाखंड के दिक्-अनुपात निम्न\nप्रकार से लिए जा सकते हैं।"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            268.8,
+            778.5,
+            883.6,
+            831.8
+          ],
+          "conf": 0.902,
+          "text": "$x_2 - x_1, y_2 - y_1, z_2 - z_1,$ या $x_1 - x_2, y_1 - y_2, z_1 - z_2$"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            832.7,
+            1127.0,
+            925.9
+          ],
+          "conf": 0.882,
+          "text": "उदाहरण 1 यदि एक रेखा $x, y$ तथा $z$-अक्षों की धनात्मक दिशा के साथ क्रमशः $90^{\\circ}, 60^{\\circ}$ तथा $30^{\\circ}$\nका कोण बनाती है तो दिक्-कोसाइन ज्ञात कीजिए।"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            928.8,
+            1126.2,
+            1013.8
+          ],
+          "conf": 0.774,
+          "text": "हल मान लीजिए रेखा की दिक्-कोसाइन $l, m, n$ है। तब $l = \\cos 90^\\circ = 0, m = \\cos 60^\\circ = \\frac{1}{2}$,"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.1,
+            995.6,
+            315.0,
+            1087.2
+          ],
+          "conf": 0.895,
+          "text": "$$n = \\cos 30^{\\circ} = \\frac{\\sqrt{3}}{2}$$"
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            1066.5,
+            1127.0,
+            1380.8
+          ],
+          "conf": 0.541,
+          "text": "उदाहरण 2 यदि एक रेखा के दिक्-अनुपात 2, -1, -2 हैं तो इसकी दिक्-कोसाइन ज्ञात कीजिए।\nहल दिक्-कोसाइन निम्नवत् हैं\n$$\\frac{2}{\\sqrt{2^2 + (-1)^2 + (-2)^2}}, \\frac{-1}{\\sqrt{2^2 + (-1)^2 + (-2)^2}}, \\frac{-2}{\\sqrt{2^2 + (-1)^2 + (-2)^2}}$$\nअर्थात् $$\\frac{2}{3}, \\frac{-1}{3}, \\frac{-2}{3}$$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            485.6,
+            1301.6,
+            640.0,
+            1390.3
+          ],
+          "conf": 0.667,
+          "text": ""
+        },
+        {
+          "order": 12,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            1397.7,
+            1129.3,
+            1488.1
+          ],
+          "conf": 0.816,
+          "text": "उदाहरण 3 दो बिंदुओं (– 2, 4, – 5) और (1, 2, 3) को मिलाने वाली रेखा की दिक्-कोसाइन ज्ञात\nकीजिए।"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            1495.1,
+            1129.4,
+            1586.9
+          ],
+          "conf": 0.869,
+          "text": "हल हम जानते हैं कि दो बिंदुओं $P(x_1, y_1, z_1)$ और $Q(x_2, y_2, z_2)$ को मिलाने वाली रेखा की\nदिक्-कोसाइन"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            433.1,
+            1597.5,
+            763.2,
+            1683.9
+          ],
+          "conf": 0.888,
+          "text": "$$ \\frac{x_2 - x_1}{\\text{PQ}}, \\frac{y_2 - y_1}{\\text{PQ}}, \\frac{z_2 - z_1}{\\text{PQ}} $$"
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0149_p0004.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.8,
+            218.7,
+            957.0,
+            290.7
+          ],
+          "conf": 0.915,
+          "text": "हैं, जहाँ $PQ = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            289.1,
+            667.7,
+            343.1
+          ],
+          "conf": 0.925,
+          "text": "यहाँ P और Q क्रमशः $(- 2, 4, - 5)$ और $(1, 2, 3)$ हैं।"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.4,
+            342.7,
+            1054.2,
+            404.8
+          ],
+          "conf": 0.92,
+          "text": "$$ \\text{इसलिए} \\quad PQ = \\sqrt{(1-(-2))^2 + (2-4)^2 + (3-(-5))^2} = \\sqrt{77} $$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            405.2,
+            778.9,
+            458.3
+          ],
+          "conf": 0.935,
+          "text": "इसलिए दो बिंदुओं को मिलाने वाली रेखा की दिक्-कोसाइन हैं:"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            462.7,
+            459.7,
+            731.5,
+            554.0
+          ],
+          "conf": 0.927,
+          "text": "$$ \\frac{3}{\\sqrt{77}}, \\frac{-2}{\\sqrt{77}}, \\frac{8}{\\sqrt{77}} $$"
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            550.1,
+            753.0,
+            602.6
+          ],
+          "conf": 0.829,
+          "text": "उदाहरण 4 $x, y$ और $z$-अक्षों की दिक्-कोसाइन ज्ञात कीजिए।"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            608.0,
+            1128.2,
+            739.3
+          ],
+          "conf": 0.849,
+          "text": "हल $x$-अक्ष क्रमशः $x, y$ और $z$-अक्ष के साथ $0^{\\circ}, 90^{\\circ}$ और $90^{\\circ}$ के कोण बनाता है। इसलिए $x$-अक्ष\nकी दिक्-कोसाइन $\\cos 0^{\\circ}, \\cos 90^{\\circ}, \\cos 90^{\\circ}$ अर्थात् $1,0,0$ हैं।\nइसी प्रकार $y$-अक्ष और $z$-अक्ष की दिक्-कोसाइन क्रमशः $0, 1, 0$ और $0, 0, 1$ हैं।"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.4,
+            749.2,
+            1131.2,
+            1043.3
+          ],
+          "conf": 0.64,
+          "text": "उदाहरण 5 दर्शाइए कि बिंदु A (2, 3, – 4), B (1, – 2, 3) और C (3, 8, – 11) संरेख हैं।\n\nहल A और B को मिलाने वाली रेखा के दिक्-अनुपात\n1 –2, –2 –3, 3 + 4 अर्थात् – 1, – 5, 7 हैं।\nB और C को मिलाने वाली रेखा के दिक्-अनुपात 3 –1, 8 + 2, – 11 – 3, अर्थात्, 2, 10, – 14 हैं।\nस्पष्ट है कि AB और BC के दिक्-अनुपात समानुपाती हैं। अतः AB और BC समांतर हैं। परंतु\nAB और BC दोनों में B उभयनिष्ठ है। अतः A, B, और C संरेख बिंदु हैं।"
+        },
+        {
+          "order": 8,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            488.5,
+            1076.0,
+            707.9,
+            1131.1
+          ],
+          "conf": 0.72,
+          "text": "प्रश्नावली 11.1"
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            95.0,
+            1140.8,
+            1131.6,
+            1482.8
+          ],
+          "conf": 0.97,
+          "text": "1. यदि एक रेखा $x, y$ और $z$-अक्ष के साथ क्रमशः $90^{\\circ}, 135^{\\circ}, 45^{\\circ}$ के कोण बनाती है तो इसकी\nदिक्-कोसाइन ज्ञात कीजिए।\n2. एक रेखा की दिक्-कोसाइन ज्ञात कीजिए जो निर्देशांक्षों के साथ समान कोण बनाती है।\n3. यदि एक रेखा के दिक्-अनुपात $-18, 12, -4$, हैं तो इसकी दिक्-कोसाइन क्या हैं?\n4. दर्शाइए कि बिंदु $(2, 3, 4), (-1, -2, 1), (5, 8, 7)$ संरेख हैं।\n5. एक त्रिभुज की भुजाओं की दिक्-कोसाइन ज्ञात कीजिए यदि त्रिभुज के शीर्ष बिंदु\n$(3, 5, -4), (-1, 1, 2)$ और $(-5, -5, -2)$ हैं।"
+        },
+        {
+          "order": 10,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            70.9,
+            1494.2,
+            957.4,
+            1549.4
+          ],
+          "conf": 0.91,
+          "text": "11.3 अंतरिक्ष में रेखा का समीकरण (Equation of a Line in Space)"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            1547.3,
+            1128.8,
+            1641.2
+          ],
+          "conf": 0.946,
+          "text": "कक्षा XI में द्वि-विमीय तल में रेखाओं का अध्ययन करने के पश्चात् अब हम अंतरिक्ष में एक रेखा\nके सदिश तथा कार्तीय समीकरणों को ज्ञात करेंगे।"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0149_p0005.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            214.0,
+            558.0,
+            265.1
+          ],
+          "conf": 0.919,
+          "text": "एक रेखा अद्वितीयतः निर्धारित होती है, यदि"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            89.0,
+            266.6,
+            723.8,
+            369.7
+          ],
+          "conf": 0.955,
+          "text": "(i) यह दिए बिंदु से दी गई दिशा से होकर जाती है, या\n(ii) यह दो दिए गए बिंदुओं से होकर जाती है।"
+        },
+        {
+          "order": 2,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.1,
+            385.7,
+            1132.4,
+            482.0
+          ],
+          "conf": 0.904,
+          "text": "11.3.1 दिए गए बिंदु A से जाने वाली तथा दिए गए सदिश $\\bar{b}$ के समांतर रेखा का समीकरण\n(Equation of a line through a given point A and parallel to a given vector $\\bar{b}$ )"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            480.2,
+            680.4,
+            715.7
+          ],
+          "conf": 0.918,
+          "text": "समकोणिक निर्देशांक निकाय के मूल बिंदु O के सापेक्ष\nमान लीजिए कि बिंदु A का सदिश $\\bar{a}$ है। मान लीजिए कि\nबिंदु A से जाने वाली तथा दिए गए सदिश $\\bar{b}$ के समांतर\nरेखा $l$ है। मान लीजिए कि $l$ पर स्थित किसी स्वेच्छ बिंदु\nP का स्थिति सदिश $\\bar{r}$ है (आकृति 11.3)।"
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            671.3,
+            487.3,
+            1126.2,
+            817.0
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            800.0,
+            796.3,
+            963.4,
+            845.5
+          ],
+          "conf": 0.912,
+          "text": "आकृति 11.3"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            717.8,
+            681.5,
+            812.7
+          ],
+          "conf": 0.921,
+          "text": "तब $\\overline{\\mathrm{AP}}$ सदिश $\\vec{b}$ के समांतर है अर्थात् $\\overline{\\mathrm{AP}} = \\lambda \\vec{b}$, जहाँ\n$\\lambda$ एक वास्तविक संख्या है।"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.0,
+            825.3,
+            546.8,
+            877.5
+          ],
+          "conf": 0.869,
+          "text": "परंतु $\\overline{\\mathrm{AP}} = \\overline{\\mathrm{OP}} - \\overline{\\mathrm{OA}}$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.8,
+            884.7,
+            496.8,
+            936.4
+          ],
+          "conf": 0.87,
+          "text": "अर्थात् $\\lambda \\vec{b} = \\vec{r} - \\vec{a}$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            935.5,
+            1129.0,
+            1030.5
+          ],
+          "conf": 0.949,
+          "text": "विलोमत: प्राचल $\\lambda$ के प्रत्येक मान के लिए यह समीकरण रेखा के किसी बिंदु P की स्थिति प्रदान\nकरता है। अतः रेखा का सदिश समीकरण है:"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            344.3,
+            1033.6,
+            1128.5,
+            1089.5
+          ],
+          "conf": 0.872,
+          "text": "$$ \\vec{r} = \\vec{a} + \\lambda \\vec{b} \\tag{1} $$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.3,
+            1091.2,
+            1128.2,
+            1207.8
+          ],
+          "conf": 0.631,
+          "text": "टिप्पणी यदि $\\vec{b} = a\\hat{i} + b\\hat{j} + c\\hat{k}$ है तो रेखा के दिक्-अनुपात $a, b, c$ है और विलोमत: यदि एक रेखा\nके दिक्-अनुपात $a, b, c$ हों तो $\\vec{b} = a\\hat{i} + b\\hat{j} + c\\hat{k}$ रेखा के समांतर होगा। यहाँ $b$ को $|\\vec{b}|$ न समझा जाए।"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1212.7,
+            1128.0,
+            1301.9
+          ],
+          "conf": 0.811,
+          "text": "सदिश रूप से कार्तीय रूप व्युत्पन्न करना (Derivation of Cartesian Form from Vector\nForm)"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            1299.2,
+            1128.8,
+            1394.8
+          ],
+          "conf": 0.928,
+          "text": "मान लीजिए कि दिए बिंदु A के निर्देशांक $(x_1, y_1, z_1)$ हैं और रेखा की दिक्-कोसाइन\n$a, b, c$ हैं मान लीजिए किसी बिंदु P के निर्देशांक $(x, y, z)$ हैं। तब"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            307.8,
+            1398.4,
+            890.4,
+            1456.2
+          ],
+          "conf": 0.86,
+          "text": "$$\\vec{r} = x\\hat{i} + y\\hat{j} + z\\hat{k}; \\vec{a} = x_1 \\hat{i} + y_1 \\hat{j} + z_1 \\hat{k}$$"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.4,
+            1457.3,
+            578.2,
+            1512.0
+          ],
+          "conf": 0.852,
+          "text": "और $\\vec{b} = a \\hat{i} + b \\hat{j} + c \\hat{k}$"
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            1521.2,
+            1129.2,
+            1615.7
+          ],
+          "conf": 0.91,
+          "text": "इन मानों को (1) में प्रतिस्थापित करके $\\hat{i}$, $\\hat{j}$ और $\\hat{k}$, के गुणांकों की तुलना करने पर हम पाते\nहैं कि"
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            300.7,
+            1609.7,
+            1127.9,
+            1663.4
+          ],
+          "conf": 0.843,
+          "text": "$$x = x_1 + \\lambda a; \\ y = y_1 + \\lambda b; \\ z = z_1 + \\lambda c \\qquad \\dots (2)$$"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0149_p0006.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.9,
+            207.7,
+            1008.6,
+            259.7
+          ],
+          "conf": 0.938,
+          "text": "ये रेखा के प्राचल समीकरण हैं। (2) से प्राचल $\\lambda$ का विलोपन करने पर, हम पाते हैं:"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            306.2,
+            269.8,
+            1128.4,
+            356.6
+          ],
+          "conf": 0.927,
+          "text": "$$ \\frac{x - x_1}{a} = \\frac{y - y_1}{b} = \\frac{z - z_1}{c} \\dots (3) $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            365.4,
+            456.2,
+            416.2
+          ],
+          "conf": 0.939,
+          "text": "यह रेखा का कार्तीय समीकरण है।"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            72.1,
+            417.6,
+            858.7,
+            469.3
+          ],
+          "conf": 0.93,
+          "text": "टिप्पणी यदि रेखा की दिक्-कोसाइन $l, m, n$ हैं, तो रेखा का समीकरण"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            307.9,
+            487.1,
+            709.4,
+            574.2
+          ],
+          "conf": 0.935,
+          "text": "$$ \\frac{x - x_1}{l} = \\frac{y - y_1}{m} = \\frac{z - z_1}{n} \\text{ हैं।} $$"
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            594.5,
+            1128.6,
+            693.2
+          ],
+          "conf": 0.901,
+          "text": "उदाहरण 6 बिंदु $(5, 2, -4)$ से जाने वाली तथा सदिश $3\\hat{i} + 2\\hat{j} - 8\\hat{k}$ के समांतर रेखा का सदिश\nतथा कार्तीय समीकरणों को ज्ञात कीजिए।"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            704.0,
+            316.2,
+            754.2
+          ],
+          "conf": 0.915,
+          "text": "हल हमें ज्ञात है, कि"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            430.4,
+            757.8,
+            918.2,
+            813.4
+          ],
+          "conf": 0.904,
+          "text": "$$ \\vec{a} = 5\\hat{i} + 2\\hat{j} - 4\\hat{k} \\text{ और } \\vec{b} = 3\\hat{i} + 2\\hat{j} - 8\\hat{k} $$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            823.3,
+            502.3,
+            875.0
+          ],
+          "conf": 0.929,
+          "text": "इसलिए, रेखा का सदिश समीकरण है:"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            439.8,
+            877.1,
+            1075.8,
+            932.8
+          ],
+          "conf": 0.911,
+          "text": "$$ \\vec{r} = 5 \\hat{i} + 2 \\hat{j} - 4 \\hat{k} + \\lambda ( 3 \\hat{i} + 2 \\hat{j} - 8 \\hat{k} ) [(1) \\text{ से}] $$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            935.8,
+            914.4,
+            989.8
+          ],
+          "conf": 0.917,
+          "text": "चूँकि रेखा पर स्थित किसी बिंदु $P(x, y, z)$ की स्थिति सदिश $\\bar{r}$ है, इसलिए"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            274.2,
+            988.2,
+            938.8,
+            1105.9
+          ],
+          "conf": 0.572,
+          "text": "$$x\\hat{i} + y\\hat{j} + z\\hat{k} = 5\\hat{i} + 2\\hat{j} - 4\\hat{k} + \\lambda ( 3\\hat{i} + 2\\hat{j} - 8\\hat{k} )$$\n$$= (5 + 3\\lambda)\\hat{i} + (2 + 2\\lambda)\\hat{j} + (-4 - 8\\lambda)\\hat{k}$$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.7,
+            1111.5,
+            514.9,
+            1162.6
+          ],
+          "conf": 0.912,
+          "text": "$\\lambda$ का विलोपन करने पर हम पाते हैं कि"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            455.8,
+            1170.0,
+            731.0,
+            1258.7
+          ],
+          "conf": 0.9,
+          "text": "$$ \\frac{x-5}{3} = \\frac{y-2}{2} = \\frac{z+4}{-8} $$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1271.9,
+            539.5,
+            1323.5
+          ],
+          "conf": 0.91,
+          "text": "जो रेखा के समीकरण का कार्तीय रूप है।"
+        },
+        {
+          "order": 15,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            70.1,
+            1348.0,
+            861.4,
+            1402.4
+          ],
+          "conf": 0.91,
+          "text": "11.4 दो रेखाओं के मध्य कोण (Angle between two lines)"
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            1411.9,
+            1129.1,
+            1628.5
+          ],
+          "conf": 0.975,
+          "text": "मान लीजिए कि $L_1$ और $L_2$ मूल बिंदु से गुजरने वाली दो रेखाएँ हैं जिनके दिक्-अनुपात क्रमशः\n$a_1, b_1, c_1$ और $a_2, b_2, c_2$, है। पुनः मान लीजिए कि $L_1$ पर एक बिंदु P तथा $L_2$ पर एक बिंदु Q है।\nआकृति 11.4 में दिए गए सदिश OP और OQ पर विचार कीजिए। मान लीजिए कि OP और OQ\nके बीच न्यून कोण $\\theta$ है। अब स्मरण कीजिए कि सदिशों OP और OQ के घटक क्रमशः $a_1, b_1$,\n$c_1$ और $a_2, b_2, c_2$ हैं। इसलिए उनके बीच का कोण $\\theta$"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0149_p0007.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            221.2,
+            692.6,
+            334.3
+          ],
+          "conf": 0.924,
+          "text": "$$ \\cos\\theta = \\left| \\frac{a_1 a_2 + b_1 b_2 + c_1 c_2}{\\sqrt{a_1^2 + b_1^2 + c_1^2} \\sqrt{a_2^2 + b_2^2 + c_2^2}} \\right| \\text{ द्वारा प्रदत्त है।} $$"
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            706.3,
+            206.1,
+            1128.1,
+            581.6
+          ],
+          "conf": 0.96,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            355.3,
+            613.8,
+            408.6
+          ],
+          "conf": 0.916,
+          "text": "पुन: $\\sin \\theta$ के रूप में, रेखाओं के बीच का कोण"
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            830.6,
+            568.6,
+            995.3,
+            617.9
+          ],
+          "conf": 0.922,
+          "text": "आकृति 11.4"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            125.6,
+            425.5,
+            645.4,
+            649.3
+          ],
+          "conf": 0.759,
+          "text": "$\\sin \\theta = \\sqrt{1 - \\cos^2 \\theta}$ से प्रदत्त है\n\n$$= \\sqrt{1 - \\frac{(a_1 a_2 + b_1 b_2 + c_1 c_2)^2}{(a_1^2 + b_1^2 + c_1^2)(a_2^2 + b_2^2 + c_2^2)}}$$\n\n$$=$$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            76.3,
+            658.3,
+            1129.3,
+            939.4
+          ],
+          "conf": 0.539,
+          "text": "$$ \\frac{\\sqrt{(a_1^2+b_1^2+c_1^2)(a_2^2+b_2^2+c_2^2)-(a_1a_2+b_1b_2+c_1c_2)^2}}{\\sqrt{(a_1^2+b_1^2+c_1^2)}\\sqrt{(a_2^2+b_2^2+c_2^2)}} $$\n\n$$ = \\frac{\\sqrt{(a_1 b_2 - a_2 b_1)^2 + (b_1 c_2 - b_2 c_1)^2 + (c_1 a_2 - c_2 a_1)^2}}{\\sqrt{(a_1^2 + b_1^2 + c_1^2)} \\sqrt{a_2^2 + b_2^2 + c_2^2}} \\quad \\dots (2) $$"
+        },
+        {
+          "order": 6,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.6,
+            956.7,
+            1128.4,
+            1183.1
+          ],
+          "conf": 0.944,
+          "text": "टिप्पणी उस स्थिति में जब रेखाएँ $\\mathrm{L}_1$ और $\\mathrm{L}_2$ मूल बिंदु से नहीं गुजरती है तो हम\n$\\mathrm{L}_1$ और $\\mathrm{L}_2$ के समांतर, मूल बिंदु से गुजरने वाली रेखाएँ क्रमशः $\\mathrm{L}'_1$ व $\\mathrm{L}'_2$ लेते हैं। यदि रेखाओं\n$\\mathrm{L}_1$ और $\\mathrm{L}_2$ के दिक्-अनुपातों के बजाय दिक्-कोसाइन दी गई हो जैसे $\\mathrm{L}_1$ के लिए $l_1, m_1, n_1$ और\n$\\mathrm{L}_2$ के लिए $l_2, m_2, n_2$ तो (1) और (2) निम्नलिखित प्रारूप लेंगे।"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            190.3,
+            1186.4,
+            1127.9,
+            1248.3
+          ],
+          "conf": 0.888,
+          "text": "$$\\cos \\theta = |l_1 l_2 + m_1 m_2 + n_1 n_2| \\text{ (क्योंकि } l_1^2 + m_1^2 + n_1^2 = 1 = l_2^2 + m_2^2 + n_2^2) \\quad \\dots (3)$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.3,
+            1258.0,
+            1126.9,
+            1332.0
+          ],
+          "conf": 0.895,
+          "text": "और $\\quad \\sin \\theta = \\sqrt{(l_1 m_2 - l_2 m_1)^2 - (m_1 n_2 - m_2 n_1)^2 + (n_1 l_2 - n_2 l_1)^2} \\quad \\dots (4)$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.5,
+            1325.7,
+            655.0,
+            1382.8
+          ],
+          "conf": 0.893,
+          "text": "दिक्-अनुपात $a_1, b_1, c_1$ और $a_2, b_2, c_2$ वाली रेखाएँ"
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            89.9,
+            1378.1,
+            899.8,
+            1530.2
+          ],
+          "conf": 0.82,
+          "text": "(i) लंबवत् है, यदि $\\theta = 90^\\circ$, अर्थात् (1) से $a_1a_2 + b_1b_2 + c_1c_2 = 0$\n(ii) समांतर है, यदि $\\theta = 0$, अर्थात् (2) से $\\frac{a_1}{a_2} = \\frac{b_1}{b_2} = \\frac{c_1}{c_2}$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            75.7,
+            1527.5,
+            1129.2,
+            1637.5
+          ],
+          "conf": 0.9,
+          "text": "अब हम दो रेखाओं के बीच का कोण ज्ञात करेंगे जिनके समीकरण दिए गए हैं। यदि उन रेखाओं\n$\\vec{r} = \\vec{a}_1 + \\lambda \\vec{b}_1$ और $\\vec{r} = \\vec{a}_2 + \\mu \\vec{b}_2$ के बीच न्यून कोण $\\theta$ है"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0149_p0008.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.3,
+            217.1,
+            691.6,
+            324.2
+          ],
+          "conf": 0.918,
+          "text": "तब $\\cos\\theta = \\left| \\frac{\\vec{b}_1 \\cdot \\vec{b}_2}{|\\vec{b}_1| |\\vec{b}_2|} \\right|$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.5,
+            320.2,
+            1128.7,
+            406.3
+          ],
+          "conf": 0.909,
+          "text": "कार्तीय रूप में यदि रेखाओं: $\\frac{x-x_1}{a_1} = \\frac{y-y_1}{b_1} = \\frac{z-z_1}{c_1}$ ... (1)"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.4,
+            403.6,
+            1127.5,
+            488.2
+          ],
+          "conf": 0.905,
+          "text": "और $$\\frac{x-x_{2}}{a_{2}}=\\frac{y-y_{2}}{b_{2}}=\\frac{z-z_{2}}{c_{2}} \\quad \\dots (2)$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.9,
+            479.7,
+            1129.6,
+            580.7
+          ],
+          "conf": 0.956,
+          "text": "के बीच का कोण $\\theta$ है जहाँ रेखाएँ (1) व (2) के दिक्-अनुपात क्रमशः $a_1, b_1, c_1$ तथा\n$a_2, b_2, c_2$ है तब"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            452.4,
+            569.5,
+            939.2,
+            680.6
+          ],
+          "conf": 0.921,
+          "text": "$$\\cos \\theta = \\left| \\frac{a_1 a_2 + b_1 b_2 + c_1 c_2}{\\sqrt{a_1^2 + b_1^2 + c_1^2} \\sqrt{a_2^2 + b_2^2 + c_2^2}} \\right|$$"
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            666.0,
+            676.2,
+            830.7
+          ],
+          "conf": 0.509,
+          "text": "उदाहरण 7 दिए गए रेखा-युग्म\n\n$$ \\vec{r} = 3\\hat{i} + 2\\hat{j} - 4\\hat{k} + \\lambda(\\hat{i} + 2\\hat{j} + 2\\hat{k}) $$\n\nऔर $$ \\vec{r} = 5\\hat{i} - 2\\hat{j} + \\mu(3\\hat{i} + 2\\hat{j} + 6\\hat{k}) $$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            832.3,
+            385.2,
+            883.6
+          ],
+          "conf": 0.903,
+          "text": "के मध्य कोण ज्ञात कीजिए"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.0,
+            883.1,
+            797.6,
+            982.3
+          ],
+          "conf": 0.856,
+          "text": "हल मान लीजिए $\\vec{b}_1 = \\hat{i} + 2\\hat{j} + 2\\hat{k}$ और $\\vec{b}_2 = 3\\hat{i} + 2\\hat{j} + 6\\hat{k}$\nदोनों रेखाओं के मध्य कोण $\\theta$ है, इसलिए"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            189.5,
+            986.6,
+            816.7,
+            1103.4
+          ],
+          "conf": 0.884,
+          "text": "$$\\cos \\theta = \\left| \\frac{\\vec{b}_1 \\cdot \\vec{b}_2}{|\\vec{b}_1||\\vec{b}_2|} \\right| = \\left| \\frac{(\\hat{i} + 2\\hat{j} + 2\\hat{k}) \\cdot (3\\hat{i} + 2\\hat{j} + 6\\hat{k})}{\\sqrt{1 + 4 + 4} \\sqrt{9 + 4 + 36}} \\right|$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            261.6,
+            1109.0,
+            518.9,
+            1203.7
+          ],
+          "conf": 0.863,
+          "text": "$$= \\left| \\frac{3 + 4 + 12}{3 \\times 7} \\right| = \\frac{19}{21}$$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.2,
+            1209.1,
+            451.7,
+            1300.9
+          ],
+          "conf": 0.89,
+          "text": "अतः $\\theta = \\cos^{-1} \\left( \\frac{19}{21} \\right)$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            1296.9,
+            342.0,
+            1347.3
+          ],
+          "conf": 0.854,
+          "text": "उदाहरण 8 रेखा-युग्म:"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            452.2,
+            1350.4,
+            737.5,
+            1440.9
+          ],
+          "conf": 0.87,
+          "text": "$$ \\frac{x+3}{3} = \\frac{y-1}{5} = \\frac{z+3}{4} $$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.0,
+            1445.9,
+            743.3,
+            1533.4
+          ],
+          "conf": 0.886,
+          "text": "और $\\frac{x+1}{1} = \\frac{y-4}{1} = \\frac{z-5}{2}$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.0,
+            1525.5,
+            391.4,
+            1576.8
+          ],
+          "conf": 0.887,
+          "text": "के मध्य कोण ज्ञात कीजिए।"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1584.0,
+            1128.7,
+            1674.7
+          ],
+          "conf": 0.921,
+          "text": "हल पहली रेखा के दिक्-अनुपात 3, 5, 4 और दूसरी रेखा के दिक्-अनुपात 1, 1, 2 हैं। यदि उनके\nबीच का कोण $\\theta$ हो तब"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0149_p0009.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            189.5,
+            221.0,
+            1025.5,
+            331.7
+          ],
+          "conf": 0.922,
+          "text": "$$\\cos \\theta = \\left| \\frac{3.1 + 5.1 + 4.2}{\\sqrt{3^2 + 5^2 + 4^2} \\sqrt{1^2 + 1^2 + 2^2}} \\right| = \\frac{16}{\\sqrt{50} \\sqrt{6}} = \\frac{16}{5 \\sqrt{2} \\sqrt{6}} = \\frac{8 \\sqrt{3}}{15}$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.0,
+            339.8,
+            499.8,
+            447.7
+          ],
+          "conf": 0.824,
+          "text": "अतः अभीष्ट कोण $\\cos^{-1}\\left(\\frac{8\\sqrt{3}}{15}\\right)$ है।"
+        },
+        {
+          "order": 2,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.7,
+            456.1,
+            1114.2,
+            512.5
+          ],
+          "conf": 0.919,
+          "text": "11.5 दो रेखाओं के मध्य न्यूनतम दूरी (Shortest Distance between two lines)"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            508.7,
+            605.0,
+            766.3
+          ],
+          "conf": 0.974,
+          "text": "अंतरिक्ष में यदि दो रेखाएँ परस्पर प्रतिच्छेद करती है\nतो उनके बीच की न्यूनतम दूरी शून्य है। और\nअंतरिक्ष में यदि दो रेखाएँ समांतर है तो उनके बीच\nकी न्यूनतम दूरी, उनके बीच लंबवत् दूरी होगी\nअर्थात् एक रेखा के एक बिंदु से दूसरी रेखा पर\nखींचा गया लंब।"
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            606.5,
+            509.8,
+            1127.9,
+            881.8
+          ],
+          "conf": 0.955,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            768.6,
+            1128.4,
+            1025.8
+          ],
+          "conf": 0.951,
+          "text": "इसके अतिरिक्त अंतरिक्ष में, ऐसी भी रेखाएँ\nहोती है जो न तो प्रतिच्छेदी और न ही समांतर\nहोती है। वास्तव में ऐसी रेखाओं के युग्म X\nअसमतलीय होते हैं और इन्हें विषमतलीय रेखाएँ\n(skew lines) कहते हैं। उदाहरणतया हम आकृति 11.5 में $x, y$ और $z$-अक्ष के अनुदिश क्रमशः\n1, 3, 2 इकाई के आकार वाले कमरे पर विचार करते हैं।"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            1025.1,
+            1129.8,
+            1157.9
+          ],
+          "conf": 0.945,
+          "text": "रेखा GE छत के विकर्ण के अनुदिश है और रेखा DB, A के ठीक ऊपर छत के कोने से गुजरती\nहुई दीवार के विकर्ण के अनुदिश है। ये रेखाएँ विषमतलीय हैं क्योंकि वे समांतर नहीं है और कभी\nमिलती भी नहीं हैं।"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1158.1,
+            1129.1,
+            1302.3
+          ],
+          "conf": 0.935,
+          "text": "दो रेखाओं के बीच न्यूनतम दूरी से हमारा अभिप्राय एक ऐसे रेखाखंड से है जो एक रेखा पर स्थित\nएक बिंदु को दूसरी रेखा पर स्थित अन्य बिंदु को मिलाने से प्राप्त हों ताकि इसकी लंबाई न्यूनतम हो।\nन्यूनतम दूरी रेखाखंड दोनों विषमतलीय रेखाओं पर लंब होगा।"
+        },
+        {
+          "order": 8,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            70.8,
+            1310.2,
+            1112.4,
+            1363.5
+          ],
+          "conf": 0.879,
+          "text": "11.5.1 दो विषमतलीय रेखाओं के बीच की दूरी (Distance between two skew lines)"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            1362.2,
+            746.3,
+            1498.0
+          ],
+          "conf": 0.942,
+          "text": "अब हम रेखाओं के बीच की न्यूनतम दूरी निम्नलिखित विधि से\nज्ञात करते हैं। मान लीजिए $l_1$ और $l_2$ दो विषमतलीय रेखाएँ है\nजिनके समीकरण (आकृति 11.6) निम्नलिखित हैं:"
+        },
+        {
+          "order": 10,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            730.0,
+            1368.5,
+            1126.9,
+            1623.4
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.2,
+            1511.3,
+            745.0,
+            1627.2
+          ],
+          "conf": 0.619,
+          "text": "$$ \\vec{r} = \\vec{a}_1 + \\lambda \\vec{b}_1 \\tag{1} $$\n$$ \\text{और} \\quad \\vec{r} = \\vec{a}_2 + \\mu \\vec{b}_2 \\tag{2} $$"
+        },
+        {
+          "order": 12,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            855.4,
+            1618.4,
+            1019.8,
+            1665.9
+          ],
+          "conf": 0.876,
+          "text": "आकृति 11.6"
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0149_p0010.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            222.3,
+            1128.5,
+            359.5
+          ],
+          "conf": 0.972,
+          "text": "रेखा $l_1$ पर कोई बिंदु S जिसकी स्थिति सदिश $\\bar{a}_1$ और $l_2$ पर कोई बिंदु T जिसकी स्थिति सदिश $\\bar{a}_2$\nहै, लीजिए। तब न्यूनतम दूरी सदिश का परिमाण, ST का न्यूनतम दूरी की दिशा में प्रक्षेप की माप के\nसमान होगा (अनुच्छेद 10.6.2)।"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            368.5,
+            1122.5,
+            472.7
+          ],
+          "conf": 0.963,
+          "text": "यदि $l_1$ और $l_2$ के बीच की न्यूनतम दूरी सदिश $\\overline{\\text{PQ}}$ है तो यह दोनों $\\vec{b}_1$ और $\\vec{b}_2$ पर लंब होगी। $\\overline{\\text{PQ}}$\nकी दिशा में इकाई सदिश $\\hat{n}$ इस प्रकार होगी कि"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            499.1,
+            491.0,
+            1127.6,
+            594.2
+          ],
+          "conf": 0.927,
+          "text": "$$ \\hat{n} = \\frac{\\vec{b}_1 \\times \\vec{b}_2}{|\\vec{b}_1 \\times \\vec{b}_2|} \\qquad \\dots (3) $$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.2,
+            612.0,
+            598.3,
+            664.4
+          ],
+          "conf": 0.882,
+          "text": "तब $\\overline{\\text{PQ}} = d$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.0,
+            677.7,
+            1129.3,
+            733.7
+          ],
+          "conf": 0.914,
+          "text": "जहाँ $d$, न्यूनतम दूरी सदिश का परिमाण है। मान लीजिए $\\overline{\\text{ST}}$ और $\\overline{\\text{PQ}}$ के बीच का कोण $\\theta$ है, तब"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            478.1,
+            773.1,
+            704.4,
+            822.6
+          ],
+          "conf": 0.896,
+          "text": "$$PQ = ST |\\cos \\theta|$$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.8,
+            830.9,
+            746.9,
+            937.3
+          ],
+          "conf": 0.898,
+          "text": "परंतु\n$$\\cos \\theta = \\left| \\frac{\\overline{\\text{PQ}} \\cdot \\overline{\\text{ST}}}{|\\overline{\\text{PQ}}||\\overline{\\text{ST}}|} \\right|$$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            527.5,
+            961.9,
+            1092.1,
+            1061.5
+          ],
+          "conf": 0.921,
+          "text": "$$= \\left| \\frac{d \\hat{n} \\cdot (\\vec{a}_2 - \\vec{a}_1)}{d \\text{ ST}} \\right| \\text{ (क्योंकि } \\vec{ST} = \\vec{a}_2 - \\vec{a}_1)$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            528.2,
+            1085.2,
+            1025.5,
+            1197.7
+          ],
+          "conf": 0.912,
+          "text": "$$= \\left| \\frac{(\\vec{b}_1 \\times \\vec{b}_2) \\cdot (\\vec{a}_2 - \\vec{a}_1)}{\\text{ST } |\\vec{b}_1 \\times \\vec{b}_2|} \\right| \\quad ((3) \\text{ के द्वारा})$$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1205.5,
+            389.2,
+            1258.7
+          ],
+          "conf": 0.883,
+          "text": "इसलिए अभीष्ट न्यूनतम दूरी"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            391.8,
+            1255.1,
+            763.1,
+            1305.7
+          ],
+          "conf": 0.538,
+          "text": "$$d = \\text{PQ} = \\text{ST} |\\cos \\theta|$$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.0,
+            1317.1,
+            893.6,
+            1422.5
+          ],
+          "conf": 0.888,
+          "text": "$$ \\text{या} \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad d = \\left| \\frac{(\\vec{b}_1 \\times \\vec{b}_2) \\cdot (\\vec{a}_2 - \\vec{a}_1)}{|\\vec{b}_1 \\times \\vec{b}_2|} \\right| \\hat{=} \\text{है।} $$"
+        },
+        {
+          "order": 12,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.4,
+            1431.0,
+            478.2,
+            1482.3
+          ],
+          "conf": 0.829,
+          "text": "कार्तीय रूप (Cartesian Form)"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            1481.2,
+            173.0,
+            1530.5
+          ],
+          "conf": 0.847,
+          "text": "रेखाओं:"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            387.4,
+            1553.9,
+            800.4,
+            1649.0
+          ],
+          "conf": 0.919,
+          "text": "$$l_1: \\frac{x - x_1}{a_1} = \\frac{y - y_1}{b_1} = \\frac{z - z_1}{c_1}$$"
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0149_p0011.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.7,
+            232.0,
+            803.3,
+            324.7
+          ],
+          "conf": 0.917,
+          "text": "और $l_2 : \\frac{x - x_2}{a_2} = \\frac{y - y_2}{b_2} = \\frac{z - z_2}{c_2}$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            320.8,
+            391.6,
+            374.4
+          ],
+          "conf": 0.91,
+          "text": "के बीच की न्यूनतम दूरी है:"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            292.8,
+            390.1,
+            880.2,
+            593.6
+          ],
+          "conf": 0.9,
+          "text": "$$\n\\frac{\\left| \\begin{array}{ccc} x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\\\ a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\end{array} \\right|}{\\sqrt{(b_1 c_2 - b_2 c_1)^2 + (c_1 a_2 - c_2 a_1)^2 + (a_1 b_2 - a_2 b_1)^2}}\n$$"
+        },
+        {
+          "order": 3,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            70.7,
+            618.5,
+            996.8,
+            672.8
+          ],
+          "conf": 0.832,
+          "text": "11.5.2 समांतर रेखाओं के बीच की दूरी (Distance between parallel lines)"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.9,
+            669.6,
+            1013.5,
+            724.7
+          ],
+          "conf": 0.938,
+          "text": "यदि दो रेखाएँ $l_1$ यदि $l_2$ समांतर हैं तो वे समतलीय होती हैं। माना दी गई रेखाएँ क्रमशः"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            497.0,
+            725.4,
+            1128.4,
+            781.7
+          ],
+          "conf": 0.792,
+          "text": "$$ \\vec{r} = \\vec{a}_1 + \\lambda \\vec{b} \\qquad \\dots (1) $$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.0,
+            783.5,
+            1126.4,
+            840.1
+          ],
+          "conf": 0.833,
+          "text": "और $\\vec{r} = \\vec{a}_2 + \\mu \\vec{b} \\dots (2)$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            845.3,
+            744.6,
+            903.4
+          ],
+          "conf": 0.886,
+          "text": "हैं, जहाँ $l_1$ पर बिंदु S का स्थिति सदिश $\\vec{a}_1$ और $l_2$ पर बिंदु T"
+        },
+        {
+          "order": 8,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            734.6,
+            853.9,
+            1130.5,
+            1089.2
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            906.7,
+            524.8,
+            960.1
+          ],
+          "conf": 0.854,
+          "text": "का स्थिति सदिश $\\bar{a}_2$ है (आकृति 11.7)"
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            858.2,
+            1090.8,
+            1023.5,
+            1140.5
+          ],
+          "conf": 0.899,
+          "text": "आकृति 11.7"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            957.2,
+            746.0,
+            1096.7
+          ],
+          "conf": 0.953,
+          "text": "क्योंकि $l_1$, और $l_2$ समतलीय है। यदि बिंदु T से $l_1$ पर\nडाले गए लंब का पाद P है तब रेखाओं $l_1$ और $l_2$ के बीच की\nदूरी = |TP|"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            1106.8,
+            746.4,
+            1159.2
+          ],
+          "conf": 0.905,
+          "text": "मान लीजिए कि सदिशों $\\overline{ST}$ और $\\bar{b}$ के बीच का कोण $\\theta$ है। तब,"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            417.4,
+            1161.4,
+            1127.6,
+            1215.5
+          ],
+          "conf": 0.894,
+          "text": "$$ \\vec{b} \\times \\overrightarrow{\\text{ST}} = (|\\vec{b}||\\overrightarrow{\\text{ST}}|\\sin\\theta)\\hat{n} \\qquad \\dots (3) $$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1215.0,
+            717.8,
+            1270.1
+          ],
+          "conf": 0.894,
+          "text": "जहाँ रेखाओं $l_1$ और $l_2$ के तल पर लंब इकाई सदिश $\\hat{n}$ है।"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.7,
+            1269.7,
+            681.4,
+            1320.5
+          ],
+          "conf": 0.852,
+          "text": "परंतु $\\overline{ST} = \\vec{a}_2 - \\vec{a}_1$"
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1312.9,
+            436.2,
+            1364.8
+          ],
+          "conf": 0.865,
+          "text": "इसलिए $(3)$ से हम पाते हैं कि"
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            357.6,
+            1375.2,
+            1025.5,
+            1430.8
+          ],
+          "conf": 0.845,
+          "text": "$$\\vec{b} \\times (\\vec{a}_2 - \\vec{a}_1) = |\\vec{b}| \\text{PT } \\hat{n} \\qquad (\\text{क्योंकि } \\text{PT} = \\text{ST} \\sin \\theta)$$"
+        },
+        {
+          "order": 18,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.5,
+            1437.7,
+            909.7,
+            1491.7
+          ],
+          "conf": 0.843,
+          "text": "अर्थात् $| \\vec{b} \\times (\\vec{a}_2 - \\vec{a}_1) | = | \\vec{b} | \\text{PT} \\cdot 1$ (as $| \\hat{n} | = 1$)"
+        },
+        {
+          "order": 19,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            1483.7,
+            535.7,
+            1537.0
+          ],
+          "conf": 0.859,
+          "text": "इसलिए ज्ञात रेखाओं के बीच न्यूनतम दूरी"
+        },
+        {
+          "order": 20,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            502.4,
+            1548.5,
+            886.0,
+            1655.8
+          ],
+          "conf": 0.905,
+          "text": "$$d = |\\overrightarrow{PT}| = \\left| \\frac{\\vec{b} \\times (\\vec{a}_2 - \\vec{a}_1)}{|\\vec{b}|} \\right| \\hat{\\vec{h}}.$$"
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0149_p0012.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.9,
+            208.1,
+            1129.2,
+            262.1
+          ],
+          "conf": 0.766,
+          "text": "उदाहरण 9 रेखाओं $l_1$ और $l_2$ के बीच की न्यूनतम दूरी ज्ञात कीजिए जिनके सदिश समीकरण है :"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            496.2,
+            262.8,
+            1128.6,
+            318.8
+          ],
+          "conf": 0.864,
+          "text": "$$ r = \\hat{i} + \\hat{j} + \\lambda ( 2 \\hat{i} - \\hat{j} + \\hat{k} ) \\qquad \\dots (1) $$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.1,
+            322.4,
+            1128.1,
+            379.1
+          ],
+          "conf": 0.878,
+          "text": "और $r = 2 \\hat{i} + \\hat{j} - \\hat{k} + \\mu (3 \\hat{i} - 5 \\hat{j} + 2 \\hat{k}) \\quad ... (2)$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.5,
+            392.4,
+            1129.9,
+            487.3
+          ],
+          "conf": 0.935,
+          "text": "हल समीकरण (1) व (2) की $r = a_1 + \\lambda b_1$ और $r = a_2 + \\mu b_2$, से तुलना करने पर हम\nपाते हैं कि"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            490.6,
+            473.8,
+            881.3,
+            532.1
+          ],
+          "conf": 0.867,
+          "text": "$$a_1 = \\hat{i} + \\hat{j} , \\quad b_1 = 2\\hat{i} - \\hat{j} + \\hat{k}$$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            488.8,
+            531.7,
+            1020.2,
+            589.3
+          ],
+          "conf": 0.864,
+          "text": "$$a_2 = 2\\hat{i} + \\hat{j} - \\hat{k} \\text{ और } b_2 = 3\\hat{i} - 5\\hat{j} + 2\\hat{k}$$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.1,
+            580.7,
+            649.9,
+            633.2
+          ],
+          "conf": 0.828,
+          "text": "इसलिए $a_2 - a_1 = \\hat{i} - \\hat{k}$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.1,
+            630.7,
+            1014.6,
+            686.9
+          ],
+          "conf": 0.844,
+          "text": "और $b_1 \\times b_2 = ( 2 \\hat{i} - \\hat{j} + \\hat{k} ) \\times ( 3 \\hat{i} - 5 \\hat{j} + 2 \\hat{k} )$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            527.2,
+            696.4,
+            949.1,
+            855.7
+          ],
+          "conf": 0.899,
+          "text": "$$ = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 2 & -1 & 1 \\\\ 3 & -5 & 2 \\end{vmatrix} = 3 \\hat{i} - \\hat{j} - 7 \\hat{k} $$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            63.0,
+            855.7,
+            820.7,
+            915.3
+          ],
+          "conf": 0.599,
+          "text": "इस प्रकार $|b_1 \\times b_2| = \\sqrt{9 + 1 + 49} = \\sqrt{59}$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.0,
+            905.4,
+            609.7,
+            958.5
+          ],
+          "conf": 0.907,
+          "text": "इसलिए दी गई रेखाओं के बीच की न्यूनतम दूरी"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            226.8,
+            944.3,
+            909.7,
+            1045.4
+          ],
+          "conf": 0.916,
+          "text": "$$d = \\left| \\frac{(b_1 \\times b_2) \\cdot (a_2 - a_1)}{|b_1 \\times b_2|} \\right| = \\frac{13 - 0 + 71}{\\sqrt{59}} = \\frac{10}{\\sqrt{59}}$$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.2,
+            1038.4,
+            655.4,
+            1091.2
+          ],
+          "conf": 0.679,
+          "text": "उदाहरण 10 निम्नलिखित दी गई रेखाओं $l_1$ और $l_2$:"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            230.2,
+            1083.1,
+            751.3,
+            1138.7
+          ],
+          "conf": 0.838,
+          "text": "$$r = \\hat{i} + 2 \\hat{j} - 4 \\hat{k} + \\lambda ( 2 \\hat{i} + 3 \\hat{j} + 6 \\hat{k} )$$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.3,
+            1141.6,
+            1128.5,
+            1196.5
+          ],
+          "conf": 0.801,
+          "text": "और $r = 3\\hat{i} + 3\\hat{j} - 5\\hat{k} + \\mu ( 2\\hat{i} + 3\\hat{j} + 6\\hat{k} )$ के बीच न्यूनतम दूरी ज्ञात कीजिए।"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            67.4,
+            1187.5,
+            673.8,
+            1240.7
+          ],
+          "conf": 0.823,
+          "text": "हल दोनों रेखाएँ समांतर हैं। (क्यों?) हमें प्राप्त है कि"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            224.8,
+            1237.3,
+            983.3,
+            1292.6
+          ],
+          "conf": 0.853,
+          "text": "$$a_1 = \\hat{i} + 2\\hat{j} - 4\\hat{k} , a_2 = 3\\hat{i} + 3\\hat{j} - 5\\hat{k} \\text{ और } b = 2\\hat{i} + 3\\hat{j} + 6\\hat{k}$$"
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            1289.3,
+            444.8,
+            1342.3
+          ],
+          "conf": 0.85,
+          "text": "इसलिए रेखाओं के बीच की दूरी"
+        },
+        {
+          "order": 18,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            234.8,
+            1344.1,
+            736.1,
+            1554.7
+          ],
+          "conf": 0.87,
+          "text": "$$d = \\left| \\frac{b \\times (a_2 - a_1)}{|b|} \\right| = \\left| \\frac{\\left| \\begin{array}{ccc} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 2 & 3 & 6 \\\\ 2 & 1 & -1 \\end{array} \\right|}{\\sqrt{4 + 9 + 36}} \\right|$$"
+        },
+        {
+          "order": 19,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            260.4,
+            1570.0,
+            791.9,
+            1672.9
+          ],
+          "conf": 0.874,
+          "text": "$$ = \\frac{| - 9 \\hat{i} + 14 \\hat{j} - 4 \\hat{k} |}{\\sqrt{49}} = \\frac{\\sqrt{293}}{\\sqrt{49}} = \\frac{\\sqrt{293}}{7} \\text{ है।} $$"
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0149_p0013.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            484.0,
+            230.2,
+            712.8,
+            289.1
+          ],
+          "conf": 0.82,
+          "text": "प्रश्नावली 11.2"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.7,
+            311.4,
+            1133.3,
+            1633.5
+          ],
+          "conf": 0.781,
+          "text": "1. दर्शाइए कि दिक्-कोसाइन $\\frac{12}{13}, \\frac{-3}{13}, \\frac{-4}{13}; \\frac{4}{13}, \\frac{12}{13}, \\frac{3}{13}; \\frac{3}{13}, \\frac{-4}{13}, \\frac{12}{13}$ वाली तीन\nरेखाएँ परस्पर लंबवत् हैं।\n\n2. दर्शाइए कि बिंदुओं $(1, -1, 2), (3, 4, -2)$ से होकर जाने वाली रेखा बिंदुओं $(0, 3, 2)$ और\n$(3, 5, 6)$ से जाने वाली रेखा पर लंब है।\n\n3. दर्शाइए कि बिंदुओं $(4, 7, 8), (2, 3, 4)$ से होकर जाने वाली रेखा, बिंदुओं $(-1, -2, 1),$\n$(1, 2, 5)$ से जाने वाली रेखा के समांतर है।\n\n4. बिंदु $(1, 2, 3)$ से गुज़रने वाली रेखा का समीकरण ज्ञात कीजिए जो सदिश $3\\hat{i} + 2\\hat{j} - 2\\hat{k}$ के\nसमांतर है।\n\n5. बिंदु जिसकी स्थिति सदिश $2\\hat{i} - j + 4\\hat{k}$ से गुज़रने व सदिश $\\hat{i} + 2\\hat{j} - \\hat{k}$ की दिशा में जाने\nवाली रेखा का सदिश और कार्तीय रूपों में समीकरण ज्ञात कीजिए।\n\n6. उस रेखा का कार्तीय समीकरण ज्ञात कीजिए जो बिंदु $(-2, 4, -5)$ से जाती है और\n$\\frac{x+3}{3} = \\frac{y-4}{5} = \\frac{z+8}{6}$ के समांतर है।\n\n7. एक रेखा का कार्तीय समीकरण $\\frac{x-5}{3} = \\frac{y+4}{7} = \\frac{z-6}{2}$ है। इसका सदिश समीकरण ज्ञात\nकीजिए।\n\n8. निम्नलिखित रेखा-युग्मों के बीच का कोण ज्ञात कीजिए:\n(i) $r = 2\\hat{i} - 5\\hat{j} + \\hat{k} + \\lambda(3\\hat{i} + 2\\hat{j} + 6\\hat{k})$ और\n$r = 7\\hat{i} - 6\\hat{k} + \\mu(\\hat{i} + 2\\hat{j} + 2\\hat{k})$\n(ii) $r = 3\\hat{i} + \\hat{j} - 2\\hat{k} + \\lambda(\\hat{i} - \\hat{j} - 2\\hat{k})$ और\n$r = 2\\hat{i} - \\hat{j} - 56\\hat{k} + \\mu(3\\hat{i} - 5\\hat{j} - 4\\hat{k})$\n\n9. निम्नलिखित रेखा-युग्मों के बीच का कोण ज्ञात कीजिए:\n(i) $\\frac{x-2}{2} = \\frac{y-1}{5} = \\frac{z+3}{-3}$ और $\\frac{x+2}{-1} = \\frac{y-4}{8} = \\frac{z-5}{4}$\n(ii) $\\frac{x}{2} = \\frac{y}{2} = \\frac{z}{1}$ और $\\frac{x-5}{4} = \\frac{y-2}{1} = \\frac{z-3}{8}$"
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0149_p0014.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            79.1,
+            222.1,
+            851.2,
+            394.6
+          ],
+          "conf": 0.793,
+          "text": "10. $p$ का मान ज्ञात कीजिए ताकि रेखाएँ $\\frac{1-x}{3} = \\frac{7y-14}{2p} = \\frac{z-3}{2}$\n\nऔर $\\frac{7-7x}{3p} = \\frac{y-5}{1} = \\frac{6-z}{5}$ परस्पर लंब हों।"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            81.0,
+            394.2,
+            943.0,
+            481.0
+          ],
+          "conf": 0.867,
+          "text": "11. दिखाइए कि रेखाएँ $\\frac{x-5}{7} = \\frac{y+2}{-5} = \\frac{z}{1}$ और $\\frac{x}{1} = \\frac{y}{2} = \\frac{z}{3}$ परस्पर लंब हैं।"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.4,
+            483.5,
+            1128.8,
+            584.6
+          ],
+          "conf": 0.894,
+          "text": "12. रेखाओं $\\bar{r} = (\\hat{i} + 2 \\hat{j} + \\hat{k}) + \\lambda (\\hat{i} - \\hat{j} + \\hat{k})$ और $\\bar{r} = 2 \\hat{i} - \\hat{j} - \\hat{k} + \\mu (2 \\hat{i} + \\hat{j} + 2 \\hat{k})$ के\nबीच की न्यूनतम दूरी ज्ञात कीजिए:"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.7,
+            591.5,
+            1128.8,
+            732.6
+          ],
+          "conf": 0.865,
+          "text": "13. रेखाओं $\\frac{x+1}{7} = \\frac{y+1}{-6} = \\frac{z+1}{1}$ और $\\frac{x-3}{1} = \\frac{y-5}{-2} = \\frac{z-7}{1}$ के बीच की न्यूनतम दूरी ज्ञात\nकीजिए।"
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            77.9,
+            726.8,
+            1122.4,
+            835.4
+          ],
+          "conf": 0.742,
+          "text": "14. रेखाएँ, जिनके सदिश समीकरण निम्नलिखित है, के बीच की न्यूनतम दूरी ज्ञात कीजिए:\n$$\\bar{r} = (\\hat{i} + 2 \\hat{j} + 3 \\hat{k}) + \\lambda (\\hat{i} - 3 \\hat{j} + 2 \\hat{k}) \\text{ और } \\bar{r} = 4 \\hat{i} + 5 \\hat{j} + 6 \\hat{k} + \\mu (2 \\hat{i} + 3 \\hat{j} + \\hat{k})$$"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            79.1,
+            830.5,
+            1067.2,
+            938.5
+          ],
+          "conf": 0.71,
+          "text": "15. रेखाएँ, जिनकी सदिश समीकरण निम्नलिखित हैं, के बीच की न्यूनतम ज्ञात कीजिए:\n$$\\bar{r} = (1-t)\\hat{i} + (t-2)\\hat{j} + (3-2t)\\hat{k} \\text{ और } \\bar{r} = (s+1)\\hat{i} + (2s-1)\\hat{j} - (2s+1)\\hat{k}$$"
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            377.3,
+            967.9,
+            825.7,
+            1021.9
+          ],
+          "conf": 0.867,
+          "text": "अध्याय 11 पर विविध प्रश्नावली"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            95.6,
+            1030.3,
+            1131.1,
+            1621.1
+          ],
+          "conf": 0.727,
+          "text": "1. उन रेखाओं के मध्य कोण ज्ञात कीजिए, जिनके दिक्-अनुपात $a, b, c$ और $b-c, c-a,$\n$a-b$ हैं।\n2. $x$-अक्ष के समांतर तथा मूल-बिंदु से जाने वाली रेखा का समीकरण ज्ञात कीजिए।\n3. यदि रेखाएँ $\\frac{x-1}{-3} = \\frac{y-2}{2k} = \\frac{z-3}{2}$ और $\\frac{x-1}{3k} = \\frac{y-1}{1} = \\frac{z-6}{-5}$ परस्पर लंब हों\nतो $k$ का मान ज्ञात कीजिए।\n4. रेखाओं $\\bar{r} = 6\\hat{i} + 2\\hat{j} + 2\\hat{k} + \\lambda(\\hat{i} - 2\\hat{j} + 2\\hat{k})$ और\n$\\bar{r} = -4\\hat{i} - \\hat{k} + \\mu(3\\hat{i} - 2\\hat{j} - 2\\hat{k})$ के बीच की न्यूनतम दूरी ज्ञात कीजिए।\n5. बिंदु $(1, 2, -4)$ से जाने वाली और दोनों रेखाओं $\\frac{x-8}{3} = \\frac{y+19}{-16} = \\frac{z-10}{7}$ और\n$\\frac{x-15}{3} = \\frac{y-29}{8} = \\frac{z-5}{-5}$ पर लंब रेखा का सदिश समीकरण ज्ञात कीजिए।"
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0149_p0015.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            550.8,
+            219.4,
+            654.6,
+            270.4
+          ],
+          "conf": 0.832,
+          "text": "सारांश"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            106.2,
+            283.3,
+            1097.0,
+            1625.8
+          ],
+          "conf": 0.876,
+          "text": "एक रेखा की दिक्-कोसाइन रेखा द्वारा निर्देशांकों की धन दिशा के साथ बनाए कोणों\nकी कोसाइन होती है।\nयदि एक रेखा की दिक्-कोसाइन $l, m, n$ हैं तो $l^2 + m^2 + n^2 = 1$\nदो बिंदुओं P $(x_1, y_1, z_1)$ और Q $(x_2, y_2, z_2)$ को मिलाने वाली रेखा की दिक्-कोसाइन\n$$\\frac{x_2 - x_1}{PQ}, \\frac{y_2 - y_1}{PQ}, \\frac{z_2 - z_1}{PQ} \\text{ हैं}$$\nजहाँ $PQ = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$\nएक रेखा का दिक्-अनुपात वे संख्याएँ हैं जो रेखा की दिक्-कोसाइन के समानुपाती\nहोती हैं।\nयदि एक रेखा की दिक्-कोसाइन $l, m, n$ और दिक्-अनुपात $a, b, c$ हैं तो\n$$l = \\frac{a}{\\sqrt{a^2 + b^2 + c^2}} ; m = \\frac{b}{\\sqrt{a^2 + b^2 + c^2}} ; n = \\frac{c}{\\sqrt{a^2 + b^2 + c^2}}$$\nविषमतलीय रेखाएँ अंतरिक्ष की वे रेखाएँ जो न तो समांतर हैं और न ही प्रतिच्छेदी हैं।\nयह रेखाएँ विभिन्न तलों में होती हैं।\nविषमतलीय रेखाओं के बीच का कोण वह कोण है जो एक किसी बिंदु (वरीयता मूल\nबिंदु की) से विषमतलीय रेखाओं में से प्रत्येक के समांतर खींची गई दो प्रतिच्छेदी रेखाओं\nके बीच में है।\nयदि $l_1, m_1, n_1$ और $l_2, m_2, n_2$ दिक्-कोसाइन वाली दो रेखाओं के बीच न्यूनकोण $\\theta$ है\nतब\n$$\\cos \\theta = |l_1 l_2 + m_1 m_2 + n_1 n_2|$$\nयदि $a_1, b_1, c_1$ और $a_2, b_2, c_2$ दिक्-अनुपातों वाली दो रेखाओं के बीच का न्यून कोण\n$\\theta$ है तब\n$$\\cos \\theta = \\left| \\frac{a_1 a_2 + b_1 b_2 + c_1 c_2}{\\sqrt{a_1^2 + b_1^2 + c_1^2} \\sqrt{a_2^2 + b_2^2 + c_2^2}} \\right|$$\nएक ज्ञात बिंदु जिसकी स्थिति सदिश $\\bar{a}$ है से गुज़रने वाली और सदिश $\\bar{b}$ के समांतर रेखा\nका सदिश समीकरण $\\bar{r} = \\bar{a} + \\lambda \\bar{b}$ है।"
+        }
+      ],
+      "page": 15
+    },
+    {
+      "image": "0149_p0016.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            105.5,
+            217.6,
+            1103.2,
+            1628.1
+          ],
+          "conf": 0.729,
+          "text": "◆ बिंदु $(x_1, y_1, z_1)$ से जाने वाली रेखा जिसकी दिक्-कोसाइन $l, m, n$ हैं, का समीकरण\n$\\frac{x - x_1}{l} = \\frac{y - y_1}{m} = \\frac{z - z_1}{n}$ है।\n◆ दो बिंदुओं जिनके स्थिति सदिश $\\vec{a}$ और $\\vec{b}$ है से जाने वाली रेखा के समीकरण का सदिश\nसमीकरण $\\vec{r} = \\vec{a} + \\lambda (\\vec{b} - \\vec{a})$ है।\n◆ यदि दो रेखाओं $\\vec{r} = \\vec{a}_1 + \\lambda \\vec{b}_1$ और $\\vec{r} = \\vec{a}_2 + \\lambda \\vec{b}_2$, के बीच का न्यूनकोण $\\theta$ है तो\n$$\\cos \\theta = \\left| \\frac{\\vec{b}_1 \\cdot \\vec{b}_2}{|\\vec{b}_1| |\\vec{b}_2|} \\right|$$\n◆ यदि दो रेखाओं $\\frac{x - x_1}{l_1} = \\frac{y - y_1}{m_1} = \\frac{z - z_1}{n_1}$ और\n$$\\frac{x - x_2}{l_2} = \\frac{y - y_2}{m_2} = \\frac{z - z_2}{n_2} \\text{ के बीच का कोण } \\theta \\text{ है तब}$$\n$$\\cos \\theta = |l_1 l_2 + m_1 m_2 + n_1 n_1|.$$\n◆ दो विषमतलीय रेखाओं के बीच की न्यूनतम दूरी वह रेखाखंड है जो दोनों रेखाओं पर\nलंब हैं।\n◆ दो रेखाओं $\\vec{r} = \\vec{a}_1 + \\lambda \\vec{b}_1$ और $\\vec{r} = \\vec{a}_2 + \\mu \\vec{b}_2$ के बीच न्यूनतम दूरी\n$$\\left| \\frac{(\\vec{b}_1 \\times \\vec{b}_2) \\cdot (\\vec{a}_2 - \\vec{a}_1)}{|\\vec{b}_1 \\times \\vec{b}_2|} \\right| \\text{ है।}$$\n◆ दो रेखाओं $\\frac{x - x_1}{a_1} = \\frac{y - y_1}{b_1} = \\frac{z - z_1}{c_1}$ और $\\frac{x - x_2}{a_2} = \\frac{y - y_2}{b_2} = \\frac{z - z_2}{c_2}$ के\nबीच न्यूनतम दूरी\n$$\\frac{\\left| \\begin{array}{ccc} x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\\\ a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\end{array} \\right|}{\\sqrt{(b_1 c_2 - b_2 c_1)^2 + (c_1 a_2 - c_2 a_1)^2 + (a_1 b_2 - a_2 b_1)^2}} \\text{ है।}$$\n◆ दो समांतर रेखाओं $\\vec{r} = \\vec{a}_1 + \\lambda \\vec{b}$ और $\\vec{r} = \\vec{a}_2 + \\mu \\vec{b}$ के बीच की दूरी\n$$\\left| \\frac{\\vec{b} \\times (\\vec{a}_2 - \\vec{a}_1)}{|\\vec{b}|} \\right| \\text{ है।}$$"
+        },
+        {
+          "order": 1,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            526.4,
+            1645.9,
+            671.2,
+            1693.6
+          ],
+          "conf": 0.713,
+          "text": ""
+        }
+      ],
+      "page": 16
+    }
+  ]
+}

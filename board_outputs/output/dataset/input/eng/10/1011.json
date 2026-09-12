@@ -1,0 +1,1116 @@
+{
+  "book": "1011",
+  "relpath": "dataset/input/eng/10/1011.pdf",
+  "num_pages": 7,
+  "pages": [
+    {
+      "image": "0080_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            544.6,
+            228.9,
+            756.2,
+            457.1
+          ],
+          "conf": 0.906,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            605.5,
+            421.4,
+            698.6,
+            456.2
+          ],
+          "conf": 0.623,
+          "text": "$$1062\\mathrm{CH}12$$"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            138.2,
+            491.0,
+            1179.9,
+            661.4
+          ],
+          "conf": 0.886,
+          "text": "AREAS RELATED TO CIRCLES 11"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.2,
+            745.2,
+            775.6,
+            798.0
+          ],
+          "conf": 0.909,
+          "text": "11.1 Areas of Sector and Segment of a Circle"
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            822.1,
+            730.7,
+            1131.0,
+            1070.3
+          ],
+          "conf": 0.958,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            785.3,
+            1173.2,
+            1284.6
+          ],
+          "conf": 0.931,
+          "text": "You have already come across the terms $sector$ and\n$segment$ of a circle in your earlier classes. Recall\nthat the portion (or part) of the circular region enclosed\nby two radii and the corresponding arc is called a\n$sector$ of the circle and the portion (or part) of the\ncircular region enclosed between a chord and the\ncorresponding arc is called a $segment$ of the circle.\nThus, in Fig. 11.1, shaded region OAPB is a $sector$\nof the circle with centre O. $\\angle$ AOB is called the\n$angle$ of the sector. Note that in this figure, unshaded region OAQB is also a sector of\nthe circle. For obvious reasons, OAPB is called the $minor$ $sector$ and\nOAQB is called the $major$ $sector$. You can also see that angle of the major sector is\n$360^\\circ - \\angle$ AOB."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1284.8,
+            779.6,
+            1551.9
+          ],
+          "conf": 0.965,
+          "text": "Now, look at Fig. 11.2 in which AB is a chord\nof the circle with centre O. So, shaded region APB is\na segment of the circle. You can also note that\nunshaded region AQB is another segment of the circle\nformed by the chord AB. For obvious reasons, APB\nis called the $minor$ $segment$ and AQB is called the\n$major$ $segment$."
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            801.8,
+            1280.8,
+            1131.1,
+            1616.7
+          ],
+          "conf": 0.961,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            884.6,
+            1617.9,
+            1028.8,
+            1667.6
+          ],
+          "conf": 0.888,
+          "text": "Fig. 11.2"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1552.3,
+            778.4,
+            1673.5
+          ],
+          "conf": 0.93,
+          "text": "Remark : When we write ‘segment’ and ‘sector’\nwe will mean the ‘minor segment’ and the ‘minor\nsector’ respectively, unless stated otherwise."
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0080_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.6,
+            191.7,
+            1178.2,
+            238.1
+          ],
+          "conf": 0.744,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.6,
+            192.5,
+            435.6,
+            237.7
+          ],
+          "conf": 0.535,
+          "text": "AREAS RELATED TO CIRCLES"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            258.2,
+            778.6,
+            342.9
+          ],
+          "conf": 0.941,
+          "text": "Now with this knowledge, let us try to find some\nrelations (or formulae) to calculate their areas."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            342.9,
+            778.7,
+            462.3
+          ],
+          "conf": 0.958,
+          "text": "Let OAPB be a sector of a circle with centre\nO and radius $r$ (see Fig. 11.3). Let the degree\nmeasure of $\\angle AOB$ be $\\theta$."
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            814.8,
+            278.2,
+            1123.5,
+            616.4
+          ],
+          "conf": 0.964,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            896.4,
+            618.8,
+            1039.3,
+            668.2
+          ],
+          "conf": 0.916,
+          "text": "Fig. 11.3"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            464.2,
+            778.7,
+            548.5
+          ],
+          "conf": 0.934,
+          "text": "You know that area of a circle (in fact of a\ncircular region or disc) is $\\pi r^2$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            549.9,
+            786.0,
+            741.2
+          ],
+          "conf": 0.962,
+          "text": "In a way, we can consider this circular region to\nbe a sector forming an angle of $360^{\\circ}$ (i.e., of degree\nmeasure 360) at the centre O. Now by applying the\nUnitary Method, we can arrive at the area of the\nsector OAPB as follows:"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            742.1,
+            1178.7,
+            825.5
+          ],
+          "conf": 0.916,
+          "text": "When degree measure of the angle at the centre is 360, area of the\nsector $= \\pi r^2$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            816.0,
+            1178.6,
+            946.4
+          ],
+          "conf": 0.882,
+          "text": "So, when the degree measure of the angle at the centre is 1, area of the\nsector = $\\frac{\\pi r^2}{360}$."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.6,
+            945.6,
+            1178.2,
+            995.2
+          ],
+          "conf": 0.863,
+          "text": "Therefore, when the degree measure of the angle at the centre is $\\theta$, area of the"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            994.5,
+            537.5,
+            1087.6
+          ],
+          "conf": 0.876,
+          "text": "$$ \\text{sector} = \\frac{\\pi r^2}{360} \\times \\theta = \\frac{\\theta}{360} \\times \\pi r^2 . $$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1080.0,
+            1178.6,
+            1165.1
+          ],
+          "conf": 0.925,
+          "text": "Thus, we obtain the following relation (or formula) for area of a sector of a\ncircle:"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            188.4,
+            1167.4,
+            789.4,
+            1257.0
+          ],
+          "conf": 0.872,
+          "text": "Area of the sector of angle $\\theta = \\frac{\\theta}{360} \\times \\pi r^2$,"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1262.4,
+            1057.2,
+            1311.6
+          ],
+          "conf": 0.891,
+          "text": "where $r$ is the radius of the circle and $\\theta$ the angle of the sector in degrees."
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1312.0,
+            778.8,
+            1574.9
+          ],
+          "conf": 0.797,
+          "text": "Now, a natural question arises : Can we find\nthe length of the arc APB corresponding to this\nsector? Yes. Again, by applying the Unitary\nMethod and taking the whole length of the circle\n(of angle $360^{\\circ}$) as $2\\pi r$, we can obtain the required\nlength of the arc APB as $\\frac{\\theta}{360} \\times 2\\pi r$."
+        },
+        {
+          "order": 16,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            890.1,
+            1317.3,
+            1174.8,
+            1625.6
+          ],
+          "conf": 0.961,
+          "text": ""
+        },
+        {
+          "order": 17,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            964.6,
+            1624.9,
+            1107.5,
+            1672.6
+          ],
+          "conf": 0.862,
+          "text": "Fig. 11.4"
+        },
+        {
+          "order": 18,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            1585.4,
+            900.2,
+            1674.3
+          ],
+          "conf": 0.837,
+          "text": "So, length of an arc of a sector of angle $\\theta = \\frac{\\theta}{360} \\times 2\\pi r$."
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0080_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            258.4,
+            779.6,
+            379.2
+          ],
+          "conf": 0.947,
+          "text": "Now let us take the case of the area of the\nsegment APB of a circle with centre O and radius $r$\n(see Fig. 11.4). You can see that :"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.2,
+            378.7,
+            1117.2,
+            517.9
+          ],
+          "conf": 0.861,
+          "text": "Area of the segment APB = Area of the sector OAPB – Area of $\\Delta$ OAB\n$$= \\frac{\\theta}{360} \\times \\pi r^2$ – area of $\\Delta$ OAB"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            515.5,
+            1012.8,
+            565.4
+          ],
+          "conf": 0.89,
+          "text": "**Note :** From Fig. 11.3 and Fig. 11.4 respectively, you can observe that:"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            559.4,
+            1161.9,
+            704.5
+          ],
+          "conf": 0.541,
+          "text": "Area of the major sector OAQB = $\\pi r^2$ – Area of the minor sector OAPB\nand      Area of major segment AQB = $\\pi r^2$ – Area of the minor segment APB\nLet us now take some examples to understand these concepts (or results)."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            660.1,
+            1124.1,
+            709.6
+          ],
+          "conf": 0.855,
+          "text": "Let us now take some examples to understand these concepts (or results)."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            720.7,
+            778.8,
+            841.7
+          ],
+          "conf": 0.874,
+          "text": "Example 1 : Find the area of the sector of a circle\nwith radius 4 cm and of angle $30^{\\circ}$. Also, find the area\nof the corresponding major sector (Use $\\pi = 3.14$)."
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            836.3,
+            724.3,
+            1122.9,
+            1026.4
+          ],
+          "conf": 0.964,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            841.1,
+            754.9,
+            891.1
+          ],
+          "conf": 0.86,
+          "text": "Solution : Given sector is OAPB (see Fig. 11.5)."
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            909.5,
+            1028.5,
+            1054.2,
+            1078.1
+          ],
+          "conf": 0.914,
+          "text": "Fig. 11.5"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            243.8,
+            893.8,
+            939.0,
+            1159.6
+          ],
+          "conf": 0.877,
+          "text": "$$Area\\ of\\ the\\ sector\\ =\\ \\frac{\\theta}{360}\\times\\pi r^2$$\n\n$$=\\ \\frac{30}{360}\\times3.14\\times4\\times4\\ cm^2$$\n\n$$=\\ \\frac{12.56}{3}\\ cm^2=4.19cm^2\\ (approx.)$$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            1156.3,
+            911.6,
+            1365.9
+          ],
+          "conf": 0.744,
+          "text": "Area of the corresponding major sector\n$$ = \\pi r^2 - \\text{area of sector OAPB} $$\n$$ = (3.14 \\times 16 - 4.19) \\text{ cm}^2 $$\n$$ = 46.05 \\text{ cm}^2 = 46.1 \\text{ cm}^2 (\\text{approx.}) $$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.2,
+            1378.5,
+            1093.7,
+            1707.9
+          ],
+          "conf": 0.91,
+          "text": "Alternatively, area of the major sector = $\\frac{(360 - \\theta)}{360} \\times \\pi r^2$\n\n$$= \\left( \\frac{360 - 30}{360} \\right) \\times 3.14 \\times 16 \\text{ cm}^2$$\n\n$$= \\frac{330}{360} \\times 3.14 \\times 16 \\text{cm}^2 = 46.05 \\text{ cm}^2$$\n\n$$= 46.1 \\text{ cm}^2 \\text{ (approx.)}$$"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0080_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            285.4,
+            778.4,
+            475.8
+          ],
+          "conf": 0.91,
+          "text": "Example 2 : Find the area of the segment AYB\nshown in Fig. 11.6, if radius of the circle is 21 cm and\n$\\angle \\text{AOB} = 120^{\\circ}$. (Use $\\pi = \\frac{22}{7}$ )"
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            830.4,
+            277.8,
+            1121.8,
+            572.9
+          ],
+          "conf": 0.963,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            897.1,
+            573.4,
+            1041.8,
+            622.4
+          ],
+          "conf": 0.918,
+          "text": "Fig. 11.6"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            632.9,
+            1178.3,
+            732.1
+          ],
+          "conf": 0.641,
+          "text": "Solution : Area of the segment AYB\n$$= \\text{Area of sector OAYB} - \\text{Area of } \\Delta \\text{ OAB} \\quad (1)$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            735.3,
+            1178.1,
+            824.6
+          ],
+          "conf": 0.895,
+          "text": "Now, area of the sector OAYB = $\\frac{120}{360} \\times \\frac{22}{7} \\times 21 \\times 21 \\text{ cm}^2 = 462 \\text{ cm}^2$ (2)"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            827.3,
+            1048.2,
+            924.9
+          ],
+          "conf": 0.879,
+          "text": "For finding the area of $\\Delta$ OAB, draw OM $\\perp$ AB as shown in Fig. 11.7.\n\nNote that OA = OB. Therefore, by RHS congruence, $\\Delta$ AMO $\\cong \\Delta$ BMO."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            939.4,
+            1028.3,
+            1027.3
+          ],
+          "conf": 0.868,
+          "text": "So, M is the mid-point of AB and $\\angle \\text{AOM} = \\angle \\text{BOM} = \\frac{1}{2} \\times 120^\\circ = 60^\\circ$."
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            1032.3,
+            625.4,
+            1081.5
+          ],
+          "conf": 0.795,
+          "text": "Let $OM = x \\text{ cm}$"
+        },
+        {
+          "order": 8,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            762.1,
+            1044.8,
+            1179.8,
+            1212.0
+          ],
+          "conf": 0.954,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            1092.7,
+            653.5,
+            1182.0
+          ],
+          "conf": 0.854,
+          "text": "So, from $\\Delta$ OMA, $\\frac{\\text{OM}}{\\text{OA}} = \\cos 60^\\circ$"
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            894.8,
+            1220.4,
+            1037.3,
+            1270.0
+          ],
+          "conf": 0.884,
+          "text": "Fig. 11.7"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1193.8,
+            801.1,
+            1288.6
+          ],
+          "conf": 0.853,
+          "text": "or, $$\\frac{x}{21} = \\frac{1}{2} \\left( \\cos 60^\\circ = \\frac{1}{2} \\right)$$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            1283.1,
+            602.4,
+            1368.0
+          ],
+          "conf": 0.832,
+          "text": "or, $x = \\frac{21}{2}$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            1369.7,
+            654.3,
+            1456.0
+          ],
+          "conf": 0.846,
+          "text": "So, $OM = \\frac{21}{2} \\text{ cm}$"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            1453.7,
+            725.5,
+            1547.2
+          ],
+          "conf": 0.843,
+          "text": "Also, $\\frac{\\text{AM}}{\\text{OA}} = \\sin 60^\\circ = \\frac{\\sqrt{3}}{2}$"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            1540.0,
+            690.9,
+            1629.1
+          ],
+          "conf": 0.8,
+          "text": "So, $AM = \\frac{21\\sqrt{3}}{2}$ cm"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            1618.4,
+            979.7,
+            1711.0
+          ],
+          "conf": 0.807,
+          "text": "Therefore, $AB = 2 AM = \\frac{2 \\times 21\\sqrt{3}}{2} \\text{ cm} = 21\\sqrt{3} \\text{ cm}$"
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0080_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            272.5,
+            1178.3,
+            447.1
+          ],
+          "conf": 0.928,
+          "text": "So, $\\text{area of } \\Delta \\text{ OAB} = \\frac{1}{2} \\text{ AB} \\times \\text{ OM} = \\frac{1}{2} \\times 21\\sqrt{3} \\times \\frac{21}{2} \\text{ cm}^2$\n$= \\frac{441}{4} \\sqrt{3} \\text{ cm}^2$ (3)"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            461.7,
+            1177.8,
+            653.2
+          ],
+          "conf": 0.879,
+          "text": "Therefore, area of the segment AYB = $\\left(462-\\frac{441}{4}\\sqrt{3}\\right)\\mathrm{cm}^2$ [From (1), (2) and (3)]\n\n$$=\\frac{21}{4}(88-21\\sqrt{3})\\mathrm{cm}^2$$"
+        },
+        {
+          "order": 2,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            521.8,
+            661.2,
+            776.0,
+            711.5
+          ],
+          "conf": 0.87,
+          "text": "EXERCISE 11.1"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            731.7,
+            560.8,
+            815.7
+          ],
+          "conf": 0.868,
+          "text": "Unless stated otherwise, use $\\pi = \\frac{22}{7}$."
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.3,
+            822.7,
+            1178.2,
+            1640.5
+          ],
+          "conf": 0.862,
+          "text": "1. Find the area of a sector of a circle with radius 6 cm if angle of the sector is $60^{\\circ}$.\n2. Find the area of a quadrant of a circle whose circumference is 22 cm.\n3. The length of the minute hand of a clock is 14 cm. Find the area swept by the minute\nhand in 5 minutes.\n4. A chord of a circle of radius 10 cm subtends a right angle at the centre. Find the area of\nthe corresponding : (i) minor segment (ii) major sector. (Use $\\pi = 3.14$)\n5. In a circle of radius 21 cm, an arc subtends an angle of $60^{\\circ}$ at the centre. Find:\n(i) the length of the arc (ii) area of the sector formed by the arc\n(iii) area of the segment formed by the corresponding chord\n6. A chord of a circle of radius 15 cm subtends an angle of $60^{\\circ}$ at the centre. Find\nthe areas of the corresponding minor and major\nsegments of the circle.\n(Use $\\pi = 3.14$ and $\\sqrt{3} = 1.73$)\n7. A chord of a circle of radius 12 cm subtends an\nangle of $120^{\\circ}$ at the centre. Find the area of the\ncorresponding segment of the circle.\n(Use $\\pi = 3.14$ and $\\sqrt{3} = 1.73$)\n8. A horse is tied to a peg at one corner of a square\nshaped grass field of side 15 m by means of a 5 m\nlong rope (see Fig. 11.8). Find"
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            941.5,
+            1596.4,
+            1086.2,
+            1646.2
+          ],
+          "conf": 0.874,
+          "text": "Fig. 11.8"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0080_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            195.3,
+            282.3,
+            752.7,
+            442.3
+          ],
+          "conf": 0.917,
+          "text": "(i) the area of that part of the field in which the\nhorse can graze.\n\n(ii) the increase in the grazing area if the rope\nwere 10 m long instead of 5 m. (Use $\\pi = 3.14$)"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.0,
+            444.4,
+            752.8,
+            628.0
+          ],
+          "conf": 0.951,
+          "text": "9. A brooch is made with silver wire in the form\nof a circle with diameter 35 mm. The wire is also\nused in making 5 diameters which divide the\ncircle into 10 equal sectors as shown in\nFig. 11.9. Find:"
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            835.9,
+            313.1,
+            1120.3,
+            595.6
+          ],
+          "conf": 0.91,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            895.7,
+            602.1,
+            1038.0,
+            650.4
+          ],
+          "conf": 0.903,
+          "text": "Fig. 11.9"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            195.1,
+            628.5,
+            725.8,
+            719.5
+          ],
+          "conf": 0.887,
+          "text": "(i) the total length of the silver wire required.\n(ii) the area of each sector of the brooch."
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.1,
+            721.4,
+            753.9,
+            880.3
+          ],
+          "conf": 0.962,
+          "text": "10. An umbrella has 8 ribs which are equally spaced\n(see Fig. 11.10). Assuming umbrella to be a flat\ncircle of radius 45 cm, find the area between the\ntwo consecutive ribs of the umbrella."
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            800.2,
+            691.0,
+            1155.8,
+            966.0
+          ],
+          "conf": 0.92,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            886.0,
+            972.0,
+            1045.8,
+            1019.7
+          ],
+          "conf": 0.904,
+          "text": "Fig. 11.10"
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            143.8,
+            883.9,
+            753.4,
+            1040.8
+          ],
+          "conf": 0.959,
+          "text": "11. A car has two wipers which do not overlap. Each\nwiper has a blade of length 25 cm sweeping\nthrough an angle of $115^{\\circ}$. Find the total area\ncleaned at each sweep of the blades."
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.3,
+            1045.2,
+            753.6,
+            1239.6
+          ],
+          "conf": 0.96,
+          "text": "12. To warn ships for underwater rocks, a lighthouse\nspreads a red coloured light over a sector of\nangle $80^{\\circ}$ to a distance of 16.5 km. Find the area\nof the sea over which the ships are warned.\n(Use $\\pi = 3.14$)"
+        },
+        {
+          "order": 10,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            805.4,
+            1035.1,
+            1114.5,
+            1348.0
+          ],
+          "conf": 0.903,
+          "text": ""
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            887.5,
+            1359.3,
+            1043.5,
+            1408.1
+          ],
+          "conf": 0.881,
+          "text": "Fig. 11.11"
+        },
+        {
+          "order": 12,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.3,
+            1242.2,
+            752.7,
+            1402.8
+          ],
+          "conf": 0.945,
+          "text": "13. A round table cover has six equal designs as\nshown in Fig. 11.11. If the radius of the cover is\n28 cm, find the cost of making the designs at the\nrate of $₹$ 0.35 per $\\text{cm}^2$. (Use $\\sqrt{3} = 1.7$)"
+        },
+        {
+          "order": 13,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.4,
+            1401.2,
+            1117.2,
+            1617.5
+          ],
+          "conf": 0.542,
+          "text": "14. Tick the correct answer in the following :\nArea of a sector of angle $p$ (in degrees) of a circle\nwith radius R is\n\n(A) $\\frac{p}{180} \\times 2\\pi\\text{R}$      (B) $\\frac{p}{180} \\times \\pi\\text{R}^2$      (C) $\\frac{p}{360} \\times 2\\pi\\text{R}$      (D) $\\frac{p}{720} \\times 2\\pi\\text{R}^2$"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0080_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.7,
+            257.5,
+            348.3,
+            309.7
+          ],
+          "conf": 0.889,
+          "text": "11.2 Summary"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            308.8,
+            760.1,
+            356.2
+          ],
+          "conf": 0.934,
+          "text": "In this chapter, you have studied the following points :"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.0,
+            354.9,
+            1176.6,
+            675.1
+          ],
+          "conf": 0.943,
+          "text": "1. Length of an arc of a sector of a circle with radius $r$ and angle with degree measure $\\theta$ is\n$$\\frac{\\theta}{360} \\times 2\\pi r.$$\n\n2. Area of a sector of a circle with radius $r$ and angle with degree measure $\\theta$ is $\\frac{\\theta}{360} \\times \\pi r^2.$\n\n3. Area of segment of a circle\n= Area of the corresponding sector – Area of the corresponding triangle."
+        }
+      ],
+      "page": 6
+    }
+  ]
+}

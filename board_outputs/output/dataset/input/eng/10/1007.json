@@ -1,0 +1,2368 @@
+{
+  "book": "1007",
+  "relpath": "dataset/input/eng/10/1007.pdf",
+  "num_pages": 14,
+  "pages": [
+    {
+      "image": "0076_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            543.8,
+            216.6,
+            756.3,
+            445.2
+          ],
+          "conf": 0.911,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            603.9,
+            410.0,
+            698.8,
+            444.8
+          ],
+          "conf": 0.66,
+          "text": "$1062\\text{CH}07$"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            249.6,
+            477.1,
+            1179.5,
+            647.9
+          ],
+          "conf": 0.885,
+          "text": "COORDINATE GEOMETRY 7"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            117.1,
+            709.6,
+            370.6,
+            760.8
+          ],
+          "conf": 0.914,
+          "text": "7.1 Introduction"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            115.4,
+            766.5,
+            1174.7,
+            962.0
+          ],
+          "conf": 0.98,
+          "text": "In Class IX, you have studied that to locate the position of a point on a plane, we\nrequire a pair of coordinate axes. The distance of a point from the $y$-axis is called its\n$\\boldsymbol{x}$\\textbf{-coordinate}, or \\textbf{abscissa}. The distance of a point from the $x$-axis is called its\n$\\boldsymbol{y}$\\textbf{-coordinate}, or \\textbf{ordinate}. The coordinates of a point on the $x$-axis are of the form\n$(x, 0)$, and of a point on the $y$-axis are of the form $(0, y)$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.5,
+            962.3,
+            1177.3,
+            1250.2
+          ],
+          "conf": 0.983,
+          "text": "Here is a play for you. Draw a set of a pair of perpendicular axes on a graph\npaper. Now plot the following points and join them as directed: Join the point A(4, 8) to\nB(3, 9) to C(3, 8) to D(1, 6) to E(1, 5) to F(3, 3) to G(6, 3) to H(8, 5) to I(8, 6) to\nJ(6, 8) to K(6, 9) to L(5, 8) to A. Then join the points P(3.5, 7), Q (3, 6) and R(4, 6) to\nform a triangle. Also join the points X(5.5, 7), Y(5, 6) and Z(6, 6) to form a triangle.\nNow join S(4, 5), T(4.5, 4) and U(5, 5) to form a triangle. Lastly join S to the points\n(0, 5) and (0, 6) and join U to the points (9, 5) and (9, 6). What picture have you got?"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.0,
+            1249.1,
+            1175.8,
+            1558.6
+          ],
+          "conf": 0.979,
+          "text": "Also, you have seen that a linear equation in two variables of the form\n$ax + by + c = 0$, ($a, b$ are not simultaneously zero), when represented graphically,\ngives a straight line. Further, in Chapter 2, you have seen the graph of\n$y = ax^2 + bx + c$ ($a \\neq 0$), is a parabola. In fact, coordinate geometry has been developed\nas an algebraic tool for studying geometry of figures. It helps us to study geometry\nusing algebra, and understand algebra with the help of geometry. Because of this,\ncoordinate geometry is widely applied in various fields such as physics, engineering,\nnavigation, seismology and art!"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.0,
+            1558.2,
+            1174.3,
+            1681.1
+          ],
+          "conf": 0.95,
+          "text": "In this chapter, you will learn how to find the distance between the two points\nwhose coordinates are given. You will also study how to find the coordinates of the\npoint which divides a line segment joining two given points in a given ratio."
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0076_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.7,
+            257.5,
+            449.4,
+            308.0
+          ],
+          "conf": 0.891,
+          "text": "7.2 Distance Formula"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.2,
+            310.7,
+            614.8,
+            358.3
+          ],
+          "conf": 0.925,
+          "text": "Let us consider the following situation:"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            359.5,
+            738.4,
+            630.2
+          ],
+          "conf": 0.976,
+          "text": "A town B is located 36 km east and 15\nkm north of the town A. How would you find\nthe distance from town A to town B without\nactually measuring it. Let us see. This situation\ncan be represented graphically as shown in\nFig. 7.1. You may use the Pythagoras Theorem\nto calculate this distance."
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            769.2,
+            256.1,
+            1175.5,
+            612.2
+          ],
+          "conf": 0.958,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            884.4,
+            616.9,
+            1012.4,
+            666.3
+          ],
+          "conf": 0.919,
+          "text": "Fig. 7.1"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            630.6,
+            738.7,
+            789.3
+          ],
+          "conf": 0.96,
+          "text": "Now, suppose two points lie on the $x$-axis.\nCan we find the distance between them? For\ninstance, consider two points A(4, 0) and B(6, 0)\nin Fig. 7.2. The points A and B lie on the $x$-axis."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            788.9,
+            737.6,
+            871.5
+          ],
+          "conf": 0.928,
+          "text": "From the figure you can see that OA = 4\nunits and OB = 6 units."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            871.3,
+            737.4,
+            955.1
+          ],
+          "conf": 0.93,
+          "text": "Therefore, the distance of B from A, i.e.,\n$$AB = OB - OA = 6 - 4 = 2 \\text{ units.}$$"
+        },
+        {
+          "order": 8,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            735.7,
+            688.2,
+            1179.0,
+            1158.8
+          ],
+          "conf": 0.954,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            954.4,
+            737.8,
+            1039.3
+          ],
+          "conf": 0.934,
+          "text": "So, if two points lie on the $x$-axis, we can\neasily find the distance between them."
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            871.9,
+            1168.5,
+            1001.8,
+            1217.5
+          ],
+          "conf": 0.899,
+          "text": "Fig. 7.2"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1038.9,
+            738.1,
+            1243.0
+          ],
+          "conf": 0.962,
+          "text": "Now, suppose we take two points lying on\nthe $y$-axis. Can you find the distance between\nthem. If the points $C(0, 3)$ and $D(0, 8)$ lie on the\n$y$-axis, similarly we find that $CD = 8 - 3 = 5$ units\n(see Fig. 7.2)."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1243.9,
+            1178.6,
+            1393.8
+          ],
+          "conf": 0.948,
+          "text": "Next, can you find the distance of A from C (in Fig. 7.2)? Since OA = 4 units and\nOC = 3 units, the distance of A from C, i.e., AC = $\\sqrt{3^2 + 4^2}$ = 5 units. Similarly, you can\nfind the distance of B from D = BD = 10 units."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1394.4,
+            1177.9,
+            1513.7
+          ],
+          "conf": 0.935,
+          "text": "Now, if we consider two points not lying on coordinate axis, can we find the\ndistance between them? Yes! We shall use Pythagoras theorem to do so. Let us see\nan example."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1512.2,
+            1178.7,
+            1703.3
+          ],
+          "conf": 0.948,
+          "text": "In Fig. 7.3, the points $P(4, 6)$ and $Q(6, 8)$ lie in the first quadrant. How do we use\nPythagoras theorem to find the distance between them? Let us draw $PR$ and $QS$\nperpendicular to the $x$-axis from $P$ and $Q$ respectively. Also, draw a perpendicular\nfrom $P$ on $QS$ to meet $QS$ at $T$. Then the coordinates of $R$ and $S$ are $(4, 0)$ and $(6, 0)$,\nrespectively. So, $RS = 2$ units. Also, $QS = 8$ units and $TS = PR = 6$ units."
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0076_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            260.7,
+            731.1,
+            310.7
+          ],
+          "conf": 0.912,
+          "text": "Therefore, QT = 2 units and PT = RS = 2 units."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            313.3,
+            738.7,
+            403.2
+          ],
+          "conf": 0.94,
+          "text": "Now, using the Pythagoras theorem, we\nhave"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            324.6,
+            407.0,
+            573.0,
+            508.4
+          ],
+          "conf": 0.873,
+          "text": "$$PQ^2 = PT^2 + QT^2$$\n$$= 2^2 + 2^2 = 8$$"
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            740.5,
+            280.1,
+            1180.3,
+            745.9
+          ],
+          "conf": 0.952,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            513.4,
+            567.7,
+            565.1
+          ],
+          "conf": 0.728,
+          "text": "So, $\\text{PQ} = 2\\sqrt{2} \\text{ units}$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            566.4,
+            738.7,
+            657.2
+          ],
+          "conf": 0.938,
+          "text": "How will we find the distance between two\npoints in two different quadrants?"
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            885.2,
+            758.5,
+            1015.4,
+            809.6
+          ],
+          "conf": 0.899,
+          "text": "Fig. 7.3"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            661.0,
+            738.5,
+            874.8
+          ],
+          "conf": 0.969,
+          "text": "Consider the points $P(6, 4)$ and $Q(-5, -3)$\n(see Fig. 7.4). Draw QS perpendicular to the\n$x$-axis. Also draw a perpendicular PT from the\npoint $P$ on QS (extended) to meet $y$-axis at the\npoint $R$."
+        },
+        {
+          "order": 8,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            319.3,
+            878.2,
+            985.9,
+            1427.5
+          ],
+          "conf": 0.961,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            583.8,
+            1463.2,
+            713.7,
+            1514.3
+          ],
+          "conf": 0.886,
+          "text": "Fig. 7.4"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.3,
+            1550.4,
+            775.3,
+            1602.1
+          ],
+          "conf": 0.834,
+          "text": "Then PT = 11 units and QT = 7 units. (Why?)"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1599.6,
+            1178.6,
+            1707.7
+          ],
+          "conf": 0.728,
+          "text": "Using the Pythagoras Theorem to the right triangle PTQ, we get\n$$PQ = \\sqrt{11^2 + 7^2} = \\sqrt{170} \\text{ units.}$$"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0076_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            272.5,
+            798.9,
+            467.0
+          ],
+          "conf": 0.964,
+          "text": "Let us now find the distance between any two\npoints $\\mathrm{P}(x_1, y_1)$ and $\\mathrm{Q}(x_2, y_2)$. Draw PR and QS\nperpendicular to the $x$-axis. A perpendicular from the\npoint $\\mathrm{P}$ on QS is drawn to meet it at the point\n$\\mathrm{T}$ (see Fig. 7.5)."
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            815.6,
+            271.7,
+            1177.8,
+            628.3
+          ],
+          "conf": 0.958,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            919.9,
+            636.3,
+            1049.2,
+            686.7
+          ],
+          "conf": 0.913,
+          "text": "Fig. 7.5"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            465.5,
+            784.9,
+            518.5
+          ],
+          "conf": 0.81,
+          "text": "Then, $\\mathrm{OR} = x_1$, $\\mathrm{OS} = x_2$. So, $\\mathrm{RS} = x_2 - x_1 = \\mathrm{PT}$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            512.8,
+            796.4,
+            567.7
+          ],
+          "conf": 0.788,
+          "text": "Also, $\\mathrm{SQ} = y_2$, $\\mathrm{ST} = \\mathrm{PR} = y_1$. So, $\\mathrm{QT} = y_2 - y_1$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            561.6,
+            811.3,
+            612.8
+          ],
+          "conf": 0.874,
+          "text": "Now, applying the Pythagoras theorem in $\\Delta$ PTQ, we get"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            381.9,
+            607.1,
+            758.3,
+            709.8
+          ],
+          "conf": 0.879,
+          "text": "$$PQ^2 = PT^2 + QT^2$$\n$$= (x_2 - x_1)^2 + (y_2 - y_1)^2$$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            709.1,
+            797.8,
+            779.9
+          ],
+          "conf": 0.831,
+          "text": "Therefore, $PQ = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            784.9,
+            1177.9,
+            872.7
+          ],
+          "conf": 0.942,
+          "text": "Note that since distance is always non-negative, we take only the positive square\nroot. So, the distance between the points $P(x_1, y_1)$ and $Q(x_2, y_2)$ is"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            392.6,
+            871.0,
+            829.8,
+            946.4
+          ],
+          "conf": 0.9,
+          "text": "$$PQ = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2},$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            951.5,
+            612.2,
+            999.8
+          ],
+          "conf": 0.908,
+          "text": "which is called the **distance formula.**"
+        },
+        {
+          "order": 11,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.6,
+            997.7,
+            287.9,
+            1046.1
+          ],
+          "conf": 0.87,
+          "text": "Remarks :"
+        },
+        {
+          "order": 12,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1046.1,
+            1125.3,
+            1237.3
+          ],
+          "conf": 0.936,
+          "text": "1. In particular, the distance of a point $P(x, y)$ from the origin $O(0, 0)$ is given by\n\n\n$$OP = \\sqrt{x^2 + y^2} \\text{ .}$$\n\n\n2. We can also write, $PQ = \\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}$ . (Why?)"
+        },
+        {
+          "order": 13,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1254.6,
+            1177.0,
+            1718.7
+          ],
+          "conf": 0.655,
+          "text": "Example 1 : Do the points $(3, 2)$, $(-2, -3)$ and $(2, 3)$ form a triangle? If so, name the\ntype of triangle formed.\n\nSolution : Let us apply the distance formula to find the distances PQ, QR and PR,\nwhere P(3, 2), Q$(-2, -3)$ and R(2, 3) are the given points. We have\n\n$$PQ = \\sqrt{(3 + 2)^2 + (2 + 3)^2} = \\sqrt{5^2 + 5^2} = \\sqrt{50} = 7.07 \\text{ (approx.)}$$\n\n$$QR = \\sqrt{(-2 - 2)^2 + (-3 - 3)^2} = \\sqrt{(-4)^2 + (-6)^2} = \\sqrt{52} = 7.21 \\text{ (approx.)}$$\n\n$$PR = \\sqrt{(3 - 2)^2 + (2 - 3)^2} = \\sqrt{1^2 + (-1)^2} = \\sqrt{2} = 1.41 \\text{ (approx.)}$$\n\nSince the sum of any two of these distances is greater than the third distance, therefore,\nthe points P, Q and R form a triangle."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1642.7,
+            1178.1,
+            1727.9
+          ],
+          "conf": 0.901,
+          "text": "Since the sum of any two of these distances is greater than the third distance, therefore,\nthe points P, Q and R form a triangle."
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0076_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.1,
+            190.8,
+            1177.3,
+            239.0
+          ],
+          "conf": 0.821,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.1,
+            191.7,
+            393.1,
+            237.5
+          ],
+          "conf": 0.506,
+          "text": "COORDINATE GEOMETRY"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            255.9,
+            1178.2,
+            353.6
+          ],
+          "conf": 0.913,
+          "text": "Also, $\\mathrm{PQ}^2 + \\mathrm{PR}^2 = \\mathrm{QR}^2$, by the converse of Pythagoras theorem, we have $\\angle \\mathrm{P} = 90^\\circ$.\nTherefore, $\\mathrm{PQR}$ is a right triangle."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.1,
+            362.9,
+            1177.0,
+            939.4
+          ],
+          "conf": 0.518,
+          "text": "Example 2 : Show that the points $(1, 7), (4, 2), (-1, -1)$ and $(-4, 4)$ are the vertices\nof a square.\n\nSolution : Let A(1, 7), B(4, 2), C$(-1, -1)$ and D$(- 4, 4)$ be the given points. One way\nof showing that ABCD is a square is to use the property that all its sides should be\nequal and both its diagonals should also be equal. Now,\n\n$$AB = \\sqrt{(1 - 4)^2 + (7 - 2)^2} = \\sqrt{9 + 25} = \\sqrt{34}$$\n\n$$BC = \\sqrt{(4 + 1)^2 + (2 + 1)^2} = \\sqrt{25 + 9} = \\sqrt{34}$$\n\n$$CD = \\sqrt{(-1 + 4)^2 + (-1 - 4)^2} = \\sqrt{9 + 25} = \\sqrt{34}$$\n\n$$DA = \\sqrt{(1 + 4)^2 + (7 - 4)^2} = \\sqrt{25 + 9} = \\sqrt{34}$$\n\n$$AC = \\sqrt{(1 + 1)^2 + (7 + 1)^2} = \\sqrt{4 + 64} = \\sqrt{68}$$\n\n$$BD = \\sqrt{(4 + 4)^2 + (2 - 4)^2} = \\sqrt{64 + 4} = \\sqrt{68}$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.0,
+            880.3,
+            766.5,
+            946.6
+          ],
+          "conf": 0.815,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            948.9,
+            1178.7,
+            1072.5
+          ],
+          "conf": 0.95,
+          "text": "Since, $AB = BC = CD = DA$ and $AC = BD$, all the four sides of the quadrilateral\nABCD are equal and its diagonals $AC$ and $BD$ are also equal. Therefore, ABCD is a\nsquare."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1070.5,
+            559.9,
+            1409.4
+          ],
+          "conf": 0.955,
+          "text": "Alternative Solution : We find\nthe four sides and one diagonal, say,\nAC as above. Here AD$^2$ + DC$^2$ =\n34 + 34 = 68 = AC$^2$. Therefore, by\nthe converse of Pythagoras\ntheorem, $\\angle$D = 90$^\\circ$. A quadrilateral\nwith all four sides equal and one\nangle 90$^\\circ$ is a square. So, ABCD\nis a square."
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1423.9,
+            559.1,
+            1727.9
+          ],
+          "conf": 0.842,
+          "text": "Example 3 : Fig. 7.6 shows the\narrangement of desks in a\nclassroom. Ashima, Bharti and\nCamella are seated at A(3, 1),\nB(6, 4) and C(8, 6) respectively.\nDo you think they are seated in a\nline? Give reasons for your\nanswer."
+        },
+        {
+          "order": 8,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            557.7,
+            1082.6,
+            1175.3,
+            1653.4
+          ],
+          "conf": 0.964,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            841.6,
+            1659.3,
+            971.5,
+            1709.6
+          ],
+          "conf": 0.837,
+          "text": "Fig. 7.6"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0076_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            257.3,
+            732.3,
+            307.8
+          ],
+          "conf": 0.917,
+          "text": "Solution : Using the distance formula, we have"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.0,
+            309.1,
+            833.4,
+            375.4
+          ],
+          "conf": 0.869,
+          "text": "$$AB = \\sqrt{(6-3)^2 + (4-1)^2} = \\sqrt{9+9} = \\sqrt{18} = 3\\sqrt{2}$$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.4,
+            376.4,
+            832.0,
+            439.1
+          ],
+          "conf": 0.766,
+          "text": "$$BC = \\sqrt{(8 - 6)^2 + (6 - 4)^2} = \\sqrt{4 + 4} = \\sqrt{8} = 2\\sqrt{2}$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.7,
+            444.4,
+            867.9,
+            507.9
+          ],
+          "conf": 0.88,
+          "text": "$$AC = \\sqrt{(8 - 3)^2 + (6 - 1)^2} = \\sqrt{25 + 25} = \\sqrt{50} = 5\\sqrt{2}$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            517.0,
+            1178.8,
+            615.0
+          ],
+          "conf": 0.951,
+          "text": "Since, $\\mathrm{AB} + \\mathrm{BC} = 3\\sqrt{2} + 2\\sqrt{2} = 5\\sqrt{2} = \\mathrm{AC}$, we can say that the points A, B and C\nare collinear. Therefore, they are seated in a line."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.1,
+            625.1,
+            1179.5,
+            952.1
+          ],
+          "conf": 0.562,
+          "text": "Example 4 : Find a relation between $x$ and $y$ such that the point $(x, y)$ is equidistant\nfrom the points $(7, 1)$ and $(3, 5)$.\n\nSolution : Let $P(x, y)$ be equidistant from the points $A(7, 1)$ and $B(3, 5)$.\n\nWe are given that $AP = BP$. So, $AP^2 = BP^2$\n\ni.e., $$(x - 7)^2 + (y - 1)^2 = (x - 3)^2 + (y - 5)^2$$\n\ni.e., $$x^2 - 14x + 49 + y^2 - 2y + 1 = x^2 - 6x + 9 + y^2 - 10y + 25$$\n\ni.e., $$x - y = 2$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            966.0,
+            507.4,
+            1015.7
+          ],
+          "conf": 0.9,
+          "text": "which is the required relation."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1026.8,
+            679.5,
+            1294.7
+          ],
+          "conf": 0.953,
+          "text": "Remark : Note that the graph of the equation\n$x - y = 2$ is a line. From your earlier studies,\nyou know that a point which is equidistant\nfrom A and B lies on the perpendicular\nbisector of AB. Therefore, the graph of\n$x - y = 2$ is the perpendicular bisector of AB\n(see Fig. 7.7)."
+        },
+        {
+          "order": 8,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            677.4,
+            967.1,
+            1179.0,
+            1503.3
+          ],
+          "conf": 0.904,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1299.8,
+            678.9,
+            1420.6
+          ],
+          "conf": 0.839,
+          "text": "Example 5 : Find a point on the $y$-axis which\nis equidistant from the points $A(6, 5)$ and\n$B(- 4, 3)$."
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            851.2,
+            1483.0,
+            980.3,
+            1532.2
+          ],
+          "conf": 0.854,
+          "text": "Fig. 7.7"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1419.7,
+            678.6,
+            1542.0
+          ],
+          "conf": 0.881,
+          "text": "Solution : We know that a point on the\ny-axis is of the form $(0, y)$. So, let the point\n$P(0, y)$ be equidistant from A and B. Then"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            1538.4,
+            903.1,
+            1724.2
+          ],
+          "conf": 0.647,
+          "text": "$$(6 - 0)^2 + (5 - y)^2 = (-4 - 0)^2 + (3 - y)^2$$\ni.e., $36 + 25 + y^2 - 10y = 16 + 9 + y^2 - 6y$\ni.e., $4y = 36$\ni.e., $y = 9$"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0076_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.1,
+            190.4,
+            1177.7,
+            239.0
+          ],
+          "conf": 0.798,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.3,
+            191.5,
+            392.7,
+            237.5
+          ],
+          "conf": 0.526,
+          "text": "COORDINATE GEOMETRY"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            281.0,
+            513.5,
+            332.1
+          ],
+          "conf": 0.907,
+          "text": "So, the required point is $(0, 9)$."
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            340.7,
+            1063.9,
+            406.6
+          ],
+          "conf": 0.894,
+          "text": "Let us check our solution : $AP = \\sqrt{(6 - 0)^2 + (5 - 9)^2} = \\sqrt{36 + 16} = \\sqrt{52}$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            467.1,
+            420.1,
+            1082.1,
+            488.7
+          ],
+          "conf": 0.911,
+          "text": "$$BP = \\sqrt{(-4-0)^2 + (3-9)^2} = \\sqrt{16 + 36} = \\sqrt{52}$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            491.0,
+            1177.9,
+            577.4
+          ],
+          "conf": 0.955,
+          "text": "**Note :** Using the remark above, we see that $(0, 9)$ is the intersection of the $y$-axis and\nthe perpendicular bisector of AB."
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.6,
+            603.2,
+            771.9,
+            653.8
+          ],
+          "conf": 0.857,
+          "text": "EXERCISE 7.1"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            151.7,
+            662.0,
+            1183.6,
+            1713.2
+          ],
+          "conf": 0.577,
+          "text": "1. Find the distance between the following pairs of points :\n(i) $(2, 3), (4, 1)$ (ii) $(-5, 7), (-1, 3)$ (iii) $(a, b), (-a, -b)$\n\n2. Find the distance between the points $(0, 0)$ and $(36, 15)$. Can you now find the distance\nbetween the two towns A and B discussed in Section 7.2.\n\n3. Determine if the points $(1, 5), (2, 3)$ and $(-2, -11)$ are collinear.\n\n4. Check whether $(5, -2), (6, 4)$ and $(7, -2)$ are the vertices of an isosceles triangle.\n\n5. In a classroom, 4 friends are\nseated at the points A, B, C and\nD as shown in Fig. 7.8. Champa\nand Chameli walk into the class\nand after observing for a few\nminutes Champa asks Chameli,\n\"Don't you think ABCD is a\nsquare?\" Chameli disagrees.\nUsing distance formula, find\nwhich of them is correct.\n\n6. Name the type of quadrilateral\nformed, if any, by the following\npoints, and give reasons for\nyour answer:\n(i) $(-1, -2), (1, 0), (-1, 2), (-3, 0)$\n(ii) $(-3, 5), (3, 1), (0, 3), (-1, -4)$\n(iii) $(4, 5), (7, 6), (4, 3), (1, 2)$\n\n7. Find the point on the $x$-axis which is equidistant from $(2, -5)$ and $(-2, 9)$.\n\n8. Find the values of $y$ for which the distance between the points $P(2, -3)$ and $Q(10, y)$ is\n10 units."
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0076_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            147.8,
+            256.5,
+            1178.5,
+            416.9
+          ],
+          "conf": 0.672,
+          "text": "9. If $Q(0, 1)$ is equidistant from $P(5, -3)$ and $R(x, 6)$, find the values of $x$. Also find the\ndistances $QR$ and $PR$.\n\n10. Find a relation between $x$ and $y$ such that the point $(x, y)$ is equidistant from the point\n$(3, 6)$ and $(-3, 4)$."
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.3,
+            442.1,
+            428.9,
+            491.3
+          ],
+          "conf": 0.903,
+          "text": "7.3 Section Formula"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            494.4,
+            679.1,
+            941.1
+          ],
+          "conf": 0.982,
+          "text": "Let us recall the situation in Section 7.2.\nSuppose a telephone company wants to\nposition a relay tower at P between A and B\nis such a way that the distance of the tower\nfrom B is twice its distance from A. If P lies\non AB, it will divide AB in the ratio $1 : 2$\n(see Fig. 7.9). If we take A as the origin O,\nand 1 km as one unit on both the axis, the\ncoordinates of B will be $(36, 15)$. In order to\nknow the position of the tower, we must know\nthe coordinates of P. How do we find these\ncoordinates?"
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            698.9,
+            542.3,
+            1180.1,
+            815.7
+          ],
+          "conf": 0.95,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            869.4,
+            809.0,
+            998.3,
+            858.8
+          ],
+          "conf": 0.864,
+          "text": "Fig. 7.9"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            945.1,
+            1178.1,
+            1065.0
+          ],
+          "conf": 0.946,
+          "text": "Let the coordinates of P be $(x, y)$. Draw perpendiculars from P and B to the\n$x$-axis, meeting it in D and E, respectively. Draw PC perpendicular to BE. Then, by\nthe AA similarity criterion, studied in Chapter 6, $\\Delta$ POD and $\\Delta$ BPC are similar."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            1068.0,
+            758.0,
+            1160.0
+          ],
+          "conf": 0.888,
+          "text": "Therefore , $\\frac{\\text{OD}}{\\text{PC}} = \\frac{\\text{OP}}{\\text{PB}} = \\frac{1}{2}$, and $\\frac{\\text{PD}}{\\text{BC}} = \\frac{\\text{OP}}{\\text{PB}} = \\frac{1}{2}$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            1158.6,
+            585.6,
+            1246.2
+          ],
+          "conf": 0.878,
+          "text": "So, $\\frac{x}{36-x}=\\frac{1}{2}$ and $\\frac{y}{15-y}=\\frac{1}{2}$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1241.8,
+            636.2,
+            1289.9
+          ],
+          "conf": 0.866,
+          "text": "These equations give $x = 12$ and $y = 5$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1288.8,
+            677.9,
+            1371.4
+          ],
+          "conf": 0.908,
+          "text": "You can check that $P(12, 5)$ meets the\ncondition that $OP : PB = 1 : 2.$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1373.3,
+            678.7,
+            1492.3
+          ],
+          "conf": 0.934,
+          "text": "Now let us use the understanding that\nyou may have developed through this\nexample to obtain the general formula."
+        },
+        {
+          "order": 11,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            703.9,
+            1205.5,
+            1179.1,
+            1640.5
+          ],
+          "conf": 0.96,
+          "text": ""
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1493.6,
+            679.2,
+            1616.0
+          ],
+          "conf": 0.915,
+          "text": "Consider any two points $A(x_1, y_1)$ and\n$B(x_2, y_2)$ and assume that $P(x, y)$ divides\nAB internally in the ratio $m_1 : m_2$, i.e.,"
+        },
+        {
+          "order": 13,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            867.8,
+            1642.0,
+            1014.1,
+            1691.4
+          ],
+          "conf": 0.85,
+          "text": "Fig. 7.10"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            124.9,
+            1619.9,
+            471.6,
+            1711.1
+          ],
+          "conf": 0.878,
+          "text": "$$\\frac{\\mathrm{PA}}{\\mathrm{PB}} = \\frac{m_1}{m_2} \\text{ (see Fig. 7.10).}$$"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0076_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.8,
+            191.1,
+            1177.5,
+            238.6
+          ],
+          "conf": 0.807,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.5,
+            192.3,
+            392.7,
+            237.1
+          ],
+          "conf": 0.523,
+          "text": "COORDINATE GEOMETRY"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            257.5,
+            1177.9,
+            343.5
+          ],
+          "conf": 0.954,
+          "text": "Draw AR, PS and BT perpendicular to the $x$-axis. Draw AQ and PC parallel to\nthe $x$-axis. Then, by the AA similarity criterion,"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            465.8,
+            341.8,
+            699.0,
+            390.4
+          ],
+          "conf": 0.88,
+          "text": "$\\Delta$ PAQ $\\sim \\Delta$ BPC"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            393.1,
+            918.2,
+            484.5
+          ],
+          "conf": 0.882,
+          "text": "Therefore, $\\frac{\\mathrm{PA}}{\\mathrm{BP}}=\\frac{\\mathrm{AQ}}{\\mathrm{PC}}=\\frac{\\mathrm{PQ}}{\\mathrm{BC}}$ (1)"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            477.7,
+            917.9,
+            658.0
+          ],
+          "conf": 0.866,
+          "text": "Now, $\\text{AQ} = \\text{RS} = \\text{OS} - \\text{OR} = x - x_1$\n$\\text{PC} = \\text{ST} = \\text{OT} - \\text{OS} = x_2 - x$\n$\\text{PQ} = \\text{PS} - \\text{QS} = \\text{PS} - \\text{AR} = y - y_1$\n$\\text{BC} = \\text{BT} - \\text{CT} = \\text{BT} - \\text{PS} = y_2 - y$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            657.8,
+            618.0,
+            707.0
+          ],
+          "conf": 0.931,
+          "text": "Substituting these values in (1), we get"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            399.9,
+            706.8,
+            716.8,
+            799.1
+          ],
+          "conf": 0.889,
+          "text": "$$ \\frac{m_1}{m_2} = \\frac{x - x_1}{x_2 - x} = \\frac{y - y_1}{y_2 - y} $$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            792.7,
+            917.8,
+            888.1
+          ],
+          "conf": 0.883,
+          "text": "Taking $\\frac{m_1}{m_2} = \\frac{x - x_1}{x_2 - x}$, we get $x = \\frac{m_1 x_2 + m_2 x_1}{m_1 + m_2}$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            886.9,
+            920.3,
+            982.7
+          ],
+          "conf": 0.888,
+          "text": "Similarly, taking $\\quad \\frac{m_{1}}{m_{2}}=\\frac{y-y_{1}}{y_{2}-y}$, we get $y=\\frac{m_{1} y_{2}+m_{2} y_{1}}{m_{1}+m_{2}}$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            985.3,
+            1175.5,
+            1075.6
+          ],
+          "conf": 0.953,
+          "text": "So, the coordinates of the point $\\mathrm{P}(x, y)$ which divides the line segment joining the\npoints $\\mathrm{A}(x_1, y_1)$ and $\\mathrm{B}(x_2, y_2)$, internally, in the ratio $m_1 : m_2$ are"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            431.6,
+            1086.6,
+            1175.5,
+            1188.6
+          ],
+          "conf": 0.906,
+          "text": "$$ \\left( \\frac{m_1 x_2 + m_2 x_1}{m_1 + m_2}, \\frac{m_1 y_2 + m_2 y_1}{m_1 + m_2} \\right) \\tag{2} $$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.9,
+            1176.3,
+            691.1,
+            1225.1
+          ],
+          "conf": 0.905,
+          "text": "This is known as the section formula."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1223.8,
+            1175.2,
+            1309.5
+          ],
+          "conf": 0.944,
+          "text": "This can also be derived by drawing perpendiculars from A, P and B on the\ny-axis and proceeding as above."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            1308.0,
+            1175.7,
+            1357.4
+          ],
+          "conf": 0.897,
+          "text": "If the ratio in which P divides AB is $k : 1$, then the coordinates of the point P will be"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            504.0,
+            1359.8,
+            796.9,
+            1460.7
+          ],
+          "conf": 0.898,
+          "text": "$$ \\left( \\frac{kx_2 + x_1}{k+1}, \\frac{ky_2 + y_1}{k+1} \\right). $$"
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1460.9,
+            1177.0,
+            1581.4
+          ],
+          "conf": 0.925,
+          "text": "Special Case : The mid-point of a line segment divides the line segment in the ratio\n$1 : 1$. Therefore, the coordinates of the mid-point P of the join of the points $A(x_1, y_1)$\nand $B(x_2, y_2)$ is"
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            327.2,
+            1569.6,
+            971.0,
+            1669.3
+          ],
+          "conf": 0.891,
+          "text": "$$ \\left( \\frac{1 \\cdot x_1 + 1 \\cdot x_2}{1 + 1}, \\frac{1 \\cdot y_1 + 1 \\cdot y_2}{1 + 1} \\right) = \\left( \\frac{x_1 + x_2}{2}, \\frac{y_1 + y_2}{2} \\right). $$"
+        },
+        {
+          "order": 18,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.5,
+            1663.8,
+            933.7,
+            1712.3
+          ],
+          "conf": 0.893,
+          "text": "Let us solve a few examples based on the section formula."
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0076_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            257.5,
+            1176.8,
+            343.3
+          ],
+          "conf": 0.864,
+          "text": "Example 6 : Find the coordinates of the point which divides the line segment joining\nthe points $(4, -3)$ and $(8, 5)$ in the ratio $3 : 1$ internally."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            342.4,
+            1108.4,
+            393.5
+          ],
+          "conf": 0.85,
+          "text": "Solution : Let $P(x, y)$ be the required point. Using the section formula, we get"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            389.6,
+            403.6,
+            940.2,
+            497.8
+          ],
+          "conf": 0.921,
+          "text": "$$x = \\frac{3(8) + 1(4)}{3 + 1} = 7, \\quad y = \\frac{3(5) + 1(-3)}{3 + 1} = 3$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            509.4,
+            607.6,
+            560.3
+          ],
+          "conf": 0.923,
+          "text": "Therefore, $(7, 3)$ is the required point."
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            570.4,
+            1176.0,
+            658.0
+          ],
+          "conf": 0.858,
+          "text": "Example 7 : In what ratio does the point $(-4, 6)$ divide the line segment joining the\npoints A$(-6, 10)$ and B$(3, -8)$?"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            654.7,
+            1176.8,
+            742.0
+          ],
+          "conf": 0.836,
+          "text": "Solution : Let $(-4, 6)$ divide AB internally in the ratio $m_1 : m_2$. Using the section\nformula, we get"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            400.9,
+            745.0,
+            1176.9,
+            850.4
+          ],
+          "conf": 0.918,
+          "text": "$$(-4, 6) = \\left( \\frac{3m_1 - 6m_2}{m_1 + m_2}, \\frac{-8m_1 + 10m_2}{m_1 + m_2} \\right) \\tag{1}$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            857.9,
+            744.1,
+            908.8
+          ],
+          "conf": 0.896,
+          "text": "Recall that if $(x, y) = (a, b)$ then $x = a$ and $y = b$."
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            918.3,
+            982.1,
+            1017.1
+          ],
+          "conf": 0.916,
+          "text": "So, $-4 = \\frac{3m_1 - 6m_2}{m_1 + m_2}$ and $6 = \\frac{-8m_1 + 10m_2}{m_1 + m_2}$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1039.7,
+            852.4,
+            1134.3
+          ],
+          "conf": 0.882,
+          "text": "Now, $-4 = \\frac{3m_1 - 6m_2}{m_1 + m_2}$ gives us"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            339.0,
+            1141.5,
+            678.5,
+            1199.1
+          ],
+          "conf": 0.83,
+          "text": "$$-4m_1 - 4m_2 = 3m_1 - 6m_2$$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.0,
+            1190.9,
+            599.3,
+            1245.5
+          ],
+          "conf": 0.837,
+          "text": "i.e., $7m_1 = 2m_2$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.6,
+            1240.1,
+            602.9,
+            1294.1
+          ],
+          "conf": 0.834,
+          "text": "i.e., $m_1 : m_2 = 2 : 7$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1288.4,
+            903.5,
+            1338.2
+          ],
+          "conf": 0.897,
+          "text": "You should verify that the ratio satisfies the $y$-coordinate also."
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1351.1,
+            1084.6,
+            1518.7
+          ],
+          "conf": 0.893,
+          "text": "Now, $$\\frac{-8m_1 + 10m_2}{m_1 + m_2} = \\frac{-8\\frac{m_1}{m_2} + 10}{\\frac{m_1}{m_2} + 1}$$ (Dividing throughout by $m_2$)"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            498.4,
+            1549.8,
+            756.7,
+            1710.4
+          ],
+          "conf": 0.895,
+          "text": "$$= \\frac{-8 \\times \\frac{2}{7} + 10}{\\frac{2}{7} + 1} = 6$$"
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0076_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.8,
+            191.0,
+            1177.4,
+            238.6
+          ],
+          "conf": 0.81,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.6,
+            192.1,
+            393.1,
+            237.3
+          ],
+          "conf": 0.506,
+          "text": "COORDINATE GEOMETRY"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            257.1,
+            1176.8,
+            343.5
+          ],
+          "conf": 0.959,
+          "text": "Therefore, the point $(-4, 6)$ divides the line segment joining the points $A(-6, 10)$ and\n$B(3, -8)$ in the ratio $2 : 7$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            366.1,
+            1175.8,
+            453.9
+          ],
+          "conf": 0.833,
+          "text": "Alternatively : The ratio $m_1 : m_2$ can also be written as $\\frac{m_1}{m_2} : 1$, or $k : 1$. Let $(-4, 6)$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            449.0,
+            1019.6,
+            500.1
+          ],
+          "conf": 0.902,
+          "text": "divide AB internally in the ratio $k : 1$. Using the section formula, we get"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            497.0,
+            512.2,
+            1177.0,
+            616.0
+          ],
+          "conf": 0.937,
+          "text": "$$(-4, 6) = \\left( \\frac{3k - 6}{k + 1}, \\frac{-8k + 10}{k + 1} \\right) \\tag{2}$$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            642.0,
+            738.7,
+            731.7
+          ],
+          "conf": 0.918,
+          "text": "So, $-4 = \\frac{3k - 6}{k + 1}$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.2,
+            744.4,
+            731.8,
+            794.4
+          ],
+          "conf": 0.87,
+          "text": "i.e., $-4k - 4 = 3k - 6$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.2,
+            793.6,
+            667.2,
+            841.9
+          ],
+          "conf": 0.871,
+          "text": "i.e.,                                                                                                   $7k = 2$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.3,
+            841.1,
+            703.3,
+            891.3
+          ],
+          "conf": 0.885,
+          "text": "i.e., $k : 1 = 2 : 7$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            889.8,
+            642.9,
+            939.4
+          ],
+          "conf": 0.904,
+          "text": "You can check for the $y$-coordinate also."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            937.5,
+            1176.6,
+            1023.5
+          ],
+          "conf": 0.937,
+          "text": "So, the point $(-4, 6)$ divides the line segment joining the points $A(-6, 10)$ and\n$B(3, -8)$ in the ratio $2:7$."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            1022.8,
+            1176.4,
+            1109.0
+          ],
+          "conf": 0.931,
+          "text": "**Note :** You can also find this ratio by calculating the distances PA and PB and taking\ntheir ratios provided you know that A, P and B are collinear."
+        },
+        {
+          "order": 13,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1120.8,
+            1178.5,
+            1207.1
+          ],
+          "conf": 0.884,
+          "text": "Example 8 : Find the coordinates of the points of trisection (i.e., points dividing in\nthree equal parts) of the line segment joining the points A(2, $-2$) and B($-7$, 4)."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1209.0,
+            640.1,
+            1338.9
+          ],
+          "conf": 0.88,
+          "text": "Solution : Let P and Q be the points of\ntrisection of AB i.e., $AP = PQ = QB$\n(see Fig. 7.11)."
+        },
+        {
+          "order": 15,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            700.7,
+            1212.6,
+            1104.7,
+            1304.3
+          ],
+          "conf": 0.936,
+          "text": ""
+        },
+        {
+          "order": 16,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            835.4,
+            1294.8,
+            977.6,
+            1343.9
+          ],
+          "conf": 0.875,
+          "text": "Fig. 7.11"
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1344.2,
+            1177.4,
+            1435.4
+          ],
+          "conf": 0.929,
+          "text": "Therefore, P divides AB internally in the ratio 1 : 2. Therefore, the coordinates of P, by\napplying the section formula, are"
+        },
+        {
+          "order": 18,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            300.6,
+            1439.8,
+            845.4,
+            1539.6
+          ],
+          "conf": 0.908,
+          "text": "$$ \\left( \\frac{1(-7) + 2(2)}{1 + 2}, \\frac{1(4) + 2(-2)}{1 + 2} \\right), \\text{i.e., } (-1, 0) $$"
+        },
+        {
+          "order": 19,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1551.7,
+            1123.9,
+            1602.3
+          ],
+          "conf": 0.875,
+          "text": "Now, Q also divides AB internally in the ratio $2 : 1$. So, the coordinates of Q are"
+        },
+        {
+          "order": 20,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            301.5,
+            1616.1,
+            853.6,
+            1717.6
+          ],
+          "conf": 0.903,
+          "text": "$$ \\left( \\frac{2(-7) + 1(2)}{2 + 1}, \\frac{2(4) + 1(-2)}{2 + 1} \\right), \\text{i.e., } (-4, 2) $$"
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0076_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            282.0,
+            1176.4,
+            370.7
+          ],
+          "conf": 0.958,
+          "text": "Therefore, the coordinates of the points of trisection of the line segment joining A and\nB are $(-1, 0)$ and $(-4, 2)$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            373.7,
+            1176.2,
+            462.5
+          ],
+          "conf": 0.958,
+          "text": "**Note :** We could also have obtained Q by noting that it is the mid-point of PB. So, we\ncould have obtained its coordinates using the mid-point formula."
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            479.8,
+            1175.1,
+            568.9
+          ],
+          "conf": 0.858,
+          "text": "Example 9 : Find the ratio in which the y-axis divides the line segment joining the\npoints $(5, -6)$ and $(-1, -4)$. Also find the point of intersection."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            571.3,
+            1174.9,
+            727.5
+          ],
+          "conf": 0.583,
+          "text": "Solution : Let the ratio be $k : 1$. Then by the section formula, the coordinates of the\n\npoint which divides AB in the ratio $k : 1$ are $\\left( \\frac{-k + 5}{k + 1}, \\frac{-4k - 6}{k + 1} \\right)$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            737.6,
+            1094.2,
+            787.4
+          ],
+          "conf": 0.914,
+          "text": "This point lies on the $y$-axis, and we know that on the $y$-axis the abscissa is $0$."
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            800.3,
+            666.1,
+            893.4
+          ],
+          "conf": 0.888,
+          "text": "Therefore, $\\frac{-k + 5}{k + 1} = 0$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            904.6,
+            666.0,
+            954.9
+          ],
+          "conf": 0.838,
+          "text": "So, $k = 5$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            953.4,
+            1175.8,
+            1095.7
+          ],
+          "conf": 0.881,
+          "text": "That is, the ratio is $5 : 1$. Putting the value of $k = 5$, we get the point of intersection as\n$$\\left(0, \\frac{-13}{3}\\right).$$"
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1125.0,
+            1175.8,
+            1217.3
+          ],
+          "conf": 0.849,
+          "text": "Example 10 : If the points A(6, 1), B(8, 2), C(9, 4) and D($p$, 3) are the vertices of a\nparallelogram, taken in order, find the value of $p$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1220.4,
+            1032.3,
+            1270.9
+          ],
+          "conf": 0.851,
+          "text": "Solution : We know that diagonals of a parallelogram bisect each other."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1273.2,
+            1127.9,
+            1324.5
+          ],
+          "conf": 0.849,
+          "text": "So, the coordinates of the mid-point of AC = coordinates of the mid-point of BD"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            1334.0,
+            847.1,
+            1436.0
+          ],
+          "conf": 0.901,
+          "text": "i.e., $\\left(\\frac{6+9}{2}, \\frac{1+4}{2}\\right) = \\left(\\frac{8+p}{2}, \\frac{2+3}{2}\\right)$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            1452.5,
+            800.0,
+            1555.0
+          ],
+          "conf": 0.894,
+          "text": "i.e., $\\left(\\frac{15}{2}, \\frac{5}{2}\\right) = \\left(\\frac{8 + p}{2}, \\frac{5}{2}\\right)$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            1572.4,
+            728.6,
+            1664.2
+          ],
+          "conf": 0.861,
+          "text": "so, $\\frac{15}{2} = \\frac{8+p}{2}$"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.0,
+            1668.0,
+            667.4,
+            1720.6
+          ],
+          "conf": 0.804,
+          "text": "i.e.,                                                                    $p=7$"
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0076_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.8,
+            255.9,
+            773.4,
+            306.7
+          ],
+          "conf": 0.84,
+          "text": "EXERCISE 7.2"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            151.5,
+            311.0,
+            1178.7,
+            1729.8
+          ],
+          "conf": 0.529,
+          "text": "1. Find the coordinates of the point which divides the join of $(-1, 7)$ and $(4, -3)$ in the\nratio $2:3$.\n\n2. Find the coordinates of the points of trisection of the line segment joining $(4, -1)$\nand $(-2, -3)$.\n\n3. To conduct Sports Day activities, in\nyour rectangular shaped school\nground ABCD, lines have been\ndrawn with chalk powder at a\ndistance of 1m each. 100 flower pots\nhave been placed at a distance of 1m\nfrom each other along AD, as shown\nin Fig. 7.12. Niharika runs $\\frac{1}{4}$ th the\ndistance AD on the 2nd line and\nposts a green flag. Preet runs $\\frac{1}{5}$ th\nthe distance AD on the eighth line\nand posts a red flag. What is the\ndistance between both the flags? If\nRashmi has to post a blue flag exactly\nhalfway between the line segment\njoining the two flags, where should\nshe post her flag?\n\n4. Find the ratio in which the line segment joining the points $(-3, 10)$ and $(6, -8)$ is divided\nby $(-1, 6)$.\n\n5. Find the ratio in which the line segment joining A$(1, -5)$ and B$(-4, 5)$ is divided by the\n$x$-axis. Also find the coordinates of the point of division.\n\n6. If $(1, 2), (4, y), (x, 6)$ and $(3, 5)$ are the vertices of a parallelogram taken in order, find\n$x$ and $y$.\n\n7. Find the coordinates of a point A, where AB is the diameter of a circle whose centre is\n$(2, -3)$ and B is $(1, 4)$.\n\n8. If A and B are $(-2, -2)$ and $(2, -4)$, respectively, find the coordinates of P such that\n$\\text{AP} = \\frac{3}{7} \\text{AB}$ and P lies on the line segment AB.\n\n9. Find the coordinates of the points which divide the line segment joining A$(-2, 2)$ and\nB$(2, 8)$ into four equal parts.\n\n10. Find the area of a rhombus if its vertices are $(3, 0), (4, 5), (-1, 4)$ and $(-2, -1)$ taken in\norder. [Hint : Area of a rhombus = $\\frac{1}{2}$ (product of its diagonals)]"
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0076_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.8,
+            257.5,
+            334.6,
+            309.7
+          ],
+          "conf": 0.889,
+          "text": "7.4 Summary"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            308.8,
+            759.7,
+            357.0
+          ],
+          "conf": 0.941,
+          "text": "In this chapter, you have studied the following points :"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            150.2,
+            359.9,
+            1179.8,
+            771.8
+          ],
+          "conf": 0.964,
+          "text": "1. The distance between $\\mathrm{P}(x_1, y_1)$ and $\\mathrm{Q}(x_2, y_2)$ is $\\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$.\n\n2. The distance of a point $\\mathrm{P}(x, y)$ from the origin is $\\sqrt{x^2 + y^2}$.\n\n3. The coordinates of the point $\\mathrm{P}(x, y)$ which divides the line segment joining the\npoints $\\mathrm{A}(x_1, y_1)$ and $\\mathrm{B}(x_2, y_2)$ internally in the ratio $m_1 : m_2$ are\n$$\\left( \\frac{m_1 x_2 + m_2 x_1}{m_1 + m_2}, \\frac{m_1 y_2 + m_2 y_1}{m_1 + m_2} \\right).$$\n\n4. The mid-point of the line segment joining the points $\\mathrm{P}(x_1, y_1)$ and $\\mathrm{Q}(x_2, y_2)$ is\n$$\\left( \\frac{x_1 + x_2}{2}, \\frac{y_1 + y_2}{2} \\right).$$"
+        },
+        {
+          "order": 3,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            782.8,
+            1181.4,
+            1361.4
+          ],
+          "conf": 0.942,
+          "text": "A NOTE TO THE READER\n\nSection 7.3 discusses the Section Formula for the coordinates $(x, y)$ of a\npoint P which divides internally the line segment joining the points\n$A(x_1, y_1)$ and $B(x_2, y_2)$ in the ratio $m_1 : m_2$ as follows :\n\n$$x = \\frac{m_1x_2 + m_2x_1}{m_1 + m_2} , \\quad y = \\frac{m_1y_2 + m_2y_1}{m_1 + m_2}$$\n\nNote that, here, $PA : PB = m_1 : m_2$.\n\nHowever, if P does not lie between A and B but lies on the line AB,\noutside the line segment AB, and $PA : PB = m_1 : m_2$, we say that P divides\nexternally the line segment joining the points A and B. You will study\nSection Formula for such case in higher classes."
+        }
+      ],
+      "page": 13
+    }
+  ]
+}

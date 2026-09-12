@@ -1,0 +1,4510 @@
+{
+  "book": "1114",
+  "relpath": "dataset/input/eng/11/1114.pdf",
+  "num_pages": 25,
+  "pages": [
+    {
+      "image": "0097_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            642.6,
+            106.8,
+            1178.6,
+            335.7
+          ],
+          "conf": 0.844,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            696.8,
+            299.4,
+            801.3,
+            335.7
+          ],
+          "conf": 0.526,
+          "text": "11076CH16"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            901.3,
+            236.6,
+            1172.3,
+            325.5
+          ],
+          "conf": 0.607,
+          "text": "Chapter 14"
+        },
+        {
+          "order": 3,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            354.2,
+            385.7,
+            940.8,
+            510.9
+          ],
+          "conf": 0.86,
+          "text": "PROBABILITY"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            178.9,
+            584.4,
+            1122.0,
+            715.0
+          ],
+          "conf": 0.918,
+          "text": "❖ *Where a mathematical reasoning can be had, it is as great a folly to*\n*make use of any other, as to grope for a thing in the dark, when*\n*you have a candle in your hand. – JOHN ARBUTHNOT*"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.6,
+            736.1,
+            302.4,
+            786.0
+          ],
+          "conf": 0.894,
+          "text": "14.1 Event"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            783.9,
+            1175.7,
+            909.3
+          ],
+          "conf": 0.96,
+          "text": "We have studied about random experiment and sample space associated with an\nexperiment. The sample space serves as an universal set for all questions concerned\nwith the experiment."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            900.6,
+            1174.8,
+            986.7
+          ],
+          "conf": 0.931,
+          "text": "Consider the experiment of tossing a coin two times. An associated sample space\nis $S = \\{HH, HT, TH, TT\\}$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            977.2,
+            1175.5,
+            1142.5
+          ],
+          "conf": 0.965,
+          "text": "Now suppose that we are interested in those outcomes which correspond to the\noccurrence of exactly one head. We find that HT and TH are the only elements of S\ncorresponding to the occurrence of this happening (event). These two elements form\nthe set $E = \\{ HT, TH \\}$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1130.9,
+            1175.3,
+            1219.0
+          ],
+          "conf": 0.933,
+          "text": "We know that the set E is a subset of the sample space S . Similarly, we find the\nfollowing correspondence between events and subsets of S."
+        },
+        {
+          "order": 10,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            186.9,
+            1209.7,
+            1084.5,
+            1488.3
+          ],
+          "conf": 0.92,
+          "text": "<table>\n<thead>\n<tr>\n<th>Description of events</th>\n<th>Corresponding subset of ‘S’</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Number of tails is exactly 2</td>\n<td>A = {TT}</td>\n</tr>\n<tr>\n<td>Number of tails is atleast one</td>\n<td>B = {HT, TH, TT}</td>\n</tr>\n<tr>\n<td>Number of heads is atmost one</td>\n<td>C = {HT, TH, TT}</td>\n</tr>\n<tr>\n<td>Second toss is not head</td>\n<td>D = { HT, TT}</td>\n</tr>\n<tr>\n<td>Number of tails is atmost two</td>\n<td>S = {HH, HT, TH, TT}</td>\n</tr>\n<tr>\n<td>Number of tails is more than two</td>\n<td>$\\phi$</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1486.6,
+            1175.8,
+            1611.6
+          ],
+          "conf": 0.943,
+          "text": "The above discussion suggests that a subset of sample space is associated with\nan event and an event is associated with a subset of sample space. In the light of this\nwe define an event as follows."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1617.1,
+            944.7,
+            1668.0
+          ],
+          "conf": 0.857,
+          "text": "Definition Any subset E of a sample space S is called an event."
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0097_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            259.7,
+            1178.5,
+            425.0
+          ],
+          "conf": 0.961,
+          "text": "**14.1.1 Occurrence of an event** Consider the experiment of throwing a die. Let E\ndenotes the event “ a number less than 4 appears”. If actually ‘1’ had appeared on the\ndie then we say that event E has occurred. As a matter of fact if outcomes are 2 or 3,\nwe say that event E has occurred"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            416.1,
+            1178.8,
+            542.8
+          ],
+          "conf": 0.969,
+          "text": "Thus, the event E of a sample space S is said to have occurred if the outcome\n$\\omega$ of the experiment is such that $\\omega \\in \\text{E}$. If the outcome $\\omega$ is such that $\\omega \\notin \\text{E}$, we say\nthat the event E has not occurred."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            549.1,
+            1178.5,
+            637.5
+          ],
+          "conf": 0.939,
+          "text": "14.1.2 *Types of events* Events can be classified into various types on the basis of the\nelements they have."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            643.9,
+            1178.3,
+            777.1
+          ],
+          "conf": 0.935,
+          "text": "1. **Impossible and Sure Events** The empty set $\\phi$ and the sample space S describe\nevents. In fact $\\phi$ is called an *impossible event* and S, i.e., the whole sample space is\ncalled the *sure event*."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            768.6,
+            1178.6,
+            858.4
+          ],
+          "conf": 0.944,
+          "text": "To understand these let us consider the experiment of rolling a die. The associated\nsample space is"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            420.0,
+            855.0,
+            680.5,
+            906.7
+          ],
+          "conf": 0.86,
+          "text": "$$S = \\{1, 2, 3, 4, 5, 6\\}$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            902.3,
+            1179.2,
+            989.9
+          ],
+          "conf": 0.946,
+          "text": "Let E be the event “ the number appears on the die is a multiple of 7”. Can you\nwrite the subset associated with the event E?"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            979.4,
+            1179.4,
+            1193.4
+          ],
+          "conf": 0.972,
+          "text": "Clearly no outcome satisfies the condition given in the event, i.e., no element of\nthe sample space ensures the occurrence of the event E. Thus, we say that the empty\nset only correspond to the event E. In other words we can say that it is impossible to\nhave a multiple of 7 on the upper face of the die. Thus, the event E = $\\phi$ is an impossible\nevent."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1186.4,
+            1179.9,
+            1312.5
+          ],
+          "conf": 0.956,
+          "text": "Now let us take up another event F “the number turns up is odd or even”. Clearly\nF = {1, 2, 3, 4, 5, 6,} = S, i.e., all outcomes of the experiment ensure the occurrence of\nthe event F. Thus, the event F = S is a sure event."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1318.6,
+            1177.9,
+            1406.6
+          ],
+          "conf": 0.895,
+          "text": "2. Simple Event If an event E has only one sample point of a sample space, it is\ncalled a simple (or elementary) event."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1395.6,
+            1177.8,
+            1483.3
+          ],
+          "conf": 0.911,
+          "text": "In a sample space containing $n$ distinct elements, there are exactly $n$ simple\nevents."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.8,
+            1473.5,
+            1062.5,
+            1523.8
+          ],
+          "conf": 0.887,
+          "text": "For example in the experiment of tossing two coins, a sample space is"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            420.7,
+            1521.7,
+            712.4,
+            1573.2
+          ],
+          "conf": 0.857,
+          "text": "$$S=\\{HH, HT, TH, TT\\}$$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1571.5,
+            1069.4,
+            1622.6
+          ],
+          "conf": 0.887,
+          "text": "There are four simple events corresponding to this sample space. These are"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.6,
+            1620.3,
+            933.8,
+            1676.9
+          ],
+          "conf": 0.884,
+          "text": "$$E_1 = \\{HH\\}, E_2 = \\{HT\\}, E_3 = \\{ TH\\} \\text{ and } E_4 = \\{TT\\}.$$"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0097_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            260.1,
+            1179.0,
+            346.0
+          ],
+          "conf": 0.909,
+          "text": "3. **Compound Event** If an event has more than one sample point, it is called a\n*Compound event*."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.1,
+            336.7,
+            1032.7,
+            385.9
+          ],
+          "conf": 0.907,
+          "text": "For example, in the experiment of “tossing a coin thrice” the events"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            320.1,
+            374.9,
+            782.3,
+            499.1
+          ],
+          "conf": 0.753,
+          "text": "E: ‘Exactly one head appeared’\nF: ‘Atleast one head appeared’\nG: ‘Atmost one head appeared’ etc."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            491.2,
+            1066.0,
+            540.0
+          ],
+          "conf": 0.883,
+          "text": "are all compound events. The subsets of S associated with these events are"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            321.9,
+            529.5,
+            607.8,
+            576.6
+          ],
+          "conf": 0.611,
+          "text": "$$E=\\{HTT,THT,TTH\\}$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            318.5,
+            567.1,
+            920.0,
+            617.3
+          ],
+          "conf": 0.746,
+          "text": "F={HTT,THT, TTH, HHT, HTH, THH, HHH}"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            311.1,
+            606.3,
+            703.7,
+            654.5
+          ],
+          "conf": 0.573,
+          "text": "$$G = \\{TTT, THT, HTT, TTH\\}$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            646.0,
+            1178.8,
+            731.9
+          ],
+          "conf": 0.944,
+          "text": "Each of the above subsets contain more than one sample point, hence they are all\ncompound events."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            739.1,
+            1178.8,
+            901.2
+          ],
+          "conf": 0.918,
+          "text": "14.1.3 *Algebra of events* In the Chapter on Sets, we have studied about different\nways of combining two or more sets, viz, union, intersection, difference, complement\nof a set etc. Like-wise we can combine two or more events by using the analogous set\nnotations."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.4,
+            892.6,
+            1175.8,
+            943.7
+          ],
+          "conf": 0.913,
+          "text": "Let A, B, C be events associated with an experiment whose sample space is S."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            950.0,
+            1179.0,
+            1001.1
+          ],
+          "conf": 0.821,
+          "text": "1. Complementary Event For every event A, there corresponds another event"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.6,
+            996.0,
+            1075.1,
+            1047.1
+          ],
+          "conf": 0.863,
+          "text": "A' called the complementary event to A. It is also called the event ‘not A’."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1034.2,
+            1179.0,
+            1119.9
+          ],
+          "conf": 0.917,
+          "text": "For example, take the experiment ‘of tossing three coins’. An associated sample\nspace is"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            319.9,
+            1108.5,
+            1016.9,
+            1158.6
+          ],
+          "conf": 0.863,
+          "text": "$$S = \\{ HHH, HHT, HTH, THH, HTT, THT, TTH, TTT \\}$$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            1148.0,
+            926.9,
+            1199.7
+          ],
+          "conf": 0.89,
+          "text": "Let $A=\\{HTH, HHT, THH\\}$ be the event ‘only one tail appears’"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1187.3,
+            1178.3,
+            1311.0
+          ],
+          "conf": 0.943,
+          "text": "Clearly for the outcome HTT, the event A has not occurred. But we may say that\nthe event ‘not A’ has occurred. Thus, with every outcome which is not in A, we say\nthat ‘not A’ occurs."
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.5,
+            1302.6,
+            884.8,
+            1352.0
+          ],
+          "conf": 0.893,
+          "text": "Thus the complementary event ‘not A’ to the event A is"
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            252.5,
+            1347.9,
+            730.3,
+            1399.4
+          ],
+          "conf": 0.807,
+          "text": "$$A' = \\{HHH, HTT, THT, TTH, TTT\\}$$"
+        },
+        {
+          "order": 18,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            1406.4,
+            739.7,
+            1456.7
+          ],
+          "conf": 0.749,
+          "text": "or $A' = \\{\\omega : \\omega \\in S \\text{ and } \\omega \\notin A\\} = S - A.$"
+        },
+        {
+          "order": 19,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            1463.0,
+            1179.1,
+            1715.7
+          ],
+          "conf": 0.577,
+          "text": "2. **The Event 'A or B'** Recall that union of two sets A and B denoted by $A \\cup B$\ncontains all those elements which are either in A or in B or in both.\n$\\quad$ When the sets A and B are two events associated with a sample space, then\n'A $\\cup$ B' is the event 'either A or B or both'. This event 'A $\\cup$ B' is also called 'A or B'.\nTherefore $\\quad$ Event 'A or B' = A $\\cup$ B\n$\\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad = \\{ \\omega : \\omega \\in A \\text{ or } \\omega \\in B \\}$"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0097_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            259.9,
+            1177.0,
+            382.1
+          ],
+          "conf": 0.924,
+          "text": "3. The Event ‘A and B’ We know that intersection of two sets A $\\cap$ B is the set of\nthose elements which are common to both A and B. i.e., which belong to both\n‘A and B’."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            374.9,
+            1069.5,
+            424.3
+          ],
+          "conf": 0.9,
+          "text": "If A and B are two events, then the set A $\\cap$ B denotes the event ‘A and B’."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            414.6,
+            670.5,
+            465.9
+          ],
+          "conf": 0.777,
+          "text": "Thus, $A \\cap B = \\{\\omega : \\omega \\in A \\text{ and } \\omega \\in B\\}$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            456.0,
+            1175.7,
+            543.2
+          ],
+          "conf": 0.921,
+          "text": "For example, in the experiment of ‘throwing a die twice’ Let A be the event\n‘score on the first throw is six’ and B is the event ‘sum of two scores is atleast 11’ then"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            249.6,
+            534.3,
+            1118.8,
+            586.9
+          ],
+          "conf": 0.748,
+          "text": "$$A = \\{(6,1), (6,2), (6,3), (6,4), (6,5), (6,6)\\}, \\text{ and } B = \\{(5,6), (6,5), (6,6)\\}$$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            574.9,
+            480.7,
+            623.8
+          ],
+          "conf": 0.642,
+          "text": "so $A \\cap B = \\{(6,5), (6,6)\\}$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            613.1,
+            1175.7,
+            699.8
+          ],
+          "conf": 0.934,
+          "text": "Note that the set $A \\cap B = \\{(6,5), (6,6)\\}$ may represent the event ‘the score on the first\nthrow is six and the sum of the scores is atleast 11’."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            699.4,
+            1175.2,
+            750.5
+          ],
+          "conf": 0.732,
+          "text": "4. The Event ‘A but not B’ We know that A–B is the set of all those elements"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            742.1,
+            1175.3,
+            830.5
+          ],
+          "conf": 0.868,
+          "text": "which are in A but not in B. Therefore, the set A–B may denote the event ‘A but not\nB’.We know that"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            254.7,
+            821.0,
+            473.7,
+            869.8
+          ],
+          "conf": 0.845,
+          "text": "$$A - B = A \\cap B'$$"
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            876.3,
+            1176.1,
+            1003.4
+          ],
+          "conf": 0.894,
+          "text": "Example 1 Consider the experiment of rolling a die. Let A be the event ‘getting a\nprime number’, B be the event ‘getting an odd number’. Write the sets representing\nthe events (i) Aor B (ii) A and B (iii) A but not B (iv) ‘not A’."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1007.9,
+            1002.8,
+            1060.6
+          ],
+          "conf": 0.807,
+          "text": "Solution Here $S = \\{1, 2, 3, 4, 5, 6\\}, A = \\{2, 3, 5\\}$ and $B = \\{1, 3, 5\\}$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1056.0,
+            265.7,
+            1104.3
+          ],
+          "conf": 0.834,
+          "text": "Obviously"
+        },
+        {
+          "order": 13,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            190.8,
+            1098.4,
+            653.2,
+            1296.4
+          ],
+          "conf": 0.906,
+          "text": "(i) ‘A or B’ = A $\\cup$ B = $\\{1, 2, 3, 5\\}$\n(ii) ‘A and B’ = A $\\cap$ B = $\\{3, 5\\}$\n(iii) ‘A but not B’ = A – B = $\\{2\\}$\n(iv) ‘not A’ = A’ = $\\{1, 4, 6\\}$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1290.7,
+            1175.5,
+            1412.3
+          ],
+          "conf": 0.911,
+          "text": "14.1.4 Mutually exclusive events In the experiment of rolling a die, a sample space\nis $S = \\{1, 2, 3, 4, 5, 6\\}$. Consider events, A ‘an odd number appears’ and B ‘an even\nnumber appears’"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1402.6,
+            1176.6,
+            1490.0
+          ],
+          "conf": 0.898,
+          "text": "Clearly the event A excludes the event B and vice versa. In other words, there is\nno outcome which ensures the occurrence of events A and B simultaneously. Here"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.4,
+            1486.2,
+            581.5,
+            1538.6
+          ],
+          "conf": 0.782,
+          "text": "$$A = \\{1, 3, 5\\} \\text{ and } B = \\{2, 4, 6\\}$$"
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            184.9,
+            1533.3,
+            820.6,
+            1584.0
+          ],
+          "conf": 0.852,
+          "text": "Clearly $A \\cap B = \\phi$, i.e., $A$ and $B$ are disjoint sets."
+        },
+        {
+          "order": 18,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1573.8,
+            1176.0,
+            1698.8
+          ],
+          "conf": 0.923,
+          "text": "In general, two events A and B are called mutually exclusive events if the\noccurrence of any one of them excludes the occurrence of the other event, i.e., if they\ncan not occur simultaneously. In this case the sets A and B are disjoint."
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0097_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            260.1,
+            1176.1,
+            346.2
+          ],
+          "conf": 0.956,
+          "text": "Again in the experiment of rolling a die, consider the events A ‘an odd number\nappears’ and event B ‘a number less than 4 appears’"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            343.3,
+            709.0,
+            393.9
+          ],
+          "conf": 0.916,
+          "text": "Obviously $A = \\{1, 3, 5\\}$ and $B = \\{1, 2, 3\\}$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            396.7,
+            508.0,
+            445.4
+          ],
+          "conf": 0.902,
+          "text": "Now $3 \\in A$ as well as $3 \\in B$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            442.1,
+            811.7,
+            491.5
+          ],
+          "conf": 0.929,
+          "text": "Therefore, A and B are not mutually exclusive events."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            495.0,
+            1038.0,
+            546.1
+          ],
+          "conf": 0.929,
+          "text": "$\\mathit{Remark}$ Simple events of a sample space are always mutually exclusive."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            548.9,
+            1175.8,
+            635.4
+          ],
+          "conf": 0.937,
+          "text": "14.1.5 Exhaustive events Consider the experiment of throwing a die. We have\n$S = \\{1, 2, 3, 4, 5, 6\\}$. Let us define the following events"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.3,
+            629.3,
+            980.8,
+            751.6
+          ],
+          "conf": 0.552,
+          "text": "A: ‘a number less than 4 appears’,\nB: ‘a number greater than 2 but less than 5 appears’\nand      C: ‘a number greater than 4 appears’."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            746.5,
+            908.1,
+            799.5
+          ],
+          "conf": 0.882,
+          "text": "Then $A = \\{1, 2, 3\\}$, $B = \\{3,4\\}$ and $C = \\{5, 6\\}$. We observe that"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            354.2,
+            792.3,
+            938.5,
+            844.2
+          ],
+          "conf": 0.753,
+          "text": "$$A \\cup B \\cup C = \\{1, 2, 3\\} \\cup \\{3, 4\\} \\cup \\{5, 6\\} = S.$$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            846.3,
+            1174.8,
+            932.7
+          ],
+          "conf": 0.94,
+          "text": "Such events A, B and C are called exhaustive events. In general, if $E_1, E_2, ..., E_n$ are $n$\nevents of a sample space S and if"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            424.4,
+            937.6,
+            870.5,
+            1021.2
+          ],
+          "conf": 0.898,
+          "text": "$$ \\mathrm{E}_1 \\cup \\mathrm{E}_2 \\cup \\mathrm{E}_3 \\cup ... \\cup \\mathrm{E}_n = \\bigcup_{i=1}^n \\mathrm{E}_i = \\mathrm{S} $$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1012.1,
+            1175.5,
+            1134.9
+          ],
+          "conf": 0.954,
+          "text": "then $E_1$, $E_2$, ....., $E_n$ are called *exhaustive events*.In other words, events $E_1$, $E_2$, ..., $E_n$\nare said to be exhaustive if atleast one of them necessarily occurs whenever the\nexperiment is performed."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.7,
+            1130.1,
+            1175.7,
+            1303.8
+          ],
+          "conf": 0.793,
+          "text": "Further, if $\\mathrm{E}_i \\cap \\mathrm{E}_j = \\phi$ for $i \\neq j$ i.e., events $\\mathrm{E}_i$ and $\\mathrm{E}_j$ are pairwise disjoint and\n$\\cup_{i=1}^n \\mathrm{E}_i = \\mathrm{S}$, then events $\\mathrm{E}_1, \\mathrm{E}_2, ..., \\mathrm{E}_n$ are called mutually exclusive and exhaustive\nevents."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.8,
+            1297.3,
+            628.5,
+            1347.5
+          ],
+          "conf": 0.873,
+          "text": "We now consider some examples."
+        },
+        {
+          "order": 14,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1350.9,
+            1175.7,
+            1613.1
+          ],
+          "conf": 0.689,
+          "text": "Example 2 Two dice are thrown and the sum of the numbers which come up on the\ndice is noted. Let us consider the following events associated with this experiment\nA: ‘the sum is even’.\nB: ‘the sum is a multiple of 3’.\nC: ‘the sum is less than 4’.\nD: ‘the sum is greater than 11’."
+        },
+        {
+          "order": 15,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1619.0,
+            779.5,
+            1668.8
+          ],
+          "conf": 0.741,
+          "text": "Which pairs of these events are mutually exclusive?"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0097_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            255.0,
+            1182.6,
+            534.7
+          ],
+          "conf": 0.541,
+          "text": "Solution There are 36 elements in the sample space $S = \\{(x, y): x, y = 1, 2, 3, 4, 5, 6\\}$.\nThen\n$$A = \\{(1, 1), (1, 3), (1, 5), (2, 2), (2, 4), (2, 6), (3, 1), (3, 3), (3, 5), (4, 2), (4, 4),$$\n$$(4, 6), (5, 1), (5, 3), (5, 5), (6, 2), (6, 4), (6, 6)\\}$$\n$$B = \\{(1, 2), (2, 1), (1, 5), (5, 1), (3, 3), (2, 4), (4, 2), (3, 6), (6, 3), (4, 5), (5, 4),$$\n$$(6, 6)\\}$$\n$$C = \\{(1, 1), (2, 1), (1, 2)\\} \\text{ and } D = \\{(6, 6)\\}$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            531.6,
+            296.5,
+            579.3
+          ],
+          "conf": 0.89,
+          "text": "We find that"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            319.5,
+            567.0,
+            1004.6,
+            618.1
+          ],
+          "conf": 0.829,
+          "text": "$$A \\cap B = \\{(1, 5), (2, 4), (3, 3), (4, 2), (5, 1), (6, 6)\\} \\neq \\phi$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            612.0,
+            811.7,
+            663.5
+          ],
+          "conf": 0.88,
+          "text": "Therefore, A and B are not mutually exclusive events."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            656.6,
+            896.5,
+            708.7
+          ],
+          "conf": 0.859,
+          "text": "Similarly $A \\cap C \\neq \\phi$, $A \\cap D \\neq \\phi$, $B \\cap C \\neq \\phi$ and $B \\cap D \\neq \\phi$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            701.9,
+            1184.3,
+            789.1
+          ],
+          "conf": 0.902,
+          "text": "Thus, the pairs of events, $(A, C)$, $(A, D)$, $(B, C)$, $(B, D)$ are not mutually exclusive\nevents."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            783.9,
+            918.2,
+            834.9
+          ],
+          "conf": 0.879,
+          "text": "Also $C \\cap D = \\phi$ and so $C$ and $D$ are mutually exclusive events."
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            836.0,
+            1184.2,
+            1383.6
+          ],
+          "conf": 0.684,
+          "text": "Example 3 A coin is tossed three times, consider the following events.\nA: ‘No head appears’, B: ‘Exactly one head appears’ and C: ‘Atleast two heads\nappear’.\nDo they form a set of mutually exclusive and exhaustive events?\n\nSolution The sample space of the experiment is\n$$S = \\{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT\\}$$\nand $A = \\{TTT\\}, B = \\{HTT, THT, TTH\\}, C = \\{HHT, HTH, THH, HHH\\}$\nNow\n$$A \\cup B \\cup C = \\{TTT, HTT, THT, TTH, HHT, HTH, THH, HHH\\} = S$$\nTherefore, $A, B$ and $C$ are exhaustive events.\nAlso, $A \\cap B = \\phi, A \\cap C = \\phi$ and $B \\cap C = \\phi$\nTherefore, the events are pair-wise disjoint, i.e., they are mutually exclusive.\nHence, $A, B$ and $C$ form a set of mutually exclusive and exhaustive events."
+        },
+        {
+          "order": 8,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            517.5,
+            1388.7,
+            787.0,
+            1443.4
+          ],
+          "conf": 0.716,
+          "text": "EXERCISE 14.1"
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.5,
+            1449.1,
+            1181.3,
+            1738.3
+          ],
+          "conf": 0.829,
+          "text": "1. A die is rolled. Let E be the event “die shows 4” and F be the event “die shows\neven number”. Are E and F mutually exclusive?\n2. A die is thrown. Describe the following events:\n(i) A: a number less than 7 (ii) B: a number greater than 7\n(iii) C: a multiple of 3 (iv) D: a number less than 4\n(v) E: an even number greater than 4 (vi) F: a number not less than 3\nAlso find $A \\cup B, A \\cap B, B \\cup C, E \\cap F, D \\cap E, A - C, D - E, E \\cap F', F'$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            1695.4,
+            1097.7,
+            1745.3
+          ],
+          "conf": 0.73,
+          "text": "Also find $A \\cup B$, $A \\cap B$, $B \\cup C$, $E \\cap F$, $D \\cap E$, $A - C$, $D - E$, $E \\cap F'$, $F'$"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0097_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.6,
+            259.7,
+            1175.7,
+            457.9
+          ],
+          "conf": 0.673,
+          "text": "3. An experiment involves rolling a pair of dice and recording the numbers that\ncome up. Describe the following events:\nA: the sum is greater than 8, B: 2 occurs on either die\nC: the sum is at least 7 and a multiple of 3.\nWhich pairs of these events are mutually exclusive?"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            137.0,
+            451.4,
+            1176.0,
+            619.0
+          ],
+          "conf": 0.522,
+          "text": "4. Three coins are tossed once. Let A denote the event ‘three heads show’, B\ndenote the event “two heads and one tail show”, C denote the event” three tails\nshow and D denote the event ‘a head shows on the first coin”. Which events are\n(i) mutually exclusive? (ii) simple? (iii) Compound?"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.0,
+            617.5,
+            615.2,
+            667.3
+          ],
+          "conf": 0.826,
+          "text": "5. Three coins are tossed. Describe"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            190.3,
+            661.4,
+            1035.2,
+            863.4
+          ],
+          "conf": 0.878,
+          "text": "(i) Two events which are mutually exclusive.\n(ii) Three events which are mutually exclusive and exhaustive.\n(iii) Two events, which are not mutually exclusive.\n(iv) Two events which are mutually exclusive but not exhaustive.\n(v) Three events which are mutually exclusive but not exhaustive."
+        },
+        {
+          "order": 4,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            138.6,
+            857.9,
+            987.0,
+            1190.3
+          ],
+          "conf": 0.558,
+          "text": "6. Two dice are thrown. The events A, B and C are as follows:\nA: getting an even number on the first die.\nB: getting an odd number on the first die.\nC: getting the sum of the numbers on the dice $\\le 5$.\nDescribe the events\n(i) A'\n(ii) not B\n(iii) A or B\n(iv) A and B\n(v) A but not C\n(vi) B or C\n(vii) B and C\n(viii) A $\\cap$ B' $\\cap$ C'"
+        },
+        {
+          "order": 5,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            137.3,
+            1189.6,
+            1134.2,
+            1501.4
+          ],
+          "conf": 0.537,
+          "text": "7. Refer to question 6 above, state true or false: (give reason for your answer)\n(i) A and B are mutually exclusive\n(ii) A and B are mutually exclusive and exhaustive\n(iii) $A = B'$\n(iv) A and C are mutually exclusive\n(v) A and $B'$ are mutually exclusive.\n(vi) $A'$, $B'$, C are mutually exclusive and exhaustive."
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.9,
+            1507.5,
+            690.3,
+            1560.1
+          ],
+          "conf": 0.891,
+          "text": "14.2 Axiomatic Approach to Probability"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1554.8,
+            1176.1,
+            1717.2
+          ],
+          "conf": 0.958,
+          "text": "In earlier sections, we have considered random experiments, sample space and\nevents associated with these experiments. In our day to day life we use many words\nabout the chances of occurrence of events. Probability theory attempts to quantify\nthese chances of occurrence or non occurrence of events."
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0097_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            259.9,
+            1175.5,
+            345.2
+          ],
+          "conf": 0.95,
+          "text": "In earlier classes, we have studied some methods of assigning probability to an\nevent associated with an experiment having known the number of total outcomes."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            336.7,
+            1175.3,
+            424.1
+          ],
+          "conf": 0.949,
+          "text": "Axiomatic approach is another way of describing probability of an event. In this\napproach some axioms or rules are depicted to assign probabilities."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            413.8,
+            1175.7,
+            540.2
+          ],
+          "conf": 0.964,
+          "text": "Let $S$ be the sample space of a random experiment. The probability $P$ is a real\nvalued function whose domain is the power set of $S$ and range is the interval $[0,1]$\nsatisfying the following axioms"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            192.4,
+            535.6,
+            1152.8,
+            627.4
+          ],
+          "conf": 0.561,
+          "text": "(i) For any event $E$, $P(E) \\geq 0$ (ii) $P(S) = 1$\n(iii) If $E$ and $F$ are mutually exclusive events, then $P(E \\cup F) = P(E) + P(F)$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            622.6,
+            1174.4,
+            711.7
+          ],
+          "conf": 0.933,
+          "text": "It follows from (iii) that $P(\\phi) = 0$. To prove this, we take $F = \\phi$ and note that $E$ and $\\phi$\nare disjoint events. Therefore, from axiom (iii), we get"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.2,
+            699.6,
+            1067.7,
+            754.1
+          ],
+          "conf": 0.888,
+          "text": "$$P(E \\cup \\phi) = P(E) + P(\\phi) \\text{ or } \\quad P(E) = P(E) + P(\\phi) \\text{ i.e. } P(\\phi) = 0.$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            749.7,
+            989.4,
+            801.8
+          ],
+          "conf": 0.918,
+          "text": "Let S be a sample space containing outcomes $\\omega_1, \\omega_2, ..., \\omega_n$, i.e.,"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            517.4,
+            793.6,
+            774.4,
+            845.5
+          ],
+          "conf": 0.877,
+          "text": "$$S = \\{\\omega_1, \\omega_2, ..., \\omega_n\\}$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            831.1,
+            836.5,
+            880.7
+          ],
+          "conf": 0.914,
+          "text": "It follows from the axiomatic definition of probability that"
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            193.3,
+            868.7,
+            788.1,
+            991.2
+          ],
+          "conf": 0.943,
+          "text": "(i) $0 \\leq P\\left(\\omega_{i}\\right) \\leq 1$ for each $\\omega_{i} \\in S$\n(ii) $P\\left(\\omega_{1}\\right)+P\\left(\\omega_{2}\\right)+\\ldots+P\\left(\\omega_{n}\\right)=1$\n(iii) For any event A, $P(A)=\\sum P\\left(\\omega_{i}\\right), \\omega_{i} \\in A$."
+        },
+        {
+          "order": 10,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            984.0,
+            1178.8,
+            1091.9
+          ],
+          "conf": 0.938,
+          "text": "Note It may be noted that the singleton $\\{\\omega_i\\}$ is called elementary event and\nfor notational convenience, we write $\\mathrm{P}(\\omega_i)$ for $\\mathrm{P}(\\{\\omega_i\\})$."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1085.1,
+            1175.3,
+            1211.1
+          ],
+          "conf": 0.923,
+          "text": "For example, in ‘a coin tossing’ experiment we can assign the number $\\frac{1}{2}$ to each\nof the outcomes H and T."
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            1211.1,
+            741.3,
+            1304.5
+          ],
+          "conf": 0.904,
+          "text": "i.e. $P(H) = \\frac{1}{2}$ and $P(T) = \\frac{1}{2}$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1299.0,
+            181.2,
+            1348.0
+          ],
+          "conf": 0.705,
+          "text": "(1)"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1336.8,
+            1175.6,
+            1424.6
+          ],
+          "conf": 0.922,
+          "text": "Clearly this assignment satisfies both the conditions i.e., each number is neither\nless than zero nor greater than 1 and"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            420.0,
+            1430.1,
+            774.8,
+            1520.4
+          ],
+          "conf": 0.912,
+          "text": "$$P(H) + P(T) = \\frac{1}{2} + \\frac{1}{2} = 1$$"
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1530.8,
+            1170.3,
+            1625.5
+          ],
+          "conf": 0.819,
+          "text": "Therefore, in this case we can say that probability of $H = \\frac{1}{2}$, and probability of $T = \\frac{1}{2}$"
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.4,
+            1632.7,
+            1113.8,
+            1724.6
+          ],
+          "conf": 0.899,
+          "text": "If we take $P(H) = \\frac{1}{4}$ and $P(T) = \\frac{3}{4}$ ... (2)"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0097_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.4,
+            259.9,
+            1026.7,
+            310.1
+          ],
+          "conf": 0.928,
+          "text": "Does this assignment satisfy the conditions of axiomatic approach?"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.2,
+            313.1,
+            988.9,
+            406.2
+          ],
+          "conf": 0.822,
+          "text": "Yes, in this case, probability of $H = \\frac{1}{4}$ and probability of $T = \\frac{3}{4}$."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            399.0,
+            1180.5,
+            486.6
+          ],
+          "conf": 0.942,
+          "text": "We find that both the assignments (1) and (2) are valid for probability of\nH and T."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            477.3,
+            1179.4,
+            565.2
+          ],
+          "conf": 0.935,
+          "text": "In fact, we can assign the numbers $p$ and $(1-p)$ to both the outcomes such that\n$$0 \\le p \\le 1 \\text{ and } \\mathrm{P}(\\mathrm{H}) + \\mathrm{P}(\\mathrm{T}) = p + (1-p) = 1$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            554.2,
+            1180.0,
+            680.4
+          ],
+          "conf": 0.956,
+          "text": "This assignment, too, satisfies both conditions of the axiomatic approach of\nprobability. Hence, we can say that there are many ways (rather infinite) to assign\nprobabilities to outcomes of an experiment. We now consider some examples."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.2,
+            674.7,
+            1178.8,
+            1197.8
+          ],
+          "conf": 0.696,
+          "text": "Example 4 Let a sample space be $S = \\{\\omega_1, \\omega_2, ..., \\omega_6\\}$.Which of the following\nassignments of probabilities to each outcome are valid?\n<table>\n<tr>\n<td>Outcomes</td>\n<td>$\\omega_1$</td>\n<td>$\\omega_2$</td>\n<td>$\\omega_3$</td>\n<td>$\\omega_4$</td>\n<td>$\\omega_5$</td>\n<td>$\\omega_6$</td>\n</tr>\n<tr>\n<td>(a)</td>\n<td>$\\frac{1}{6}$</td>\n<td>$\\frac{1}{6}$</td>\n<td>$\\frac{1}{6}$</td>\n<td>$\\frac{1}{6}$</td>\n<td>$\\frac{1}{6}$</td>\n<td>$\\frac{1}{6}$</td>\n</tr>\n<tr>\n<td>(b)</td>\n<td>1</td>\n<td>0</td>\n<td>0</td>\n<td>0</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr>\n<td>(c)</td>\n<td>$\\frac{1}{8}$</td>\n<td>$\\frac{2}{3}$</td>\n<td>$\\frac{1}{3}$</td>\n<td>$\\frac{1}{3}$</td>\n<td>$\\frac{1}{4}$</td>\n<td>$\\frac{1}{3}$</td>\n</tr>\n<tr>\n<td>(d)</td>\n<td>$\\frac{1}{12}$</td>\n<td>$\\frac{1}{12}$</td>\n<td>$\\frac{1}{6}$</td>\n<td>$\\frac{1}{6}$</td>\n<td>$\\frac{1}{6}$</td>\n<td>$\\frac{3}{2}$</td>\n</tr>\n<tr>\n<td>(e)</td>\n<td>0.1</td>\n<td>0.2</td>\n<td>0.3</td>\n<td>0.4</td>\n<td>0.5</td>\n<td>0.6</td>\n</tr>\n</table>"
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            1207.3,
+            1140.8,
+            1396.1
+          ],
+          "conf": 0.583,
+          "text": "Solution (a) Condition (i): Each of the number $p(\\omega_i)$ is positive and less than one.\nCondition (ii): Sum of probabilities\n$$= \\frac{1}{6} + \\frac{1}{6} + \\frac{1}{6} + \\frac{1}{6} + \\frac{1}{6} + \\frac{1}{6} = 1$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1393.5,
+            557.2,
+            1443.2
+          ],
+          "conf": 0.865,
+          "text": "Therefore, the assignment is valid"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1431.1,
+            1178.3,
+            1719.3
+          ],
+          "conf": 0.896,
+          "text": "(b) Condition (i): Each of the number $p(\\omega_i)$ is either 0 or 1.\nCondition (ii) Sum of the probabilities $= 1 + 0 + 0 + 0 + 0 + 0 = 1$\nTherefore, the assignment is valid\n(c) Condition (i) Two of the probabilities $p(\\omega_s)$ and $p(\\omega_0)$ are negative, the assignment\nis not valid\n\n(d) Since $p(\\omega_0) = \\frac{3}{2} > 1$, the assignment is not valid"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0097_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            256.5,
+            1178.2,
+            343.3
+          ],
+          "conf": 0.827,
+          "text": "(e) Since, sum of probabilities $= 0.1 + 0.2 + 0.3 + 0.4 + 0.5 + 0.6 = 2.1$, the assignment\nis not valid."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            347.5,
+            1178.7,
+            506.2
+          ],
+          "conf": 0.896,
+          "text": "14.2.1 *Probability of an event* Let S be a sample space associated with the experiment\n‘examining three consecutive pens produced by a machine and classified as Good\n(non-defective) and bad (defective)’. We may get 0, 1, 2 or 3 defective pens as result\nof this examination."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            493.8,
+            756.9,
+            543.8
+          ],
+          "conf": 0.91,
+          "text": "A sample space associated with this experiment is"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            421.2,
+            538.3,
+            1131.0,
+            589.0
+          ],
+          "conf": 0.844,
+          "text": "$$S = \\{BBB, BBG, BGB, GBB, BGG, GBG, GGB, GGG\\},$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            585.6,
+            1166.4,
+            636.3
+          ],
+          "conf": 0.922,
+          "text": "where B stands for a defective or bad pen and G for a non – defective or good pen."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.4,
+            632.3,
+            935.0,
+            683.0
+          ],
+          "conf": 0.911,
+          "text": "Let the probabilities assigned to the outcomes be as follows"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            677.5,
+            1068.6,
+            728.8
+          ],
+          "conf": 0.803,
+          "text": "Sample point: BBB BBG BGB GBB BGG GBG GGB GGG"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            728.8,
+            1046.6,
+            822.7
+          ],
+          "conf": 0.765,
+          "text": "Probability: $\\frac{1}{8}$ $\\frac{1}{8}$ $\\frac{1}{8}$ $\\frac{1}{8}$ $\\frac{1}{8}$ $\\frac{1}{8}$ $\\frac{1}{8}$ $\\frac{1}{8}$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            822.7,
+            1177.9,
+            910.1
+          ],
+          "conf": 0.937,
+          "text": "Let event A: there is exactly one defective pen and event B: there are atleast two\ndefective pens."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            906.3,
+            976.7,
+            958.9
+          ],
+          "conf": 0.845,
+          "text": "Hence $A = \\{BGG, GBG, GGB\\}$ and $B = \\{BBG, BGB, GBB, BBB\\}$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            950.9,
+            952.4,
+            1101.4
+          ],
+          "conf": 0.547,
+          "text": "Now $\\quad \\mathrm{P}(\\mathrm{A})=\\sum \\mathrm{P}\\left(\\omega_{i}\\right), \\forall \\omega_{i} \\in A$\n\n$\\quad \\quad \\quad \\quad \\quad \\quad =\\mathrm{P}(\\mathrm{BGG})+\\mathrm{P}(\\mathrm{GBG})+\\mathrm{P}(\\mathrm{GGB})=\\frac{1}{8}+\\frac{1}{8}+\\frac{1}{8}=\\frac{3}{8}$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1101.4,
+            1172.6,
+            1253.4
+          ],
+          "conf": 0.696,
+          "text": "and $\\quad \\mathrm{P}(\\mathrm{B})=\\sum \\mathrm{P}\\left(\\omega_{i}\\right), \\forall \\omega_{i} \\in B$\n\n$\\quad \\quad \\quad \\quad \\quad \\quad =\\mathrm{P}(\\mathrm{BBG})+\\mathrm{P}(\\mathrm{BGB})+\\mathrm{P}(\\mathrm{GBB})+\\mathrm{P}(\\mathrm{BBB})=\\frac{1}{8}+\\frac{1}{8}+\\frac{1}{8}+\\frac{1}{8}=\\frac{4}{8}=\\frac{1}{2}$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            1247.3,
+            961.4,
+            1298.1
+          ],
+          "conf": 0.883,
+          "text": "Let us consider another experiment of ‘tossing a coin “twice”’"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1293.7,
+            912.7,
+            1345.8
+          ],
+          "conf": 0.878,
+          "text": "The sample space of this experiment is $S = \\{HH, HT, TH, TT\\}$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.0,
+            1341.2,
+            920.8,
+            1392.3
+          ],
+          "conf": 0.898,
+          "text": "Let the following probabilities be assigned to the outcomes"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.1,
+            1391.9,
+            981.4,
+            1485.8
+          ],
+          "conf": 0.899,
+          "text": "$$P(HH) = \\frac{1}{4}, P(HT) = \\frac{1}{7}, P(TH) = \\frac{2}{7}, P(TT) = \\frac{9}{28}$$"
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1484.8,
+            1178.2,
+            1572.8
+          ],
+          "conf": 0.932,
+          "text": "Clearly this assignment satisfies the conditions of axiomatic approach. Now, let\nus find the probability of the event E: ‘Both the tosses yield the same result’."
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            1568.6,
+            522.3,
+            1620.1
+          ],
+          "conf": 0.748,
+          "text": "Here $\\qquad \\qquad \\qquad \\mathrm{E} = \\{\\mathrm{HH}, \\mathrm{TT}\\}$"
+        },
+        {
+          "order": 18,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1614.6,
+            711.9,
+            1666.9
+          ],
+          "conf": 0.72,
+          "text": "Now $\\qquad \\qquad \\mathrm{P}(\\mathrm{E}) = \\Sigma \\mathrm{P}(w_i)$, for all $w_i \\in \\mathrm{E}$"
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0097_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            387.5,
+            278.9,
+            807.6,
+            371.1
+          ],
+          "conf": 0.933,
+          "text": "$$= \\mathrm{P}(\\mathrm{HH}) + \\mathrm{P}(\\mathrm{TT}) = \\frac{1}{4} + \\frac{9}{28} = \\frac{4}{7}$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            363.5,
+            837.7,
+            414.2
+          ],
+          "conf": 0.921,
+          "text": "For the event F: ‘exactly two heads’, we have $F = \\{HH\\}$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            411.5,
+            577.5,
+            501.8
+          ],
+          "conf": 0.914,
+          "text": "and $P(F) = P(HH) = \\frac{1}{4}$"
+        },
+        {
+          "order": 3,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.3,
+            506.5,
+            1178.1,
+            592.8
+          ],
+          "conf": 0.816,
+          "text": "14.2.2 *Probabilities of equally likely outcomes* Let a sample space of an\nexperiment be"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            319.7,
+            588.8,
+            581.4,
+            643.2
+          ],
+          "conf": 0.891,
+          "text": "$$S = \\{\\omega_1, \\omega_2, ..., \\omega_n\\}.$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            635.0,
+            1178.8,
+            721.6
+          ],
+          "conf": 0.936,
+          "text": "Let all the outcomes are equally likely to occur, i.e., the chance of occurrence of each\nsimple event must be same."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            710.6,
+            947.6,
+            762.7
+          ],
+          "conf": 0.835,
+          "text": "i.e. $\\qquad \\qquad \\qquad \\qquad \\qquad \\mathrm{P}(\\omega_i) = p$, for all $\\omega_i \\in \\mathrm{S}$ where $0 \\leq p \\leq 1$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            771.8,
+            909.4,
+            867.4
+          ],
+          "conf": 0.886,
+          "text": "Since $\\sum_{i=1}^{n} \\mathrm{P}(\\omega_{i})=1$ i.e., $p+p+\\ldots+p$ ($n$ times) $=1$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            877.8,
+            571.1,
+            963.3
+          ],
+          "conf": 0.896,
+          "text": "or $np = 1$ i.e., $p = \\frac{1}{n}$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            959.1,
+            1181.0,
+            1045.0
+          ],
+          "conf": 0.943,
+          "text": "Let S be a sample space and E be an event, such that $n(\\text{S}) = n$ and $n(\\text{E}) = m$. If\neach out come is equally likely, then it follows that"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            323.4,
+            1047.3,
+            1058.3,
+            1158.6
+          ],
+          "conf": 0.913,
+          "text": "$$P(E)=\\frac{m}{n}=\\frac{\\text{Number of outcomes favourable to E}}{\\text{Total possible outcomes}}$$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1162.2,
+            1179.2,
+            1251.3
+          ],
+          "conf": 0.786,
+          "text": "14.2.3 *Probability of the event ‘A or B’* Let us now find the probability of event\n‘A or B’, i.e., $P(A \\cup B)$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1248.5,
+            1178.6,
+            1336.8
+          ],
+          "conf": 0.928,
+          "text": "Let $A = \\{HHT, HTH, THH\\}$ and $B = \\{HTH, THH, HHH\\}$ be two events associated\nwith ‘tossing of a coin thrice’"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1332.9,
+            689.6,
+            1384.7
+          ],
+          "conf": 0.856,
+          "text": "Clearly $A \\cup B = \\{\\text{HHT}, \\text{HTH}, \\text{THH}, \\text{HHH}\\}$"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1386.6,
+            1026.6,
+            1439.4
+          ],
+          "conf": 0.858,
+          "text": "Now $P(A \\cup B) = P(HHT) + P(HTH) + P(THH) + P(HHH)$"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            1442.7,
+            649.7,
+            1493.4
+          ],
+          "conf": 0.886,
+          "text": "If all the outcomes are equally likely, then"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            323.8,
+            1492.8,
+            761.0,
+            1584.8
+          ],
+          "conf": 0.919,
+          "text": "$$P(A \\cup B) = \\frac{1}{8} + \\frac{1}{8} + \\frac{1}{8} + \\frac{1}{8} = \\frac{4}{8} = \\frac{1}{2}$$"
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1591.1,
+            876.5,
+            1672.9
+          ],
+          "conf": 0.878,
+          "text": "Also $P(A) = P(HHT) + P(HTH) + P(THH) = \\frac{3}{8}$"
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0097_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            270.2,
+            879.7,
+            359.1
+          ],
+          "conf": 0.912,
+          "text": "and $P(B) = P(HTH) + P(THH) + P(HHH) = \\frac{3}{8}$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            364.0,
+            653.2,
+            450.7
+          ],
+          "conf": 0.911,
+          "text": "Therefore $P(A) + P(B) = \\frac{3}{8} + \\frac{3}{8} = \\frac{6}{8}$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            443.5,
+            652.9,
+            493.8
+          ],
+          "conf": 0.837,
+          "text": "It is clear that $P(A \\cup B) \\neq P(A) + P(B)$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            490.4,
+            1179.4,
+            653.6
+          ],
+          "conf": 0.963,
+          "text": "The points HTH and THH are common to both A and B. In the computation of\n$P(A) + P(B)$ the probabilities of points HTH and THH, i.e., the elements of $A \\cap B$ are\nincluded twice. Thus to get the probability $P(A \\cup B)$ we have to subtract the probabilities\nof the sample points in $A \\cap B$ from $P(A) + P(B)$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            650.6,
+            843.3,
+            755.8
+          ],
+          "conf": 0.885,
+          "text": "i.e. $\\quad \\mathrm{P}(\\mathrm{A} \\cup \\mathrm{B})=\\mathrm{P}(\\mathrm{A})+\\mathrm{P}(\\mathrm{B})-\\sum \\mathrm{P}\\left(\\omega_{i}\\right), \\forall \\omega_{i} \\in A \\cap B$\n$\\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            752.0,
+            867.8,
+            802.2
+          ],
+          "conf": 0.88,
+          "text": "Thus we observe that, $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            795.5,
+            1178.2,
+            880.5
+          ],
+          "conf": 0.948,
+          "text": "In general, if A and B are any two events associated with a random experiment,\nthen by the definition of probability of an event, we have"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            324.9,
+            879.3,
+            784.8,
+            935.6
+          ],
+          "conf": 0.877,
+          "text": "$$ \\mathrm{P}(\\mathrm{A} \\cup \\mathrm{B}) = \\sum p(\\omega_i), \\forall \\omega_i \\in A \\cup B . $$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            935.4,
+            783.9,
+            985.9
+          ],
+          "conf": 0.769,
+          "text": "Since $A \\cup B = (A-B) \\cup (A \\cap B) \\cup (B-A),$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            980.2,
+            250.8,
+            1026.4
+          ],
+          "conf": 0.864,
+          "text": "we have"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.6,
+            1024.3,
+            1172.0,
+            1084.1
+          ],
+          "conf": 0.814,
+          "text": "$$ \\mathrm{P}(\\mathrm{A} \\cup \\mathrm{B}) = \\left[ \\sum \\mathrm{P}(\\omega_i) \\forall \\omega_i \\in (A-B) \\right] + \\left[ \\sum P(\\omega_i) \\forall \\omega_i \\in A \\cap B \\right] + \\left[ \\sum \\mathrm{P}(\\omega_i) \\forall \\omega_i \\in B - A \\right] $$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            1074.6,
+            1179.0,
+            1127.5
+          ],
+          "conf": 0.837,
+          "text": "(because A–B, A $\\cap$ B and B – A are mutually exclusive) ... (1)"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            132.9,
+            1126.1,
+            1169.3,
+            1469.1
+          ],
+          "conf": 0.833,
+          "text": "Also $\\mathrm{P}(\\mathrm{A})+\\mathrm{P}(\\mathrm{B})=\\left[\\sum p\\left(\\omega_{i}\\right) \\forall \\omega_{i} \\in A\\right]+\\left[\\sum p\\left(\\omega_{i}\\right) \\forall \\omega_{i} \\in B\\right]$\n\n$=\\left[\\sum \\mathrm{P}\\left(\\omega_{i}\\right) \\forall \\omega_{i} \\in(A-B) \\cup(A \\cap B)\\right]+\\left[\\sum \\mathrm{P}\\left(\\omega_{i}\\right) \\forall \\omega_{i} \\in(B-A) \\cup(A \\cap B)\\right]$\n\n$=\\left[\\sum \\mathrm{P}\\left(\\omega_{i}\\right) \\forall \\omega_{i} \\in(A-B)\\right]+\\left[\\sum P\\left(\\omega_{i}\\right) \\forall \\omega_{i} \\in(A \\cap B)\\right]+\\left[\\sum \\mathrm{P}\\left(\\omega_{i}\\right) \\forall \\omega_{i} \\in(B-A)\\right]+$\n\n$\\left[\\sum \\mathrm{P}\\left(\\omega_{i}\\right) \\forall \\omega_{i} \\in(A \\cap B)\\right]$\n\n$=\\mathrm{P}(\\mathrm{A} \\cup \\mathrm{B})+\\left[\\sum \\mathrm{P}\\left(\\omega_{i}\\right) \\forall \\omega_{i} \\in A \\cap B\\right]$ [using (1)]\n\n$=\\mathrm{P}(\\mathrm{A} \\cup \\mathrm{B})+\\mathrm{P}(\\mathrm{A} \\cap \\mathrm{B})$."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1467.9,
+            686.9,
+            1519.4
+          ],
+          "conf": 0.829,
+          "text": "Hence $P(A \\cup B)=P(A)+P(B)-P(A \\cap B).$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.5,
+            1511.6,
+            793.4,
+            1561.8
+          ],
+          "conf": 0.87,
+          "text": "Alternatively, it can also be proved as follows:"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1556.7,
+            1105.8,
+            1694.8
+          ],
+          "conf": 0.867,
+          "text": "$$A \\cup B = A \\cup (B - A), \\text{ where } A \\text{ and } B - A \\text{ are mutually exclusive,}$$\n$$\\text{and } B = (A \\cap B) \\cup (B - A), \\text{ where } A \\cap B \\text{ and } B - A \\text{ are mutually exclusive.}$$\nUsing Axiom (iii) of probability, we get"
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0097_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.6,
+            259.0,
+            1111.4,
+            343.1
+          ],
+          "conf": 0.859,
+          "text": "$$P (A \\cup B) = P (A) + P (B - A) \\quad \\dots (2)$$\nand $$P(B) = P ( A \\cap B) + P (B - A) \\quad \\dots (3)$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.7,
+            339.5,
+            505.6,
+            389.3
+          ],
+          "conf": 0.903,
+          "text": "Subtracting (3) from (2) gives"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.0,
+            385.9,
+            777.7,
+            469.3
+          ],
+          "conf": 0.852,
+          "text": "$$P(A \\cup B) - P(B) = P(A) - P(A \\cap B)$$\nor $$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.7,
+            466.1,
+            1149.6,
+            514.9
+          ],
+          "conf": 0.931,
+          "text": "The above result can further be verified by observing the Venn Diagram (Fig 14.1)"
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            375.0,
+            520.0,
+            889.6,
+            851.2
+          ],
+          "conf": 0.971,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            572.3,
+            868.1,
+            692.4,
+            915.4
+          ],
+          "conf": 0.918,
+          "text": "Fig 14.1"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.6,
+            930.2,
+            1159.2,
+            977.4
+          ],
+          "conf": 0.904,
+          "text": "If $A$ and $B$ are disjoint sets, i.e., they are mutually exclusive events, then $A \\cap B = \\phi$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.0,
+            981.7,
+            589.7,
+            1031.5
+          ],
+          "conf": 0.813,
+          "text": "Therefore $P(A \\cap B) = P(\\phi) = 0$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.3,
+            1033.2,
+            800.3,
+            1082.0
+          ],
+          "conf": 0.896,
+          "text": "Thus, for mutually exclusive events A and B, we have"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            322.0,
+            1077.5,
+            653.8,
+            1124.8
+          ],
+          "conf": 0.828,
+          "text": "$$P(A \\cup B) = P(A) + P(B),$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.7,
+            1121.2,
+            550.5,
+            1169.8
+          ],
+          "conf": 0.889,
+          "text": "which is Axiom (iii) of probability."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.3,
+            1172.3,
+            1175.5,
+            1292.8
+          ],
+          "conf": 0.88,
+          "text": "14.2.4 *Probability of event ‘not A’* Consider the event $A = \\{2, 4, 6, 8\\}$ associated\nwith the experiment of drawing a card from a deck of ten cards numbered from\n1 to 10. Clearly the sample space is $S = \\{1, 2, 3, ..., 10\\}$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.6,
+            1284.0,
+            1175.2,
+            1334.9
+          ],
+          "conf": 0.833,
+          "text": "If all the outcomes $1, 2, ..., 10$ are considered to be equally likely, then the probability"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.3,
+            1338.7,
+            422.2,
+            1424.8
+          ],
+          "conf": 0.738,
+          "text": "of each outcome is $\\frac{1}{10}$"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            116.9,
+            1423.3,
+            805.5,
+            1563.9
+          ],
+          "conf": 0.834,
+          "text": "Now $P(A) = P(2) + P(4) + P(6) + P(8)$\n$= \\frac{1}{10} + \\frac{1}{10} + \\frac{1}{10} + \\frac{1}{10} = \\frac{4}{10} = \\frac{2}{5}$"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.1,
+            1562.6,
+            982.4,
+            1650.7
+          ],
+          "conf": 0.639,
+          "text": "Also event ‘not A’ = A’ = {1, 3, 5, 7, 9, 10}\nNow $P(A') = P(1) + P(3) + P(5) + P(7) + P(9) + P(10)$"
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0097_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            427.4,
+            271.3,
+            564.9,
+            358.9
+          ],
+          "conf": 0.895,
+          "text": "$$= \\frac{6}{10} = \\frac{3}{5}$$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.9,
+            366.3,
+            728.5,
+            454.7
+          ],
+          "conf": 0.908,
+          "text": "Thus, $P(A') = \\frac{3}{5} = 1 - \\frac{2}{5} = 1 - P(A)$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            448.2,
+            1107.5,
+            498.6
+          ],
+          "conf": 0.908,
+          "text": "Also, we know that $A'$ and $A$ are mutually exclusive and exhaustive events i.e.,"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            253.0,
+            485.3,
+            617.6,
+            534.7
+          ],
+          "conf": 0.767,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.3,
+            490.6,
+            987.5,
+            644.9
+          ],
+          "conf": 0.639,
+          "text": "$$A \\cap A' = \\phi \\text{ and } A \\cup A' = S$$\nor $$P(A \\cup A') = P(S)$$\nNow $$P(A) + P(A') = 1, \\quad \\text{by using axioms (ii) and (iii).}$$\nor $$P(A') = P(\\text{not } A) = 1 - P(A)$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            636.1,
+            1175.5,
+            723.5
+          ],
+          "conf": 0.942,
+          "text": "We now consider some examples and exercises having equally likely outcomes\nunless stated otherwise."
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            728.5,
+            1175.2,
+            818.3
+          ],
+          "conf": 0.76,
+          "text": "Example 5 One card is drawn from a well shuffled deck of 52 cards. If each outcome\nis equally likely, calculate the probability that the card will be"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            183.6,
+            808.6,
+            1017.5,
+            932.5
+          ],
+          "conf": 0.876,
+          "text": "(i) a diamond\n(ii) not an ace\n(iii) a black card (i.e., a club or, a spade)\n(iv) not a diamond\n(v) not a black card."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            935.8,
+            1177.8,
+            1023.7
+          ],
+          "conf": 0.894,
+          "text": "**Solution** When a card is drawn from a well shuffled deck of 52 cards, the number of\npossible outcomes is 52."
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1019.3,
+            806.1,
+            1106.4
+          ],
+          "conf": 0.805,
+          "text": "(i) Let A be the event 'the card drawn is a diamond'\nClearly the number of elements in set A is 13."
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.9,
+            1101.0,
+            488.1,
+            1195.9
+          ],
+          "conf": 0.882,
+          "text": "Therefore, $P(A) = \\frac{13}{52} = \\frac{1}{4}$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            1203.5,
+            618.9,
+            1290.9
+          ],
+          "conf": 0.85,
+          "text": "i.e. probability of a diamond card = $\\frac{1}{4}$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1281.0,
+            874.6,
+            1374.3
+          ],
+          "conf": 0.78,
+          "text": "(ii) We assume that the event ‘Card drawn is an ace’ is B\nTherefore ‘Card drawn is not an ace’ should be B’."
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            1384.7,
+            815.6,
+            1475.9
+          ],
+          "conf": 0.872,
+          "text": "$$ \\text{We know that } P(B') = 1 - P(B) = 1 - \\frac{4}{52} = 1 - \\frac{1}{13} = \\frac{12}{13} $$"
+        },
+        {
+          "order": 14,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1468.1,
+            823.0,
+            1562.4
+          ],
+          "conf": 0.753,
+          "text": "(iii) Let C denote the event ‘card drawn is black card’\nTherefore, number of elements in the set C = 26"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            1562.9,
+            402.9,
+            1654.3
+          ],
+          "conf": 0.858,
+          "text": "i.e. $P(C) = \\frac{26}{52} = \\frac{1}{2}$"
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0097_p0014.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            273.2,
+            610.1,
+            365.0
+          ],
+          "conf": 0.883,
+          "text": "Thus, probability of a black card = $\\frac{1}{2}$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            360.1,
+            1078.1,
+            454.3
+          ],
+          "conf": 0.938,
+          "text": "(iv) We assumed in (i) above that A is the event ‘card drawn is a diamond’,\nso the event ‘card drawn is not a diamond’ may be denoted as A' or ‘not A’"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            457.3,
+            619.4,
+            546.2
+          ],
+          "conf": 0.912,
+          "text": "Now $P(\\text{not } A) = 1 - P(A) = 1 - \\frac{1}{4} = \\frac{3}{4}$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            539.8,
+            1144.9,
+            589.6
+          ],
+          "conf": 0.911,
+          "text": "(v) The event ‘card drawn is not a black card’ may be denoted as C’ or ‘not C’."
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            591.7,
+            735.7,
+            687.8
+          ],
+          "conf": 0.904,
+          "text": "We know that $P(\\text{not } C) = 1 - P(C) = 1 - \\frac{1}{2} = \\frac{1}{2}$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            696.2,
+            713.8,
+            787.7
+          ],
+          "conf": 0.87,
+          "text": "Therefore, probability of not a black card = $\\frac{1}{2}$"
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            800.1,
+            1175.7,
+            966.3
+          ],
+          "conf": 0.916,
+          "text": "Example 6 A bag contains 9 discs of which 4 are red, 3 are blue and 2 are yellow. The\ndiscs are similar in shape and size. A disc is drawn at random from the bag. Calculate\nthe probability that it will be (i) red, (ii) yellow, (iii) blue, (iv) not blue,\n(v) either red or blue."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            971.8,
+            1103.3,
+            1058.7
+          ],
+          "conf": 0.815,
+          "text": "Solution There are 9 discs in all so the total number of possible outcomes is 9.\nLet the events A, B, C be defined as"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            269.9,
+            1056.6,
+            643.5,
+            1197.8
+          ],
+          "conf": 0.536,
+          "text": "A: ‘the disc drawn is red’\nB: ‘the disc drawn is yellow’\nC: ‘the disc drawn is blue’."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            134.7,
+            1197.6,
+            741.3,
+            1248.1
+          ],
+          "conf": 0.823,
+          "text": "(i) The number of red discs $= 4$, i.e., $n$ (A) $= 4$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            1251.5,
+            470.2,
+            1338.2
+          ],
+          "conf": 0.842,
+          "text": "Hence $P(A) = \\frac{4}{9}$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            126.4,
+            1333.0,
+            778.6,
+            1384.0
+          ],
+          "conf": 0.841,
+          "text": "(ii) The number of yellow discs $= 2$, i.e., $n$ (B) $= 2$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.2,
+            1385.3,
+            465.5,
+            1472.5
+          ],
+          "conf": 0.855,
+          "text": "Therefore, $P(B) = \\frac{2}{9}$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1466.6,
+            738.1,
+            1517.1
+          ],
+          "conf": 0.819,
+          "text": "(iii) The number of blue discs $= 3$, i.e., $n(\\mathrm{C}) = 3$"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            1518.9,
+            514.1,
+            1609.7
+          ],
+          "conf": 0.868,
+          "text": "Therefore, $P(C) = \\frac{3}{9} = \\frac{1}{3}$"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            1601.3,
+            1118.8,
+            1651.9
+          ],
+          "conf": 0.825,
+          "text": "(iv) Clearly the event ‘not blue’ is ‘not C’. We know that $P(not \\ C) = 1 - P(C)$"
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0097_p0015.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            122.6,
+            272.5,
+            600.0,
+            362.3
+          ],
+          "conf": 0.921,
+          "text": "Therefore $P(\\text{not } C) = 1 - \\frac{1}{3} = \\frac{2}{3}$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.1,
+            356.4,
+            1034.3,
+            449.2
+          ],
+          "conf": 0.878,
+          "text": "(v) The event ‘either red or blue’ may be described by the set ‘A or C’\nSince, A and C are mutually exclusive events, we have"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            312.3,
+            451.6,
+            977.7,
+            541.5
+          ],
+          "conf": 0.927,
+          "text": "$$P(A \\text{ or } C) = P(A \\cup C) = P(A) + P(C) = \\frac{4}{9} + \\frac{1}{3} = \\frac{7}{9}$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.5,
+            555.4,
+            1175.5,
+            726.0
+          ],
+          "conf": 0.895,
+          "text": "Example 7 Two students Anil and Ashima appeared in an examination. The probability\nthat Anil will qualify the examination is 0.05 and that Ashima will qualify the examination\nis 0.10. The probability that both will qualify the examination is 0.02. Find the\nprobability that"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.6,
+            715.4,
+            966.7,
+            856.9
+          ],
+          "conf": 0.947,
+          "text": "(a) Both Anil and Ashima will not qualify the examination.\n(b) Atleast one of them will not qualify the examination and\n(c) Only one of them will qualify the examination."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.8,
+            861.5,
+            1174.8,
+            948.5
+          ],
+          "conf": 0.915,
+          "text": "Solution Let E and F denote the events that Anil and Ashima will qualify the examination,\nrespectively. Given that"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            255.5,
+            942.2,
+            849.2,
+            993.3
+          ],
+          "conf": 0.861,
+          "text": "$P(E) = 0.05, P(F) = 0.10$ and $P(E \\cap F) = 0.02.$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.8,
+            992.2,
+            211.0,
+            1038.3
+          ],
+          "conf": 0.885,
+          "text": "Then"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.6,
+            1047.5,
+            1175.2,
+            1139.0
+          ],
+          "conf": 0.86,
+          "text": "(a) The event ‘both Anil and Ashima will not qualify the examination’ may be\nexpressed as $E' \\cap F'$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.5,
+            1138.7,
+            1175.6,
+            1226.1
+          ],
+          "conf": 0.922,
+          "text": "Since, $E^{'}$ is ‘not E’, i.e., Anil will not qualify the examination and $F^{'}$ is ‘not F’, i.e.,\nAshima will not qualify the examination."
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            122.5,
+            1226.1,
+            796.3,
+            1277.9
+          ],
+          "conf": 0.787,
+          "text": "Also $\\qquad \\mathrm{E}' \\cap \\mathrm{F}' = (\\mathrm{E} \\cup \\mathrm{F})'$ (by Demorgan's Law)"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            122.1,
+            1275.7,
+            734.8,
+            1325.4
+          ],
+          "conf": 0.765,
+          "text": "Now $P(E \\cup F) = P(E) + P(F) - P(E \\cap F)$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            122.1,
+            1320.9,
+            745.6,
+            1370.1
+          ],
+          "conf": 0.767,
+          "text": "or $P(E \\cup F) = 0.05 + 0.10 - 0.02 = 0.13$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.7,
+            1367.4,
+            1005.8,
+            1418.9
+          ],
+          "conf": 0.77,
+          "text": "Therefore $\\mathrm{P}(\\mathrm{E}' \\cap \\mathrm{F}') = \\mathrm{P}(\\mathrm{E} \\cup \\mathrm{F})' = 1 - \\mathrm{P}(\\mathrm{E} \\cup \\mathrm{F}) = 1 - 0.13 = 0.87$"
+        },
+        {
+          "order": 14,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.6,
+            1430.9,
+            680.2,
+            1566.4
+          ],
+          "conf": 0.866,
+          "text": "(b) P (atleast one of them will not qualify)\n$$= 1 - \\text{P}(\\text{both of them will qualify})$$\n$$= 1 - 0.02 = 0.98$$"
+        },
+        {
+          "order": 15,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            1567.9,
+            1175.3,
+            1659.1
+          ],
+          "conf": 0.812,
+          "text": "(c) The event only one of them will qualify the examination is same as the event\neither (Anil will qualify, and Ashima will not qualify) or (Anil will not qualify and Ashima"
+        }
+      ],
+      "page": 15
+    },
+    {
+      "image": "0097_p0016.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            262.6,
+            1173.0,
+            314.1
+          ],
+          "conf": 0.915,
+          "text": "will qualify) i.e., $E \\cap F'$ or $E' \\cap F$, where $E \\cap F'$ and $E' \\cap F$ are mutually exclusive."
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            314.4,
+            1022.6,
+            366.7
+          ],
+          "conf": 0.803,
+          "text": "Therefore, $\\mathrm{P}(\\text{only one of them will qualify}) \\quad = \\mathrm{P}(\\mathrm{E} \\cap \\mathrm{F}' \\text{ or } \\mathrm{E}' \\cap \\mathrm{F})$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            184.6,
+            366.1,
+            1011.8,
+            465.5
+          ],
+          "conf": 0.786,
+          "text": "$$= \\mathrm{P}(\\mathrm{E} \\cap \\mathrm{F}') + \\mathrm{P}(\\mathrm{E}' \\cap \\mathrm{F}) = \\mathrm{P} (\\mathrm{E}) - \\mathrm{P}(\\mathrm{E} \\cap \\mathrm{F}) + \\mathrm{P}(\\mathrm{F}) - \\mathrm{P} (\\mathrm{E} \\cap \\mathrm{F})$$\n$$= 0.05 - 0.02 + 0.10 - 0.02 = 0.11$$"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            477.5,
+            1177.9,
+            603.2
+          ],
+          "conf": 0.847,
+          "text": "Example 8 A committee of two persons is selected from two men and two women.\nWhat is the probability that the committee will have (a) no man? (b) one man? (c) two\nmen?"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            612.9,
+            1178.8,
+            718.4
+          ],
+          "conf": 0.853,
+          "text": "Solution The total number of persons $= 2 + 2 = 4$. Out of these four person, two can\nbe selected in $^4\\text{C}_2$ ways."
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            723.3,
+            1178.3,
+            827.8
+          ],
+          "conf": 0.78,
+          "text": "(a) No men in the committee of two means there will be two women in the committee.\nOut of two women, two can be selected in ${}^2\\text{C}_2 = 1$ way."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            841.9,
+            746.1,
+            943.2
+          ],
+          "conf": 0.865,
+          "text": "Therefore $P(\\text{no man}) = \\frac{{}^2C_2}{{}^4C_2} = \\frac{1 \\times 2 \\times 1}{4 \\times 3} = \\frac{1}{6}$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            954.6,
+            1177.7,
+            1062.1
+          ],
+          "conf": 0.688,
+          "text": "(b) One man in the committee means that there is one woman. One man out of 2\ncan be selected in $^2\\text{C}_1$ ways and one woman out of 2 can be selected in $^2\\text{C}_1$ ways."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1067.8,
+            756.0,
+            1124.0
+          ],
+          "conf": 0.786,
+          "text": "Together they can be selected in $^2\\text{C}_1 \\times ^2\\text{C}_1$ ways."
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            1131.5,
+            799.1,
+            1237.7
+          ],
+          "conf": 0.876,
+          "text": "Therefore $P(\\text{One man}) = \\frac{^2C_1 \\times ^2C_1}{^4C_2} = \\frac{2 \\times 2}{2 \\times 3} = \\frac{2}{3}$"
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1249.4,
+            676.1,
+            1303.0
+          ],
+          "conf": 0.764,
+          "text": "(c) Two men can be selected in $^2\\text{C}_2$ way."
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            1318.0,
+            736.5,
+            1418.7
+          ],
+          "conf": 0.879,
+          "text": "Hence $P(\\text{Two men}) = \\frac{^2C_2}{^4C_2} = \\frac{1}{^4C_2} = \\frac{1}{6}$"
+        },
+        {
+          "order": 12,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            517.1,
+            1465.3,
+            780.4,
+            1517.1
+          ],
+          "conf": 0.719,
+          "text": "EXERCISE 14.2"
+        },
+        {
+          "order": 13,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.7,
+            1524.8,
+            1178.7,
+            1628.7
+          ],
+          "conf": 0.853,
+          "text": "1. Which of the following can not be valid assignment of probabilities for outcomes\nof sample Space $S = \\{\\omega_1, \\omega_2, \\omega_3, \\omega_4, \\omega_5, \\omega_6, \\omega_7\\}$"
+        }
+      ],
+      "page": 16
+    },
+    {
+      "image": "0097_p0017.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            119.5,
+            261.2,
+            1062.5,
+            621.9
+          ],
+          "conf": 0.91,
+          "text": "<table>\n<thead>\n<tr>\n<th>Assignment</th>\n<th>\\omega_1</th>\n<th>\\omega_2</th>\n<th>\\omega_3</th>\n<th>\\omega_4</th>\n<th>\\omega_5</th>\n<th>\\omega_6</th>\n<th>\\omega_7</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>(a)</td>\n<td>0.1</td>\n<td>0.01</td>\n<td>0.05</td>\n<td>0.03</td>\n<td>0.01</td>\n<td>0.2</td>\n<td>0.6</td>\n</tr>\n<tr>\n<td>(b)</td>\n<td>\\frac{1}{7}</td>\n<td>\\frac{1}{7}</td>\n<td>\\frac{1}{7}</td>\n<td>\\frac{1}{7}</td>\n<td>\\frac{1}{7}</td>\n<td>\\frac{1}{7}</td>\n<td>\\frac{1}{7}</td>\n</tr>\n<tr>\n<td>(c)</td>\n<td>0.1</td>\n<td>0.2</td>\n<td>0.3</td>\n<td>0.4</td>\n<td>0.5</td>\n<td>0.6</td>\n<td>0.7</td>\n</tr>\n<tr>\n<td>(d)</td>\n<td>- 0.1</td>\n<td>0.2</td>\n<td>0.3</td>\n<td>0.4</td>\n<td>- 0.2</td>\n<td>0.1</td>\n<td>0.3</td>\n</tr>\n<tr>\n<td>(e)</td>\n<td>\\frac{1}{14}</td>\n<td>\\frac{2}{14}</td>\n<td>\\frac{3}{14}</td>\n<td>\\frac{4}{14}</td>\n<td>\\frac{5}{14}</td>\n<td>\\frac{6}{14}</td>\n<td>\\frac{15}{14}</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.4,
+            617.7,
+            1103.2,
+            667.5
+          ],
+          "conf": 0.889,
+          "text": "2. A coin is tossed twice, what is the probability that atleast one tail occurs?"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.1,
+            655.9,
+            883.2,
+            705.7
+          ],
+          "conf": 0.874,
+          "text": "3. A die is thrown, find the probability of following events:"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            189.7,
+            699.8,
+            863.6,
+            900.8
+          ],
+          "conf": 0.927,
+          "text": "(i) A prime number will appear,\n(ii) A number greater than or equal to 3 will appear,\n(iii) A number less than or equal to one will appear,\n(iv) A number more than 6 will appear,\n(v) A number less than 6 will appear."
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.6,
+            896.6,
+            741.6,
+            947.3
+          ],
+          "conf": 0.866,
+          "text": "4. A card is selected from a pack of 52 cards."
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            184.3,
+            941.3,
+            1072.0,
+            1066.7
+          ],
+          "conf": 0.925,
+          "text": "(a) How many points are there in the sample space?\n(b) Calculate the probability that the card is an ace of spades.\n(c) Calculate the probability that the card is (i) an ace (ii) black card."
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.7,
+            1062.7,
+            1176.4,
+            1150.5
+          ],
+          "conf": 0.929,
+          "text": "5. A fair coin with 1 marked on one face and 6 on the other and a fair die are both\ntossed. find the probability that the sum of numbers that turn up is (i) 3 (ii) 12"
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            137.2,
+            1141.5,
+            1175.5,
+            1227.6
+          ],
+          "conf": 0.917,
+          "text": "6. There are four men and six women on the city council. If one council member is\nselected for a committee at random, how likely is it that it is a woman?"
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.6,
+            1217.5,
+            1176.0,
+            1376.5
+          ],
+          "conf": 0.874,
+          "text": "7. A fair coin is tossed four times, and a person win Re 1 for each head and lose\nRs 1.50 for each tail that turns up.\nFrom the sample space calculate how many different amounts of money you can\nhave after four tosses and the probability of having each of these amounts."
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.1,
+            1368.2,
+            927.6,
+            1418.7
+          ],
+          "conf": 0.834,
+          "text": "8. Three coins are tossed once. Find the probability of getting"
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            181.5,
+            1410.4,
+            1094.5,
+            1537.5
+          ],
+          "conf": 0.875,
+          "text": "(i) 3 heads\n(ii) 2 heads\n(iii) atleast 2 heads\n(iv) atmost 2 heads\n(v) no head\n(vi) 3 tails\n(vii) exactly two tails\n(viii) no tail\n(ix) atmost two tails"
+        },
+        {
+          "order": 11,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.3,
+            1542.4,
+            1170.1,
+            1631.0
+          ],
+          "conf": 0.882,
+          "text": "9. If $\\frac{2}{11}$ is the probability of an event, what is the probability of the event ‘not A’."
+        },
+        {
+          "order": 12,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            1626.4,
+            1175.3,
+            1716.5
+          ],
+          "conf": 0.898,
+          "text": "10. A letter is chosen at random from the word ‘ASSASSINATION’. Find the\nprobability that letter is (i) a vowel (ii) a consonant"
+        }
+      ],
+      "page": 17
+    },
+    {
+      "image": "0097_p0018.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            259.5,
+            1178.8,
+            421.8
+          ],
+          "conf": 0.96,
+          "text": "11. In a lottery, a person choses six different natural numbers at random from 1 to 20,\nand if these six numbers match with the six numbers already fixed by the lottery\ncommittee, he wins the prize. What is the probability of winning the prize in the\ngame? [Hint order of the numbers is not important.]"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            411.9,
+            1178.6,
+            534.7
+          ],
+          "conf": 0.845,
+          "text": "12. Check whether the following probabilities $P(A)$ and $P(B)$ are consistently defined\n(i) $P(A) = 0.5$, $P(B) = 0.7$, $P(A \\cap B) = 0.6$\n(ii) $P(A) = 0.5$, $P(B) = 0.4$, $P(A \\cup B) = 0.8$"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            527.1,
+            628.0,
+            578.4
+          ],
+          "conf": 0.846,
+          "text": "13. Fill in the blanks in following table:"
+        },
+        {
+          "order": 3,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            192.8,
+            563.4,
+            915.1,
+            789.4
+          ],
+          "conf": 0.914,
+          "text": "<table>\n<thead>\n<tr>\n<th></th>\n<th>P(A)</th>\n<th>P(B)</th>\n<th>P(A ∩ B)</th>\n<th>P(A ∪ B)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>(i)</td>\n<td>1<br/>3</td>\n<td>1<br/>5</td>\n<td>1<br/>15</td>\n<td>...</td>\n</tr>\n<tr>\n<td>(ii)</td>\n<td>0.35</td>\n<td>...</td>\n<td>0.25</td>\n<td>0.6</td>\n</tr>\n<tr>\n<td>(iii)</td>\n<td>0.5</td>\n<td>0.35</td>\n<td>...</td>\n<td>0.7</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            793.1,
+            1178.8,
+            929.5
+          ],
+          "conf": 0.951,
+          "text": "14. Given $P(A) = \\frac{3}{5}$ and $P(B) = \\frac{1}{5}$. Find $P(A \\text{ or } B)$, if $A$ and $B$ are mutually exclusive\nevents."
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            934.8,
+            1177.4,
+            1068.4
+          ],
+          "conf": 0.901,
+          "text": "15. If E and F are events such that $P(E) = \\frac{1}{4}$, $P(F) = \\frac{1}{2}$ and $P(E \\text{ and } F) = \\frac{1}{8}$, find\n\n(i) $P(E \\text{ or } F)$, (ii) $P(\\text{not } E \\text{ and not } F)$."
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1061.2,
+            1178.3,
+            1152.2
+          ],
+          "conf": 0.925,
+          "text": "16. Events E and F are such that P(not E or not F) = 0.25, State whether E and F are\nmutually exclusive."
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1141.1,
+            1177.0,
+            1232.1
+          ],
+          "conf": 0.915,
+          "text": "17. A and B are events such that $P(A) = 0.42$, $P(B) = 0.48$ and $P(A \\text{ and } B) = 0.16$.\nDetermine (i) $P(\\text{not } A)$, (ii) $P(\\text{not } B)$ and (iii) $P(A \\text{ or } B)$"
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            1221.5,
+            1179.0,
+            1388.7
+          ],
+          "conf": 0.946,
+          "text": "18. In Class XI of a school 40% of the students study Mathematics and 30% study\nBiology. 10% of the class study both Mathematics and Biology. If a student is\nselected at random from the class, find the probability that he will be studying\nMathematics or Biology."
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1380.4,
+            1179.9,
+            1548.3
+          ],
+          "conf": 0.941,
+          "text": "19. In an entrance test that is graded on the basis of two examinations, the probability\nof a randomly chosen student passing the first examination is 0.8 and the probability\nof passing the second examination is 0.7. The probability of passing atleast one of\nthem is 0.95. What is the probability of passing both?"
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1539.6,
+            1179.4,
+            1706.8
+          ],
+          "conf": 0.942,
+          "text": "20. The probability that a student will pass the final examination in both English and\nHindi is 0.5 and the probability of passing neither is 0.1. If the probability of\npassing the English examination is 0.75, what is the probability of passing the\nHindi examination?"
+        }
+      ],
+      "page": 18
+    },
+    {
+      "image": "0097_p0019.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            259.2,
+            1174.8,
+            508.1
+          ],
+          "conf": 0.619,
+          "text": "21. In a class of 60 students, 30 opted for NCC, 32 opted for NSS and 24 opted for\nboth NCC and NSS. If one of these students is selected at random, find the\nprobability that\n\n(i) The student opted for NCC or NSS.\n(ii) The student has opted neither NCC nor NSS.\n(iii) The student has opted NSS but not NCC."
+        },
+        {
+          "order": 1,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            463.2,
+            530.7,
+            832.0,
+            582.5
+          ],
+          "conf": 0.806,
+          "text": "Miscellaneous Examples"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            590.1,
+            1174.7,
+            799.7
+          ],
+          "conf": 0.583,
+          "text": "Example 9 On her vacations Veena visits four cities (A, B, C and D) in a random\norder. What is the probability that she visits\n\n(i) A before B? (ii) A before B and B before C?\n(iii) A first and B last? (iv) A either first or second?\n(v) A just before B?"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            806.7,
+            1175.8,
+            1009.7
+          ],
+          "conf": 0.919,
+          "text": "Solution The number of arrangements (orders) in which Veena can visit four cities A,\nB, C, or D is 4! i.e., 24.Therefore, $n$ (S) = 24.\nSince the number of elements in the sample space of the experiment is 24 all of these\noutcomes are considered to be equally likely. A sample space for the\nexperiment is"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.2,
+            1006.2,
+            880.4,
+            1195.5
+          ],
+          "conf": 0.864,
+          "text": "$$S = \\{ABCD, ABDC, ACBD, ACDB, ADBC, ADCB$$\n$$BACD, BADC, BDAC, BDCA, BCAD, BCDA$$\n$$CABD, CADB, CBDA, CBAD, CDAB, CDBA$$\n$$DABC, DACB, DBCA, DBAC, DCAB, DCBA\\}$$"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1194.7,
+            941.9,
+            1327.7
+          ],
+          "conf": 0.537,
+          "text": "(i) Let the event ‘she visits A before B’ be denoted by E\nTherefore, E = {ABCD, CABD, DABC, ABDC, CADB, DACB\n               ACBD, ACDB, ADBC, CDAB, DCAB, ADCB}"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            1335.9,
+            563.2,
+            1437.3
+          ],
+          "conf": 0.882,
+          "text": "Thus $\\mathrm{P}(\\mathrm{E})=\\frac{n(\\mathrm{E})}{n(\\mathrm{S})}=\\frac{12}{24}=\\frac{1}{2}$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1442.3,
+            1099.2,
+            1529.9
+          ],
+          "conf": 0.819,
+          "text": "(ii) Let the event ‘Veena visits A before B and B before C’ be denoted by F.\nHere $F = \\{ABCD, DABC, ABDC, ADBC\\}$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            1537.7,
+            555.4,
+            1638.0
+          ],
+          "conf": 0.887,
+          "text": "Therefore, $\\mathrm{P}(\\mathrm{F})=\\frac{n(\\mathrm{F})}{n(\\mathrm{S})}=\\frac{4}{24}=\\frac{1}{6}$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1641.6,
+            997.0,
+            1693.7
+          ],
+          "conf": 0.872,
+          "text": "Students are advised to find the probability in case of (iii), (iv) and (v)."
+        }
+      ],
+      "page": 19
+    },
+    {
+      "image": "0097_p0020.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.4,
+            259.9,
+            1176.4,
+            347.3
+          ],
+          "conf": 0.885,
+          "text": "Example 10 Find the probability that when a hand of 7 cards is drawn from a well\nshuffled deck of 52 cards, it contains (i) all Kings (ii) 3 Kings (iii) atleast 3 Kings."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.6,
+            365.4,
+            731.1,
+            420.1
+          ],
+          "conf": 0.8,
+          "text": "Solution Total number of possible hands = $^{52}\\text{C}_7$"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            131.0,
+            428.6,
+            1176.0,
+            527.2
+          ],
+          "conf": 0.739,
+          "text": "(i) Number of hands with 4 Kings = $^4\\text{C}_4 \\times ^{48}\\text{C}_3$ (other 3 cards must be chosen from\nthe rest 48 cards)"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.4,
+            534.8,
+            955.6,
+            633.5
+          ],
+          "conf": 0.883,
+          "text": "Hence $P$ (a hand will have 4 Kings) = $\\frac{{}^4C_4 \\times ^{48}C_3}{{}^{52}C_7} = \\frac{1}{7735}$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.8,
+            647.5,
+            1011.1,
+            703.8
+          ],
+          "conf": 0.779,
+          "text": "(ii) Number of hands with 3 Kings and 4 non-King cards $= ^4\\text{C}_3 \\times ^{48}\\text{C}_4$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.4,
+            714.2,
+            757.1,
+            814.9
+          ],
+          "conf": 0.871,
+          "text": "Therefore $P(3 \\text{ Kings}) = \\frac{^4C_3 \\times ^{48}C_4}{^{52}C_7} = \\frac{9}{1547}$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.1,
+            814.0,
+            765.8,
+            1000.9
+          ],
+          "conf": 0.823,
+          "text": "(iii) $P(atleast\\ 3\\ King) = P(3\\ Kings\\ or\\ 4\\ Kings)$\n$= P(3\\ Kings) + P(4\\ Kings)$\n$= \\frac{9}{1547} + \\frac{1}{7735} = \\frac{46}{7735}$"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            114.8,
+            1035.9,
+            1175.1,
+            1708.9
+          ],
+          "conf": 0.593,
+          "text": "Example 11 If A, B, C are three events associated with a random experiment,\nprove that\n$$P(A \\cup B \\cup C) = P(A) + P(B) + P(C) - P(A \\cap B) - P(A \\cap C)$$\n$$- P(B \\cap C) + P(A \\cap B \\cap C)$$\nSolution Consider $E = B \\cup C$ so that\n$$P(A \\cup B \\cup C) = P(A \\cup E)$$\n$$= P(A) + P(E) - P(A \\cap E)$$ ... (1)\nNow\n$$P(E) = P(B \\cup C)$$\n$$= P(B) + P(C) - P(B \\cap C)$$ ... (2)\nAlso $A \\cap E = A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$ [using distribution property of\nintersection of sets over the union]. Thus\n$$P(A \\cap E) = P(A \\cap B) + P(A \\cap C) - P[(A \\cap B) \\cap (A \\cap C)]$$"
+        }
+      ],
+      "page": 20
+    },
+    {
+      "image": "0097_p0021.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            445.0,
+            270.0,
+            1116.6,
+            330.0
+          ],
+          "conf": 0.908,
+          "text": "$$ = \\mathrm{P}(\\mathrm{A} \\cap \\mathrm{B}) + \\mathrm{P}(\\mathrm{A} \\cap \\mathrm{C}) - \\mathrm{P}[\\mathrm{A} \\cap \\mathrm{B} \\cap \\mathrm{C}] \\quad \\dots (3) $$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            189.0,
+            324.3,
+            596.7,
+            376.4
+          ],
+          "conf": 0.92,
+          "text": "Using (2) and (3) in (1), we get"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            194.1,
+            373.0,
+            951.1,
+            491.9
+          ],
+          "conf": 0.795,
+          "text": "$$ \\mathrm{P}[\\mathrm{A} \\cup \\mathrm{B} \\cup \\mathrm{C}] = \\mathrm{P}(\\mathrm{A}) + \\mathrm{P}(\\mathrm{B}) + \\mathrm{P}(\\mathrm{C}) - \\mathrm{P}(\\mathrm{B} \\cap \\mathrm{C}) $$\n$$ \\qquad \\qquad \\qquad - \\mathrm{P}(\\mathrm{A} \\cap \\mathrm{B}) - \\mathrm{P}(\\mathrm{A} \\cap \\mathrm{C}) + \\mathrm{P}(\\mathrm{A} \\cap \\mathrm{B} \\cap \\mathrm{C}) $$"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.8,
+            505.6,
+            974.5,
+            555.9
+          ],
+          "conf": 0.785,
+          "text": "Example 12 In a relay race there are five teams A, B, C, D and E."
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.1,
+            555.4,
+            1175.6,
+            720.9
+          ],
+          "conf": 0.95,
+          "text": "(a) What is the probability that A, B and C finish first, second and third,\nrespectively.\n(b) What is the probability that A, B and C are first three to finish (in any order)\n(Assume that all finishing orders are equally likely)"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.9,
+            726.8,
+            1175.3,
+            777.9
+          ],
+          "conf": 0.883,
+          "text": "Solution If we consider the sample space consisting of all finishing orders in the first"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.7,
+            779.2,
+            1174.9,
+            880.7
+          ],
+          "conf": 0.76,
+          "text": "three places, we will have $^5\\text{P}_3$, i.e., $\\frac{5!}{(5-3)!} = 5 \\times 4 \\times 3 = 60$ sample points, each with"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.5,
+            898.5,
+            391.2,
+            987.4
+          ],
+          "conf": 0.846,
+          "text": "a probability of $\\frac{1}{60}$."
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.5,
+            983.4,
+            1175.8,
+            1071.6
+          ],
+          "conf": 0.87,
+          "text": "(a) A, B and C finish first, second and third, respectively. There is only one finishing\norder for this, i.e., ABC."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.8,
+            1074.8,
+            978.9,
+            1163.6
+          ],
+          "conf": 0.796,
+          "text": "Thus P(A, B and C finish first, second and third respectively) = $\\frac{1}{60}$."
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.7,
+            1162.4,
+            1175.5,
+            1287.2
+          ],
+          "conf": 0.902,
+          "text": "(b) A, B and C are the first three finishers. There will be 3! arrangements for A, B\nand C.      Therefore, the sample points corresponding to this event will be 3! in\nnumber."
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            122.5,
+            1291.4,
+            879.6,
+            1384.2
+          ],
+          "conf": 0.797,
+          "text": "So $P$ (A, B and C are first three to finish) $= \\frac{3!}{60} = \\frac{6}{60} = \\frac{1}{10}$"
+        },
+        {
+          "order": 12,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            370.8,
+            1431.3,
+            929.5,
+            1484.1
+          ],
+          "conf": 0.833,
+          "text": "Miscellaneous Exercise on Chapter 14"
+        },
+        {
+          "order": 13,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            139.2,
+            1492.1,
+            1176.4,
+            1704.3
+          ],
+          "conf": 0.921,
+          "text": "1. A box contains 10 red marbles, 20 blue marbles and 30 green marbles. 5 marbles\nare drawn from the box, what is the probability that\n(i) all will be blue? (ii) atleast one will be green?\n2. 4 cards are drawn from a well – shuffled deck of 52 cards. What is the probability\nof obtaining 3 diamonds and one spade?"
+        }
+      ],
+      "page": 21
+    },
+    {
+      "image": "0097_p0022.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.1,
+            259.0,
+            1178.8,
+            346.9
+          ],
+          "conf": 0.88,
+          "text": "3. A die has two faces each with number ‘1’, three faces each with number ‘2’ and\none face with number ‘3’. If die is rolled once, determine"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.3,
+            350.7,
+            766.6,
+            402.8
+          ],
+          "conf": 0.819,
+          "text": "(i) $P(2)$          (ii) $P(1 \\text{ or } 3)$          (iii) $P(\\text{not } 3)$"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.7,
+            407.0,
+            1178.1,
+            530.9
+          ],
+          "conf": 0.914,
+          "text": "4. In a certain lottery 10,000 tickets are sold and ten equal prizes are awarded.\nWhat is the probability of not getting a prize if you buy (a) one ticket (b) two\ntickets (c) 10 tickets."
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.1,
+            521.2,
+            1178.7,
+            610.7
+          ],
+          "conf": 0.9,
+          "text": "5. Out of 100 students, two sections of 40 and 60 are formed. If you and your friend\nare among the 100 students, what is the probability that"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.8,
+            608.4,
+            710.1,
+            694.8
+          ],
+          "conf": 0.858,
+          "text": "(a) you both enter the same section?\n(b) you both enter the different sections?"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.5,
+            691.0,
+            1178.6,
+            856.7
+          ],
+          "conf": 0.939,
+          "text": "6. Three letters are dictated to three persons and an envelope is addressed to each\nof them, the letters are inserted into the envelopes at random so that each envelope\ncontains exactly one letter. Find the probability that at least one letter is in its\nproper envelope."
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            137.4,
+            852.9,
+            1177.0,
+            952.3
+          ],
+          "conf": 0.895,
+          "text": "7. A and B are two events such that $P(A) = 0.54$, $P(B) = 0.69$ and $P(A \\cap B) = 0.35$.\nFind (i) $P(A \\cup B)$ (ii) $P(A' \\cap B')$ (iii) $P(A \\cap B')$ (iv) $P(B \\cap A')$"
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            137.3,
+            950.2,
+            1177.9,
+            1038.2
+          ],
+          "conf": 0.909,
+          "text": "8. From the employees of a company, 5 persons are selected to represent them in\nthe managing committee of the company. Particulars of five persons are as follows:"
+        },
+        {
+          "order": 8,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            287.7,
+            1040.1,
+            1082.4,
+            1335.9
+          ],
+          "conf": 0.955,
+          "text": "<table>\n<thead>\n<tr>\n<th>S. No.</th>\n<th>Name</th>\n<th>Sex</th>\n<th>Age in years</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1.</td>\n<td>Harish</td>\n<td>M</td>\n<td>30</td>\n</tr>\n<tr>\n<td>2.</td>\n<td>Rohan</td>\n<td>M</td>\n<td>33</td>\n</tr>\n<tr>\n<td>3.</td>\n<td>Sheetal</td>\n<td>F</td>\n<td>46</td>\n</tr>\n<tr>\n<td>4.</td>\n<td>Alis</td>\n<td>F</td>\n<td>28</td>\n</tr>\n<tr>\n<td>5.</td>\n<td>Salim</td>\n<td>M</td>\n<td>41</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.4,
+            1337.4,
+            1178.5,
+            1428.8
+          ],
+          "conf": 0.89,
+          "text": "A person is selected at random from this group to act as a spokesperson. What is\nthe probability that the spokesperson will be either male or over 35 years?"
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.5,
+            1428.6,
+            1178.2,
+            1562.4
+          ],
+          "conf": 0.917,
+          "text": "9. If 4-digit numbers greater than 5,000 are randomly formed from the digits\n0, 1, 3, 5, and 7, what is the probability of forming a number divisible by 5 when,\n(i) the digits are repeated? (ii) the repetition of digits is not allowed?"
+        },
+        {
+          "order": 11,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            1569.4,
+            1179.1,
+            1701.6
+          ],
+          "conf": 0.922,
+          "text": "10. The number lock of a suitcase has 4 wheels, each labelled with ten digits i.e.,\nfrom 0 to 9. The lock opens with a sequence of four digits with no repeats. What\nis the probability of a person getting the right sequence to open the suitcase?"
+        }
+      ],
+      "page": 22
+    },
+    {
+      "image": "0097_p0023.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            258.8,
+            1170.8,
+            1647.5
+          ],
+          "conf": 0.673,
+          "text": "Summary\n\nIn this Chapter, we studied about the axiomatic approach of probability. The main\nfeatures of this Chapter are as follows:\n$\\blacklozenge$ **Event**: A subset of the sample space\n$\\blacklozenge$ **Impossible event**: The empty set\n$\\blacklozenge$ **Sure event**: The whole sample space\n$\\blacklozenge$ **Complementary event or 'not event'**: The set A' or S – A\n$\\blacklozenge$ **Event A or B**: The set A $\\cup$ B\n$\\blacklozenge$ **Event A and B**: The set A $\\cap$ B\n$\\blacklozenge$ **Event A and not B**: The set A – B\n$\\blacklozenge$ **Mutually exclusive event**: A and B are mutually exclusive if A $\\cap$ B = $\\phi$\n$\\blacklozenge$ **Exhaustive and mutually exclusive events**: Events E$_1$, E$_2$, ..., E$_n$ are mutually\nexclusive and exhaustive if E$_1 \\cup$ E$_2 \\cup ... \\cup$ E$_n$ = S and E$_i \\cap$ E$_j$ = $\\phi$ $\\forall$ i $\\neq j$\n$\\blacklozenge$ **Probability**: Number P ($\\omega_i$) associated with sample point $\\omega_i$ such that\n(i) $0 \\leq P(\\omega_i) \\leq 1$ (ii) $\\sum P(\\omega_i)$ for all $\\omega_i \\in S = 1$\n(iii) $P(A) = \\sum P(\\omega_i)$ for all $\\omega_i \\in A$. The number P($\\omega_i$) is called *probability*\n*of the outcome* $\\omega_i$.\n$\\blacklozenge$ **Equally likely outcomes**: All outcomes with equal probability\n$\\blacklozenge$ **Probability of an event**: For a finite sample space with equally likely outcomes\n\nProbability of an event $P(A) = \\frac{n(A)}{n(S)}$, where $n(A) =$ number of elements in\nthe set A, $n(S) =$ number of elements in the set S.\n$\\blacklozenge$ If A and B are any two events, then\n$P(A \\text{ or } B) = P(A) + P(B) - P(A \\text{ and } B)$\nequivalently, $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$\n$\\blacklozenge$ If A and B are mutually exclusive, then $P(A \\text{ or } B) = P(A) + P(B)$\n$\\blacklozenge$ If A is any event, then\n$P(\\text{not } A) = 1 - P(A)$"
+        }
+      ],
+      "page": 23
+    },
+    {
+      "image": "0097_p0024.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.5,
+            260.9,
+            1180.5,
+            1043.5
+          ],
+          "conf": 0.744,
+          "text": "\\textit{Historical Note}\n\nProbability theory like many other branches of mathematics, evolved out of\npractical consideration. It had its origin in the 16th century when an Italian\nphysician and mathematician Jerome Cardan (1501–1576) wrote the first book\non the subject “Book on Games of Chance” (Biber de Ludo Aleae). It was\npublished in 1663 after his death.\nIn 1654, a gambler Chevalier de Metre approached the well known French\nPhilosopher and Mathematician Blaise Pascal (1623–1662) for certain dice\nproblem. Pascal became interested in these problems and discussed with famous\nFrench Mathematician Pierre de Fermat (1601–1665). Both Pascal and Fermat\nsolved the problem independently. Besides, Pascal and Fermat, outstanding\ncontributions to probability theory were also made by Christian Huygenes (1629–\n1665), a Dutchman, J. Bernoulli (1654–1705), De Moivre (1667–1754), a\nFrenchman Pierre Laplace (1749–1827), the Russian P.L Chebyshev (1821–\n1897), A. A Markov (1856–1922) and A. N Kolmogorove (1903–1987).\nKolmogorov is credited with the axiomatic theory of probability. His book\n‘Foundations of Probability’ published in 1933, introduces probability as a set\nfunction and is considered a classic."
+        },
+        {
+          "order": 1,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            572.0,
+            1184.8,
+            733.1,
+            1234.8
+          ],
+          "conf": 0.528,
+          "text": ""
+        }
+      ],
+      "page": 24
+    }
+  ]
+}

@@ -1,0 +1,1067 @@
+{
+  "book": "1111",
+  "relpath": "dataset/input/eng/11/1111.pdf",
+  "num_pages": 9,
+  "pages": [
+    {
+      "image": "0094_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            622.6,
+            103.4,
+            1178.6,
+            332.9
+          ],
+          "conf": 0.86,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            679.1,
+            297.9,
+            782.3,
+            333.1
+          ],
+          "conf": 0.558,
+          "text": "$$11076\\mathrm{CH}_2$$"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            901.3,
+            237.5,
+            1166.8,
+            324.1
+          ],
+          "conf": 0.542,
+          "text": "Chapter 11"
+        },
+        {
+          "order": 3,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            182.8,
+            384.2,
+            1128.4,
+            584.4
+          ],
+          "conf": 0.86,
+          "text": "INTRODUCTION TO THREE\nDIMENSIONAL GEOMETRY"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            260.8,
+            665.9,
+            1041.2,
+            759.6
+          ],
+          "conf": 0.785,
+          "text": "* Mathematics is both the queen and the hand-maiden of\nall sciences – E.T. BELL*"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.8,
+            793.6,
+            385.8,
+            844.6
+          ],
+          "conf": 0.885,
+          "text": "11.1 Introduction"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            843.4,
+            848.1,
+            1210.3
+          ],
+          "conf": 0.97,
+          "text": "You may recall that to locate the position of a point in a\nplane, we need two intersecting mutually perpendicular lines\nin the plane. These lines are called the coordinate axes\nand the two numbers are called the coordinates of the\npoint with respect to the axes. In actual life, we do not\nhave to deal with points lying in a plane only. For example,\nconsider the position of a ball thrown in space at different\npoints of time or the position of an aeroplane as it flies\nfrom one place to another at different times during its flight."
+        },
+        {
+          "order": 7,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            839.7,
+            810.9,
+            1175.8,
+            1220.0
+          ],
+          "conf": 0.966,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1203.6,
+            1179.2,
+            1649.2
+          ],
+          "conf": 0.97,
+          "text": "Similarly, if we were to locate the position of the lowest tip of an electric bulb hanging from the ceiling of a room or the position of the central tip of the ceiling fan in a room, we will not only require the perpendicular distances of the point to be located from two perpendicular walls of the room but also the height of the point from the floor of the room. Therefore, we need not only two but three numbers representing the perpendicular distances of the point from three mutually perpendicular planes, namely the floor of the room and two adjacent walls of the room. The three numbers representing the three distances are called the coordinates of the point with reference to the three coordinate planes. So, a point in space has three coordinates. In this Chapter, we shall study the basic concepts of geometry in three dimensional space.*"
+        },
+        {
+          "order": 9,
+          "label": "Footnote",
+          "type": "Footnote",
+          "bbox_xyxy": [
+            117.5,
+            1665.0,
+            1176.8,
+            1742.9
+          ],
+          "conf": 0.872,
+          "text": "* For various activities in three dimensional geometry one may refer to the Book, “*A Hand Book for*\n*designing Mathematics Laboratory in Schools*”, NCERT, 2005."
+        },
+        {
+          "order": 10,
+          "label": "Footer",
+          "type": "PageFooter",
+          "bbox_xyxy": [
+            119.0,
+            1663.1,
+            1176.0,
+            1889.2
+          ],
+          "conf": 0.763,
+          "text": ""
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0094_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.6,
+            257.6,
+            1169.2,
+            309.3
+          ],
+          "conf": 0.86,
+          "text": "11.2 Coordinate Axes and Coordinate Planes in Three Dimensional Space"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            310.1,
+            1180.0,
+            1123.5
+          ],
+          "conf": 0.932,
+          "text": "Consider three planes intersecting at a point O\nsuch that these three planes are mutually\nperpendicular to each other (Fig 11.1). These\nthree planes intersect along the lines X'OX, Y'OY\nand Z'OZ, called the $x, y$ and $z$-axes, respectively.\nWe may note that these lines are mutually\nperpendicular to each other. These lines constitute\nthe rectangular coordinate system. The planes\nXOY, YOZ and ZOX, called, respectively the\nXY-plane, YZ-plane and the ZX-plane, are\nknown as the three coordinate planes. We take\nthe XOY plane as the plane of the paper and the\nline Z'OZ as perpendicular to the plane XOY. If the plane of the paper is considered\nas horizontal, then the line Z'OZ will be vertical. The distances measured from\nXY-plane upwards in the direction of OZ are taken as positive and those measured\ndownwards in the direction of OZ' are taken as negative. Similarly, the distance\nmeasured to the right of ZX-plane along OY are taken as positive, to the left of\nZX-plane and along OY' as negative, in front of the YZ-plane along OX as positive\nand to the back of it along OX' as negative. The point O is called the origin of the\ncoordinate system. The three coordinate planes divide the space into eight parts known\nas octants. These octants could be named as XOYZ, X'OYZ, X'OY'Z, XOY'Z, XOYZ',\nX'OYZ', X'OY'Z' and XOY'Z'. and denoted by I, II, III, ..., VIII , respectively."
+        },
+        {
+          "order": 2,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.3,
+            1129.5,
+            655.3,
+            1182.4
+          ],
+          "conf": 0.83,
+          "text": "11.3 Coordinates of a Point in Space"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1180.1,
+            764.4,
+            1444.4
+          ],
+          "conf": 0.965,
+          "text": "Having chosen a fixed coordinate system in the\nspace, consisting of coordinate axes, coordinate\nplanes and the origin, we now explain, as to how,\ngiven a point in the space, we associate with it three\ncoordinates $(x,y,z)$ and conversely, given a triplet\nof three numbers $(x, y, z)$, how, we locate a point in\nthe space."
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            774.4,
+            1135.2,
+            1182.0,
+            1467.9
+          ],
+          "conf": 0.954,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1437.0,
+            1179.0,
+            1700.5
+          ],
+          "conf": 0.952,
+          "text": "Given a point P in space, we drop a $\\mathbf{X}$\nperpendicular PM on the XY-plane with M as the\nfoot of this perpendicular (Fig 11.2). Then, from the point M, we draw a perpendicular\nML to the $x$-axis, meeting it at L. Let OL be $x$, LM be $y$ and MP be $z$. Then $x,y$ and $z$\nare called the $x, y$ and $z$ coordinates, respectively, of the point P in the space. In\nFig 11.2, we may note that the point P $(x, y, z)$ lies in the octant XOYZ and so all $x, y,$\n$z$ are positive. If P was in any other octant, the signs of $x, y$ and $z$ would change"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0094_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            260.9,
+            1176.1,
+            346.4
+          ],
+          "conf": 0.945,
+          "text": "accordingly. Thus, to each point P in the space there corresponds an ordered triplet\n$(x, y, z)$ of real numbers."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            335.2,
+            1176.0,
+            601.7
+          ],
+          "conf": 0.971,
+          "text": "Conversely, given any triplet $(x, y, z)$, we would first fix the point L on the $x$-axis\ncorresponding to $x$, then locate the point M in the XY-plane such that $(x, y)$ are the\ncoordinates of the point M in the XY-plane. Note that LM is perpendicular to the\n$x$-axis or is parallel to the $y$-axis. Having reached the point M, we draw a perpendicular\nMP to the XY-plane and locate on it the point P corresponding to $z$. The point P so\nobtained has then the coordinates $(x, y, z)$. Thus, there is a one to one correspondence\nbetween the points in space and ordered triplet $(x, y, z)$ of real numbers."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            593.0,
+            1176.2,
+            1150.6
+          ],
+          "conf": 0.932,
+          "text": "Alternatively, through the point P in the\nspace, we draw three planes parallel to the\ncoordinate planes, meeting the $x$-axis, $y$-axis\nand $z$-axis in the points A, B and C, respectively\n(Fig 11.3). Let OA = $x$, OB = $y$ and OC = $z$.\nThen, the point P will have the coordinates $x, y$\nand $z$ and we write P $(x, y, z)$. Conversely, given\n$x, y$ and $z$, we locate the three points A, B and\nC on the three coordinate axes. Through the\npoints A, B and C we draw planes parallel to\nthe YZ-plane, ZX-plane and XY-plane,\nrespectively. The point of intersection of these three planes,\nnamely, ADPF, BDPE and CEPF is obviously the point P,\ncorresponding to the ordered triplet $(x, y, z)$. We\nobserve that if P $(x, y, z)$ is any point in the space, then $x, y$ and $z$ are perpendicular\ndistances from YZ, ZX and XY planes, respectively."
+        },
+        {
+          "order": 3,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1149.5,
+            1178.1,
+            1292.6
+          ],
+          "conf": 0.934,
+          "text": "Note The coordinates of the origin O are $(0,0,0)$. The coordinates of any point\non the $x$-axis will be as $(x,0,0)$ and the coordinates of any point in the YZ-plane will\nbe as $(0, y, z)$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1286.1,
+            1175.6,
+            1371.4
+          ],
+          "conf": 0.885,
+          "text": "$\\mathit{Remark}$ The sign of the coordinates of a point determine the octant in which the\npoint lies. The following table shows the signs of the coordinates in eight octants."
+        },
+        {
+          "order": 5,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            565.4,
+            1369.0,
+            730.0,
+            1417.4
+          ],
+          "conf": 0.896,
+          "text": "Table 11.1"
+        },
+        {
+          "order": 6,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            147.4,
+            1416.3,
+            1148.3,
+            1704.5
+          ],
+          "conf": 0.969,
+          "text": "<table>\n<thead>\n<tr>\n<th>Octants<br/>Coordinates</th>\n<th>I</th>\n<th>II</th>\n<th>III</th>\n<th>IV</th>\n<th>V</th>\n<th>VI</th>\n<th>VII</th>\n<th>VIII</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>x</td>\n<td>+</td>\n<td>-</td>\n<td>-</td>\n<td>+</td>\n<td>+</td>\n<td>-</td>\n<td>-</td>\n<td>+</td>\n</tr>\n<tr>\n<td>\\nu</td>\n<td>+</td>\n<td>+</td>\n<td>-</td>\n<td>-</td>\n<td>+</td>\n<td>+</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>z</td>\n<td>+</td>\n<td>+</td>\n<td>+</td>\n<td>+</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0094_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            257.1,
+            914.3,
+            308.4
+          ],
+          "conf": 0.804,
+          "text": "Example 1 In Fig 11.3, if P is (2,4,5), find the coordinates of F."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            320.7,
+            1178.8,
+            407.0
+          ],
+          "conf": 0.812,
+          "text": "Solution For the point F, the distance measured along OY is zero. Therefore, the\ncoordinates of F are $(2,0,5)$."
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            411.0,
+            1038.6,
+            462.6
+          ],
+          "conf": 0.763,
+          "text": "Example 2 Find the octant in which the points $(-3,1,2)$ and $(-3,1,-2)$ lie."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            463.8,
+            1179.8,
+            551.6
+          ],
+          "conf": 0.816,
+          "text": "**Solution** From the Table 11.1, the point $(-3,1, 2)$ lies in second octant and the point\n$(-3, 1, -2)$ lies in octant VI."
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            514.5,
+            567.0,
+            783.8,
+            624.0
+          ],
+          "conf": 0.739,
+          "text": "EXERCISE 11.1"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            629.5,
+            1177.1,
+            1049.2
+          ],
+          "conf": 0.94,
+          "text": "1. A point is on the $x$-axis. What are its $y$-coordinate and $z$-coordinates?\n2. A point is in the XZ-plane. What can you say about its $y$-coordinate?\n3. Name the octants in which the following points lie:\n$(1, 2, 3), (4, -2, 3), (4, -2, -5), (4, 2, -5), (-4, 2, -5), (-4, 2, 5),$\n$(-3, -1, 6) (-2, -4, -7).$\n4. Fill in the blanks:\n(i) The $x$-axis and $y$-axis taken together determine a plane known as ________.\n(ii) The coordinates of points in the XY-plane are of the form ________.\n(iii) Coordinate planes divide the space into ________ octants."
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.9,
+            1064.6,
+            622.3,
+            1116.8
+          ],
+          "conf": 0.855,
+          "text": "11.4 Distance between Two Points"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1112.5,
+            641.2,
+            1271.1
+          ],
+          "conf": 0.936,
+          "text": "We have studied about the distance\nbetween two points in two-dimensional\ncoordinate system. Let us now extend this\nstudy to three-dimensional system."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1264.6,
+            642.2,
+            1531.8
+          ],
+          "conf": 0.943,
+          "text": "Let $P(x_1, y_1, z_1)$ and $Q$ $(x_2, y_2, z_2)$\nbe two points referred to a system of\nrectangular axes OX, OY and OZ.\nThrough the points P and Q draw planes\nparallel to the coordinate planes so as to\nform a rectangular parallelopiped with one\ndiagonal PQ (Fig 11.4)."
+        },
+        {
+          "order": 9,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            630.5,
+            1092.1,
+            1173.9,
+            1554.2
+          ],
+          "conf": 0.94,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            837.7,
+            1540.9,
+            956.0,
+            1589.2
+          ],
+          "conf": 0.847,
+          "text": "Fig 11.4"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1526.7,
+            628.8,
+            1611.6
+          ],
+          "conf": 0.794,
+          "text": "Now, since $\\angle PAQ$ is a right\nangle, it follows that, in triangle PAQ,"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            378.8,
+            1607.0,
+            1072.1,
+            1658.9
+          ],
+          "conf": 0.831,
+          "text": "$$PQ^2 = PA^2 + AQ^2 \\qquad \\dots (1)$$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.5,
+            1657.0,
+            1048.1,
+            1707.5
+          ],
+          "conf": 0.858,
+          "text": "Also, triangle ANQ is right angle triangle with $\\angle$ANQ a right angle."
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0094_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            254.8,
+            1114.0,
+            309.7
+          ],
+          "conf": 0.829,
+          "text": "Therefore $AQ^2 = AN^2 + NQ^2$ ... (2)"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            218.8,
+            295.6,
+            596.4,
+            345.6
+          ],
+          "conf": 0.718,
+          "text": "From (1) and (2), we have"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            417.0,
+            339.5,
+            754.4,
+            391.8
+          ],
+          "conf": 0.786,
+          "text": "$$PQ^2 = PA^2 + AN^2 + NQ^2$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            386.3,
+            988.0,
+            442.3
+          ],
+          "conf": 0.837,
+          "text": "Now $\\mathrm{PA}=y_{2}-y_{1}, \\mathrm{AN}=x_{2}-x_{1}$ and $\\mathrm{NQ}=z_{2}-z_{1}$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            431.7,
+            836.7,
+            491.3
+          ],
+          "conf": 0.847,
+          "text": "Hence $PQ^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            491.9,
+            895.6,
+            558.6
+          ],
+          "conf": 0.883,
+          "text": "Therefore $PQ = \\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            551.4,
+            1029.1,
+            605.5
+          ],
+          "conf": 0.884,
+          "text": "This gives us the distance between two points $(x_1, y_1, z_1)$ and $(x_2, y_2, z_2)$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            609.7,
+            1177.8,
+            719.9
+          ],
+          "conf": 0.578,
+          "text": "In particular, if $x_1 = y_1 = z_1 = 0$, i.e., point P is origin O, then OQ = $\\sqrt{x_2^2 + y_2^2 + z_2^2}$,\nwhich gives the distance between the origin O and any point Q ($x_2, y_2, z_2$)."
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            721.2,
+            1102.1,
+            1013.1
+          ],
+          "conf": 0.726,
+          "text": "Example 3 Find the distance between the points P(1, $-3$, 4) and Q ($-4$, 1, 2).\n\nSolution The distance PQ between the points P (1,$-3$, 4) and Q ($-4$, 1, 2) is\n\n$$PQ = \\sqrt{(-4-1)^2 + (1+3)^2 + (2-4)^2}$$\n\n$$= \\sqrt{25 + 16 + 4}$$\n\n$$= \\sqrt{45} = 3\\sqrt{5} \\text{ units}$$"
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1018.2,
+            1176.5,
+            1367.2
+          ],
+          "conf": 0.756,
+          "text": "Example 4 Show that the points P $(-2, 3, 5)$, Q $(1, 2, 3)$ and R $(7, 0, -1)$ are collinear.\n\nSolution We know that points are said to be collinear if they lie on a line.\n\nNow, $\\quad \\text{PQ} = \\sqrt{(1+2)^2 + (2-3)^2 + (3-5)^2} = \\sqrt{9+1+4} = \\sqrt{14}$\n\n$\\quad \\text{QR} = \\sqrt{(7-1)^2 + (0-2)^2 + (-1-3)^2} = \\sqrt{36+4+16} = \\sqrt{56} = 2\\sqrt{14}$\n\nand $\\quad \\text{PR} = \\sqrt{(7+2)^2 + (0-3)^2 + (-1-5)^2} = \\sqrt{81+9+36} = \\sqrt{126} = 3\\sqrt{14}$\n\nThus, $\\text{PQ} + \\text{QR} = \\text{PR}$. Hence, P, Q and R are collinear."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1320.7,
+            830.4,
+            1372.8
+          ],
+          "conf": 0.778,
+          "text": "Thus, $PQ + QR = PR$. Hence, $P$, $Q$ and $R$ are collinear."
+        },
+        {
+          "order": 11,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1373.3,
+            1177.5,
+            1688.1
+          ],
+          "conf": 0.767,
+          "text": "Example 5 Are the points A (3, 6, 9), B (10, 20, 30) and C (25, $-41$, 5), the vertices\nof a right angled triangle?\n\nSolution By the distance formula, we have\n$$AB^2 = (10 - 3)^2 + (20 - 6)^2 + (30 - 9)^2$$\n$$= 49 + 196 + 441 = 686$$\n$$BC^2 = (25 - 10)^2 + (-41 - 20)^2 + (5 - 30)^2$$\n$$= 225 + 3721 + 625 = 4571$$"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0094_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            217.9,
+            256.1,
+            748.7,
+            350.9
+          ],
+          "conf": 0.922,
+          "text": "$$CA^2 \\quad = (3 - 25)^2 + (6 + 41)^2 + (9 - 5)^2$$\n$$= 484 + 2209 + 16 = 2709$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            351.3,
+            563.3,
+            399.9
+          ],
+          "conf": 0.887,
+          "text": "We find that $CA^2 + AB^2 \\neq BC^2$."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            398.2,
+            799.0,
+            448.2
+          ],
+          "conf": 0.928,
+          "text": "Hence, the triangle ABC is not a right angled triangle."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.6,
+            453.3,
+            1174.8,
+            829.2
+          ],
+          "conf": 0.704,
+          "text": "Example 6 Find the equation of set of points P such that $PA^2 + PB^2 = 2k^2$, where\nA and B are the points $(3, 4, 5)$ and $(-1, 3, -7)$, respectively.\n\nSolution Let the coordinates of point P be $(x, y, z)$.\nHere $$PA^2 = (x - 3)^2 + (y - 4)^2 + (z - 5)^2$$\n$$PB^2 = (x + 1)^2 + (y - 3)^2 + (z + 7)^2$$\nBy the given condition $PA^2 + PB^2 = 2k^2$, we have\n$$(x - 3)^2 + (y - 4)^2 + (z - 5)^2 + (x + 1)^2 + (y - 3)^2 + (z + 7)^2 = 2k^2$$\ni.e., $$2x^2 + 2y^2 + 2z^2 - 4x - 14y + 4z = 2k^2 - 109.$$"
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            514.5,
+            829.7,
+            783.0,
+            887.5
+          ],
+          "conf": 0.754,
+          "text": "EXERCISE 11.2"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.8,
+            892.4,
+            1179.8,
+            1455.0
+          ],
+          "conf": 0.911,
+          "text": "1. Find the distance between the following pairs of points:\n(i) $(2, 3, 5)$ and $(4, 3, 1)$ (ii) $(-3, 7, 2)$ and $(2, 4, -1)$\n(iii) $(-1, 3, -4)$ and $(1, -3, 4)$ (iv) $(2, -1, 3)$ and $(-2, 1, 3)$.\n2. Show that the points $(-2, 3, 5), (1, 2, 3)$ and $(7, 0, -1)$ are collinear.\n3. Verify the following:\n(i) $(0, 7, -10), (1, 6, -6)$ and $(4, 9, -6)$ are the vertices of an isosceles triangle.\n(ii) $(0, 7, 10), (-1, 6, 6)$ and $(-4, 9, 6)$ are the vertices of a right angled triangle.\n(iii) $(-1, 2, 1), (1, -2, 5), (4, -7, 8)$ and $(2, -3, 4)$ are the vertices of a parallelogram.\n4. Find the equation of the set of points which are equidistant from the points\n$(1, 2, 3)$ and $(3, 2, -1)$.\n5. Find the equation of the set of points P, the sum of whose distances from\nA $(4, 0, 0)$ and B $(-4, 0, 0)$ is equal to 10."
+        },
+        {
+          "order": 6,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            463.6,
+            1468.1,
+            833.4,
+            1519.2
+          ],
+          "conf": 0.775,
+          "text": "Miscellaneous Examples"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1519.0,
+            1178.8,
+            1695.9
+          ],
+          "conf": 0.787,
+          "text": "Example 7 Show that the points A (1, 2, 3), B ($-1, -2, -1$), C (2, 3, 2) and\nD (4, 7, 6) are the vertices of a parallelogram ABCD, but it is not a rectangle.\n\nSolution To show ABCD is a parallelogram we need to show opposite side are equal\nNote that."
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0094_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            207.7,
+            266.4,
+            943.8,
+            335.9
+          ],
+          "conf": 0.876,
+          "text": "$$AB = \\sqrt{(-1-1)^2+(-2-2)^2+(-1-3)^2} = \\sqrt{4+16+16} = 6$$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            210.0,
+            339.7,
+            930.5,
+            405.6
+          ],
+          "conf": 0.882,
+          "text": "$$BC = \\sqrt{(2+1)^2+(3+2)^2+(2+1)^2} = \\sqrt{9+25+9} = \\sqrt{43}$$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            207.7,
+            408.5,
+            905.5,
+            474.1
+          ],
+          "conf": 0.87,
+          "text": "$$CD = \\sqrt{(4-2)^2+(7-3)^2+(6-2)^2} = \\sqrt{4+16+16} = 6$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            205.7,
+            479.4,
+            907.8,
+            544.9
+          ],
+          "conf": 0.88,
+          "text": "$$DA = \\sqrt{(1-4)^2+(2-7)^2+(3-6)^2} = \\sqrt{9+25+9}=\\sqrt{43}$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            553.5,
+            878.0,
+            604.4
+          ],
+          "conf": 0.907,
+          "text": "Since $AB = CD$ and $BC = AD$, ABCD is a parallelogram."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            601.4,
+            1179.1,
+            687.0
+          ],
+          "conf": 0.944,
+          "text": "Now, it is required to prove that ABCD is not a rectangle. For this, we show that\ndiagonals AC and BD are unequal. We have"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            219.4,
+            695.4,
+            900.1,
+            761.5
+          ],
+          "conf": 0.877,
+          "text": "$$AC \\quad = \\sqrt{(2-1)^2+(3-2)^2+(2-3)^2} = \\sqrt{1+1+1}=\\sqrt{3}$$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            218.9,
+            764.6,
+            1000.3,
+            831.8
+          ],
+          "conf": 0.866,
+          "text": "$$BD \\quad = \\sqrt{(4+1)^2+(7+2)^2+(6+1)^2} = \\sqrt{25+81+49}=\\sqrt{155} .$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            834.1,
+            667.8,
+            885.0
+          ],
+          "conf": 0.912,
+          "text": "Since $AC \\neq BD$, ABCD is not a rectangle."
+        },
+        {
+          "order": 9,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            897.0,
+            1179.2,
+            1014.0
+          ],
+          "conf": 0.928,
+          "text": "Note We can also show that ABCD is a parallelogram, using the property that\ndiagonals AC and BD bisect each other."
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1023.9,
+            1176.8,
+            1366.1
+          ],
+          "conf": 0.631,
+          "text": "Example 8 Find the equation of the set of the points P such that its distances from the\npoints A (3, 4, $-5$) and B ($-2, 1, 4$) are equal.\n\nSolution If P ($x, y, z$) be any point such that PA = PB.\n\nNow $\\sqrt{(x-3)^2 + (y-4)^2 + (z+5)^2} = \\sqrt{(x+2)^2 + (y-1)^2 + (z-4)^2}$\n\nor $(x-3)^2 + (y-4)^2 + (z+5)^2 = (x+2)^2 + (y-1)^2 + (z-4)^2$\n\nor $10x + 6y - 18z - 29 = 0.$"
+        },
+        {
+          "order": 11,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1373.1,
+            1178.3,
+            1587.1
+          ],
+          "conf": 0.677,
+          "text": "Example 9 The centroid of a triangle ABC is at the point $(1, 1, 1)$. If the coordinates\nof A and B are $(3, -5, 7)$ and $(-1, 7, -6)$, respectively, find the coordinates of the\npoint C.\n\nSolution Let the coordinates of C be $(x, y, z)$ and the coordinates of the centroid G be\n$(1, 1, 1)$. Then"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0094_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            220.6,
+            266.4,
+            1177.7,
+            364.6
+          ],
+          "conf": 0.927,
+          "text": "$$\\frac{x+3-1}{3}=1, \\text { i.e., } x=1 ; \\frac{y-5+7}{3}=1, \\text { i.e., } y=1 ; \\frac{z+7-6}{3}=1, \\text { i.e., } z=2 .$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            218.9,
+            356.2,
+            705.0,
+            406.2
+          ],
+          "conf": 0.912,
+          "text": "Hence, coordinates of C are $(1, 1, 2)$."
+        },
+        {
+          "order": 2,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            370.8,
+            426.0,
+            926.2,
+            477.1
+          ],
+          "conf": 0.829,
+          "text": "Miscellaneous Exercise on Chapter 11"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.0,
+            482.2,
+            1179.9,
+            816.0
+          ],
+          "conf": 0.98,
+          "text": "1. Three vertices of a parallelogram ABCD are A(3, $-1$, 2), B (1, 2, $-4$) and\nC ($-1$, 1, 2). Find the coordinates of the fourth vertex.\n\n2. Find the lengths of the medians of the triangle with vertices A (0, 0, 6), B (0,4, 0)\nand (6, 0, 0).\n\n3. If the origin is the centroid of the triangle PQR with vertices P (2$a$, 2, 6),\nQ ($-4$, 3$b$, $-10$) and R(8, 14, 2$c$), then find the values of $a$, $b$ and $c$.\n\n4. If A and B be the points (3, 4, 5) and ($-1$, 3, $-7$), respectively, find the equation of\nthe set of points P such that $\\text{PA}^2 + \\text{PB}^2 = k^2$, where $k$ is a constant."
+        },
+        {
+          "order": 4,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            861.5,
+            1179.4,
+            1633.6
+          ],
+          "conf": 0.861,
+          "text": "Summary\n\nIn three dimensions, the coordinate axes of a rectangular Cartesian coordi-\nnate system are three mutually perpendicular lines. The axes are called the $x$,\n$y$ and $z$-axes.\nThe three planes determined by the pair of axes are the coordinate planes,\ncalled XY, YZ and ZX-planes.\nThe three coordinate planes divide the space into eight parts known as octants.\nThe coordinates of a point P in three dimensional geometry is always written\nin the form of triplet like $(x, y, z)$. Here $x$, $y$ and $z$ are the distances from the\nYZ, ZX and XY-planes.\n(i) Any point on $x$-axis is of the form $(x, 0, 0)$\n(ii) Any point on $y$-axis is of the form $(0, y, 0)$\n(iii) Any point on $z$-axis is of the form $(0, 0, z)$.\nDistance between two points $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$ is given by\n\n$$PQ = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$$"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0094_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            255.7,
+            1178.8,
+            932.9
+          ],
+          "conf": 0.912,
+          "text": "Historical Note\n\nRene’ Descartes (1596–1650), the father of analytical geometry, essentially dealt\nwith plane geometry only in 1637. The same is true of his co-inventor Pierre\nFermat (1601-1665) and La Hire (1640-1718). Although suggestions for the three\ndimensional coordinate geometry can be found in their works but no details.\nDescartes had the idea of coordinates in three dimensions but did not develop it.\nJ.Bernoulli (1667-1748) in a letter of 1715 to Leibnitz introduced the three coor-\ndinate planes which we use today. It was Antoinette Parent\n(1666-1716), who gave a systematic development of analytical solid geometry\nfor the first time in a paper presented to the French Academy in 1700.\nL.Euler (1707-1783) took up systematically the three dimensional coordinate ge-\nometry, in Chapter 5 of the appendix to the second volume of his “Introduction\nto Geometry” in 1748.\nIt was not until the middle of the nineteenth century that geometry was extended\nto more than three dimensions, the well-known application of which is in the\nSpace-Time Continuum of Einstein’s Theory of Relativity."
+        }
+      ],
+      "page": 8
+    }
+  ]
+}

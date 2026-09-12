@@ -1,0 +1,2589 @@
+{
+  "book": "1003",
+  "relpath": "dataset/input/eng/10/1003.pdf",
+  "num_pages": 14,
+  "pages": [
+    {
+      "image": "0072_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            546.9,
+            216.6,
+            759.1,
+            444.2
+          ],
+          "conf": 0.916,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            608.0,
+            409.8,
+            701.1,
+            444.6
+          ],
+          "conf": 0.709,
+          "text": "$1062\\text{CH}03$"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            161.5,
+            459.6,
+            1179.6,
+            641.2
+          ],
+          "conf": 0.915,
+          "text": "PAIR OF LINEAR EQUATIONS\nIN TWO VARIABLES 3"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.0,
+            708.5,
+            372.6,
+            759.4
+          ],
+          "conf": 0.919,
+          "text": "3.1 Introduction"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            761.0,
+            932.1,
+            810.9
+          ],
+          "conf": 0.933,
+          "text": "You must have come across situations like the one given below :"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            809.6,
+            1179.1,
+            1048.4
+          ],
+          "conf": 0.981,
+          "text": "Akhila went to a fair in her village. She wanted to enjoy rides on the Giant Wheel\nand play Hoopla (a game in which you throw a ring on the items kept in a stall, and if\nthe ring covers any object completely, you get it). The number of times she played\nHoopla is half the number of rides she had on the Giant Wheel. If each ride costs\n$₹ 3$, and a game of Hoopla costs $₹ 4$, how would you find out the number of rides she\nhad and how many times she played Hoopla, provided she spent $₹ 20$."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1049.2,
+            1178.7,
+            1174.0
+          ],
+          "conf": 0.961,
+          "text": "May be you will try it by considering different cases. If she has one ride, is it\npossible? Is it possible to have two rides? And so on. Or you may use the knowledge\nof Class IX, to represent such situations as linear equations in two variables."
+        },
+        {
+          "order": 7,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            316.0,
+            1197.6,
+            1010.1,
+            1702.0
+          ],
+          "conf": 0.977,
+          "text": ""
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0072_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            121.2,
+            191.1,
+            1178.2,
+            239.2
+          ],
+          "conf": 0.792,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.1,
+            192.1,
+            627.6,
+            237.7
+          ],
+          "conf": 0.574,
+          "text": "PAIR OF LINEAR EQUATIONS IN TWO VARIABLES"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            257.6,
+            445.3,
+            308.0
+          ],
+          "conf": 0.913,
+          "text": "Let us try this approach."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            306.1,
+            1177.4,
+            392.5
+          ],
+          "conf": 0.952,
+          "text": "Denote the number of rides that Akhila had by $x$, and the number of times she\nplayed Hoopla by $y$. Now the situation can be represented by the two equations:"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            578.6,
+            395.6,
+            1178.1,
+            482.4
+          ],
+          "conf": 0.907,
+          "text": "$$y = \\frac{1}{2} x \\eqno(1)$$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            502.7,
+            478.4,
+            1177.3,
+            529.2
+          ],
+          "conf": 0.906,
+          "text": "$$3x + 4y = 20 \\tag{2}$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            526.9,
+            1178.7,
+            612.4
+          ],
+          "conf": 0.956,
+          "text": "Can we find the solutions of this pair of equations? There are several ways of\nfinding these, which we will study in this chapter."
+        },
+        {
+          "order": 7,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.2,
+            625.9,
+            1019.5,
+            677.7
+          ],
+          "conf": 0.911,
+          "text": "3.2 Graphical Method of Solution of a Pair of Linear Equations"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            678.1,
+            1178.6,
+            917.3
+          ],
+          "conf": 0.98,
+          "text": "A pair of linear equations which has no solution, is called an $inconsistent$ pair of linear\nequations. A pair of linear equations in two variables, which has a solution, is called a\n$consistent$ pair of linear equations. A pair of linear equations which are equivalent has\ninfinitely many distinct common solutions. Such a pair is called a $dependent$ pair of\nlinear equations in two variables. Note that a dependent pair of linear equations is\nalways consistent."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            915.6,
+            1177.1,
+            1001.5
+          ],
+          "conf": 0.947,
+          "text": "We can now summarise the behaviour of lines representing a pair of linear equations\nin two variables and the existence of solutions as follows:"
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            204.6,
+            1008.9,
+            1178.1,
+            1268.4
+          ],
+          "conf": 0.975,
+          "text": "(i) the lines may intersect in a single point. In this case, the pair of equations\nhas a unique solution (consistent pair of equations).\n\n(ii) the lines may be parallel. In this case, the equations have no solution\n(inconsistent pair of equations).\n\n(iii) the lines may be coincident. In this case, the equations have infinitely many\nsolutions [dependent (consistent) pair of equations]."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            1267.9,
+            791.8,
+            1318.2
+          ],
+          "conf": 0.893,
+          "text": "Consider the following three pairs of equations."
+        },
+        {
+          "order": 12,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            200.7,
+            1312.1,
+            1046.1,
+            1448.8
+          ],
+          "conf": 0.955,
+          "text": "(i) $x - 2y = 0$ and $3x + 4y - 20 = 0$ (The lines intersect)\n(ii) $2x + 3y - 9 = 0$ and $4x + 6y - 18 = 0$ (The lines coincide)\n(iii) $x + 2y - 4 = 0$ and $2x + 4y - 12 = 0$ (The lines are parallel)"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            1457.1,
+            1177.7,
+            1629.1
+          ],
+          "conf": 0.753,
+          "text": "Let us now write down, and compare, the values of $\\frac{a_1}{a_2}$, $\\frac{b_1}{b_2}$ and $\\frac{c_1}{c_2}$ in all the\n\nthree examples. Here, $a_1$, $b_1$, $c_1$ and $a_2$, $b_2$, $c_2$ denote the coefficients of equations\ngiven in the general form in Section 3.2."
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0072_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            574.2,
+            256.7,
+            722.9,
+            304.2
+          ],
+          "conf": 0.887,
+          "text": "Table 3.1"
+        },
+        {
+          "order": 1,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            122.5,
+            290.3,
+            1179.5,
+            870.0
+          ],
+          "conf": 0.986,
+          "text": "<table>\n<thead>\n<tr>\n<th>Sl<br/>No.</th>\n<th>Pair of lines</th>\n<th>$\\frac{a_1}{a_2}$</th>\n<th>$\\frac{b_1}{b_2}$</th>\n<th>$\\frac{c_1}{c_2}$</th>\n<th>Compare the<br/>ratios</th>\n<th>Graphical<br/>representation</th>\n<th>Algebraic<br/>interpretation</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1.</td>\n<td>$x-2y=0$<br/>$3x+4y-20=0$</td>\n<td>$\\frac{1}{3}$</td>\n<td>$\\frac{-2}{4}$</td>\n<td>$\\frac{0}{-20}$</td>\n<td>$\\frac{a_1}{a_2} \\neq \\frac{b_1}{b_2}$</td>\n<td>Intersecting<br/>lines</td>\n<td>Exactly one<br/>solution<br/>(unique)</td>\n</tr>\n<tr>\n<td>2.</td>\n<td>$2x+3y-9=0$<br/>$4x+6y-18=0$</td>\n<td>$\\frac{2}{4}$</td>\n<td>$\\frac{3}{6}$</td>\n<td>$\\frac{-9}{-18}$</td>\n<td>$\\frac{a_1}{a_2} = \\frac{b_1}{b_2} = \\frac{c_1}{c_2}$</td>\n<td>Coincident<br/>lines</td>\n<td>Infinitely<br/>many solutions</td>\n</tr>\n<tr>\n<td>3.</td>\n<td>$x+2y-4=0$<br/>$2x+4y-12=0$</td>\n<td>$\\frac{1}{2}$</td>\n<td>$\\frac{2}{4}$</td>\n<td>$\\frac{-4}{-12}$</td>\n<td>$\\frac{a_1}{a_2} = \\frac{b_1}{b_2} \\neq \\frac{c_1}{c_2}$</td>\n<td>Parallel lines</td>\n<td>No solution</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.5,
+            882.4,
+            1177.8,
+            931.8
+          ],
+          "conf": 0.924,
+          "text": "From the table above, you can observe that if the lines represented by the equation"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            420.8,
+            935.2,
+            673.4,
+            990.3
+          ],
+          "conf": 0.866,
+          "text": "$$a_1x + b_1y + c_1 = 0$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.5,
+            991.2,
+            672.4,
+            1045.6
+          ],
+          "conf": 0.851,
+          "text": "and $a_2x + b_2y + c_2 = 0$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.1,
+            1047.8,
+            650.8,
+            1140.8
+          ],
+          "conf": 0.797,
+          "text": "are (i) intersecting, then $\\frac{a_1}{a_2} \\neq \\frac{b_1}{b_2}$."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            255.3,
+            1133.2,
+            704.2,
+            1228.9
+          ],
+          "conf": 0.826,
+          "text": "(ii) coincident, then $\\frac{a_1}{a_2} = \\frac{b_1}{b_2} = \\frac{c_1}{c_2}$."
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            249.7,
+            1217.5,
+            660.5,
+            1314.0
+          ],
+          "conf": 0.829,
+          "text": "(iii) parallel, then $\\frac{a_1}{a_2} = \\frac{b_1}{b_2} \\neq \\frac{c_1}{c_2}$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1307.2,
+            1177.7,
+            1392.9
+          ],
+          "conf": 0.933,
+          "text": "In fact, the converse is also true for any pair of lines. You can verify them by\nconsidering some more examples by yourself."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            1389.3,
+            903.5,
+            1439.1
+          ],
+          "conf": 0.88,
+          "text": "Let us now consider some more examples to illustrate it."
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1446.5,
+            1180.7,
+            1725.2
+          ],
+          "conf": 0.681,
+          "text": "Example 1 : Check graphically whether the pair of equations\n$$x + 3y = 6 \\eqno(1)$$\nand $$2x - 3y = 12 \\eqno(2)$$\nis consistent. If so, solve them graphically.\n\nSolution : Let us draw the graphs of the Equations (1) and (2). For this, we find two\nsolutions of each of the equations, which are given in Table 3.2"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0072_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            121.3,
+            191.1,
+            1178.1,
+            238.6
+          ],
+          "conf": 0.797,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.4,
+            192.1,
+            627.8,
+            237.1
+          ],
+          "conf": 0.567,
+          "text": "PAIR OF LINEAR EQUATIONS IN TWO VARIABLES"
+        },
+        {
+          "order": 2,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            573.8,
+            256.7,
+            724.9,
+            304.6
+          ],
+          "conf": 0.876,
+          "text": "Table 3.2"
+        },
+        {
+          "order": 3,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            164.6,
+            305.7,
+            572.5,
+            493.2
+          ],
+          "conf": 0.965,
+          "text": "<table>\n<thead>\n<tr>\n<th>x</th>\n<th>0</th>\n<th>6</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>y = \\frac{6-x}{3}</td>\n<td>2</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 4,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            617.1,
+            305.9,
+            1030.4,
+            493.8
+          ],
+          "conf": 0.963,
+          "text": "<table>\n<thead>\n<tr>\n<th>x</th>\n<th>0</th>\n<th>3</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>y = \\frac{2x - 12}{3}</td>\n<td>-4</td>\n<td>-2</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            514.3,
+            579.3,
+            735.1
+          ],
+          "conf": 0.976,
+          "text": "Plot the points $A(0, 2), B(6, 0),$\n$P(0, - 4)$ and $Q(3, - 2)$ on graph\npaper, and join the points to form the\nlines $AB$ and $PQ$ as shown in\nFig. 3.1."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            743.1,
+            579.1,
+            1004.0
+          ],
+          "conf": 0.978,
+          "text": "We observe that there is a point\nB (6, 0) common to both the lines\nAB and PQ. So, the solution of the\npair of linear equations is $x = 6$ and\n$y = 0$, i.e., the given pair of equations\nis consistent."
+        },
+        {
+          "order": 7,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            573.6,
+            494.6,
+            1168.8,
+            1006.4
+          ],
+          "conf": 0.944,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            808.9,
+            1005.9,
+            937.2,
+            1055.1
+          ],
+          "conf": 0.906,
+          "text": "Fig. 3.1"
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1054.1,
+            1179.9,
+            1492.6
+          ],
+          "conf": 0.567,
+          "text": "Example 2 : Graphically, find whether the following pair of equations has no solution,\nunique solution or infinitely many solutions:\n$$5x - 8y + 1 = 0 \\eqno(1)$$\n$$3x - \\frac{24}{5}y + \\frac{3}{5} = 0 \\eqno(2)$$\nSolution : Multiplying Equation (2) by $\\frac{5}{3}$, we get\n$$5x - 8y + 1 = 0$$\nBut, this is the same as Equation (1). Hence the lines represented by Equations (1)\nand (2) are coincident. Therefore, Equations (1) and (2) have infinitely many solutions.\nPlot few points on the graph and verify it yourself."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.4,
+            1453.7,
+            827.4,
+            1503.3
+          ],
+          "conf": 0.861,
+          "text": "Plot few points on the graph and verify it yourself."
+        },
+        {
+          "order": 11,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1513.9,
+            1178.8,
+            1707.7
+          ],
+          "conf": 0.911,
+          "text": "Example 3 : Champa went to a ‘Sale’ to purchase some pants and skirts. When her\nfriends asked her how many of each she had bought, she answered, “The number of\nskirts is two less than twice the number of pants purchased. Also, the number of skirts\nis four less than four times the number of pants purchased”. Help her friends to find\nhow many pants and skirts Champa bought."
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0072_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            257.3,
+            1178.2,
+            342.8
+          ],
+          "conf": 0.951,
+          "text": "Solution : Let us denote the number of pants by $x$ and the number of skirts by $y$. Then\nthe equations formed are :"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            127.7,
+            344.3,
+            1177.4,
+            438.1
+          ],
+          "conf": 0.794,
+          "text": "$$y = 2x - 2 \\tag{1}$$\nand $$y = 4x - 4 \\tag{2}$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            452.8,
+            576.2,
+            610.3
+          ],
+          "conf": 0.962,
+          "text": "Let us draw the graphs of\nEquations (1) and (2) by finding two\nsolutions for each of the equations.\nThey are given in Table 3.3."
+        },
+        {
+          "order": 3,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            299.3,
+            622.8,
+            449.8,
+            670.7
+          ],
+          "conf": 0.918,
+          "text": "Table 3.3"
+        },
+        {
+          "order": 4,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            192.4,
+            678.9,
+            545.6,
+            834.5
+          ],
+          "conf": 0.946,
+          "text": "<table>\n<thead>\n<tr>\n<th>x</th>\n<th>2</th>\n<th>0</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>y = 2x - 2</td>\n<td>2</td>\n<td>- 2</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 5,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            192.7,
+            848.0,
+            545.9,
+            1002.2
+          ],
+          "conf": 0.934,
+          "text": "<table>\n<thead>\n<tr>\n<th>x</th>\n<th>0</th>\n<th>1</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>y = 4x - 4</td>\n<td>- 4</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 6,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            570.4,
+            470.2,
+            1175.7,
+            1009.3
+          ],
+          "conf": 0.965,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            809.1,
+            1013.3,
+            937.7,
+            1062.7
+          ],
+          "conf": 0.915,
+          "text": "Fig. 3.2"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1080.0,
+            1178.1,
+            1166.6
+          ],
+          "conf": 0.934,
+          "text": "Plot the points and draw the lines passing through them to represent the equations,\nas shown in Fig. 3.2."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1168.1,
+            1178.1,
+            1292.8
+          ],
+          "conf": 0.947,
+          "text": "The two lines intersect at the point $(1, 0)$. So, $x = 1, y = 0$ is the required solution\nof the pair of linear equations, i.e., the number of pants she purchased is 1 and she did\nnot buy any skirt."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1309.1,
+            1178.3,
+            1398.0
+          ],
+          "conf": 0.923,
+          "text": "**Verify** the answer by checking whether it satisfies the conditions of the given\nproblem."
+        },
+        {
+          "order": 11,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.0,
+            1424.8,
+            773.2,
+            1474.6
+          ],
+          "conf": 0.806,
+          "text": "EXERCISE 3.1"
+        },
+        {
+          "order": 12,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.6,
+            1481.2,
+            1178.6,
+            1667.8
+          ],
+          "conf": 0.909,
+          "text": "1. Form the pair of linear equations in the following problems, and find their solutions\ngraphically.\n(i) 10 students of Class X took part in a Mathematics quiz. If the number of girls is 4\nmore than the number of boys, find the number of boys and girls who took part in\nthe quiz."
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0072_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            121.3,
+            190.6,
+            1178.5,
+            238.8
+          ],
+          "conf": 0.779,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.2,
+            192.1,
+            626.9,
+            237.3
+          ],
+          "conf": 0.617,
+          "text": "PAIR OF LINEAR EQUATIONS IN TWO VARIABLES"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            208.9,
+            256.5,
+            1178.8,
+            340.3
+          ],
+          "conf": 0.895,
+          "text": "(ii) 5 pencils and 7 pens together cost ₹ 50, whereas 7 pencils and 5 pens together\ncost ₹ 46. Find the cost of one pencil and that of one pen."
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.7,
+            348.1,
+            1177.7,
+            472.7
+          ],
+          "conf": 0.779,
+          "text": "2. On comparing the ratios $\\frac{a_1}{a_2}$, $\\frac{b_1}{b_2}$ and $\\frac{c_1}{c_2}$, find out whether the lines representing the\nfollowing pairs of linear equations intersect at a point, are parallel or coincident:"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            209.7,
+            475.9,
+            946.9,
+            655.7
+          ],
+          "conf": 0.856,
+          "text": "(i) $5x - 4y + 8 = 0$                                                               (ii) $9x + 3y + 12 = 0$\n    $7x + 6y - 9 = 0$                                                                 $18x + 6y + 24 = 0$\n\n(iii) $6x - 3y + 10 = 0$\n    $2x - y + 9 = 0$"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.2,
+            662.5,
+            1178.8,
+            794.0
+          ],
+          "conf": 0.919,
+          "text": "3. On comparing the ratios $\\frac{a_1}{a_2}$, $\\frac{b_1}{b_2}$ and $\\frac{c_1}{c_2}$, find out whether the following pair of linear\nequations are consistent, or inconsistent."
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            207.2,
+            790.2,
+            1097.1,
+            1016.9
+          ],
+          "conf": 0.863,
+          "text": "(i) $3x + 2y = 5$ ; $2x - 3y = 7$ (ii) $2x - 3y = 8$ ; $4x - 6y = 9$\n(iii) $\\frac{3}{2}x + \\frac{5}{3}y = 7$ ; $9x - 10y = 14$ (iv) $5x - 3y = 11$ ; $-10x + 6y = -22$\n(v) $\\frac{4}{3}x + 2y = 8$ ; $2x + 3y = 12$"
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.4,
+            1027.5,
+            1179.2,
+            1108.5
+          ],
+          "conf": 0.897,
+          "text": "4. Which of the following pairs of linear equations are consistent/inconsistent? If\nconsistent, obtain the solution graphically:"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            207.1,
+            1102.6,
+            634.8,
+            1273.6
+          ],
+          "conf": 0.868,
+          "text": "(i) $x + y = 5$, $2x + 2y = 10$\n(ii) $x - y = 8$, $3x - 3y = 16$\n(iii) $2x + y - 6 = 0$, $4x - 2y - 4 = 0$\n(iv) $2x - 2y - 2 = 0$, $4x - 4y - 5 = 0$"
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.6,
+            1288.0,
+            1176.9,
+            1368.2
+          ],
+          "conf": 0.903,
+          "text": "**5.** Half the perimeter of a rectangular garden, whose length is 4 m more than its width, is\n36 m. Find the dimensions of the garden."
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.6,
+            1371.0,
+            1177.9,
+            1452.0
+          ],
+          "conf": 0.867,
+          "text": "6. Given the linear equation $2x + 3y - 8 = 0$, write another linear equation in two variables\nsuch that the geometrical representation of the pair so formed is:"
+        },
+        {
+          "order": 11,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            207.6,
+            1445.7,
+            903.4,
+            1534.4
+          ],
+          "conf": 0.836,
+          "text": "(i) intersecting lines                                                               (ii) parallel lines\n(iii) coincident lines"
+        },
+        {
+          "order": 12,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.3,
+            1536.9,
+            1177.8,
+            1649.6
+          ],
+          "conf": 0.897,
+          "text": "7. Draw the graphs of the equations $x - y + 1 = 0$ and $3x + 2y - 12 = 0$. Determine the\ncoordinates of the vertices of the triangle formed by these lines and the $x$-axis, and\nshade the triangular region."
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0072_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.6,
+            257.3,
+            988.1,
+            310.5
+          ],
+          "conf": 0.859,
+          "text": "3.3 Algebraic Methods of Solving a Pair of Linear Equations"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            325.3,
+            1176.6,
+            650.6
+          ],
+          "conf": 0.754,
+          "text": "In the previous section, we discussed how to solve a pair of linear equations graphically.\nThe graphical method is not convenient in cases when the point representing the\nsolution of the linear equations has non-integral coordinates like $\\left(\\sqrt{3}, 2\\sqrt{7}\\right)$,\n$(-1.75, 3.3), \\left(\\frac{4}{13}, \\frac{1}{19}\\right)$, etc. There is every possibility of making mistakes while reading\nsuch coordinates. Is there any alternative method of finding the solution? There are\nseveral algebraic methods, which we shall now discuss."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            664.6,
+            1177.4,
+            753.4
+          ],
+          "conf": 0.871,
+          "text": "3.3.1 Substitution Method : We shall explain the method of substitution by taking\nsome examples."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.2,
+            764.0,
+            1178.2,
+            910.9
+          ],
+          "conf": 0.698,
+          "text": "Example 4 : Solve the following pair of equations by substitution method:\n$$7x - 15y = 2 \\tag{1}$$\n$$x + 2y = 3 \\tag{2}$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            909.0,
+            273.8,
+            958.0
+          ],
+          "conf": 0.84,
+          "text": "Solution :"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            957.8,
+            1177.7,
+            1044.0
+          ],
+          "conf": 0.915,
+          "text": "Step 1 : We pick either of the equations and write one variable in terms of the other.\nLet us consider the Equation (2) :"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            511.6,
+            1047.5,
+            1176.9,
+            1146.8
+          ],
+          "conf": 0.571,
+          "text": "$$x + 2y = 3$$\n$$x = 3 - 2y \\tag{3}$$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            1099.2,
+            1174.7,
+            1151.0
+          ],
+          "conf": 0.713,
+          "text": "and write it as $x = 3 - 2y$ (3)"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1147.2,
+            845.6,
+            1198.1
+          ],
+          "conf": 0.87,
+          "text": "Step 2 : Substitute the value of $x$ in Equation (1). We get"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            404.8,
+            1194.7,
+            673.9,
+            1245.5
+          ],
+          "conf": 0.812,
+          "text": "$$7(3 - 2y) - 15y = 2$$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            1243.7,
+            673.1,
+            1293.1
+          ],
+          "conf": 0.785,
+          "text": "i.e., $21 - 14y - 15y = 2$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            1290.1,
+            703.7,
+            1342.7
+          ],
+          "conf": 0.778,
+          "text": "i.e.,                                                                                                   $-29y = -19$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            1344.8,
+            698.2,
+            1429.4
+          ],
+          "conf": 0.811,
+          "text": "Therefore, $y = \\frac{19}{29}$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1427.8,
+            864.0,
+            1478.2
+          ],
+          "conf": 0.895,
+          "text": "Step 3 : Substituting this value of $y$ in Equation (3), we get"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            580.2,
+            1483.1,
+            872.9,
+            1579.7
+          ],
+          "conf": 0.883,
+          "text": "$$x = 3 - 2\\left(\\frac{19}{29}\\right) = \\frac{49}{29}$$"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            1566.0,
+            668.3,
+            1656.4
+          ],
+          "conf": 0.841,
+          "text": "Therefore, the solution is $x = \\frac{49}{29}, y = \\frac{19}{29}$."
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0072_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            121.0,
+            190.4,
+            1175.8,
+            239.4
+          ],
+          "conf": 0.816,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.2,
+            191.7,
+            627.5,
+            237.9
+          ],
+          "conf": 0.574,
+          "text": "PAIR OF LINEAR EQUATIONS IN TWO VARIABLES"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            271.1,
+            1177.4,
+            401.3
+          ],
+          "conf": 0.845,
+          "text": "Verification : Substituting $x = \\frac{49}{29}$ and $y = \\frac{19}{29}$ , you can verify that both the Equations\n(1) and (2) are satisfied."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.9,
+            404.3,
+            1171.7,
+            454.7
+          ],
+          "conf": 0.922,
+          "text": "To understand the substitution method more clearly, let us consider it stepwise:"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            454.7,
+            1178.2,
+            542.1
+          ],
+          "conf": 0.935,
+          "text": "Step 1 : Find the value of one variable, say $y$ in terms of the other variable, i.e., $x$ from\neither equation, whichever is convenient."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            541.9,
+            1178.7,
+            745.6
+          ],
+          "conf": 0.969,
+          "text": "Step 2 : Substitute this value of $y$ in the other equation, and reduce it to an equation in\none variable, i.e., in terms of $x$, which can be solved. Sometimes, as in Examples 9 and\n10 below, you can get statements with no variable. If this statement is true, you can\nconclude that the pair of linear equations has infinitely many solutions. If the statement\nis false, then the pair of linear equations is inconsistent."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            747.3,
+            1177.8,
+            835.0
+          ],
+          "conf": 0.937,
+          "text": "Step 3 : Substitute the value of $x$ (or $y$) obtained in Step 2 in the equation used in\nStep 1 to obtain the value of the other variable."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            848.5,
+            1178.2,
+            974.7
+          ],
+          "conf": 0.937,
+          "text": "Remark : We have substituted the value of one variable by expressing it in terms of\nthe other variable to solve the pair of linear equations. That is why the method is\nknown as the substitution method."
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            988.8,
+            1177.5,
+            1150.5
+          ],
+          "conf": 0.89,
+          "text": "Example 5 : Solve the following question—Aftab tells his daughter, “Seven years\nago, I was seven times as old as you were then. Also, three years from now, I shall be\nthree times as old as you will be.” (Isn’t this interesting?) Represent this situation\nalgebraically and graphically by the method of substitution."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1151.0,
+            1177.7,
+            1239.8
+          ],
+          "conf": 0.904,
+          "text": "Solution : Let $s$ and $t$ be the ages (in years) of Aftab and his daughter, respectively.\nThen, the pair of linear equations that represent the situation is"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            342.9,
+            1239.0,
+            1177.9,
+            1288.0
+          ],
+          "conf": 0.882,
+          "text": "$$s - 7 = 7 (t - 7), \\text{ i.e., } s - 7t + 42 = 0 \\tag{1}$$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.3,
+            1289.2,
+            1177.0,
+            1338.9
+          ],
+          "conf": 0.85,
+          "text": "and $s + 3 = 3 (t + 3)$, i.e., $s - 3t = 6$ (2)"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1339.5,
+            608.3,
+            1389.9
+          ],
+          "conf": 0.909,
+          "text": "Using Equation (2), we get $s = 3t + 6$."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1389.1,
+            697.3,
+            1439.2
+          ],
+          "conf": 0.895,
+          "text": "Putting this value of $s$ in Equation (1), we get"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            384.1,
+            1438.7,
+            678.2,
+            1488.1
+          ],
+          "conf": 0.865,
+          "text": "$$(3t + 6) - 7t + 42 = 0,$$"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1487.7,
+            933.9,
+            1537.5
+          ],
+          "conf": 0.831,
+          "text": "i.e., $4t = 48$, which gives $t = 12$."
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1537.5,
+            693.5,
+            1588.0
+          ],
+          "conf": 0.883,
+          "text": "Putting this value of $t$ in Equation (2), we get"
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            581.6,
+            1588.6,
+            843.0,
+            1636.1
+          ],
+          "conf": 0.882,
+          "text": "$$s = 3 (12) + 6 = 42$$"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0072_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            258.8,
+            934.8,
+            309.7
+          ],
+          "conf": 0.918,
+          "text": "So, Aftab and his daughter are 42 and 12 years old, respectively."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.4,
+            309.5,
+            1177.8,
+            360.6
+          ],
+          "conf": 0.916,
+          "text": "Verify this answer by checking if it satisfies the conditions of the given problems."
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            373.0,
+            1178.3,
+            460.6
+          ],
+          "conf": 0.869,
+          "text": "Example 6 : In a shop the cost of 2 pencils and 3 erasers is $₹9$ and the cost of 4\npencils and 6 erasers is $₹18$. Find the cost of each pencil and each eraser."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            461.7,
+            793.3,
+            511.7
+          ],
+          "conf": 0.875,
+          "text": "Solution : The pair of linear equations formed were:"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            501.9,
+            510.9,
+            1177.8,
+            558.8
+          ],
+          "conf": 0.835,
+          "text": "$$2x + 3y = 9 \\eqno(1)$$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            501.8,
+            558.0,
+            1177.4,
+            607.1
+          ],
+          "conf": 0.865,
+          "text": "$$4x + 6y = 18 \\tag{2}$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            605.9,
+            1144.0,
+            656.6
+          ],
+          "conf": 0.9,
+          "text": "We first express the value of $x$ in terms of $y$ from the equation $2x + 3y = 9$, to get"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            578.2,
+            662.3,
+            1178.3,
+            752.6
+          ],
+          "conf": 0.918,
+          "text": "$$x = \\frac{9 - 3y}{2} \\qquad (3)$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            757.3,
+            828.4,
+            808.1
+          ],
+          "conf": 0.907,
+          "text": "Now we substitute this value of $x$ in Equation (2), to get"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            404.4,
+            818.1,
+            687.7,
+            911.0
+          ],
+          "conf": 0.886,
+          "text": "$$ \\frac{4(9 - 3y)}{2} + 6y = 18 $$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            909.0,
+            686.9,
+            958.7
+          ],
+          "conf": 0.847,
+          "text": "i.e., $18 - 6y + 6y = 18$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.5,
+            957.4,
+            687.2,
+            1006.2
+          ],
+          "conf": 0.845,
+          "text": "i.e., $18 = 18$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1027.0,
+            1178.6,
+            1275.3
+          ],
+          "conf": 0.975,
+          "text": "This statement is true for all values of $y$. However, we do not get a specific\nvalue of $y$ as a solution. Therefore, we cannot obtain a specific value of $x$. This\nsituation has arisen because both the given equations are the same. Therefore,\nEquations (1) and (2) have infinitely many solutions. We cannot find a unique\ncost of a pencil and an eraser, because there are many common solutions, to the\ngiven situation."
+        },
+        {
+          "order": 13,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1284.6,
+            1183.6,
+            1676.0
+          ],
+          "conf": 0.556,
+          "text": "Example 7 : Two rails are represented by the equations\n$x + 2y - 4 = 0$ and $2x + 4y - 12 = 0$. Will the rails cross each other?\nSolution : The pair of linear equations formed were:\n$$x + 2y - 4 = 0 \\eqno(1)$$\n$$2x + 4y - 12 = 0 \\eqno(2)$$\nWe express $x$ in terms of $y$ from Equation (1) to get\n$$x = 4 - 2y$$\nNow, we substitute this value of $x$ in Equation (2) to get\n$$2(4 - 2y) + 4y - 12 = 0$$"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0072_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.2,
+            191.1,
+            1178.2,
+            239.8
+          ],
+          "conf": 0.817,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.3,
+            192.5,
+            627.1,
+            237.5
+          ],
+          "conf": 0.566,
+          "text": "PAIR OF LINEAR EQUATIONS IN TWO VARIABLES"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            259.4,
+            673.9,
+            346.9
+          ],
+          "conf": 0.767,
+          "text": "i.e.,                                                                 $8 - 12 = 0$\ni.e.,                                                                 $-4 = 0$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            349.0,
+            471.5,
+            395.2
+          ],
+          "conf": 0.892,
+          "text": "which is a false statement."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            390.4,
+            1178.3,
+            474.1
+          ],
+          "conf": 0.945,
+          "text": "Therefore, the equations do not have a common solution. So, the two rails will not\ncross each other."
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.7,
+            527.1,
+            773.6,
+            576.6
+          ],
+          "conf": 0.87,
+          "text": "EXERCISE 3.2"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            159.2,
+            585.2,
+            1177.5,
+            1707.9
+          ],
+          "conf": 0.523,
+          "text": "1. Solve the following pair of linear equations by the substitution method.\n(i) $x + y = 14$                                                                    (ii) $s - t = 3$\n\n$$x - y = 4$$                                                                    $\\frac{s}{3} + \\frac{t}{2} = 6$\n\n(iii) $3x - y = 3$                                                                    (iv) $0.2x + 0.3y = 1.3$\n$9x - 3y = 9$                                                                    $0.4x + 0.5y = 2.3$\n\n(v) $\\sqrt{2}x + \\sqrt{3}y = 0$                                                                    (vi) $\\frac{3x}{2} - \\frac{5y}{3} = -2$\n\n$$\\sqrt{3}x - \\sqrt{8}y = 0$$                                                                    $\\frac{x}{3} + \\frac{y}{2} = \\frac{13}{6}$$\n\n2. Solve $2x + 3y = 11$ and $2x - 4y = -24$ and hence find the value of ‘$m$’ for which\n$y = mx + 3$.\n\n3. Form the pair of linear equations for the following problems and find their solution by\nsubstitution method.\n\n(i) The difference between two numbers is 26 and one number is three times the other.\nFind them.\n\n(ii) The larger of two supplementary angles exceeds the smaller by 18 degrees. Find\nthem.\n\n(iii) The coach of a cricket team buys 7 bats and 6 balls for ₹ 3800. Later, she buys 3\nbats and 5 balls for ₹ 1750. Find the cost of each bat and each ball.\n\n(iv) The taxi charges in a city consist of a fixed charge together with the charge for the\ndistance covered. For a distance of 10 km, the charge paid is ₹ 105 and for a\njourney of 15 km, the charge paid is ₹ 155. What are the fixed charges and the\ncharge per km? How much does a person have to pay for travelling a distance of\n25 km?\n\n(v) A fraction becomes $\\frac{9}{11}$, if 2 is added to both the numerator and the denominator.\nIf, 3 is added to both the numerator and the denominator it becomes $\\frac{5}{6}$. Find the\nfraction."
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0072_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            201.0,
+            257.3,
+            1179.4,
+            338.4
+          ],
+          "conf": 0.92,
+          "text": "(vi) Five years hence, the age of Jacob will be three times that of his son. Five years\nago, Jacob's age was seven times that of his son. What are their present ages?"
+        },
+        {
+          "order": 1,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.5,
+            360.4,
+            503.5,
+            411.4
+          ],
+          "conf": 0.853,
+          "text": "3.3.2 Elimination Method"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            412.3,
+            1178.5,
+            535.0
+          ],
+          "conf": 0.973,
+          "text": "Now let us consider another method of eliminating (i.e., removing) one variable. This\nis sometimes more convenient than the substitution method. Let us see how this method\nworks."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            548.9,
+            1177.9,
+            672.0
+          ],
+          "conf": 0.895,
+          "text": "Example 8 : The ratio of incomes of two persons is $9 : 7$ and the ratio of their\nexpenditures is $4 : 3$. If each of them manages to save $\\text{\\rupee} 2000$ per month, find their\nmonthly incomes."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            673.0,
+            1178.7,
+            797.2
+          ],
+          "conf": 0.917,
+          "text": "Solution : Let us denote the incomes of the two person by $9x$ and $7x$ and their\nexpenditures by $4y$ and $3y$ respectively. Then the equations formed in the situation\nis given by :"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            500.5,
+            794.8,
+            1178.3,
+            845.9
+          ],
+          "conf": 0.874,
+          "text": "$$9x - 4y = 2000 \\tag{1}$$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            843.0,
+            1177.8,
+            893.8
+          ],
+          "conf": 0.852,
+          "text": "and $7x - 3y = 2000$ (2)"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            892.8,
+            1179.6,
+            980.4
+          ],
+          "conf": 0.94,
+          "text": "Step 1 : Multiply Equation (1) by 3 and Equation (2) by 4 to make the coefficients of\n$y$ equal. Then we get the equations:"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            471.9,
+            979.1,
+            1177.4,
+            1028.8
+          ],
+          "conf": 0.858,
+          "text": "$$27x - 12y = 6000 \\tag{3}$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            473.3,
+            1026.8,
+            1177.9,
+            1077.7
+          ],
+          "conf": 0.871,
+          "text": "$$28x - 12y = 8000 \\tag{4}$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1077.5,
+            1178.3,
+            1163.8
+          ],
+          "conf": 0.931,
+          "text": "Step 2 : Subtract Equation (3) from Equation (4) to $eliminate$ $y$, because the coefficients\nof $y$ are the same. So, we get"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            278.7,
+            1162.8,
+            808.2,
+            1212.2
+          ],
+          "conf": 0.886,
+          "text": "$$(28x - 27x) - (12y - 12y) = 8000 - 6000$$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            1211.4,
+            716.6,
+            1260.1
+          ],
+          "conf": 0.814,
+          "text": "i.e., $x = 2000$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            1260.6,
+            751.5,
+            1310.0
+          ],
+          "conf": 0.902,
+          "text": "Step 3 : Substituting this value of $x$ in (1), we get"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            437.1,
+            1308.7,
+            716.0,
+            1358.5
+          ],
+          "conf": 0.859,
+          "text": "$$9(2000) - 4y = 2000$$"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            1357.9,
+            716.3,
+            1408.3
+          ],
+          "conf": 0.82,
+          "text": "i.e., $y = 4000$"
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1403.7,
+            1178.5,
+            1489.2
+          ],
+          "conf": 0.92,
+          "text": "So, the solution of the equations is $x = 2000$, $y = 4000$. Therefore, the monthly incomes\nof the persons are $₹$ 18,000 and $₹$ 14,000, respectively."
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            1499.9,
+            1178.6,
+            1584.8
+          ],
+          "conf": 0.898,
+          "text": "{\\color{cyan}Verification :} $18000 : 14000 = 9 : 7$. Also, the ratio of their expenditures =\n$18000 - 2000 : 14000 - 2000 = 16000 : 12000 = 4 : 3$"
+        },
+        {
+          "order": 18,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.6,
+            1598.5,
+            288.5,
+            1647.1
+          ],
+          "conf": 0.767,
+          "text": "Remarks :"
+        },
+        {
+          "order": 19,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.2,
+            1644.6,
+            1178.2,
+            1728.4
+          ],
+          "conf": 0.924,
+          "text": "1. The method used in solving the example above is called the $elimination$ method,\nbecause we eliminate one variable first, to get a linear equation in one variable."
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0072_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            121.3,
+            190.8,
+            1178.3,
+            238.8
+          ],
+          "conf": 0.811,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.2,
+            192.3,
+            627.5,
+            237.7
+          ],
+          "conf": 0.606,
+          "text": "PAIR OF LINEAR EQUATIONS IN TWO VARIABLES"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.9,
+            256.7,
+            1177.7,
+            342.9
+          ],
+          "conf": 0.949,
+          "text": "In the example above, we eliminated $y$. We could also have eliminated $x$. Try\ndoing it that way."
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            153.4,
+            339.5,
+            1177.1,
+            426.0
+          ],
+          "conf": 0.924,
+          "text": "2. You could also have used the substitution, or graphical method, to solve this\nproblem. Try doing so, and see which method is more convenient."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.9,
+            421.4,
+            958.9,
+            471.0
+          ],
+          "conf": 0.914,
+          "text": "Let us now note down these steps in the elimination method :"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            474.6,
+            1177.9,
+            560.7
+          ],
+          "conf": 0.94,
+          "text": "Step 1 : First multiply both the equations by some suitable non-zero constants to make\nthe coefficients of one variable (either $x$ or $y$) numerically equal."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            555.0,
+            1178.3,
+            641.6
+          ],
+          "conf": 0.948,
+          "text": "Step 2 : Then add or subtract one equation from the other so that one variable gets\neliminated. If you get an equation in one variable, go to Step 3."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            637.3,
+            1178.5,
+            724.1
+          ],
+          "conf": 0.947,
+          "text": "If in Step 2, we obtain a true statement involving no variable, then the original\npair of equations has infinitely many solutions."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            719.0,
+            1178.6,
+            804.6
+          ],
+          "conf": 0.939,
+          "text": "If in Step 2, we obtain a false statement involving no variable, then the original\npair of equations has no solution, i.e., it is inconsistent."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            801.6,
+            1107.2,
+            852.0
+          ],
+          "conf": 0.91,
+          "text": "Step 3 : Solve the equation in one variable ($x$ or $y$) so obtained to get its value."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            845.5,
+            1177.1,
+            932.5
+          ],
+          "conf": 0.935,
+          "text": "Step 4 : Substitute this value of $x$ (or $y$) in either of the original equations to get the\nvalue of the other variable."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            927.0,
+            817.3,
+            977.7
+          ],
+          "conf": 0.898,
+          "text": "Now to illustrate it, we shall solve few more examples."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            988.8,
+            1178.2,
+            1074.6
+          ],
+          "conf": 0.825,
+          "text": "Example 9 : Use elimination method to find all possible solutions of the following pair\nof linear equations :"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            501.5,
+            1115.7,
+            1177.0,
+            1163.9
+          ],
+          "conf": 0.837,
+          "text": "$$4x + 6y = 7 \\tag{2}$$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1160.9,
+            273.8,
+            1209.5
+          ],
+          "conf": 0.822,
+          "text": "Solution :"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1224.2,
+            1178.1,
+            1312.3
+          ],
+          "conf": 0.916,
+          "text": "Step 1 : Multiply Equation (1) by 2 and Equation (2) by 1 to make the\ncoefficients of $x$ equal. Then we get the equations as :"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            502.6,
+            1307.0,
+            1177.3,
+            1396.9
+          ],
+          "conf": 0.665,
+          "text": "$$4x + 6y = 16 \\tag{3}$$\n$$4x + 6y = 7 \\tag{4}$$"
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1396.9,
+            784.8,
+            1448.2
+          ],
+          "conf": 0.876,
+          "text": "Step 2 : Subtracting Equation (4) from Equation (3),"
+        },
+        {
+          "order": 18,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            336.6,
+            1441.9,
+            735.0,
+            1492.1
+          ],
+          "conf": 0.836,
+          "text": "$$(4x - 4x) + (6y - 6y) = 16 - 7$$"
+        },
+        {
+          "order": 19,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1486.8,
+            1013.5,
+            1535.8
+          ],
+          "conf": 0.798,
+          "text": "i.e., $0 = 9$, which is a false statement."
+        },
+        {
+          "order": 20,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.3,
+            1535.0,
+            729.8,
+            1586.1
+          ],
+          "conf": 0.875,
+          "text": "Therefore, the pair of equations has no solution."
+        },
+        {
+          "order": 21,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1596.2,
+            1178.6,
+            1716.6
+          ],
+          "conf": 0.907,
+          "text": "Example 10 : The sum of a two-digit number and the number obtained by reversing\nthe digits is 66. If the digits of the number differ by 2, find the number. How many such\nnumbers are there?"
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0072_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            257.3,
+            1178.1,
+            379.4
+          ],
+          "conf": 0.958,
+          "text": "Solution : Let the ten's and the unit's digits in the first number be $x$ and $y$, respectively.\nSo, the first number may be written as $10x + y$ in the expanded form (for example,\n$56 = 10(5) + 6$)."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            380.0,
+            1178.3,
+            500.5
+          ],
+          "conf": 0.966,
+          "text": "When the digits are reversed, $x$ becomes the unit's digit and $y$ becomes the ten's\ndigit. This number, in the expanded notation is $10y + x$ (for example, when 56 is\nreversed, we get $65 = 10(6) + 5$)."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            500.1,
+            548.9,
+            548.1
+          ],
+          "conf": 0.923,
+          "text": "According to the given condition."
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            336.7,
+            545.9,
+            687.8,
+            595.5
+          ],
+          "conf": 0.884,
+          "text": "$$(10x + y) + (10y + x) = 66$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            590.5,
+            687.7,
+            638.6
+          ],
+          "conf": 0.843,
+          "text": "i.e.,                                                                 $11(x + y) = 66$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.6,
+            637.5,
+            1178.7,
+            686.3
+          ],
+          "conf": 0.839,
+          "text": "i.e., $x + y = 6$ (1)"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            680.4,
+            810.0,
+            729.8
+          ],
+          "conf": 0.919,
+          "text": "We are also given that the digits differ by 2, therefore,"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            726.2,
+            1175.8,
+            774.4
+          ],
+          "conf": 0.797,
+          "text": "either $x - y = 2$ (2)"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            771.6,
+            1177.3,
+            818.7
+          ],
+          "conf": 0.835,
+          "text": "or $y - x = 2$ (3)"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            815.7,
+            1128.1,
+            907.8
+          ],
+          "conf": 0.939,
+          "text": "If $x - y = 2$, then solving (1) and (2) by elimination, we get $x = 4$ and $y = 2$.\nIn this case, we get the number 42."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            125.8,
+            906.1,
+            1143.9,
+            1001.3
+          ],
+          "conf": 0.922,
+          "text": "If $y - x = 2$, then solving (1) and (3) by elimination, we get $x = 2$ and $y = 4$.\nIn this case, we get the number 24."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1001.5,
+            699.0,
+            1050.5
+          ],
+          "conf": 0.895,
+          "text": "Thus, there are two such numbers 42 and 24."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            1049.2,
+            1141.8,
+            1099.3
+          ],
+          "conf": 0.898,
+          "text": "\\textbf{Verification :} Here $42 + 24 = 66$ and $4 - 2 = 2$. Also $24 + 42 = 66$ and $4 - 2 = 2$."
+        },
+        {
+          "order": 13,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.4,
+            1119.9,
+            773.2,
+            1170.6
+          ],
+          "conf": 0.852,
+          "text": "EXERCISE 3.3"
+        },
+        {
+          "order": 14,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.3,
+            1175.9,
+            1179.8,
+            1746.7
+          ],
+          "conf": 0.83,
+          "text": "1. Solve the following pair of linear equations by the elimination method and the substitution\nmethod :\n(i) $x + y = 5$ and $2x - 3y = 4$\n(ii) $3x + 4y = 10$ and $2x - 2y = 2$\n(iii) $3x - 5y - 4 = 0$ and $9x = 2y + 7$\n(iv) $\\frac{x}{2} + \\frac{2y}{3} = -1$ and $x - \\frac{y}{3} = 3$\n\n2. Form the pair of linear equations in the following problems, and find their solutions\n(if they exist) by the elimination method :\n(i) If we add 1 to the numerator and subtract 1 from the denominator, a fraction reduces\nto 1. It becomes $\\frac{1}{2}$ if we only add 1 to the denominator. What is the fraction?\n(ii) Five years ago, Nuri was thrice as old as Sonu. Ten years later, Nuri will be twice as\nold as Sonu. How old are Nuri and Sonu?\n(iii) The sum of the digits of a two-digit number is 9. Also, nine times this number is\ntwice the number obtained by reversing the order of the digits. Find the number."
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0072_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            121.5,
+            191.3,
+            1178.1,
+            238.8
+          ],
+          "conf": 0.785,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.5,
+            192.5,
+            627.9,
+            237.7
+          ],
+          "conf": 0.567,
+          "text": "PAIR OF LINEAR EQUATIONS IN TWO VARIABLES"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            201.9,
+            266.8,
+            1179.0,
+            378.9
+          ],
+          "conf": 0.886,
+          "text": "(iv) Meena went to a bank to withdraw ₹ 2000. She asked the cashier to give her\n₹ 50 and ₹ 100 notes only. Meena got 25 notes in all. Find how many notes of\n₹ 50 and ₹ 100 she received."
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            207.0,
+            379.4,
+            1178.5,
+            529.2
+          ],
+          "conf": 0.902,
+          "text": "(v) A lending library has a fixed charge for the first three days and an additional charge\nfor each day thereafter. Saritha paid ₹ 27 for a book kept for seven days, while Susy\npaid ₹ 21 for the book she kept for five days. Find the fixed charge and the charge\nfor each extra day."
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.1,
+            544.0,
+            334.6,
+            595.5
+          ],
+          "conf": 0.903,
+          "text": "3.4 Summary"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            594.1,
+            752.2,
+            641.1
+          ],
+          "conf": 0.938,
+          "text": "In this chapter, you have studied the following points:"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            150.0,
+            639.0,
+            1182.0,
+            1743.4
+          ],
+          "conf": 0.667,
+          "text": "1. A pair of linear equations in two variables can be represented, and solved, by the:\n(i) graphical method\n(ii) algebraic method\n2. Graphical Method :\nThe graph of a pair of linear equations in two variables is represented by two lines.\n(i) If the lines intersect at a point, then that point gives the unique solution of the two\nequations. In this case, the pair of equations is **consistent**.\n(ii) If the lines coincide, then there are infinitely many solutions — each point on\nthe line being a solution. In this case, the pair of equations is **dependent**\n**(consistent)**.\n(iii) If the lines are parallel, then the pair of equations has no solution. In this case, the\npair of equations is **inconsistent**.\n3. Algebraic Methods : We have discussed the following methods for finding the solution(s)\nof a pair of linear equations :\n(i) Substitution Method\n(ii) Elimination Method\n4. If a pair of linear equations is given by $a_1x + b_1y + c_1 = 0$ and $a_2x + b_2y + c_2 = 0$, then the\nfollowing situations can arise :\n(i) $\\frac{a_1}{a_2} \\neq \\frac{b_1}{b_1}$ : In this case, the pair of linear equations is consistent.\n(ii) $\\frac{a_1}{a_2} = \\frac{b_1}{b_2} \\neq \\frac{c_1}{c_2}$ : In this case, the pair of linear equations is inconsistent.\n(iii) $\\frac{a_1}{a_2} = \\frac{b_1}{b_2} = \\frac{c_1}{c_2}$ : In this case, the pair of linear equations is dependent and consistent.\n5. There are several situations which can be mathematically represented by two equations\nthat are not linear to start with. But we alter them so that they are reduced to a pair of\nlinear equations."
+        }
+      ],
+      "page": 13
+    }
+  ]
+}

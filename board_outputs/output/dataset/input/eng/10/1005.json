@@ -1,0 +1,4398 @@
+{
+  "book": "1005",
+  "relpath": "dataset/input/eng/10/1005.pdf",
+  "num_pages": 24,
+  "pages": [
+    {
+      "image": "0074_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            544.3,
+            217.7,
+            755.8,
+            445.2
+          ],
+          "conf": 0.906,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            605.8,
+            410.2,
+            697.8,
+            444.6
+          ],
+          "conf": 0.614,
+          "text": "$1062\\text{CH}05$"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            163.0,
+            479.2,
+            1180.1,
+            648.7
+          ],
+          "conf": 0.858,
+          "text": "ARITHMETIC PROGRESSIONS 5"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            117.1,
+            709.3,
+            370.8,
+            760.2
+          ],
+          "conf": 0.911,
+          "text": "5.1 Introduction"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.9,
+            766.7,
+            1174.3,
+            889.6
+          ],
+          "conf": 0.968,
+          "text": "You must have observed that in nature, many things follow a certain pattern, such as\nthe petals of a sunflower, the holes of a honeycomb, the grains on a maize cob, the\nspirals on a pineapple and on a pine cone, etc."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.0,
+            887.1,
+            1176.2,
+            972.2
+          ],
+          "conf": 0.947,
+          "text": "We now look for some patterns which occur in our day-to-day life. Some such\nexamples are :"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            142.5,
+            973.6,
+            1172.3,
+            1695.8
+          ],
+          "conf": 0.562,
+          "text": "(i) Reena applied for a job and got selected. She\nhas been offered a job with a starting monthly\nsalary of ₹ 8000, with an annual increment of\n₹ 500 in her salary. Her salary (in ₹) for the 1st,\n2nd, 3rd, . . . years will be, respectively\n8000, 8500, 9000, . . . .\n(ii) The lengths of the rungs of a ladder decrease\nuniformly by 2 cm from bottom to top\n(see Fig. 5.1). The bottom rung is 45 cm in\nlength. The lengths (in cm) of the 1st, 2nd,\n3rd, . . ., 8th rung from the bottom to the top\nare, respectively\n45, 43, 41, 39, 37, 35, 33, 31\n\n(iii) In a savings scheme, the amount becomes $\\frac{5}{4}$ times of itself after every 3 years.\nThe maturity amount (in ₹) of an investment of ₹ 8000 after 3, 6, 9 and 12 years\nwill be, respectively :\n10000, 12500, 15625, 19531.25"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            302.5,
+            1659.3,
+            761.4,
+            1710.0
+          ],
+          "conf": 0.688,
+          "text": "10000, 12500, 15625, 19531.25"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0074_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            134.8,
+            256.3,
+            1178.6,
+            345.0
+          ],
+          "conf": 0.766,
+          "text": "(iv) The number of unit squares in squares with side $1, 2, 3, \\dots$ units (see Fig. 5.2)\nare, respectively"
+        },
+        {
+          "order": 1,
+          "label": "Expression",
+          "type": "Equation",
+          "bbox_xyxy": [
+            258.2,
+            340.9,
+            460.3,
+            391.6
+          ],
+          "conf": 0.779,
+          "text": "$$1^2, 2^2, 3^2, \\dots$$"
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            239.2,
+            408.3,
+            1054.3,
+            669.2
+          ],
+          "conf": 0.935,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            584.0,
+            698.4,
+            712.8,
+            748.8
+          ],
+          "conf": 0.922,
+          "text": "Fig. 5.2"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.1,
+            759.1,
+            1178.6,
+            890.5
+          ],
+          "conf": 0.775,
+          "text": "(v) Shakila puts ₹ 100 into her daughter's money box when she was one year old\nand increased the amount by ₹ 50 every year. The amounts of money (in ₹) in the\nbox on the 1st, 2nd, 3rd, 4th, . . . birthday were"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            139.9,
+            772.7,
+            1180.4,
+            1136.8
+          ],
+          "conf": 0.547,
+          "text": "(v) Shakila puts $\\text{\\textcent}$ 100 into her daughter's money box when she was one year old\nand increased the amount by $\\text{\\textcent}$ 50 every year. The amounts of money (in $\\text{\\textcent}$) in the\nbox on the 1st, 2nd, 3rd, 4th, $\\dots$ birthday were\n\n$$100, \\quad 150, \\quad 200, \\quad 250, \\dots, \\text{respectively.}$$\n\n(vi) A pair of rabbits are too young to produce in their first month. In the second, and\nevery subsequent month, they produce a new pair. Each new pair of rabbits\nproduce a new pair in their second month and in every subsequent month (see\nFig. 5.3). Assuming no rabbit dies, the number of pairs of rabbits at the start of\nthe 1st, 2nd, 3rd, $\\dots$, 6th month, respectively are :"
+        },
+        {
+          "order": 6,
+          "label": "Expression",
+          "type": "Equation",
+          "bbox_xyxy": [
+            335.5,
+            1152.7,
+            524.6,
+            1201.8
+          ],
+          "conf": 0.79,
+          "text": "$$1, 1, 2, 3, 5, 8$$"
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            243.6,
+            1228.0,
+            1099.9,
+            1629.4
+          ],
+          "conf": 0.923,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            584.4,
+            1646.0,
+            712.8,
+            1697.8
+          ],
+          "conf": 0.889,
+          "text": "Fig. 5.3"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0074_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.1,
+            191.0,
+            1177.4,
+            238.4
+          ],
+          "conf": 0.801,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.5,
+            192.9,
+            423.9,
+            237.3
+          ],
+          "conf": 0.535,
+          "text": "ARITHMETIC PROGRESSIONS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            258.2,
+            1178.5,
+            414.8
+          ],
+          "conf": 0.971,
+          "text": "In the examples above, we observe some patterns. In some, we find that the\nsucceeding terms are obtained by adding a fixed number, in other by multiplying\nwith a fixed number, in another we find that they are squares of consecutive\nnumbers, and so on."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            416.1,
+            1178.6,
+            574.0
+          ],
+          "conf": 0.972,
+          "text": "In this chapter, we shall discuss one of these patterns in which succeeding terms\nare obtained by adding a fixed number to the preceding terms. We shall also see how\nto find their $n$th terms and the sum of $n$ consecutive terms, and use this knowledge in\nsolving some daily life problems."
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.8,
+            587.9,
+            537.3,
+            639.5
+          ],
+          "conf": 0.906,
+          "text": "5.2 Arithmetic Progressions"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            639.4,
+            635.6,
+            688.9
+          ],
+          "conf": 0.931,
+          "text": "Consider the following lists of numbers :"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            138.4,
+            687.0,
+            535.1,
+            925.7
+          ],
+          "conf": 0.957,
+          "text": "(i) $1, 2, 3, 4, \\dots$\n\n(ii) $100, 70, 40, 10, \\dots$\n\n(iii) $-3, -2, -1, 0, \\dots$\n\n(iv) $3, 3, 3, 3, \\dots$\n\n(v) $-1.0, -1.5, -2.0, -2.5, \\dots$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            925.1,
+            796.3,
+            974.9
+          ],
+          "conf": 0.889,
+          "text": "Each of the numbers in the list is called a **term**."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            972.4,
+            1178.2,
+            1091.9
+          ],
+          "conf": 0.951,
+          "text": "Given a term, can you write the next term in each of the lists above? If so, how\nwill you write it? Perhaps by following a pattern or rule. Let us observe and write the\nrule."
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.3,
+            1083.8,
+            1022.6,
+            1227.2
+          ],
+          "conf": 0.561,
+          "text": "In (i), each term is 1 more than the term preceding it.\nIn (ii), each term is 30 less than the term preceding it.\nIn (iii), each term is obtained by adding 1 to the term preceding it."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1225.9,
+            1178.3,
+            1311.6
+          ],
+          "conf": 0.893,
+          "text": "In (iv), all the terms in the list are 3 , i.e., each term is obtained by adding\n(or subtracting) 0 to the term preceding it."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1308.3,
+            1178.7,
+            1392.5
+          ],
+          "conf": 0.885,
+          "text": "In (v), each term is obtained by adding $- 0.5$ to (i.e., subtracting $0.5$ from) the\nterm preceding it."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1389.1,
+            1179.1,
+            1509.9
+          ],
+          "conf": 0.931,
+          "text": "In all the lists above, we see that successive terms are obtained by adding a fixed\nnumber to the preceding terms. Such list of numbers is said to form an **Arithmetic**\n**Progression ( AP )**."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1506.7,
+            1178.7,
+            1627.9
+          ],
+          "conf": 0.928,
+          "text": "So, an arithmetic progression is a list of numbers in which each term is\nobtained by adding a fixed number to the preceding term except the first\nterm."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1624.7,
+            1178.5,
+            1709.6
+          ],
+          "conf": 0.903,
+          "text": "This fixed number is called the **common difference** of the AP. Remember that\nit **can be positive, negative or zero**."
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0074_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            257.5,
+            1177.1,
+            348.1
+          ],
+          "conf": 0.937,
+          "text": "Let us denote the first term of an AP by $a_1$, second term by $a_2, \\dots, n$th term by\n$a_n$ and the common difference by $d$. Then the AP becomes $a_1, a_2, a_3, \\dots, a_n$."
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            343.1,
+            703.9,
+            397.9
+          ],
+          "conf": 0.875,
+          "text": "So, $a_2 - a_1 = a_3 - a_2 = \\dots = a_n - a_{n-1} = d.$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            392.2,
+            542.9,
+            441.4
+          ],
+          "conf": 0.927,
+          "text": "Some more examples of AP are:"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.2,
+            439.9,
+            1178.6,
+            920.5
+          ],
+          "conf": 0.956,
+          "text": "(a) The heights ( in cm ) of some students of a school standing in a queue in the\nmorning assembly are $147, 148, 149, \\dots, 157$.\n\n(b) The minimum temperatures ( in degree celsius ) recorded for a week in the\nmonth of January in a city, arranged in ascending order are\n\n$$ - 3.1, - 3.0, - 2.9, - 2.8, - 2.7, - 2.6, - 2.5 $$\n\n(c) The balance money ( in ₹ ) after paying $5 \\%$ of the total loan of ₹ 1000 every\nmonth is $950, 900, 850, 800, \\dots, 50$.\n\n(d) The cash prizes ( in ₹ ) given by a school to the toppers of Classes I to XII are,\nrespectively, $200, 250, 300, 350, \\dots, 750$.\n\n(e) The total savings (in ₹) after every month for 10 months when ₹ 50 are saved\neach month are $50, 100, 150, 200, 250, 300, 350, 400, 450, 500$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.8,
+            915.6,
+            1176.0,
+            1011.4
+          ],
+          "conf": 0.822,
+          "text": "It is left as an exercise for you to explain why each of the lists above is an AP.\n\nYou can see that"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            494.0,
+            1005.3,
+            870.6,
+            1053.7
+          ],
+          "conf": 0.755,
+          "text": "$a, a + d, a + 2d, a + 3d, \\dots$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1053.0,
+            1177.8,
+            1137.0
+          ],
+          "conf": 0.946,
+          "text": "represents an arithmetic progression where $a$ is the first term and $d$ the common\ndifference. This is called the **general form of an AP.**"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1137.3,
+            1178.3,
+            1330.2
+          ],
+          "conf": 0.969,
+          "text": "Note that in examples (a) to (e) above, there are only a finite number of terms.\nSuch an AP is called a **finite AP**. Also note that each of these Arithmetic Progressions\n(APs) has a last term. The APs in examples (i) to (v) in this section, are not finite APs\nand so they are called **infinite Arithmetic Progressions**. Such APs do not have a\nlast term."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1330.8,
+            1178.5,
+            1487.5
+          ],
+          "conf": 0.956,
+          "text": "Now, to know about an AP, what is the minimum information that you need? Is it\nenough to know the first term? Or, is it enough to know only the common difference?\nYou will find that you will need to know both – the first term $a$ and the common\ndifference $d$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1487.9,
+            1178.3,
+            1572.2
+          ],
+          "conf": 0.926,
+          "text": "For instance if the first term $a$ is 6 and the common difference $d$ is 3, then\nthe AP is"
+        },
+        {
+          "order": 10,
+          "label": "Expression",
+          "type": "Equation",
+          "bbox_xyxy": [
+            498.9,
+            1562.8,
+            706.9,
+            1610.1
+          ],
+          "conf": 0.752,
+          "text": "$6, 9, 12, 15, \\dots$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1608.4,
+            628.5,
+            1657.9
+          ],
+          "conf": 0.873,
+          "text": "and if $a$ is $6$ and $d$ is $-3$, then the AP is"
+        },
+        {
+          "order": 12,
+          "label": "Expression",
+          "type": "Equation",
+          "bbox_xyxy": [
+            492.3,
+            1658.5,
+            695.0,
+            1705.6
+          ],
+          "conf": 0.766,
+          "text": "$6, 3, 0, -3, \\dots$"
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0074_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.6,
+            192.1,
+            1177.4,
+            238.8
+          ],
+          "conf": 0.759,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.6,
+            192.9,
+            423.3,
+            237.5
+          ],
+          "conf": 0.513,
+          "text": "ARITHMETIC PROGRESSIONS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.5,
+            258.0,
+            397.7,
+            307.2
+          ],
+          "conf": 0.88,
+          "text": "Similarly, when"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            293.0,
+            305.1,
+            1010.4,
+            559.5
+          ],
+          "conf": 0.647,
+          "text": "$a = -7, \\quad d = -2, \\quad$ the AP is $-7, -9, -11, -13, \\dots$\n$a = 1.0, \\quad d = 0.1, \\quad$ the AP is $1.0, 1.1, 1.2, 1.3, \\dots$\n\n$a = 0, \\quad d = 1\\frac{1}{2}, \\quad$ the AP is $0, \\ 1\\frac{1}{2}, 3, 4\\frac{1}{2}, 6, \\dots$\n$a = 2, \\quad d = 0, \\quad$ the AP is $2, 2, 2, 2, \\dots$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            557.8,
+            1178.7,
+            788.9
+          ],
+          "conf": 0.98,
+          "text": "So, if you know what $a$ and $d$ are, you can list the AP. What about the other way\nround? That is, if you are given a list of numbers can you say that it is an AP and then\nfind $a$ and $d$? Since $a$ is the first term, it can easily be written. We know that in an AP,\nevery succeeding term is obtained by adding $d$ to the preceding term. So, $d$ found by\nsubtracting any term from its succeeding term, i.e., the term which immediately follows\nit should be same for an AP."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.2,
+            791.9,
+            664.3,
+            841.1
+          ],
+          "conf": 0.917,
+          "text": "For example, for the list of numbers :"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            478.0,
+            843.4,
+            772.5,
+            1024.1
+          ],
+          "conf": 0.693,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            883.7,
+            773.2,
+            1026.8
+          ],
+          "conf": 0.721,
+          "text": "We have\n$$a_2 - a_1 = 9 - 6 = 3,$$\n$$a_3 - a_2 = 12 - 9 = 3,$$\n$$a_4 - a_3 = 15 - 12 = 3$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1023.0,
+            1178.2,
+            1107.5
+          ],
+          "conf": 0.95,
+          "text": "Here the difference of any two consecutive terms in each case is 3. So, the\ngiven list is an AP whose first term $a$ is 6 and common difference $d$ is 3."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            1103.9,
+            702.3,
+            1153.1
+          ],
+          "conf": 0.877,
+          "text": "For the list of numbers : $6, 3, 0, -3, \\dots,$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            484.6,
+            1149.7,
+            780.7,
+            1289.2
+          ],
+          "conf": 0.828,
+          "text": "$$a_2 - a_1 = 3 - 6 = -3$$\n$$a_3 - a_2 = 0 - 3 = -3$$\n$$a_4 - a_3 = -3 - 0 = -3$$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            1289.5,
+            1178.2,
+            1374.8
+          ],
+          "conf": 0.941,
+          "text": "Similarly this is also an AP whose first term is 6 and the common difference\nis $-3$."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.4,
+            1376.7,
+            764.1,
+            1429.2
+          ],
+          "conf": 0.862,
+          "text": "In general, for an AP $a_1, a_2, \\dots, a_n$, we have"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            529.4,
+            1429.2,
+            724.1,
+            1482.0
+          ],
+          "conf": 0.836,
+          "text": "$$d = a_{k+1} - a_k$$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1477.2,
+            988.6,
+            1530.1
+          ],
+          "conf": 0.896,
+          "text": "where $a_{k+1}$ and $a_k$ are the $( k + 1)$th and the $k$th terms respectively."
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1528.4,
+            1179.2,
+            1613.1
+          ],
+          "conf": 0.919,
+          "text": "To obtain $d$ in a given AP, we need not find all of $a_2 - a_1, a_3 - a_2, a_4 - a_3, \\dots$.\nIt is enough to find only one of them."
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1611.4,
+            1178.6,
+            1697.1
+          ],
+          "conf": 0.916,
+          "text": "Consider the list of numbers $1, 1, 2, 3, 5, \\dots$. By looking at it, you can tell that the\ndifference between any two consecutive terms is not the same. So, this is not an AP."
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0074_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            257.1,
+            1178.8,
+            379.2
+          ],
+          "conf": 0.968,
+          "text": "Note that to find $d$ in the AP : $6, 3, 0, - 3, \\dots$, we have subtracted $6$ from $3$\nand not $3$ from $6$, i.e., we should subtract the $k$th term from the $(k + 1)$ th term\neven if the $(k + 1)$ th term is smaller."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            184.3,
+            381.9,
+            964.0,
+            431.9
+          ],
+          "conf": 0.926,
+          "text": "Let us make the concept more clear through some examples."
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            455.0,
+            1177.7,
+            570.6
+          ],
+          "conf": 0.819,
+          "text": "Example 1 : For the AP : $\\frac{3}{2}$, $\\frac{1}{2}$, $-\\frac{1}{2}$, $-\\frac{3}{2}$, $\\dots$, write the first term $a$ and the\ncommon difference $d$."
+        },
+        {
+          "order": 3,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            582.0,
+            715.5,
+            674.1
+          ],
+          "conf": 0.69,
+          "text": "Solution : Here, $a = \\frac{3}{2}, d = \\frac{1}{2} - \\frac{3}{2} = -1.$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            677.4,
+            1178.2,
+            763.0
+          ],
+          "conf": 0.926,
+          "text": "Remember that we can find $d$ using any two consecutive terms, once we know that\nthe numbers are in AP."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            775.2,
+            1178.2,
+            958.9
+          ],
+          "conf": 0.559,
+          "text": "Example 2 : Which of the following list of numbers form an AP? If they form an AP,\nwrite the next two terms :\n\n(i) $4, 10, 16, 22, \\dots$                                     (ii) $1, -1, -3, -5, \\dots$\n\n(iii) $-2, 2, -2, 2, -2, \\dots$                               (iv) $1, 1, 1, 2, 2, 2, 3, 3, 3, \\dots$"
+        },
+        {
+          "order": 6,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            954.6,
+            754.6,
+            1102.4
+          ],
+          "conf": 0.689,
+          "text": "Solution : (i) We have $a_2 - a_1 = 10 - 4 = 6$\n$a_3 - a_2 = 16 - 10 = 6$\n$a_4 - a_3 = 22 - 16 = 6$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.3,
+            1100.7,
+            629.3,
+            1154.2
+          ],
+          "conf": 0.86,
+          "text": "i.e., $a_{k+1} - a_k$ is the same every time."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1148.0,
+            1093.6,
+            1196.8
+          ],
+          "conf": 0.879,
+          "text": "So, the given list of numbers forms an AP with the common difference $d = 6$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1195.3,
+            798.2,
+            1245.3
+          ],
+          "conf": 0.873,
+          "text": "The next two terms are: $22 + 6 = 28$ and $28 + 6 = 34$."
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            143.9,
+            1242.0,
+            695.2,
+            1380.4
+          ],
+          "conf": 0.853,
+          "text": "(ii) $a_2 - a_1 = -1 - 1 = -2$\n$a_3 - a_2 = -3 - (-1) = -3 + 1 = -2$\n$a_4 - a_3 = -5 - (-3) = -5 + 3 = -2$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1379.8,
+            631.4,
+            1433.0
+          ],
+          "conf": 0.836,
+          "text": "i.e., $a_{k+1} - a_k$ is the same every time."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1427.7,
+            1160.8,
+            1476.5
+          ],
+          "conf": 0.841,
+          "text": "So, the given list of numbers forms an AP with the common difference $d = -2$."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1474.6,
+            441.1,
+            1521.9
+          ],
+          "conf": 0.795,
+          "text": "The next two terms are:"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            312.6,
+            1519.0,
+            939.6,
+            1568.5
+          ],
+          "conf": 0.784,
+          "text": "$$ -5 + (-2) = -7 \\quad \\text{and} \\quad -7 + (-2) = -9 $$"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            136.1,
+            1562.4,
+            586.0,
+            1658.1
+          ],
+          "conf": 0.763,
+          "text": "(iii) $a_2 - a_1 = 2 - (-2) = 2 + 2 = 4$\n$a_3 - a_2 = -2 - 2 = -4$"
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1651.9,
+            1000.9,
+            1704.3
+          ],
+          "conf": 0.845,
+          "text": "As $a_2 - a_1 \\neq a_3 - a_2$, the given list of numbers does not form an AP."
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0074_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            119.9,
+            191.3,
+            1178.5,
+            239.0
+          ],
+          "conf": 0.774,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.6,
+            193.2,
+            423.8,
+            237.3
+          ],
+          "conf": 0.501,
+          "text": "ARITHMETIC PROGRESSIONS"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            134.7,
+            258.4,
+            446.0,
+            381.0
+          ],
+          "conf": 0.933,
+          "text": "(iv) $a_2 - a_1 = 1 - 1 = 0$\n$a_3 - a_2 = 1 - 1 = 0$\n$a_4 - a_3 = 2 - 1 = 1$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            377.3,
+            561.6,
+            430.2
+          ],
+          "conf": 0.846,
+          "text": "Here, $a_2 - a_1 = a_3 - a_2 \\neq a_4 - a_3$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            422.2,
+            762.1,
+            470.8
+          ],
+          "conf": 0.911,
+          "text": "So, the given list of numbers does not form an AP."
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.9,
+            497.2,
+            772.3,
+            546.6
+          ],
+          "conf": 0.861,
+          "text": "EXERCISE 5.1"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            151.1,
+            554.4,
+            1179.9,
+            1708.1
+          ],
+          "conf": 0.629,
+          "text": "1. In which of the following situations, does the list of numbers involved make an arithmetic\nprogression, and why?\n(i) The taxi fare after each km when the fare is ₹ 15 for the first km and ₹ 8 for each\nadditional km.\n(ii) The amount of air present in a cylinder when a vacuum pump removes $\\frac{1}{4}$ of the\nair remaining in the cylinder at a time.\n(iii) The cost of digging a well after every metre of digging, when it costs ₹ 150 for the\nfirst metre and rises by ₹ 50 for each subsequent metre.\n(iv) The amount of money in the account every year, when ₹ 10000 is deposited at\ncompound interest at 8 % per annum.\n\n2. Write first four terms of the AP, when the first term $a$ and the common difference $d$ are\ngiven as follows:\n(i) $a=10$, $d=10$\n(iii) $a=4$, $d=-3$\n(v) $a=-1.25$, $d=-0.25$\n(ii) $a=-2$, $d=0$\n(iv) $a=-1$, $d=\\frac{1}{2}$\n\n3. For the following APs, write the first term and the common difference:\n(i) $3, 1, -1, -3, \\dots$\n(iii) $\\frac{1}{3}, \\frac{5}{3}, \\frac{9}{3}, \\frac{13}{3}, \\dots$\n(iv) $0.6, 1.7, 2.8, 3.9, \\dots$\n\n4. Which of the following are APs ? If they form an AP, find the common difference $d$ and\nwrite three more terms.\n\n(i) $2, 4, 8, 16, \\dots$\n(iii) $-1.2, -3.2, -5.2, -7.2, \\dots$\n(v) $3, 3 + \\sqrt{2}, 3 + 2\\sqrt{2}, 3 + 3\\sqrt{2}, \\dots$\n(vi) $0.2, 0.22, 0.222, 0.2222, \\dots$\n(vii) $0, -4, -8, -12, \\dots$\n(viii) $-\\frac{1}{2}, -\\frac{1}{2}, -\\frac{1}{2}, -\\frac{1}{2}, \\dots$"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0074_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            220.0,
+            257.3,
+            1078.2,
+            460.4
+          ],
+          "conf": 0.877,
+          "text": "(ix) $1, 3, 9, 27, \\dots$                                                                    (x) $a, 2a, 3a, 4a, \\dots$\n\n(xi) $a, a^2, a^3, a^4, \\dots$                                                                    (xii) $\\sqrt{2}, \\sqrt{8}, \\sqrt{18}, \\sqrt{32}, \\dots$\n\n(xiii) $\\sqrt{3}, \\sqrt{6}, \\sqrt{9}, \\sqrt{12}, \\dots$                                                                    (xiv) $1^2, 3^2, 5^2, 7^2, \\dots$\n\n(xv) $1^2, 5^2, 7^2, 73, \\dots$"
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.8,
+            483.7,
+            456.0,
+            534.1
+          ],
+          "conf": 0.892,
+          "text": "5.3 $n$th Term of an AP"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            534.5,
+            1176.8,
+            691.6
+          ],
+          "conf": 0.975,
+          "text": "Let us consider the situation again, given in Section 5.1 in which Reena applied for a\njob and got selected. She has been offered the job with a starting monthly salary of\n₹ 8000, with an annual increment of ₹ 500. What would be her monthly salary for the\nfifth year?"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            692.2,
+            1176.5,
+            775.4
+          ],
+          "conf": 0.942,
+          "text": "To answer this, let us first see what her monthly salary for the second year\nwould be."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            774.6,
+            1175.3,
+            894.7
+          ],
+          "conf": 0.913,
+          "text": "It would be $\\text{\\text{\\textsection}}$ (8000 + 500) = $\\text{\\textsection}$ 8500. In the same way, we can find the monthly\nsalary for the 3rd, 4th and 5th year by adding $\\text{\\textsection}$ 500 to the salary of the previous year.\nSo, the salary for the 3rd year = $\\text{\\textsection}$ (8500 + 500)"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            123.9,
+            849.5,
+            1176.2,
+            1074.5
+          ],
+          "conf": 0.668,
+          "text": "So, the salary for the 3rd year = ₹ (8500 + 500)\n= ₹ (8000 + 500 + 500)\n= ₹ (8000 + 2 × 500)\n= ₹ [8000 + (3 – 1) × 500] (for the 3rd year)\n= ₹ 9000"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.2,
+            1073.7,
+            1177.1,
+            1303.6
+          ],
+          "conf": 0.886,
+          "text": "Salary for the 4th year $= \\text{₹ } (9000 + 500)$\n$= \\text{₹ } (8000 + 500 + 500 + 500)$\n$= \\text{₹ } (8000 + 3 \\times 500)$\n$= \\text{₹ } [8000 + (4 - 1) \\times 500] \\quad \\text{(for the \\textbf{4th year})} $\n$= \\text{₹ } 9500$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.6,
+            1301.1,
+            1177.9,
+            1549.1
+          ],
+          "conf": 0.878,
+          "text": "Salary for the 5th year $= \\text{₹ } (9500 + 500)$\n$= \\text{₹ } (8000+500+500+500 + 500)$\n$= \\text{₹ } (8000 + 4 \\times 500)$\n$= \\text{₹ } [8000 + (5 - 1) \\times 500] \\quad \\text{(for the \\textbf{5th year})} $\n$= \\text{₹ } 10000$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            1555.5,
+            767.8,
+            1604.7
+          ],
+          "conf": 0.854,
+          "text": "Observe that we are getting a list of numbers"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            339.3,
+            1606.5,
+            794.6,
+            1654.9
+          ],
+          "conf": 0.723,
+          "text": "8000, 8500, 9000, 9500, 10000, . . ."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.3,
+            1660.4,
+            633.0,
+            1710.8
+          ],
+          "conf": 0.877,
+          "text": "These numbers are in AP. (Why?)"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0074_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.2,
+            191.0,
+            1178.3,
+            239.0
+          ],
+          "conf": 0.773,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.7,
+            192.7,
+            423.7,
+            237.7
+          ],
+          "conf": 0.553,
+          "text": "ARITHMETIC PROGRESSIONS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            262.0,
+            1178.6,
+            516.4
+          ],
+          "conf": 0.982,
+          "text": "Now, looking at the pattern formed above, can you find her monthly salary for\nthe 6th year? The 15th year? And, assuming that she will still be working in the job,\nwhat about the monthly salary for the 25th year? You would calculate this by adding\n$₹ 500 each time to the salary of the previous year to give the answer. Can we make\nthis process shorter? Let us see. You may have already got some idea from the way\nwe have obtained the salaries above."
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.2,
+            521.4,
+            945.9,
+            833.0
+          ],
+          "conf": 0.827,
+          "text": "Salary for the 15th year\n= Salary for the 14th year + ₹ 500\n= ₹ [8000 + $\\frac{500 + 500 + 500 + \\ldots + 500}{13 \\text{ times}}$] + ₹ 500\n= ₹ [8000 + 14 × 500]\n= ₹ [8000 + (15 - 1) × 500] = ₹ 15000"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            843.2,
+            917.1,
+            892.6
+          ],
+          "conf": 0.843,
+          "text": "i.e., $\\qquad \\qquad \\qquad \\text{First salary } + (15 - 1) \\times \\text{Annual increment.}$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.2,
+            901.0,
+            991.2,
+            950.2
+          ],
+          "conf": 0.913,
+          "text": "In the same way, her monthly salary for the 25th year would be"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            319.0,
+            958.0,
+            895.8,
+            1066.1
+          ],
+          "conf": 0.855,
+          "text": "₹ [8000 + (25 – 1) × 500] = ₹ 20000\n= First salary + (25 – 1) × Annual increment"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1070.5,
+            1178.1,
+            1162.2
+          ],
+          "conf": 0.951,
+          "text": "This example would have given you some idea about how to write the 15th term,\nor the 25th term, and more generally, the $n$th term of the AP."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1167.7,
+            1178.5,
+            1258.4
+          ],
+          "conf": 0.928,
+          "text": "Let $a_1, a_2, a_3, \\dots$ be an AP whose first term $a_1$ is $a$ and the common\ndifference is $d$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1261.6,
+            213.3,
+            1308.7
+          ],
+          "conf": 0.859,
+          "text": "Then,"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            283.1,
+            1309.5,
+            1178.1,
+            1543.6
+          ],
+          "conf": 0.837,
+          "text": "the second term $a_2 = a + d = a + (\\mathbf{2} - \\mathbf{1}) d$\nthe third term $a_3 = a_2 + d = (a + d) + d = a + 2d = a + (\\mathbf{3} - \\mathbf{1}) d$\nthe fourth term $a_4 = a_3 + d = (a + 2d) + d = a + 3d = a + (\\mathbf{4} - \\mathbf{1}) d$\n$\\cdot \\cdot \\cdot \\cdot \\cdot \\cdot \\cdot \\cdot$\n$\\cdot \\cdot \\cdot \\cdot \\cdot \\cdot \\cdot \\cdot$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            518.3,
+            1509.7,
+            682.0,
+            1547.4
+          ],
+          "conf": 0.504,
+          "text": ". . . . . . . ."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.2,
+            1548.3,
+            1092.0,
+            1599.8
+          ],
+          "conf": 0.883,
+          "text": "Looking at the pattern, we can say that the $\\boldsymbol{n}$th term $a_n = a + (n - 1) d$."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1600.6,
+            1178.3,
+            1694.2
+          ],
+          "conf": 0.924,
+          "text": "So, the $n$th term $a_n$ of the AP with first term $a$ and common difference $d$ is\ngiven by $a_n = a + (n - 1) d$."
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0074_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.2,
+            257.8,
+            1178.5,
+            344.8
+          ],
+          "conf": 0.956,
+          "text": "$\\boldsymbol{a}_n$ is also called the **general term of the AP**. If there are $m$ terms in the AP, then\n$\\boldsymbol{a}_m$ represents the **last term which is sometimes also denoted by** $l$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.2,
+            343.5,
+            605.4,
+            391.0
+          ],
+          "conf": 0.913,
+          "text": "Let us consider some examples."
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            403.0,
+            842.0,
+            613.3
+          ],
+          "conf": 0.535,
+          "text": "Example 3 : Find the 10th term of the AP : $2, 7, 12, \\dots$\n\nSolution : Here, $a = 2$, $d = 7 - 2 = 5$ and $n = 10$.\n\nWe have $a_n = a + (n - 1) d$\n\nSo, $a_{10} = 2 + (10 - 1) \\times 5 = 2 + 45 = 47$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            605.1,
+            721.0,
+            656.1
+          ],
+          "conf": 0.871,
+          "text": "Therefore, the 10th term of the given AP is 47."
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            115.3,
+            666.9,
+            1184.0,
+            1332.1
+          ],
+          "conf": 0.575,
+          "text": "Example 4 : Which term of the AP : $21, 18, 15, \\dots$ is $-81$? Also, is any term $0$? Give\nreason for your answer.\nSolution : Here, $a = 21$, $d = 18 - 21 = -3$ and $a_n = -81$, and we have to find $n$.\nAs $a_n = a + (n - 1)d$,\nwe have $-81 = 21 + (n - 1)(-3)$\n$-81 = 24 - 3n$\n$-105 = -3n$\nSo, $n = 35$\nTherefore, the 35th term of the given AP is $-81$.\nNext, we want to know if there is any $n$ for which $a_n = 0$. If such an $n$ is there, then\n$$21 + (n - 1)(-3) = 0,$$\ni.e., $3(n - 1) = 21$\ni.e., $n = 8$\nSo, the eighth term is $0$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1299.4,
+            432.8,
+            1348.8
+          ],
+          "conf": 0.811,
+          "text": "So, the eighth term is $0$."
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1360.4,
+            1180.3,
+            1696.7
+          ],
+          "conf": 0.655,
+          "text": "Example 5 : Determine the AP whose 3rd term is 5 and the 7th term is 9.\nSolution : We have\n$$a_3 = a + (3 - 1) d = a + 2d = 5 \\eqno(1)$$\nand\n$$a_7 = a + (7 - 1) d = a + 6d = 9 \\eqno(2)$$\nSolving the pair of linear equations (1) and (2), we get\n$$a = 3, \\quad d = 1$$\nHence, the required AP is 3, 4, 5, 6, 7, . . ."
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0074_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.1,
+            191.7,
+            1179.2,
+            238.6
+          ],
+          "conf": 0.806,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.2,
+            192.7,
+            423.8,
+            237.3
+          ],
+          "conf": 0.585,
+          "text": "ARITHMETIC PROGRESSIONS"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            257.3,
+            1152.6,
+            307.4
+          ],
+          "conf": 0.797,
+          "text": "Example 6 : Check whether 301 is a term of the list of numbers 5, 11, 17, 23, ..."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            305.7,
+            406.1,
+            354.5
+          ],
+          "conf": 0.793,
+          "text": "Solution : We have :"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            269.8,
+            354.2,
+            1175.7,
+            407.4
+          ],
+          "conf": 0.843,
+          "text": "$$a_2 - a_1 = 11 - 5 = 6, \\quad a_3 - a_2 = 17 - 11 = 6, \\quad a_4 - a_3 = 23 - 17 = 6$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            402.0,
+            1118.1,
+            455.0
+          ],
+          "conf": 0.877,
+          "text": "As $a_{k+1} - a_k$ is the same for $k = 1, 2, 3,$ etc., the given list of numbers is an AP."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            449.9,
+            617.9,
+            498.8
+          ],
+          "conf": 0.767,
+          "text": "Now, $a=5$ and $d=6$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            497.0,
+            720.1,
+            546.4
+          ],
+          "conf": 0.902,
+          "text": "Let 301 be a term, say, the $n$th term of this AP."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            545.5,
+            317.3,
+            591.9
+          ],
+          "conf": 0.873,
+          "text": "We know that"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            570.0,
+            594.7,
+            823.4,
+            644.5
+          ],
+          "conf": 0.785,
+          "text": "$$a_n = a + (n - 1) d$$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            640.7,
+            843.4,
+            689.5
+          ],
+          "conf": 0.79,
+          "text": "So, $301 = 5 + (n - 1) \\times 6$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.6,
+            688.8,
+            737.8,
+            738.1
+          ],
+          "conf": 0.784,
+          "text": "i.e., $301 = 6n - 1$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            750.3,
+            790.4,
+            839.4
+          ],
+          "conf": 0.858,
+          "text": "So, $n = \\frac{302}{6} = \\frac{151}{3}$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            844.6,
+            1177.8,
+            930.2
+          ],
+          "conf": 0.921,
+          "text": "But $n$ should be a positive integer (Why?). So, 301 is not a term of the given list of\nnumbers."
+        },
+        {
+          "order": 14,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            942.8,
+            910.0,
+            993.5
+          ],
+          "conf": 0.751,
+          "text": "Example 7 : How many two-digit numbers are divisible by 3?"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            990.8,
+            843.4,
+            1041.8
+          ],
+          "conf": 0.81,
+          "text": "Solution : The list of two-digit numbers divisible by 3 is :"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            523.5,
+            1040.4,
+            776.6,
+            1090.8
+          ],
+          "conf": 0.704,
+          "text": "12, 15, 18, . . . , 99"
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1092.1,
+            826.1,
+            1143.2
+          ],
+          "conf": 0.819,
+          "text": "Is this an AP? Yes it is. Here, $a = 12$, $d = 3$, $a_n = 99$."
+        },
+        {
+          "order": 18,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1144.2,
+            825.4,
+            1195.3
+          ],
+          "conf": 0.711,
+          "text": "As $a_n = a + (n - 1) d,$"
+        },
+        {
+          "order": 19,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.3,
+            1193.4,
+            857.1,
+            1242.8
+          ],
+          "conf": 0.732,
+          "text": "we have $99 = 12 + (n - 1) \\times 3$"
+        },
+        {
+          "order": 20,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            1243.2,
+            794.8,
+            1293.3
+          ],
+          "conf": 0.714,
+          "text": "i.e., $87 = (n - 1) \\times 3$"
+        },
+        {
+          "order": 21,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            1309.7,
+            767.1,
+            1395.9
+          ],
+          "conf": 0.803,
+          "text": "i.e., $n - 1 = \\frac{87}{3} = 29$"
+        },
+        {
+          "order": 22,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.3,
+            1404.5,
+            800.5,
+            1454.4
+          ],
+          "conf": 0.729,
+          "text": "i.e., $n = 29 + 1 = 30$"
+        },
+        {
+          "order": 23,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            1453.7,
+            742.2,
+            1504.0
+          ],
+          "conf": 0.834,
+          "text": "So, there are 30 two-digit numbers divisible by 3."
+        },
+        {
+          "order": 24,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1517.0,
+            1178.2,
+            1710.0
+          ],
+          "conf": 0.637,
+          "text": "Example 8 : Find the 11th term from the last term (towards the first term) of the\nAP : $10, 7, 4, \\dots, -62$.\n\nSolution : Here, $a = 10$, $d = 7 - 10 = -3$, $l = -62$,\n\nwhere $l = a + (n - 1) d$"
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0074_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            257.6,
+            1178.2,
+            343.1
+          ],
+          "conf": 0.952,
+          "text": "To find the 11th term from the last term, we will find the total number of terms in\nthe AP."
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            342.6,
+            854.0,
+            392.5
+          ],
+          "conf": 0.867,
+          "text": "So, $-62 = 10 + (n - 1)(-3)$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            389.5,
+            792.4,
+            440.2
+          ],
+          "conf": 0.854,
+          "text": "i.e., $-72 = (n-1)(-3)$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.2,
+            437.8,
+            683.4,
+            487.2
+          ],
+          "conf": 0.858,
+          "text": "i.e., $n-1=24$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            487.0,
+            683.0,
+            534.7
+          ],
+          "conf": 0.866,
+          "text": "or $n = 25$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            533.5,
+            619.1,
+            583.1
+          ],
+          "conf": 0.914,
+          "text": "So, there are 25 terms in the given AP."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            582.2,
+            1178.2,
+            667.8
+          ],
+          "conf": 0.951,
+          "text": "The 11th term from the last term will be the 15th term. (Note that it will not be\nthe 14th term. Why?)"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            666.5,
+            928.6,
+            717.8
+          ],
+          "conf": 0.878,
+          "text": "So, $a_{15} = 10 + (15 - 1)(-3) = 10 - 42 = -32$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            714.8,
+            684.8,
+            764.0
+          ],
+          "conf": 0.911,
+          "text": "i.e., the 11th term from the last term is – 32."
+        },
+        {
+          "order": 9,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.2,
+            762.5,
+            438.6,
+            811.7
+          ],
+          "conf": 0.876,
+          "text": "Alternative Solution :"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            808.4,
+            1170.1,
+            906.1
+          ],
+          "conf": 0.886,
+          "text": "If we write the given AP in the reverse order, then $a = -62$ and $d = 3$ (Why?)\nSo, the question now becomes finding the 11th term with these $a$ and $d$."
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            904.8,
+            974.1,
+            956.6
+          ],
+          "conf": 0.882,
+          "text": "So, $a_{11} = -62 + (11 - 1) \\times 3 = -62 + 30 = -32$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            953.4,
+            854.6,
+            1004.3
+          ],
+          "conf": 0.895,
+          "text": "So, the 11th term, which is now the required term, is – 32."
+        },
+        {
+          "order": 13,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1015.7,
+            1178.1,
+            1136.8
+          ],
+          "conf": 0.889,
+          "text": "Example 9 : A sum of ₹ 1000 is invested at 8% simple interest per year. Calculate the\ninterest at the end of each year. Do these interests form an AP? If so, find the interest\nat the end of 30 years making use of this fact."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1136.6,
+            1075.5,
+            1186.6
+          ],
+          "conf": 0.858,
+          "text": "Solution : We know that the formula to calculate simple interest is given by"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            459.5,
+            1198.5,
+            819.9,
+            1288.8
+          ],
+          "conf": 0.85,
+          "text": "Simple Interest = $\\frac{P \\times R \\times T}{100}$"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            1283.1,
+            945.0,
+            1375.6
+          ],
+          "conf": 0.879,
+          "text": "So, the interest at the end of the 1st year = ₹ $\\frac{1000 \\times 8 \\times 1}{100}$ = ₹ 80"
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            1373.1,
+            958.0,
+            1464.1
+          ],
+          "conf": 0.883,
+          "text": "The interest at the end of the 2nd year = ₹ $\\frac{1000 \\times 8 \\times 2}{100}$ = ₹ 160"
+        },
+        {
+          "order": 18,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1462.8,
+            957.5,
+            1552.3
+          ],
+          "conf": 0.884,
+          "text": "The interest at the end of the 3rd year = ₹ $\\frac{1000 \\times 8 \\times 3}{100}$ = ₹ 240"
+        },
+        {
+          "order": 19,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1553.8,
+            1151.4,
+            1603.8
+          ],
+          "conf": 0.866,
+          "text": "Similarly, we can obtain the interest at the end of the 4th year, 5th year, and so on."
+        },
+        {
+          "order": 20,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1607.0,
+            1112.3,
+            1656.6
+          ],
+          "conf": 0.839,
+          "text": "So, the interest (in ₹) at the end of the 1st, 2nd, 3rd, . . . years, respectively are"
+        },
+        {
+          "order": 21,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            532.9,
+            1660.0,
+            762.3,
+            1709.6
+          ],
+          "conf": 0.81,
+          "text": "80, 160, 240, . . ."
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0074_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.4,
+            191.0,
+            1177.3,
+            239.0
+          ],
+          "conf": 0.798,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.3,
+            193.0,
+            423.7,
+            238.1
+          ],
+          "conf": 0.51,
+          "text": "ARITHMETIC PROGRESSIONS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            257.3,
+            1176.2,
+            342.8
+          ],
+          "conf": 0.955,
+          "text": "It is an AP as the difference between the consecutive terms in the list is 80, i.e.,\n$d = 80$. Also, $a = 80$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            348.1,
+            915.5,
+            399.6
+          ],
+          "conf": 0.924,
+          "text": "So, to find the interest at the end of 30 years, we shall find $a_{30}$."
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            401.1,
+            957.3,
+            452.8
+          ],
+          "conf": 0.877,
+          "text": "Now, $a_{30} = a + (30 - 1) d = 80 + 29 \\times 80 = 2400$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            454.1,
+            789.8,
+            504.1
+          ],
+          "conf": 0.925,
+          "text": "So, the interest at the end of 30 years will be $₹ 2400$."
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.0,
+            516.2,
+            1175.5,
+            1081.5
+          ],
+          "conf": 0.61,
+          "text": "Example 10 : In a flower bed, there are 23 rose plants in the first row, 21 in the\nsecond, 19 in the third, and so on. There are 5 rose plants in the last row. How many\nrows are there in the flower bed?\n\nSolution : The number of rose plants in the 1st, 2nd, 3rd, . . ., rows are :\n\n$$23, 21, 19, \\dots, 5$$\n\nIt forms an AP (Why?). Let the number of rows in the flower bed be $n$.\n\nThen $a = 23, \\quad d = 21 - 23 = - 2, \\quad a_n = 5$\n\nAs, $a_n = a + (n - 1) d$\n\nWe have, $5 = 23 + (n - 1)(- 2)$\n\ni.e., $- 18 = (n - 1)(- 2)$\n\ni.e., $n = 10$\n\nSo, there are 10 rows in the flower bed."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1045.2,
+            633.9,
+            1094.8
+          ],
+          "conf": 0.894,
+          "text": "So, there are 10 rows in the flower bed."
+        },
+        {
+          "order": 8,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.4,
+            1130.9,
+            773.4,
+            1182.9
+          ],
+          "conf": 0.801,
+          "text": "EXERCISE 5.2"
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.6,
+            1189.0,
+            1177.7,
+            1270.7
+          ],
+          "conf": 0.849,
+          "text": "1. Fill in the blanks in the following table, given that $a$ is the first term, $d$ the common\ndifference and $a_n$ the $n$th term of the AP:"
+        },
+        {
+          "order": 10,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            225.0,
+            1290.3,
+            972.4,
+            1667.6
+          ],
+          "conf": 0.96,
+          "text": "<table>\n<thead>\n<tr>\n<th></th>\n<th>a</th>\n<th>d</th>\n<th>n</th>\n<th>a_n</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>(i)</td>\n<td>7</td>\n<td>3</td>\n<td>8</td>\n<td>...</td>\n</tr>\n<tr>\n<td>(ii)</td>\n<td>-18</td>\n<td>...</td>\n<td>10</td>\n<td>0</td>\n</tr>\n<tr>\n<td>(iii)</td>\n<td>...</td>\n<td>-3</td>\n<td>18</td>\n<td>-5</td>\n</tr>\n<tr>\n<td>(iv)</td>\n<td>-18.9</td>\n<td>2.5</td>\n<td>...</td>\n<td>3.6</td>\n</tr>\n<tr>\n<td>(v)</td>\n<td>3.5</td>\n<td>0</td>\n<td>105</td>\n<td>...</td>\n</tr>\n</tbody>\n</table>"
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0074_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.1,
+            257.1,
+            1109.5,
+            388.4
+          ],
+          "conf": 0.843,
+          "text": "**2.** Choose the correct choice in the following and justify :\n(i) 30th term of the AP: $10, 7, 4, \\dots,$ is\n(A) 97 (B) 77 (C) $-77$ (D) $-87$"
+        },
+        {
+          "order": 1,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            229.2,
+            387.4,
+            1133.3,
+            516.4
+          ],
+          "conf": 0.888,
+          "text": "(ii) 11th term of the AP: $-3$, $-\\frac{1}{2}$, $2$, $\\dots$, is\n\n(A) 28          (B) 22          (C) $-38$          (D) $-48\\frac{1}{2}$"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.7,
+            512.6,
+            862.8,
+            561.6
+          ],
+          "conf": 0.906,
+          "text": "3. In the following APs, find the missing terms in the boxes :"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            226.8,
+            564.7,
+            748.1,
+            950.8
+          ],
+          "conf": 0.671,
+          "text": "(i) $2$, $\\square$, $26$\n\n(ii) $\\square$, $13$, $\\square$, $3$\n\n(iii) $5$, $\\square$, $\\square$, $9\\frac{1}{2}$\n\n(iv) $-4$, $\\square$, $\\square$, $\\square$, $\\square$, $6$\n\n(v) $\\square$, $38$, $\\square$, $\\square$, $\\square$, $-22$"
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.7,
+            946.8,
+            725.3,
+            994.6
+          ],
+          "conf": 0.893,
+          "text": "4. Which term of the AP : 3, 8, 13, 18, ...,is 78?"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.3,
+            991.8,
+            835.8,
+            1039.5
+          ],
+          "conf": 0.867,
+          "text": "5. Find the number of terms in each of the following APs :"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            216.5,
+            1042.5,
+            978.5,
+            1121.4
+          ],
+          "conf": 0.766,
+          "text": "(i) $7, 13, 19, \\dots, 205$                                     (ii) $18, 15 \\frac{1}{2}, 13, \\dots, -47$"
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.3,
+            1115.1,
+            822.5,
+            1164.3
+          ],
+          "conf": 0.887,
+          "text": "6. Check whether – 150 is a term of the AP : 11, 8, 5, 2 ..."
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            153.8,
+            1159.2,
+            1035.6,
+            1207.3
+          ],
+          "conf": 0.883,
+          "text": "7. Find the 31st term of an AP whose 11th term is 38 and the 16th term is 73."
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.3,
+            1203.5,
+            1177.8,
+            1284.2
+          ],
+          "conf": 0.912,
+          "text": "**8.** An AP consists of 50 terms of which 3rd term is 12 and the last term is 106. Find the 29th\nterm."
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.2,
+            1281.4,
+            1178.1,
+            1361.2
+          ],
+          "conf": 0.908,
+          "text": "**9.** If the 3rd and the 9th terms of an AP are 4 and $-8$ respectively, which term of this AP is\nzero?"
+        },
+        {
+          "order": 11,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.5,
+            1357.9,
+            1101.0,
+            1407.5
+          ],
+          "conf": 0.877,
+          "text": "10. The 17th term of an AP exceeds its 10th term by 7. Find the common difference."
+        },
+        {
+          "order": 12,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.1,
+            1402.0,
+            1051.4,
+            1451.6
+          ],
+          "conf": 0.87,
+          "text": "11. Which term of the AP : 3, 15, 27, 39, ... will be 132 more than its 54th term?"
+        },
+        {
+          "order": 13,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.1,
+            1448.4,
+            1177.7,
+            1526.3
+          ],
+          "conf": 0.913,
+          "text": "12. Two APs have the same common difference. The difference between their 100th terms is\n100, what is the difference between their 1000th terms?"
+        },
+        {
+          "order": 14,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            139.5,
+            1525.3,
+            774.9,
+            1573.2
+          ],
+          "conf": 0.853,
+          "text": "13. How many three-digit numbers are divisible by 7?"
+        },
+        {
+          "order": 15,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            138.8,
+            1569.2,
+            768.4,
+            1616.7
+          ],
+          "conf": 0.847,
+          "text": "14. How many multiples of 4 lie between 10 and 250?"
+        },
+        {
+          "order": 16,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            139.2,
+            1614.0,
+            1177.9,
+            1662.1
+          ],
+          "conf": 0.86,
+          "text": "**15.** For what value of $n$, are the $n$th terms of two APs: 63, 65, 67, ... and 3, 10, 17, ... equal?"
+        },
+        {
+          "order": 17,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.0,
+            1658.3,
+            1165.2,
+            1705.8
+          ],
+          "conf": 0.858,
+          "text": "16. Determine the AP whose third term is 16 and the 7th term exceeds the 5th term by 12."
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0074_p0014.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.4,
+            259.2,
+            1177.7,
+            540.0
+          ],
+          "conf": 0.658,
+          "text": "**17.** Find the 20th term from the last term of the AP : $3, 8, 13, \\dots, 253$.\n\n**18.** The sum of the 4th and 8th terms of an AP is 24 and the sum of the 6th and 10th terms is\n44. Find the first three terms of the AP.\n\n**19.** Subba Rao started work in 1995 at an annual salary of $₹$ 5000 and received an increment\nof $₹$ 200 each year. In which year did his income reach $₹$ 7000?\n\n**20.** Ramkali saved $₹$ 5 in the first week of a year and then increased her weekly savings by\n$₹$ 1.75. If in the $n$th week, her weekly savings become $₹$ 20.75, find $n$."
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.2,
+            554.0,
+            621.0,
+            604.4
+          ],
+          "conf": 0.904,
+          "text": "5.4 Sum of First $n$ Terms of an AP"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            605.0,
+            579.0,
+            980.6
+          ],
+          "conf": 0.979,
+          "text": "Let us consider the situation again\ngiven in Section 5.1 in which Shakila\nput ₹ 100 into her daughter's money\nbox when she was one year old,\n₹ 150 on her second birthday,\n₹ 200 on her third birthday and will\ncontinue in the same way. How much\nmoney will be collected in the money\nbox by the time her daughter is 21\nyears old?"
+        },
+        {
+          "order": 3,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            681.1,
+            596.2,
+            1055.3,
+            973.9
+          ],
+          "conf": 0.934,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            982.9,
+            1178.6,
+            1213.5
+          ],
+          "conf": 0.973,
+          "text": "Here, the amount of money (in ₹) put in the money box on her first, second, third,\nfourth . . . birthday were respectively 100, 150, 200, 250, . . . till her 21st birthday. To\nfind the total amount in the money box on her 21st birthday, we will have to write each\nof the 21 numbers in the list above and then add them up. Don’t you think it would be\na tedious and time consuming process? Can we make the process shorter? This would\nbe possible if we can find a method for getting this sum. Let us see."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1212.6,
+            1178.5,
+            1370.5
+          ],
+          "conf": 0.958,
+          "text": "We consider the problem given to Gauss (about whom you read in\nChapter 1), to solve when he was just 10 years old. He was asked to find the sum of\nthe positive integers from 1 to 100. He immediately replied that the sum is 5050. Can\nyou guess how did he do? He wrote :"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            328.8,
+            1366.3,
+            735.5,
+            1415.7
+          ],
+          "conf": 0.892,
+          "text": "$$S = 1 + 2 + 3 + \\dots + 99 + 100$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            1412.5,
+            643.6,
+            1461.1
+          ],
+          "conf": 0.893,
+          "text": "And then, reversed the numbers to write"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            328.9,
+            1457.1,
+            733.7,
+            1505.6
+          ],
+          "conf": 0.874,
+          "text": "$$S = 100 + 99 + \\ldots + 3 + 2 + 1$$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1503.5,
+            451.6,
+            1551.9
+          ],
+          "conf": 0.879,
+          "text": "Adding these two, he got"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            313.8,
+            1544.9,
+            1141.1,
+            1640.8
+          ],
+          "conf": 0.884,
+          "text": "$$2S = (100 + 1) + (99 + 2) + \\ldots + (3 + 98) + (2 + 99) + (1 + 100)$$\n$$= 101 + 101 + \\ldots + 101 + 101 \\quad (100 \\text{ times})$$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            1642.7,
+            895.6,
+            1729.6
+          ],
+          "conf": 0.777,
+          "text": "So, $S = \\frac{100 \\times 101}{2} = 5050$, i.e., the sum $= 5050$."
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0074_p0015.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            257.8,
+            1172.3,
+            307.2
+          ],
+          "conf": 0.921,
+          "text": "We will now use the same technique to find the sum of the first $n$ terms of an AP :"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            308.1,
+            307.4,
+            588.2,
+            354.7
+          ],
+          "conf": 0.827,
+          "text": "$$a, a + d, a + 2d, \\dots$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            354.0,
+            1178.3,
+            437.6
+          ],
+          "conf": 0.953,
+          "text": "The $n$th term of this AP is $a + (n - 1) d$. Let S denote the sum of the first $n$ terms\nof the AP. We have"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.8,
+            437.2,
+            1177.8,
+            489.1
+          ],
+          "conf": 0.91,
+          "text": "$$S = a + (a + d) + (a + 2d) + \\dots + [a + (n - 1) d] \\tag{1}$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            486.6,
+            710.7,
+            534.8
+          ],
+          "conf": 0.919,
+          "text": "Rewriting the terms in reverse order, we have"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.5,
+            532.8,
+            1177.0,
+            584.4
+          ],
+          "conf": 0.921,
+          "text": "$$S = [a + (n - 1) d] + [a + (n - 2) d] + \\dots + (a + d) + a \\tag{2}$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            582.2,
+            651.2,
+            631.6
+          ],
+          "conf": 0.924,
+          "text": "On adding (1) and (2), term-wise. we get"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            188.1,
+            643.0,
+            1172.3,
+            734.9
+          ],
+          "conf": 0.94,
+          "text": "$$2\\mathrm{S} = \\frac{[2a + (n - 1)d] + [2a + (n - 1)d] + ... + [2a + (n - 1)d] + [2a + (n - 1)d]}{n \\text{ times}}$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            747.3,
+            886.6,
+            798.8
+          ],
+          "conf": 0.879,
+          "text": "or, $2S = n [2a + (n - 1) d]$ (Since, there are $n$ terms)"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            818.7,
+            518.2,
+            900.6
+          ],
+          "conf": 0.875,
+          "text": "or, $S = \\frac{n}{2} [2a + (n - 1) d]$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            905.7,
+            835.5,
+            955.3
+          ],
+          "conf": 0.918,
+          "text": "So, the sum of the first $n$ terms of an AP is given by"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            550.8,
+            963.5,
+            881.9,
+            1047.8
+          ],
+          "conf": 0.906,
+          "text": "$$S = \\frac{n}{2} [2a + (n - 1) d]$$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1060.8,
+            908.2,
+            1143.8
+          ],
+          "conf": 0.858,
+          "text": "We can also write this as\n$$S = \\frac{n}{2} [a + a + (n - 1) d]$$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            1159.8,
+            1175.8,
+            1235.0
+          ],
+          "conf": 0.884,
+          "text": "i.e., $S = \\frac{n}{2} (a + a_n)$ (3)"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1245.6,
+            1049.5,
+            1331.1
+          ],
+          "conf": 0.925,
+          "text": "Now, if there are only $n$ terms in an AP, then $a_n = l$, the last term.\nFrom (3), we see that"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            550.2,
+            1324.7,
+            1176.2,
+            1406.2
+          ],
+          "conf": 0.917,
+          "text": "$$ \\mathbf{S} = \\frac{n}{2} (a + l) \\tag{4} $$"
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1415.1,
+            1176.8,
+            1502.0
+          ],
+          "conf": 0.936,
+          "text": "This form of the result is useful when the first and the last terms of an AP are\ngiven and the common difference is not given."
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1503.8,
+            1179.0,
+            1627.9
+          ],
+          "conf": 0.949,
+          "text": "Now we return to the question that was posed to us in the beginning. The amount\nof money (in Rs) in the money box of Shakila’s daughter on 1st, 2nd, 3rd, 4th birthday,\n. . ., were 100, 150, 200, 250, . . ., respectively."
+        },
+        {
+          "order": 18,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1629.4,
+            1178.1,
+            1714.4
+          ],
+          "conf": 0.918,
+          "text": "This is an AP. We have to find the total money collected on her 21st birthday, i.e.,\nthe sum of the first 21 terms of this AP."
+        }
+      ],
+      "page": 15
+    },
+    {
+      "image": "0074_p0016.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            256.7,
+            822.2,
+            308.2
+          ],
+          "conf": 0.918,
+          "text": "Here, $a = 100$, $d = 50$ and $n = 21$. Using the formula :"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            327.5,
+            316.4,
+            622.0,
+            400.9
+          ],
+          "conf": 0.906,
+          "text": "$$S = \\frac{n}{2} [2a + (n-1) d],$$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            414.4,
+            951.2,
+            510.2
+          ],
+          "conf": 0.828,
+          "text": "we have $\\quad \\mathrm{S}=\\frac{21}{2}[2 \\times 100+(21-1) \\times 50]=\\frac{21}{2}[200+1000]$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            351.5,
+            521.7,
+            641.3,
+            612.8
+          ],
+          "conf": 0.893,
+          "text": "$$ = \\frac{21}{2} \\times 1200 = 12600 $$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            612.0,
+            953.4,
+            663.3
+          ],
+          "conf": 0.912,
+          "text": "So, the amount of money collected on her 21st birthday is $12600$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.2,
+            660.6,
+            1094.7,
+            710.8
+          ],
+          "conf": 0.908,
+          "text": "Hasn't the use of the formula made it much easier to solve the problem?"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            707.8,
+            1179.2,
+            866.4
+          ],
+          "conf": 0.962,
+          "text": "We also use $S_n$ in place of $S$ to denote the sum of first $n$ terms of the AP. We\nwrite $S_{20}$ to denote the sum of the first 20 terms of an AP. The formula for the sum of\nthe first $n$ terms involves four quantities $S, a, d$ and $n$. If we know any three of them,\nwe can find the fourth."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            866.4,
+            1177.7,
+            956.8
+          ],
+          "conf": 0.917,
+          "text": "Remark : The $n$th term of an AP is the difference of the sum to first $n$ terms and the\nsum to first $(n-1)$ terms of it, i.e., $a_n = \\mathrm{S}_n - \\mathrm{S}_{n-1}$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.2,
+            951.3,
+            602.6,
+            1001.1
+          ],
+          "conf": 0.884,
+          "text": "Let us consider some examples."
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1011.9,
+            1077.0,
+            1334.6
+          ],
+          "conf": 0.641,
+          "text": "Example 11 : Find the sum of the first 22 terms of the AP : $8, 3, -2, \\dots$\n\nSolution : Here, $a = 8$, $d = 3 - 8 = -5$, $n = 22$.\n\nWe know that\n\n$$S = \\frac{n}{2} [2a + (n - 1) d]$$\n\nTherefore, $S = \\frac{22}{2} [16 + 21(-5)] = 11(16 - 105) = 11(-89) = -979$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1330.8,
+            774.5,
+            1382.2
+          ],
+          "conf": 0.875,
+          "text": "So, the sum of the first 22 terms of the AP is – 979."
+        },
+        {
+          "order": 11,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1391.6,
+            1177.7,
+            1700.5
+          ],
+          "conf": 0.718,
+          "text": "Example 12 : If the sum of the first 14 terms of an AP is 1050 and its first term is 10,\nfind the 20th term.\nSolution : Here, $S_{14} = 1050$, $n = 14$, $a = 10$.\n\nAs $S_n = \\frac{n}{2}[2a + (n-1)d]$,\n\nso, $1050 = \\frac{14}{2}[20 + 13d] = 140 + 91d$"
+        }
+      ],
+      "page": 16
+    },
+    {
+      "image": "0074_p0017.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.2,
+            256.3,
+            607.2,
+            307.0
+          ],
+          "conf": 0.882,
+          "text": "i.e.,                                                                 $910 = 91d$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.0,
+            305.9,
+            589.6,
+            354.2
+          ],
+          "conf": 0.864,
+          "text": "or, $d = 10$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            352.6,
+            1122.4,
+            406.2
+          ],
+          "conf": 0.888,
+          "text": "Therefore, $a_{20} = 10 + (20 - 1) \\times 10 = 200$, i.e. 20th term is 200."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            415.3,
+            1178.1,
+            498.4
+          ],
+          "conf": 0.876,
+          "text": "Example 13 : How many terms of the AP : 24, 21, 18, . . . must be taken so that their\nsum is 78?"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            498.6,
+            1023.5,
+            550.6
+          ],
+          "conf": 0.859,
+          "text": "Solution : Here, $a = 24$, $d = 21 - 24 = -3$, $S_n = 78$. We need to find $n$."
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            550.2,
+            763.4,
+            630.2
+          ],
+          "conf": 0.887,
+          "text": "We know that $S_n = \\frac{n}{2}[2a + (n-1)d]$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            634.0,
+            967.1,
+            719.7
+          ],
+          "conf": 0.91,
+          "text": "So, $78 = \\frac{n}{2}[48 + (n-1)(-3)] = \\frac{n}{2}[51 - 3n]$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.4,
+            727.5,
+            575.4,
+            777.5
+          ],
+          "conf": 0.887,
+          "text": "or $3n^2 - 51n + 156 = 0$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.4,
+            777.1,
+            575.2,
+            825.9
+          ],
+          "conf": 0.862,
+          "text": "or $n^2 - 17n + 52 = 0$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.3,
+            825.0,
+            575.2,
+            874.4
+          ],
+          "conf": 0.871,
+          "text": "or $(n-4)(n-13) = 0$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            873.2,
+            660.3,
+            920.7
+          ],
+          "conf": 0.846,
+          "text": "or $n = 4$ or $13$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            920.4,
+            1044.3,
+            969.8
+          ],
+          "conf": 0.911,
+          "text": "Both values of $n$ are admissible. So, the number of terms is either 4 or 13."
+        },
+        {
+          "order": 12,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.1,
+            967.9,
+            281.7,
+            1015.5
+          ],
+          "conf": 0.868,
+          "text": "Remarks:"
+        },
+        {
+          "order": 13,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            133.9,
+            1016.5,
+            1179.0,
+            1186.7
+          ],
+          "conf": 0.956,
+          "text": "1. In this case, the sum of the first 4 terms $=$ the sum of the first 13 terms $=$ 78.\n2. Two answers are possible because the sum of the terms from 5th to 13th will be\nzero. This is because $a$ is positive and $d$ is negative, so that some terms will be\npositive and some others negative, and will cancel out each other."
+        },
+        {
+          "order": 14,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.1,
+            1199.1,
+            1179.1,
+            1709.8
+          ],
+          "conf": 0.635,
+          "text": "Example 14 : Find the sum of :\n\n(i) the first 1000 positive integers (ii) the first $n$ positive integers\n\nSolution :\n\n(i) Let $S = 1 + 2 + 3 + \\ldots + 1000$\n\nUsing the formula $S_n = \\frac{n}{2}(a + l)$ for the sum of the first $n$ terms of an AP, we\nhave\n$$S_{1000} = \\frac{1000}{2}(1 + 1000) = 500 \\times 1001 = 500500$$\n\nSo, the sum of the first 1000 positive integers is 500500.\n\n(ii) Let $S_n = 1 + 2 + 3 + \\ldots + n$\n\nHere $a = 1$ and the last term $l$ is $n$."
+        }
+      ],
+      "page": 17
+    },
+    {
+      "image": "0074_p0018.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            262.8,
+            855.9,
+            352.4
+          ],
+          "conf": 0.923,
+          "text": "Therefore, $S_n = \\frac{n(1+n)}{2}$ or $S_n = \\frac{n(n+1)}{2}$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            359.7,
+            818.6,
+            411.4
+          ],
+          "conf": 0.924,
+          "text": "So, the sum of first $n$ positive integers is given by"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            544.7,
+            426.0,
+            746.7,
+            513.4
+          ],
+          "conf": 0.916,
+          "text": "$$S_n = \\frac{n(n+1)}{2}$$"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            525.4,
+            1178.6,
+            610.5
+          ],
+          "conf": 0.9,
+          "text": "Example 15 : Find the sum of first 24 terms of the list of numbers whose $n$th term is\ngiven by"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            455.0,
+            610.5,
+            629.5,
+            661.8
+          ],
+          "conf": 0.846,
+          "text": "$$a_n = 3 + 2n$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            657.4,
+            274.3,
+            705.7
+          ],
+          "conf": 0.821,
+          "text": "Solution :"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            707.6,
+            698.2,
+            947.3
+          ],
+          "conf": 0.766,
+          "text": "As $a_n = 3 + 2n,$\nso, $a_1 = 3 + 2 = 5$\n$a_2 = 3 + 2 \\times 2 = 7$\n$a_3 = 3 + 2 \\times 3 = 9$\n$\\vdots$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            951.5,
+            642.1,
+            1001.9
+          ],
+          "conf": 0.867,
+          "text": "List of numbers becomes $5, 7, 9, 11, \\dots$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            998.6,
+            889.6,
+            1048.8
+          ],
+          "conf": 0.863,
+          "text": "Here, $7 - 5 = 9 - 7 = 11 - 9 = 2$ and so on."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1046.0,
+            755.8,
+            1095.9
+          ],
+          "conf": 0.896,
+          "text": "So, it forms an AP with common difference $d = 2$."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1094.2,
+            696.1,
+            1145.9
+          ],
+          "conf": 0.836,
+          "text": "To find $\\mathrm{S}_{24}$, we have $n=24$, $a=5$, $d=2$."
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1159.2,
+            1078.6,
+            1245.8
+          ],
+          "conf": 0.868,
+          "text": "Therefore, $S_{24} = \\frac{24}{2} [2 \\times 5 + (24 - 1) \\times 2] = 12 [10 + 46] = 672$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1250.4,
+            797.8,
+            1301.1
+          ],
+          "conf": 0.884,
+          "text": "So, sum of first 24 terms of the list of numbers is 672."
+        },
+        {
+          "order": 13,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1313.3,
+            1178.6,
+            1711.7
+          ],
+          "conf": 0.618,
+          "text": "Example 16 : A manufacturer of TV sets produced 600 sets in the third year and 700\nsets in the seventh year. Assuming that the production increases uniformly by a fixed\nnumber every year, find :\n\n(i) the production in the 1st year (ii) the production in the 10th year\n\n(iii) the total production in first 7 years\n\nSolution : (i) Since the production increases uniformly by a fixed number every year,\nthe number of TV sets manufactured in 1st, 2nd, 3rd, . . ., years will form an AP.\n\nLet us denote the number of TV sets manufactured in the $n$th year by $a_n$.\n\nThen, $a_3 = 600$ and $a_7 = 700$"
+        }
+      ],
+      "page": 18
+    },
+    {
+      "image": "0074_p0019.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.2,
+            258.0,
+            701.7,
+            307.0
+          ],
+          "conf": 0.872,
+          "text": "or, $a + 2d = 600$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.6,
+            305.5,
+            701.5,
+            355.7
+          ],
+          "conf": 0.875,
+          "text": "and $a + 6d = 700$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            354.2,
+            829.9,
+            403.4
+          ],
+          "conf": 0.91,
+          "text": "Solving these equations, we get $d=25$ and $a=550$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            402.0,
+            829.3,
+            451.1
+          ],
+          "conf": 0.919,
+          "text": "Therefore, production of TV sets in the first year is 550."
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            449.7,
+            1002.0,
+            500.3
+          ],
+          "conf": 0.913,
+          "text": "(ii) Now $a_{10} = a + 9d = 550 + 9 \\times 25 = 775$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            497.4,
+            741.4,
+            547.6
+          ],
+          "conf": 0.922,
+          "text": "So, production of TV sets in the 10th year is 775."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            560.9,
+            952.6,
+            648.5
+          ],
+          "conf": 0.911,
+          "text": "(iii) Also, $S_7 = \\frac{7}{2} [2 \\times 550 + (7 - 1) \\times 25]$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            601.9,
+            668.8,
+            932.6,
+            758.1
+          ],
+          "conf": 0.851,
+          "text": "$$= \\frac{7}{2}[1100 + 150] = 4375$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            763.6,
+            877.8,
+            813.2
+          ],
+          "conf": 0.919,
+          "text": "Thus, the total production of TV sets in first 7 years is 4375."
+        },
+        {
+          "order": 9,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.2,
+            849.5,
+            773.4,
+            900.0
+          ],
+          "conf": 0.878,
+          "text": "EXERCISE 5.3"
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.1,
+            903.6,
+            1057.7,
+            1706.6
+          ],
+          "conf": 0.698,
+          "text": "1. Find the sum of the following APs:\n(i) $2, 7, 12, \\dots,$ to 10 terms.\n(ii) $-37, -33, -29, \\dots,$ to 12 terms.\n(iii) $0.6, 1.7, 2.8, \\dots,$ to 100 terms.\n(iv) $\\frac{1}{15}, \\frac{1}{12}, \\frac{1}{10}, \\dots,$ to 11 terms.\n2. Find the sums given below :\n(i) $7 + 10\\frac{1}{2} + 14 + \\dots + 84$\n(ii) $34 + 32 + 30 + \\dots + 10$\n(iii) $-5 + (-8) + (-11) + \\dots + (-230)$\n3. In an AP:\n(i) given $a = 5, d = 3, a_n = 50,$ find $n$ and $S_n$.\n(ii) given $a = 7, a_{13} = 35,$ find $d$ and $S_{13}$.\n(iii) given $a_{12} = 37, d = 3,$ find $a$ and $S_{12}$.\n(iv) given $a_3 = 15, S_{10} = 125,$ find $d$ and $a_{10}$.\n(v) given $d = 5, S_9 = 75,$ find $a$ and $a_9$.\n(vi) given $a = 2, d = 8, S_n = 90,$ find $n$ and $a_n$.\n(vii) given $a = 8, a_n = 62, S_n = 210,$ find $n$ and $d$.\n(viii) given $a_n = 4, d = 2, S_n = -14,$ find $n$ and $a$.\n(ix) given $a = 3, n = 8, S = 192,$ find $d$.\n(x) given $l = 28, S = 144,$ and there are total 9 terms. Find $a$."
+        }
+      ],
+      "page": 19
+    },
+    {
+      "image": "0074_p0020.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            121.4,
+            191.9,
+            1178.2,
+            239.0
+          ],
+          "conf": 0.772,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.7,
+            192.9,
+            423.5,
+            238.1
+          ],
+          "conf": 0.553,
+          "text": "ARITHMETIC PROGRESSIONS"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.7,
+            256.3,
+            1064.8,
+            305.3
+          ],
+          "conf": 0.884,
+          "text": "4. How many terms of the AP : $9, 17, 25, \\dots$ must be taken to give a sum of $636$?"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.8,
+            300.8,
+            1177.1,
+            381.5
+          ],
+          "conf": 0.911,
+          "text": "**5.** The first term of an AP is 5, the last term is 45 and the sum is 400. Find the number of terms\nand the common difference."
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.9,
+            379.2,
+            1177.7,
+            459.4
+          ],
+          "conf": 0.899,
+          "text": "**6.** The first and the last terms of an AP are 17 and 350 respectively. If the common difference\nis 9, how many terms are there and what is their sum?"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.3,
+            456.8,
+            1039.9,
+            504.6
+          ],
+          "conf": 0.863,
+          "text": "7. Find the sum of first 22 terms of an AP in which $d=7$ and 22nd term is 149."
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.0,
+            502.0,
+            1177.9,
+            582.2
+          ],
+          "conf": 0.882,
+          "text": "**8.** Find the sum of first 51 terms of an AP whose second and third terms are 14 and 18\nrespectively."
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.9,
+            580.4,
+            1179.0,
+            660.6
+          ],
+          "conf": 0.894,
+          "text": "9. If the sum of first 7 terms of an AP is 49 and that of 17 terms is 289, find the sum of\nfirst $n$ terms."
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.3,
+            657.8,
+            982.3,
+            791.3
+          ],
+          "conf": 0.616,
+          "text": "10. Show that $a_1, a_2, \\dots, a_n, \\dots$ form an AP where $a_n$ is defined as below :\n(i) $a_n = 3 + 4n$\n(ii) $a_n = 9 - 5n$\nAlso find the sum of the first 15 terms in each case."
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            143.4,
+            791.0,
+            1178.1,
+            905.3
+          ],
+          "conf": 0.928,
+          "text": "11. If the sum of the first $n$ terms of an AP is $4n - n^2$, what is the first term (that is $S_1$)? What\nis the sum of first two terms? What is the second term? Similarly, find the 3rd, the 10th and\nthe $n$th terms."
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            139.9,
+            903.1,
+            865.4,
+            951.5
+          ],
+          "conf": 0.864,
+          "text": "12. Find the sum of the first 40 positive integers divisible by 6."
+        },
+        {
+          "order": 11,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            139.8,
+            947.5,
+            673.9,
+            994.8
+          ],
+          "conf": 0.857,
+          "text": "13. Find the sum of the first 15 multiples of 8."
+        },
+        {
+          "order": 12,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            139.2,
+            992.4,
+            787.5,
+            1040.2
+          ],
+          "conf": 0.857,
+          "text": "14. Find the sum of the odd numbers between 0 and 50."
+        },
+        {
+          "order": 13,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.2,
+            1037.6,
+            1178.2,
+            1216.2
+          ],
+          "conf": 0.934,
+          "text": "15. A contract on construction job specifies a penalty for delay of completion beyond a\ncertain date as follows: $₹$ 200 for the first day, $₹$ 250 for the second day, $₹$ 300 for the third\nday, etc., the penalty for each succeeding day being $₹$ 50 more than for the preceding day.\nHow much money the contractor has to pay as penalty, if he has delayed the work by 30\ndays?"
+        },
+        {
+          "order": 14,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.2,
+            1214.9,
+            1178.2,
+            1332.5
+          ],
+          "conf": 0.909,
+          "text": "16. A sum of $700$ is to be used to give seven cash prizes to students of a school for their\noverall academic performance. If each prize is $70 less than its preceding prize, find the\nvalue of each of the prizes."
+        },
+        {
+          "order": 15,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.9,
+            1332.1,
+            1177.8,
+            1520.2
+          ],
+          "conf": 0.916,
+          "text": "17. In a school, students thought of planting trees in and around the school to reduce air\npollution. It was decided that the number of trees, that each section of each class will\nplant, will be the same as the class, in which they are studying, e.g., a section of Class I\nwill plant 1 tree, a section of Class II will plant 2 trees and so on till Class XII. There are\nthree sections of each class. How many trees will be planted by the students?"
+        },
+        {
+          "order": 16,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            139.8,
+            1518.9,
+            1178.2,
+            1708.9
+          ],
+          "conf": 0.919,
+          "text": "**18.** A spiral is made up of successive semicircles, with centres alternately at A and B,\nstarting with centre at A, of radii 0.5 cm, 1.0 cm, 1.5 cm, 2.0 cm, . . . as shown in\nFig. 5.4. What is the total length of such a spiral made up of thirteen consecutive\nsemicircles? (Take $\\pi = \\frac{22}{7}$)"
+        }
+      ],
+      "page": 20
+    },
+    {
+      "image": "0074_p0021.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            308.8,
+            256.5,
+            980.6,
+            621.1
+          ],
+          "conf": 0.886,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            583.6,
+            626.4,
+            713.3,
+            677.0
+          ],
+          "conf": 0.908,
+          "text": "Fig. 5.4"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            195.1,
+            685.5,
+            1179.2,
+            766.1
+          ],
+          "conf": 0.943,
+          "text": "[Hint : Length of successive semicircles is $l_1, l_2, l_3, l_4, \\dots$ with centres at A, B, A, B, $\\dots$,\nrespectively.]"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.8,
+            762.9,
+            1179.4,
+            877.6
+          ],
+          "conf": 0.948,
+          "text": "19. 200 logs are stacked in the following manner: 20 logs in the bottom row, 19 in the next row,\n18 in the row next to it and so on (see Fig. 5.5). In how many rows are the 200 logs placed\nand how many logs are in the top row?"
+        },
+        {
+          "order": 4,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            273.0,
+            878.9,
+            1016.9,
+            1056.0
+          ],
+          "conf": 0.936,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            583.3,
+            1066.3,
+            712.8,
+            1115.3
+          ],
+          "conf": 0.879,
+          "text": "Fig. 5.5"
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.8,
+            1124.4,
+            1178.6,
+            1236.5
+          ],
+          "conf": 0.935,
+          "text": "20. In a potato race, a bucket is placed at the starting point, which is 5 m from the first potato,\nand the other potatoes are placed 3 m apart in a straight line. There are ten potatoes in the\nline (see Fig. 5.6)."
+        },
+        {
+          "order": 7,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            148.5,
+            1229.3,
+            1176.9,
+            1401.6
+          ],
+          "conf": 0.854,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            582.7,
+            1422.3,
+            713.4,
+            1472.1
+          ],
+          "conf": 0.847,
+          "text": "Fig. 5.6"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            194.7,
+            1481.0,
+            1178.8,
+            1625.3
+          ],
+          "conf": 0.896,
+          "text": "A competitor starts from the bucket, picks up the nearest potato, runs back with it, drops\nit in the bucket, runs back to pick up the next potato, runs to the bucket to drop it in, and\nshe continues in the same way until all the potatoes are in the bucket. What is the total\ndistance the competitor has to run?"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            194.3,
+            1624.5,
+            1179.2,
+            1705.8
+          ],
+          "conf": 0.873,
+          "text": "[Hint : To pick up the first potato and the second potato, the total distance (in metres)\nrun by a competitor is $2 \\times 5 + 2 \\times (5 + 3)$]"
+        }
+      ],
+      "page": 21
+    },
+    {
+      "image": "0074_p0022.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            438.4,
+            255.9,
+            859.2,
+            308.9
+          ],
+          "conf": 0.846,
+          "text": "EXERCISE 5.4 (Optional)*"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.0,
+            314.3,
+            678.6,
+            429.8
+          ],
+          "conf": 0.826,
+          "text": "1. Which term of the AP: 121, 117, 113, ..., is\nits first negative term?\n[Hint : Find $n$ for $a_n < 0$]"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.2,
+            428.3,
+            678.3,
+            540.5
+          ],
+          "conf": 0.863,
+          "text": "2. The sum of the third and the seventh terms\nof an AP is 6 and their product is 8. Find\nthe sum of first sixteen terms of the AP."
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            764.4,
+            314.6,
+            1106.8,
+            860.3
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.0,
+            539.8,
+            679.2,
+            843.2
+          ],
+          "conf": 0.848,
+          "text": "3. A ladder has rungs 25 cm apart.\n(see Fig. 5.7). The rungs decrease\nuniformly in length from 45 cm at the\nbottom to 25 cm at the top. If the top and\n\nthe bottom rungs are $2\\frac{1}{2}$ m apart, what is\n\nthe length of the wood required for the\nrungs?"
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            851.4,
+            861.8,
+            981.1,
+            910.3
+          ],
+          "conf": 0.896,
+          "text": "Fig. 5.7"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            195.8,
+            854.6,
+            619.1,
+            939.7
+          ],
+          "conf": 0.798,
+          "text": "[ **Hint** : Number of rungs = $\\frac{250}{25} + 1$ ]"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.1,
+            943.7,
+            1177.9,
+            1058.5
+          ],
+          "conf": 0.83,
+          "text": "4. The houses of a row are numbered consecutively from 1 to 49. Show that there is a value\nof $x$ such that the sum of the numbers of the houses preceding the house numbered $x$ is\nequal to the sum of the numbers of the houses following it. Find this value of $x$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            196.3,
+            1053.9,
+            464.4,
+            1110.7
+          ],
+          "conf": 0.61,
+          "text": "$$[\\mathbf{Hint} : S_{x-1} = S_{49} - S_x]$$"
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.0,
+            1103.0,
+            1178.8,
+            1341.0
+          ],
+          "conf": 0.718,
+          "text": "**5.** A small terrace at a football ground comprises of 15 steps each of which is 50 m long and\nbuilt of solid concrete.\n\nEach step has a rise of $\\frac{1}{4}$ m and a tread of $\\frac{1}{2}$ m. (see Fig. 5.8). Calculate the total volume\nof concrete required to build the terrace.\n\n[**Hint :** Volume of concrete required to build the first step = $\\frac{1}{4} \\times \\frac{1}{2} \\times 50 \\text{ m}^3$ ]"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            194.3,
+            1270.3,
+            1057.0,
+            1351.1
+          ],
+          "conf": 0.679,
+          "text": "[Hint : Volume of concrete required to build the first step = $\\frac{1}{4} \\times \\frac{1}{2} \\times 50 \\text{ m}^3$ ]"
+        },
+        {
+          "order": 11,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            383.1,
+            1359.8,
+            908.8,
+            1612.9
+          ],
+          "conf": 0.942,
+          "text": ""
+        },
+        {
+          "order": 12,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            583.7,
+            1611.4,
+            711.9,
+            1661.7
+          ],
+          "conf": 0.866,
+          "text": "Fig. 5.8"
+        },
+        {
+          "order": 13,
+          "label": "Footnote",
+          "type": "Footnote",
+          "bbox_xyxy": [
+            120.6,
+            1668.6,
+            824.6,
+            1714.2
+          ],
+          "conf": 0.854,
+          "text": "* These exercises are not from the examination point of view."
+        }
+      ],
+      "page": 22
+    },
+    {
+      "image": "0074_p0023.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.2,
+            257.3,
+            334.2,
+            309.1
+          ],
+          "conf": 0.905,
+          "text": "5.5 Summary"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            309.1,
+            759.5,
+            356.4
+          ],
+          "conf": 0.938,
+          "text": "In this chapter, you have studied the following points :"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.2,
+            354.4,
+            1179.4,
+            990.7
+          ],
+          "conf": 0.864,
+          "text": "1. An arithmetic progression (AP) is a list of numbers in which each term is obtained by\nadding a fixed number $d$ to the preceding term, except the first term. The fixed number $d$\nis called the common difference.\n\nThe general form of an AP is $a$, $a + d$, $a + 2d$, $a + 3d$, $\\dots$\n\n2. A given list of numbers $a_1$, $a_2$, $a_3$, $\\dots$ is an AP, if the differences $a_2 - a_1$, $a_3 - a_2$,\n$a_4 - a_3$, $\\dots$, give the same value, i.e., if $a_{k+1} - a_k$ is the same for different values of $k$.\n\n3. In an AP with first term $a$ and common difference $d$, the $n$th term (or the general term) is\ngiven by $a_n = a + (n - 1)d$.\n\n4. The sum of the first $n$ terms of an AP is given by :\n\n$$S = \\frac{n}{2} [2a + (n - 1)d]$$\n\n5. If $l$ is the last term of the finite AP, say the $n$th term, then the sum of all terms of the AP\nis given by :\n\n$$S = \\frac{n}{2} (a + l)$$"
+        },
+        {
+          "order": 3,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1046.9,
+            1177.4,
+            1330.6
+          ],
+          "conf": 0.93,
+          "text": "A NOTE TO THE READER\n\nIf $a, b, c$ are in AP, then $b = \\frac{a + c}{2}$ and $b$ is called the arithmetic\nmean of $a$ and $c$."
+        }
+      ],
+      "page": 23
+    }
+  ]
+}

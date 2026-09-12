@@ -1,0 +1,2277 @@
+{
+  "book": "1002",
+  "relpath": "dataset/input/eng/10/1002.pdf",
+  "num_pages": 14,
+  "pages": [
+    {
+      "image": "0071_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            543.5,
+            217.4,
+            754.9,
+            445.4
+          ],
+          "conf": 0.89,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            605.0,
+            410.6,
+            697.1,
+            444.8
+          ],
+          "conf": 0.636,
+          "text": "$1062\\text{CH}02$"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            118.3,
+            474.4,
+            1179.9,
+            649.0
+          ],
+          "conf": 0.511,
+          "text": "POLYNOMIALS 2"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.1,
+            708.9,
+            373.1,
+            760.4
+          ],
+          "conf": 0.897,
+          "text": "2.1 Introduction"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            779.6,
+            1180.0,
+            1173.4
+          ],
+          "conf": 0.906,
+          "text": "In Class IX, you have studied polynomials in one variable and their degrees. Recall\nthat if $p(x)$ is a polynomial in $x$, the highest power of $x$ in $p(x)$ is called **the degree of**\n**the polynomial** $p(x)$. For example, $4x + 2$ is a polynomial in the variable $x$ of\ndegree $1$, $2y^2 - 3y + 4$ is a polynomial in the variable $y$ of degree $2$, $5x^3 - 4x^2 + x - \\sqrt{2}$\n\nis a polynomial in the variable $x$ of degree $3$ and $7u^6 - \\frac{3}{2}u^4 + 4u^2 + u - 8$ is a polynomial\n\nin the variable $u$ of degree $6$. Expressions like $\\frac{1}{x - 1}$, $\\sqrt{x} + 2$, $\\frac{1}{x^2 + 2x + 3}$ etc., are\nnot polynomials."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            1175.0,
+            1178.2,
+            1357.7
+          ],
+          "conf": 0.881,
+          "text": "A polynomial of degree 1 is called a **linear polynomial**. For example, $2x - 3$,\n$\\sqrt{3}x + 5$, $y + \\sqrt{2}$, $x - \\frac{2}{11}, 3z + 4$, $\\frac{2}{3}u + 1$, etc., are all linear polynomials. Polynomials\nsuch as $2x + 5 - x^2, x^3 + 1$, etc., are not linear polynomials."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1355.1,
+            1177.9,
+            1710.0
+          ],
+          "conf": 0.719,
+          "text": "A polynomial of degree 2 is called a **quadratic polynomial**. The name ‘quadratic’\nhas been derived from the word ‘quadrate’, which means ‘square’. $2x^2 + 3x - \\frac{2}{5}$,\n$y^2 - 2$, $2 - x^2 + \\sqrt{3}x$, $\\frac{u}{3} - 2u^2 + 5$, $\\sqrt{5}v^2 - \\frac{2}{3}v$, $4z^2 + \\frac{1}{7}$ are some examples of\nquadratic polynomials (whose coefficients are real numbers). More generally, any\nquadratic polynomial in $x$ is of the form $ax^2 + bx + c$, where $a, b, c$ are real numbers\nand $a \\neq 0$. A polynomial of degree 3 is called a **cubic polynomial**. Some examples of"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0071_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.6,
+            191.7,
+            1177.9,
+            239.4
+          ],
+          "conf": 0.833,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.5,
+            192.3,
+            291.1,
+            236.7
+          ],
+          "conf": 0.537,
+          "text": "POLYNOMIALS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            267.9,
+            1177.5,
+            364.2
+          ],
+          "conf": 0.953,
+          "text": "a cubic polynomial are $2-x^3, x^3, \\sqrt{2} x^3, 3-x^2+x^3, 3x^3-2x^2+x-1$. In fact, the most\ngeneral form of a cubic polynomial is"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            518.8,
+            363.5,
+            780.0,
+            413.1
+          ],
+          "conf": 0.903,
+          "text": "$$ax^3 + bx^2 + cx + d,$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            412.7,
+            695.4,
+            461.3
+          ],
+          "conf": 0.922,
+          "text": "where, $a, b, c, d$ are real numbers and $a \\neq 0$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.3,
+            459.4,
+            1178.6,
+            618.8
+          ],
+          "conf": 0.971,
+          "text": "Now consider the polynomial $p(x) = x^2 - 3x - 4$. Then, putting $x = 2$ in the\npolynomial, we get $p(2) = 2^2 - 3 \\times 2 - 4 = - 6$. The value ‘$- 6$’, obtained by replacing\n$x$ by $2$ in $x^2 - 3x - 4$, is the value of $x^2 - 3x - 4$ at $x = 2$. Similarly, $p(0)$ is the value of\n$p(x)$ at $x = 0$, which is $- 4$."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            616.4,
+            1178.2,
+            703.4
+          ],
+          "conf": 0.951,
+          "text": "If $p(x)$ is a polynomial in $x$, and if $k$ is any real number, then the value obtained by\nreplacing $x$ by $k$ in $p(x)$, is called **the value of $p(x)$ at $x = k$**, and is denoted by $p(k)$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.7,
+            700.7,
+            945.8,
+            751.5
+          ],
+          "conf": 0.92,
+          "text": "What is the value of $p(x) = x^2 -3x - 4$ at $x = -1$? We have :"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            334.4,
+            749.4,
+            773.9,
+            800.7
+          ],
+          "conf": 0.903,
+          "text": "$$p(-1) = (-1)^2 - \\{3 \\times (-1)\\} - 4 = 0$$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            796.3,
+            689.5,
+            847.2
+          ],
+          "conf": 0.903,
+          "text": "Also, note that $p(4) = 4^2 - (3 \\times 4) - 4 = 0.$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            844.4,
+            1178.3,
+            967.3
+          ],
+          "conf": 0.966,
+          "text": "As $p(-1) = 0$ and $p(4) = 0, -1$ and $4$ are called the zeroes of the quadratic\npolynomial $x^2 - 3x - 4$. More generally, a real number $k$ is said to be a **zero of a**\n**polynomial** $p(x)$, if $p(k) = 0$."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            965.0,
+            1178.2,
+            1120.8
+          ],
+          "conf": 0.927,
+          "text": "You have already studied in Class IX, how to find the zeroes of a linear\npolynomial. For example, if $k$ is a zero of $p(x) = 2x + 3$, then $p(k) = 0$ gives us\n$2k + 3 = 0$, i.e., $k = -\\frac{3}{2}$."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.7,
+            1100.1,
+            1173.0,
+            1186.7
+          ],
+          "conf": 0.838,
+          "text": "In general, if $k$ is a zero of $p(x) = ax + b$, then $p(k) = ak + b = 0$, i.e., $k = \\frac{-b}{a}$."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1179.7,
+            1015.4,
+            1271.9
+          ],
+          "conf": 0.861,
+          "text": "So, the zero of the linear polynomial $ax + b$ is $\\frac{-b}{a} = \\frac{-\\text{(Constant term)}}{\\text{Coefficient of } x}$."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1265.2,
+            1178.2,
+            1395.2
+          ],
+          "conf": 0.95,
+          "text": "Thus, the zero of a linear polynomial is related to its coefficients. Does this\nhappen in the case of other polynomials too? For example, are the zeroes of a quadratic\npolynomial also related to its coefficients?"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1397.8,
+            1178.5,
+            1489.4
+          ],
+          "conf": 0.925,
+          "text": "In this chapter, we will try to answer these questions. We will also study the\ndivision algorithm for polynomials."
+        },
+        {
+          "order": 16,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.5,
+            1506.3,
+            919.8,
+            1559.1
+          ],
+          "conf": 0.871,
+          "text": "2.2 Geometrical Meaning of the Zeroes of a Polynomial"
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1559.3,
+            1178.3,
+            1716.1
+          ],
+          "conf": 0.958,
+          "text": "You know that a real number $k$ is a zero of the polynomial $p(x)$ if $p(k) = 0$. But why\nare the zeroes of a polynomial so important? To answer this, first we will see the\n**geometrical** representations of linear and quadratic polynomials and the geometrical\nmeaning of their zeroes."
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0071_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            257.6,
+            1178.3,
+            380.6
+          ],
+          "conf": 0.967,
+          "text": "Consider first a linear polynomial $ax + b$, $a \\neq 0$. You have studied in Class IX that the\ngraph of $y = ax + b$ is a straight line. For example, the graph of $y = 2x + 3$ is a straight\nline passing through the points $(- 2, -1)$ and $(2, 7)$."
+        },
+        {
+          "order": 1,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            120.9,
+            381.9,
+            565.6,
+            532.0
+          ],
+          "conf": 0.974,
+          "text": "<table>\n  <tbody>\n    <tr>\n      <td>x</td>\n      <td>−2</td>\n      <td>2</td>\n    </tr>\n    <tr>\n      <td>y = 2x + 3</td>\n      <td>−1</td>\n      <td>7</td>\n    </tr>\n  </tbody>\n</table>"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            549.9,
+            559.1,
+            837.9
+          ],
+          "conf": 0.942,
+          "text": "From Fig. 2.1, you can see\nthat the graph of $y = 2x + 3$\nintersects the $x$-axis mid-way\nbetween $x = -1$ and $x = -2$,\nthat is, at the point $\\left(-\\frac{3}{2}, 0\\right)$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            841.5,
+            560.4,
+            1149.1
+          ],
+          "conf": 0.949,
+          "text": "You also know that the zero of\n$2x + 3$ is $-\\frac{3}{2}$. Thus, the zero of\nthe polynomial $2x + 3$ is the\n$x$-coordinate of the point where the\ngraph of $y = 2x + 3$ intersects the\n$x$-axis."
+        },
+        {
+          "order": 4,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            570.6,
+            395.8,
+            1176.1,
+            1017.4
+          ],
+          "conf": 0.976,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            812.5,
+            1044.6,
+            940.0,
+            1094.4
+          ],
+          "conf": 0.904,
+          "text": "Fig. 2.1"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1159.4,
+            1178.7,
+            1308.0
+          ],
+          "conf": 0.893,
+          "text": "In general, for a linear polynomial $ax + b$, $a \\neq 0$, the graph of $y = ax + b$ is a\nstraight line which intersects the $x$-axis at exactly one point, namely, $\\left(\\frac{-b}{a}, 0\\right)$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            1312.7,
+            1177.5,
+            1407.7
+          ],
+          "conf": 0.904,
+          "text": "Therefore, the linear polynomial $ax + b$, $a \\neq 0$, has exactly one zero, namely, the\n$x$-coordinate of the point where the graph of $y = ax + b$ intersects the $x$-axis."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            1415.5,
+            1179.2,
+            1600.8
+          ],
+          "conf": 0.959,
+          "text": "Now, let us look for the geometrical meaning of a zero of a quadratic polynomial.\nConsider the quadratic polynomial $x^2 - 3x - 4$. Let us see what the graph* of\n$y = x^2 - 3x - 4$ looks like. Let us list a few values of $y = x^2 - 3x - 4$ corresponding to\na few values for $x$ as given in Table 2.1."
+        },
+        {
+          "order": 9,
+          "label": "Footnote",
+          "type": "Footnote",
+          "bbox_xyxy": [
+            120.9,
+            1628.9,
+            1178.2,
+            1707.0
+          ],
+          "conf": 0.923,
+          "text": "* Plotting of graphs of quadratic or cubic polynomials is not meant to be done by the students,\nnor is to be evaluated."
+        },
+        {
+          "order": 10,
+          "label": "Footer",
+          "type": "PageFooter",
+          "bbox_xyxy": [
+            121.0,
+            1628.5,
+            1178.3,
+            1866.2
+          ],
+          "conf": 0.526,
+          "text": ""
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0071_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            574.0,
+            256.7,
+            723.7,
+            304.8
+          ],
+          "conf": 0.907,
+          "text": "Table 2.1"
+        },
+        {
+          "order": 1,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            119.3,
+            312.7,
+            1178.3,
+            464.6
+          ],
+          "conf": 0.97,
+          "text": "<table>\n<thead>\n<tr>\n<th>x</th>\n<th>−2</th>\n<th>−1</th>\n<th>0</th>\n<th>1</th>\n<th>2</th>\n<th>3</th>\n<th>4</th>\n<th>5</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>y = x² − 3x − 4</td>\n<td>6</td>\n<td>0</td>\n<td>−4</td>\n<td>−6</td>\n<td>−6</td>\n<td>−4</td>\n<td>0</td>\n<td>6</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            472.9,
+            558.4,
+            636.5
+          ],
+          "conf": 0.967,
+          "text": "If we locate the points listed\nabove on a graph paper and draw\nthe graph, it will actually look like\nthe one given in Fig. 2.2."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            639.5,
+            558.6,
+            1015.4
+          ],
+          "conf": 0.977,
+          "text": "In fact, for any quadratic\npolynomial $ax^2 + bx + c, a \\neq 0$, the\ngraph of the corresponding\nequation $y = ax^2 + bx + c$ has one\nof the two shapes either open\nupwards like $\\bigcup$ or open\ndownwards like $\\bigcap$ depending on\nwhether $a > 0$ or $a < 0$. (These\ncurves are called **parabolas**.)"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1017.8,
+            558.9,
+            1491.9
+          ],
+          "conf": 0.976,
+          "text": "You can see from Table 2.1\nthat $-1$ and $4$ are zeroes of the\nquadratic polynomial. Also\nnote from Fig. 2.2 that $-1$ and $4$\nare the $x$-coordinates of the points\nwhere the graph of $y = x^2 - 3x - 4$\nintersects the $x$-axis. Thus, the\nzeroes of the quadratic polynomial\n$x^2 - 3x - 4$ are $x$-coordinates of\nthe points where the graph of\n$y = x^2 - 3x - 4$ intersects the\n$x$-axis."
+        },
+        {
+          "order": 5,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            550.0,
+            484.5,
+            1175.8,
+            1383.2
+          ],
+          "conf": 0.978,
+          "text": ""
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            795.7,
+            1390.2,
+            923.9,
+            1439.6
+          ],
+          "conf": 0.89,
+          "text": "Fig. 2.2"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1495.3,
+            1177.9,
+            1621.7
+          ],
+          "conf": 0.941,
+          "text": "This fact is true for any quadratic polynomial, i.e., the zeroes of a quadratic\npolynomial $ax^2 + bx + c, a \\neq 0$, are precisely the $x$-coordinates of the points where the\nparabola representing $y = ax^2 + bx + c$ intersects the $x$-axis."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1623.6,
+            1177.7,
+            1709.8
+          ],
+          "conf": 0.912,
+          "text": "From our observation earlier about the shape of the graph of $y = ax^2 + bx + c$, the\nfollowing three cases can happen:"
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0071_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            259.4,
+            1005.4,
+            308.9
+          ],
+          "conf": 0.911,
+          "text": "Case (i) : Here, the graph cuts $x$-axis at two distinct points A and A'."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            312.0,
+            1177.7,
+            399.9
+          ],
+          "conf": 0.954,
+          "text": "The $x$-coordinates of A and A$'$ are the **two zeroes** of the quadratic polynomial\n$ax^2 + bx + c$ in this case (see Fig. 2.3)."
+        },
+        {
+          "order": 2,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            131.6,
+            417.1,
+            1170.8,
+            884.6
+          ],
+          "conf": 0.959,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            583.8,
+            889.0,
+            711.0,
+            939.4
+          ],
+          "conf": 0.906,
+          "text": "Fig. 2.3"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            950.8,
+            1177.5,
+            1078.1
+          ],
+          "conf": 0.95,
+          "text": "Case (ii) : Here, the graph cuts the $x$-axis at exactly one point, i.e., at two coincident\npoints. So, the two points A and A$'$ of Case (i) coincide here to become one point A\n(see Fig. 2.4)."
+        },
+        {
+          "order": 5,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            130.1,
+            1093.5,
+            1166.6,
+            1557.2
+          ],
+          "conf": 0.968,
+          "text": ""
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            583.7,
+            1565.4,
+            712.3,
+            1616.5
+          ],
+          "conf": 0.892,
+          "text": "Fig. 2.4"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1624.3,
+            1179.8,
+            1708.5
+          ],
+          "conf": 0.923,
+          "text": "The $x$-coordinate of A is the **only zero** for the quadratic polynomial $ax^2 + bx + c$\nin this case."
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0071_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            119.9,
+            191.3,
+            1178.7,
+            238.3
+          ],
+          "conf": 0.832,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.2,
+            192.7,
+            291.2,
+            236.0
+          ],
+          "conf": 0.55,
+          "text": "POLYNOMIALS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            256.9,
+            1177.8,
+            343.7
+          ],
+          "conf": 0.941,
+          "text": "Case (iii) : Here, the graph is either completely above the $x$-axis or completely below\nthe $x$-axis. So, it does not cut the $x$-axis at any point (see Fig. 2.5)."
+        },
+        {
+          "order": 3,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            140.5,
+            354.7,
+            1157.9,
+            963.9
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            583.6,
+            969.9,
+            712.9,
+            1020.5
+          ],
+          "conf": 0.907,
+          "text": "Fig. 2.5"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1027.9,
+            962.9,
+            1078.8
+          ],
+          "conf": 0.897,
+          "text": "So, the quadratic polynomial $ax^2 + bx + c$ has **no zero** in this case."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1078.1,
+            1178.8,
+            1197.0
+          ],
+          "conf": 0.95,
+          "text": "So, you can see geometrically that a quadratic polynomial can have either two\ndistinct zeroes or two equal zeroes (i.e., one zero), or no zero. This also means that a\npolynomial of degree 2 has atmost two zeroes."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1197.8,
+            1178.3,
+            1354.5
+          ],
+          "conf": 0.957,
+          "text": "Now, what do you expect the geometrical meaning of the zeroes of a cubic\npolynomial to be? Let us find out. Consider the cubic polynomial $x^3 - 4x$. To see what\nthe graph of $y = x^3 - 4x$ looks like, let us list a few values of $y$ corresponding to a few\nvalues for $x$ as shown in Table 2.2."
+        },
+        {
+          "order": 8,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            574.3,
+            1375.0,
+            724.2,
+            1423.7
+          ],
+          "conf": 0.889,
+          "text": "Table 2.2"
+        },
+        {
+          "order": 9,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            234.0,
+            1421.4,
+            1040.8,
+            1587.3
+          ],
+          "conf": 0.957,
+          "text": "<table>\n<thead>\n<tr>\n<th>x</th>\n<th>-2</th>\n<th>-1</th>\n<th>0</th>\n<th>1</th>\n<th>2</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>y = x^3 - 4x</td>\n<td>0</td>\n<td>3</td>\n<td>0</td>\n<td>-3</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1625.5,
+            1178.1,
+            1711.0
+          ],
+          "conf": 0.919,
+          "text": "Locating the points of the table on a graph paper and drawing the graph, we see\nthat the graph of $y = x^3 - 4x$ actually looks like the one given in Fig. 2.6."
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0071_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            262.0,
+            578.2,
+            683.0
+          ],
+          "conf": 0.981,
+          "text": "We see from the table above\nthat $-2, 0$ and $2$ are zeroes of the\ncubic polynomial $x^3 - 4x$. Observe\nthat $-2, 0$ and $2$ are, in fact, the\n$x$-coordinates of the only points\nwhere the graph of $y = x^3 - 4x$\nintersects the $x$-axis. Since the curve\nmeets the $x$-axis in only these $3$\npoints, their $x$-coordinates are the\nonly zeroes of the polynomial."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            690.8,
+            579.0,
+            902.9
+          ],
+          "conf": 0.965,
+          "text": "Let us take a few more\nexamples. Consider the cubic\npolynomials $x^3$ and $x^3 - x^2$. We draw\nthe graphs of $y = x^3$ and $y = x^3 - x^2$\nin Fig. 2.7 and Fig. 2.8 respectively."
+        },
+        {
+          "order": 2,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            571.6,
+            258.2,
+            1161.9,
+            876.7
+          ],
+          "conf": 0.969,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            806.8,
+            884.6,
+            935.6,
+            934.2
+          ],
+          "conf": 0.912,
+          "text": "Fig. 2.6"
+        },
+        {
+          "order": 4,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            147.2,
+            932.7,
+            649.1,
+            1693.1
+          ],
+          "conf": 0.965,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            344.2,
+            1691.4,
+            477.2,
+            1742.3
+          ],
+          "conf": 0.871,
+          "text": "Fig. 2.7"
+        },
+        {
+          "order": 6,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            650.6,
+            932.5,
+            1176.2,
+            1696.3
+          ],
+          "conf": 0.963,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            818.3,
+            1691.6,
+            952.1,
+            1741.7
+          ],
+          "conf": 0.884,
+          "text": "Fig. 2.8"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0071_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.0,
+            191.5,
+            1179.4,
+            238.3
+          ],
+          "conf": 0.828,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.2,
+            192.9,
+            291.5,
+            236.2
+          ],
+          "conf": 0.543,
+          "text": "POLYNOMIALS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            257.8,
+            1178.2,
+            452.6
+          ],
+          "conf": 0.977,
+          "text": "Note that 0 is the only zero of the polynomial $x^3$. Also, from Fig. 2.7, you can see\nthat 0 is the $x$-coordinate of the only point where the graph of $y = x^3$ intersects the\n$x$-axis. Similarly, since $x^3 - x^2 = x^2(x - 1)$, 0 and 1 are the only zeroes of the polynomial\n$x^3 - x^2$. Also, from Fig. 2.8, these values are the $x$-coordinates of the only points\nwhere the graph of $y = x^3 - x^2$ intersects the $x$-axis."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            452.0,
+            1178.7,
+            537.7
+          ],
+          "conf": 0.949,
+          "text": "From the examples above, we see that there are at most 3 zeroes for any cubic\npolynomial. In other words, any polynomial of degree 3 can have at most three zeroes."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            536.9,
+            1178.1,
+            656.8
+          ],
+          "conf": 0.95,
+          "text": "Remark : In general, given a polynomial $p(x)$ of degree $n$, the graph of $y = p(x)$\nintersects the $x$-axis at atmost $n$ points. Therefore, a polynomial $p(x)$ of degree $n$ has\nat most $n$ zeroes."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            670.9,
+            1177.5,
+            757.7
+          ],
+          "conf": 0.881,
+          "text": "Example 1 : Look at the graphs in Fig. 2.9 given below. Each is the graph of $y = p(x)$,\nwhere $p(x)$ is a polynomial. For each of the graphs, find the number of zeroes of $p(x)$."
+        },
+        {
+          "order": 6,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            129.9,
+            766.7,
+            1173.2,
+            1438.5
+          ],
+          "conf": 0.957,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            583.7,
+            1441.5,
+            712.1,
+            1493.2
+          ],
+          "conf": 0.846,
+          "text": "Fig. 2.9"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1520.4,
+            273.6,
+            1570.7
+          ],
+          "conf": 0.823,
+          "text": "Solution :"
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.1,
+            1570.7,
+            1167.4,
+            1713.6
+          ],
+          "conf": 0.943,
+          "text": "(i) The number of zeroes is 1 as the graph intersects the $x$-axis at one point only.\n(ii) The number of zeroes is 2 as the graph intersects the $x$-axis at two points.\n(iii) The number of zeroes is 3. (Why?)"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0071_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            134.9,
+            257.6,
+            645.8,
+            402.6
+          ],
+          "conf": 0.951,
+          "text": "(iv) The number of zeroes is 1. (Why?)\n(v) The number of zeroes is 1. (Why?)\n(vi) The number of zeroes is 4. (Why?)"
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.8,
+            429.2,
+            772.2,
+            478.8
+          ],
+          "conf": 0.812,
+          "text": "EXERCISE 2.1"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            485.4,
+            1178.2,
+            565.4
+          ],
+          "conf": 0.921,
+          "text": "**1.** The graphs of $y = p(x)$ are given in Fig. 2.10 below, for some polynomials $p(x)$. Find the\nnumber of zeroes of $p(x)$, in each case."
+        },
+        {
+          "order": 3,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            134.0,
+            568.5,
+            1170.5,
+            1228.2
+          ],
+          "conf": 0.951,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            575.4,
+            1231.6,
+            721.9,
+            1281.5
+          ],
+          "conf": 0.862,
+          "text": "Fig. 2.10"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.2,
+            1294.5,
+            1060.3,
+            1345.8
+          ],
+          "conf": 0.879,
+          "text": "2.3 Relationship between Zeroes and Coefficients of a Polynomial"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1354.7,
+            1178.5,
+            1612.5
+          ],
+          "conf": 0.946,
+          "text": "You have already seen that zero of a linear polynomial $ax + b$ is $-\\frac{b}{a}$. We will now try\nto answer the question raised in Section 2.1 regarding the relationship between zeroes\nand coefficients of a quadratic polynomial. For this, let us take a quadratic polynomial,\nsay $p(x) = 2x^2 - 8x + 6$. In Class IX, you have learnt how to factorise quadratic\npolynomials by splitting the middle term. So, here we need to split the middle term\n‘$-8x$’ as a sum of two terms, whose product is $6 \\times 2x^2 = 12x^2$. So, we write"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            194.5,
+            1613.1,
+            895.0,
+            1708.1
+          ],
+          "conf": 0.879,
+          "text": "$$2x^2 - 8x + 6 = 2x^2 - 6x - 2x + 6 = 2x(x - 3) - 2(x - 3)$$\n$$= (2x - 2)(x - 3) = 2(x - 1)(x - 3)$$"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0071_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.5,
+            191.3,
+            1179.1,
+            238.6
+          ],
+          "conf": 0.814,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.5,
+            193.0,
+            291.1,
+            236.6
+          ],
+          "conf": 0.531,
+          "text": "POLYNOMIALS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            256.7,
+            1178.5,
+            343.3
+          ],
+          "conf": 0.951,
+          "text": "So, the value of $p(x) = 2x^2 - 8x + 6$ is zero when $x - 1 = 0$ or $x - 3 = 0$, i.e., when\n$x = 1$ or $x = 3$. So, the zeroes of $2x^2 - 8x + 6$ are $1$ and $3$. Observe that :"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            339.8,
+            355.7,
+            1156.2,
+            452.8
+          ],
+          "conf": 0.911,
+          "text": "$$ \\text{Sum of its zeroes} \\quad = 1 + 3 = 4 = \\frac{-(-8)}{2} = \\frac{-(\\text{Coefficient of } x)}{\\text{Coefficient of } x^2} $$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            339.7,
+            445.0,
+            1066.3,
+            538.6
+          ],
+          "conf": 0.908,
+          "text": "Product of its zeroes $= 1 \\times 3 = 3 = \\frac{6}{2} = \\frac{\\text{Constant term}}{\\text{Coefficient of } x^2}$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            547.4,
+            1177.3,
+            633.1
+          ],
+          "conf": 0.95,
+          "text": "Let us take one more quadratic polynomial, say, $p(x) = 3x^2 + 5x - 2$. By the\nmethod of splitting the middle term,"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            444.5,
+            630.0,
+            1124.1,
+            728.5
+          ],
+          "conf": 0.907,
+          "text": "$$3x^2 + 5x - 2 = 3x^2 + 6x - x - 2 = 3x(x + 2) - 1(x + 2)$$\n$$= (3x - 1)(x + 2)$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            730.9,
+            1174.4,
+            871.2
+          ],
+          "conf": 0.807,
+          "text": "Hence, the value of $3x^2 + 5x - 2$ is zero when either $3x - 1 = 0$ or $x + 2 = 0$, i.e.,\n\nwhen $x = \\frac{1}{3}$ or $x = -2$. So, the zeroes of $3x^2 + 5x - 2$ are $\\frac{1}{3}$ and $-2$. Observe that :"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            339.9,
+            881.4,
+            1110.9,
+            977.0
+          ],
+          "conf": 0.899,
+          "text": "$$\\text{Sum of its zeroes} \\quad = \\frac{1}{3} + (-2) = \\frac{-5}{3} = \\frac{-(\\text{Coefficient of } x)}{\\text{Coefficient of } x^2}$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            339.2,
+            983.4,
+            1090.8,
+            1079.4
+          ],
+          "conf": 0.898,
+          "text": "Product of its zeroes $= \\frac{1}{3} \\times (-2) = \\frac{-2}{3} = \\frac{\\text{Constant term}}{\\text{Coefficient of } x^2}$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1089.7,
+            1177.1,
+            1174.4
+          ],
+          "conf": 0.946,
+          "text": "In general, if $\\alpha^*$ and $\\beta^*$ are the zeroes of the quadratic polynomial $p(x) = ax^2 + bx + c$,\n$a \\neq 0$, then you know that $x - \\alpha$ and $x - \\beta$ are the factors of $p(x)$. Therefore,"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            441.2,
+            1173.2,
+            1134.6,
+            1317.7
+          ],
+          "conf": 0.901,
+          "text": "$ax^2 + bx + c = k(x - \\alpha) (x - \\beta)$, where $k$ is a constant\n$= k[x^2 - (\\alpha + \\beta)x + \\alpha \\beta]$\n$= kx^2 - k(\\alpha + \\beta)x + k \\alpha \\beta$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.2,
+            1316.9,
+            1177.7,
+            1368.0
+          ],
+          "conf": 0.853,
+          "text": "Comparing the coefficients of $x^2$, $x$ and constant terms on both the sides, we get"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            494.4,
+            1364.4,
+            961.1,
+            1416.6
+          ],
+          "conf": 0.834,
+          "text": "$$a = k, b = -k(\\alpha + \\beta) \\text{ and } c = k\\alpha\\beta.$$"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.2,
+            1419.3,
+            714.5,
+            1506.1
+          ],
+          "conf": 0.819,
+          "text": "This gives $\\alpha + \\beta = \\frac{-b}{a}$,"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            553.5,
+            1523.0,
+            685.1,
+            1605.9
+          ],
+          "conf": 0.792,
+          "text": "$$ \\alpha\\beta = \\frac{c}{a} $$"
+        },
+        {
+          "order": 16,
+          "label": "Footnote",
+          "type": "Footnote",
+          "bbox_xyxy": [
+            121.3,
+            1633.1,
+            1177.5,
+            1711.7
+          ],
+          "conf": 0.934,
+          "text": "$^*$ $\\alpha, \\beta$ are Greek letters pronounced as ‘alpha’ and ‘beta’ respectively. We will use later one\nmore letter ‘$\\gamma$’ pronounced as ‘gamma’."
+        },
+        {
+          "order": 17,
+          "label": "Footer",
+          "type": "PageFooter",
+          "bbox_xyxy": [
+            121.2,
+            1631.0,
+            1178.2,
+            1866.9
+          ],
+          "conf": 0.588,
+          "text": ""
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0071_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.9,
+            280.1,
+            1005.0,
+            377.0
+          ],
+          "conf": 0.92,
+          "text": "i.e., $\\qquad \\qquad \\text{sum of zeroes} = \\alpha + \\beta = -\\frac{b}{a} = \\frac{-(\\text{Coefficient of } x)}{\\text{Coefficient of } x^2} ,$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            283.1,
+            400.3,
+            925.5,
+            494.0
+          ],
+          "conf": 0.924,
+          "text": "product of zeroes $= \\alpha\\beta = \\frac{c}{a} = \\frac{\\text{Constant term}}{\\text{Coefficient of } x^2}$."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            184.9,
+            503.7,
+            605.8,
+            553.7
+          ],
+          "conf": 0.918,
+          "text": "Let us consider some examples."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            565.8,
+            1177.8,
+            650.8
+          ],
+          "conf": 0.832,
+          "text": "Example 2 : Find the zeroes of the quadratic polynomial $x^2 + 7x + 10$, and verify the\nrelationship between the zeroes and the coefficients."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            649.2,
+            391.6,
+            698.4
+          ],
+          "conf": 0.854,
+          "text": "Solution : We have"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            459.2,
+            696.4,
+            837.2,
+            747.5
+          ],
+          "conf": 0.854,
+          "text": "$$x^2 + 7x + 10 = (x + 2)(x + 5)$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            745.4,
+            1179.1,
+            831.6
+          ],
+          "conf": 0.926,
+          "text": "So, the value of $x^2 + 7x + 10$ is zero when $x + 2 = 0$ or $x + 5 = 0$, i.e., when $x = -2$ or\n$x = -5$. Therefore, the zeroes of $x^2 + 7x + 10$ are $-2$ and $-5$. Now,"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            264.9,
+            843.6,
+            1096.8,
+            940.1
+          ],
+          "conf": 0.907,
+          "text": "$$ \\text{sum of zeroes} = -2 + (-5) = -(7) = \\frac{-(7)}{1} = \\frac{-(\\text{Coefficient of } x)}{\\text{Coefficient of } x^2}, $$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            223.3,
+            963.3,
+            1030.0,
+            1059.2
+          ],
+          "conf": 0.907,
+          "text": "product of zeroes = $(-2) \\times (-5) = 10 = \\frac{10}{1} = \\frac{\\text{Constant term}}{\\text{Coefficient of } x^2}$."
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1080.7,
+            1178.3,
+            1166.8
+          ],
+          "conf": 0.813,
+          "text": "Example 3 : Find the zeroes of the polynomial $x^2 - 3$ and verify the relationship\nbetween the zeroes and the coefficients."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1165.3,
+            1100.1,
+            1217.3
+          ],
+          "conf": 0.833,
+          "text": "Solution : Recall the identity $a^2 - b^2 = (a - b)(a + b)$. Using it, we can write:"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            368.7,
+            1225.3,
+            730.3,
+            1295.6
+          ],
+          "conf": 0.862,
+          "text": "$$x^2 - 3 = (x - \\sqrt{3})(x + \\sqrt{3})$$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1312.9,
+            848.9,
+            1368.6
+          ],
+          "conf": 0.884,
+          "text": "So, the value of $x^2 - 3$ is zero when $x = \\sqrt{3}$ or $x = -\\sqrt{3}$."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1384.2,
+            758.3,
+            1439.4
+          ],
+          "conf": 0.873,
+          "text": "Therefore, the zeroes of $x^2 - 3$ are $\\sqrt{3}$ and $-\\sqrt{3}$."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1445.1,
+            210.5,
+            1492.8
+          ],
+          "conf": 0.811,
+          "text": "Now,"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            265.6,
+            1506.7,
+            954.9,
+            1601.1
+          ],
+          "conf": 0.896,
+          "text": "$$ \\text{sum of zeroes} = \\sqrt{3} - \\sqrt{3} = 0 = \\frac{-\\text{(Coefficient of } x)}{\\text{Coefficient of } x^2}, $$"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            222.2,
+            1625.5,
+            1048.8,
+            1719.7
+          ],
+          "conf": 0.889,
+          "text": "product of zeroes = $(\\sqrt{3})(-\\sqrt{3}) = -3 = \\frac{-3}{1} = \\frac{\\text{Constant term}}{\\text{Coefficient of } x^2}$."
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0071_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            119.9,
+            191.3,
+            1177.3,
+            239.0
+          ],
+          "conf": 0.855,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.3,
+            192.9,
+            291.2,
+            236.6
+          ],
+          "conf": 0.597,
+          "text": "POLYNOMIALS"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            257.3,
+            1178.2,
+            342.0
+          ],
+          "conf": 0.895,
+          "text": "Example 4 : Find a quadratic polynomial, the sum and product of whose zeroes are\n$-3$ and $2$, respectively."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            342.2,
+            1177.4,
+            427.1
+          ],
+          "conf": 0.887,
+          "text": "Solution : Let the quadratic polynomial be $ax^2 + bx + c$, and its zeroes be $\\alpha$ and $\\beta$.\nWe have"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            398.8,
+            441.6,
+            659.4,
+            534.7
+          ],
+          "conf": 0.914,
+          "text": "$$ \\alpha + \\beta = -3 = \\frac{-b}{a}, $$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            558.0,
+            619.7,
+            640.7
+          ],
+          "conf": 0.855,
+          "text": "and $\\alpha\\beta = 2 = \\frac{c}{a}.$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            644.7,
+            509.0,
+            694.6
+          ],
+          "conf": 0.904,
+          "text": "If $a=1$, then $b=3$ and $c=2$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            692.0,
+            1052.6,
+            743.1
+          ],
+          "conf": 0.922,
+          "text": "So, one quadratic polynomial which fits the given conditions is $x^2 + 3x + 2$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            739.9,
+            1178.8,
+            826.5
+          ],
+          "conf": 0.951,
+          "text": "You can check that any other quadratic polynomial that fits these conditions will\nbe of the form $k(x^2 + 3x + 2)$, where $k$ is real."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            825.5,
+            1178.2,
+            910.3
+          ],
+          "conf": 0.939,
+          "text": "Let us now look at cubic polynomials. Do you think a similar relation holds\nbetween the zeroes of a cubic polynomial and its coefficients?"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.6,
+            908.6,
+            740.5,
+            960.3
+          ],
+          "conf": 0.88,
+          "text": "Let us consider $p(x) = 2x^3 - 5x^2 - 14x + 8$."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            968.4,
+            1176.9,
+            1089.3
+          ],
+          "conf": 0.873,
+          "text": "You can check that $p(x) = 0$ for $x = 4, - 2, \\frac{1}{2}$. Since $p(x)$ can have atmost three\nzeroes, these are the zeroes of $2x^3 - 5x^2 - 14x + 8$. Now,"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            249.7,
+            1097.2,
+            1164.5,
+            1195.3
+          ],
+          "conf": 0.919,
+          "text": "sum of the zeroes $= 4 + (-2) + \\frac{1}{2} = \\frac{5}{2} = \\frac{-(-5)}{2} = \\frac{-\\left(\\text{Coefficient of } x^2\\right)}{\\text{Coefficient of } x^3}$,"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            208.4,
+            1207.6,
+            1098.0,
+            1302.5
+          ],
+          "conf": 0.902,
+          "text": "product of the zeroes $= 4 \\times (-2) \\times \\frac{1}{2} = -4 = \\frac{-8}{2} = \\frac{-\\text{Constant term}}{\\text{Coefficient of } x^3}$."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1312.7,
+            1178.2,
+            1397.1
+          ],
+          "conf": 0.935,
+          "text": "However, there is one more relationship here. Consider the sum of the products\nof the zeroes taken two at a time. We have"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            190.1,
+            1409.0,
+            645.6,
+            1511.3
+          ],
+          "conf": 0.88,
+          "text": "$$ \\{4 \\times (-2)\\} + \\left\\{ (-2) \\times \\frac{1}{2} \\right\\} + \\left\\{ \\frac{1}{2} \\times 4 \\right\\} $$"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            412.0,
+            1520.4,
+            1008.1,
+            1617.5
+          ],
+          "conf": 0.899,
+          "text": "$$ = -8 - 1 + 2 = -7 = \\frac{-14}{2} = \\frac{\\text{Coefficient of } x}{\\text{Coefficient of } x^3}. $$"
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1620.5,
+            1178.3,
+            1706.6
+          ],
+          "conf": 0.928,
+          "text": "In general, it can be proved that if $\\alpha$, $\\beta$, $\\gamma$ are the zeroes of the cubic polynomial\n$ax^3 + bx^2 + cx + d$, then"
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0071_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            383.4,
+            272.6,
+            692.5,
+            520.6
+          ],
+          "conf": 0.779,
+          "text": "$$ \\alpha + \\beta + \\gamma = \\frac{-b}{a}, $$\n\n$$ \\alpha\\beta + \\beta\\gamma + \\gamma\\alpha = \\frac{c}{a}, $$\n\n$$ \\alpha \\beta \\gamma = \\frac{-d}{a}. $$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            515.1,
+            490.1,
+            563.9
+          ],
+          "conf": 0.921,
+          "text": "Let us consider an example."
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            595.6,
+            1177.4,
+            759.8
+          ],
+          "conf": 0.87,
+          "text": "Example 5* : Verify that $3, -1, -\\frac{1}{3}$ are the zeroes of the cubic polynomial\n\n$p(x) = 3x^3 - 5x^2 - 11x - 3$, and then verify the relationship between the zeroes and the\ncoefficients."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            757.3,
+            1071.6,
+            810.9
+          ],
+          "conf": 0.857,
+          "text": "Solution : Comparing the given polynomial with $ax^3 + bx^2 + cx + d$, we get"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.5,
+            806.2,
+            700.3,
+            857.3
+          ],
+          "conf": 0.798,
+          "text": "$a=3, b=-5, c=-11, d=-3.$ Further"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            182.8,
+            852.0,
+            958.0,
+            905.2
+          ],
+          "conf": 0.819,
+          "text": "$$p(3) = 3 \\times 3^3 - (5 \\times 3^2) - (11 \\times 3) - 3 = 81 - 45 - 33 - 3 = 0,$$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            182.8,
+            900.6,
+            1042.9,
+            951.9
+          ],
+          "conf": 0.814,
+          "text": "$$p(-1) = 3 \\times (-1)^3 - 5 \\times (-1)^2 - 11 \\times (-1) - 3 = -3 - 5 + 11 - 3 = 0,$$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            192.5,
+            950.8,
+            851.8,
+            1160.9
+          ],
+          "conf": 0.613,
+          "text": "$$p\\left(-\\frac{1}{3}\\right)=3\\times\\left(-\\frac{1}{3}\\right)^{3}-5\\times\\left(-\\frac{1}{3}\\right)^{2}-11\\times\\left(-\\frac{1}{3}\\right)-3,$$\n$$=-\\frac{1}{9}-\\frac{5}{9}+\\frac{11}{3}-3=-\\frac{2}{3}+\\frac{2}{3}=0$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1165.5,
+            924.0,
+            1250.4
+          ],
+          "conf": 0.847,
+          "text": "Therefore, $3$, $-1$ and $-\\frac{1}{3}$ are the zeroes of $3x^3 - 5x^2 - 11x - 3$."
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            1232.7,
+            621.7,
+            1314.8
+          ],
+          "conf": 0.723,
+          "text": "So, we take $\\alpha = 3$, $\\beta = -1$ and $\\gamma = -\\frac{1}{3}$."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1294.7,
+            209.8,
+            1341.8
+          ],
+          "conf": 0.843,
+          "text": "Now,"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            190.2,
+            1332.7,
+            910.3,
+            1430.7
+          ],
+          "conf": 0.852,
+          "text": "$$\\alpha + \\beta + \\gamma = 3 + (-1) + \\left( -\\frac{1}{3} \\right) = 2 - \\frac{1}{3} = \\frac{5}{3} = \\frac{-(-5)}{3} = \\frac{-b}{a},$$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            190.6,
+            1429.4,
+            1165.8,
+            1525.5
+          ],
+          "conf": 0.849,
+          "text": "$$\\alpha\\beta + \\beta\\gamma + \\gamma\\alpha = 3 \\times (-1) + (-1) \\times \\left(-\\frac{1}{3}\\right) + \\left(-\\frac{1}{3}\\right) \\times 3 = -3 + \\frac{1}{3} - 1 = \\frac{-11}{3} = \\frac{c}{a},$$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            191.5,
+            1536.5,
+            745.3,
+            1633.2
+          ],
+          "conf": 0.863,
+          "text": "$$\\alpha\\beta\\gamma = 3 \\times (-1) \\times \\left(-\\frac{1}{3}\\right) = 1 = \\frac{-(-3)}{3} = \\frac{-d}{a}.$$"
+        },
+        {
+          "order": 14,
+          "label": "Footnote",
+          "type": "Footnote",
+          "bbox_xyxy": [
+            121.8,
+            1656.4,
+            615.0,
+            1703.9
+          ],
+          "conf": 0.891,
+          "text": "* Not from the examination point of view."
+        },
+        {
+          "order": 15,
+          "label": "Footer",
+          "type": "PageFooter",
+          "bbox_xyxy": [
+            121.9,
+            1655.7,
+            741.1,
+            1870.7
+          ],
+          "conf": 0.569,
+          "text": ""
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0071_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.4,
+            190.4,
+            1177.4,
+            237.9
+          ],
+          "conf": 0.789,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.0,
+            192.3,
+            290.8,
+            236.6
+          ],
+          "conf": 0.542,
+          "text": "POLYNOMIALS"
+        },
+        {
+          "order": 2,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.6,
+            256.3,
+            773.1,
+            306.5
+          ],
+          "conf": 0.776,
+          "text": "EXERCISE 2.2"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.8,
+            312.6,
+            1177.1,
+            712.9
+          ],
+          "conf": 0.647,
+          "text": "**1.** Find the zeroes of the following quadratic polynomials and verify the relationship between\nthe zeroes and the coefficients.\n\n(i) $x^2 - 2x - 8$                                (ii) $4s^2 - 4s + 1$                                (iii) $6x^2 - 3 - 7x$\n\n(iv) $4u^2 + 8u$                                (v) $t^2 - 15$                                (vi) $3x^2 - x - 4$\n\n**2.** Find a quadratic polynomial each with the given numbers as the sum and product of its\nzeroes respectively.\n\n(i) $\\frac{1}{4}, -1$                                (ii) $\\sqrt{2}, \\frac{1}{3}$                                (iii) $0, \\sqrt{5}$\n\n(iv) $1, 1$                                (v) $-\\frac{1}{4}, \\frac{1}{4}$                                (vi) $4, 1$"
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.1,
+            737.4,
+            334.8,
+            788.9
+          ],
+          "conf": 0.855,
+          "text": "2.4 Summary"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            788.3,
+            752.6,
+            835.8
+          ],
+          "conf": 0.919,
+          "text": "In this chapter, you have studied the following points:"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.0,
+            834.1,
+            1178.3,
+            1639.7
+          ],
+          "conf": 0.88,
+          "text": "1. Polynomials of degrees 1, 2 and 3 are called linear, quadratic and cubic polynomials\nrespectively.\n2. A quadratic polynomial in $x$ with real coefficients is of the form $ax^2 + bx + c$, where $a, b, c$\nare real numbers with $a \\neq 0$.\n3. The zeroes of a polynomial $p(x)$ are precisely the $x$-coordinates of the points, where the\ngraph of $y = p(x)$ intersects the $x$-axis.\n4. A quadratic polynomial can have at most 2 zeroes and a cubic polynomial can have\nat most 3 zeroes.\n5. If $\\alpha$ and $\\beta$ are the zeroes of the quadratic polynomial $ax^2 + bx + c$, then\n\n$$\\alpha + \\beta = -\\frac{b}{a}, \\quad \\alpha\\beta = \\frac{c}{a}.$$\n\n6. If $\\alpha, \\beta, \\gamma$ are the zeroes of the cubic polynomial $ax^3 + bx^2 + cx + d$, then\n\n$$\\alpha + \\beta + \\gamma = \\frac{-b}{a},$$\n\n$$\\alpha\\beta + \\beta\\gamma + \\gamma\\alpha = \\frac{c}{a},$$\n\nand $\\quad \\alpha\\beta\\gamma = \\frac{-d}{a}.$"
+        }
+      ],
+      "page": 13
+    }
+  ]
+}

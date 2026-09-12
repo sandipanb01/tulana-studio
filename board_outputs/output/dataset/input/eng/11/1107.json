@@ -1,0 +1,1392 @@
+{
+  "book": "1107",
+  "relpath": "dataset/input/eng/11/1107.pdf",
+  "num_pages": 9,
+  "pages": [
+    {
+      "image": "0090_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            648.3,
+            106.0,
+            1178.3,
+            333.4
+          ],
+          "conf": 0.879,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            906.4,
+            241.7,
+            1157.9,
+            323.8
+          ],
+          "conf": 0.511,
+          "text": "Chapter 7"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            703.4,
+            297.7,
+            807.3,
+            334.2
+          ],
+          "conf": 0.517,
+          "text": "11076CH08"
+        },
+        {
+          "order": 3,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            234.3,
+            370.5,
+            1066.1,
+            487.9
+          ],
+          "conf": 0.831,
+          "text": "BINOMIAL THEOREM"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            160.3,
+            567.7,
+            1144.0,
+            654.5
+          ],
+          "conf": 0.737,
+          "text": "❖ Mathematics is a most exact science and its conclusions are capable of\nabsolute proofs. – C.P. STEINMETZ❖"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.1,
+            689.5,
+            380.1,
+            739.9
+          ],
+          "conf": 0.897,
+          "text": "7.1 Introduction"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            738.7,
+            868.7,
+            1115.3
+          ],
+          "conf": 0.982,
+          "text": "In earlier classes, we have learnt how to find the squares\nand cubes of binomials like $a + b$ and $a - b$. Using them, we\ncould evaluate the numerical values of numbers like\n$(98)^2 = (100 - 2)^2$, $(999)^3 = (1000 - 1)^3$, etc. However, for\nhigher powers like $(98)^5$, $(101)^6$, etc., the calculations become\ndifficult by using repeated multiplication. This difficulty was\novercome by a theorem known as binomial theorem. It gives\nan easier way to expand $(a + b)^n$, where $n$ is an integer or a\nrational number. In this Chapter, we study binomial theorem\nfor positive integral indices only."
+        },
+        {
+          "order": 7,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            853.8,
+            718.8,
+            1178.3,
+            1130.1
+          ],
+          "conf": 0.965,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            931.7,
+            1126.9,
+            1101.5,
+            1199.1
+          ],
+          "conf": 0.951,
+          "text": "Blaise Pascal\n(1623-1662)"
+        },
+        {
+          "order": 9,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.7,
+            1136.2,
+            861.9,
+            1189.0
+          ],
+          "conf": 0.878,
+          "text": "7.2 Binomial Theorem for Positive Integral Indices"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.3,
+            1186.9,
+            838.4,
+            1233.9
+          ],
+          "conf": 0.914,
+          "text": "Let us have a look at the following identities done earlier:"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            196.6,
+            1222.8,
+            949.9,
+            1415.1
+          ],
+          "conf": 0.922,
+          "text": "$(a+b)^0 = 1 \\qquad \\qquad \\qquad a+b \\neq 0$\n$(a+b)^1 = a+b$\n$(a+b)^2 = a^2 + 2ab + b^2$\n$(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$\n$(a+b)^4 = (a+b)^3 (a+b) = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1406.8,
+            595.5,
+            1453.7
+          ],
+          "conf": 0.874,
+          "text": "In these expansions, we observe that"
+        },
+        {
+          "order": 13,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            127.1,
+            1443.4,
+            1179.9,
+            1707.3
+          ],
+          "conf": 0.971,
+          "text": "(i) The total number of terms in the expansion is one more than the index. For\nexample, in the expansion of $(a + b)^2$, number of terms is 3 whereas the index of\n$(a + b)^2$ is 2.\n(ii) Powers of the first quantity ‘$a$’ go on decreasing by 1 whereas the powers of the\nsecond quantity ‘$b$’ increase by 1, in the successive terms.\n(iii) In each term of the expansion, the sum of the indices of $a$ and $b$ is the same and\nis equal to the index of $a + b$."
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0090_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.9,
+            258.0,
+            1106.0,
+            308.0
+          ],
+          "conf": 0.93,
+          "text": "We now arrange the coefficients in these expansions as follows (Fig 7.1):"
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            390.5,
+            315.4,
+            899.1,
+            618.6
+          ],
+          "conf": 0.835,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            590.7,
+            609.7,
+            694.7,
+            655.5
+          ],
+          "conf": 0.824,
+          "text": "Fig 7.1"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            658.2,
+            1178.6,
+            851.6
+          ],
+          "conf": 0.968,
+          "text": "Do we observe any pattern in this table that will help us to write the next row? Yes we\ndo. It can be seen that the addition of 1's in the row for index 1 gives rise to 2 in the row\nfor index 2. The addition of 1, 2 and 2, 1 in the row for index 2, gives rise to 3 and 3 in\nthe row for index 3 and so on. Also, 1 is present at the beginning and at the end of each\nrow. This can be continued till any index of our interest."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.7,
+            841.5,
+            1084.9,
+            890.7
+          ],
+          "conf": 0.89,
+          "text": "We can extend the pattern given in Fig 7.2 by writing a few more rows."
+        },
+        {
+          "order": 5,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            337.4,
+            890.0,
+            986.3,
+            1226.3
+          ],
+          "conf": 0.909,
+          "text": ""
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            606.6,
+            1228.3,
+            711.1,
+            1274.5
+          ],
+          "conf": 0.852,
+          "text": "Fig 7.2"
+        },
+        {
+          "order": 7,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.0,
+            1281.9,
+            380.6,
+            1332.5
+          ],
+          "conf": 0.794,
+          "text": "Pascal's Triangle"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1324.9,
+            1178.6,
+            1479.3
+          ],
+          "conf": 0.938,
+          "text": "The structure given in Fig 7.2 looks like a triangle with 1 at the top vertex and running\ndown the two slanting sides. This array of numbers is known as Pascal's triangle,\nafter the name of French mathematician Blaise Pascal. It is also known as Meru\nPrastara by Pingla."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1469.8,
+            1178.2,
+            1553.6
+          ],
+          "conf": 0.876,
+          "text": "Expansions for the higher powers of a binomial are also possible by using Pascal's\ntriangle. Let us expand $(2x + 3y)^5$ by using Pascal's triangle. The row for index 5 is"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            436.8,
+            1543.9,
+            866.6,
+            1587.6
+          ],
+          "conf": 0.678,
+          "text": "$$1 \\quad 5 \\quad 10 \\quad 10 \\quad 5 \\quad 1$$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1580.2,
+            864.9,
+            1627.4
+          ],
+          "conf": 0.823,
+          "text": "Using this row and our observations (i), (ii) and (iii), we get"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            1614.6,
+            1177.9,
+            1699.9
+          ],
+          "conf": 0.868,
+          "text": "$$\n\\begin{aligned}\n(2x + 3y)^5 &= (2x)^5 + 5(2x)^4 (3y) + 10(2x)^3 (3y)^2 + 10 (2x)^2 (3y)^3 + 5(2x)(3y)^4 + (3y)^5 \\\\\n&= 32x^5 + 240x^4y + 720x^3y^2 + 1080x^2y^3 + 810xy^4 + 243y^5.\n\\end{aligned}\n$$"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0090_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            258.2,
+            1179.1,
+            414.4
+          ],
+          "conf": 0.96,
+          "text": "Now, if we want to find the expansion of $(2x + 3y)^{12}$, we are first required to get\nthe row for index 12. This can be done by writing all the rows of the Pascal's triangle\ntill index 12. This is a slightly lengthy process. The process, as you observe, will become\nmore difficult, if we need the expansions involving still larger powers."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            404.5,
+            1178.7,
+            524.8
+          ],
+          "conf": 0.951,
+          "text": "We thus try to find a rule that will help us to find the expansion of the binomial for\nany power without writing all the rows of the Pascal's triangle, that come before the\nrow of the desired index."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.3,
+            515.9,
+            1178.8,
+            563.7
+          ],
+          "conf": 0.895,
+          "text": "For this, we make use of the concept of combinations studied earlier to rewrite"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            564.5,
+            1178.5,
+            660.1
+          ],
+          "conf": 0.805,
+          "text": "the numbers in the Pascal's triangle. We know that ${}^n\\mathrm{C}_r = \\frac{n!}{r!(n-r)!}, 0 \\le r \\le n$ and"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            658.0,
+            731.6,
+            708.3
+          ],
+          "conf": 0.824,
+          "text": "$n$ is a non-negative integer. Also, ${}^n\\mathrm{C}_0 = 1 = {}^n\\mathrm{C}_n$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            696.0,
+            818.6,
+            745.8
+          ],
+          "conf": 0.844,
+          "text": "The Pascal's triangle can now be rewritten as (Fig 7.3)"
+        },
+        {
+          "order": 6,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            210.7,
+            741.0,
+            1046.4,
+            1303.2
+          ],
+          "conf": 0.906,
+          "text": "<table>\n<thead>\n<tr>\n<th>Index</th>\n<th>Coefficients</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0</td>\n<td><sup>0</sup>C<sub>0</sub><br/>(=1)</td>\n</tr>\n<tr>\n<td>1</td>\n<td><sup>1</sup>C<sub>0</sub><sup>1</sup><br/>(=1)<sup>1</sup> <sup>1</sup>C<sub>1</sub><br/>(=1)</td>\n</tr>\n<tr>\n<td>2</td>\n<td><sup>2</sup>C<sub>0</sub><sup>2</sup><br/>(=1)<sup>2</sup> <sup>2</sup>C<sub>1</sub><sup>2</sup><br/>(=2)<sup>2</sup> <sup>2</sup>C<sub>2</sub><br/>(=1)<sup>2</sup></td>\n</tr>\n<tr>\n<td>3</td>\n<td><sup>3</sup>C<sub>0</sub><sup>3</sup><br/>(=1)<sup>3</sup> <sup>3</sup>C<sub>1</sub><sup>3</sup><br/>(=3)<sup>3</sup> <sup>3</sup>C<sub>2</sub><sup>3</sup><br/>(=3)<sup>3</sup> <sup>3</sup>C<sub>3</sub><br/>(=1)<sup>3</sup></td>\n</tr>\n<tr>\n<td>4</td>\n<td><sup>4</sup>C<sub>0</sub><sup>4</sup><br/>(=1)<sup>4</sup> <sup>4</sup>C<sub>1</sub><sup>4</sup><br/>(=4)<sup>4</sup> <sup>4</sup>C<sub>2</sub><sup>4</sup><br/>(=6)<sup>4</sup> <sup>4</sup>C<sub>3</sub><sup>4</sup><br/>(=4)<sup>4</sup> <sup>4</sup>C<sub>4</sub><br/>(=1)<sup>4</sup></td>\n</tr>\n<tr>\n<td>5</td>\n<td><sup>5</sup>C<sub>0</sub><sup>5</sup><br/>(=1)<sup>5</sup> <sup>5</sup>C<sub>1</sub><sup>5</sup><br/>(=5)<sup>5</sup> <sup>5</sup>C<sub>2</sub><sup>5</sup><br/>(=10)<sup>5</sup> <sup>5</sup>C<sub>3</sub><sup>5</sup><br/>(=10)<sup>5</sup> <sup>5</sup>C<sub>4</sub><sup>5</sup><br/>(=5)<sup>5</sup> <sup>5</sup>C<sub>5</sub><br/>(=1)<sup>5</sup></td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            517.5,
+            1303.0,
+            854.1,
+            1350.5
+          ],
+          "conf": 0.814,
+          "text": "Fig 7.3 Pascal's triangle"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1343.1,
+            1177.8,
+            1428.0
+          ],
+          "conf": 0.916,
+          "text": "Observing this pattern, we can now write the row of the Pascal's triangle for any index\nwithout writing the earlier rows. For example, for the index 7 the row would be"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            410.3,
+            1429.9,
+            888.3,
+            1486.8
+          ],
+          "conf": 0.822,
+          "text": "${}^7\\text{C}_0 \\ {}^7\\text{C}_1 \\ {}^7\\text{C}_2 \\ {}^7\\text{C}_3 \\ {}^7\\text{C}_4 \\ {}^7\\text{C}_5 \\ {}^7\\text{C}_6 \\ {}^7\\text{C}_7.$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1485.2,
+            949.8,
+            1535.8
+          ],
+          "conf": 0.875,
+          "text": "Thus, using this row and the observations (i), (ii) and (iii), we have"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            1535.6,
+            1178.7,
+            1592.0
+          ],
+          "conf": 0.857,
+          "text": "$$(a+b)^7 = {}^7\\text{C}_0 a^7 + {}^7\\text{C}_1 a^6 b + {}^7\\text{C}_2 a^5 b^2 + {}^7\\text{C}_3 a^4 b^3 + {}^7\\text{C}_4 a^3 b^4 + {}^7\\text{C}_5 a^2 b^5 + {}^7\\text{C}_6 a b^6 + {}^7\\text{C}_7 b^7$$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1587.1,
+            1179.2,
+            1706.8
+          ],
+          "conf": 0.916,
+          "text": "An expansion of a binomial to any positive integral index say $n$ can now be visualised\nusing these observations. We are now in a position to write the expansion of a binomial\nto any positive integral index."
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0090_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.6,
+            259.0,
+            835.5,
+            308.0
+          ],
+          "conf": 0.881,
+          "text": "7.2.1  Binomial theorem for any positive integer $n$,"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            225.7,
+            309.7,
+            1072.2,
+            365.6
+          ],
+          "conf": 0.919,
+          "text": "$$(a+b)^n = {}^n\\mathrm{C}_0 a^n + {}^n\\mathrm{C}_1 a^{n-1} b + {}^n\\mathrm{C}_2 a^{n-2} b^2 + ... + {}^n\\mathrm{C}_{n-1} a . b^{n-1} + {}^n\\mathrm{C}_n b^n$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            364.4,
+            1078.2,
+            414.8
+          ],
+          "conf": 0.92,
+          "text": "Proof The proof is obtained by applying principle of mathematical induction."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            418.0,
+            470.5,
+            466.8
+          ],
+          "conf": 0.924,
+          "text": "Let the given statement be"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            219.8,
+            468.9,
+            1158.6,
+            525.7
+          ],
+          "conf": 0.907,
+          "text": "$$ \\mathrm{P}(n) : (a + b)^n = {}^n\\mathrm{C}_0 a^n + {}^n\\mathrm{C}_1 a^{n-1} b + {}^n\\mathrm{C}_2 a^{n-2} b^2 + ... + {}^n\\mathrm{C}_{n-1} a . b^{n-1} + {}^n\\mathrm{C}_n b^n $$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            219.3,
+            525.0,
+            479.1,
+            573.0
+          ],
+          "conf": 0.884,
+          "text": "For $n = 1$, we have"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            219.3,
+            575.9,
+            730.9,
+            629.1
+          ],
+          "conf": 0.903,
+          "text": "$$ \\mathrm{P} (1) : (a + b)^1 = {}^1\\mathrm{C}_0 a^1 + {}^1\\mathrm{C}_1 b^1 = a + b $$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            631.8,
+            371.7,
+            680.8
+          ],
+          "conf": 0.918,
+          "text": "Thus, P (1) is true."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.9,
+            684.8,
+            852.5,
+            735.3
+          ],
+          "conf": 0.92,
+          "text": "Suppose P ($k$) is true for some positive integer $k$, i.e."
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            217.9,
+            735.1,
+            884.1,
+            790.0
+          ],
+          "conf": 0.87,
+          "text": "$$(a + b)^k = {}^k\\mathrm{C}_0 a^k + {}^k\\mathrm{C}_1 a^{k-1} b + {}^k\\mathrm{C}_2 a^{k-2} b^2 + ... + {}^k\\mathrm{C}_k b^k$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            775.2,
+            181.1,
+            824.0
+          ],
+          "conf": 0.77,
+          "text": "(1)"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            827.1,
+            691.2,
+            877.8
+          ],
+          "conf": 0.904,
+          "text": "We shall prove that $\\mathrm{P}(k+1)$ is also true, i.e.,"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            184.6,
+            877.0,
+            1060.8,
+            935.0
+          ],
+          "conf": 0.882,
+          "text": "$$(a+b)^{k+1} = {}^{k+1}\\mathrm{C}_0 a^{k+1} + {}^{k+1}\\mathrm{C}_1 a^k b + {}^{k+1}\\mathrm{C}_2 a^{k-1} b^2 + ... + {}^{k+1}\\mathrm{C}_{k+1} b^{k+1}$$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            122.3,
+            932.3,
+            1178.5,
+            1377.5
+          ],
+          "conf": 0.779,
+          "text": "Now, $(a+b)^{k+1}=(a+b)(a+b)^{k}$\n\n$=(a+b)\\left({ }^{k}\\mathrm{C}_{0}a^{k}+\\{^{k}\\mathrm{C}_{1}a^{k-1}b+{ }^{k}\\mathrm{C}_{2}a^{k-2}b^{2}+\\ldots+{ }^{k}\\mathrm{C}_{k-1}ab^{k-1+{ }^{k}\\mathrm{C}_{k}b^{k}\\right)$\n\n[from (1)]\n\n$={ }^{k}\\mathrm{C}_{0}a^{k+1}+{^{k}\\mathrm{C}_{1}a^{k}b+{ }^{k}\\mathrm{C}_{2}a^{k-1}b^{2}+\\ldots+{ }^{k}\\mathrm{C}_{k-1}a^{2}b^{k-1}+{^{k}\\mathrm{C}_{k}ab^{k}+{^{k}\\mathrm{C}_{0}a^{k}b}$\n\n$+{ }^{k}\\mathrm{C}_{1}a^{k-1}b^{2}+{^{k}\\mathrm{C}_{2}a^{k-2}b^{3}+\\ldots+{ }^{k}\\mathrm{C}_{k-1}ab^{k}+{^{k}\\mathrm{C}_{k}b^{k+1}}$\n\n[by actual multiplication]\n\n$={ }^{k}\\mathrm{C}_{0}a^{k+1}+{^{k}\\mathrm{C}_{1}+{^{k}\\mathrm{C}_{0}})a^{k}b+{ ({ }^{k}\\mathrm{C}_{2}+{^{k}\\mathrm{C}_{1}})a^{k-1}b^{2}+\\ldots$\n\n$+{ ({}^{k}\\mathrm{C}_{k}+{^{k}\\mathrm{C}_{k-1}})ab^{k}+{^{k}\\mathrm{C}_{k}b^{k+1}}$\n\n[grouping like terms]\n\n$={ }^{k+1}\\mathrm{C}_{0}a^{k+1+{ }^{k+1}\\mathrm{C}_{1}a^{k}b+{ }^{k+1}\\mathrm{C}_{2}a^{k-1}b^{2}+\\ldots+{ }^{k+1}\\mathrm{C}_{k}ab^{k}+{^{k+1}\\mathrm{C}_{k+1}}b^{k+1}$"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            198.5,
+            1377.3,
+            1061.7,
+            1436.4
+          ],
+          "conf": 0.798,
+          "text": "(by using ${}^{k+1}\\mathrm{C}_0=1$, ${}^k\\mathrm{C}_r + {}^k\\mathrm{C}_{r-1} = {}^{k+1}\\mathrm{C}_r$ and ${}^k\\mathrm{C}_k = 1 = {}^{k+1}\\mathrm{C}_{k+1}$)"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1433.9,
+            1178.8,
+            1520.0
+          ],
+          "conf": 0.923,
+          "text": "Thus, it has been proved that $\\mathrm{P} (k + 1)$ is true whenever $\\mathrm{P}(k)$ is true. Therefore, by\nprinciple of mathematical induction, $\\mathrm{P}(n)$ is true for every positive integer $n$."
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            1523.4,
+            800.0,
+            1574.2
+          ],
+          "conf": 0.883,
+          "text": "We illustrate this theorem by expanding $(x+2)^6$:"
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.5,
+            1574.2,
+            1177.8,
+            1678.3
+          ],
+          "conf": 0.876,
+          "text": "$$\n\\begin{aligned}\n(x+2)^{6} &= {}^{6}\\mathrm{C}_{0}x^{6} + {}^{6}\\mathrm{C}_{1}x^{5}.2 + {}^{6}\\mathrm{C}_{2}x^{4}2^{2} + {}^{6}\\mathrm{C}_{3}x^{3}.2^{3} + {}^{6}\\mathrm{C}_{4}x^{2}.2^{4} + {}^{6}\\mathrm{C}_{5}x.2^{5} + {}^{6}\\mathrm{C}_{6}.2^{6}. \\\\\n&= x^{6} + 12x^{5} + 60x^{4} + 160x^{3} + 240x^{2} + 192x + 64\n\\end{aligned}\n$$"
+        },
+        {
+          "order": 18,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1680.2,
+            911.7,
+            1732.6
+          ],
+          "conf": 0.786,
+          "text": "Thus $(x+2)^6 = x^6 + 12x^5 + 60x^4 + 160x^3 + 240x^2 + 192x + 64.$"
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0090_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.2,
+            258.0,
+            329.9,
+            305.3
+          ],
+          "conf": 0.849,
+          "text": "Observations"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            320.0,
+            1179.5,
+            1007.6
+          ],
+          "conf": 0.507,
+          "text": "1. The notation $\\sum_{k=0}^{n} {}^{n}\\mathrm{C}_{k} a^{n-k} b^{k}$ stands for\n\n${}^{n}\\mathrm{C}_{0} a^{n} b^{0} + {}^{n}\\mathrm{C}_{1} a^{n-1} b^{1} + ... + {}^{n}\\mathrm{C}_{r} a^{n-r} b^{r} + ... + {}^{n}\\mathrm{C}_{n} a^{n-n} b^{n}$, where $b^{0} = 1 = a^{n-n}$.\nHence the theorem can also be stated as\n\n$$(a+b)^{n} = \\sum_{k=0}^{n} {}^{n}\\mathrm{C}_{k} a^{n-k} b^{k}.$$\n\n2. The coefficients ${}^{n}\\mathrm{C}_{r}$ occuring in the binomial theorem are known as binomial\ncoefficients.\n3. There are $(n+1)$ terms in the expansion of $(a+b)^{n}$, i.e., one more than the index.\n4. In the successive terms of the expansion the index of $a$ goes on decreasing by\nunity. It is $n$ in the first term, $(n-1)$ in the second term, and so on ending with zero\nin the last term. At the same time the index of $b$ increases by unity, starting with\nzero in the first term, 1 in the second and so on ending with $n$ in the last term.\n5. In the expansion of $(a+b)^{n}$, the sum of the indices of $a$ and $b$ is $n+0 = n$ in the\nfirst term, $(n-1) + 1 = n$ in the second term and so on $0+n = n$ in the last term.\nThus, it can be seen that the sum of the indices of $a$ and $b$ is $n$ in every term of the\nexpansion."
+        },
+        {
+          "order": 2,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.2,
+            1012.7,
+            849.3,
+            1064.2
+          ],
+          "conf": 0.859,
+          "text": "7.2.2 Some special cases In the expansion of $(a + b)^n$,"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1066.7,
+            654.7,
+            1118.2
+          ],
+          "conf": 0.738,
+          "text": "(i) Taking $a = x$ and $b = -y$, we obtain"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.8,
+            1117.6,
+            1176.9,
+            1277.6
+          ],
+          "conf": 0.821,
+          "text": "$$\n\\begin{aligned}\n(x-y)^n &= [x + (\\rightarrow y)]^n \\\\\n&= {}^nC_0x^n + {}^nC_1x^{n-1}(-y) + {}^nC_2x^{n-2}(-y)^2 + {}^nC_3x^{n-3}(-y)^3 + ... + {}^nC_n(-y)^n \\\\\n&= {}^nC_0x^n - {}^nC_1x^{n-1}y + {}^nC_2x^{n-2}y^2 - {}^nC_3x^{n-3}y^3 + ... + (-1)^n {}^nC_n y^n\n\\end{aligned}\n$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1276.6,
+            939.1,
+            1333.8
+          ],
+          "conf": 0.739,
+          "text": "Thus $(x-y)^n = {}^n\\mathrm{C}_0 x^n - {}^n\\mathrm{C}_1 x^{n-1} y + {}^n\\mathrm{C}_2 x^{n-2} y^2 + ... + (-1)^n {}^n\\mathrm{C}_n y^n$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.8,
+            1330.0,
+            1178.5,
+            1486.0
+          ],
+          "conf": 0.812,
+          "text": "Using this, we have\n$$\n\\begin{aligned}\n(x-2y)^5 &= {}^5C_0x^5 - {}^5C_1x^4(2y) + {}^5C_2x^3(2y)^2 - {}^5C_3x^2(2y)^3 + \\\\\n&= {}^5C_4x(2y)^4 - {}^5C_5(2y)^5 \\\\\n&= x^5 - 10x^4y + 40x^3y^2 - 80x^2y^3 + 80xy^4 - 32y^5.\n\\end{aligned}\n$$"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1491.1,
+            579.4,
+            1543.8
+          ],
+          "conf": 0.732,
+          "text": "(ii) Taking $a=1$, $b=x$, we obtain"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            249.0,
+            1541.5,
+            996.2,
+            1705.8
+          ],
+          "conf": 0.514,
+          "text": "$$(1+x)^n = {}^n\\text{C}_0(1)^n + {}^n\\text{C}_1(1)^{n-1}x + {}^n\\text{C}_2(1)^{n-2}x^2 + ... + {}^n\\text{C}_n x^n$$\n$$= {}^n\\text{C}_0 + {}^n\\text{C}_1 x + {}^n\\text{C}_2 x^2 + {}^n\\text{C}_3 x^3 + ... + {}^n\\text{C}_n x^n$$\n$$(1+x)^n = {}^n\\text{C}_0 + {}^n\\text{C}_1 x + {}^n\\text{C}_2 x^2 + {}^n\\text{C}_3 x^3 + ... + {}^n\\text{C}_n x^n$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            1649.0,
+            896.2,
+            1706.2
+          ],
+          "conf": 0.662,
+          "text": ""
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0090_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            257.5,
+            539.2,
+            307.4
+          ],
+          "conf": 0.903,
+          "text": "In particular, for $x=1$, we have"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            319.4,
+            308.4,
+            735.8,
+            366.3
+          ],
+          "conf": 0.905,
+          "text": "$$2^n = {}^nC_0 + {}^nC_1 + {}^nC_2 + ... + {}^nC_n.$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            364.8,
+            639.1,
+            414.4
+          ],
+          "conf": 0.821,
+          "text": "(iii)      Taking $a=1$, $b=-x$, we obtain"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            219.2,
+            415.7,
+            858.4,
+            471.8
+          ],
+          "conf": 0.884,
+          "text": "$$(1-x)^n = {}^nC_0 - {}^nC_1x + {}^nC_2x^2 - ... + (-1)^n {}^nC_nx^n$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            150.2,
+            472.3,
+            540.7,
+            521.4
+          ],
+          "conf": 0.885,
+          "text": "In particular, for $x = 1$, we get"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            338.7,
+            522.5,
+            806.7,
+            579.7
+          ],
+          "conf": 0.884,
+          "text": "$$0 = {}^nC_0 - {}^nC_1 + {}^nC_2 - ... + (-1)^n {}^nC_n$$"
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            595.1,
+            1177.5,
+            1067.8
+          ],
+          "conf": 0.707,
+          "text": "Example 1 Expand $\\left(x^2 + \\frac{3}{x}\\right)^4$, $x \\neq 0$\n\nSolution By using binomial theorem, we have\n\n$$x^2 + \\frac{3}{x} = ^4\\text{C}_0(x^2)^4 + ^4\\text{C}_1(x^2)^3 \\left(\\frac{3}{x}\\right) + ^4\\text{C}_2(x^2)^2 \\left(\\frac{3}{x}\\right)^2 + ^4\\text{C}_3(x^2) \\left(\\frac{3}{x}\\right)^3 + ^4\\text{C}_4 \\left(\\frac{3}{x}\\right)^4$$\n\n$$= x^8 + 4 \\cdot x^6 \\cdot \\frac{3}{x} + 6 \\cdot x^4 \\cdot \\frac{9}{x^2} + 4 \\cdot x^2 \\cdot \\frac{27}{x^3} + \\frac{81}{x^4}$$\n\n$$= x^8 + 12x^5 + 54x^2 + \\frac{108}{x} + \\frac{81}{x^4}$$"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            112.7,
+            1067.2,
+            1188.5,
+            1679.2
+          ],
+          "conf": 0.551,
+          "text": "Example 2 Compute $(98)^5$.\n\nSolution We express 98 as the sum or difference of two numbers whose powers are\neasier to calculate, and then use Binomial Theorem.\n\nWrite $98 = 100 - 2$\n\nTherefore, $(98)^5 = (100 - 2)^5$\n$= ^5C_0 (100)^5 - ^5C_1 (100)^4 \\cdot 2 + ^5C_2 (100)^3 2^2$\n$- ^5C_3 (100)^2 (2)^3 + ^5C_4 (100) (2)^4 - ^5C_5 (2)^5$\n$= 10000000000 - 5 \\times 100000000 \\times 2 + 10 \\times 1000000 \\times 4 - 10 \\times 10000$\n$\\times 8 + 5 \\times 100 \\times 16 - 32$\n\n$= 10040008000 - 1000800032 = 9039207968.$\n\nExample 3 Which is larger $(1.01)^{1000000}$ or 10,000?\n\nSolution Splitting 1.01 and using binomial theorem to write the first few terms we\nhave"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0090_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            188.9,
+            255.2,
+            967.2,
+            554.4
+          ],
+          "conf": 0.939,
+          "text": "$(1.01)^{1000000} = (1 + 0.01)^{1000000}$\n$= ^{1000000}\\text{C}_0 + ^{1000000}\\text{C}_1(0.01) + \\text{other positive terms}$\n$= 1 + 1000000 \\times 0.01 + \\text{other positive terms}$\n$= 1 + 10000 + \\text{other positive terms}$\n$> 10000$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            564.9,
+            604.5,
+            614.1
+          ],
+          "conf": 0.826,
+          "text": "Hence $(1.01)^{1000000} > 10000$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            639.7,
+            1178.5,
+            729.0
+          ],
+          "conf": 0.882,
+          "text": "Example 4 Using binomial theorem, prove that $6^n-5n$ always leaves remainder\n1 when divided by 25."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            738.7,
+            1179.4,
+            912.6
+          ],
+          "conf": 0.917,
+          "text": "Solution For two numbers $a$ and $b$ if we can find numbers $q$ and $r$ such that\n$a = bq + r$, then we say that $b$ divides $a$ with $q$ as quotient and $r$ as remainder. Thus, in\norder to show that $6^n - 5n$ leaves remainder 1 when divided by 25, we prove that\n$6^n - 5n = 25k + 1$, where $k$ is some natural number."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            922.1,
+            254.8,
+            968.0
+          ],
+          "conf": 0.884,
+          "text": "We have"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            328.2,
+            972.4,
+            878.7,
+            1029.8
+          ],
+          "conf": 0.86,
+          "text": "$$(1 + a)^n = {}^n\\mathrm{C}_0 + {}^n\\mathrm{C}_1 a + {}^n\\mathrm{C}_2 a^2 + ... + {}^n\\mathrm{C}_n a^n$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1028.7,
+            383.0,
+            1077.7
+          ],
+          "conf": 0.845,
+          "text": "For $a = 5$, we get"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            287.2,
+            1078.2,
+            824.8,
+            1136.4
+          ],
+          "conf": 0.854,
+          "text": "$$(1+5)^n = {}^n\\mathrm{C}_0 + {}^n\\mathrm{C}_1 5 + {}^n\\mathrm{C}_2 5^2 + ... + {}^n\\mathrm{C}_n 5^n$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.3,
+            1141.5,
+            790.8,
+            1194.3
+          ],
+          "conf": 0.83,
+          "text": "i.e. $\\qquad (6)^n = 1 + 5n + 5^2 \\cdot {}^n\\text{C}_2 + 5^3 \\cdot {}^n\\text{C}_3 + ... + 5^n$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.2,
+            1202.9,
+            763.6,
+            1256.3
+          ],
+          "conf": 0.83,
+          "text": "i.e. $6^n - 5n = 1+5^2 (^nC_2 + ^nC_3 5 + ... + 5^{n-2})$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.3,
+            1264.8,
+            793.1,
+            1319.7
+          ],
+          "conf": 0.806,
+          "text": "or $6^n - 5n = 1 + 25 (^nC_2 + 5.^nC_3 + ... + 5^{n-2})$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            1326.4,
+            959.8,
+            1380.7
+          ],
+          "conf": 0.806,
+          "text": "or $6^n - 5n = 25k+1$ where $k = ^nC_2 + 5 \\cdot ^nC_3 + ... + 5^{n-2}.$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1381.9,
+            928.3,
+            1431.8
+          ],
+          "conf": 0.875,
+          "text": "This shows that when divided by 25, $6^n - 5n$ leaves remainder 1."
+        },
+        {
+          "order": 13,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            527.4,
+            1466.8,
+            769.2,
+            1519.6
+          ],
+          "conf": 0.761,
+          "text": "EXERCISE 7.1"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1525.3,
+            774.7,
+            1575.3
+          ],
+          "conf": 0.831,
+          "text": "Expand each of the expressions in Exercises 1 to 5."
+        },
+        {
+          "order": 15,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.6,
+            1594.5,
+            946.7,
+            1688.9
+          ],
+          "conf": 0.816,
+          "text": "1. $(1-2x)^5$ 2. $\\left(\\frac{2}{x} - \\frac{x}{2}\\right)^5$ 3. $(2x - 3)^6$"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0090_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.2,
+            261.8,
+            693.3,
+            367.5
+          ],
+          "conf": 0.724,
+          "text": "4. $\\left(\\frac{x}{3}+\\frac{1}{x}\\right)^5$                                     5. $\\left(x+\\frac{1}{x}\\right)^6$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.8,
+            381.1,
+            819.4,
+            431.5
+          ],
+          "conf": 0.888,
+          "text": "Using binomial theorem, evaluate each of the following:"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.7,
+            426.9,
+            1172.1,
+            820.4
+          ],
+          "conf": 0.624,
+          "text": "6. $(96)^3$\n7. $(102)^5$\n8. $(101)^4$\n9. $(99)^5$\n10. Using Binomial Theorem, indicate which number is larger $(1.1)^{10000}$ or $1000$.\n11. Find $(a+b)^4 - (a-b)^4$. Hence, evaluate $(\\sqrt{3} + \\sqrt{2})^4 - (\\sqrt{3} - \\sqrt{2})^4$.\n12. Find $(x+1)^6 + (x-1)^6$. Hence or otherwise evaluate $(\\sqrt{2} + 1)^6 + (\\sqrt{2} - 1)^6$.\n13. Show that $9^{n+1} - 8n - 9$ is divisible by $64$, whenever $n$ is a positive integer.\n14. Prove that $\\sum_{r=0}^n 3^r \\text{ } ^n\\text{C}_r = 4^n$."
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            377.3,
+            855.8,
+            906.6,
+            908.8
+          ],
+          "conf": 0.857,
+          "text": "Miscellaneous Exercise on Chapter 7"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.6,
+            918.8,
+            1177.0,
+            1433.0
+          ],
+          "conf": 0.783,
+          "text": "1. If $a$ and $b$ are distinct integers, prove that $a - b$ is a factor of $a^n - b^n$, whenever\n$n$ is a positive integer.\n[Hint write $a^n = (a - b + b)^n$ and expand]\n\n2. Evaluate $\\left(\\sqrt{3} + \\sqrt{2}\\right)^6 - \\left(\\sqrt{3} - \\sqrt{2}\\right)^6$.\n\n3. Find the value of $\\left(a^2 + \\sqrt{a^2 - 1}\\right)^4 + \\left(a^2 - \\sqrt{a^2 - 1}\\right)^4$.\n\n4. Find an approximation of $(0.99)^5$ using the first three terms of its expansion.\n\n5. Expand using Binomial Theorem $\\left(1 + \\frac{x}{2} - \\frac{2}{x}\\right)^4, x \\neq 0$.\n\n6. Find the expansion of $(3x^2 - 2ax + 3a^2)^3$ using binomial theorem."
+        },
+        {
+          "order": 5,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.7,
+            1447.6,
+            1178.7,
+            1725.6
+          ],
+          "conf": 0.9,
+          "text": "Summary\n\nThe expansion of a binomial for any positive integral $n$ is given by Binomial\nTheorem, which is $(a + b)^n = {}^n\\text{C}_0a^n + {}^n\\text{C}_1a^{n-1}b + {}^n\\text{C}_2a^{n-2}b^2 + ... +$\n${}^n\\text{C}_{n-1}a.b^{n-1} + {}^n\\text{C}_nb^n$.\nThe coefficients of the expansions are arranged in an array. This array is\ncalled $Pascal's$ $triangle$."
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0090_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.5,
+            253.3,
+            1179.6,
+            885.8
+          ],
+          "conf": 0.823,
+          "text": "Historical Note\n\nThe ancient Indian mathematicians knew about the coefficients in the\nexpansions of $(x + y)^n$, $0 \\le n \\le 7$. The arrangement of these coefficients was in\nthe form of a diagram called Meru-Prastara, provided by Pingla in his book\nChhanda shastra (200B.C.). This triangular arrangement is also found in the\nwork of Chinese mathematician Chu-shi-kie in 1303. The term binomial coefficients\nwas first introduced by the German mathematician, Michael Stipel (1486-1567) in\napproximately 1544. Bombelli (1572) also gave the coefficients in the expansion of\n$(a + b)^n$, for $n = 1,2 \\dots,7$ and Oughtred (1631) gave them for $n = 1, 2,\\dots, 10$. The\narithmetic triangle, popularly known as Pascal's triangle and similar to the Meru-\nPrastara of Pingla was constructed by the French mathematician Blaise Pascal\n(1623-1662) in 1665.\nThe present form of the binomial theorem for integral values of $n$ appeared in\nTrate du triange arithmetic, written by Pascal and published posthumously in\n1665."
+        },
+        {
+          "order": 1,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            618.4,
+            980.4,
+            676.6,
+            1029.8
+          ],
+          "conf": 0.517,
+          "text": ""
+        }
+      ],
+      "page": 8
+    }
+  ]
+}

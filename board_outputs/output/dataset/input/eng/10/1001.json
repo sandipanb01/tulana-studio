@@ -1,0 +1,1639 @@
+{
+  "book": "1001",
+  "relpath": "dataset/input/eng/10/1001.pdf",
+  "num_pages": 9,
+  "pages": [
+    {
+      "image": "0070_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            544.3,
+            217.0,
+            755.8,
+            444.8
+          ],
+          "conf": 0.889,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            606.5,
+            410.2,
+            698.1,
+            444.6
+          ],
+          "conf": 0.646,
+          "text": "$1062\\text{CH}01$"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            500.9,
+            478.4,
+            1179.1,
+            642.0
+          ],
+          "conf": 0.854,
+          "text": "REAL NUMBERS 1"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            117.9,
+            709.6,
+            370.5,
+            761.0
+          ],
+          "conf": 0.912,
+          "text": "1.1 Introduction"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.0,
+            759.6,
+            1177.0,
+            912.6
+          ],
+          "conf": 0.973,
+          "text": "In Class IX, you began your exploration of the world of real numbers and encountered\nirrational numbers. We continue our discussion on real numbers in this chapter. We\nbegin with very important properties of positive integers in Sections 1.2, namely the\nEuclid's division algorithm and the Fundamental Theorem of Arithmetic."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            909.9,
+            1178.8,
+            1166.2
+          ],
+          "conf": 0.979,
+          "text": "Euclid's division algorithm, as the name suggests, has to do with divisibility of\nintegers. Stated simply, it says any positive integer $a$ can be divided by another positive\ninteger $b$ in such a way that it leaves a remainder $r$ that is smaller than $b$. Many of you\nprobably recognise this as the usual long division process. Although this result is quite\neasy to state and understand, it has many applications related to the divisibility properties\nof integers. We touch upon a few of them, and use it mainly to compute the HCF of\ntwo positive integers."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.5,
+            1162.4,
+            1177.7,
+            1695.2
+          ],
+          "conf": 0.975,
+          "text": "The Fundamental Theorem of Arithmetic, on the other hand, has to do something\nwith multiplication of positive integers. You already know that every composite number\ncan be expressed as a product of primes in a unique way — this important fact is the\nFundamental Theorem of Arithmetic. Again, while it is a result that is easy to state and\nunderstand, it has some very deep and significant applications in the field of mathematics.\nWe use the Fundamental Theorem of Arithmetic for two main applications. First, we\nuse it to prove the irrationality of many of the numbers you studied in Class IX, such as\n$\\sqrt{2}$, $\\sqrt{3}$ and $\\sqrt{5}$ . Second, we apply this theorem to explore when exactly the decimal\nexpansion of a rational number, say $\\frac{p}{q}(q \\neq 0)$, is terminating and when it is non-\nterminating repeating. We do so by looking at the prime factorisation of the denominator\n$q$ of $\\frac{p}{q}$. You will see that the prime factorisation of $q$ will completely reveal the nature\nof the decimal expansion of $\\frac{p}{q}$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            184.5,
+            1680.7,
+            587.2,
+            1730.0
+          ],
+          "conf": 0.858,
+          "text": "So let us begin our exploration."
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0070_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.8,
+            257.1,
+            766.6,
+            308.9
+          ],
+          "conf": 0.916,
+          "text": "1.2 The Fundamental Theorem of Arithmetic"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            309.7,
+            1178.7,
+            465.3
+          ],
+          "conf": 0.972,
+          "text": "In your earlier classes, you have seen that any natural number can be written as a\nproduct of its prime factors. For instance, $2 = 2$, $4 = 2 \\times 2$, $253 = 11 \\times 23$, and so on.\nNow, let us try and look at natural numbers from the other direction. That is, can any\nnatural number be obtained by multiplying prime numbers? Let us see."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            464.7,
+            1178.2,
+            620.4
+          ],
+          "conf": 0.965,
+          "text": "Take any collection of prime numbers, say 2, 3, 7, 11 and 23. If we multiply\nsome or all of these numbers, allowing them to repeat as many times as we wish,\nwe can produce a large collection of positive integers (In fact, infinitely many).\nLet us list a few :"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.8,
+            618.6,
+            441.7,
+            667.7
+          ],
+          "conf": 0.831,
+          "text": "$$7 \\times 11 \\times 23 = 1771$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            620.4,
+            619.8,
+            923.6,
+            667.1
+          ],
+          "conf": 0.838,
+          "text": "$$3 \\times 7 \\times 11 \\times 23 = 5313$$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.4,
+            665.2,
+            554.6,
+            715.2
+          ],
+          "conf": 0.803,
+          "text": "$$2 \\times 3 \\times 7 \\times 11 \\times 23 = 10626$$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            619.2,
+            665.0,
+            867.6,
+            713.8
+          ],
+          "conf": 0.791,
+          "text": "$$2^3 \\times 3 \\times 7^3 = 8232$$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.7,
+            712.5,
+            563.3,
+            762.1
+          ],
+          "conf": 0.826,
+          "text": "$$2^2 \\times 3 \\times 7 \\times 11 \\times 23 = 21252$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            758.3,
+            269.4,
+            804.1
+          ],
+          "conf": 0.877,
+          "text": "and so on."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            798.4,
+            1179.0,
+            956.5
+          ],
+          "conf": 0.875,
+          "text": "Now, let us suppose your collection of primes includes all the possible primes.\nWhat is your guess about the size of this collection? Does it contain only a finite\nnumber of integers, or infinitely many? Infact, there are infinitely many primes. So,\nif we combine all these primes in all possible ways, we will get an infinite"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            947.9,
+            458.0,
+            1543.8
+          ],
+          "conf": 0.865,
+          "text": "collection of numbers, all\nthe primes and all possible\nproducts of primes. The\nquestion is – can we\nproduce all the composite\nnumbers this way? What\ndo you think? Do you\nthink that there may be a\ncomposite number which\nis not the product of\npowers of primes?\nBefore we answer this,\nlet us factorise positive\nintegers, that is, do the\nopposite of what we have\ndone so far."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1546.0,
+            457.2,
+            1775.0
+          ],
+          "conf": 0.935,
+          "text": "We are going to use\nthe factor tree with which\nyou are all familiar. Let us\ntake some large number,\nsay, 32760, and factorise\nit as shown."
+        },
+        {
+          "order": 12,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            460.3,
+            954.2,
+            1177.9,
+            1776.5
+          ],
+          "conf": 0.931,
+          "text": ""
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0070_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.5,
+            191.0,
+            1177.5,
+            238.3
+          ],
+          "conf": 0.813,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.6,
+            192.3,
+            308.2,
+            236.6
+          ],
+          "conf": 0.538,
+          "text": "REAL NUMBERS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            257.6,
+            1179.5,
+            561.8
+          ],
+          "conf": 0.982,
+          "text": "So we have factorised $32760$ as $2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5 \\times 7 \\times 13$ as a product of\nprimes, i.e., $32760 = 2^3 \\times 3^2 \\times 5 \\times 7 \\times 13$ as a product of powers of primes. Let us try\nanother number, say, $123456789$. This can be written as $3^2 \\times 3803 \\times 3607$. Of course,\nyou have to check that $3803$ and $3607$ are primes! (Try it out for several other natural\nnumbers yourself.) This leads us to a conjecture that every composite number can be\nwritten as the product of powers of primes. In fact, this statement is true, and is called\nthe **Fundamental Theorem of Arithmetic** because of its basic crucial importance\nto the study of integers. Let us now formally state this theorem."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            562.0,
+            1178.5,
+            684.2
+          ],
+          "conf": 0.963,
+          "text": "**Theorem 1.1 (Fundamental Theorem of Arithmetic) :** *Every composite*\n*number can be expressed (factorised) as a product of primes, and this factorisation*\n*is unique, apart from the order in which the prime factors occur.*"
+        },
+        {
+          "order": 4,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            718.8,
+            1177.8,
+            1194.7
+          ],
+          "conf": 0.92,
+          "text": "An equivalent version of Theorem 1.2 was probably\nfirst recorded as Proposition 14 of Book IX in Euclid’s\nElements, before it came to be known as the\nFundamental Theorem of Arithmetic. However, the\nfirst correct proof was given by Carl Friedrich Gauss\nin his *Disquisitiones Arithmeticae*.\n\nCarl Friedrich Gauss is often referred to as the ‘Prince\nof Mathematicians’ and is considered one of the three\ngreatest mathematicians of all time, along with\nArchimedes and Newton. He has made fundamental\ncontributions to both mathematics and science.\n\nCarl Friedrich Gauss\n(1777 – 1855)"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1217.9,
+            1179.0,
+            1520.4
+          ],
+          "conf": 0.974,
+          "text": "The Fundamental Theorem of Arithmetic says that every composite number can\nbe factorised as a product of primes. Actually it says more. It says that given any\ncomposite number it can be factorised as a product of prime numbers in a ‘unique’\nway, except for the order in which the primes occur. That is, given any composite\nnumber there is one and only one way to write it as a product of primes, as long as we\nare not particular about the order in which the primes occur. So, for example, we\nregard $2 \\times 3 \\times 5 \\times 7$ as the same as $3 \\times 5 \\times 7 \\times 2$, or any other possible order in which\nthese primes are written. This fact is also stated in the following form:"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1521.3,
+            1178.5,
+            1606.3
+          ],
+          "conf": 0.92,
+          "text": "The prime factorisation of a natural number is unique, except for the order\nof its factors."
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0070_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            116.9,
+            259.2,
+            1179.2,
+            384.4
+          ],
+          "conf": 0.952,
+          "text": "In general, given a composite number $x$, we factorise it as $x = p_1 p_2 ... p_n$, where\n$p_1, p_2, ..., p_n$ are primes and written in ascending order, i.e., $p_1 \\le p_2$\n$\\le ... \\le p_n$. If we combine the same primes, we will get powers of primes. For example,"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            184.9,
+            380.0,
+            964.2,
+            431.1
+          ],
+          "conf": 0.904,
+          "text": "$$32760 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5 \\times 7 \\times 13 = 2^3 \\times 3^2 \\times 5 \\times 7 \\times 13$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            430.5,
+            1178.2,
+            516.2
+          ],
+          "conf": 0.952,
+          "text": "Once we have decided that the order will be ascending, then the way the number\nis factorised, is unique."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            516.6,
+            1178.3,
+            603.1
+          ],
+          "conf": 0.947,
+          "text": "The Fundamental Theorem of Arithmetic has many applications, both within\nmathematics and in other fields. Let us look at some examples."
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            616.4,
+            1178.2,
+            702.4
+          ],
+          "conf": 0.864,
+          "text": "Example 1 : Consider the numbers $4^n$, where $n$ is a natural number. Check whether\nthere is any value of $n$ for which $4^n$ ends with the digit zero."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            703.8,
+            1178.6,
+            935.9
+          ],
+          "conf": 0.939,
+          "text": "Solution : If the number $4^n$, for any $n$, were to end with the digit zero, then it would be\ndivisible by 5. That is, the prime factorisation of $4^n$ would contain the prime 5. This is\nnot possible because $4^n = (2)^{2n}$; so the only prime in the factorisation of $4^n$ is 2. So, the\nuniqueness of the Fundamental Theorem of Arithmetic guarantees that there are no\nother primes in the factorisation of $4^n$. So, there is no natural number $n$ for which $4^n$\nends with the digit zero."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            935.4,
+            1178.2,
+            1094.2
+          ],
+          "conf": 0.957,
+          "text": "You have already learnt how to find the HCF and LCM of two positive integers\nusing the Fundamental Theorem of Arithmetic in earlier classes, without realising it!\nThis method is also called the prime factorisation method. Let us recall this method\nthrough an example."
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1106.2,
+            1177.1,
+            1158.2
+          ],
+          "conf": 0.795,
+          "text": "Example 2 : Find the LCM and HCF of 6 and 20 by the prime factorisation method."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1152.5,
+            1017.5,
+            1205.5
+          ],
+          "conf": 0.746,
+          "text": "Solution : We have : $6 = 2^1 \\times 3^1$ and $20 = 2 \\times 2 \\times 5 = 2^2 \\times 5^1$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1201.9,
+            1177.9,
+            1288.2
+          ],
+          "conf": 0.861,
+          "text": "You can find HCF(6, 20) = 2 and LCM(6, 20) = $2 \\times 2 \\times 3 \\times 5 = 60$, as done in your\nearlier classes."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1286.7,
+            1178.8,
+            1372.8
+          ],
+          "conf": 0.882,
+          "text": "Note that HCF$(6, 20) = 2^1 =$ **Product of the smallest power of each common**\n**prime factor in the numbers.**"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.3,
+            1370.9,
+            1178.7,
+            1456.9
+          ],
+          "conf": 0.859,
+          "text": "$$ \\text{LCM } (6, 20) = 2^2 \\times 3^1 \\times 5^1 = \\text{Product of the greatest power of each prime factor,} $$\n$$ \\text{involved in the numbers.} $$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1467.8,
+            1179.1,
+            1627.9
+          ],
+          "conf": 0.941,
+          "text": "From the example above, you might have noticed that HCF$(6, 20) \\times \\text{LCM}(6, 20)$\n$= 6 \\times 20$. In fact, we can verify that **for any two positive integers $a$ and $b$,**\n**$\\mathbf{HCF(a, b) \\times LCM(a, b) = a \\times b}$.** We can use this result to find the LCM of two\npositive integers, if we have already found the HCF of the two positive integers."
+        },
+        {
+          "order": 13,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1640.5,
+            1177.8,
+            1724.2
+          ],
+          "conf": 0.854,
+          "text": "Example 3: Find the HCF of 96 and 404 by the prime factorisation method. Hence,\nfind their LCM."
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0070_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.1,
+            191.0,
+            1178.6,
+            240.0
+          ],
+          "conf": 0.838,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.3,
+            192.5,
+            307.7,
+            237.1
+          ],
+          "conf": 0.532,
+          "text": "REAL NUMBERS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            256.3,
+            829.9,
+            307.6
+          ],
+          "conf": 0.889,
+          "text": "Solution : The prime factorisation of 96 and 404 gives :"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            477.2,
+            304.6,
+            834.6,
+            354.4
+          ],
+          "conf": 0.891,
+          "text": "$$96 = 2^5 \\times 3, 404 = 2^2 \\times 101$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            353.8,
+            773.4,
+            404.5
+          ],
+          "conf": 0.907,
+          "text": "Therefore, the HCF of these two integers is $2^2 = 4$."
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            414.4,
+            1079.3,
+            510.0
+          ],
+          "conf": 0.924,
+          "text": "Also, $\\text{LCM } (96, 404) = \\frac{96 \\times 404}{\\text{HCF}(96, 404)} = \\frac{96 \\times 404}{4} = 9696$"
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            533.1,
+            1177.5,
+            618.6
+          ],
+          "conf": 0.889,
+          "text": "Example 4 : Find the HCF and LCM of 6, 72 and 120, using the prime factorisation\nmethod."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            618.1,
+            405.5,
+            667.3
+          ],
+          "conf": 0.857,
+          "text": "Solution : We have :"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            502.3,
+            663.7,
+            1016.1,
+            715.7
+          ],
+          "conf": 0.861,
+          "text": "$$6 = 2 \\times 3, 72 = 2^3 \\times 3^2, 120 = 2^3 \\times 3 \\times 5$$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            713.6,
+            1177.9,
+            764.2
+          ],
+          "conf": 0.905,
+          "text": "Here, $2^1$ and $3^1$ are the smallest powers of the common factors 2 and 3, respectively."
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            763.6,
+            885.4,
+            814.7
+          ],
+          "conf": 0.837,
+          "text": "So, $\\text{HCF} (6, 72, 120) = 2^1 \\times 3^1 = 2 \\times 3 = 6$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            814.9,
+            1178.3,
+            905.2
+          ],
+          "conf": 0.934,
+          "text": "$2^3$, $3^2$ and $5^1$ are the greatest powers of the prime factors 2, 3 and 5 respectively\ninvolved in the three numbers."
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            906.1,
+            872.3,
+            957.2
+          ],
+          "conf": 0.809,
+          "text": "So, $\\text{LCM } (6, 72, 120) = 2^3 \\times 3^2 \\times 5^1 = 360$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            972.4,
+            1177.4,
+            1062.7
+          ],
+          "conf": 0.921,
+          "text": "Remark : Notice, $6 \\times 72 \\times 120 \\neq \\text{HCF } (6, 72, 120) \\times \\text{LCM } (6, 72, 120)$. So, the\nproduct of three numbers is not equal to the product of their HCF and LCM."
+        },
+        {
+          "order": 14,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.4,
+            1100.3,
+            771.9,
+            1150.8
+          ],
+          "conf": 0.855,
+          "text": "EXERCISE 1.1"
+        },
+        {
+          "order": 15,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.7,
+            1160.7,
+            1180.9,
+            1720.1
+          ],
+          "conf": 0.867,
+          "text": "**1.** Express each number as a product of its prime factors:\n(i) 140 (ii) 156 (iii) 3825 (iv) 5005 (v) 7429\n\n**2.** Find the LCM and HCF of the following pairs of integers and verify that LCM $\\times$ HCF =\nproduct of the two numbers.\n(i) 26 and 91 (ii) 510 and 92 (iii) 336 and 54\n\n**3.** Find the LCM and HCF of the following integers by applying the prime factorisation\nmethod.\n(i) 12, 15 and 21 (ii) 17, 23 and 29 (iii) 8, 9 and 25\n\n**4.** Given that HCF $(306, 657) = 9$, find LCM $(306, 657)$.\n\n**5.** Check whether $6^n$ can end with the digit 0 for any natural number $n$.\n\n**6.** Explain why $7 \\times 11 \\times 13 + 13$ and $7 \\times 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1 + 5$ are composite numbers.\n\n**7.** There is a circular path around a sports field. Sonia takes 18 minutes to drive one round\nof the field, while Ravi takes 12 minutes for the same. Suppose they both start at the"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0070_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            195.4,
+            259.9,
+            1178.1,
+            342.4
+          ],
+          "conf": 0.95,
+          "text": "same point and at the same time, and go in the same direction. After how many minutes\nwill they meet again at the starting point?"
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.0,
+            364.2,
+            620.2,
+            415.9
+          ],
+          "conf": 0.907,
+          "text": "1.3 Revisiting Irrational Numbers"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            416.1,
+            1179.4,
+            658.2
+          ],
+          "conf": 0.98,
+          "text": "In Class IX, you were introduced to irrational numbers and many of their properties.\nYou studied about their existence and how the rationals and the irrationals together\nmade up the real numbers. You even studied how to locate irrationals on the number\nline. However, we did not prove that they were irrationals. In this section, we will\nprove that $\\sqrt{2}$, $\\sqrt{3}$, $\\sqrt{5}$ and, in general, $\\sqrt{p}$ is irrational, where $p$ is a prime. One of\nthe theorems, we use in our proof, is the Fundamental Theorem of Arithmetic."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            651.9,
+            1176.8,
+            795.0
+          ],
+          "conf": 0.962,
+          "text": "Recall, a number ‘$s$’ is called \\textit{irrational} if it cannot be written in the form $\\frac{p}{q}$,\nwhere $p$ and $q$ are integers and $q \\neq 0$. Some examples of irrational numbers, with\nwhich you are already familiar, are :"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            191.1,
+            787.4,
+            837.7,
+            886.5
+          ],
+          "conf": 0.918,
+          "text": "$\\sqrt{2}, \\sqrt{3}, \\sqrt{15}, \\pi, -\\frac{\\sqrt{2}}{\\sqrt{3}}, 0.10110111011110 \\dots$, etc."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            878.6,
+            1177.8,
+            969.2
+          ],
+          "conf": 0.945,
+          "text": "Before we prove that $\\sqrt{2}$ is irrational, we need the following theorem, whose\nproof is based on the Fundamental Theorem of Arithmetic."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            985.0,
+            1177.5,
+            1073.5
+          ],
+          "conf": 0.806,
+          "text": "Theorem 1.2 : Let $p$ be a prime number. If $p$ divides $a^2$, then $p$ divides $a$, where\n$a$ is a positive integer."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1076.7,
+            829.3,
+            1127.1
+          ],
+          "conf": 0.877,
+          "text": "*Proof : Let the prime factorisation of $a$ be as follows :"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.8,
+            1128.8,
+            1097.1,
+            1183.5
+          ],
+          "conf": 0.806,
+          "text": "$a = p_1 p_2 \\dots p_n$, where $p_1, p_2, \\dots, p_n$ are primes, not necessarily distinct."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1179.3,
+            865.3,
+            1236.7
+          ],
+          "conf": 0.796,
+          "text": "Therefore, $a^2 = (p_1 p_2 \\dots p_n)(p_1 p_2 \\dots p_n) = p_1^2 p_2^2 \\dots p_n^2.$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1230.2,
+            1179.5,
+            1405.2
+          ],
+          "conf": 0.94,
+          "text": "Now, we are given that $p$ divides $a^2$. Therefore, from the Fundamental Theorem of\nArithmetic, it follows that $p$ is one of the prime factors of $a^2$. However, using the\nuniqueness part of the Fundamental Theorem of Arithmetic, we realise that the only\nprime factors of $a^2$ are $p_1, p_2, \\dots, p_n$. So $p$ is one of $p_1, p_2, \\dots, p_n$."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1402.6,
+            643.6,
+            1457.3
+          ],
+          "conf": 0.834,
+          "text": "Now, since $a = p_1 p_2 \\dots p_n$, $p$ divides $a$."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.8,
+            1452.4,
+            892.5,
+            1506.9
+          ],
+          "conf": 0.846,
+          "text": "We are now ready to give a proof that $\\sqrt{2}$ is irrational."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1502.9,
+            1177.8,
+            1589.7
+          ],
+          "conf": 0.916,
+          "text": "The proof is based on a technique called ‘proof by contradiction’. (This technique is\ndiscussed in some detail in Appendix 1)."
+        },
+        {
+          "order": 14,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            1609.5,
+            569.4,
+            1662.3
+          ],
+          "conf": 0.719,
+          "text": "Theorem 1.3 : $\\sqrt{2}$ is irrational."
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1667.4,
+            870.0,
+            1718.9
+          ],
+          "conf": 0.863,
+          "text": "Proof : Let us assume, to the contrary, that $\\sqrt{2}$ is rational."
+        },
+        {
+          "order": 16,
+          "label": "Footnote",
+          "type": "Footnote",
+          "bbox_xyxy": [
+            120.1,
+            1728.4,
+            602.3,
+            1774.8
+          ],
+          "conf": 0.813,
+          "text": "* Not from the examination point of view."
+        },
+        {
+          "order": 17,
+          "label": "Footer",
+          "type": "PageFooter",
+          "bbox_xyxy": [
+            121.8,
+            1728.8,
+            742.0,
+            1873.2
+          ],
+          "conf": 0.522,
+          "text": ""
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0070_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.5,
+            191.0,
+            1178.8,
+            240.2
+          ],
+          "conf": 0.822,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.3,
+            191.5,
+            308.2,
+            237.7
+          ],
+          "conf": 0.525,
+          "text": "REAL NUMBERS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            256.5,
+            856.2,
+            330.2
+          ],
+          "conf": 0.884,
+          "text": "So, we can find integers $r$ and $s$ $(\\neq 0)$ such that $\\sqrt{2} = \\frac{r}{s}$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            323.8,
+            1178.1,
+            376.0
+          ],
+          "conf": 0.918,
+          "text": "Suppose $r$ and $s$ have a common factor other than 1. Then, we divide by the common"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            382.1,
+            771.2,
+            460.2
+          ],
+          "conf": 0.881,
+          "text": "factor to get $\\sqrt{2} = \\frac{a}{b}$, where $a$ and $b$ are coprime."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            447.1,
+            315.4,
+            501.4
+          ],
+          "conf": 0.832,
+          "text": "So, $b \\sqrt{2} = a.$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            501.8,
+            1135.4,
+            555.0
+          ],
+          "conf": 0.906,
+          "text": "Squaring on both sides and rearranging, we get $2b^2 = a^2$. Therefore, 2 divides $a^2$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            549.5,
+            741.3,
+            601.4
+          ],
+          "conf": 0.898,
+          "text": "Now, by Theorem 1.2, it follows that 2 divides $a$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            597.5,
+            681.3,
+            649.4
+          ],
+          "conf": 0.902,
+          "text": "So, we can write $a = 2c$ for some integer $c$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            644.9,
+            785.9,
+            697.5
+          ],
+          "conf": 0.905,
+          "text": "Substituting for $a$, we get $2b^2 = 4c^2$, that is, $b^2 = 2c^2$."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            693.1,
+            1176.8,
+            745.9
+          ],
+          "conf": 0.899,
+          "text": "This means that 2 divides $b^2$, and so 2 divides $b$ (again using Theorem 1.2 with $p = 2$)."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            741.8,
+            822.8,
+            792.9
+          ],
+          "conf": 0.896,
+          "text": "Therefore, $a$ and $b$ have at least 2 as a common factor."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            789.6,
+            1119.0,
+            841.3
+          ],
+          "conf": 0.915,
+          "text": "But this contradicts the fact that $a$ and $b$ have no common factors other than 1."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            846.3,
+            1176.8,
+            900.2
+          ],
+          "conf": 0.887,
+          "text": "This contradiction has arisen because of our incorrect assumption that $\\sqrt{2}$ is rational."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            902.9,
+            610.6,
+            957.6
+          ],
+          "conf": 0.87,
+          "text": "So, we conclude that $\\sqrt{2}$ is irrational."
+        },
+        {
+          "order": 15,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            969.9,
+            651.0,
+            1023.1
+          ],
+          "conf": 0.827,
+          "text": "Example 5 : Prove that $\\sqrt{3}$ is irrational."
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1027.1,
+            906.4,
+            1079.6
+          ],
+          "conf": 0.87,
+          "text": "Solution : Let us assume, to the contrary, that $\\sqrt{3}$ is rational."
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1090.0,
+            911.0,
+            1170.6
+          ],
+          "conf": 0.868,
+          "text": "That is, we can find integers $a$ and $b$ $(\\neq 0)$ such that $\\sqrt{3} = \\frac{a}{b}$."
+        },
+        {
+          "order": 18,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1166.8,
+            1178.3,
+            1254.2
+          ],
+          "conf": 0.919,
+          "text": "Suppose $a$ and $b$ have a common factor other than $1$, then we can divide by the\ncommon factor, and assume that $a$ and $b$ are coprime."
+        },
+        {
+          "order": 19,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1256.7,
+            311.2,
+            1310.4
+          ],
+          "conf": 0.841,
+          "text": "So, $b\\sqrt{3} = a$."
+        },
+        {
+          "order": 20,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1310.0,
+            845.4,
+            1362.5
+          ],
+          "conf": 0.891,
+          "text": "Squaring on both sides, and rearranging, we get $3b^2 = a^2$."
+        },
+        {
+          "order": 21,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1358.7,
+            1178.1,
+            1445.5
+          ],
+          "conf": 0.91,
+          "text": "Therefore, $a^2$ is divisible by 3, and by Theorem 1.2, it follows that $a$ is also divisible\nby 3."
+        },
+        {
+          "order": 22,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1441.9,
+            682.6,
+            1493.6
+          ],
+          "conf": 0.872,
+          "text": "So, we can write $a = 3c$ for some integer $c$."
+        },
+        {
+          "order": 23,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1489.4,
+            786.4,
+            1541.8
+          ],
+          "conf": 0.873,
+          "text": "Substituting for $a$, we get $3b^2 = 9c^2$, that is, $b^2 = 3c^2$."
+        },
+        {
+          "order": 24,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1538.2,
+            1177.8,
+            1624.1
+          ],
+          "conf": 0.901,
+          "text": "This means that $b^2$ is divisible by 3, and so $b$ is also divisible by 3 (using Theorem 1.2\nwith $p = 3$)."
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0070_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            257.8,
+            823.4,
+            307.0
+          ],
+          "conf": 0.91,
+          "text": "Therefore, $a$ and $b$ have at least 3 as a common factor."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            308.0,
+            806.7,
+            358.3
+          ],
+          "conf": 0.905,
+          "text": "But this contradicts the fact that $a$ and $b$ are coprime."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            368.8,
+            1176.5,
+            468.7
+          ],
+          "conf": 0.891,
+          "text": "This contradiction has arisen because of our incorrect assumption that $\\sqrt{3}$ is rational.\nSo, we conclude that $\\sqrt{3}$ is irrational."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.5,
+            473.1,
+            606.7,
+            521.7
+          ],
+          "conf": 0.915,
+          "text": "In Class IX, we mentioned that :"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.9,
+            536.6,
+            1176.5,
+            684.0
+          ],
+          "conf": 0.953,
+          "text": "$\\bullet$ the sum or difference of a rational and an irrational number is irrational and\n\n$\\bullet$ the product and quotient of a non-zero rational and irrational number is\nirrational."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.2,
+            686.9,
+            699.8,
+            736.6
+          ],
+          "conf": 0.909,
+          "text": "We prove some particular cases here."
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            750.7,
+            1183.4,
+            1304.9
+          ],
+          "conf": 0.524,
+          "text": "Example 6 : Show that $5 - \\sqrt{3}$ is irrational.\n\nSolution : Let us assume, to the contrary, that $5 - \\sqrt{3}$ is rational.\n\nThat is, we can find coprime $a$ and $b$ ($b \\neq 0$) such that $5 - \\sqrt{3} = \\frac{a}{b}$.\n\nTherefore, $5 - \\frac{a}{b} = \\sqrt{3}$.\n\nRearranging this equation, we get $\\sqrt{3} = 5 - \\frac{a}{b} = \\frac{5b - a}{b}$.\n\nSince $a$ and $b$ are integers, we get $5 - \\frac{a}{b}$ is rational, and so $\\sqrt{3}$ is rational.\n\nBut this contradicts the fact that $\\sqrt{3}$ is irrational.\n\nThis contradiction has arisen because of our incorrect assumption that $5 - \\sqrt{3}$ is\nrational."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1316.5,
+            654.0,
+            1370.7
+          ],
+          "conf": 0.854,
+          "text": "So, we conclude that $5 - \\sqrt{3}$ is irrational."
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1394.8,
+            969.4,
+            1722.5
+          ],
+          "conf": 0.677,
+          "text": "Example 7 : Show that $3\\sqrt{2}$ is irrational.\n\nSolution : Let us assume, to the contrary, that $3\\sqrt{2}$ is rational.\n\nThat is, we can find coprime $a$ and $b$ ($b \\neq 0$) such that $3\\sqrt{2} = \\frac{a}{b}$.\n\nRearranging, we get $\\sqrt{2} = \\frac{a}{3b}$.\n\nSince $3$, $a$ and $b$ are integers, $\\frac{a}{3b}$ is rational, and so $\\sqrt{2}$ is rational."
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0070_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.8,
+            190.4,
+            1178.7,
+            240.5
+          ],
+          "conf": 0.789,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.7,
+            191.5,
+            307.8,
+            237.1
+          ],
+          "conf": 0.525,
+          "text": "REAL NUMBERS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            265.8,
+            750.6,
+            319.2
+          ],
+          "conf": 0.89,
+          "text": "But this contradicts the fact that $\\sqrt{2}$ is irrational."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            318.2,
+            624.4,
+            371.8
+          ],
+          "conf": 0.893,
+          "text": "So, we conclude that $3\\sqrt{2}$ is irrational."
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.7,
+            401.3,
+            773.6,
+            452.4
+          ],
+          "conf": 0.855,
+          "text": "EXERCISE 1.2"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.4,
+            467.8,
+            857.5,
+            721.4
+          ],
+          "conf": 0.936,
+          "text": "**1.** Prove that $\\sqrt{5}$ is irrational.\n\n**2.** Prove that $3 + 2\\sqrt{5}$ is irrational.\n\n**3.** Prove that the following are irrationals :\n\n(i) $\\frac{1}{\\sqrt{2}}$          (ii) $7\\sqrt{5}$          (iii) $6 + \\sqrt{2}$"
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.2,
+            756.2,
+            335.3,
+            807.7
+          ],
+          "conf": 0.868,
+          "text": "1.4 Summary"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            809.8,
+            752.2,
+            858.2
+          ],
+          "conf": 0.922,
+          "text": "In this chapter, you have studied the following points:"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.8,
+            856.7,
+            1178.6,
+            1101.6
+          ],
+          "conf": 0.947,
+          "text": "1. The Fundamental Theorem of Arithmetic :\n   Every composite number can be expressed (factorised) as a product of primes, and this\nfactorisation is unique, apart from the order in which the prime factors occur.\n\n2. If $p$ is a prime and $p$ divides $a^2$, then $p$ divides $a$, where $a$ is a positive integer.\n\n3. To prove that $\\sqrt{2}$, $\\sqrt{3}$ are irrationals."
+        },
+        {
+          "order": 9,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.2,
+            1157.3,
+            1180.0,
+            1682.3
+          ],
+          "conf": 0.917,
+          "text": "A NOTE TO THE READER\n\nYou have seen that :\n\n$$HCF (p, q, r) \\times LCM (p, q, r) \\neq p \\times q \\times r, \\text{ where } p, q, r \\text{ are positive integers}$$\n(see Example 8). However, the following results hold good for three numbers\n$p, q$ and $r$ :\n\n$$LCM (p, q, r) = \\frac{p \\cdot q \\cdot r \\cdot HCF(p, q, r)}{HCF(p, q) \\cdot HCF(q, r) \\cdot HCF(p, r)}$$\n\n$$HCF (p, q, r) = \\frac{p \\cdot q \\cdot r \\cdot LCM(p, q, r)}{LCM(p, q) \\cdot LCM(q, r) \\cdot LCM(p, r)}$$"
+        }
+      ],
+      "page": 8
+    }
+  ]
+}

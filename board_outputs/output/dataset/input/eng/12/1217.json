@@ -1,0 +1,4886 @@
+{
+  "book": "1217",
+  "relpath": "dataset/input/eng/12/1217.pdf",
+  "num_pages": 33,
+  "pages": [
+    {
+      "image": "0110_p0000.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            640.8,
+            61.0,
+            1128.2,
+            288.4
+          ],
+          "conf": 0.877,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            855.8,
+            186.3,
+            1123.1,
+            271.3
+          ],
+          "conf": 0.535,
+          "text": "Chapter 13"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            697.7,
+            253.6,
+            798.1,
+            289.1
+          ],
+          "conf": 0.538,
+          "text": "$12080\\text{CH}13$"
+        },
+        {
+          "order": 3,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            321.7,
+            313.6,
+            875.5,
+            411.8
+          ],
+          "conf": 0.862,
+          "text": "PROBABILITY"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            209.5,
+            494.8,
+            990.8,
+            586.6
+          ],
+          "conf": 0.853,
+          "text": "❖ *The theory of probabilities is simply the Science of logic*\n*quantitatively treated. – C.S. PEIRCE* ❖"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            70.2,
+            609.7,
+            339.6,
+            659.3
+          ],
+          "conf": 0.905,
+          "text": "13.1 Introduction"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            656.5,
+            1130.0,
+            1316.5
+          ],
+          "conf": 0.963,
+          "text": "In earlier Classes, we have studied the probability as a\nmeasure of uncertainty of events in a random experiment.\nWe discussed the axiomatic approach formulated by\nRussian Mathematician, A.N. Kolmogorov (1903-1987)\nand treated probability as a function of outcomes of the\nexperiment. We have also established equivalence between\nthe axiomatic theory and the classical theory of probability\nin case of equally likely outcomes. On the basis of this\nrelationship, we obtained probabilities of events associated\nwith discrete sample spaces. We have also studied the\naddition rule of probability. In this chapter, we shall discuss\nthe important concept of conditional probability of an event\ngiven that another event has occurred, which will be helpful\nin understanding the Bayes' theorem, multiplication rule of\nprobability and independence of events. We shall also learn\nan important concept of random variable and its probability\ndistribution and also the mean and variance of a probability\ndistribution. In the last\nsection of the chapter, we shall study an important discrete probability\ndistribution called Binomial distribution. Throughout this chapter, we shall take up the experiments\nhaving equally likely outcomes, unless stated otherwise."
+        },
+        {
+          "order": 7,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.8,
+            1319.0,
+            486.0,
+            1370.7
+          ],
+          "conf": 0.874,
+          "text": "13.2 Conditional Probability"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            1362.1,
+            1128.6,
+            1538.5
+          ],
+          "conf": 0.957,
+          "text": "Uptill now in probability, we have discussed the methods of finding the probability of\nevents. If we have two events from the same sample space, does the information\nabout the occurrence of one of the events affect the probability of the other event? Let\nus try to answer this question by taking up a random experiment in which the outcomes\nare equally likely to occur."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            1532.9,
+            1127.8,
+            1613.2
+          ],
+          "conf": 0.904,
+          "text": "Consider the experiment of tossing three fair coins. The sample space of the\nexperiment is"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            269.3,
+            1603.1,
+            966.8,
+            1653.3
+          ],
+          "conf": 0.777,
+          "text": "$$S = \\{ HHH, HHT, HTH, THH, HTT, THT, TTH, TTT \\}$$"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0110_p0001.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            225.2,
+            1129.1,
+            310.7
+          ],
+          "conf": 0.805,
+          "text": "Since the coins are fair, we can assign the probability $\\frac{1}{8}$ to each sample point. Let"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            305.6,
+            1127.5,
+            386.8
+          ],
+          "conf": 0.922,
+          "text": "E be the event ‘at least two heads appear’ and F be the event ‘first coin shows tail’.\nThen"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.1,
+            382.0,
+            1042.3,
+            867.1
+          ],
+          "conf": 0.522,
+          "text": "$$E = \\{HHH, HHT, HTH, THH\\}$$\n$$F = \\{THH, THT, TTH, TTT\\}$$\n$$P(E) = P(\\{HHH\\}) + P(\\{HHT\\}) + P(\\{HTH\\}) + P(\\{THH\\})$$\n$$= \\frac{1}{8} + \\frac{1}{8} + \\frac{1}{8} + \\frac{1}{8} = \\frac{1}{2} \\text{ (Why ?)}$$\n$$P(F) = P(\\{THH\\}) + P(\\{THT\\}) + P(\\{TTH\\}) + P(\\{TTT\\})$$\n$$= \\frac{1}{8} + \\frac{1}{8} + \\frac{1}{8} + \\frac{1}{8} = \\frac{1}{2}$$\n$$E \\cap F = \\{THH\\}$$\n$$P(E \\cap F) = P(\\{THH\\}) = \\frac{1}{8}$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.6,
+            789.8,
+            559.7,
+            875.7
+          ],
+          "conf": 0.892,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            873.4,
+            1127.9,
+            1174.9
+          ],
+          "conf": 0.981,
+          "text": "Now, suppose we are given that the first coin shows tail, i.e. F occurs, then what is\nthe probability of occurrence of E? With the information of occurrence of F, we are\nsure that the cases in which first coin does not result into a tail should not be considered\nwhile finding the probability of E. This information reduces our sample space from the\nset S to its subset F for the event E. In other words, the additional information really\namounts to telling us that the situation may be considered as being that of a new\nrandom experiment for which the sample space consists of all those outcomes only\nwhich are favourable to the occurrence of the event F."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1174.0,
+            910.7,
+            1222.9
+          ],
+          "conf": 0.903,
+          "text": "Now, the sample point of F which is favourable to event E is THH."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.2,
+            1226.7,
+            854.3,
+            1310.0
+          ],
+          "conf": 0.872,
+          "text": "Thus, Probability of E considering F as the sample space = $\\frac{1}{4}$,"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.7,
+            1314.7,
+            942.1,
+            1401.7
+          ],
+          "conf": 0.893,
+          "text": "or Probability of E given that the event F has occurred = $\\frac{1}{4}$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            1397.3,
+            1128.4,
+            1482.5
+          ],
+          "conf": 0.933,
+          "text": "This probability of the event E is called the *conditional probability of E given*\n*that F has already occurred*, and is denoted by P (E|F)."
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.1,
+            1486.8,
+            397.1,
+            1572.3
+          ],
+          "conf": 0.891,
+          "text": "Thus $P(E|F) = \\frac{1}{4}$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            1567.3,
+            1128.8,
+            1652.4
+          ],
+          "conf": 0.925,
+          "text": "Note that the elements of F which favour the event E are the common elements of\nE and F, i.e. the sample points of $E \\cap F$."
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0110_p0002.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            208.6,
+            1090.3,
+            257.9
+          ],
+          "conf": 0.924,
+          "text": "Thus, we can also write the conditional probability of E given that F has occurred as"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            228.7,
+            267.8,
+            1036.0,
+            362.2
+          ],
+          "conf": 0.923,
+          "text": "$$P(ElF) = \\frac{\\text{Number of elementary events favourable to } E \\cap F}{\\text{Number of elementary events which are favourable to } F}$$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.5,
+            384.5,
+            491.0,
+            476.5
+          ],
+          "conf": 0.893,
+          "text": "$$ = \\frac{n(\\mathrm{E} \\cap \\mathrm{F})}{n(\\mathrm{F})} $$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            477.4,
+            1128.2,
+            562.9
+          ],
+          "conf": 0.951,
+          "text": "Dividing the numerator and the denominator by total number of elementary events\nof the sample space, we see that $P(E|F)$ can also be written as"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            429.1,
+            572.6,
+            1129.3,
+            745.2
+          ],
+          "conf": 0.936,
+          "text": "$$ \\mathrm{P}(\\mathrm{ElF}) = \\frac{\\frac{n(\\mathrm{E} \\cap \\mathrm{F})}{n(\\mathrm{S})}}{\\frac{n(\\mathrm{F})}{n(\\mathrm{S})}} = \\frac{\\mathrm{P}(\\mathrm{E} \\cap \\mathrm{F})}{\\mathrm{P}(\\mathrm{F})} \\quad \\dots (1) $$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            749.0,
+            825.4,
+            800.1
+          ],
+          "conf": 0.916,
+          "text": "Note that (1) is valid only when $P(F) \\neq 0$ i.e., $F \\neq \\phi$ (Why?)"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.5,
+            796.0,
+            805.2,
+            845.3
+          ],
+          "conf": 0.9,
+          "text": "Thus, we can define the conditional probability as follows :"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            840.4,
+            1128.2,
+            962.5
+          ],
+          "conf": 0.915,
+          "text": "Definition 1 If $E$ and $F$ are two events associated with the same sample space of a\nrandom experiment, the conditional probability of the event $E$ given that $F$ has occurred,\ni.e. $P$ ($E|F$) is given by"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            429.2,
+            972.2,
+            929.0,
+            1066.5
+          ],
+          "conf": 0.911,
+          "text": "$$P(E|F) = \\frac{P(E \\cap F)}{P(F)} \\text{ provided } P(F) \\neq 0$$"
+        },
+        {
+          "order": 9,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            68.6,
+            1090.6,
+            659.3,
+            1142.1
+          ],
+          "conf": 0.882,
+          "text": "13.2.1 Properties of conditional probability"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.8,
+            1137.8,
+            1012.9,
+            1224.5
+          ],
+          "conf": 0.854,
+          "text": "Let E and F be events of a sample space S of an experiment, then we have\nProperty 1 $P(S|F) = P(F|F) = 1$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            1222.6,
+            268.1,
+            1269.0
+          ],
+          "conf": 0.882,
+          "text": "We know that"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            426.5,
+            1271.9,
+            817.1,
+            1366.0
+          ],
+          "conf": 0.916,
+          "text": "$$P(S|F) = \\frac{P(S \\cap F)}{P(F)} = \\frac{P(F)}{P(F)} = 1$$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.7,
+            1379.7,
+            806.6,
+            1473.3
+          ],
+          "conf": 0.895,
+          "text": "Also $P(F|F) = \\frac{P(F \\cap F)}{P(F)} = \\frac{P(F)}{P(F)} = 1$"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.6,
+            1471.1,
+            696.5,
+            1521.7
+          ],
+          "conf": 0.748,
+          "text": "Thus $P(S|F) = P(F|F) = 1$"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            1518.8,
+            1128.7,
+            1604.7
+          ],
+          "conf": 0.81,
+          "text": "Property 2 If A and B are any two events of a sample space S and F is an event\nof S such that $P(F) \\neq 0$, then"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            338.3,
+            1600.4,
+            980.8,
+            1650.2
+          ],
+          "conf": 0.855,
+          "text": "$$P((A \\cup B)|F) = P(A|F) + P(B|F) - P((A \\cap B)|F)$$"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0110_p0003.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            209.0,
+            728.2,
+            257.2
+          ],
+          "conf": 0.894,
+          "text": "In particular, if A and B are disjoint events, then"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            360.1,
+            252.7,
+            772.3,
+            302.0
+          ],
+          "conf": 0.909,
+          "text": "$$P((A \\cup B)|F) = P(A|F) + P(B|F)$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            291.2,
+            204.5,
+            335.5
+          ],
+          "conf": 0.861,
+          "text": "We have"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            354.7,
+            339.3,
+            1128.1,
+            842.9
+          ],
+          "conf": 0.61,
+          "text": "$$P((A \\cup B)|F) = \\frac{P[(A \\cup B) \\cap F]}{P(F)}$$\n\n$$= \\frac{P[(A \\cap F) \\cup (B \\cap F)]}{P(F)}$$\n\n(by distributive law of union of sets over intersection)\n\n$$= \\frac{P(A \\cap F) + P(B \\cap F) - P(A \\cap B \\cap F)}{P(F)}$$\n\n$$= \\frac{P(A \\cap F)}{P(F)} + \\frac{P(B \\cap F)}{P(F)} - \\frac{P[(A \\cap B) \\cap F]}{P(F)}$$\n\n$$= P(A|F) + P(B|F) - P((A \\cap B)|F)$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            840.4,
+            570.1,
+            887.2
+          ],
+          "conf": 0.896,
+          "text": "When A and B are disjoint events, then"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.6,
+            884.3,
+            779.4,
+            976.0
+          ],
+          "conf": 0.75,
+          "text": "$$P((A \\cap B)|F) = 0$$\n$$\\Rightarrow \\quad P((A \\cup B)|F) = P(A|F) + P(B|F)$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.0,
+            973.4,
+            509.4,
+            1022.6
+          ],
+          "conf": 0.718,
+          "text": "Property 3 $P(E'|F) = 1 - P(E|F)$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            1019.0,
+            615.0,
+            1067.6
+          ],
+          "conf": 0.855,
+          "text": "From Property 1, we know that $P(S|F) = 1$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.2,
+            1061.5,
+            1127.4,
+            1200.6
+          ],
+          "conf": 0.689,
+          "text": "$\\Rightarrow$\n$\\text{P}(\\text{E} \\cup \\text{E}'|\\text{F}) = 1$\n$\\Rightarrow$\n$\\text{P}(\\text{E}|\\text{F}) + \\text{P} \\left(\\text{E}'|\\text{F}\\right) = 1$\nThus,\nsince $\\text{S} = \\text{E} \\cup \\text{E}'$\nsince $\\text{E}$ and $\\text{E}'$ are disjoint events\n$\\text{P}(\\text{E}'|\\text{F}) = 1 - \\text{P}(\\text{E}|\\text{F})$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.0,
+            1199.7,
+            533.8,
+            1247.8
+          ],
+          "conf": 0.88,
+          "text": "Let us now take up some examples."
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            1261.3,
+            1060.7,
+            1547.8
+          ],
+          "conf": 0.65,
+          "text": "Example 1 If $P(A) = \\frac{7}{13}$, $P(B) = \\frac{9}{13}$ and $P(A \\cap B) = \\frac{4}{13}$, evaluate $P(A|B)$.\n\n\nSolution We have $P(A|B) = \\frac{P(A \\cap B)}{P(B)} = \\frac{\\frac{4}{13}}{\\frac{9}{13}} = \\frac{4}{9}$"
+        },
+        {
+          "order": 11,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            1570.5,
+            1127.8,
+            1655.5
+          ],
+          "conf": 0.871,
+          "text": "Example 2 A family has two children. What is the probability that both the children are\nboys given that at least one of them is a boy ?"
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0110_p0004.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            208.6,
+            1103.0,
+            304.6
+          ],
+          "conf": 0.574,
+          "text": "Solution Let $b$ stand for boy and $g$ for girl. The sample space of the experiment is\n$$S = \\{(b, b), (g, b), (b, g), (g, g)\\}$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.6,
+            299.2,
+            596.4,
+            347.2
+          ],
+          "conf": 0.915,
+          "text": "Let E and F denote the following events :"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.9,
+            343.4,
+            468.5,
+            391.5
+          ],
+          "conf": 0.884,
+          "text": "E : ‘both the children are boys’"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.4,
+            388.1,
+            537.7,
+            436.7
+          ],
+          "conf": 0.895,
+          "text": "F : ‘at least one of the child is a boy’"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.7,
+            431.8,
+            1006.3,
+            528.1
+          ],
+          "conf": 0.602,
+          "text": "Then $\\qquad \\qquad \\qquad \\qquad \\qquad \\mathrm{E} = \\{(b,b)\\}$ and $\\mathrm{F} = \\{(b,b), (g,b), (b,g)\\}$\nNow $\\qquad \\qquad \\qquad \\qquad \\qquad \\mathrm{E} \\cap \\mathrm{F} = \\{(b,b)\\}$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.8,
+            530.8,
+            842.8,
+            618.7
+          ],
+          "conf": 0.845,
+          "text": "Thus $P(F) = \\frac{3}{4}$ and $P(E \\cap F) = \\frac{1}{4}$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.4,
+            635.4,
+            789.1,
+            792.9
+          ],
+          "conf": 0.855,
+          "text": "Therefore $P(E|F) = \\frac{P(E \\cap F)}{P(F)} = \\frac{\\frac{1}{4}}{\\frac{3}{4}} = \\frac{1}{3}$"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            803.3,
+            1128.4,
+            926.6
+          ],
+          "conf": 0.91,
+          "text": "Example 3 Ten cards numbered 1 to 10 are placed in a box, mixed up thoroughly and\nthen one card is drawn randomly. If it is known that the number on the drawn card is\nmore than 3, what is the probability that it is an even number?"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            934.7,
+            1128.2,
+            1019.3
+          ],
+          "conf": 0.872,
+          "text": "Solution Let A be the event ‘the number on the card drawn is even’ and B be the\nevent ‘the number on the card drawn is greater than 3’. We have to find P(A|B)."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            1017.2,
+            1004.5,
+            1066.3
+          ],
+          "conf": 0.872,
+          "text": "Now, the sample space of the experiment is $S = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\}$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.2,
+            1061.1,
+            1053.0,
+            1156.9
+          ],
+          "conf": 0.516,
+          "text": "Then $A = \\{2, 4, 6, 8, 10\\}$, $B = \\{4, 5, 6, 7, 8, 9, 10\\}$\nand $A \\cap B = \\{4, 6, 8, 10\\}$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            1156.9,
+            989.5,
+            1248.7
+          ],
+          "conf": 0.837,
+          "text": "Also $P(A) = \\frac{5}{10}$, $P(B) = \\frac{7}{10}$ and $P(A \\cap B) = \\frac{4}{10}$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.7,
+            1263.6,
+            812.4,
+            1425.6
+          ],
+          "conf": 0.84,
+          "text": "Then $\\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\frac{\\mathrm{P}(\\mathrm{A} \\cap \\mathrm{B})}{\\mathrm{P}(\\mathrm{B})} = \\frac{\\frac{4}{10}}{\\frac{7}{10}} = \\frac{4}{7}$"
+        },
+        {
+          "order": 13,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            67.4,
+            1437.3,
+            1132.0,
+            1653.1
+          ],
+          "conf": 0.539,
+          "text": "Example 4 In a school, there are 1000 students, out of which 430 are girls. It is known\nthat out of 430, 10% of the girls study in class XII. What is the probability that a student\nchosen randomly studies in Class XII given that the chosen student is a girl?\n\nSolution Let E denote the event that a student chosen randomly studies in Class XII\nand F be the event that the randomly chosen student is a girl. We have to find P (E|F)."
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0110_p0005.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.1,
+            222.5,
+            1016.3,
+            317.5
+          ],
+          "conf": 0.927,
+          "text": "Now $\\qquad \\mathrm{P}(\\mathrm{F})=\\frac{430}{1000}=0.43 \\text { and } \\mathrm{P}(\\mathrm{E} \\cap \\mathrm{F})=\\frac{43}{1000}=0.043 \\quad(\\text { Why? })$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.9,
+            320.9,
+            655.4,
+            413.8
+          ],
+          "conf": 0.925,
+          "text": "Then $P(E|F) = \\frac{P(E \\cap F)}{P(F)} = \\frac{0.043}{0.43} = 0.1$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.5,
+            421.4,
+            1058.8,
+            605.0
+          ],
+          "conf": 0.777,
+          "text": "Example 5 A die is thrown three times. Events A and B are defined as below:\nA : 4 on the third throw\nB : 6 on the first and 5 on the second throw\nFind the probability of A given that B has already occurred."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            610.2,
+            670.0,
+            658.6
+          ],
+          "conf": 0.846,
+          "text": "Solution The sample space has 216 outcomes."
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.7,
+            672.7,
+            1030.1,
+            821.3
+          ],
+          "conf": 0.837,
+          "text": "$$ \\text{Now} \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.6,
+            824.8,
+            931.0,
+            909.4
+          ],
+          "conf": 0.76,
+          "text": "$$ \\text{and} \\quad \\begin{aligned} \\text{B} &= \\{(6,5,1), (6,5,2), (6,5,3), (6,5,4), (6,5,5), (6,5,6)\\} \\\\ \\text{A} \\cap \\text{B} &= \\{(6,5,4)\\}. \\end{aligned} $$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.2,
+            913.1,
+            715.2,
+            1005.1
+          ],
+          "conf": 0.861,
+          "text": "Now $P(B) = \\frac{6}{216}$ and $P(A \\cap B) = \\frac{1}{216}$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.7,
+            1021.1,
+            633.5,
+            1183.7
+          ],
+          "conf": 0.91,
+          "text": "Then $P(A|B) = \\frac{P(A \\cap B)}{P(B)} = \\frac{\\frac{1}{216}}{\\frac{6}{216}} = \\frac{1}{6}$"
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            1193.2,
+            1129.3,
+            1650.1
+          ],
+          "conf": 0.667,
+          "text": "Example 6 A die is thrown twice and the sum of the numbers appearing is observed\nto be 6. What is the conditional probability that the number 4 has appeared at least\nonce?\n\nSolution Let E be the event that ‘number 4 appears at least once’ and F be the event\nthat ‘the sum of the numbers appearing is 6’.\nThen, $$E = \\{(4,1), (4,2), (4,3), (4,4), (4,5), (4,6), (1,4), (2,4), (3,4), (5,4), (6,4)\\}$$\nand $$F = \\{(1,5), (2,4), (3,3), (4,2), (5,1)\\}$$\n\nWe have $$P(E) = \\frac{11}{36} \\text{ and } P(F) = \\frac{5}{36}$$\n\nAlso $$E \\cap F = \\{(2,4), (4,2)\\}$$"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0110_p0006.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.7,
+            224.5,
+            525.6,
+            315.4
+          ],
+          "conf": 0.901,
+          "text": "Therefore $P(E \\cap F) = \\frac{2}{36}$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            309.1,
+            469.2,
+            358.6
+          ],
+          "conf": 0.913,
+          "text": "Hence, the required probability"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            334.3,
+            371.3,
+            728.3,
+            533.2
+          ],
+          "conf": 0.94,
+          "text": "$$ \\mathrm{P}(\\mathrm{E}|\\mathrm{F}) = \\frac{\\mathrm{P}(\\mathrm{E} \\cap \\mathrm{F})}{\\mathrm{P}(\\mathrm{F})} = \\frac{\\frac{2}{36}}{\\frac{5}{36}} = \\frac{2}{5} $$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            540.4,
+            1129.3,
+            781.4
+          ],
+          "conf": 0.981,
+          "text": "For the conditional probability discussed above, we have considered the elemen-\ntary events of the experiment to be equally likely and the corresponding definition of\nthe probability of an event was used. However, the same definition can also be used in\nthe general case where the elementary events of the sample space are not equally\nlikely, the probabilities $P(E \\cap F)$ and $P(F)$ being calculated accordingly. Let us take up\nthe following example."
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.9,
+            789.1,
+            1129.1,
+            990.7
+          ],
+          "conf": 0.791,
+          "text": "Example 7 Consider the experiment of tossing a coin. If the coin shows head, toss it\nagain but if it shows tail, then throw a die. Find the\nconditional probability of the event that ‘the die shows\na number greater than 4’ given that ‘there is at least\none tail’."
+        },
+        {
+          "order": 5,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            737.9,
+            834.1,
+            1129.6,
+            1163.5
+          ],
+          "conf": 0.959,
+          "text": ""
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            999.2,
+            747.7,
+            1124.6
+          ],
+          "conf": 0.94,
+          "text": "Solution The outcomes of the experiment can be\nrepresented in following diagrammatic manner called\nthe ‘tree diagram’."
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            874.2,
+            1148.6,
+            994.3,
+            1193.2
+          ],
+          "conf": 0.884,
+          "text": "Fig 13.1"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.9,
+            1125.7,
+            747.8,
+            1210.9
+          ],
+          "conf": 0.922,
+          "text": "The sample space of the experiment may be\ndescribed as"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            249.5,
+            1210.7,
+            944.8,
+            1261.6
+          ],
+          "conf": 0.805,
+          "text": "$$S = \\{(H,H), (H,T), (T,1), (T,2), (T,3), (T,4), (T,5), (T,6)\\}$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.6,
+            1259.3,
+            744.8,
+            1384.2
+          ],
+          "conf": 0.888,
+          "text": "where (H, H) denotes that both the tosses result into\nhead and (T, $i$) denote the first toss result into a tail and\nthe number $i$ appeared on the die for $i = 1,2,3,4,5,6$."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            1383.5,
+            745.1,
+            1468.6
+          ],
+          "conf": 0.866,
+          "text": "Thus, the probabilities assigned to the 8 elementary\nevents"
+        },
+        {
+          "order": 12,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            737.5,
+            1268.5,
+            1127.4,
+            1634.8
+          ],
+          "conf": 0.958,
+          "text": ""
+        },
+        {
+          "order": 13,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            880.4,
+            1612.4,
+            1001.9,
+            1658.0
+          ],
+          "conf": 0.839,
+          "text": "Fig 13.2"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.1,
+            1468.6,
+            745.1,
+            1519.4
+          ],
+          "conf": 0.764,
+          "text": "$$(H, H), (H, T), (T, 1), (T, 2), (T, 3) (T, 4), (T, 5), (T, 6)$$"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            1521.4,
+            745.3,
+            1653.3
+          ],
+          "conf": 0.793,
+          "text": "are $\\frac{1}{4}, \\frac{1}{4}, \\frac{1}{12}, \\frac{1}{12}, \\frac{1}{12}, \\frac{1}{12}, \\frac{1}{12}, \\frac{1}{12}$ respectively which is\nclear from the Fig 13.2."
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0110_p0007.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            211.1,
+            1128.1,
+            298.1
+          ],
+          "conf": 0.955,
+          "text": "Let F be the event that ‘there is at least one tail’ and E be the event ‘the die shows\na number greater than 4’. Then"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            292.8,
+            295.7,
+            902.6,
+            391.3
+          ],
+          "conf": 0.609,
+          "text": "$$F = \\{(H,T), (T,1), (T,2), (T,3), (T,4), (T,5), (T,6)\\}$$\n$$E = \\{(T,5), (T,6)\\} \\text{ and } E \\cap F = \\{(T,5), (T,6)\\}$$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.0,
+            383.6,
+            1014.4,
+            571.1
+          ],
+          "conf": 0.83,
+          "text": "Now $P(F) = P(\\{(H,T)\\}) + P \\{(T,1)\\}) + P \\{(T,2)\\}) + P \\{(T,3)\\})$\n$+ P \\{(T,4)\\}) + P \\{(T,5)\\}) + P \\{(T,6)\\})$\n$= \\frac{1}{4} + \\frac{1}{12} + \\frac{1}{12} + \\frac{1}{12} + \\frac{1}{12} + \\frac{1}{12} + \\frac{1}{12} = \\frac{3}{4}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.2,
+            580.7,
+            847.1,
+            669.8
+          ],
+          "conf": 0.889,
+          "text": "and $P(E \\cap F) = P (\\{(T,5)\\}) + P (\\{(T,6)\\}) = \\frac{1}{12} + \\frac{1}{12} = \\frac{1}{6}$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.8,
+            688.9,
+            591.0,
+            848.5
+          ],
+          "conf": 0.929,
+          "text": "Hence $P(E|F) = \\frac{P(E \\cap F)}{P(F)} = \\frac{\\frac{1}{6}}{\\frac{3}{4}} = \\frac{2}{9}$"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            464.8,
+            881.3,
+            731.3,
+            935.6
+          ],
+          "conf": 0.8,
+          "text": "EXERCISE 13.1"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            92.3,
+            940.5,
+            1131.2,
+            1644.8
+          ],
+          "conf": 0.783,
+          "text": "1. Given that E and F are events such that $P(E) = 0.6$, $P(F) = 0.3$ and\n$P(E \\cap F) = 0.2$, find $P(E|F)$ and $P(F|E)$\n\n2. Compute $P(A|B)$, if $P(B) = 0.5$ and $P(A \\cap B) = 0.32$\n\n3. If $P(A) = 0.8$, $P(B) = 0.5$ and $P(B|A) = 0.4$, find\n(i) $P(A \\cap B)$ (ii) $P(A|B)$ (iii) $P(A \\cup B)$\n\n4. Evaluate $P(A \\cup B)$, if $2P(A) = P(B) = \\frac{5}{13}$ and $P(A|B) = \\frac{2}{5}$\n\n5. If $P(A) = \\frac{6}{11}$, $P(B) = \\frac{5}{11}$ and $P(A \\cup B) = \\frac{7}{11}$, find\n(i) $P(A \\cap B)$ (ii) $P(A|B)$ (iii) $P(B|A)$\nDetermine $P(E|F)$ in Exercises 6 to 9.\n\n6. A coin is tossed three times, where\n(i) $E$ : head on third toss , $F$ : heads on first two tosses\n(ii) $E$ : at least two heads , $F$ : at most two heads\n(iii) $E$ : at most two tails , $F$ : at least one tail"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0110_p0008.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            92.4,
+            207.0,
+            909.6,
+            340.9
+          ],
+          "conf": 0.675,
+          "text": "7. Two coins are tossed once, where\n(i) $E :$ tail appears on one coin, $F :$ one coin shows head\n(ii) $E :$ no tail appears, $F :$ no head appears"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            93.7,
+            335.0,
+            1002.1,
+            457.2
+          ],
+          "conf": 0.784,
+          "text": "8. A die is thrown three times,\nE : 4 appears on the third toss,      F : 6 and 5 appears respectively\n                                                                    on first two tosses"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.3,
+            454.7,
+            908.2,
+            545.2
+          ],
+          "conf": 0.821,
+          "text": "9. Mother, father and son line up at random for a family picture\nE : son on one end, F : father in middle"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            82.0,
+            539.8,
+            1126.0,
+            740.7
+          ],
+          "conf": 0.698,
+          "text": "10. A black and a red dice are rolled.\n(a) Find the conditional probability of obtaining a sum greater than 9, given\nthat the black die resulted in a 5.\n(b) Find the conditional probability of obtaining the sum 8, given that the red die\nresulted in a number less than 4."
+        },
+        {
+          "order": 4,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            82.3,
+            736.6,
+            1101.5,
+            913.3
+          ],
+          "conf": 0.672,
+          "text": "11. A fair die is rolled. Consider events $E = \\{1,3,5\\}$, $F = \\{2,3\\}$ and $G = \\{2,3,4,5\\}$\nFind\n(i) $P(E|F)$ and $P(F|E)$ (ii) $P(E|G)$ and $P(G|E)$\n(iii) $P((E \\cup F)|G)$ and $P((E \\cap F)|G)$"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.6,
+            908.3,
+            1128.2,
+            1027.1
+          ],
+          "conf": 0.927,
+          "text": "12. Assume that each born child is equally likely to be a boy or a girl. If a family has\ntwo children, what is the conditional probability that both are girls given that\n(i) the youngest is a girl, (ii) at least one is a girl?"
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            79.3,
+            1019.2,
+            1128.6,
+            1206.2
+          ],
+          "conf": 0.942,
+          "text": "13. An instructor has a question bank consisting of 300 easy True / False questions,\n200 difficult True / False questions, 500 easy multiple choice questions and 400\ndifficult multiple choice questions. If a question is selected at random from the\nquestion bank, what is the probability that it will be an easy question given that it\nis a multiple choice question?"
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            79.1,
+            1200.4,
+            1128.6,
+            1287.0
+          ],
+          "conf": 0.912,
+          "text": "14. Given that the two numbers appearing on throwing two dice are different. Find\nthe probability of the event ‘the sum of numbers on the dice is 4’."
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.6,
+            1281.2,
+            1127.8,
+            1397.9
+          ],
+          "conf": 0.91,
+          "text": "15. Consider the experiment of throwing a die, if a multiple of 3 comes up, throw the\ndie again and if any other number comes, toss a coin. Find the conditional probability\nof the event ‘the coin shows a tail’, given that ‘at least one die shows a 3’."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            1392.3,
+            864.7,
+            1442.3
+          ],
+          "conf": 0.866,
+          "text": "In each of the Exercises 16 and 17 choose the correct answer:"
+        },
+        {
+          "order": 10,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            77.5,
+            1442.0,
+            722.8,
+            1649.3
+          ],
+          "conf": 0.756,
+          "text": "16. If $P(A) = \\frac{1}{2}$, $P(B) = 0$, then $P(A|B)$ is\n\n(A) 0                                                                    (B) $\\frac{1}{2}$\n(C) not defined                                                                    (D) 1"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0110_p0009.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            77.2,
+            211.0,
+            849.4,
+            348.1
+          ],
+          "conf": 0.941,
+          "text": "17. If A and B are events such that $P(A|B) = P(B|A)$, then\n(A) $A \\subset B$ but $A \\neq B$ (B) $A = B$\n(C) $A \\cap B = \\phi$ (D) $P(A) = P(B)$"
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            70.3,
+            356.2,
+            695.9,
+            407.0
+          ],
+          "conf": 0.912,
+          "text": "13.3 Multiplication Theorem on Probability"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            403.7,
+            1128.4,
+            524.3
+          ],
+          "conf": 0.96,
+          "text": "Let E and F be two events associated with a sample space S. Clearly, the set E $\\cap$ F\ndenotes the event that both E and F have occurred. In other words, E $\\cap$ F denotes the\nsimultaneous occurrence of the events E and F. The event E $\\cap$ F is also written as EF."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            519.8,
+            1128.2,
+            675.9
+          ],
+          "conf": 0.965,
+          "text": "Very often we need to find the probability of the event EF. For example, in the\nexperiment of drawing two cards one after the other, we may be interested in finding\nthe probability of the event ‘a king and a queen’. The probability of event EF is obtained\nby using the conditional probability as obtained below :"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            672.8,
+            1128.4,
+            757.4
+          ],
+          "conf": 0.944,
+          "text": "We know that the conditional probability of event E given that F has occurred is\ndenoted by P(E|F) and is given by"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            429.7,
+            758.9,
+            802.6,
+            850.3
+          ],
+          "conf": 0.909,
+          "text": "$$P(E|F) = \\frac{P(E \\cap F)}{P(F)}, P(F) \\neq 0$$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.3,
+            851.9,
+            1127.8,
+            936.2
+          ],
+          "conf": 0.56,
+          "text": "From this result, we can write\n$$P(E \\cap F) = P(F) \\cdot P(E|F) \\quad \\dots (1)$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            924.8,
+            332.5,
+            970.4
+          ],
+          "conf": 0.865,
+          "text": "Also, we know that"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            423.4,
+            973.3,
+            805.2,
+            1068.1
+          ],
+          "conf": 0.863,
+          "text": "$$P(F|E) = \\frac{P(F \\cap E)}{P(E)}, P(E) \\neq 0$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.1,
+            1078.0,
+            980.5,
+            1170.2
+          ],
+          "conf": 0.875,
+          "text": "or $P(F|E) = \\frac{P(E \\cap F)}{P(E)}$ (since $E \\cap F = F \\cap E$)"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.1,
+            1169.1,
+            1127.5,
+            1220.2
+          ],
+          "conf": 0.822,
+          "text": "Thus, $P(E \\cap F) = P(E). P(F|E)$ .... (2)"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            1214.8,
+            526.0,
+            1263.8
+          ],
+          "conf": 0.874,
+          "text": "Combining (1) and (2), we find that"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            390.5,
+            1259.6,
+            1118.5,
+            1351.3
+          ],
+          "conf": 0.848,
+          "text": "$$P(E \\cap F) = P(E) \\ P(F|E)$$\n$$= P(F) \\ P(E|F) \\text{ provided } P(E) \\neq 0 \\text{ and } P(F) \\neq 0.$$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.8,
+            1348.6,
+            934.3,
+            1398.1
+          ],
+          "conf": 0.889,
+          "text": "The above result is known as the $multiplication$ $rule$ $of$ $probability$."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.2,
+            1394.1,
+            486.1,
+            1441.8
+          ],
+          "conf": 0.864,
+          "text": "Let us now take up an example."
+        },
+        {
+          "order": 15,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            1444.9,
+            1128.8,
+            1652.2
+          ],
+          "conf": 0.667,
+          "text": "Example 8 An urn contains 10 black and 5 white balls. Two balls are drawn from the\nurn one after the other without replacement. What is the probability that both drawn\nballs are black?\n\nSolution Let E and F denote respectively the events that first and second ball drawn\nare black. We have to find $P(E \\cap F)$ or $P(EF)$."
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0110_p0010.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.7,
+            221.2,
+            757.2,
+            311.4
+          ],
+          "conf": 0.914,
+          "text": "Now $P(E) = P \\text{ (black ball in first draw)} = \\frac{10}{15}$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.7,
+            314.1,
+            1128.1,
+            472.0
+          ],
+          "conf": 0.973,
+          "text": "Also given that the first ball drawn is black, i.e., event E has occurred, now there\nare 9 black balls and five white balls left in the urn. Therefore, the probability that the\nsecond ball drawn is black, given that the ball in the first draw is black, is nothing but\nthe conditional probability of F given that E has occurred."
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.5,
+            474.8,
+            606.7,
+            565.6
+          ],
+          "conf": 0.921,
+          "text": "i.e. $P(F|E) = \\frac{9}{14}$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            567.0,
+            634.8,
+            615.6
+          ],
+          "conf": 0.918,
+          "text": "By multiplication rule of probability, we have"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            391.6,
+            611.5,
+            726.1,
+            661.3
+          ],
+          "conf": 0.877,
+          "text": "$$P(E \\cap F) = P(E) P(F|E)$$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            519.7,
+            671.0,
+            721.6,
+            760.9
+          ],
+          "conf": 0.889,
+          "text": "$$= \\frac{10}{15} \\times \\frac{9}{14} = \\frac{3}{7}$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            762.7,
+            1127.2,
+            848.2
+          ],
+          "conf": 0.951,
+          "text": "Multiplication rule of probability for more than two events If E, F and G are\nthree events of sample space, we have"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            181.8,
+            843.3,
+            1064.6,
+            894.6
+          ],
+          "conf": 0.903,
+          "text": "$$P(E \\cap F \\cap G) = P(E) P(F|E) P(G|(E \\cap F)) = P(E) P(F|E) P(G|EF)$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.8,
+            890.8,
+            1127.8,
+            973.4
+          ],
+          "conf": 0.946,
+          "text": "Similarly, the multiplication rule of probability can be extended for four or\nmore events."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            972.4,
+            1127.8,
+            1055.3
+          ],
+          "conf": 0.947,
+          "text": "The following example illustrates the extension of multiplication rule of probability\nfor three events."
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.9,
+            1062.2,
+            1128.4,
+            1182.2
+          ],
+          "conf": 0.904,
+          "text": "Example 9 Three cards are drawn successively, without replacement from a pack of\n52 well shuffled cards. What is the probability that first two cards are kings and the\nthird card drawn is an ace?"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            1188.4,
+            1128.7,
+            1272.2
+          ],
+          "conf": 0.911,
+          "text": "Solution Let K denote the event that the card drawn is king and A be the event that\nthe card drawn is an ace. Clearly, we have to find P (KKA)"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.1,
+            1283.8,
+            608.2,
+            1371.6
+          ],
+          "conf": 0.89,
+          "text": "Now $P(K) = \\frac{4}{52}$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            1375.6,
+            1127.8,
+            1467.2
+          ],
+          "conf": 0.942,
+          "text": "Also, P (K|K) is the probability of second king with the condition that one king has\nalready been drawn. Now there are three kings in $(52 - 1) = 51$ cards."
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.1,
+            1478.7,
+            606.5,
+            1570.7
+          ],
+          "conf": 0.881,
+          "text": "Therefore $P(K|K) = \\frac{3}{51}$"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            1573.4,
+            1128.1,
+            1657.8
+          ],
+          "conf": 0.924,
+          "text": "Lastly, P(AlKK) is the probability of third drawn card to be an ace, with the condition\nthat two kings have already been drawn. Now there are four aces in left 50 cards."
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0110_p0011.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.0,
+            222.8,
+            608.8,
+            313.2
+          ],
+          "conf": 0.902,
+          "text": "Therefore $P(A|KK) = \\frac{4}{50}$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.6,
+            314.1,
+            631.7,
+            362.3
+          ],
+          "conf": 0.905,
+          "text": "By multiplication law of probability, we have"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            398.9,
+            358.4,
+            887.4,
+            499.9
+          ],
+          "conf": 0.809,
+          "text": "$$P(KKA) = P(K) \\quad P(K|K) \\quad P(A|KK)$$\n$$= \\frac{4}{52} \\times \\frac{3}{51} \\times \\frac{4}{50} = \\frac{2}{5525}$$"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            70.3,
+            510.5,
+            447.6,
+            560.3
+          ],
+          "conf": 0.857,
+          "text": "13.4 Independent Events"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            559.4,
+            1128.1,
+            679.5
+          ],
+          "conf": 0.962,
+          "text": "Consider the experiment of drawing a card from a deck of 52 playing cards, in which\nthe elementary events are assumed to be equally likely. If E and F denote the events\n'the card drawn is a spade' and 'the card drawn is an ace' respectively, then"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            453.5,
+            680.6,
+            897.6,
+            770.4
+          ],
+          "conf": 0.925,
+          "text": "$$P(E) = \\frac{13}{52} = \\frac{1}{4} \\text{ and } P(F) = \\frac{4}{52} = \\frac{1}{13}$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.9,
+            761.4,
+            957.2,
+            809.5
+          ],
+          "conf": 0.918,
+          "text": "Also E and F is the event ' the card drawn is the ace of spades' so that"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            396.6,
+            810.5,
+            607.7,
+            898.4
+          ],
+          "conf": 0.877,
+          "text": "$$P(E \\cap F) = \\frac{1}{52}$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.8,
+            903.4,
+            814.3,
+            1064.7
+          ],
+          "conf": 0.876,
+          "text": "Hence $P(E|F) = \\frac{P(E \\cap F)}{P(F)} = \\frac{\\frac{1}{52}}{\\frac{1}{13}} = \\frac{1}{4}$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.2,
+            1073.3,
+            1127.9,
+            1231.9
+          ],
+          "conf": 0.912,
+          "text": "Since $P(E) = \\frac{1}{4} = P$ (E|F), we can say that the occurrence of event F has not\naffected the probability of occurrence of the event E.\nWe also have"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            429.6,
+            1240.4,
+            909.5,
+            1397.7
+          ],
+          "conf": 0.926,
+          "text": "$$ \\mathrm{P}(\\mathrm{F}|\\mathrm{E}) = \\frac{\\mathrm{P}(\\mathrm{E} \\cap \\mathrm{F})}{\\mathrm{P}(\\mathrm{E})} = \\frac{\\frac{1}{52}}{\\frac{1}{4}} = \\frac{1}{13} = \\mathrm{P}(\\mathrm{F}) $$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.9,
+            1406.5,
+            1128.2,
+            1528.4
+          ],
+          "conf": 0.904,
+          "text": "Again, $P(F) = \\frac{1}{13} = P(F|E)$ shows that occurrence of event E has not affected\nthe probability of occurrence of the event F."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            1527.5,
+            1129.1,
+            1608.3
+          ],
+          "conf": 0.881,
+          "text": "Thus, E and F are two events such that the probability of occurrence of one of\nthem is not affected by occurrence of the other."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            1606.5,
+            636.2,
+            1653.8
+          ],
+          "conf": 0.831,
+          "text": "Such events are called independent events."
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0110_p0012.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.2,
+            207.9,
+            1132.0,
+            569.3
+          ],
+          "conf": 0.582,
+          "text": "**Definition 2** Two events E and F are said to be independent, if\n$$P(F|E) = P \\ (F) \\ \\text{provided } P \\ (E) \\neq 0$$\nand $$P \\ (E|F) = P \\ (E) \\ \\text{provided } P \\ (F) \\neq 0$$\nThus, in this definition we need to have $P \\ (E) \\neq 0$ and $P(F) \\neq 0$\nNow, by the multiplication rule of probability, we have\n$$P(E \\cap F) = P(E) \\ . \\ P \\ (F|E) \\ ... \\ (1)$$\nIf E and F are independent, then (1) becomes\n$$P(E \\cap F) = P(E) \\ . \\ P(F) \\ ... \\ (2)$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            563.2,
+            996.0,
+            612.4
+          ],
+          "conf": 0.908,
+          "text": "Thus, using (2), the independence of two events is also defined as follows:"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            65.9,
+            602.1,
+            1127.3,
+            741.8
+          ],
+          "conf": 0.529,
+          "text": "Definition 3 Let E and F be two events associated with the same random experiment,\nthen E and F are said to be independent if\n\n$$P(E \\cap F) = P(E) \\cdot P(F)$$"
+        },
+        {
+          "order": 3,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            70.0,
+            750.4,
+            212.6,
+            796.9
+          ],
+          "conf": 0.836,
+          "text": "Remarks"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            90.2,
+            794.5,
+            1129.0,
+            1648.6
+          ],
+          "conf": 0.851,
+          "text": "(i) Two events E and F are said to be dependent if they are not independent, i.e. if\n$$P(E \\cap F ) \\neq P(E) . P (F)$$\n(ii) Sometimes there is a confusion between independent events and mutually\nexclusive events. Term ‘independent’ is defined in terms of ‘probability of events’\nwhereas mutually exclusive is defined in term of events (subset of sample space).\nMoreover, mutually exclusive events never have an outcome common, but\nindependent events, may have common outcome. Clearly, ‘independent’ and\n‘mutually exclusive’ do not have the same meaning.\nIn other words, two independent events having nonzero probabilities of occurrence\ncan not be mutually exclusive, and conversely, i.e. two mutually exclusive events\nhaving nonzero probabilities of occurrence can not be independent.\n(iii) Two experiments are said to be independent if for every pair of events E and F,\nwhere E is associated with the first experiment and F with the second experiment,\nthe probability of the simultaneous occurrence of the events E and F when the\ntwo experiments are performed is the product of $P(E)$ and $P(F)$ calculated\nseparately on the basis of two experiments, i.e., $P (E \\cap F) = P (E) . P(F)$\n(iv) Three events A, B and C are said to be mutually independent, if\n$$P(A \\cap B) = P(A) P(B)$$\n$$P(A \\cap C) = P(A) P(C)$$\n$$P(B \\cap C) = P(B) P(C)$$\nand $$P(A \\cap B \\cap C) = P(A) P(B) P(C)$$"
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0110_p0013.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            209.0,
+            1127.8,
+            291.8
+          ],
+          "conf": 0.954,
+          "text": "If at least one of the above is not true for three given events, we say that the\nevents are not independent."
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            297.9,
+            1128.5,
+            418.7
+          ],
+          "conf": 0.892,
+          "text": "Example 10 A die is thrown. If E is the event ‘the number appearing is a multiple of\n3’ and F be the event ‘the number appearing is even’ then find whether E and F are\nindependent ?"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            424.1,
+            875.4,
+            474.7
+          ],
+          "conf": 0.807,
+          "text": "Solution We know that the sample space is $S = \\{1, 2, 3, 4, 5, 6\\}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.3,
+            469.4,
+            820.8,
+            520.4
+          ],
+          "conf": 0.776,
+          "text": "Now $E = \\{ 3, 6 \\}, F = \\{ 2, 4, 6 \\}$ and $E \\cap F = \\{ 6 \\}$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.2,
+            530.1,
+            865.7,
+            619.0
+          ],
+          "conf": 0.856,
+          "text": "Then $P(E)=\\frac{2}{6}=\\frac{1}{3}$, $P(F)=\\frac{3}{6}=\\frac{1}{2}$ and $P(E \\cap F)=\\frac{1}{6}$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.4,
+            621.2,
+            584.0,
+            668.9
+          ],
+          "conf": 0.745,
+          "text": "Clearly $P(E \\cap F) = P(E). P (F)$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.0,
+            667.1,
+            688.4,
+            714.6
+          ],
+          "conf": 0.823,
+          "text": "Hence      E and F are independent events."
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            719.1,
+            1128.4,
+            838.4
+          ],
+          "conf": 0.888,
+          "text": "Example 11 An unbiased die is thrown twice. Let the event A be ‘odd number on the\nfirst throw’ and B the event ‘odd number on the second throw’. Check the independence\nof the events A and B."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            846.0,
+            1127.9,
+            929.0
+          ],
+          "conf": 0.854,
+          "text": "Solution If all the 36 elementary events of the experiment are considered to be equally\nlikely, we have"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            447.1,
+            933.1,
+            890.6,
+            1022.9
+          ],
+          "conf": 0.869,
+          "text": "$$P(A) = \\frac{18}{36} = \\frac{1}{2} \\text{ and } P(B) = \\frac{18}{36} = \\frac{1}{2}$$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.1,
+            1016.5,
+            948.7,
+            1066.0
+          ],
+          "conf": 0.744,
+          "text": "Also $P(A \\cap B) = P$ (odd number on both throws)"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            518.5,
+            1074.4,
+            655.1,
+            1165.0
+          ],
+          "conf": 0.771,
+          "text": "$$= \\frac{9}{36} = \\frac{1}{4}$$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            1183.7,
+            698.5,
+            1273.9
+          ],
+          "conf": 0.861,
+          "text": "Now $P(A) P(B) = \\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.1,
+            1279.1,
+            734.3,
+            1330.4
+          ],
+          "conf": 0.762,
+          "text": "Clearly $P(A \\cap B) = P(A) \\times P(B)$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.5,
+            1330.0,
+            687.2,
+            1379.0
+          ],
+          "conf": 0.801,
+          "text": "Thus, A and B are independent events"
+        },
+        {
+          "order": 15,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            1385.8,
+            1128.1,
+            1510.9
+          ],
+          "conf": 0.876,
+          "text": "Example 12 Three coins are tossed simultaneously. Consider the event E ‘three heads\nor three tails’, F ‘at least two heads’ and G ‘at most two heads’. Of the pairs (E,F),\n(E,G) and (F,G), which are independent? which are dependent?"
+        },
+        {
+          "order": 16,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            1517.9,
+            994.3,
+            1662.5
+          ],
+          "conf": 0.528,
+          "text": "**Solution** The sample space of the experiment is given by\n$$S = \\{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT\\}$$\nClearly $$E = \\{HHH, TTT\\}, F= \\{HHH, HHT, HTH, THH\\}$$"
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0110_p0014.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.4,
+            209.2,
+            975.7,
+            257.2
+          ],
+          "conf": 0.837,
+          "text": "and                                     G = {HHT, HTH, THH, HTT, THT, TTH, TTT}"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.0,
+            256.3,
+            1118.4,
+            306.0
+          ],
+          "conf": 0.861,
+          "text": "Also $\\mathrm{E} \\cap \\mathrm{F}=\\{\\mathrm{HHH}\\}, \\mathrm{E} \\cap \\mathrm{G}=\\{\\mathrm{TTT}\\}, \\mathrm{F} \\cap \\mathrm{G}=\\{\\mathrm{HHT}, \\mathrm{HTH}, \\mathrm{THH}\\}$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.6,
+            317.9,
+            828.8,
+            408.4
+          ],
+          "conf": 0.927,
+          "text": "Therefore $P(E) = \\frac{2}{8} = \\frac{1}{4}, P(F) = \\frac{4}{8} = \\frac{1}{2}, P(G) = \\frac{7}{8}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.0,
+            427.3,
+            826.3,
+            517.1
+          ],
+          "conf": 0.918,
+          "text": "and $P(E \\cap F) = \\frac{1}{8}, P(E \\cap G) = \\frac{1}{8}, P(F \\cap G) = \\frac{3}{8}$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.2,
+            536.6,
+            876.5,
+            627.3
+          ],
+          "conf": 0.918,
+          "text": "Also $P(E) \\cdot P(F) = \\frac{1}{4} \\times \\frac{1}{2} = \\frac{1}{8}, P(E) \\cdot P(G) = \\frac{1}{4} \\times \\frac{7}{8} = \\frac{7}{32}$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            647.1,
+            576.2,
+            736.7
+          ],
+          "conf": 0.895,
+          "text": "and $P(F) \\cdot P(G) = \\frac{1}{2} \\times \\frac{7}{8} = \\frac{7}{16}$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.3,
+            742.1,
+            582.2,
+            876.6
+          ],
+          "conf": 0.624,
+          "text": "Thus $\\quad \\mathrm{P}(\\mathrm{E} \\cap \\mathrm{F})=\\mathrm{P}(\\mathrm{E}) \\cdot \\mathrm{P}(\\mathrm{F})$\n$\\quad \\mathrm{P}(\\mathrm{E} \\cap \\mathrm{G}) \\neq \\mathrm{P}(\\mathrm{E}) \\cdot \\mathrm{P}(\\mathrm{G})$\nand $\\quad \\mathrm{P}(\\mathrm{F} \\cap \\mathrm{G}) \\neq \\mathrm{P}(\\mathrm{F}) \\cdot \\mathrm{P}(\\mathrm{G})$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            835.7,
+            583.9,
+            884.3
+          ],
+          "conf": 0.821,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            882.5,
+            1128.8,
+            968.9
+          ],
+          "conf": 0.937,
+          "text": "Hence, the events (E and F) are independent, and the events (E and G) and\n(F and G) are dependent."
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            67.4,
+            981.5,
+            1131.8,
+            1625.4
+          ],
+          "conf": 0.531,
+          "text": "Example 13 Prove that if E and F are independent events, then so are the events\nE and F'.\n\nSolution Since E and F are independent, we have\n$$P(E \\cap F) = P(E) \\cdot P(F) \\quad ....(1)$$\nFrom the venn diagram in Fig 13.3, it is clear\nthat E $\\cap$ F and E $\\cap$ F' are mutually exclusive events\nand also E = (E $\\cap$ F) $\\cup$ (E $\\cap$ F').\nTherefore $P(E) = P(E \\cap F) + P(E \\cap F')$\nor $P(E \\cap F') = P(E) - P(E \\cap F)$\n$= P(E) - P(E) \\cdot P(F)$\n(by (1))\n$= P(E) \\ (1-P(F))$\n$= P(E) \\cdot P(F')$\nHence E and F' are independent."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1596.4,
+            508.7,
+            1644.8
+          ],
+          "conf": 0.861,
+          "text": "Hence, E and F' are independent"
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0110_p0015.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            72.5,
+            215.1,
+            1124.3,
+            406.8
+          ],
+          "conf": 0.889,
+          "text": "Note In a similar manner, it can be shown that if the events E and F are\nindependent, then\n(a) $E'$ and F are independent,\n(b) $E'$ and $F'$ are independent"
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.9,
+            413.1,
+            1128.5,
+            916.7
+          ],
+          "conf": 0.714,
+          "text": "Example 14 If A and B are two independent events, then the probability of occurrence\nof at least one of A and B is given by $1- P(A') P(B')$\n\nSolution We have\n$$\n\\begin{aligned}\nP(at\\ least\\ one\\ of\\ A\\ and\\ B) &= P(A \\cup B) \\\\\n&= P(A) + P(B) - P(A \\cap B) \\\\\n&= P(A) + P(B) - P(A) P(B) \\\\\n&= P(A) + P(B) [1-P(A)] \\\\\n&= P(A) + P(B). P(A') \\\\\n&= 1- P(A') + P(B) P(A') \\\\\n&= 1- P(A') [1- P(B)] \\\\\n&= 1- P(A') P (B')\n\\end{aligned}\n$$"
+        },
+        {
+          "order": 2,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            467.0,
+            934.9,
+            730.6,
+            988.4
+          ],
+          "conf": 0.774,
+          "text": "EXERCISE 13.2"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.7,
+            991.3,
+            1130.2,
+            1670.6
+          ],
+          "conf": 0.813,
+          "text": "1. If $P(A) = \\frac{3}{5}$ and $P(B) = \\frac{1}{5}$, find $P(A \\cap B)$ if $A$ and $B$ are independent events.\n\n2. Two cards are drawn at random and without replacement from a pack of 52\nplaying cards. Find the probability that both the cards are black.\n\n3. A box of oranges is inspected by examining three randomly selected oranges\ndrawn without replacement. If all the three oranges are good, the box is approved\nfor sale, otherwise, it is rejected. Find the probability that a box containing 15\noranges out of which 12 are good and 3 are bad ones will be approved for sale.\n\n4. A fair coin and an unbiased die are tossed. Let $A$ be the event ‘head appears on\nthe coin’ and $B$ be the event ‘3 on the die’. Check whether $A$ and $B$ are\nindependent events or not.\n\n5. A die marked 1, 2, 3 in red and 4, 5, 6 in green is tossed. Let $A$ be the event,\n‘the number is even,’ and $B$ be the event, ‘the number is red’. Are $A$ and $B$\nindependent?\n\n6. Let $E$ and $F$ be events with $P(E) = \\frac{3}{5}$, $P(F) = \\frac{3}{10}$ and $P(E \\cap F) = \\frac{1}{5}$. Are\n$E$ and $F$ independent?"
+        }
+      ],
+      "page": 15
+    },
+    {
+      "image": "0110_p0016.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.2,
+            222.7,
+            1128.1,
+            345.4
+          ],
+          "conf": 0.928,
+          "text": "7. Given that the events A and B are such that $\\mathrm{P}(\\mathrm{A}) = \\frac{1}{2}$, $\\mathrm{P}(\\mathrm{A} \\cup \\mathrm{B}) = \\frac{3}{5}$ and\n$\\mathrm{P}(\\mathrm{B}) = p$. Find $p$ if they are (i) mutually exclusive (ii) independent."
+        },
+        {
+          "order": 1,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.7,
+            337.3,
+            1065.7,
+            472.0
+          ],
+          "conf": 0.817,
+          "text": "8. Let A and B be independent events with $P(A) = 0.3$ and $P(B) = 0.4$. Find\n(i) $P(A \\cap B)$                                     (ii) $P(A \\cup B)$\n(iii) $P(A|B)$                                     (iv) $P(B|A)$"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            93.7,
+            470.5,
+            1128.1,
+            597.2
+          ],
+          "conf": 0.94,
+          "text": "9. If A and B are two events such that $P(A) = \\frac{1}{4}$, $P(B) = \\frac{1}{2}$ and $P(A \\cap B) = \\frac{1}{8}$,\nfind $P$ (not A and not B)."
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.6,
+            592.7,
+            1127.0,
+            719.5
+          ],
+          "conf": 0.938,
+          "text": "10. Events A and B are such that $P(A) = \\frac{1}{2}$, $P(B) = \\frac{7}{12}$ and $P(\\text{not } A \\text{ or not } B) = \\frac{1}{4}$.\nState whether A and B are independent ?"
+        },
+        {
+          "order": 4,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            81.6,
+            712.8,
+            1066.6,
+            879.8
+          ],
+          "conf": 0.836,
+          "text": "11. Given two independent events A and B such that $P(A) = 0.3$, $P(B) = 0.6$.\nFind\n(i) $P(A \\text{ and } B)$                                     (ii) $P(A \\text{ and not } B)$\n(iii) $P(A \\text{ or } B)$                                     (iv) $P(\\text{neither } A \\text{ nor } B)$"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.4,
+            873.4,
+            1127.3,
+            923.9
+          ],
+          "conf": 0.878,
+          "text": "12. A die is tossed thrice. Find the probability of getting an odd number at least once."
+        },
+        {
+          "order": 6,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            80.2,
+            915.3,
+            1126.7,
+            1124.6
+          ],
+          "conf": 0.71,
+          "text": "13. Two balls are drawn at random with replacement from a box containing 10 black\nand 8 red balls. Find the probability that\n(i) both balls are red.\n(ii) first ball is black and second is red.\n(iii) one of them is black and other is red."
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            79.1,
+            1125.7,
+            1125.6,
+            1283.9
+          ],
+          "conf": 0.886,
+          "text": "14. Probability of solving specific problem independently by A and B are $\\frac{1}{2}$ and $\\frac{1}{3}$\nrespectively. If both try to solve the problem independently, find the probability\nthat"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            176.6,
+            1276.6,
+            1128.5,
+            1327.5
+          ],
+          "conf": 0.788,
+          "text": "(i) the problem is solved          (ii) exactly one of them solves the problem."
+        },
+        {
+          "order": 9,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.7,
+            1318.9,
+            1129.0,
+            1654.9
+          ],
+          "conf": 0.722,
+          "text": "15. One card is drawn at random from a well shuffled deck of 52 cards. In which of\nthe following cases are the events E and F independent ?\n(i) E : ‘the card drawn is a spade’\nF : ‘the card drawn is an ace’\n(ii) E : ‘the card drawn is black’\nF : ‘the card drawn is a king’\n(iii) E : ‘the card drawn is a king or queen’\nF : ‘the card drawn is a queen or jack’."
+        }
+      ],
+      "page": 16
+    },
+    {
+      "image": "0110_p0017.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            79.2,
+            207.0,
+            1128.0,
+            526.9
+          ],
+          "conf": 0.686,
+          "text": "16. In a hostel, $60\\%$ of the students read Hindi newspaper, $40\\%$ read English\nnewspaper and $20\\%$ read both Hindi and English newspapers. A student is\nselected at random.\n(a) Find the probability that she reads neither Hindi nor English newspapers.\n(b) If she reads Hindi newspaper, find the probability that she reads English\nnewspaper.\n(c) If she reads English newspaper, find the probability that she reads Hindi\nnewspaper."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            522.7,
+            717.2,
+            572.4
+          ],
+          "conf": 0.884,
+          "text": "Choose the correct answer in Exercises 17 and 18."
+        },
+        {
+          "order": 2,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.0,
+            565.4,
+            1128.1,
+            732.8
+          ],
+          "conf": 0.853,
+          "text": "17. The probability of obtaining an even prime number on each die, when a pair of\ndice is rolled is\n\n(A) 0\n(B) $\\frac{1}{3}$\n(C) $\\frac{1}{12}$\n(D) $\\frac{1}{36}$"
+        },
+        {
+          "order": 3,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.6,
+            727.7,
+            693.7,
+            950.0
+          ],
+          "conf": 0.792,
+          "text": "18. Two events A and B will be independent, if\n(A) A and B are mutually exclusive\n(B) $P(A'B') = [1 - P(A)] [1 - P(B)]$\n(C) $P(A) = P(B)$\n(D) $P(A) + P(B) = 1$"
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            71.0,
+            955.6,
+            398.5,
+            1005.7
+          ],
+          "conf": 0.886,
+          "text": "13.5 Bayes' Theorem"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.2,
+            1003.1,
+            1128.5,
+            1518.5
+          ],
+          "conf": 0.813,
+          "text": "Consider that there are two bags I and II. Bag I contains 2 white and 3 red balls and\nBag II contains 4 white and 5 red balls. One ball is drawn at random from one of the\nbags. We can find the probability of selecting any of the bags (i.e. $\\frac{1}{2}$) or probability of\ndrawing a ball of a particular colour (say white) from a particular bag (say Bag I). In\nother words, we can find the probability that the ball drawn is of a particular colour, if\nwe are given the bag from which the ball is drawn. But, can we find the probability that\nthe ball drawn is from a particular bag (say Bag II), if the colour of the ball drawn is\ngiven? Here, we have to find the reverse probability of Bag II to be selected when an\nevent occurred after it is known. Famous mathematician, John Bayes' solved the problem\nof finding reverse probability by using conditional probability. The formula developed\nby him is known as ‘$Bayes\\ theorem$’ which was published posthumously in 1763.\nBefore stating and proving the Bayes’ theorem, let us first take up a definition and\nsome preliminary results."
+        },
+        {
+          "order": 6,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            70.3,
+            1523.7,
+            541.9,
+            1573.9
+          ],
+          "conf": 0.895,
+          "text": "13.5.1 Partition of a sample space"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            1567.4,
+            1114.2,
+            1618.9
+          ],
+          "conf": 0.883,
+          "text": "A set of events $E_1, E_2, ..., E_n$ is said to represent a partition of the sample space $S$ if"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            142.3,
+            1611.2,
+            655.6,
+            1663.4
+          ],
+          "conf": 0.727,
+          "text": "(a) $\\mathrm{E}_i \\cap \\mathrm{E}_j = \\phi, i \\neq j, i, j = 1, 2, 3, ..., n$"
+        }
+      ],
+      "page": 17
+    },
+    {
+      "image": "0110_p0018.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.7,
+            209.2,
+            575.6,
+            304.9
+          ],
+          "conf": 0.892,
+          "text": "(b) $\\mathrm{E}_1 \\cup \\mathrm{E}_2 \\cup ... \\cup \\mathrm{E}_n = \\mathrm{S}$ and\n(c) $\\mathrm{P}(\\mathrm{E}_i) > 0$ for all $i = 1, 2, ..., n$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.6,
+            302.0,
+            1128.1,
+            389.3
+          ],
+          "conf": 0.954,
+          "text": "In other words, the events $E_1$, $E_2$, ..., $E_n$ represent a partition of the sample space\n$S$ if they are pairwise disjoint, exhaustive and have nonzero probabilities."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            388.4,
+            1128.7,
+            475.0
+          ],
+          "conf": 0.948,
+          "text": "As an example, we see that any nonempty event $E$ and its complement $E'$ form a\npartition of the sample space $S$ since they satisfy $E \\cap E' = \\phi$ and $E \\cup E' = S$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            471.8,
+            1128.0,
+            636.1
+          ],
+          "conf": 0.97,
+          "text": "From the Venn diagram in Fig 13.3, one can easily observe that if E and F are any\ntwo events associated with a sample space S, then the set $\\{E \\cap F', E \\cap F, E' \\cap F, E' \\cap F'\\}$\nis a partition of the sample space S. It may be mentioned that the partition of a sample\nspace is not unique. There can be several partitions of the same sample space."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            634.0,
+            1018.0,
+            683.5
+          ],
+          "conf": 0.916,
+          "text": "We shall now prove a theorem known as $Theorem$ $of$ $total$ $probability$."
+        },
+        {
+          "order": 5,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            68.8,
+            688.7,
+            554.9,
+            738.5
+          ],
+          "conf": 0.904,
+          "text": "13.5.2 Theorem of total probability"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            736.2,
+            1128.2,
+            858.4
+          ],
+          "conf": 0.962,
+          "text": "Let $\\{E_1, E_2,...,E_n\\}$ be a partition of the sample space $S$, and suppose that each of the\nevents $E_1, E_2,..., E_n$ has nonzero probability of occurrence. Let $A$ be any event associated\nwith $S$, then"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            249.1,
+            856.6,
+            1020.6,
+            1012.3
+          ],
+          "conf": 0.914,
+          "text": "$$ \\mathrm{P}(\\mathrm{A}) = \\mathrm{P}(\\mathrm{E}_1) \\ \\mathrm{P}(\\mathrm{A}|\\mathrm{E}_1) + \\mathrm{P}(\\mathrm{E}_2) \\ \\mathrm{P}(\\mathrm{A}|\\mathrm{E}_2) + ... + \\mathrm{P}(\\mathrm{E}_n) \\ \\mathrm{P}(\\mathrm{A}|\\mathrm{E}_n) $$\n\n$$ = \\sum_{j=1}^{n} \\mathrm{P}(\\mathrm{E}_j) \\mathrm{P} \\ (\\mathrm{A}|\\mathrm{E}_j) $$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            1013.9,
+            1127.9,
+            1064.0
+          ],
+          "conf": 0.878,
+          "text": "Proof Given that $E_1, E_2, \\dots, E_n$ is a partition of the sample space $S$ (Fig 13.4). Therefore,"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            295.8,
+            1057.5,
+            1128.4,
+            1112.4
+          ],
+          "conf": 0.531,
+          "text": "$$S = E_1 \\cup E_2 \\cup ... \\cup E_n \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\dots (1)$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            1104.1,
+            654.6,
+            1154.3
+          ],
+          "conf": 0.793,
+          "text": "and $$E_i \\cap E_j = \\phi, i \\neq j, i, j = 1, 2, ..., n$$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            1149.5,
+            543.2,
+            1197.7
+          ],
+          "conf": 0.879,
+          "text": "Now, we know that for any event $A$,"
+        },
+        {
+          "order": 12,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            836.4,
+            1066.0,
+            1127.2,
+            1285.4
+          ],
+          "conf": 0.959,
+          "text": ""
+        },
+        {
+          "order": 13,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            917.3,
+            1280.0,
+            1038.1,
+            1325.0
+          ],
+          "conf": 0.867,
+          "text": "Fig 13.4"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            289.7,
+            1193.8,
+            843.5,
+            1333.4
+          ],
+          "conf": 0.906,
+          "text": "$$A = A \\cap S$$\n$$= A \\cap (E_1 \\cup E_2 \\cup ... \\cup E_n)$$\n$$= (A \\cap E_1) \\cup (A \\cap E_2) \\cup ... \\cup (A \\cap E_n)$$"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            1328.8,
+            1128.2,
+            1467.2
+          ],
+          "conf": 0.945,
+          "text": "Also $\\mathrm{A} \\cap \\mathrm{E}_i$ and $\\mathrm{A} \\cap \\mathrm{E}_j$ are respectively the subsets of $\\mathrm{E}_i$ and $\\mathrm{E}_j$. We know that\n$\\mathrm{E}_i$ and $\\mathrm{E}_j$ are disjoint, for $i \\neq j$, therefore, $\\mathrm{A} \\cap \\mathrm{E}_i$ and $\\mathrm{A} \\cap \\mathrm{E}_j$ are also disjoint for all\n$i \\neq j, \\ i, j = 1, 2, ..., n$."
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            1462.7,
+            902.0,
+            1556.5
+          ],
+          "conf": 0.862,
+          "text": "Thus, $\\quad \\mathrm{P}(\\mathrm{A})=\\mathrm{P}\\left[\\left(\\mathrm{A} \\cap \\mathrm{E}_{1}\\right) \\cup\\left(\\mathrm{A} \\cap \\mathrm{E}_{2}\\right) \\cup \\ldots \\cup\\left(\\mathrm{A} \\cap \\mathrm{E}_{n}\\right)\\right]$\n$\\quad \\quad \\quad \\quad \\quad =\\mathrm{P}\\left(\\mathrm{A} \\cap \\mathrm{E}_{1}\\right)+\\mathrm{P}\\left(\\mathrm{A} \\cap \\mathrm{E}_{2}\\right)+\\ldots+\\mathrm{P}\\left(\\mathrm{A} \\cap \\mathrm{E}_{n}\\right)$"
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.0,
+            1553.4,
+            703.0,
+            1601.8
+          ],
+          "conf": 0.853,
+          "text": "Now, by multiplication rule of probability, we have"
+        },
+        {
+          "order": 18,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            251.6,
+            1597.3,
+            940.0,
+            1648.4
+          ],
+          "conf": 0.852,
+          "text": "$$ \\mathrm{P}(\\mathrm{A} \\cap \\mathrm{E}_i) = \\mathrm{P}(\\mathrm{E}_i) \\ \\mathrm{P}(\\mathrm{A}|\\mathrm{E}_i) \\ \\mathrm{as} \\ \\ \\mathrm{P} \\ (\\mathrm{E}_i) \\neq 0 \\forall i = 1,2,..., \\ n $$"
+        }
+      ],
+      "page": 18
+    },
+    {
+      "image": "0110_p0019.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            205.4,
+            1110.5,
+            260.6
+          ],
+          "conf": 0.887,
+          "text": "Therefore, $\\mathrm{P} (\\mathrm{A}) = \\mathrm{P} (\\mathrm{E}_1) \\mathrm{P} (\\mathrm{A}|\\mathrm{E}_1) + \\mathrm{P} (\\mathrm{E}_2) \\mathrm{P} (\\mathrm{A}|\\mathrm{E}_2) + ... + \\mathrm{P} (\\mathrm{E}_n)\\mathrm{P}(\\mathrm{A}|\\mathrm{E}_n)$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.1,
+            271.1,
+            655.4,
+            362.5
+          ],
+          "conf": 0.911,
+          "text": "or $$ \\mathrm{P}(\\mathrm{A}) = \\sum_{j=1}^{n} \\mathrm{P}(\\mathrm{E}_j) \\mathrm{P}(\\mathrm{A}|\\mathrm{E}_j) $$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            357.7,
+            1127.9,
+            508.1
+          ],
+          "conf": 0.922,
+          "text": "Example 15 A person has undertaken a construction job. The probabilities are 0.65\nthat there will be strike, 0.80 that the construction job will be completed on time if there\nis no strike, and 0.32 that the construction job will be completed on time if there is a\nstrike. Determine the probability that the construction job will be completed on time."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            512.3,
+            1127.5,
+            595.6
+          ],
+          "conf": 0.858,
+          "text": "Solution Let A be the event that the construction job will be completed on time, and B\nbe the event that there will be a strike. We have to find P(A)."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.9,
+            582.8,
+            204.1,
+            627.7
+          ],
+          "conf": 0.664,
+          "text": "We have"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            220.8,
+            624.4,
+            1047.4,
+            716.8
+          ],
+          "conf": 0.62,
+          "text": "$P(B) = 0.65, P(no\\ strike) = P(B') = 1 - P(B) = 1 - 0.65 = 0.35$\n$P(A|B) = 0.32, P(A|B') = 0.80$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            715.1,
+            1128.2,
+            796.7
+          ],
+          "conf": 0.944,
+          "text": "Since events B and B' form a partition of the sample space S, therefore, by theorem\non total probability, we have"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            250.2,
+            792.0,
+            735.4,
+            923.0
+          ],
+          "conf": 0.92,
+          "text": "$$P(A) = P(B) P(A|B) + P(B') P(A|B')$$\n$$= 0.65 \\times 0.32 + 0.35 \\times 0.8$$\n$$= 0.208 + 0.28 = 0.488$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            921.6,
+            1060.8,
+            970.0
+          ],
+          "conf": 0.903,
+          "text": "Thus, the probability that the construction job will be completed in time is $0.488$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            965.2,
+            707.9,
+            1013.0
+          ],
+          "conf": 0.896,
+          "text": "We shall now state and prove the Bayes' theorem."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            1008.4,
+            1128.4,
+            1124.8
+          ],
+          "conf": 0.952,
+          "text": "**Bayes' Theorem** If $\\mathrm{E}_1, \\mathrm{E}_2, ..., \\mathrm{E}_n$ are $n$ non empty events which constitute a partition\nof sample space $\\mathrm{S}$, i.e. $\\mathrm{E}_1, \\mathrm{E}_2, ..., \\mathrm{E}_n$ are pairwise disjoint and $\\mathrm{E}_1 \\cup \\mathrm{E}_2 \\cup ... \\cup \\mathrm{E}_n = \\mathrm{S}$ and\n$\\mathrm{A}$ is any event of nonzero probability, then"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            216.8,
+            1125.5,
+            908.0,
+            1266.7
+          ],
+          "conf": 0.934,
+          "text": "$$ \\mathrm{P}(\\mathrm{E}_i|\\mathrm{A}) = \\frac{\\mathrm{P}(\\mathrm{E}_i)\\mathrm{P}(\\mathrm{A}|\\mathrm{E}_i)}{\\sum_{j=1}^n \\mathrm{P}(\\mathrm{E}_j)\\mathrm{P}(\\mathrm{A}|\\mathrm{E}_j)} \\quad \\text{for any } i = 1, 2, 3, ..., n $$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.0,
+            1266.1,
+            797.6,
+            1314.9
+          ],
+          "conf": 0.897,
+          "text": "Proof By formula of conditional probability, we know that"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            215.8,
+            1309.5,
+            1127.2,
+            1659.8
+          ],
+          "conf": 0.904,
+          "text": "$$P(E_i|A) = \\frac{P(A \\cap E_i)}{P(A)}$$\n\n$$= \\frac{P(E_i)P(A|E_i)}{P(A)} \\text{ (by multiplication rule of probability)}$$\n\n$$= \\frac{P(E_i)P(A|E_i)}{\\sum_{j=1}^{n} P(E_j)P(A|E_j)} \\text{ (by the result of theorem of total probability)}$$"
+        }
+      ],
+      "page": 19
+    },
+    {
+      "image": "0110_p0020.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            208.4,
+            1126.9,
+            259.4
+          ],
+          "conf": 0.879,
+          "text": "$Remark$ The following terminology is generally used when Bayes' theorem is applied."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            254.2,
+            739.0,
+            305.6
+          ],
+          "conf": 0.88,
+          "text": "The events $\\mathrm{E}_1, \\mathrm{E}_2, ..., \\mathrm{E}_n$ are called \\textit{hypotheses}."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            299.0,
+            1033.6,
+            351.5
+          ],
+          "conf": 0.885,
+          "text": "The probability $P(E_i)$ is called the *priori probability* of the hypothesis $E_i$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            345.4,
+            1128.2,
+            435.2
+          ],
+          "conf": 0.928,
+          "text": "The conditional probability $P(E_i|A)$ is called a posteriori probability of the\nhypothesis $E_i$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            429.1,
+            1128.4,
+            627.3
+          ],
+          "conf": 0.967,
+          "text": "Bayes' theorem is also called the formula for the probability of \"causes\". Since the\n$E_i$'s are a partition of the sample space $S$, one and only one of the events $E_i$ occurs (i.e.\none of the events $E_i$ must occur and only one can occur). Hence, the above formula\ngives us the probability of a particular $E_i$ (i.e. a \"Cause\"), given that the event $A$ has\noccurred."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            625.5,
+            1128.1,
+            711.4
+          ],
+          "conf": 0.938,
+          "text": "The Bayes' theorem has its applications in variety of situations, few of which are\nillustrated in following examples."
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            715.9,
+            1128.7,
+            840.8
+          ],
+          "conf": 0.898,
+          "text": "Example 16 Bag I contains 3 red and 4 black balls while another Bag II contains 5 red\nand 6 black balls. One ball is drawn at random from one of the bags and it is found to\nbe red. Find the probability that it was drawn from Bag II."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            845.1,
+            1127.9,
+            933.7
+          ],
+          "conf": 0.918,
+          "text": "Solution Let $\\text{E}_1$ be the event of choosing the bag I, $\\text{E}_2$ the event of choosing the bag II\nand A be the event of drawing a red ball."
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.8,
+            931.1,
+            508.9,
+            1020.6
+          ],
+          "conf": 0.889,
+          "text": "Then $P(E_1) = P(E_2) = \\frac{1}{2}$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.3,
+            1026.0,
+            832.2,
+            1114.7
+          ],
+          "conf": 0.881,
+          "text": "Also $P(A|E_1) = P(\\text{drawing a red ball from Bag I}) = \\frac{3}{7}$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.0,
+            1118.7,
+            850.3,
+            1208.9
+          ],
+          "conf": 0.889,
+          "text": "and $P(AlE_2) = P(\\text{drawing a red ball from Bag II}) = \\frac{5}{11}$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.0,
+            1199.2,
+            1128.2,
+            1287.9
+          ],
+          "conf": 0.919,
+          "text": "Now, the probability of drawing a ball from Bag II, being given that it is red,\nis $P(E_2|A)$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            1280.0,
+            520.7,
+            1330.2
+          ],
+          "conf": 0.851,
+          "text": "By using Bayes' theorem, we have"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            212.0,
+            1329.8,
+            1010.4,
+            1495.3
+          ],
+          "conf": 0.935,
+          "text": "$$P(E_2|A) = \\frac{P(E_2)P(A|E_2)}{P(E_1)P(A|E_1) + P(E_2)P(A|E_2)} = \\frac{\\frac{1}{2} \\times \\frac{5}{11}}{\\frac{1}{2} \\times \\frac{3}{7} + \\frac{1}{2} \\times \\frac{5}{11}} = \\frac{35}{68}$$"
+        },
+        {
+          "order": 14,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            1504.3,
+            1128.7,
+            1659.4
+          ],
+          "conf": 0.899,
+          "text": "Example 17 Given three identical boxes I, II and III, each containing two coins. In\nbox I, both coins are gold coins, in box II, both are silver coins and in the box III, there\nis one gold and one silver coin. A person chooses a box at random and takes out a coin.\nIf the coin is of gold, what is the probability that the other coin in the box is also of gold?"
+        }
+      ],
+      "page": 20
+    },
+    {
+      "image": "0110_p0021.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            206.8,
+            1127.0,
+            259.2
+          ],
+          "conf": 0.915,
+          "text": "Solution Let $\\text{E}_1$, $\\text{E}_2$ and $\\text{E}_3$ be the events that boxes I, II and III are chosen, respectively."
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.5,
+            267.3,
+            597.6,
+            351.7
+          ],
+          "conf": 0.91,
+          "text": "Then $P(E_1) = P(E_2) = P(E_3) = \\frac{1}{3}$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            346.0,
+            759.5,
+            396.2
+          ],
+          "conf": 0.913,
+          "text": "Also, let A be the event that ‘the coin drawn is of gold’"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.4,
+            405.5,
+            788.8,
+            616.7
+          ],
+          "conf": 0.834,
+          "text": "Then $P(AlE_1) = P(a \\text{ gold coin from bag I}) = \\frac{2}{2} = 1$\n$P(AlE_2) = P(a \\text{ gold coin from bag II}) = 0$\n$P(AlE_3) = P(a \\text{ gold coin from bag III}) = \\frac{1}{2}$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            614.0,
+            814.4,
+            663.5
+          ],
+          "conf": 0.88,
+          "text": "Now, the probability that the other coin in the box is of gold"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.9,
+            619.6,
+            1012.8,
+            768.1
+          ],
+          "conf": 0.509,
+          "text": "Now, the probability that the other coin in the box is of gold\n= the probability that gold coin is drawn from the box I.\n= $P(E_1|A)$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            750.8,
+            511.7,
+            799.2
+          ],
+          "conf": 0.903,
+          "text": "By Bayes' theorem, we know that"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            213.7,
+            807.7,
+            944.2,
+            1090.6
+          ],
+          "conf": 0.826,
+          "text": "$$P(E_1|A) = \\frac{P(E_1)P(A|E_1)}{P(E_1)P(A|E_1)+P(E_2)P(A|E_2)+P(E_3)P(A|E_3)}$$\n\n$$= \\frac{\\frac{1}{3}\\times1}{\\frac{1}{3}\\times1+\\frac{1}{3}\\times0+\\frac{1}{3}\\times\\frac{1}{2}}=\\frac{2}{3}$$"
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.6,
+            1105.2,
+            1130.9,
+            1346.2
+          ],
+          "conf": 0.67,
+          "text": "Example 18 Suppose that the reliability of a HIV test is specified as follows:\nOf people having HIV, $90\\%$ of the test detect the disease but $10\\%$ go undetected. Of\npeople free of HIV, $99\\%$ of the test are judged HIV–ive but $1\\%$ are diagnosed as\nshowing HIV+ive. From a large population of which only $0.1\\%$ have HIV, one person\nis selected at random, given the HIV test, and the pathologist reports him/her as\nHIV+ive. What is the probability that the person actually has HIV?"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            1351.3,
+            1127.6,
+            1437.3
+          ],
+          "conf": 0.817,
+          "text": "Solution Let E denote the event that the person selected is actually having HIV and A\nthe event that the person's HIV test is diagnosed as +ive. We need to find P(E|A)."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            1433.3,
+            1039.0,
+            1483.2
+          ],
+          "conf": 0.794,
+          "text": "Also $E'$ denotes the event that the person selected is actually not having HIV."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            1477.4,
+            1127.4,
+            1562.0
+          ],
+          "conf": 0.874,
+          "text": "Clearly, $\\{E, E'\\}$ is a partition of the sample space of all people in the population.\nWe are given that"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            452.5,
+            1565.1,
+            817.0,
+            1655.1
+          ],
+          "conf": 0.881,
+          "text": "$$ \\text{P(E)} = 0.1\\% = \\frac{0.1}{100} = 0.001 $$"
+        }
+      ],
+      "page": 21
+    },
+    {
+      "image": "0110_p0022.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            423.7,
+            205.9,
+            1127.4,
+            421.4
+          ],
+          "conf": 0.566,
+          "text": "$P(E') = 1 - P(E) = 0.999$\n$P(A|E) = P(Person tested as HIV+ive given that he/she$\n$is actually having HIV)$\n$= 90\\% = \\frac{90}{100} = 0.9$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.8,
+            421.7,
+            1127.2,
+            508.1
+          ],
+          "conf": 0.84,
+          "text": "and $P(A|E') = P(Person tested as HIV +ive given that he/she$\nis actually not having HIV)"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            519.5,
+            508.7,
+            778.3,
+            594.9
+          ],
+          "conf": 0.884,
+          "text": "$$= 1\\% = \\frac{1}{100} = 0.01$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            588.1,
+            397.1,
+            636.8
+          ],
+          "conf": 0.906,
+          "text": "Now, by Bayes' theorem"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            423.7,
+            634.3,
+            960.8,
+            877.0
+          ],
+          "conf": 0.817,
+          "text": "$$P(E|A) = \\frac{P(E)P(A|E)}{P(E)P(A|E)+P(E')P(A|E')}$$\n\n$$= \\frac{0.001\\times0.9}{0.001\\times0.9+0.999\\times0.01} = \\frac{90}{1089}$$\n\n$$= 0.083 \\text{ approx.}$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.6,
+            887.0,
+            1127.2,
+            972.4
+          ],
+          "conf": 0.952,
+          "text": "Thus, the probability that a person selected at random is actually having HIV\ngiven that he/she is tested HIV+ive is $0.083$."
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            64.8,
+            974.2,
+            1132.1,
+            1659.6
+          ],
+          "conf": 0.539,
+          "text": "Example 19 In a factory which manufactures bolts, machines A, B and C manufacture\nrespectively $25\\%$, $35\\%$ and $40\\%$ of the bolts. Of their outputs, 5, 4 and 2 percent are\nrespectively defective bolts. A bolt is drawn at random from the product and is found\nto be defective. What is the probability that it is manufactured by the machine B?\nSolution Let events $B_1$, $B_2$, $B_3$ be the following :\n$B_1$ : the bolt is manufactured by machine A\n$B_2$ : the bolt is manufactured by machine B\n$B_3$ : the bolt is manufactured by machine C\nClearly, $B_1$, $B_2$, $B_3$ are mutually exclusive and exhaustive events and hence, they\nrepresent a partition of the sample space.\nLet the event E be ‘the bolt is defective’.\nThe event E occurs with $B_1$ or with $B_2$ or with $B_3$. Given that,\n$$P(B_1) = 25\\% = 0.25, \\quad P(B_2) = 0.35 \\text{ and } P(B_3) = 0.40$$\nAgain $P(E|B_1) = \\text{Probability that the bolt drawn is defective given that it is manu-}$\nfactured by machine A $= 5\\% = 0.05$\nSimilarly, $P(E|B_2) = 0.04, \\quad P(E|B_3) = 0.02$."
+        }
+      ],
+      "page": 22
+    },
+    {
+      "image": "0110_p0023.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            206.5,
+            549.2,
+            254.3
+          ],
+          "conf": 0.921,
+          "text": "Hence, by Bayes' Theorem, we have"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            214.3,
+            251.1,
+            943.9,
+            532.4
+          ],
+          "conf": 0.953,
+          "text": "$$P(B_2|E) = \\frac{P(B_2) P(E|B_2)}{P(B_1) P(E|B_1) + P(B_2) P(E|B_2) + P(B_3) P(E|B_3)}$$\n\n$$= \\frac{0.35 \\times 0.04}{0.25 \\times 0.05 + 0.35 \\times 0.04 + 0.40 \\times 0.02}$$\n\n$$= \\frac{0.0140}{0.0345} = \\frac{28}{69}$$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.5,
+            537.5,
+            1128.8,
+            803.9
+          ],
+          "conf": 0.83,
+          "text": "Example 20 A doctor is to visit a patient. From the past experience, it is known that\nthe probabilities that he will come by train, bus, scooter or by other means of transport\n\nare respectively $\\frac{3}{10}, \\frac{1}{5}, \\frac{1}{10}$ and $\\frac{2}{5}$. The probabilities that he will be late are $\\frac{1}{4}, \\frac{1}{3}$, and $\\frac{1}{12}$,\nif he comes by train, bus and scooter respectively, but if he comes by other means of\ntransport, then he will not be late. When he arrives, he is late. What is the probability\nthat he comes by train?"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            806.4,
+            1129.0,
+            920.7
+          ],
+          "conf": 0.907,
+          "text": "Solution Let E be the event that the doctor visits the patient late and let $T_1$, $T_2$, $T_3$, $T_4$\nbe the events that the doctor comes by train, bus, scooter, and other means of transport\nrespectively."
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.0,
+            916.7,
+            1078.9,
+            1009.3
+          ],
+          "conf": 0.86,
+          "text": "Then $P(T_1) = \\frac{3}{10}, P(T_2) = \\frac{1}{5}, P(T_3) = \\frac{1}{10}$ and $P(T_4) = \\frac{2}{5}$ (given)"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            217.0,
+            1008.2,
+            1083.8,
+            1094.4
+          ],
+          "conf": 0.863,
+          "text": "$$P(E|T_1) = Probability \\text{ that the doctor arriving late comes by train} = \\frac{1}{4}$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.8,
+            1093.3,
+            1126.6,
+            1216.8
+          ],
+          "conf": 0.871,
+          "text": "Similarly, $P(E|T_2) = \\frac{1}{3}$, $P(E|T_3) = \\frac{1}{12}$ and $P(E|T_4) = 0$, since he is not late if he\ncomes by other means of transport."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1210.9,
+            642.1,
+            1259.5
+          ],
+          "conf": 0.866,
+          "text": "Therefore, by Bayes' Theorem, we have"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            218.5,
+            1251.4,
+            1108.2,
+            1557.9
+          ],
+          "conf": 0.852,
+          "text": "$P(T_1|E) =$ Probability that the doctor arriving late comes by train\n$= \\frac{P(T_1)P(E|T_1)}{P(T_1)P(E|T_1) + P(T_2)P(E|T_2) + P(T_3)P(E|T_3) + P(T_4)P(E|T_4)}$\n$= \\frac{\\frac{3}{10} \\times \\frac{1}{4}}{\\frac{3}{10} \\times \\frac{1}{4} + \\frac{1}{5} \\times \\frac{1}{3} + \\frac{1}{10} \\times \\frac{1}{12} + \\frac{2}{5} \\times 0} = \\frac{3}{40} \\times \\frac{120}{18} = \\frac{1}{2}$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            1564.0,
+            544.3,
+            1649.2
+          ],
+          "conf": 0.85,
+          "text": "Hence, the required probability is $\\frac{1}{2}$."
+        }
+      ],
+      "page": 23
+    },
+    {
+      "image": "0110_p0024.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            207.9,
+            1128.0,
+            292.5
+          ],
+          "conf": 0.897,
+          "text": "Example 21 A man is known to speak truth 3 out of 4 times. He throws a die and\nreports that it is a six. Find the probability that it is actually a six."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            304.9,
+            1128.1,
+            389.9
+          ],
+          "conf": 0.889,
+          "text": "Solution Let E be the event that the man reports that six occurs in the throwing of the\ndie and let $S_1$ be the event that six occurs and $S_2$ be the event that six does not occur."
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.2,
+            392.6,
+            746.5,
+            478.3
+          ],
+          "conf": 0.847,
+          "text": "Then $P(S_1) =$ Probability that six occurs $= \\frac{1}{6}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            245.0,
+            488.7,
+            843.8,
+            574.6
+          ],
+          "conf": 0.892,
+          "text": "$$P(S_2) = \\text{Probability that } six \\text{ does not occur} = \\frac{5}{6}$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            218.3,
+            569.7,
+            1127.2,
+            656.3
+          ],
+          "conf": 0.828,
+          "text": "$P(ElS_1) = Probability$ that the man reports that $six$ occurs when $six$ has\nactually occurred on the die"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            319.0,
+            655.2,
+            921.5,
+            742.9
+          ],
+          "conf": 0.889,
+          "text": "$$= \\text{Probability that the man speaks the truth} = \\frac{3}{4}$$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            218.5,
+            737.1,
+            1127.0,
+            823.5
+          ],
+          "conf": 0.828,
+          "text": "$P(ElS_2) = \\text{Probability that the man reports that } \\textit{six} \\text{ occurs when } \\textit{six} \\text{ has}$\n$\\text{not actually occurred on the die}$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            317.9,
+            824.0,
+            1106.5,
+            911.5
+          ],
+          "conf": 0.882,
+          "text": "$$= \\text{Probability that the man does not speak the truth } = 1 - \\frac{3}{4} = \\frac{1}{4}$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            343.1,
+            905.2,
+            773.5,
+            954.5
+          ],
+          "conf": 0.767,
+          "text": "Thus, by Bayes' theorem, we get"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            218.3,
+            949.5,
+            1126.7,
+            1035.5
+          ],
+          "conf": 0.849,
+          "text": "$P(S_1|E) =$ Probability that the report of the man that $six$ has occurred is\nactually a $six$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.5,
+            1035.2,
+            728.6,
+            1140.5
+          ],
+          "conf": 0.888,
+          "text": "$$= \\frac{\\mathrm{P}(\\mathrm{S}_1) \\mathrm{P}(\\mathrm{E} | \\mathrm{S}_1)}{\\mathrm{P}(\\mathrm{S}_1) \\mathrm{P}(\\mathrm{E} | \\mathrm{S}_1) + \\mathrm{P}(\\mathrm{S}_2) \\mathrm{P} (\\mathrm{E} | \\mathrm{S}_2)}$$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.6,
+            1165.0,
+            723.2,
+            1329.5
+          ],
+          "conf": 0.914,
+          "text": "$$= \\frac{\\frac{1}{6} \\times \\frac{3}{4}}{\\frac{1}{6} \\times \\frac{3}{4} + \\frac{5}{6} \\times \\frac{1}{4}} = \\frac{1}{8} \\times \\frac{24}{8} = \\frac{3}{8}$$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            1343.0,
+            535.8,
+            1431.5
+          ],
+          "conf": 0.833,
+          "text": "Hence, the required probability is $\\frac{3}{8}$."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            1434.8,
+            1127.5,
+            1521.0
+          ],
+          "conf": 0.763,
+          "text": "$\\textit{\\textbf{Remark}}$ A random variable is a real valued function whose domain is the sample\nspace of a random experiment."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.9,
+            1526.8,
+            1128.2,
+            1576.1
+          ],
+          "conf": 0.857,
+          "text": "For example, let us consider the experiment of tossing a coin two times in succession."
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.6,
+            1579.7,
+            878.0,
+            1631.7
+          ],
+          "conf": 0.855,
+          "text": "The sample space of the experiment is $S = \\{HH, HT, TH, TT\\}$."
+        }
+      ],
+      "page": 24
+    },
+    {
+      "image": "0110_p0025.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            209.5,
+            1127.3,
+            293.6
+          ],
+          "conf": 0.953,
+          "text": "If $X$ denotes the number of heads obtained, then $X$ is a random variable and for\neach outcome, its value is as given below :"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            218.6,
+            291.1,
+            850.0,
+            341.1
+          ],
+          "conf": 0.906,
+          "text": "$$X(HH) = 2, X(HT) = 1, X(TH) = 1, X(TT) = 0.$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            338.6,
+            1128.2,
+            460.1
+          ],
+          "conf": 0.967,
+          "text": "More than one random variables can be defined on the same sample space. For\nexample, let $Y$ denote the number of heads minus the number of tails for each outcome\nof the above sample space $S$."
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.7,
+            458.3,
+            869.6,
+            507.4
+          ],
+          "conf": 0.843,
+          "text": "Then $Y(HH) = 2, Y(HT) = 0, Y(TH) = 0, Y(TT) = -2.$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.8,
+            504.2,
+            1127.4,
+            589.5
+          ],
+          "conf": 0.947,
+          "text": "Thus, $X$ and $Y$ are two different random variables defined on the same sample\nspace $S$."
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            466.2,
+            643.3,
+            731.6,
+            698.9
+          ],
+          "conf": 0.809,
+          "text": "EXERCISE 13.3"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            95.8,
+            706.3,
+            1128.5,
+            1622.3
+          ],
+          "conf": 0.898,
+          "text": "1. An urn contains 5 red and 5 black balls. A ball is drawn at random, its colour is\nnoted and is returned to the urn. Moreover, 2 additional balls of the colour drawn\nare put in the urn and then a ball is drawn at random. What is the probability that\nthe second ball is red?\n2. A bag contains 4 red and 4 black balls, another bag contains 2 red and 6 black\nballs. One of the two bags is selected at random and a ball is drawn from the bag\nwhich is found to be red. Find the probability that the ball is drawn from the\nfirst bag.\n3. Of the students in a college, it is known that $60\\%$ reside in hostel and $40\\%$ are\nday scholars (not residing in hostel). Previous year results report that $30\\%$ of all\nstudents who reside in hostel attain A grade and $20\\%$ of day scholars attain A\ngrade in their annual examination. At the end of the year, one student is chosen\nat random from the college and he has an A grade, what is the probability that the\nstudent is a hostlier?\n4. In answering a question on a multiple choice test, a student either knows the\nanswer or guesses. Let $\\frac{3}{4}$ be the probability that he knows the answer and $\\frac{1}{4}$\nbe the probability that he guesses. Assuming that a student who guesses at the\nanswer will be correct with probability $\\frac{1}{4}$. What is the probability that the stu-\ndent knows the answer given that he answered it correctly?\n5. A laboratory blood test is $99\\%$ effective in detecting a certain disease when it is\nin fact, present. However, the test also yields a false positive result for $0.5\\%$ of\nthe healthy person tested (i.e. if a healthy person is tested, then, with probability\n$0.005$, the test will imply he has the disease). If $0.1$ percent of the population"
+        }
+      ],
+      "page": 25
+    },
+    {
+      "image": "0110_p0026.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            145.3,
+            208.6,
+            1127.2,
+            291.4
+          ],
+          "conf": 0.945,
+          "text": "actually has the disease, what is the probability that a person has the disease\ngiven that his test result is positive ?"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            89.4,
+            279.0,
+            1131.7,
+            1673.5
+          ],
+          "conf": 0.517,
+          "text": "6. There are three coins. One is a two headed coin (having head on both faces),\nanother is a biased coin that comes up heads $75\\%$ of the time and third is an\nunbiased coin. One of the three coins is chosen at random and tossed, it shows\nheads, what is the probability that it was the two headed coin ?\n\n7. An insurance company insured 2000 scooter drivers, 4000 car drivers and 6000\ntruck drivers. The probability of an accidents are 0.01, 0.03 and 0.15 respectively.\nOne of the insured persons meets with an accident. What is the probability that\nhe is a scooter driver?\n\n8. A factory has two machines A and B. Past record shows that machine A produced\n$60\\%$ of the items of output and machine B produced $40\\%$ of the items. Further,\n$2\\%$ of the items produced by machine A and $1\\%$ produced by machine B were\ndefective. All the items are put into one stockpile and then one item is chosen at\nrandom from this and is found to be defective. What is the probability that it was\nproduced by machine B?\n\n9. Two groups are competing for the position on the Board of directors of a\ncorporation. The probabilities that the first and the second groups will win are\n0.6 and 0.4 respectively. Further, if the first group wins, the probability of\nintroducing a new product is 0.7 and the corresponding probability is 0.3 if the\nsecond group wins. Find the probability that the new product introduced was by\nthe second group.\n\n10. Suppose a girl throws a die. If she gets a 5 or 6, she tosses a coin three times and\nnotes the number of heads. If she gets 1, 2, 3 or 4, she tosses a coin once and\nnotes whether a head or tail is obtained. If she obtained exactly one head, what\nis the probability that she threw 1, 2, 3 or 4 with the die?\n\n11. A manufacturer has three machine operators A, B and C. The first operator A\nproduces $1\\%$ defective items, where as the other two operators B and C pro-\nduce $5\\%$ and $7\\%$ defective items respectively. A is on the job for $50\\%$ of the\ntime, B is on the job for $30\\%$ of the time and C is on the job for $20\\%$ of the time.\nA defective item is produced, what is the probability that it was produced by A?\n\n12. A card from a pack of 52 cards is lost. From the remaining cards of the pack,\ntwo cards are drawn and are found to be both diamonds. Find the probability of\nthe lost card being a diamond.\n\n13. Probability that A speaks truth is $\\frac{4}{5}$. A coin is tossed. A reports that a head\nappears. The probability that actually there was head is"
+        }
+      ],
+      "page": 26
+    },
+    {
+      "image": "0110_p0027.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.5,
+            224.5,
+            954.7,
+            313.2
+          ],
+          "conf": 0.854,
+          "text": "(A) $\\frac{4}{5}$      (B) $\\frac{1}{2}$      (C) $\\frac{1}{5}$      (D) $\\frac{2}{5}$"
+        },
+        {
+          "order": 1,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            79.1,
+            307.3,
+            1126.8,
+            534.8
+          ],
+          "conf": 0.823,
+          "text": "14. If A and B are two events such that $A \\subset B$ and $P(B) \\neq 0$, then which of the\nfollowing is correct?\n\n(A) $P(A \\mid B) = \\frac{P(B)}{P(A)}$                                     (B) $P(A \\mid B) < P(A)$\n\n(C) $P(A \\mid B) \\geq P(A)$                                          (D) None of these"
+        },
+        {
+          "order": 2,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            414.6,
+            556.6,
+            781.2,
+            607.5
+          ],
+          "conf": 0.826,
+          "text": "Miscellaneous Examples"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            614.2,
+            1127.5,
+            662.2
+          ],
+          "conf": 0.738,
+          "text": "Example 22 Coloured balls are distributed in four boxes as shown in the following table:"
+        },
+        {
+          "order": 4,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            263.6,
+            666.5,
+            934.1,
+            1030.3
+          ],
+          "conf": 0.985,
+          "text": "<table>\n<thead>\n<tr>\n<th colspan=\"5\">Box Colour</th>\n</tr>\n<tr>\n<th></th>\n<th>Black</th>\n<th>White</th>\n<th>Red</th>\n<th>Blue</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>I</td>\n<td>3</td>\n<td>4</td>\n<td>5</td>\n<td>6</td>\n</tr>\n<tr>\n<td>II</td>\n<td>2</td>\n<td>2</td>\n<td>2</td>\n<td>2</td>\n</tr>\n<tr>\n<td>III</td>\n<td>1</td>\n<td>2</td>\n<td>3</td>\n<td>1</td>\n</tr>\n<tr>\n<td>IV</td>\n<td>4</td>\n<td>3</td>\n<td>1</td>\n<td>5</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.9,
+            1035.2,
+            1128.5,
+            1153.8
+          ],
+          "conf": 0.955,
+          "text": "A box is selected at random and then a ball is randomly drawn from the selected\nbox. The colour of the ball is black, what is the probability that ball drawn is from the\nbox III?"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            1159.7,
+            903.7,
+            1210.0
+          ],
+          "conf": 0.865,
+          "text": "Solution Let A, $E_1$, $E_2$, $E_3$ and $E_4$ be the events as defined below :"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            169.4,
+            1206.5,
+            866.6,
+            1342.4
+          ],
+          "conf": 0.714,
+          "text": "A : a black ball is selected\nE$_1$ : box I is selected\nE$_2$ : box II is selected\nE$_3$ : box III is selected\nE$_4$ : box IV is selected"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            1347.7,
+            565.4,
+            1395.9
+          ],
+          "conf": 0.868,
+          "text": "Since the boxes are chosen at random,"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.1,
+            1402.9,
+            776.8,
+            1485.9
+          ],
+          "conf": 0.822,
+          "text": "Therefore $P(E_1) = P(E_2) = P(E_3) = P(E_4) = \\frac{1}{4}$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.7,
+            1482.3,
+            1071.8,
+            1572.3
+          ],
+          "conf": 0.833,
+          "text": "Also $P(AlE_1) = \\frac{3}{18}$, $P(AlE_2) = \\frac{2}{8}$, $P(AlE_3) = \\frac{1}{7}$ and $P(AlE_4) = \\frac{4}{13}$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            1560.4,
+            1127.3,
+            1643.4
+          ],
+          "conf": 0.876,
+          "text": "P(box III is selected, given that the drawn ball is black) = P(E$_3$|A). By Bayes'\ntheorem,"
+        }
+      ],
+      "page": 27
+    },
+    {
+      "image": "0110_p0028.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            216.7,
+            1045.7,
+            479.2
+          ],
+          "conf": 0.917,
+          "text": "$$P(E_3|A) = \\frac{P(E_3) \\cdot P(A|E_3)}{P(E_1)P(A|E_1) + P(E_2)P(A|E_2) + P(E_3)P(A|E_3) + P(E_4)P(A|E_4)}$$\n\n$$= \\frac{\\frac{1}{4} \\times \\frac{1}{7}}{\\frac{1}{4} \\times \\frac{3}{18} + \\frac{1}{4} \\times \\frac{1}{4} + \\frac{1}{4} \\times \\frac{1}{7} + \\frac{1}{4} \\times \\frac{4}{13}} = 0.165$$"
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            475.7,
+            1127.3,
+            561.4
+          ],
+          "conf": 0.779,
+          "text": "Example 23 A and B throw a die alternatively till one of them gets a ‘6’ and wins the\ngame. Find their respective probabilities of winning, if A starts first."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            557.1,
+            1129.0,
+            643.9
+          ],
+          "conf": 0.837,
+          "text": "Solution Let S denote the success (getting a ‘6’) and F denote the failure (not getting\na ‘6’)."
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.4,
+            640.6,
+            711.6,
+            727.7
+          ],
+          "conf": 0.818,
+          "text": "Thus, $P(S) = \\frac{1}{6}, P(F) = \\frac{5}{6}$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            171.5,
+            727.6,
+            684.5,
+            814.9
+          ],
+          "conf": 0.842,
+          "text": "$$P(A \\text{ wins in the first throw}) = P(S) = \\frac{1}{6}$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            809.6,
+            1128.5,
+            891.2
+          ],
+          "conf": 0.935,
+          "text": "A gets the third throw, when the first throw by A and second throw by B result into\nfailures."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.5,
+            889.0,
+            1061.9,
+            1072.8
+          ],
+          "conf": 0.784,
+          "text": "Therefore, $P(A \\text{ wins in the 3rd throw}) = P(FFS) = P(F)P(F)P(S) = \\frac{5}{6} \\times \\frac{5}{6} \\times \\frac{1}{6}$\n\n$= \\left(\\frac{5}{6}\\right)^2 \\times \\frac{1}{6}$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.1,
+            1073.2,
+            981.7,
+            1171.8
+          ],
+          "conf": 0.857,
+          "text": "$$P(A \\text{ wins in the 5th throw}) = P(FFFFS) = \\left(\\frac{5}{6}\\right)^4 \\left(\\frac{1}{6}\\right) \\text{ and so on.}$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.1,
+            1169.5,
+            947.4,
+            1519.0
+          ],
+          "conf": 0.707,
+          "text": "Hence,\n$$ \\text{P(A wins)} = \\frac{1}{6} + \\left( \\frac{5}{6} \\right)^2 \\left( \\frac{1}{6} \\right) + \\left( \\frac{5}{6} \\right)^4 \\left( \\frac{1}{6} \\right) + ... $$\n\n$$ = \\frac{\\frac{1}{6}}{1 - \\frac{25}{36}} = \\frac{6}{11} $$\n\n$$ \\text{P(B wins)} = 1 - \\text{P (A wins)} = 1 - \\frac{6}{11} = \\frac{5}{11} $$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            1524.8,
+            1128.1,
+            1663.2
+          ],
+          "conf": 0.639,
+          "text": "$\\mathit{Remark}$ If $a + ar + ar^2 + ... + ar^{n-1} + ...$, where $|r| < 1$, then sum of this infinite G.P.\n\nis given by $\\frac{a}{1-r}$. (Refer A.1.3 of Class XI Text book)."
+        }
+      ],
+      "page": 28
+    },
+    {
+      "image": "0110_p0029.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            207.9,
+            1128.2,
+            364.0
+          ],
+          "conf": 0.89,
+          "text": "Example 24 If a machine is correctly set up, it produces $90\\%$ acceptable items. If it is\nincorrectly set up, it produces only $40\\%$ acceptable items. Past experience shows that\n$80\\%$ of the set ups are correctly done. If after a certain set up, the machine produces\n2 acceptable items, find the probability that the machine is correctly setup."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            369.4,
+            1012.6,
+            418.0
+          ],
+          "conf": 0.887,
+          "text": "Solution Let A be the event that the machine produces 2 acceptable items."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            421.7,
+            1129.6,
+            507.2
+          ],
+          "conf": 0.932,
+          "text": "Also let $B_1$ represent the event of correct set up and $B_2$ represent the event of\nincorrect setup."
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.5,
+            508.5,
+            863.3,
+            613.4
+          ],
+          "conf": 0.648,
+          "text": "Now $\\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\mathrm{P}(\\mathrm{B}_{1})=0.8, \\mathrm{P}(\\mathrm{B}_{2})=0.2$\n$\\quad \\quad \\quad \\quad \\quad \\quad \\mathrm{P}(\\mathrm{A} \\mid \\mathrm{B}_{1})=0.9 \\times 0.9 \\quad \\text { and } \\mathrm{P}(\\mathrm{A} \\mid \\mathrm{B}_{2})=0.4 \\times 0.4$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.3,
+            629.8,
+            971.3,
+            846.9
+          ],
+          "conf": 0.665,
+          "text": "Therefore $P(B_1|A) = \\frac{P(B_1) P(A|B_1)}{P(B_1) P(A|B_1) + P(B_2) P(A|B_2)}$\n\n$= \\frac{0.8 \\times 0.9 \\times 0.9}{0.8 \\times 0.9 \\times 0.9 + 0.2 \\times 0.4 \\times 0.4} = \\frac{648}{680} = 0.95$"
+        },
+        {
+          "order": 5,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            319.4,
+            879.5,
+            876.5,
+            931.5
+          ],
+          "conf": 0.808,
+          "text": "Miscellaneous Exercise on Chapter 13"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.8,
+            945.7,
+            1129.1,
+            1645.2
+          ],
+          "conf": 0.887,
+          "text": "1. A and B are two events such that $P(A) \\neq 0$. Find $P(B|A)$, if\n(i) $A$ is a subset of $B$ (ii) $A \\cap B = \\phi$\n\n2. A couple has two children,\n(i) Find the probability that both children are males, if it is known that at least\none of the children is male.\n(ii) Find the probability that both children are females, if it is known that the\nelder child is a female.\n\n3. Suppose that $5\\%$ of men and $0.25\\%$ of women have grey hair. A grey haired\nperson is selected at random. What is the probability of this person being male?\nAssume that there are equal number of males and females.\n\n4. Suppose that $90\\%$ of people are right-handed. What is the probability that\nat most 6 of a random sample of 10 people are right-handed?\n\n5. If a leap year is selected at random, what is the chance that it will contain 53\ntuesdays?\n\n6. Suppose we have four boxes A,B,C and D containing coloured marbles as given\nbelow:"
+        }
+      ],
+      "page": 29
+    },
+    {
+      "image": "0110_p0030.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            277.8,
+            198.5,
+            918.5,
+            500.8
+          ],
+          "conf": 0.983,
+          "text": "<table>\n<thead>\n<tr>\n<th>Box</th>\n<th colspan=\"3\">Marble colour</th>\n</tr>\n<tr>\n<th></th>\n<th>Red</th>\n<th>White</th>\n<th>Black</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>A</td>\n<td>1</td>\n<td>6</td>\n<td>3</td>\n</tr>\n<tr>\n<td>B</td>\n<td>6</td>\n<td>2</td>\n<td>2</td>\n</tr>\n<tr>\n<td>C</td>\n<td>8</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>D</td>\n<td>0</td>\n<td>6</td>\n<td>4</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            494.1,
+            1128.6,
+            613.1
+          ],
+          "conf": 0.952,
+          "text": "One of the boxes has been selected at random and a single marble is drawn from\nit. If the marble is red, what is the probability that it was drawn from box A?, box B?,\nbox C?"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.7,
+            607.5,
+            1129.1,
+            871.2
+          ],
+          "conf": 0.9,
+          "text": "7. Assume that the chances of a patient having a heart attack is $40\\%$. It is also\nassumed that a meditation and yoga course reduce the risk of heart attack by\n$30\\%$ and prescription of certain drug reduces its chances by $25\\%$. At a time a\npatient can choose any one of the two options with equal probabilities. It is given\nthat after going through one of the two options the patient selected at random\nsuffers a heart attack. Find the probability that the patient followed a course of\nmeditation and yoga?"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            95.4,
+            865.1,
+            1128.2,
+            1077.8
+          ],
+          "conf": 0.858,
+          "text": "8. If each element of a second order determinant is either zero or one, what is the\nprobability that the value of the determinant is positive? (Assume that the indi-\nvidual entries of the determinant are chosen independently, each value being\n\nassumed with probability $\\frac{1}{2}$)."
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            95.4,
+            1077.8,
+            1127.6,
+            1360.4
+          ],
+          "conf": 0.607,
+          "text": "9. An electronic assembly consists of two subsystems, say, A and B. From previ-\nous testing procedures, the following probabilities are assumed to be known:\n$$P(A \\text{ fails}) = 0.2$$\n$$P(B \\text{ fails alone}) = 0.15$$\n$$P(A \\text{ and } B \\text{ fail}) = 0.15$$\nEvaluate the following probabilities\n(i) $P(A \\text{ fails}|B \\text{ has failed})$      (ii) $P(A \\text{ fails alone})$"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.7,
+            1358.3,
+            1128.4,
+            1521.2
+          ],
+          "conf": 0.853,
+          "text": "10. Bag I contains 3 red and 4 black balls and Bag II contains 4 red and 5 black balls.\nOne ball is transferred from Bag I to Bag II and then a ball is drawn from Bag II.\nThe ball so drawn is found to be red in colour. Find the probability that the\ntransferred ball is black."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            1521.0,
+            724.7,
+            1571.0
+          ],
+          "conf": 0.861,
+          "text": "Choose the correct answer in each of the following:"
+        },
+        {
+          "order": 7,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            80.0,
+            1565.3,
+            1005.0,
+            1665.4
+          ],
+          "conf": 0.841,
+          "text": "11. If $A$ and $B$ are two events such that $P(A) \\neq 0$ and $P(B \\mid A) = 1$, then\n\n(A) $A \\subset B$      (B) $B \\subset A$      (C) $B = \\phi$      (D) $A = \\phi$"
+        }
+      ],
+      "page": 30
+    },
+    {
+      "image": "0110_p0031.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.2,
+            209.9,
+            1003.7,
+            367.2
+          ],
+          "conf": 0.926,
+          "text": "12. If $P(A|B) > P(A)$, then which of the following is correct :\n\n(A) $P(B|A) < P(B)$                                     (B) $P(A \\cap B) < P(A)$ . $P(B)$\n\n(C) $P(B|A) > P(B)$                                     (D) $P(B|A) = P(B)$"
+        },
+        {
+          "order": 1,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.2,
+            371.7,
+            1127.5,
+            529.7
+          ],
+          "conf": 0.939,
+          "text": "13. If A and B are any two events such that $P(A) + P(B) - P(A \\text{ and } B) = P(A)$, then\n\n(A) $P(B|A) = 1$                                     (B) $P(A|B) = 1$\n\n(C) $P(B|A) = 0$                                     (D) $P(A|B) = 0$"
+        },
+        {
+          "order": 2,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            72.0,
+            543.1,
+            1130.9,
+            1667.3
+          ],
+          "conf": 0.784,
+          "text": "Summary\n\nThe salient features of the chapter are –\n\n$\\diamond$ The conditional probability of an event E, given the occurrence of the event F\nis given by $P(E|F) = \\frac{P(E \\cap F)}{P(F)}, P(F) \\neq 0$\n\n$\\diamond$ $0 \\leq P(E|F) \\leq 1, \\quad P(E'|F) = 1 - P(E|F)$\n$P((E \\cup F)|G) = P(E|G) + P(F|G) - P((E \\cap F)|G)$\n\n$\\diamond$ $P(E \\cap F) = P(E) P(F|E), P(E) \\neq 0$\n$P(E \\cap F) = P(F) P(E|F), P(F) \\neq 0$\n\n$\\diamond$ If E and F are independent, then\n$P(E \\cap F) = P(E) P(F)$\n$P(E|F) = P(E), P(F) \\neq 0$\n$P(F|E) = P(F), P(E) \\neq 0$\n\n$\\diamond$ Theorem of total probability\nLet $\\{E_1, E_2, ..., E_n\\}$ be a partition of a sample space and suppose that each of\n$E_1, E_2, ..., E_n$ has nonzero probability. Let A be any event associated with S,\nthen\n$$P(A) = P(E_1) P(A|E_1) + P(E_2) P(A|E_2) + ... + P(E_n) P(A|E_n)$$\n\n$\\diamond$ Bayes' theorem If $E_1, E_2, ..., E_n$ are events which constitute a partition of\nsample space S, i.e. $E_1, E_2, ..., E_n$ are pairwise disjoint and $E_1 \\cup E_2 \\cup ... \\cup E_n = S$\nand A be any event with nonzero probability, then\n\n$$P(E_i | A) = \\frac{P(E_i) P(A|E_i)}{\\sum_{j=1}^{n} P(E_j) P(A|E_j)}$$"
+        }
+      ],
+      "page": 31
+    },
+    {
+      "image": "0110_p0032.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            75.2,
+            205.0,
+            1125.8,
+            1447.4
+          ],
+          "conf": 0.67,
+          "text": "\\textit{Historical Note}\n\nThe earliest indication on measurement of chances in game of dice appeared\nin 1477 in a commentary on Dante's Divine Comedy. A treatise on gambling\nnamed \\textit{liber de Ludo Alcae}, by Geronimo Carden (1501-1576) was published\nposthumously in 1663. In this treatise, he gives the number of favourable cases\nfor each event when two dice are thrown.\n\nGalileo (1564-1642) gave casual remarks concerning the correct evaluation\nof chance in a game of three dice. Galileo analysed that when three dice are\nthrown, the sum of the number that appear is more likely to be 10 than the sum 9,\nbecause the number of cases favourable to 10 are more than the number of\ncases for the appearance of number 9.\n\nApart from these early contributions, it is generally acknowledged that the\ntrue origin of the science of probability lies in the correspondence between two\ngreat men of the seventeenth century, Pascal (1623-1662) and Pierre de Fermat\n(1601-1665). A French gambler, Chevalier de Metre asked Pascal to explain\nsome seeming contradiction between his theoretical reasoning and the\nobservation gathered from gambling. In a series of letters written around 1654,\nPascal and Fermat laid the first foundation of science of probability. Pascal solved\nthe problem in algebraic manner while Fermat used the method of combinations.\n\nGreat Dutch Scientist, Huygens (1629-1695), became acquainted with the\ncontent of the correspondence between Pascal and Fermat and published a first\nbook on probability, \"\\textit{De Ratiociniis in Ludo Aleae}\" containing solution of many\ninteresting rather than difficult problems on probability in games of chances.\n\nThe next great work on probability theory is by Jacob Bernoulli (1654-1705),\nin the form of a great book, \"\\textit{Ars Conjectendi}\" published posthumously in 1713\nby his nephew, Nicholes Bernoulli. To him is due the discovery of one of the most\nimportant probability distribution known as Binomial distribution. The next\nremarkable work on probability lies in 1993. A. N. Kolmogorov (1903-1987) is\ncredited with the axiomatic theory of probability. His book, ‘Foundations of\nprobability’ published in 1933, introduces probability as a set function and is\nconsidered a ‘classic!’."
+        },
+        {
+          "order": 1,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            529.0,
+            1442.3,
+            675.0,
+            1490.2
+          ],
+          "conf": 0.795,
+          "text": ""
+        }
+      ],
+      "page": 32
+    }
+  ]
+}

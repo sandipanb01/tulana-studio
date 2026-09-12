@@ -1,0 +1,3534 @@
+{
+  "book": "1008",
+  "relpath": "dataset/input/eng/10/1008.pdf",
+  "num_pages": 20,
+  "pages": [
+    {
+      "image": "0077_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            544.4,
+            217.7,
+            755.7,
+            444.6
+          ],
+          "conf": 0.909,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            604.2,
+            409.8,
+            698.0,
+            444.8
+          ],
+          "conf": 0.678,
+          "text": "$1062\\text{CH}08$"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            448.2,
+            468.0,
+            1177.7,
+            641.2
+          ],
+          "conf": 0.867,
+          "text": "INTRODUCTION TO\nTRIGONOMETRY 8"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            322.3,
+            670.5,
+            972.5,
+            757.2
+          ],
+          "conf": 0.906,
+          "text": "There is perhaps nothing which so occupies the\nmiddle position of mathematics as trigonometry."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            662.5,
+            756.6,
+            975.8,
+            806.4
+          ],
+          "conf": 0.885,
+          "text": "- J.F. Herbart (1890)"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            117.3,
+            808.3,
+            370.5,
+            857.7
+          ],
+          "conf": 0.91,
+          "text": "8.1 Introduction"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.2,
+            863.6,
+            1174.0,
+            985.0
+          ],
+          "conf": 0.96,
+          "text": "You have already studied about triangles, and in particular, right triangles, in your\nearlier classes. Let us take some examples from our surroundings where right triangles\ncan be imagined to be formed. For instance :"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            149.2,
+            985.1,
+            679.6,
+            1686.6
+          ],
+          "conf": 0.852,
+          "text": "1. Suppose the students of a school are\nvisiting Qutub Minar. Now, if a student\nis looking at the top of the Minar, a right\ntriangle can be imagined to be made,\nas shown in Fig 8.1. Can the student\nfind out the height of the Minar, without\nactually measuring it?\n\n2. Suppose a girl is sitting on the balcony\nof her house located on the bank of a\nriver. She is looking down at a flower\npot placed on a stair of a temple situated\nnearby on the other bank of the river.\nA right triangle is imagined to be made\nin this situation as shown in Fig.8.2. If\nyou know the height at which the\nperson is sitting, can you find the width\nof the river?"
+        },
+        {
+          "order": 8,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            681.7,
+            951.7,
+            1146.7,
+            1308.9
+          ],
+          "conf": 0.894,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            848.1,
+            1315.8,
+            976.4,
+            1365.9
+          ],
+          "conf": 0.89,
+          "text": "Fig. 8.1"
+        },
+        {
+          "order": 10,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            672.8,
+            1405.2,
+            1168.4,
+            1658.7
+          ],
+          "conf": 0.876,
+          "text": ""
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            848.0,
+            1658.7,
+            977.2,
+            1708.5
+          ],
+          "conf": 0.869,
+          "text": "Fig. 8.2"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0077_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            153.7,
+            258.2,
+            679.8,
+            673.0
+          ],
+          "conf": 0.931,
+          "text": "3. Suppose a hot air balloon is flying in\nthe air. A girl happens to spot the\nballoon in the sky and runs to her\nmother to tell her about it. Her mother\nrushes out of the house to look at the\nballoon.Now when the girl had spotted\nthe balloon intially it was at point A.\nWhen both the mother and daughter\ncame out to see it, it had already\ntravelled to another point B. Can you\nfind the altitude of B from the ground?"
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            675.5,
+            311.0,
+            1174.0,
+            599.6
+          ],
+          "conf": 0.951,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            857.6,
+            610.5,
+            985.9,
+            660.8
+          ],
+          "conf": 0.909,
+          "text": "Fig. 8.3"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            672.6,
+            1179.0,
+            1013.3
+          ],
+          "conf": 0.977,
+          "text": "In all the situations given above, the distances or heights can be found by using\nsome mathematical techniques, which come under a branch of mathematics called\n‘trigonometry’. The word ‘trigonometry’ is derived from the Greek words ‘tri’\n(meaning three), ‘gon’ (meaning sides) and ‘metron’ (meaning measure). In fact,\n**trigonometry** is the study of relationships between the sides and angles of a triangle.\nThe earliest known work on trigonometry was recorded in Egypt and Babylon. Early\nastronomers used it to find out the distances of the stars and planets from the Earth.\nEven today, most of the technologically advanced methods used in Engineering and\nPhysical Sciences are based on trigonometrical concepts."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1015.2,
+            1178.6,
+            1245.1
+          ],
+          "conf": 0.966,
+          "text": "In this chapter, we will study some ratios of the sides of a right triangle with\nrespect to its acute angles, called **trigonometric ratios of the angle**. We will restrict\nour discussion to acute angles only. However, these ratios can be extended to other\nangles also. We will also define the trigonometric ratios for angles of measure $0^{\\circ}$ and\n$90^{\\circ}$. We will calculate trigonometric ratios for some specific angles and establish\nsome identities involving these ratios, called **trigonometric identities**."
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.3,
+            1257.4,
+            497.1,
+            1310.8
+          ],
+          "conf": 0.874,
+          "text": "8.2 Trigonometric Ratios"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1310.8,
+            718.8,
+            1393.7
+          ],
+          "conf": 0.924,
+          "text": "In Section 8.1, you have seen some right triangles\nimagined to be formed in different situations."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1394.6,
+            718.6,
+            1478.2
+          ],
+          "conf": 0.91,
+          "text": "Let us take a right triangle ABC as shown\nin Fig. 8.4."
+        },
+        {
+          "order": 8,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            793.1,
+            1282.1,
+            1132.0,
+            1674.1
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1478.8,
+            719.3,
+            1745.5
+          ],
+          "conf": 0.955,
+          "text": "Here, $\\angle$ CAB (or, in brief, angle A) is an\nacute angle. Note the position of the side BC\nwith respect to angle A. It faces $\\angle$ A. We call it\nthe \\textit{side opposite} to angle A. AC is the\n\\textit{hypotenuse} of the right triangle and the side AB\nis a part of $\\angle$ A. So, we call it the \\textit{side}\n\\textit{adjacent} to angle A."
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            904.0,
+            1681.5,
+            1034.9,
+            1731.1
+          ],
+          "conf": 0.869,
+          "text": "Fig. 8.4"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0077_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            277.4,
+            718.8,
+            399.9
+          ],
+          "conf": 0.961,
+          "text": "Note that the position of sides change\nwhen you consider angle C in place of A\n(see Fig. 8.5)."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            398.4,
+            718.8,
+            556.7
+          ],
+          "conf": 0.967,
+          "text": "You have studied the concept of ‘ratio’ in\nyour earlier classes. We now define certain ratios\ninvolving the sides of a right triangle, and call\nthem trigonometric ratios."
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            803.5,
+            276.6,
+            1161.8,
+            662.5
+          ],
+          "conf": 0.962,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            904.8,
+            666.1,
+            1034.4,
+            715.4
+          ],
+          "conf": 0.919,
+          "text": "Fig. 8.5"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            557.3,
+            718.1,
+            676.0
+          ],
+          "conf": 0.957,
+          "text": "The trigonometric ratios of the angle A\nin right triangle ABC (see Fig. 8.4) are defined\nas follows :"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.7,
+            680.0,
+            775.1,
+            775.0
+          ],
+          "conf": 0.924,
+          "text": "$$ \\text{sine of } \\angle A = \\frac{\\text{side opposite to angle A}}{\\text{hypotenuse}} = \\frac{\\text{BC}}{\\text{AC}} $$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.0,
+            787.4,
+            802.9,
+            884.3
+          ],
+          "conf": 0.923,
+          "text": "$$ \\text{cosine of } \\angle A = \\frac{\\text{side adjacent to angle A}}{\\text{hypotenuse}} = \\frac{\\text{AB}}{\\text{AC}} $$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.3,
+            889.8,
+            810.7,
+            985.1
+          ],
+          "conf": 0.926,
+          "text": "$$tangent \\ of \\angle A = \\frac{\\text{side opposite to angle A}}{\\text{side adjacent to angle A}} = \\frac{BC}{AB}$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.9,
+            989.3,
+            1021.0,
+            1085.7
+          ],
+          "conf": 0.934,
+          "text": "$$\\text{cosecant of } \\angle A = \\frac{1}{\\text{sine of } \\angle A} = \\frac{\\text{hypotenuse}}{\\text{side opposite to angle A}} = \\frac{\\text{AC}}{\\text{BC}}$$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.9,
+            1085.1,
+            1020.9,
+            1182.4
+          ],
+          "conf": 0.923,
+          "text": "$$secant \\text{ of } \\angle A = \\frac{1}{\\text{cosine of } \\angle A} = \\frac{\\text{hypotenuse}}{\\text{side adjacent to angle A}} = \\frac{AC}{AB}$$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.0,
+            1186.7,
+            1077.3,
+            1283.6
+          ],
+          "conf": 0.915,
+          "text": "$$\\text{cotangent of } \\angle A = \\frac{1}{\\text{tangent of } \\angle A} = \\frac{\\text{side adjacent to angle A}}{\\text{side opposite to angle A}} = \\frac{\\text{AB}}{\\text{BC}}$$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1292.0,
+            1178.1,
+            1413.0
+          ],
+          "conf": 0.95,
+          "text": "The ratios defined above are abbreviated as $\\sin A$, $\\cos A$, $\\tan A$, $\\text{cosec A}$, $\\sec A$\nand $\\cot A$ respectively. Note that the ratios $\\mathbf{cosec A}$, $\\mathbf{sec A}$ and $\\mathbf{cot A}$ are respectively,\nthe reciprocals of the ratios $\\sin A$, $\\cos A$ and $\\tan A$."
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.3,
+            1422.9,
+            1045.1,
+            1579.3
+          ],
+          "conf": 0.925,
+          "text": "Also, observe that $\\tan A = \\frac{BC}{AB} = \\frac{\\frac{BC}{AC}}{\\frac{AB}{AC}} = \\frac{\\sin A}{\\cos A}$ and $\\cot A = \\frac{\\cos A}{\\sin A}$."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1570.9,
+            1178.1,
+            1656.4
+          ],
+          "conf": 0.887,
+          "text": "So, the **trigonometric ratios** of an acute angle in a right triangle express the\nrelationship between the angle and the length of its sides."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1653.2,
+            1179.1,
+            1738.1
+          ],
+          "conf": 0.875,
+          "text": "Why don't you try to define the trigonometric ratios for angle C in the right\ntriangle? (See Fig. 8.5)"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0077_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            128.3,
+            274.0,
+            1161.9,
+            928.3
+          ],
+          "conf": 0.669,
+          "text": "The first use of the idea of ‘**sine**’ in the way we use\nit today was in the work *Aryabhatiyam* by Aryabhata,\nin A.D. 500. Aryabhata used the word *ardha-jya*\nfor the half-chord, which was shortened to *jya* or\n*jiva* in due course. When the *Aryabhatiyam* was\ntranslated into Arabic, the word *jiva* was retained as\nit is. The word *jiva* was translated into *sinus*, which\nmeans curve, when the Arabic version was translated\ninto Latin. Soon the word *sinus*, also used as *sine*,\nbecame common in mathematical texts throughout\nEurope. An English Professor of astronomy Edmund\nGunter (1581–1626), first used the abbreviated\nnotation ‘**sin**’.\n\nThe origin of the terms ‘**cosine**’ and ‘**tangent**’ was much later. The cosine function\narose from the need to compute the sine of the complementary angle. Aryabhatta\ncalled it **kotijya**. The name **cosinus** originated with Edmund Gunter. In 1674, the\nEnglish Mathematician Sir Jonas Moore first used the abbreviated notation ‘**cos**’."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            952.5,
+            779.6,
+            1182.4
+          ],
+          "conf": 0.96,
+          "text": "Remark : Note that the symbol $\\sin A$ is used as an\nabbreviation for ‘the sine of the angle A’. $\\sin A$ is $not$\nthe product of ‘$\\sin$’ and A. ‘$\\sin$’ separated from A\nhas no meaning. Similarly, $\\cos A$ is $not$ the product of\n‘$\\cos$’ and A. Similar interpretations follow for other\ntrigonometric ratios also."
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            782.7,
+            981.7,
+            1162.7,
+            1336.3
+          ],
+          "conf": 0.95,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            903.0,
+            1361.4,
+            1033.1,
+            1411.7
+          ],
+          "conf": 0.882,
+          "text": "Fig. 8.6"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1182.6,
+            778.6,
+            1449.7
+          ],
+          "conf": 0.961,
+          "text": "Now, if we take a point P on the hypotenuse\nAC or a point Q on AC extended, of the right triangle\nABC and draw PM perpendicular to AB and QN\nperpendicular to AB extended (see Fig. 8.6), how\nwill the trigonometric ratios of $\\angle A$ in $\\Delta$ PAM differ\nfrom those of $\\angle A$ in $\\Delta$ CAB or from those of $\\angle A$ in\n$\\Delta$ QAN?"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1450.8,
+            1178.7,
+            1607.0
+          ],
+          "conf": 0.947,
+          "text": "To answer this, first look at these triangles. Is $\\Delta$ PAM similar to $\\Delta$ CAB? From\nChapter 6, recall the AA similarity criterion. Using the criterion, you will see that the\ntriangles PAM and CAB are similar. Therefore, by the property of similar triangles,\nthe corresponding sides of the triangles are proportional."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            1609.5,
+            799.9,
+            1699.7
+          ],
+          "conf": 0.745,
+          "text": "So, we have $\\frac{\\text{AM}}{\\text{AB}} = \\frac{\\text{AP}}{\\text{AC}} = \\frac{\\text{MP}}{\\text{BC}}.$"
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0077_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            261.2,
+            824.5,
+            354.5
+          ],
+          "conf": 0.907,
+          "text": "From this, we find $$\\frac{\\mathrm{MP}}{\\mathrm{AP}} = \\frac{\\mathrm{BC}}{\\mathrm{AC}} = \\sin \\mathrm{A}.$$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            351.1,
+            1132.3,
+            444.2
+          ],
+          "conf": 0.923,
+          "text": "Similarly, $\\frac{\\mathrm{AM}}{\\mathrm{AP}}=\\frac{\\mathrm{AB}}{\\mathrm{AC}}=\\cos \\mathrm{A}, \\frac{\\mathrm{MP}}{\\mathrm{AM}}=\\frac{\\mathrm{BC}}{\\mathrm{AB}}=\\tan \\mathrm{A}$ and so on."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            444.8,
+            1178.5,
+            529.5
+          ],
+          "conf": 0.951,
+          "text": "This shows that the trigonometric ratios of angle A in $\\Delta$ PAM not differ from\nthose of angle A in $\\Delta$ CAB."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            530.7,
+            1178.2,
+            613.9
+          ],
+          "conf": 0.946,
+          "text": "In the same way, you should check that the value of $\\sin A$ (and also of other\ntrigonometric ratios) remains the same in $\\Delta$ QAN also."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            614.5,
+            1179.5,
+            734.5
+          ],
+          "conf": 0.96,
+          "text": "From our observations, it is now clear that the values of the trigonometric\nratios of an angle do not vary with the lengths of the sides of the triangle, if\nthe angle remains the same."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            734.5,
+            1178.3,
+            929.5
+          ],
+          "conf": 0.972,
+          "text": "**Note :** For the sake of convenience, we may write $\\sin^2 A$, $\\cos^2 A$, etc., in place of\n$(\\sin A)^2$, $(\\cos A)^2$, etc., respectively. But $\\csc A = (\\sin A)^{-1} \\neq \\sin^{-1} A$ (it is called sine\ninverse $A$). $\\sin^{-1} A$ has a different meaning, which will be discussed in higher classes.\nSimilar conventions hold for the other trigonometric ratios as well. Sometimes, the\nGreek letter $\\theta$ (theta) is also used to denote an angle."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            930.0,
+            1177.4,
+            1013.6
+          ],
+          "conf": 0.936,
+          "text": "We have defined six trigonometric ratios of an acute angle. If we know any one\nof the ratios, can we obtain the other ratios? Let us see."
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.2,
+            1004.1,
+            670.9,
+            1089.7
+          ],
+          "conf": 0.78,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1014.6,
+            1177.9,
+            1403.2
+          ],
+          "conf": 0.894,
+          "text": "If in a right triangle ABC, $\\sin A = \\frac{1}{3}$,\nthen this means that $\\frac{\\text{BC}}{\\text{AC}} = \\frac{1}{3}$, i.e., the\nlengths of the sides BC and AC of the triangle\nABC are in the ratio $1:3$ (see Fig. 8.7). So if\nBC is equal to $k$, then AC will be $3k$, where\n$k$ is any positive number. To determine other\ntrigonometric ratios for the angle A, we need to find the length of the third side\nAB. Do you remember the Pythagoras theorem? Let us use it to determine the\nrequired length AB."
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            401.1,
+            1395.0,
+            1058.3,
+            1447.0
+          ],
+          "conf": 0.875,
+          "text": "$$AB^2 = AC^2 - BC^2 = (3k)^2 - (k)^2 = 8k^2 = (2\\sqrt{2} k)^2$$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1447.4,
+            623.6,
+            1500.4
+          ],
+          "conf": 0.829,
+          "text": "Therefore, $\\text{AB} = \\pm 2\\sqrt{2}k$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            1505.4,
+            961.1,
+            1562.8
+          ],
+          "conf": 0.851,
+          "text": "So, we get $\\text{AB} = 2\\sqrt{2}k \\quad (\\text{Why is AB not } -2\\sqrt{2}k ?)$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            1561.8,
+            728.4,
+            1656.8
+          ],
+          "conf": 0.883,
+          "text": "Now, $\\cos A = \\frac{AB}{AC} = \\frac{2\\sqrt{2}k}{3k} = \\frac{2\\sqrt{2}}{3}$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1657.4,
+            994.0,
+            1706.4
+          ],
+          "conf": 0.884,
+          "text": "Similarly, you can obtain the other trigonometric ratios of the angle A."
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0077_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            257.1,
+            1179.2,
+            344.1
+          ],
+          "conf": 0.928,
+          "text": "Remark : Since the hypotenuse is the longest side in a right triangle, the value of\n$\\sin A$ or $\\cos A$ is always less than 1 (or, in particular, equal to 1)."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            343.9,
+            537.9,
+            391.8
+          ],
+          "conf": 0.872,
+          "text": "Let us consider some examples."
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            407.2,
+            779.6,
+            535.4
+          ],
+          "conf": 0.8,
+          "text": "Example 1 : Given $\\tan A = \\frac{4}{3}$, find the other\ntrigonometric ratios of the angle A."
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            832.4,
+            386.3,
+            1146.5,
+            771.6
+          ],
+          "conf": 0.961,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            535.8,
+            778.7,
+            620.5
+          ],
+          "conf": 0.888,
+          "text": "Solution : Let us first draw a right $\\Delta$ ABC\n(see Fig 8.8)."
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            911.7,
+            778.4,
+            1039.2,
+            827.5
+          ],
+          "conf": 0.888,
+          "text": "Fig. 8.8"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            624.0,
+            610.9,
+            714.2
+          ],
+          "conf": 0.82,
+          "text": "Now, we know that $\\tan A = \\frac{BC}{AB} = \\frac{4}{3}$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            717.2,
+            778.2,
+            803.1
+          ],
+          "conf": 0.917,
+          "text": "Therefore, if BC $= 4k$, then AB $= 3k$, where $k$ is a\npositive number."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            803.1,
+            751.1,
+            851.6
+          ],
+          "conf": 0.869,
+          "text": "Now, by using the Pythagoras Theorem, we have"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            122.6,
+            849.7,
+            966.6,
+            944.7
+          ],
+          "conf": 0.526,
+          "text": "$$AC^2 = AB^2 + BC^2 = (4k)^2 + (3k)^2 = 25k^2$$\nSo, $AC = 5k$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            947.0,
+            982.3,
+            995.0
+          ],
+          "conf": 0.902,
+          "text": "Now, we can write all the trigonometric ratios using their definitions."
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            413.3,
+            998.4,
+            724.4,
+            1176.5
+          ],
+          "conf": 0.678,
+          "text": "$$\\sin A = \\frac{BC}{AC} = \\frac{4k}{5k} = \\frac{4}{5}$$\n$$\\cos A = \\frac{AB}{AC} = \\frac{3k}{5k} = \\frac{3}{5}$$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            1179.7,
+            1104.4,
+            1274.7
+          ],
+          "conf": 0.852,
+          "text": "Therefore, $\\cot A = \\frac{1}{\\tan A} = \\frac{3}{4}$, $\\csc A = \\frac{1}{\\sin A} = \\frac{5}{4}$ and $\\sec A = \\frac{1}{\\cos A} = \\frac{5}{3}$."
+        },
+        {
+          "order": 13,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1299.2,
+            600.1,
+            1430.9
+          ],
+          "conf": 0.823,
+          "text": "Example 2 : If $\\angle \\text{ B}$ and $\\angle \\text{ Q}$ are\nacute angles such that $\\sin \\text{ B} = \\sin \\text{ Q}$,\nthen prove that $\\angle \\text{ B} = \\angle \\text{ Q}$."
+        },
+        {
+          "order": 14,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            603.1,
+            1269.8,
+            1174.5,
+            1552.1
+          ],
+          "conf": 0.955,
+          "text": ""
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1435.4,
+            598.8,
+            1566.5
+          ],
+          "conf": 0.858,
+          "text": "Solution : Let us consider two right\ntriangles ABC and PQR where\n$\\sin B = \\sin Q$ (see Fig. 8.9)."
+        },
+        {
+          "order": 16,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            825.0,
+            1559.1,
+            953.4,
+            1608.9
+          ],
+          "conf": 0.851,
+          "text": "Fig. 8.9"
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1575.7,
+            704.2,
+            1655.5
+          ],
+          "conf": 0.754,
+          "text": "We have $\\sin \\mathrm{B} = \\frac{\\mathrm{AC}}{\\mathrm{AB}}$"
+        },
+        {
+          "order": 18,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1657.4,
+            701.7,
+            1737.5
+          ],
+          "conf": 0.779,
+          "text": "and $\\sin Q = \\frac{PR}{PQ}$"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0077_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            273.0,
+            705.6,
+            365.2
+          ],
+          "conf": 0.919,
+          "text": "Then $\\frac{\\mathrm{AC}}{\\mathrm{AB}} = \\frac{\\mathrm{PR}}{\\mathrm{PQ}}$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            377.7,
+            1179.0,
+            462.6
+          ],
+          "conf": 0.902,
+          "text": "Therefore, $\\frac{\\text{AC}}{\\text{PR}} = \\frac{\\text{AB}}{\\text{PQ}} = k$, say (1)"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            464.0,
+            542.5,
+            513.0
+          ],
+          "conf": 0.91,
+          "text": "Now, using Pythagoras theorem,"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            551.9,
+            509.8,
+            825.0,
+            577.8
+          ],
+          "conf": 0.692,
+          "text": "$$ \\mathrm{BC} = \\sqrt{\\mathrm{AB}^2 - \\mathrm{AC}^2} $$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            580.6,
+            825.2,
+            644.3
+          ],
+          "conf": 0.874,
+          "text": "and $QR = \\sqrt{PQ^2 - PR^2}$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            653.2,
+            1178.2,
+            776.3
+          ],
+          "conf": 0.936,
+          "text": "So, $\\frac{\\mathrm{BC}}{\\mathrm{QR}} = \\frac{\\sqrt{\\mathrm{AB}^2 - \\mathrm{AC}^2}}{\\sqrt{\\mathrm{PQ}^2 - \\mathrm{PR}^2}} = \\frac{\\sqrt{k^2\\mathrm{PQ}^2 - k^2\\mathrm{PR}^2}}{\\sqrt{\\mathrm{PQ}^2 - \\mathrm{PR}^2}} = \\frac{k\\sqrt{\\mathrm{PQ}^2 - \\mathrm{PR}^2}}{\\sqrt{\\mathrm{PQ}^2 - \\mathrm{PR}^2}} = k$ \\hfill (2)"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            773.5,
+            470.1,
+            821.8
+          ],
+          "conf": 0.893,
+          "text": "From (1) and (2), we have"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            541.6,
+            821.8,
+            791.4,
+            916.6
+          ],
+          "conf": 0.866,
+          "text": "$$ \\frac{\\mathrm{AC}}{\\mathrm{PR}} = \\frac{\\mathrm{AB}}{\\mathrm{PQ}} = \\frac{\\mathrm{BC}}{\\mathrm{QR}} $$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            923.2,
+            1052.9,
+            973.7
+          ],
+          "conf": 0.909,
+          "text": "Then, by using Theorem 6.4, $\\Delta$ ACB $\\sim \\Delta$ PRQ and therefore, $\\angle \\mathrm{B} = \\angle \\mathrm{Q}$."
+        },
+        {
+          "order": 9,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            829.3,
+            969.8,
+            1178.2,
+            1303.4
+          ],
+          "conf": 0.963,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            986.7,
+            1073.4,
+            1720.1
+          ],
+          "conf": 0.752,
+          "text": "Example 3 : Consider $\\Delta$ ACB, right-angled at C, in\nwhich AB = 29 units, BC = 21 units and $\\angle$ ABC = $\\theta$\n(see Fig. 8.10). Determine the values of\n(i) $\\cos^2 \\theta + \\sin^2 \\theta$,\n(ii) $\\cos^2 \\theta - \\sin^2 \\theta$.\nSolution : In $\\Delta$ ACB, we have\n$$AC = \\sqrt{AB^2 - BC^2} = \\sqrt{(29)^2 - (21)^2}$$\n$$= \\sqrt{(29 - 21)(29 + 21)} = \\sqrt{(8)(50)} = \\sqrt{400} = 20 \\text{units}$$\nSo, $\\sin \\theta = \\frac{AC}{AB} = \\frac{20}{29}$, $\\cos \\theta = \\frac{BC}{AB} = \\frac{21}{29}$.\nNow, (i) $\\cos^2 \\theta + \\sin^2 \\theta = \\left( \\frac{20}{29} \\right)^2 + \\left( \\frac{21}{29} \\right)^2 = \\frac{20^2 + 21^2}{29^2} = \\frac{400 + 441}{841} = 1$,\nand (ii) $\\cos^2 \\theta - \\sin^2 \\theta = \\left( \\frac{21}{29} \\right)^2 - \\left( \\frac{20}{29} \\right)^2 = \\frac{(21 + 20)(21 - 20)}{29^2} = \\frac{41}{841}$."
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0077_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            279.1,
+            817.8,
+            410.8
+          ],
+          "conf": 0.877,
+          "text": "Example 4 : In a right triangle ABC, right-angled at B,\nif $\\tan A = 1$, then verify that\n$2 \\sin A \\cos A = 1$."
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            843.8,
+            278.9,
+            1143.1,
+            555.8
+          ],
+          "conf": 0.959,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            923.4,
+            562.8,
+            1066.9,
+            611.8
+          ],
+          "conf": 0.92,
+          "text": "Fig. 8.11"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            427.1,
+            830.7,
+            516.4
+          ],
+          "conf": 0.714,
+          "text": "Solution : In $\\Delta$ ABC, $\\tan A = \\frac{BC}{AB} = 1$ (see Fig 8.11)"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.3,
+            534.7,
+            701.2,
+            584.8
+          ],
+          "conf": 0.819,
+          "text": "i.e.,                                                                                              BC = AB"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.5,
+            596.2,
+            740.9,
+            645.8
+          ],
+          "conf": 0.873,
+          "text": "Let AB = BC = $k$, where $k$ is a positive number."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            666.7,
+            916.6,
+            827.6
+          ],
+          "conf": 0.788,
+          "text": "Now, $\\text{AC} = \\sqrt{\\text{AB}^2 + \\text{BC}^2}$\n\n$= \\sqrt{(k)^2 + (k)^2} = k\\sqrt{2}$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            860.1,
+            1135.3,
+            955.3
+          ],
+          "conf": 0.836,
+          "text": "Therefore, $\\sin A = \\frac{BC}{AC} = \\frac{1}{\\sqrt{2}}$ and $\\cos A = \\frac{AB}{AC} = \\frac{1}{\\sqrt{2}}$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            975.3,
+            1113.7,
+            1077.1
+          ],
+          "conf": 0.811,
+          "text": "So, $2 \\sin A \\cos A = 2\\left(\\frac{1}{\\sqrt{2}}\\right)\\left(\\frac{1}{\\sqrt{2}}\\right) = 1$, which is the required value."
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1086.8,
+            933.5,
+            1701.6
+          ],
+          "conf": 0.73,
+          "text": "Example 5 : In $\\Delta$ OPQ, right-angled at P,\nOP = 7 cm and OQ – PQ = 1 cm (see Fig. 8.12).\nDetermine the values of $\\sin$ Q and $\\cos$ Q.\n\nSolution : In $\\Delta$ OPQ, we have\n\n$$OQ^2 = OP^2 + PQ^2$$\n\ni.e., $$(1 + PQ)^2 = OP^2 + PQ^2 \\quad \\text{(Why?)}$$\n\ni.e., $1 + PQ^2 + 2PQ = OP^2 + PQ^2$\n\ni.e., $1 + 2PQ = 7^2 \\quad \\text{(Why?)}$\n\ni.e., $PQ = 24 \\text{ cm and } OQ = 1 + PQ = 25 \\text{ cm}$\n\nSo, $\\sin Q = \\frac{7}{25}$ and $\\cos Q = \\frac{24}{25}$."
+        },
+        {
+          "order": 10,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            955.4,
+            1105.0,
+            1145.8,
+            1569.6
+          ],
+          "conf": 0.957,
+          "text": ""
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            977.7,
+            1581.9,
+            1123.3,
+            1630.6
+          ],
+          "conf": 0.875,
+          "text": "Fig. 8.12"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0077_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.4,
+            256.5,
+            772.6,
+            306.7
+          ],
+          "conf": 0.85,
+          "text": "EXERCISE 8.1"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.5,
+            313.5,
+            941.6,
+            449.5
+          ],
+          "conf": 0.734,
+          "text": "**1.** In $\\Delta$ ABC, right-angled at B, AB = 24 cm, BC = 7 cm. Determine :\n(i) $\\sin A$, $\\cos A$\n(ii) $\\sin C$, $\\cos C$"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.4,
+            447.3,
+            554.6,
+            494.6
+          ],
+          "conf": 0.822,
+          "text": "2. In Fig. 8.13, find $\\tan P - \\cot R$."
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            908.3,
+            344.1,
+            1139.4,
+            648.7
+          ],
+          "conf": 0.958,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.2,
+            497.6,
+            686.9,
+            579.9
+          ],
+          "conf": 0.855,
+          "text": "3. If $\\sin A = \\frac{3}{4}$, calculate $\\cos A$ and $\\tan A$."
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            977.2,
+            650.2,
+            1123.3,
+            699.4
+          ],
+          "conf": 0.913,
+          "text": "Fig. 8.13"
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.3,
+            574.8,
+            677.2,
+            622.2
+          ],
+          "conf": 0.837,
+          "text": "4. Given 15 $\\cot A = 8$, find $\\sin A$ and $\\sec A$."
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.6,
+            625.7,
+            863.9,
+            709.1
+          ],
+          "conf": 0.873,
+          "text": "5. Given $\\sec \\theta = \\frac{13}{12}$, calculate all other trigonometric ratios."
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.8,
+            703.8,
+            1165.7,
+            751.6
+          ],
+          "conf": 0.849,
+          "text": "**6.** If $\\angle A$ and $\\angle B$ are acute angles such that $\\cos A = \\cos B$, then show that $\\angle A = \\angle B$."
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.1,
+            759.6,
+            967.2,
+            847.6
+          ],
+          "conf": 0.813,
+          "text": "7. If $\\cot \\theta = \\frac{7}{8}$, evaluate : (i) $\\frac{(1 + \\sin \\theta)(1 - \\sin \\theta)}{(1 + \\cos \\theta)(1 - \\cos \\theta)}$, (ii) $\\cot^2 \\theta$"
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.7,
+            855.4,
+            951.1,
+            944.1
+          ],
+          "conf": 0.845,
+          "text": "**8.** If $3 \\cot A = 4$, check whether $\\frac{1 - \\tan^2 A}{1 + \\tan^2 A} = \\cos^2 A - \\sin^2 A$ or not."
+        },
+        {
+          "order": 11,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.2,
+            938.4,
+            977.1,
+            1098.8
+          ],
+          "conf": 0.665,
+          "text": "9. In triangle ABC, right-angled at B, if $\\tan A = \\frac{1}{\\sqrt{3}}$, find the value of:\n(i) $\\sin A \\cos C + \\cos A \\sin C$\n(ii) $\\cos A \\cos C - \\sin A \\sin C$"
+        },
+        {
+          "order": 12,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.8,
+            1106.0,
+            1179.2,
+            1187.3
+          ],
+          "conf": 0.865,
+          "text": "**10.** In $\\Delta$ PQR, right- angled at Q, PR + QR = 25 cm and PQ = 5 cm. Determine the values of\n$\\sin \\text{P}$, $\\cos \\text{P}$ and $\\tan \\text{P}$."
+        },
+        {
+          "order": 13,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            144.4,
+            1196.6,
+            945.0,
+            1521.5
+          ],
+          "conf": 0.726,
+          "text": "11. State whether the following are true or false. Justify your answer.\n(i) The value of $\\tan A$ is always less than 1.\n(ii) $\\sec A = \\frac{12}{5}$ for some value of angle A.\n(iii) $\\cos A$ is the abbreviation used for the cosecant of angle A.\n(iv) $\\cot A$ is the product of $\\cot$ and A.\n(v) $\\sin \\theta = \\frac{4}{3}$ for some angle $\\theta$."
+        },
+        {
+          "order": 14,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.5,
+            1538.8,
+            838.9,
+            1591.2
+          ],
+          "conf": 0.893,
+          "text": "8.3 Trigonometric Ratios of Some Specific Angles"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1589.5,
+            1179.0,
+            1710.6
+          ],
+          "conf": 0.947,
+          "text": "From geometry, you are already familiar with the construction of angles of $30^{\\circ}$, $45^{\\circ}$,\n$60^{\\circ}$ and $90^{\\circ}$. In this section, we will find the values of the trigonometric ratios for these\nangles and, of course, for $0^{\\circ}$."
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0077_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.1,
+            257.1,
+            524.0,
+            306.9
+          ],
+          "conf": 0.871,
+          "text": "Trigonometric Ratios of $45^\\circ$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            305.7,
+            779.6,
+            426.2
+          ],
+          "conf": 0.952,
+          "text": "In $\\Delta$ ABC, right-angled at B, if one angle is $45^{\\circ}$, then\nthe other angle is also $45^{\\circ}$, i.e., $\\angle A = \\angle C = 45^{\\circ}$\n(see Fig. 8.14)."
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            919.8,
+            257.3,
+            1171.6,
+            496.3
+          ],
+          "conf": 0.961,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            977.6,
+            492.9,
+            1124.5,
+            542.6
+          ],
+          "conf": 0.923,
+          "text": "Fig. 8.14"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            426.6,
+            669.2,
+            475.9
+          ],
+          "conf": 0.84,
+          "text": "So, $\\text{BC} = \\text{AB} \\quad (\\text{Why?})$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            475.0,
+            504.4,
+            523.5
+          ],
+          "conf": 0.85,
+          "text": "Now, Suppose BC = AB = $a$."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            522.3,
+            951.7,
+            572.1
+          ],
+          "conf": 0.862,
+          "text": "Then by Pythagoras Theorem, $\\mathrm{AC}^2 = \\mathrm{AB}^2 + \\mathrm{BC}^2 = a^2 + a^2 = 2a^2$,"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            582.4,
+            549.8,
+            634.6
+          ],
+          "conf": 0.803,
+          "text": "and, therefore, $\\text{AC} = a\\sqrt{2}.$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            641.6,
+            854.4,
+            691.2
+          ],
+          "conf": 0.914,
+          "text": "Using the definitions of the trigonometric ratios, we have :"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            238.2,
+            703.8,
+            961.6,
+            802.4
+          ],
+          "conf": 0.893,
+          "text": "$$ \\sin 45^{\\circ} = \\frac{\\text{side opposite to angle } 45^{\\circ}}{\\text{hypotenuse}} = \\frac{\\text{BC}}{\\text{AC}} = \\frac{a}{a\\sqrt{2}} = \\frac{1}{\\sqrt{2}} $$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            230.4,
+            821.6,
+            957.7,
+            918.8
+          ],
+          "conf": 0.888,
+          "text": "$$\\cos 45^{\\circ} = \\frac{\\text{side adjacent to angle } 45^{\\circ}}{\\text{hypotenuse}} = \\frac{\\text{AB}}{\\text{AC}} = \\frac{a}{a\\sqrt{2}} = \\frac{1}{\\sqrt{2}}$$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            235.3,
+            942.0,
+            891.9,
+            1036.3
+          ],
+          "conf": 0.902,
+          "text": "$$ \\tan 45^{\\circ} = \\frac{\\text{side opposite to angle } 45^{\\circ}}{\\text{side adjacent to angle } 45^{\\circ}} = \\frac{\\text{BC}}{\\text{AB}} = \\frac{a}{a} = 1 $$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.0,
+            1060.0,
+            1174.9,
+            1156.7
+          ],
+          "conf": 0.893,
+          "text": "Also, $\\text{cosec } 45^{\\circ} = \\frac{1}{\\sin 45^{\\circ}} = \\sqrt{2}$, $\\sec 45^{\\circ} = \\frac{1}{\\cos 45^{\\circ}} = \\sqrt{2}$, $\\cot 45^{\\circ} = \\frac{1}{\\tan 45^{\\circ}} = 1$."
+        },
+        {
+          "order": 13,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.0,
+            1181.6,
+            635.0,
+            1232.0
+          ],
+          "conf": 0.869,
+          "text": "Trigonometric Ratios of $30^\\circ$ and $60^\\circ$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1230.1,
+            779.1,
+            1386.6
+          ],
+          "conf": 0.932,
+          "text": "Let us now calculate the trigonometric ratios of $30^{\\circ}$\nand $60^{\\circ}$. Consider an equilateral triangle ABC. Since\neach angle in an equilateral triangle is $60^{\\circ}$, therefore,\n$\\angle A = \\angle B = \\angle C = 60^{\\circ}$."
+        },
+        {
+          "order": 15,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            858.8,
+            1212.4,
+            1132.2,
+            1453.1
+          ],
+          "conf": 0.955,
+          "text": ""
+        },
+        {
+          "order": 16,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            921.4,
+            1453.9,
+            1068.6,
+            1502.5
+          ],
+          "conf": 0.87,
+          "text": "Fig. 8.15"
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1387.6,
+            778.4,
+            1471.4
+          ],
+          "conf": 0.89,
+          "text": "Draw the perpendicular AD from A to the side BC\n(see Fig. 8.15)."
+        },
+        {
+          "order": 18,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            1467.9,
+            873.9,
+            1597.1
+          ],
+          "conf": 0.755,
+          "text": "Now $\\Delta \\mathrm{ABD} \\cong \\Delta \\mathrm{ACD}$ (Why?)\nTherefore, $\\mathrm{BD}=\\mathrm{DC}$\nand $\\angle \\mathrm{BAD}=\\angle \\mathrm{CAD}$ (CPCT)"
+        },
+        {
+          "order": 19,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1593.7,
+            371.4,
+            1641.4
+          ],
+          "conf": 0.777,
+          "text": "Now observe that:"
+        },
+        {
+          "order": 20,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1634.4,
+            1177.9,
+            1720.1
+          ],
+          "conf": 0.891,
+          "text": "$\\Delta$ ABD is a right triangle, right-angled at D with $\\angle$ BAD $= 30^{\\circ}$ and $\\angle$ ABD $= 60^{\\circ}$\n(see Fig. 8.15)."
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0077_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.8,
+            191.5,
+            1177.0,
+            238.6
+          ],
+          "conf": 0.758,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.6,
+            192.1,
+            492.6,
+            237.7
+          ],
+          "conf": 0.518,
+          "text": "INTRODUCTION TO TRIGONOMETRY"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            257.3,
+            1177.8,
+            343.9
+          ],
+          "conf": 0.949,
+          "text": "As you know, for finding the trigonometric ratios, we need to know the lengths of the\nsides of the triangle. So, let us suppose that $\\text{AB} = 2a$."
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            357.6,
+            777.4,
+            445.9
+          ],
+          "conf": 0.891,
+          "text": "Then, $\\text{BD} = \\frac{1}{2}\\text{BC} = a$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            449.5,
+            883.1,
+            502.6
+          ],
+          "conf": 0.863,
+          "text": "and $\\mathrm{AD}^{2}=\\mathrm{AB}^{2}-\\mathrm{BD}^{2}=(2 a)^{2}-(a)^{2}=3 a^{2}$,"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            511.5,
+            715.9,
+            570.4
+          ],
+          "conf": 0.834,
+          "text": "Therefore, $AD = a\\sqrt{3}$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            123.2,
+            568.1,
+            981.6,
+            766.7
+          ],
+          "conf": 0.521,
+          "text": "Now, we have :\n$$\\sin 30^{\\circ} = \\frac{\\text{BD}}{\\text{AB}} = \\frac{a}{2a} = \\frac{1}{2}, \\cos 30^{\\circ} = \\frac{\\text{AD}}{\\text{AB}} = \\frac{a\\sqrt{3}}{2a} = \\frac{\\sqrt{3}}{2}$$\n$$\\tan 30^{\\circ} = \\frac{\\text{BD}}{\\text{AD}} = \\frac{a}{a\\sqrt{3}} = \\frac{1}{\\sqrt{3}}.$$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            771.2,
+            910.5,
+            950.0
+          ],
+          "conf": 0.735,
+          "text": "Also, $\\quad \\operatorname{cosec} 30^{\\circ}=\\frac{1}{\\sin 30^{\\circ}}=2, \\quad \\sec 30^{\\circ}=\\frac{1}{\\cos 30^{\\circ}}=\\frac{2}{\\sqrt{3}}$\n$\\cot 30^{\\circ}=\\frac{1}{\\tan 30^{\\circ}}=\\sqrt{3}$."
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            122.7,
+            958.0,
+            1017.0,
+            1163.4
+          ],
+          "conf": 0.65,
+          "text": "Similarly,\n$$\\sin 60^{\\circ} = \\frac{\\text{AD}}{\\text{AB}} = \\frac{a\\sqrt{3}}{2a} = \\frac{\\sqrt{3}}{2} , \\cos 60^{\\circ} = \\frac{1}{2} , \\tan 60^{\\circ} = \\sqrt{3} ,$$\n$$\\text{cosec } 60^{\\circ} = \\frac{2}{\\sqrt{3}} , \\sec 60^{\\circ} = 2 \\text{ and } \\cot 60^{\\circ} = \\frac{1}{\\sqrt{3}} .$$"
+        },
+        {
+          "order": 9,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.9,
+            1170.6,
+            616.3,
+            1221.7
+          ],
+          "conf": 0.884,
+          "text": "Trigonometric Ratios of $0^\\circ$ and $90^\\circ$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1224.0,
+            878.7,
+            1474.0
+          ],
+          "conf": 0.961,
+          "text": "Let us see what happens to the trigonometric ratios of angle\nA, if it is made smaller and smaller in the right triangle ABC\n(see Fig. 8.16), till it becomes zero. As $\\angle$ A gets smaller and\nsmaller, the length of the side BC decreases.The point C gets\ncloser to point B, and finally when $\\angle$ A becomes very close\nto $0^{\\circ}$, AC becomes almost the same as AB (see Fig. 8.17)."
+        },
+        {
+          "order": 11,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            929.9,
+            1245.5,
+            1099.8,
+            1419.3
+          ],
+          "conf": 0.93,
+          "text": ""
+        },
+        {
+          "order": 12,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            941.6,
+            1417.4,
+            1087.7,
+            1465.8
+          ],
+          "conf": 0.857,
+          "text": "Fig. 8.16"
+        },
+        {
+          "order": 13,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            117.4,
+            1491.1,
+            1185.5,
+            1668.8
+          ],
+          "conf": 0.922,
+          "text": ""
+        },
+        {
+          "order": 14,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            575.9,
+            1682.3,
+            720.3,
+            1731.7
+          ],
+          "conf": 0.848,
+          "text": "Fig. 8.17"
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0077_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            256.5,
+            1178.8,
+            391.8
+          ],
+          "conf": 0.849,
+          "text": "When $\\angle A$ is very close to $0^{\\circ}$, BC gets very close to $0$ and so the value of\n$\\sin A = \\frac{BC}{AC}$ is very close to $0$. Also, when $\\angle A$ is very close to $0^{\\circ}$, AC is nearly the"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            387.8,
+            931.8,
+            478.2
+          ],
+          "conf": 0.784,
+          "text": "same as AB and so the value of $\\cos A = \\frac{AB}{AC}$ is very close to 1."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            484.1,
+            1178.5,
+            574.8
+          ],
+          "conf": 0.945,
+          "text": "This helps us to see how we can define the values of $\\sin A$ and $\\cos A$ when\n$A = 0^\\circ$. We define : $\\mathbf{sin}\\ \\mathbf{0}^\\circ = \\mathbf{0}$ and $\\mathbf{cos}\\ \\mathbf{0}^\\circ = \\mathbf{1}$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.5,
+            579.9,
+            490.9,
+            629.5
+          ],
+          "conf": 0.918,
+          "text": "Using these, we have :"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.0,
+            641.4,
+            1043.6,
+            738.7
+          ],
+          "conf": 0.9,
+          "text": "$$\\tan 0^{\\circ} = \\frac{\\sin 0^{\\circ}}{\\cos 0^{\\circ}} = 0, \\cot 0^{\\circ} = \\frac{1}{\\tan 0^{\\circ}}, \\text{ which is not defined. (Why?)}$$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.7,
+            744.0,
+            1178.7,
+            842.1
+          ],
+          "conf": 0.896,
+          "text": "$\\sec 0^{\\circ} = \\frac{1}{\\cos 0^{\\circ}} = 1$ and $\\csc 0^{\\circ} = \\frac{1}{\\sin 0^{\\circ}}$, which is again not defined.(Why?)"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            837.1,
+            1179.1,
+            1101.6
+          ],
+          "conf": 0.976,
+          "text": "Now, let us see what happens to the trigonometric ratios of $\\angle A$, when it is made\nlarger and larger in $\\Delta ABC$ till it becomes $90^\\circ$. As $\\angle A$ gets larger and larger, $\\angle C$ gets\nsmaller and smaller. Therefore, as in the case above, the length of the side AB goes on\ndecreasing. The point A gets closer to point B. Finally when $\\angle A$ is very close to $90^\\circ$,\n$\\angle C$ becomes very close to $0^\\circ$ and the side AC almost coincides with side BC\n(see Fig. 8.18)."
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            132.2,
+            1124.8,
+            1170.6,
+            1302.3
+          ],
+          "conf": 0.94,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            575.2,
+            1310.2,
+            721.1,
+            1361.2
+          ],
+          "conf": 0.881,
+          "text": "Fig. 8.18"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1371.8,
+            1178.3,
+            1506.9
+          ],
+          "conf": 0.946,
+          "text": "When $\\angle C$ is very close to $0^{\\circ}$, $\\angle A$ is very close to $90^{\\circ}$, side AC is nearly the\nsame as side BC, and so $\\sin A$ is very close to $1$. Also when $\\angle A$ is very close to $90^{\\circ}$,\n$\\angle C$ is very close to $0^{\\circ}$, and the side AB is nearly zero, so $\\cos A$ is very close to $0$."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            1510.3,
+            917.4,
+            1562.9
+          ],
+          "conf": 0.824,
+          "text": "So, we define : $\\sin 90^{\\circ} = 1$ and $\\cos 90^{\\circ} = 0$."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.6,
+            1565.6,
+            978.0,
+            1617.7
+          ],
+          "conf": 0.881,
+          "text": "Now, why don’t you find the other trigonometric ratios of $90^\\circ$?"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1621.1,
+            1177.8,
+            1713.4
+          ],
+          "conf": 0.921,
+          "text": "We shall now give the values of all the trigonometric ratios of $0^{\\circ}$, $30^{\\circ}$, $45^{\\circ}$, $60^{\\circ}$\nand $90^{\\circ}$ in Table 8.1, for ready reference."
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0077_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Table-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            574.0,
+            256.5,
+            723.3,
+            304.9
+          ],
+          "conf": 0.879,
+          "text": "Table 8.1"
+        },
+        {
+          "order": 1,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            120.1,
+            304.0,
+            1178.2,
+            1059.1
+          ],
+          "conf": 0.988,
+          "text": "<table>\n<thead>\n<tr>\n<th>$\\angle A$</th>\n<th>$0^\\circ$</th>\n<th>$30^\\circ$</th>\n<th>$45^\\circ$</th>\n<th>$60^\\circ$</th>\n<th>$90^\\circ$</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$\\sin A$</td>\n<td>0</td>\n<td>$\\frac{1}{2}$</td>\n<td>$\\frac{1}{\\sqrt{2}}$</td>\n<td>$\\frac{\\sqrt{3}}{2}$</td>\n<td>1</td>\n</tr>\n<tr>\n<td>$\\cos A$</td>\n<td>1</td>\n<td>$\\frac{\\sqrt{3}}{2}$</td>\n<td>$\\frac{1}{\\sqrt{2}}$</td>\n<td>$\\frac{1}{2}$</td>\n<td>0</td>\n</tr>\n<tr>\n<td>$\\tan A$</td>\n<td>0</td>\n<td>$\\frac{1}{\\sqrt{3}}$</td>\n<td>1</td>\n<td>$\\sqrt{3}$</td>\n<td>Not defined</td>\n</tr>\n<tr>\n<td>cosec A</td>\n<td>Not defined</td>\n<td>2</td>\n<td>$\\sqrt{2}$</td>\n<td>$\\frac{2}{\\sqrt{3}}$</td>\n<td>1</td>\n</tr>\n<tr>\n<td>sec A</td>\n<td>1</td>\n<td>$\\frac{2}{\\sqrt{3}}$</td>\n<td>$\\sqrt{2}$</td>\n<td>2</td>\n<td>Not defined</td>\n</tr>\n<tr>\n<td>cot A</td>\n<td>Not defined</td>\n<td>$\\sqrt{3}$</td>\n<td>1</td>\n<td>$\\frac{1}{\\sqrt{3}}$</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1058.1,
+            1178.5,
+            1142.1
+          ],
+          "conf": 0.932,
+          "text": "**Remark :** From the table above you can observe that as $\\angle$ A increases from $0^\\circ$ to\n$90^\\circ$, $\\sin$ A increases from 0 to 1 and $\\cos$ A decreases from 1 to 0."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            184.7,
+            1142.7,
+            1177.9,
+            1191.3
+          ],
+          "conf": 0.905,
+          "text": "Let us illustrate the use of the values in the table above through some examples."
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1203.1,
+            774.7,
+            1714.4
+          ],
+          "conf": 0.599,
+          "text": "Example 6 : In $\\Delta$ ABC, right-angled at B,\nAB = 5 cm and $\\angle$ ACB = $30^\\circ$ (see Fig. 8.19).\nDetermine the lengths of the sides BC and AC.\nSolution : To find the length of the side BC, we will\nchoose the trigonometric ratio involving BC and the\ngiven side AB. Since BC is the side adjacent to angle\nC and AB is the side opposite to angle C, therefore\n\n$$\\frac{\\text{AB}}{\\text{BC}} = \\tan \\text{C}$$\n\ni.e., $$\\frac{5}{\\text{BC}} = \\tan 30^\\circ = \\frac{1}{\\sqrt{3}}$$\n\nwhich gives $$\\text{BC} = 5\\sqrt{3} \\text{ cm}$$"
+        },
+        {
+          "order": 5,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            788.3,
+            1212.6,
+            1179.2,
+            1430.7
+          ],
+          "conf": 0.961,
+          "text": ""
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            910.6,
+            1433.2,
+            1055.3,
+            1483.3
+          ],
+          "conf": 0.867,
+          "text": "Fig. 8.19"
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0077_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            258.2,
+            710.1,
+            307.2
+          ],
+          "conf": 0.921,
+          "text": "To find the length of the side AC, we consider"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            442.1,
+            320.5,
+            839.3,
+            411.0
+          ],
+          "conf": 0.903,
+          "text": "$$ \\sin 30^{\\circ} = \\frac{\\text{AB}}{\\text{AC}} \\qquad (\\text{Why?}) $$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            430.7,
+            640.8,
+            520.4
+          ],
+          "conf": 0.906,
+          "text": "i.e., $\\frac{1}{2} = \\frac{5}{AC}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.4,
+            523.1,
+            663.9,
+            574.0
+          ],
+          "conf": 0.878,
+          "text": "i.e.,                                                                    $AC = 10 \\text{ cm}$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            571.9,
+            1178.1,
+            658.3
+          ],
+          "conf": 0.95,
+          "text": "Note that alternatively we could have used Pythagoras theorem to determine the third\nside in the example above,"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.2,
+            667.7,
+            1107.1,
+            734.7
+          ],
+          "conf": 0.887,
+          "text": "i.e., $AC = \\sqrt{AB^2 + BC^2} = \\sqrt{5^2 + (5\\sqrt{3})^2} \\text{ cm} = 10\\text{cm}.$"
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            753.4,
+            699.8,
+            875.0
+          ],
+          "conf": 0.836,
+          "text": "Example 7 : In $\\Delta$ PQR, right-angled at\nQ (see Fig. 8.20), PQ = 3 cm and PR = 6 cm.\nDetermine $\\angle$ QPR and $\\angle$ PRQ."
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            753.6,
+            799.1,
+            1141.3,
+            1015.0
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            875.1,
+            700.7,
+            925.1
+          ],
+          "conf": 0.844,
+          "text": "Solution : Given $PQ = 3$ cm and $PR = 6$ cm."
+        },
+        {
+          "order": 9,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            883.9,
+            1016.5,
+            1029.2,
+            1066.3
+          ],
+          "conf": 0.901,
+          "text": "Fig. 8.20"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            937.3,
+            624.9,
+            1026.2
+          ],
+          "conf": 0.848,
+          "text": "Therefore, $\\frac{\\mathrm{PQ}}{\\mathrm{PR}} = \\sin \\mathrm{R}$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1045.0,
+            643.5,
+            1136.0
+          ],
+          "conf": 0.877,
+          "text": "or $\\sin R = \\frac{3}{6} = \\frac{1}{2}$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            1145.3,
+            604.9,
+            1196.6
+          ],
+          "conf": 0.835,
+          "text": "So, $\\angle PRQ = 30^{\\circ}$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            1200.8,
+            738.8,
+            1252.5
+          ],
+          "conf": 0.844,
+          "text": "and therefore, $\\angle QPR = 60^{\\circ}$. (Why?)"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1259.9,
+            1178.1,
+            1379.0
+          ],
+          "conf": 0.949,
+          "text": "You may note that if one of the sides and any other part (either an acute angle or any\nside) of a right triangle is known, the remaining sides and angles of the triangle can be\ndetermined."
+        },
+        {
+          "order": 15,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1379.4,
+            1179.8,
+            1704.7
+          ],
+          "conf": 0.572,
+          "text": "Example 8 : If $\\sin (A - B) = \\frac{1}{2}$, $\\cos (A + B) = \\frac{1}{2}$, $0^{\\circ} < A + B \\leq 90^{\\circ}$, $A > B$, find A\nand B.\n\nSolution : Since, $\\sin (A - B) = \\frac{1}{2}$, therefore, $A - B = 30^{\\circ}$ (Why?) (1)\n\nAlso, since $\\cos (A + B) = \\frac{1}{2}$, therefore, $A + B = 60^{\\circ}$ (Why?) (2)\n\nSolving (1) and (2), we get : $A = 45^{\\circ}$ and $B = 15^{\\circ}$."
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1660.8,
+            772.6,
+            1711.3
+          ],
+          "conf": 0.806,
+          "text": "Solving (1) and (2), we get : $A = 45^{\\circ}$ and $B = 15^{\\circ}$."
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0077_p0014.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.7,
+            276.1,
+            773.5,
+            327.6
+          ],
+          "conf": 0.873,
+          "text": "EXERCISE 8.2"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.7,
+            334.4,
+            482.2,
+            381.1
+          ],
+          "conf": 0.896,
+          "text": "1. Evaluate the following :"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            208.0,
+            388.4,
+            1110.1,
+            659.3
+          ],
+          "conf": 0.529,
+          "text": "(i) $\\sin 60^\\circ \\cos 30^\\circ + \\sin 30^\\circ \\cos 60^\\circ$\n(ii) $2 \\tan^2 45^\\circ + \\cos^2 30^\\circ - \\sin^2 60^\\circ$\n\n(iii) $\\frac{\\cos 45^\\circ}{\\sec 30^\\circ + \\text{cosec } 30^\\circ}$\n(iv) $\\frac{\\sin 30^\\circ + \\tan 45^\\circ - \\text{cosec } 60^\\circ}{\\sec 30^\\circ + \\cos 60^\\circ + \\cot 45^\\circ}$\n\n(v) $\\frac{5 \\cos^2 60^\\circ + 4 \\sec^2 30^\\circ - \\tan^2 45^\\circ}{\\sin^2 30^\\circ + \\cos^2 30^\\circ}$"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.4,
+            678.7,
+            789.5,
+            727.3
+          ],
+          "conf": 0.909,
+          "text": "2. Choose the correct option and justify your choice :"
+        },
+        {
+          "order": 4,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            215.0,
+            749.7,
+            1110.9,
+            889.2
+          ],
+          "conf": 0.881,
+          "text": "(i) $\\frac{2 \\tan 30^{\\circ}}{1 + \\tan^2 30^{\\circ}} =$\n\n(A) $\\sin 60^{\\circ}$ (B) $\\cos 60^{\\circ}$ (C) $\\tan 60^{\\circ}$ (D) $\\sin 30^{\\circ}$"
+        },
+        {
+          "order": 5,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            209.7,
+            901.5,
+            1050.5,
+            1041.2
+          ],
+          "conf": 0.909,
+          "text": "(ii) $\\frac{1 - \\tan^2 45^\\circ}{1 + \\tan^2 45^\\circ} =$\n\n(A) $\\tan 90^\\circ$          (B) 1          (C) $\\sin 45^\\circ$          (D) 0"
+        },
+        {
+          "order": 6,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            204.2,
+            1050.1,
+            1070.9,
+            1142.1
+          ],
+          "conf": 0.908,
+          "text": "(iii) $\\sin 2A = 2 \\sin A$ is true when $A =$\n(A) $0^\\circ$ (B) $30^\\circ$ (C) $45^\\circ$ (D) $60^\\circ$"
+        },
+        {
+          "order": 7,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            201.4,
+            1163.8,
+            1110.2,
+            1308.3
+          ],
+          "conf": 0.909,
+          "text": "(iv) $\\frac{2 \\tan 30^{\\circ}}{1 - \\tan^2 30^{\\circ}} =$\n\n(A) $\\cos 60^{\\circ}$ (B) $\\sin 60^{\\circ}$ (C) $\\tan 60^{\\circ}$ (D) $\\sin 30^{\\circ}$"
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.4,
+            1334.8,
+            1113.3,
+            1419.1
+          ],
+          "conf": 0.884,
+          "text": "3. If $\\tan (A + B) = \\sqrt{3}$ and $\\tan (A - B) = \\frac{1}{\\sqrt{3}}$; $0^{\\circ} < A + B \\leq 90^{\\circ}$; $A > B$, find A and B."
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.1,
+            1438.3,
+            944.2,
+            1486.4
+          ],
+          "conf": 0.868,
+          "text": "4. State whether the following are true or false. Justify your answer."
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            206.4,
+            1485.4,
+            772.5,
+            1705.6
+          ],
+          "conf": 0.916,
+          "text": "(i) $\\sin (A + B) = \\sin A + \\sin B$.\n(ii) The value of $\\sin \\theta$ increases as $\\theta$ increases.\n(iii) The value of $\\cos \\theta$ increases as $\\theta$ increases.\n(iv) $\\sin \\theta = \\cos \\theta$ for all values of $\\theta$.\n(v) $\\cot A$ is not defined for $A = 0^{\\circ}$."
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0077_p0015.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.0,
+            257.1,
+            537.0,
+            309.1
+          ],
+          "conf": 0.887,
+          "text": "8.4 Trigonometric Identities"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            309.1,
+            779.2,
+            503.5
+          ],
+          "conf": 0.971,
+          "text": "You may recall that an equation is called an identity\nwhen it is true for all values of the variables involved.\nSimilarly, an equation involving trigonometric ratios\nof an angle is called a **trigonometric identity**, if it is\ntrue for all values of the angle(s) involved."
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            899.6,
+            257.8,
+            1155.7,
+            574.2
+          ],
+          "conf": 0.959,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            956.2,
+            567.5,
+            1099.8,
+            616.4
+          ],
+          "conf": 0.919,
+          "text": "Fig. 8.21"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            504.6,
+            778.6,
+            624.3
+          ],
+          "conf": 0.953,
+          "text": "In this section, we will prove one trigonometric\nidentity, and use it further to prove other useful\ntrigonometric identities."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.6,
+            624.5,
+            871.4,
+            673.9
+          ],
+          "conf": 0.917,
+          "text": "In $\\Delta$ ABC, right-angled at B (see Fig. 8.21), we have:"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            453.6,
+            671.1,
+            1175.5,
+            722.0
+          ],
+          "conf": 0.88,
+          "text": "$$AB^2 + BC^2 = AC^2 \\tag{1}$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            719.7,
+            719.3,
+            769.9
+          ],
+          "conf": 0.907,
+          "text": "Dividing each term of (1) by $AC^2$, we get"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            440.6,
+            781.8,
+            721.8,
+            878.8
+          ],
+          "conf": 0.887,
+          "text": "$$ \\frac{\\mathrm{AB}^2}{\\mathrm{AC}^2} + \\frac{\\mathrm{BC}^2}{\\mathrm{AC}^2} = \\frac{\\mathrm{AC}^2}{\\mathrm{AC}^2} $$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            881.2,
+            747.5,
+            986.5
+          ],
+          "conf": 0.91,
+          "text": "i.e., $\\left(\\frac{\\mathrm{AB}}{\\mathrm{AC}}\\right)^2 + \\left(\\frac{\\mathrm{BC}}{\\mathrm{AC}}\\right)^2 = \\left(\\frac{\\mathrm{AC}}{\\mathrm{AC}}\\right)^2$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.9,
+            989.1,
+            1176.6,
+            1046.0
+          ],
+          "conf": 0.535,
+          "text": "i.e., $(\\cos A)^2 + (\\sin A)^2 = 1$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.6,
+            1041.8,
+            1175.1,
+            1090.2
+          ],
+          "conf": 0.861,
+          "text": "i.e., $\\cos^2 \\mathbf{A} + \\sin^2 \\mathbf{A} = 1$ (2)"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.4,
+            1107.1,
+            1175.5,
+            1157.1
+          ],
+          "conf": 0.847,
+          "text": "This is true for all A such that $0^{\\circ} \\leq A \\leq 90^{\\circ}$. So, this is a trigonometric identity."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.6,
+            1155.4,
+            679.2,
+            1205.0
+          ],
+          "conf": 0.824,
+          "text": "Let us now divide (1) by $AB^2$. We get"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            439.1,
+            1214.9,
+            721.1,
+            1314.0
+          ],
+          "conf": 0.88,
+          "text": "$$ \\frac{\\mathrm{AB}^2}{\\mathrm{AB}^2} + \\frac{\\mathrm{BC}^2}{\\mathrm{AB}^2} = \\frac{\\mathrm{AC}^2}{\\mathrm{AB}^2} $$"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            1317.3,
+            747.0,
+            1417.8
+          ],
+          "conf": 0.909,
+          "text": "or, $\\left(\\frac{\\mathrm{AB}}{\\mathrm{AB}}\\right)^{2}+\\left(\\frac{\\mathrm{BC}}{\\mathrm{AB}}\\right)^{2}=\\left(\\frac{\\mathrm{AC}}{\\mathrm{AB}}\\right)^{2}$"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.4,
+            1422.7,
+            1175.6,
+            1473.1
+          ],
+          "conf": 0.852,
+          "text": "i.e., $1 + \\tan^2 \\mathrm{A} = \\sec^2 \\mathrm{A}$ (3)"
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1470.0,
+            1176.5,
+            1554.2
+          ],
+          "conf": 0.918,
+          "text": "Is this equation true for $A = 0^{\\circ}$? Yes, it is. What about $A = 90^{\\circ}$? Well, $\\tan A$ and\nsec A are not defined for $A = 90^{\\circ}$. So, (3) is true for all A such that $0^{\\circ} \\le A < 90^{\\circ}$."
+        },
+        {
+          "order": 18,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            184.9,
+            1555.2,
+            886.7,
+            1605.1
+          ],
+          "conf": 0.871,
+          "text": "Let us see what we get on dividing (1) by $\\text{BC}^2$. We get"
+        },
+        {
+          "order": 19,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            439.7,
+            1612.7,
+            723.3,
+            1710.6
+          ],
+          "conf": 0.893,
+          "text": "$$ \\frac{\\mathrm{AB}^2}{\\mathrm{BC}^2} + \\frac{\\mathrm{BC}^2}{\\mathrm{BC}^2} = \\frac{\\mathrm{AC}^2}{\\mathrm{BC}^2} $$"
+        }
+      ],
+      "page": 15
+    },
+    {
+      "image": "0077_p0016.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.6,
+            282.1,
+            751.8,
+            390.1
+          ],
+          "conf": 0.937,
+          "text": "i.e., $\\left(\\frac{AB}{BC}\\right)^2 + \\left(\\frac{BC}{BC}\\right)^2 = \\left(\\frac{AC}{BC}\\right)^2$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            402.0,
+            1176.5,
+            453.0
+          ],
+          "conf": 0.902,
+          "text": "i.e., $\\cot^2 \\mathbf{A} + \\mathbf{1} = \\operatorname{cosec}^2 \\mathbf{A}$ (4)"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            455.2,
+            1176.5,
+            540.9
+          ],
+          "conf": 0.939,
+          "text": "Note that cosec A and cot A are not defined for A = $0^\\circ$. Therefore (4) is true for\nall A such that $0^\\circ < \\text{A} \\le 90^\\circ$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            540.5,
+            1176.6,
+            661.4
+          ],
+          "conf": 0.961,
+          "text": "Using these identities, we can express each trigonometric ratio in terms of other\ntrigonometric ratios, i.e., if any one of the ratios is known, we can also determine the\nvalues of other trigonometric ratios."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            662.1,
+            1175.8,
+            803.3
+          ],
+          "conf": 0.834,
+          "text": "Let us see how we can do this using these identities. Suppose we know that\n\n\n$$\\tan A = \\frac{1}{\\sqrt{3}} \\text{ . Then, } \\cot A = \\sqrt{3} \\text{ .}$$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            826.7,
+            1017.2,
+            925.3
+          ],
+          "conf": 0.876,
+          "text": "Since, $\\sec^2 A = 1 + \\tan^2 A = 1 + \\frac{1}{3} = \\frac{4}{3}$, $\\sec A = \\frac{2}{\\sqrt{3}}$, and $\\cos A = \\frac{\\sqrt{3}}{2}$."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.9,
+            939.0,
+            946.0,
+            1031.5
+          ],
+          "conf": 0.823,
+          "text": "Again, $\\sin A = \\sqrt{1 - \\cos^2 A} = \\sqrt{1 - \\frac{3}{4}} = \\frac{1}{2}$. Therefore, $\\csc A = 2$."
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1052.6,
+            1046.4,
+            1103.9
+          ],
+          "conf": 0.793,
+          "text": "Example 9 : Express the ratios $\\cos A$, $\\tan A$ and $\\sec A$ in terms of $\\sin A$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1112.6,
+            807.8,
+            1166.4
+          ],
+          "conf": 0.642,
+          "text": "Solution : Since $\\cos^2 A + \\sin^2 A = 1$, therefore,"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            515.7,
+            1183.3,
+            1122.2,
+            1252.5
+          ],
+          "conf": 0.819,
+          "text": "$$\\cos^2 A = 1 - \\sin^2 A, \\text{ i.e., } \\cos A = \\pm \\sqrt{1 - \\sin^2 A}$$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1279.5,
+            969.7,
+            1343.9
+          ],
+          "conf": 0.821,
+          "text": "This gives $\\cos A = \\sqrt{1 - \\sin^2 A}$ (Why?)"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1362.5,
+            1129.7,
+            1472.7
+          ],
+          "conf": 0.883,
+          "text": "Hence, $\\tan A = \\frac{\\sin A}{\\cos A} = \\frac{\\sin A}{\\sqrt{1 - \\sin^2 A}}$ and $\\sec A = \\frac{1}{\\cos A} = \\frac{1}{\\sqrt{1 - \\sin^2 A}}$"
+        },
+        {
+          "order": 12,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1486.4,
+            928.9,
+            1537.1
+          ],
+          "conf": 0.781,
+          "text": "Example 10 : Prove that $\\sec A (1 - \\sin A)(\\sec A + \\tan A) = 1$."
+        },
+        {
+          "order": 13,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1536.5,
+            273.8,
+            1584.6
+          ],
+          "conf": 0.615,
+          "text": "Solution :"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.2,
+            1599.2,
+            1172.0,
+            1704.5
+          ],
+          "conf": 0.84,
+          "text": "$$LHS = \\sec A (1 - \\sin A)(\\sec A + \\tan A) = \\left( \\frac{1}{\\cos A} \\right) (1 - \\sin A) \\left( \\frac{1}{\\cos A} + \\frac{\\sin A}{\\cos A} \\right)$$"
+        }
+      ],
+      "page": 16
+    },
+    {
+      "image": "0077_p0017.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            619.6,
+            263.3,
+            1113.5,
+            447.6
+          ],
+          "conf": 0.879,
+          "text": "$$ = \\frac{(1 - \\sin A)(1 + \\sin A)}{\\cos^2 A} = \\frac{1 - \\sin^2 A}{\\cos^2 A} $$\n\n$$ = \\frac{\\cos^2 A}{\\cos^2 A} = 1 = \\text{RHS} $$"
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            465.9,
+            844.9,
+            558.6
+          ],
+          "conf": 0.831,
+          "text": "Example 11 : Prove that $\\frac{\\cot A - \\cos A}{\\cot A + \\cos A} = \\frac{\\text{cosec A} - 1}{\\text{cosec A} + 1}$"
+        },
+        {
+          "order": 2,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            576.1,
+            1176.4,
+            922.1
+          ],
+          "conf": 0.846,
+          "text": "Solution : LHS = $\\frac{\\cot A - \\cos A}{\\cot A + \\cos A} = \\frac{\\frac{\\cos A}{\\sin A} - \\cos A}{\\frac{\\cos A}{\\sin A} + \\cos A}$\n$= \\frac{\\cos A\\left(\\frac{1}{\\sin A} - 1\\right)}{\\cos A\\left(\\frac{1}{\\sin A} + 1\\right)} = \\frac{\\left(\\frac{1}{\\sin A} - 1\\right)}{\\left(\\frac{1}{\\sin A} + 1\\right)} = \\frac{\\text{cosec A} - 1}{\\text{cosec A} + 1} = \\text{RHS}$"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            959.7,
+            1175.7,
+            1087.8
+          ],
+          "conf": 0.813,
+          "text": "Example 12 : Prove that $\\frac{\\sin \\theta - \\cos \\theta + 1}{\\sin \\theta + \\cos \\theta - 1} = \\frac{1}{\\sec \\theta - \\tan \\theta}$, using the identity\n$\\sec^2 \\theta = 1 + \\tan^2 \\theta$."
+        },
+        {
+          "order": 4,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.8,
+            1095.9,
+            1179.0,
+            1701.1
+          ],
+          "conf": 0.55,
+          "text": "Solution : Since we will apply the identity involving $\\sec \\theta$ and $\\tan \\theta$, let us first\nconvert the LHS (of the identity we need to prove) in terms of $\\sec \\theta$ and $\\tan \\theta$ by\ndividing numerator and denominator by $\\cos \\theta$.\n\n$$LHS = \\frac{\\sin \\theta - \\cos \\theta + 1}{\\sin \\theta + \\cos \\theta - 1} = \\frac{\\tan \\theta - 1 + \\sec \\theta}{\\tan \\theta + 1 - \\sec \\theta}$$\n\n$$= \\frac{(\\tan \\theta + \\sec \\theta) - 1}{(\\tan \\theta - \\sec \\theta) + 1} = \\frac{\\{(\\tan \\theta + \\sec \\theta) - 1\\} (\\tan \\theta - \\sec \\theta)}{\\{(\\tan \\theta - \\sec \\theta) + 1\\} (\\tan \\theta - \\sec \\theta)}$$\n\n$$= \\frac{(\\tan^2 \\theta - \\sec^2 \\theta) - (\\tan \\theta - \\sec \\theta)}{\\{\\tan \\theta - \\sec \\theta + 1\\} (\\tan \\theta - \\sec \\theta)}$$\n\n$$= \\frac{- 1 - \\tan \\theta + \\sec \\theta}{(\\tan \\theta - \\sec \\theta + 1) (\\tan \\theta - \\sec \\theta)}$$"
+        }
+      ],
+      "page": 17
+    },
+    {
+      "image": "0077_p0018.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            270.8,
+            271.7,
+            702.0,
+            366.1
+          ],
+          "conf": 0.938,
+          "text": "$$ = \\frac{-1}{\\tan \\theta - \\sec \\theta} = \\frac{1}{\\sec \\theta - \\tan \\theta}, $$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            377.3,
+            863.6,
+            425.8
+          ],
+          "conf": 0.935,
+          "text": "which is the RHS of the identity, we are required to prove."
+        },
+        {
+          "order": 2,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.9,
+            462.8,
+            774.0,
+            512.6
+          ],
+          "conf": 0.878,
+          "text": "EXERCISE 8.3"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.0,
+            519.8,
+            1027.0,
+            567.9
+          ],
+          "conf": 0.845,
+          "text": "1. Express the trigonometric ratios $\\sin A$, $\\sec A$ and $\\tan A$ in terms of $\\cot A$."
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.3,
+            564.9,
+            925.5,
+            612.2
+          ],
+          "conf": 0.829,
+          "text": "2. Write all the other trigonometric ratios of $\\angle A$ in terms of sec A."
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.0,
+            609.1,
+            747.1,
+            656.4
+          ],
+          "conf": 0.86,
+          "text": "3. Choose the correct option. Justify your choice."
+        },
+        {
+          "order": 6,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            214.4,
+            652.1,
+            1052.7,
+            744.2
+          ],
+          "conf": 0.934,
+          "text": "(i) $9 \\sec^2 A - 9 \\tan^2 A =$\n(A) 1 (B) 9 (C) 8 (D) 0"
+        },
+        {
+          "order": 7,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            208.7,
+            739.5,
+            1063.4,
+            832.4
+          ],
+          "conf": 0.947,
+          "text": "(ii) $(1 + \\tan \\theta + \\sec \\theta) (1 + \\cot \\theta - \\text{cosec } \\theta) =$\n(A) $0$ (B) $1$ (C) $2$ (D) $-1$"
+        },
+        {
+          "order": 8,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            203.1,
+            830.1,
+            1101.2,
+            923.0
+          ],
+          "conf": 0.945,
+          "text": "(iii) $(\\sec A + \\tan A) (1 - \\sin A) =$\n(A) $\\sec A$          (B) $\\sin A$          (C) $\\csc A$          (D) $\\cos A$"
+        },
+        {
+          "order": 9,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            201.4,
+            934.8,
+            1104.5,
+            1079.6
+          ],
+          "conf": 0.946,
+          "text": "(iv) $\\frac{1 + \\tan^2 \\text{ A}}{1 + \\cot^2 \\text{ A}} =$\n\n(A) $\\sec^2 \\text{ A}$      (B) $-1$      (C) $\\cot^2 \\text{ A}$      (D) $\\tan^2 \\text{ A}$"
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.3,
+            1077.7,
+            1177.1,
+            1157.9
+          ],
+          "conf": 0.895,
+          "text": "4. Prove the following identities, where the angles involved are acute angles for which the\nexpressions are defined."
+        },
+        {
+          "order": 11,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            196.3,
+            1174.4,
+            1178.7,
+            1699.0
+          ],
+          "conf": 0.548,
+          "text": "(i) $(\\text{cosec } \\theta - \\cot \\theta)^2 = \\frac{1 - \\cos \\theta}{1 + \\cos \\theta}$ \\qquad (ii) $\\frac{\\cos A}{1 + \\sin A} + \\frac{1 + \\sin A}{\\cos A} = 2 \\sec A$\n\n(iii) $\\frac{\\tan \\theta}{1 - \\cot \\theta} + \\frac{\\cot \\theta}{1 - \\tan \\theta} = 1 + \\sec \\theta \\text{ cosec } \\theta$\n\n[Hint : Write the expression in terms of $\\sin \\theta$ and $\\cos \\theta$]\n\n(iv) $\\frac{1 + \\sec A}{\\sec A} = \\frac{\\sin^2 A}{1 - \\cos A}$ \\qquad [Hint : Simplify LHS and RHS separately]\n\n(v) $\\frac{\\cos A - \\sin A + 1}{\\cos A + \\sin A - 1} = \\text{cosec A} + \\cot A$, using the identity $\\text{cosec}^2 A = 1 + \\cot^2 A$.\n\n(vi) $\\sqrt{\\frac{1 + \\sin A}{1 - \\sin A}} = \\sec A + \\tan A$ \\qquad (vii) $\\frac{\\sin \\theta - 2 \\sin^3 \\theta}{2 \\cos^3 \\theta - \\cos \\theta} = \\tan \\theta$\n\n(viii) $(\\sin A + \\text{cosec A})^2 + (\\cos A + \\sec A)^2 = 7 + \\tan^2 A + \\cot^2 A$"
+        }
+      ],
+      "page": 18
+    },
+    {
+      "image": "0077_p0019.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            204.6,
+            264.5,
+            878.0,
+            351.9
+          ],
+          "conf": 0.881,
+          "text": "(ix) $(\\text{cosec A} - \\sin \\text{A})(\\sec \\text{A} - \\cos \\text{A}) = \\frac{1}{\\tan \\text{A} + \\cot \\text{A}}$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            258.1,
+            348.6,
+            743.0,
+            398.6
+          ],
+          "conf": 0.9,
+          "text": "[Hint : Simplify LHS and RHS separately]"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            211.8,
+            398.1,
+            712.4,
+            502.2
+          ],
+          "conf": 0.929,
+          "text": "(x) $\\left(\\frac{1 + \\tan^2 A}{1 + \\cot^2 A}\\right) = \\left(\\frac{1 - \\tan A}{1 - \\cot A}\\right)^2 = \\tan^2 A$"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.1,
+            514.3,
+            335.7,
+            566.2
+          ],
+          "conf": 0.906,
+          "text": "8.5 Summary"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.3,
+            565.2,
+            759.2,
+            613.1
+          ],
+          "conf": 0.937,
+          "text": "In this chapter, you have studied the following points :"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.7,
+            609.3,
+            1179.0,
+            1184.5
+          ],
+          "conf": 0.914,
+          "text": "1. In a right triangle ABC, right-angled at B,\n$$ \\sin A = \\frac{\\text{side opposite to angle A}}{\\text{hypotenuse}}, \\cos A = \\frac{\\text{side adjacent to angle A}}{\\text{hypotenuse}} $$\n$$ \\tan A = \\frac{\\text{side opposite to angle A}}{\\text{side adjacent to angle A}} . $$\n2. $\\text{cosec A} = \\frac{1}{\\sin A} ; \\sec A = \\frac{1}{\\cos A} ; \\tan A = \\frac{1}{\\cot A}, \\tan A = \\frac{\\sin A}{\\cos A} .$\n3. If one of the trigonometric ratios of an acute angle is known, the remaining trigonometric\nratios of the angle can be easily determined.\n4. The values of trigonometric ratios for angles $0^\\circ, 30^\\circ, 45^\\circ, 60^\\circ$ and $90^\\circ$.\n5. The value of $\\sin A$ or $\\cos A$ never exceeds 1, whereas the value of $\\sec A$ ($0^\\circ \\le A < 90^\\circ$) or\n$\\text{cosec A } (0^\\circ < A \\le 90^\\circ)$ is always greater than or equal to 1.\n6. $\\sin^2 A + \\cos^2 A = 1,$\n$\\sec^2 A - \\tan^2 A = 1$ for $0^\\circ \\le A < 90^\\circ,$\n$\\text{cosec}^2 A = 1 + \\cot^2 A$ for $0^\\circ < A \\le 90^\\circ.$"
+        }
+      ],
+      "page": 19
+    }
+  ]
+}

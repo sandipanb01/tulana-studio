@@ -1,0 +1,1382 @@
+{
+  "book": "1105",
+  "relpath": "dataset/input/eng/11/1105.pdf",
+  "num_pages": 11,
+  "pages": [
+    {
+      "image": "0088_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            657.7,
+            98.8,
+            1178.1,
+            329.5
+          ],
+          "conf": 0.888,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            905.8,
+            237.5,
+            1156.3,
+            323.8
+          ],
+          "conf": 0.555,
+          "text": "Chapter 5"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            219.8,
+            376.4,
+            1087.8,
+            478.0
+          ],
+          "conf": 0.887,
+          "text": "LINEAR INEQUALITIES"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            272.1,
+            554.6,
+            1029.1,
+            642.8
+          ],
+          "conf": 0.816,
+          "text": "❖ Mathematics is the art of saying many things in many\ndifferent ways. – MAXWELL ❖"
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.1,
+            665.2,
+            389.3,
+            715.9
+          ],
+          "conf": 0.903,
+          "text": "5.1 Introduction"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            714.4,
+            1178.7,
+            981.2
+          ],
+          "conf": 0.974,
+          "text": "In earlier classes, we have studied equations in one variable and two variables and also\nsolved some statement problems by translating them in the form of equations. Now a\nnatural question arises: ‘Is it always possible to translate a statement problem in the\nform of an equation? For example, the height of all the students in your class is less\nthan 160 cm. Your classroom can occupy atmost 60 tables or chairs or both. Here we\nget certain statements involving a sign ‘$<$’ (less than), ‘$>$’ (greater than), ‘$\\le$’ (less than\nor equal) and $\\ge$ (greater than or equal) which are known as inequalities."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            968.6,
+            1178.3,
+            1092.1
+          ],
+          "conf": 0.948,
+          "text": "In this Chapter, we will study linear inequalities in one and two variables. The\nstudy of inequalities is very useful in solving problems in the field of science, mathematics,\nstatistics, economics, psychology, etc."
+        },
+        {
+          "order": 7,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.7,
+            1112.3,
+            374.8,
+            1165.3
+          ],
+          "conf": 0.889,
+          "text": "5.2 Inequalities"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1162.2,
+            624.1,
+            1211.4
+          ],
+          "conf": 0.913,
+          "text": "Let us consider the following situations:"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1214.9,
+            1178.5,
+            1372.2
+          ],
+          "conf": 0.922,
+          "text": "(i) Ravi goes to market with ₹ 200 to buy rice, which is available in packets of 1kg. The\nprice of one packet of rice is ₹ 30. If $x$ denotes the number of packets of rice, which he\nbuys, then the total amount spent by him is ₹ $30x$. Since, he has to buy rice in packets\nonly, he may not be able to spend the entire amount of ₹ 200. (Why?) Hence"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            519.4,
+            1360.6,
+            1114.1,
+            1411.7
+          ],
+          "conf": 0.902,
+          "text": "$$30x < 200 \\hspace{10em} \\dots (1)$$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1413.8,
+            1168.2,
+            1464.3
+          ],
+          "conf": 0.897,
+          "text": "Clearly the statement (i) is not an equation as it does not involve the sign of equality."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1460.1,
+            1180.0,
+            1617.3
+          ],
+          "conf": 0.899,
+          "text": "(ii) Reshma has ₹ 120 and wants to buy some registers and pens. The cost of one\nregister is ₹ 40 and that of a pen is ₹ 20. In this case, if $x$ denotes the number of\nregisters and $y$, the number of pens which Reshma buys, then the total amount spent by\nher is ₹ $(40x + 20y)$ and we have"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            519.0,
+            1621.3,
+            1113.8,
+            1672.2
+          ],
+          "conf": 0.892,
+          "text": "$$40x + 20y \\leq 120 \\qquad \\dots (2)$$"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0088_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            258.0,
+            1178.3,
+            342.6
+          ],
+          "conf": 0.953,
+          "text": "Since in this case the total amount spent may be upto ₹ 120. Note that the statement (2)\nconsists of two statements"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.0,
+            348.6,
+            1114.4,
+            433.4
+          ],
+          "conf": 0.882,
+          "text": "$$40x + 20y < 120 \\quad \\dots (3)$$\nand $$40x + 20y = 120 \\quad \\dots (4)$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            437.6,
+            1178.1,
+            488.3
+          ],
+          "conf": 0.938,
+          "text": "Statement (3) is not an equation, i.e., it is an inequality while statement (4) is an equation."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.6,
+            499.5,
+            1180.4,
+            827.8
+          ],
+          "conf": 0.531,
+          "text": "Definition 1 Two real numbers or two algebraic expressions related by the symbol\n‘<’, ‘$>$’, ‘$\\le$’ or ‘$\\ge$’ form an inequality.\nStatements such as (1), (2) and (3) above are inequalities.\n\n$3 < 5$; $7 > 5$ are the examples of numerical inequalities while\n$x < 5$; $y > 2$; $x \\ge 3$, $y \\le 4$ are some examples of literal inequalities.\n$3 < 5 < 7$ (read as 5 is greater than 3 and less than 7), $3 \\le x < 5$ (read as $x$ is greater\nthan or equal to 3 and less than 5) and $2 < y \\le 4$ are the examples of double inequalities."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            834.5,
+            636.4,
+            884.3
+          ],
+          "conf": 0.909,
+          "text": "Some more examples of inequalities are:"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            184.1,
+            889.0,
+            1014.0,
+            1388.1
+          ],
+          "conf": 0.708,
+          "text": "... (5)\n... (6)\n... (7)\n... (8)\n... (9)\n... (10)\n... (11)\n... (12)\n... (13)\n... (14)"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            184.5,
+            1342.2,
+            1015.9,
+            1393.5
+          ],
+          "conf": 0.562,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1392.5,
+            1179.9,
+            1551.9
+          ],
+          "conf": 0.953,
+          "text": "Inequalities (5), (6), (9), (10) and (14) are *strict inequalities* while inequalities (7), (8),\n(11), (12), and (13) are *slack inequalities*. Inequalities from (5) to (8) are *linear*\n*inequalities* in one variable $x$ when $a \\neq 0$, while inequalities from (9) to (12) are *linear*\n*inequalities in two variables* $x$ and $y$ when $a \\neq 0$, $b \\neq 0$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1544.1,
+            1178.5,
+            1629.6
+          ],
+          "conf": 0.918,
+          "text": "Inequalities (13) and (14) are not linear (in fact, these are quadratic inequalities\nin one variable $x$ when $a \\neq 0$)."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1624.1,
+            1178.5,
+            1708.9
+          ],
+          "conf": 0.909,
+          "text": "In this Chapter, we shall confine ourselves to the study of linear inequalities in one\nand two variables only."
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0088_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.5,
+            259.0,
+            1178.8,
+            349.6
+          ],
+          "conf": 0.886,
+          "text": "5.3 Algebraic Solutions of Linear Inequalities in One Variable and their\nGraphical Representation"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            354.5,
+            909.4,
+            440.2
+          ],
+          "conf": 0.854,
+          "text": "Let us consider the inequality (1) of Section 6.2, viz, $30x < 200$\nNote that here $x$ denotes the number of packets of rice."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            434.9,
+            1178.6,
+            523.1
+          ],
+          "conf": 0.929,
+          "text": "Obviously, $x$ cannot be a negative integer or a fraction. Left hand side (L.H.S.) of this\ninequality is $30x$ and right hand side (RHS) is 200. Therefore, we have"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.0,
+            516.6,
+            962.3,
+            881.4
+          ],
+          "conf": 0.703,
+          "text": "For $x = 0$, L.H.S. $= 30$ $(0) = 0 < 200$ (R.H.S.), which is true.\nFor $x = 1$, L.H.S. $= 30$ $(1) = 30 < 200$ (R.H.S.), which is true.\nFor $x = 2$, L.H.S. $= 30$ $(2) = 60 < 200$, which is true.\nFor $x = 3$, L.H.S. $= 30$ $(3) = 90 < 200$, which is true.\nFor $x = 4$, L.H.S. $= 30$ $(4) = 120 < 200$, which is true.\nFor $x = 5$, L.H.S. $= 30$ $(5) = 150 < 200$, which is true.\nFor $x = 6$, L.H.S. $= 30$ $(6) = 180 < 200$, which is true.\nFor $x = 7$, L.H.S. $= 30$ $(7) = 210 < 200$, which is false."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            884.8,
+            1178.1,
+            1043.9
+          ],
+          "conf": 0.943,
+          "text": "In the above situation, we find that the values of $x$, which makes the above\ninequality a true statement, are 0,1,2,3,4,5,6. These values of $x$, which make above\ninequality a true statement, are called \\textit{solutions} of inequality and the set $\\{0,1,2,3,4,5,6\\}$\nis called its \\textit{solution set}."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1032.8,
+            1179.2,
+            1117.6
+          ],
+          "conf": 0.907,
+          "text": "Thus, any solution of an inequality in one variable is a value of the variable\nwhich makes it a true statement."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1106.0,
+            1178.7,
+            1299.6
+          ],
+          "conf": 0.956,
+          "text": "We have found the solutions of the above inequality by $trial$ $and$ $error$ method\nwhich is not very efficient. Obviously, this method is time consuming and sometimes\nnot feasible. We must have some better or systematic techniques for solving inequalities.\nBefore that we should go through some more properties of numerical inequalities and\nfollow them as rules while solving the inequalities."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.5,
+            1289.2,
+            1177.9,
+            1339.9
+          ],
+          "conf": 0.877,
+          "text": "You will recall that while solving linear equations, we followed the following rules:"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1342.4,
+            1177.3,
+            1393.1
+          ],
+          "conf": 0.829,
+          "text": "Rule 1 Equal numbers may be added to (or subtracted from) both sides of an equation."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            1395.7,
+            1178.5,
+            1480.1
+          ],
+          "conf": 0.868,
+          "text": "Rule 2 Both sides of an equation may be multiplied (or divided) by the same non-zero\nnumber."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1468.9,
+            1178.8,
+            1627.2
+          ],
+          "conf": 0.919,
+          "text": "In the case of solving inequalities, we again follow the same rules except with a\ndifference that in Rule 2, the sign of inequality is reversed (i.e., ‘$<$ becomes ‘$>$’, $\\leq$’\nbecomes ‘$\\geq$’ and so on) whenever we multiply (or divide) both sides of an inequality by\na negative number. It is evident from the facts that"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            317.5,
+            1622.4,
+            1006.2,
+            1709.2
+          ],
+          "conf": 0.815,
+          "text": "$3 > 2$ while $-3 < -2,$\n$-8 < -7$ while $(-8) (-2) > (-7) (-2)$ , i.e., $16 > 14.$"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0088_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            257.5,
+            857.4,
+            307.8
+          ],
+          "conf": 0.921,
+          "text": "Thus, we state the following rules for solving an inequality:"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            312.0,
+            1178.8,
+            397.1
+          ],
+          "conf": 0.936,
+          "text": "Rule 1 Equal numbers may be added to (or subtracted from) both sides of an inequality\nwithout affecting the sign of inequality."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            401.3,
+            1178.6,
+            523.3
+          ],
+          "conf": 0.928,
+          "text": "Rule 2 Both sides of an inequality can be multiplied (or divided) by the same positive\nnumber. But when both sides are multiplied or divided by a negative number, then the\nsign of inequality is $reversed$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.5,
+            519.8,
+            663.6,
+            570.0
+          ],
+          "conf": 0.907,
+          "text": "Now, let us consider some examples."
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            573.6,
+            1179.5,
+            1059.6
+          ],
+          "conf": 0.617,
+          "text": "Example 1 Solve $30\\ x < 200$ when\n(i) $x$ is a natural number, (ii) $x$ is an integer.\n\nSolution We are given $30\\ x < 200$\n\nor $\\frac{30x}{30} < \\frac{200}{30}$ (Rule 2), i.e., $x < 20 / 3$.\n\n(i) When $x$ is a natural number, in this case the following values of $x$ make the\nstatement true.\n\n$1, 2, 3, 4, 5, 6$.\n\nThe solution set of the inequality is $\\{1,2,3,4,5,6\\}$.\n(ii) When $x$ is an integer, the solutions of the given inequality are\n..., $-3, -2, -1, 0, 1, 2, 3, 4, 5, 6$\n\nThe solution set of the inequality is $\\{..., -3, -2, -1, 0, 1, 2, 3, 4, 5, 6\\}$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1025.0,
+            949.4,
+            1077.1
+          ],
+          "conf": 0.866,
+          "text": "The solution set of the inequality is $\\{...,-3, -2,-1, 0, 1, 2, 3, 4, 5, 6\\}$"
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.7,
+            1077.1,
+            1183.3,
+            1697.8
+          ],
+          "conf": 0.733,
+          "text": "Example 2 Solve $5x - 3 < 3x + 1$ when\n(i) $x$ is an integer,\n(ii) $x$ is a real number.\nSolution We have, $5x - 3 < 3x + 1$\nor $5x - 3 + 3 < 3x + 1 + 3$ (Rule 1)\nor $5x < 3x + 4$\nor $5x - 3x < 3x + 4 - 3x$ (Rule 1)\nor $2x < 4$\nor $x < 2$ (Rule 2)\n(i) When $x$ is an integer, the solutions of the given inequality are\n..., $- 4, - 3, - 2, - 1, 0, 1$\n(ii) When $x$ is a real number, the solutions of the inequality are given by $x < 2$,\ni.e., all real numbers $x$ which are less than $2$. Therefore, the solution set of\nthe inequality is $x \\in (-\\infty, 2)$.\nWe have considered solutions of inequalities in the set of natural numbers, set of\nintegers and in the set of real numbers. Henceforth, unless stated otherwise, we shall\nsolve the inequalities in this Chapter in the set of real numbers."
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0088_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            258.0,
+            559.9,
+            306.1
+          ],
+          "conf": 0.741,
+          "text": "Example 3 Solve $4x + 3 < 6x + 7$."
+        },
+        {
+          "order": 1,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            310.3,
+            1178.6,
+            506.5
+          ],
+          "conf": 0.718,
+          "text": "Solution We have, $4x + 3 < 6x + 7$\nor $4x - 6x < 6x + 4 - 6x$\nor $-2x < 4$ or $x > -2$\ni.e., all the real numbers which are greater than $-2$, are the solutions of the given\ninequality. Hence, the solution set is $(-2, \\infty)$."
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            526.7,
+            573.3,
+            613.3
+          ],
+          "conf": 0.783,
+          "text": "Example 4 Solve $\\frac{5-2x}{3} \\leq \\frac{x}{6}-5$."
+        },
+        {
+          "order": 3,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            623.4,
+            1179.2,
+            958.9
+          ],
+          "conf": 0.62,
+          "text": "Solution We have\n$$\\frac{5-2x}{3} \\leq \\frac{x}{6}-5$$\nor $2(5-2x) \\leq x-30$.\nor $10-4x \\leq x-30$\nor $-5x \\leq -40$, i.e., $x \\geq 8$\nThus, all real numbers $x$ which are greater than or equal to 8 are the solutions of the\ngiven inequality, i.e., $x \\in [8, \\infty)$."
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            966.5,
+            1156.1,
+            1017.4
+          ],
+          "conf": 0.764,
+          "text": "Example 5 Solve $7x + 3 < 5x + 9$. Show the graph of the solutions on number line."
+        },
+        {
+          "order": 5,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1020.5,
+            934.8,
+            1142.5
+          ],
+          "conf": 0.672,
+          "text": "Solution We have $7x + 3 < 5x + 9$ or\n$2x < 6$ or $x < 3$\nThe graphical representation of the solutions are given in Fig 5.1."
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            387.1,
+            1170.4,
+            914.3,
+            1255.1
+          ],
+          "conf": 0.894,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            596.7,
+            1253.6,
+            701.4,
+            1299.2
+          ],
+          "conf": 0.837,
+          "text": "Fig 5.1"
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.9,
+            1319.0,
+            1178.8,
+            1681.5
+          ],
+          "conf": 0.74,
+          "text": "Example 6 Solve $\\frac{3x-4}{2} \\geq \\frac{x+1}{4} - 1$. Show the graph of the solutions on number line.\n\nSolution We have\n\n$$\\frac{3x-4}{2} \\geq \\frac{x+1}{4} - 1$$\n\nor\n\n$$\\frac{3x-4}{2} \\geq \\frac{x-3}{4}$$\n\nor\n\n$$2(3x-4) \\geq (x-3)$$"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0088_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.8,
+            259.7,
+            741.0,
+            359.5
+          ],
+          "conf": 0.775,
+          "text": "or $6x - 8 \\ge x - 3$\nor $5x \\ge 5$ or $x \\ge 1$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            364.2,
+            867.2,
+            415.5
+          ],
+          "conf": 0.923,
+          "text": "The graphical representation of solutions is given in Fig 5.2."
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            383.8,
+            430.4,
+            912.3,
+            524.4
+          ],
+          "conf": 0.93,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            596.1,
+            528.2,
+            702.3,
+            574.2
+          ],
+          "conf": 0.879,
+          "text": "Fig 5.2"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            597.7,
+            1179.1,
+            1019.2
+          ],
+          "conf": 0.595,
+          "text": "Example 7 The marks obtained by a student of Class XI in first and second terminal\nexamination are 62 and 48, respectively. Find the minimum marks he should get in the\nannual examination to have an average of at least 60 marks.\n\nSolution Let $x$ be the marks obtained by student in the annual examination. Then\n\n$$\\frac{62+48+x}{3} \\geq 60$$\n\nor $110+x \\geq 180$\n\nor $x \\geq 70$\n\nThus, the student must obtain a minimum of 70 marks to get an average of at least\n60 marks."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            960.6,
+            1179.2,
+            1044.8
+          ],
+          "conf": 0.927,
+          "text": "Thus, the student must obtain a minimum of 70 marks to get an average of at least\n60 marks."
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1052.8,
+            1178.5,
+            1144.4
+          ],
+          "conf": 0.885,
+          "text": "Example 8 Find all pairs of consecutive odd natural numbers, both of which are larger\nthan 10, such that their sum is less than 40."
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1062.7,
+            1180.0,
+            1655.9
+          ],
+          "conf": 0.565,
+          "text": "Example 8 Find all pairs of consecutive odd natural numbers, both of which are larger\nthan 10, such that their sum is less than 40.\n\nSolution Let $x$ be the smaller of the two consecutive odd natural number, so that the\nother one is $x + 2$. Then, we should have\n$$x > 10 \\quad \\dots \\quad (1)$$\nand $$x + (x + 2) < 40 \\quad \\dots \\quad (2)$$\nSolving (2), we get\n$$2x + 2 < 40$$\ni.e., $x < 19 \\quad \\dots \\quad (3)$\nFrom (1) and (3), we get\n$$10 < x < 19$$\n\nSince $x$ is an odd number, $x$ can take the values 11, 13, 15, and 17. So, the required\npossible pairs will be"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.6,
+            1647.1,
+            629.6,
+            1699.0
+          ],
+          "conf": 0.783,
+          "text": "$(11, 13), (13, 15), (15, 17), (17, 19)$"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0088_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            516.2,
+            262.6,
+            779.4,
+            321.1
+          ],
+          "conf": 0.797,
+          "text": "EXERCISE 5.1"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.5,
+            323.0,
+            938.6,
+            630.4
+          ],
+          "conf": 0.815,
+          "text": "1.  Solve $24x < 100$, when\n    (i)   $x$ is a natural number.                 (ii)  $x$ is an integer.\n2.  Solve $- 12x > 30$, when\n    (i)   $x$ is a natural number.                 (ii)  $x$ is an integer.\n3.  Solve $5x - 3 < 7$, when\n    (i)   $x$ is an integer.                 (ii)  $x$ is a real number.\n4.  Solve $3x + 8 > 2$, when\n    (i)   $x$ is an integer.                 (ii)  $x$ is a real number."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            632.5,
+            775.3,
+            681.9
+          ],
+          "conf": 0.926,
+          "text": "Solve the inequalities in Exercises 5 to 16 for real $x$."
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            124.4,
+            674.5,
+            1071.5,
+            1178.6
+          ],
+          "conf": 0.525,
+          "text": "5. $4x + 3 < 5x + 7$\n7. $3(x - 1) \\le 2(x - 3)$\n9. $x + \\frac{x}{2} + \\frac{x}{3} < 11$\n11. $\\frac{3(x - 2)}{5} \\le \\frac{5(2 - x)}{3}$\n13. $2(2x + 3) - 10 < 6(x - 2)$\n15. $\\frac{x}{4} < \\frac{(5x - 2)}{3} - \\frac{(7x - 3)}{5}$\n6. $3x - 7 > 5x - 1$\n8. $3(2 - x) \\ge 2(1 - x)$\n10. $\\frac{x}{3} > \\frac{x}{2} + 1$\n12. $\\frac{1}{2} \\left( \\frac{3x}{5} + 4 \\right) \\ge \\frac{1}{3} (x - 6)$\n14. $37 - (3x + 5) \\ge 9x - 8(x - 3)$\n16. $\\frac{(2x - 1)}{3} \\ge \\frac{(3x - 2)}{4} - \\frac{(2 - x)}{5}$\n\nSolve the inequalities in Exercises 17 to 20 and show the graph of the solution\ncase on number line."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1111.9,
+            1178.3,
+            1197.6
+          ],
+          "conf": 0.946,
+          "text": "Solve the inequalities in Exercises 17 to 20 and show the graph of the solution in each\ncase on number line"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1204.0,
+            1177.9,
+            1711.3
+          ],
+          "conf": 0.638,
+          "text": "17. $3x - 2 < 2x + 1$                                   18. $5x - 3 \\ge 3x - 5$\n\n19. $3(1 - x) < 2(x + 4)$                                 20. $\\frac{x}{2} \\ge \\frac{(5x - 2)}{3} - \\frac{(7x - 3)}{5}$\n\n21. Ravi obtained 70 and 75 marks in first two unit test. Find the minimum marks he\nshould get in the third test to have an average of at least 60 marks.\n\n22. To receive Grade ‘A’ in a course, one must obtain an average of 90 marks or\nmore in five examinations (each of 100 marks). If Sunita’s marks in first four\nexaminations are 87, 92, 94 and 95, find minimum marks that Sunita must obtain\nin fifth examination to get grade ‘A’ in the course.\n\n23. Find all pairs of consecutive odd positive integers both of which are smaller than\n10 such that their sum is more than 11.\n\n24. Find all pairs of consecutive even positive integers, both of which are larger than\n5 such that their sum is less than 23."
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0088_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            261.1,
+            1181.7,
+            638.6
+          ],
+          "conf": 0.59,
+          "text": "25. The longest side of a triangle is 3 times the shortest side and the third side is 2 cm\nshorter than the longest side. If the perimeter of the triangle is at least 61 cm, find\nthe minimum length of the shortest side.\n26. A man wants to cut three lengths from a single piece of board of length 91cm.\nThe second length is to be 3cm longer than the shortest and the third length is to\nbe twice as long as the shortest. What are the possible lengths of the shortest\nboard if the third piece is to be at least 5cm longer than the second?\n[Hint: If $x$ is the length of the shortest board, then $x$ , $(x + 3)$ and $2x$ are the\nlengths of the second and third piece, respectively. Thus, $x + (x + 3) + 2x \\le 91$ and\n$2x \\ge (x + 3) + 5$]."
+        },
+        {
+          "order": 1,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            465.3,
+            644.1,
+            834.7,
+            695.0
+          ],
+          "conf": 0.814,
+          "text": "Miscellaneous Examples"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            699.4,
+            579.0,
+            749.9
+          ],
+          "conf": 0.733,
+          "text": "Example 9 Solve $-8 \\leq 5x - 3 < 7$."
+        },
+        {
+          "order": 3,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            751.8,
+            1180.4,
+            874.6
+          ],
+          "conf": 0.687,
+          "text": "Solution In this case, we have two inequalities, $-8 \\le 5x - 3$ and $5x - 3 < 7$, which we\nwill solve simultaneously. We have $-8 \\le 5x - 3 < 7$\nor $-5 \\le 5x < 10$ or $-1 \\le x < 2$"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            882.0,
+            821.7,
+            1213.1
+          ],
+          "conf": 0.609,
+          "text": "Example 10 Solve $-5 \\leq \\frac{5-3x}{2} \\leq 8$.\n\nSolution We have $-5 \\leq \\frac{5-3x}{2} \\leq 8$\n\nor $-10 \\leq 5 - 3x \\leq 16$ or $-15 \\leq -3x \\leq 11$\n\nor $5 \\geq x \\geq -\\frac{11}{3}$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1208.0,
+            628.3,
+            1298.7
+          ],
+          "conf": 0.628,
+          "text": "which can be written as $$\\frac{-11}{3} \\le x \\le 5$$"
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1293.1,
+            1119.3,
+            1702.0
+          ],
+          "conf": 0.638,
+          "text": "Example 11 Solve the system of inequalities:\n$$3x - 7 < 5 + x \\quad \\dots \\quad (1)$$\n$$11 - 5x \\le 1 \\quad \\dots \\quad (2)$$\nand represent the solutions on the number line.\n\nSolution From inequality (1), we have\n$$3x - 7 < 5 + x$$\nor $$x < 6 \\quad \\dots \\quad (3)$$\nAlso, from inequality (2), we have\n$$11 - 5x \\le 1$$\nor $-5x \\le -10 \\quad \\text{i.e., } x \\ge 2 \\quad \\dots \\quad (4)$$"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0088_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            258.6,
+            1178.5,
+            343.3
+          ],
+          "conf": 0.955,
+          "text": "If we draw the graph of inequalities (3) and (4) on the number line, we see that the\nvalues of $x$, which are common to both, are shown by bold line in Fig 5.3."
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            365.0,
+            345.0,
+            935.9,
+            513.0
+          ],
+          "conf": 0.94,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            596.2,
+            510.7,
+            702.3,
+            557.3
+          ],
+          "conf": 0.879,
+          "text": "Fig 5.3"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            563.5,
+            1178.8,
+            646.8
+          ],
+          "conf": 0.928,
+          "text": "Thus, solution of the system are real numbers $x$ lying between 2 and 6 including 2, i.e.,\n$$2 \\le x < 6$$"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            635.0,
+            1177.4,
+            1307.2
+          ],
+          "conf": 0.658,
+          "text": "Example 12 In an experiment, a solution of hydrochloric acid is to be kept between\n$30^{\\circ}$ and $35^{\\circ}$ Celsius. What is the range of temperature in degree Fahrenheit if conversion\n\nformula is given by $C = \\frac{5}{9}$ (F – 32), where C and F represent temperature in degree\n\nCelsius and degree Fahrenheit, respectively.\n\nSolution It is given that $30 < C < 35$.\n\nPutting $C = \\frac{5}{9}$ (F – 32), we get\n\n$$30 < \\frac{5}{9} (F - 32) < 35,$$\n\nor $\\frac{9}{5} \\times (30) < (F - 32) < \\frac{9}{5} \\times (35)$\n\nor $54 < (F - 32) < 63$\n\nor $86 < F < 95$.\n\nThus, the required range of temperature is between 868 F and 958 F."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            1285.5,
+            980.5,
+            1335.5
+          ],
+          "conf": 0.844,
+          "text": "Thus, the required range of temperature is between $86^{\\circ}$ F and $95^{\\circ}$ F."
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            1339.1,
+            1177.3,
+            1731.8
+          ],
+          "conf": 0.759,
+          "text": "Example 13 A manufacturer has 600 litres of a 12% solution of acid. How many litres\nof a 30% acid solution must be added to it so that acid content in the resulting mixture\nwill be more than 15% but less than 18%?\n\nSolution Let $x$ litres of 30% acid solution is required to be added. Then\nTotal mixture = ($x$ + 600) litres\n\nTherefore $30\\% x + 12\\%$ of $600 > 15\\%$ of ($x + 600$)\nand $30\\% x + 12\\%$ of $600 < 18\\%$ of ($x + 600$)\n\nor $$\\frac{30x}{100} + \\frac{12}{100} (600) > \\frac{15}{100} (x + 600)$$"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0088_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            278.5,
+            791.1,
+            371.8
+          ],
+          "conf": 0.922,
+          "text": "and $$\\frac{30x}{100} + \\frac{12}{100} (600) < \\frac{18}{100} (x + 600)$$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.6,
+            370.5,
+            649.4,
+            418.6
+          ],
+          "conf": 0.879,
+          "text": "or $30x + 7200 > 15x + 9000$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.3,
+            415.1,
+            664.0,
+            463.6
+          ],
+          "conf": 0.868,
+          "text": "and $30x + 7200 < 18x + 10800$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            461.3,
+            676.8,
+            509.0
+          ],
+          "conf": 0.869,
+          "text": "or $15x > 1800$ and $12x < 3600$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            507.7,
+            594.2,
+            553.8
+          ],
+          "conf": 0.876,
+          "text": "or $x > 120$ and $x < 300$,"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            551.8,
+            514.4,
+            598.3
+          ],
+          "conf": 0.884,
+          "text": "i.e. $120 < x < 300$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            597.5,
+            1179.0,
+            684.4
+          ],
+          "conf": 0.956,
+          "text": "Thus, the number of litres of the 30% solution of acid will have to be more than\n120 litres but less than 300 litres."
+        },
+        {
+          "order": 7,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            378.7,
+            704.9,
+            921.1,
+            757.0
+          ],
+          "conf": 0.823,
+          "text": "Miscellaneous Exercise on Chapter 5"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            761.3,
+            641.2,
+            812.4
+          ],
+          "conf": 0.928,
+          "text": "Solve the inequalities in Exercises 1 to 6."
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.0,
+            804.8,
+            1032.1,
+            1044.8
+          ],
+          "conf": 0.912,
+          "text": "1. $2 \\le 3x - 4 \\le 5$\n2. $6 \\le -3(2x - 4) < 12$\n3. $-3 \\le 4 - \\frac{7x}{2} \\le 18$\n4. $-15 < \\frac{3(x - 2)}{5} \\le 0$\n5. $-12 < 4 - \\frac{3x}{-5} \\le 2$\n6. $7 \\le \\frac{(3x + 11)}{2} \\le 11.$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1049.8,
+            1178.8,
+            1141.0
+          ],
+          "conf": 0.945,
+          "text": "Solve the inequalities in Exercises 7 to 10 and represent the solution graphically on\nnumber line."
+        },
+        {
+          "order": 11,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            124.9,
+            1140.2,
+            1178.8,
+            1688.3
+          ],
+          "conf": 0.538,
+          "text": "7. $5x + 1 > -24$, $5x - 1 < 24$\n8. $2(x - 1) < x + 5$, $3(x + 2) > 2 - x$\n9. $3x - 7 > 2(x - 6)$, $6 - x > 11 - 2x$\n10. $5(2x - 7) - 3(2x + 3) \\le 0$, $2x + 19 \\le 6x + 47$.\n11. A solution is to be kept between $68^\\circ$ F and $77^\\circ$ F. What is the range in temperature\nin degree Celsius (C) if the Celsius / Fahrenheit (F) conversion formula is given by\n$$F = \\frac{9}{5} C + 32$$ ?\n12. A solution of 8% boric acid is to be diluted by adding a 2% boric acid solution to\nit. The resulting mixture is to be more than 4% but less than 6% boric acid. If we\nhave 640 litres of the 8% solution, how many litres of the 2% solution will have to\nbe added?"
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0088_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            264.7,
+            1179.1,
+            407.0
+          ],
+          "conf": 0.93,
+          "text": "13. How many litres of water will have to be added to 1125 litres of the 45% solution\nof acid so that the resulting mixture will contain more than 25% but less than 30%\nacid content?"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            407.2,
+            677.0,
+            457.3
+          ],
+          "conf": 0.884,
+          "text": "14. IQ of a person is given by the formula"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            519.1,
+            464.9,
+            787.3,
+            548.9
+          ],
+          "conf": 0.921,
+          "text": "$$ \\text{IQ} = \\frac{\\text{MA}}{\\text{CA}} \\times 100, $$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            547.0,
+            1180.7,
+            634.0
+          ],
+          "conf": 0.95,
+          "text": "where MA is mental age and CA is chronological age. If $80 \\le IQ \\le 140$ for a group of\n12 years old children, find the range of their mental age."
+        },
+        {
+          "order": 4,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            691.8,
+            1180.4,
+            1255.9
+          ],
+          "conf": 0.832,
+          "text": "Summary\n\n$\\diamond$ Two real numbers or two algebraic expressions related by the symbols $<, >, \\le$\nor $\\ge$ form an inequality.\n$\\diamond$ Equal numbers may be added to (or subtracted from ) both sides of an inequality.\n$\\diamond$ Both sides of an inequality can be multiplied (or divided ) by the same positive\nnumber. But when both sides are multiplied (or divided) by a negative number,\nthen the inequality is reversed.\n$\\diamond$ The values of $x$, which make an inequality a true statement, are called solutions\nof the inequality.\n$\\diamond$ To represent $x < a$ (or $x > a$) on a number line, put a circle on the number $a$ and\ndark line to the left (or right) of the number $a$.\n$\\diamond$ To represent $x \\le a$ (or $x \\ge a$) on a number line, put a dark circle on the number\n$a$ and dark the line to the left (or right) of the number $x$."
+        },
+        {
+          "order": 5,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            565.9,
+            1340.8,
+            733.1,
+            1390.2
+          ],
+          "conf": 0.742,
+          "text": ""
+        }
+      ],
+      "page": 10
+    }
+  ]
+}

@@ -1,0 +1,3959 @@
+{
+  "book": "1006",
+  "relpath": "dataset/input/eng/10/1006.pdf",
+  "num_pages": 26,
+  "pages": [
+    {
+      "image": "0075_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            544.3,
+            217.2,
+            756.1,
+            444.8
+          ],
+          "conf": 0.894,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            605.7,
+            410.2,
+            697.6,
+            444.4
+          ],
+          "conf": 0.616,
+          "text": "$1062\\text{CH}06$"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            117.1,
+            477.5,
+            1178.7,
+            648.5
+          ],
+          "conf": 0.553,
+          "text": "TRIANGLES 6"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            117.1,
+            709.3,
+            370.6,
+            761.0
+          ],
+          "conf": 0.908,
+          "text": "6.1 Introduction"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.8,
+            766.5,
+            1175.2,
+            1035.7
+          ],
+          "conf": 0.981,
+          "text": "You are familiar with triangles and many of their properties from your earlier classes.\nIn Class IX, you have studied congruence of triangles in detail. Recall that two figures\nare said to be $congruent$, if they have the same shape and the same size. In this\nchapter, we shall study about those figures which have the same shape but not necessarily\nthe same size. Two figures having the same shape (and not necessarily the same size)\nare called $similar$ $figures$. In particular, we shall discuss the similarity of triangles and\napply this knowledge in giving a simple proof of Pythagoras Theorem learnt earlier."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.6,
+            1033.0,
+            1177.1,
+            1119.1
+          ],
+          "conf": 0.946,
+          "text": "Can you guess how heights of mountains (say Mount Everest) or distances of\nsome long distant objects (say moon) have been found out? Do you think these have"
+        },
+        {
+          "order": 6,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            180.6,
+            1114.9,
+            1118.1,
+            1708.3
+          ],
+          "conf": 0.866,
+          "text": ""
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0075_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            259.4,
+            1178.7,
+            423.5
+          ],
+          "conf": 0.969,
+          "text": "been measured directly with the help of a measuring tape? In fact, all these heights\nand distances have been found out using the idea of indirect measurements, which is\nbased on the principle of similarity of figures (see Example 7, Q.15 of Exercise 6.3\nand also Chapters 8 and 9 of this book)."
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.5,
+            449.7,
+            414.1,
+            500.8
+          ],
+          "conf": 0.902,
+          "text": "6.2 Similar Figures"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            502.4,
+            1178.5,
+            628.7
+          ],
+          "conf": 0.962,
+          "text": "In Class IX, you have seen that all circles with the same radii are congruent, all\nsquares with the same side lengths are congruent and all equilateral triangles with the\nsame side lengths are congruent."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            630.4,
+            599.6,
+            1299.0
+          ],
+          "conf": 0.978,
+          "text": "Now consider any two (or more)\ncircles [see Fig. 6.1 (i)]. Are they\ncongruent? Since all of them do not\nhave the same radius, they are not\ncongruent to each other. Note that\nsome are congruent and some are not,\nbut all of them have the same shape.\nSo they all are, what we call, \\textit{similar}.\nTwo similar figures have the same\nshape but not necessarily the same\nsize. Therefore, all circles are similar.\nWhat about two (or more) squares or\ntwo (or more) equilateral triangles\n[see Fig. 6.1 (ii) and (iii)]? As observed\nin the case of circles, here also all\nsquares are similar and all equilateral\ntriangles are similar."
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            604.8,
+            592.6,
+            1178.2,
+            1392.1
+          ],
+          "conf": 0.935,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1303.0,
+            580.6,
+            1465.5
+          ],
+          "conf": 0.946,
+          "text": "From the above, we can say\nthat all congruent figures are\nsimilar but the similar figures need\nnot be congruent."
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            802.5,
+            1409.2,
+            930.5,
+            1459.4
+          ],
+          "conf": 0.871,
+          "text": "Fig. 6.1"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1468.1,
+            579.5,
+            1697.3
+          ],
+          "conf": 0.952,
+          "text": "Can a circle and a square be\nsimilar? Can a triangle and a square\nbe similar? These questions can be\nanswered by just looking at the\nfigures (see Fig. 6.1). Evidently\nthese figures are not similar. (Why?)"
+        },
+        {
+          "order": 8,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            608.5,
+            1463.6,
+            1157.1,
+            1682.1
+          ],
+          "conf": 0.938,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            802.4,
+            1682.3,
+            931.5,
+            1731.8
+          ],
+          "conf": 0.86,
+          "text": "Fig. 6.2"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0075_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            258.0,
+            1178.3,
+            452.8
+          ],
+          "conf": 0.98,
+          "text": "What can you say about the two quadrilaterals ABCD and PQRS\n(see Fig 6.2)?Are they similar? These figures appear to be similar but we cannot be\ncertain about it.Therefore, we must have some definition of similarity of figures and\nbased on this definition some rules to decide whether the two given figures are similar\nor not. For this, let us look at the photographs given in Fig. 6.3:"
+        },
+        {
+          "order": 1,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            161.8,
+            461.1,
+            1137.0,
+            702.4
+          ],
+          "conf": 0.941,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            584.0,
+            721.0,
+            712.1,
+            770.5
+          ],
+          "conf": 0.931,
+          "text": "Fig. 6.3"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            778.8,
+            1178.6,
+            900.2
+          ],
+          "conf": 0.966,
+          "text": "You will at once say that they are the photographs of the same monument\n(Taj Mahal) but are in different sizes. Would you say that the three photographs are\nsimilar? Yes,they are."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            899.8,
+            1177.8,
+            1057.9
+          ],
+          "conf": 0.967,
+          "text": "What can you say about the two photographs of the same size of the same\nperson one at the age of 10 years and the other at the age of 40 years? Are these\nphotographs similar? These photographs are of the same size but certainly they are\nnot of the same shape. So, they are not similar."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1058.1,
+            1178.2,
+            1252.7
+          ],
+          "conf": 0.869,
+          "text": "What does the photographer do when she prints photographs of different sizes\nfrom the same negative? You must have heard about the stamp size, passport size and\npostcard size photographs. She generally takes a photograph on a small size film, say\nof $35\\text{mm}$ size and then enlarges it into a bigger size, say $45\\text{mm}$ (or $55\\text{mm}$). Thus, if we\nconsider any line segment in the smaller photograph (figure), its corresponding line"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1243.0,
+            1176.9,
+            1339.3
+          ],
+          "conf": 0.745,
+          "text": "segment in the bigger photograph (figure) will be $\\frac{45}{35} \\left( \\text{or } \\frac{55}{35} \\right)$ of that of the line segment."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1327.5,
+            1179.0,
+            1593.7
+          ],
+          "conf": 0.932,
+          "text": "This really means that every line segment of the smaller photograph is enlarged\n(increased) \\textit{in the ratio} 35:45 (or 35:55). It can also be said that every line segment\nof the bigger photograph is reduced (decreased) in the ratio 45:35 (or 55:35). Further,\nif you consider inclinations (or angles) between any pair of corresponding line segments\nin the two photographs of different sizes, you shall see that these inclinations(or angles)\n\\textit{are always equal}. This is the essence of the similarity of two figures and in particular\nof two polygons. We say that:"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1593.2,
+            1178.5,
+            1713.6
+          ],
+          "conf": 0.935,
+          "text": "Two polygons of the same number of sides are similar, if (i) their\ncorresponding angles are equal and (ii) their corresponding sides are in the\nsame ratio (or proportion)."
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0075_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.3,
+            258.2,
+            1178.8,
+            416.1
+          ],
+          "conf": 0.971,
+          "text": "Note that the same ratio of the corresponding sides is referred to as the $scale$\n$factor$ (or the $Representative$ $Fraction$) for the polygons. You must have heard that\nworld maps (i.e., global maps) and blue prints for the construction of a building are\nprepared using a suitable scale factor and observing certain conventions."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            416.7,
+            1178.2,
+            499.3
+          ],
+          "conf": 0.949,
+          "text": "In order to understand similarity of figures more clearly, let us perform the following\nactivity:"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            499.9,
+            638.8,
+            876.5
+          ],
+          "conf": 0.955,
+          "text": "Activity 1 : Place a lighted bulb at a\npoint O on the ceiling and directly below\nit a table in your classroom. Let us cut a\npolygon, say a quadrilateral ABCD, from\na plane cardboard and place this\ncardboard parallel to the ground between\nthe lighted bulb and the table. Then a\nshadow of ABCD is cast on the table.\nMark the outline of this shadow as\n$A'B'C'D'$ (see Fig.6.4)."
+        },
+        {
+          "order": 3,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            639.9,
+            513.6,
+            1166.8,
+            1046.5
+          ],
+          "conf": 0.889,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            878.2,
+            1175.2,
+            1181.6
+          ],
+          "conf": 0.938,
+          "text": "Note that the quadrilateral $A'B'C'D'$ is\nan enlargement (or magnification) of the\nquadrilateral ABCD. This is because of\nthe property of light that light propagates\nin a straight line. You may also note that\n$A'$ lies on ray OA, $B'$ lies on ray OB, $C'$\nlies on OC and $D'$ lies on OD. Thus, quadrilaterals $A'B'C'D'$ and ABCD are of the\nsame shape but of different sizes."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1182.4,
+            1177.9,
+            1267.5
+          ],
+          "conf": 0.934,
+          "text": "So, quadrilateral $A'B'C'D'$ is similiar to quadrilateral ABCD. We can also say\nthat quadrilateral ABCD is similar to the quadrilateral $A'B'C'D'$."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1267.7,
+            1178.8,
+            1460.9
+          ],
+          "conf": 0.962,
+          "text": "Here, you can also note that vertex $A'$ corresponds to vertex $A$, vertex $B'$\ncorresponds to vertex $B$, vertex $C'$ corresponds to vertex $C$ and vertex $D'$ corresponds\nto vertex $D$. Symbolically, these correspondences are represented as $A' \\leftrightarrow A, B' \\leftrightarrow B$,\n$C' \\leftrightarrow C$ and $D' \\leftrightarrow D$. By actually measuring the angles and the sides of the two\nquadrilaterals, you may verify that"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.5,
+            1460.0,
+            928.6,
+            1598.1
+          ],
+          "conf": 0.875,
+          "text": "(i) $\\angle A = \\angle A'$, $\\angle B = \\angle B'$, $\\angle C = \\angle C'$, $\\angle D = \\angle D'$ and\n(ii) $\\frac{AB}{A'B'} = \\frac{BC}{B'C'} = \\frac{CD}{C'D'} = \\frac{DA}{D'A'}$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1595.6,
+            1178.3,
+            1715.1
+          ],
+          "conf": 0.938,
+          "text": "This again emphasises that two polygons of the same number of sides are\nsimilar, if (i) all the corresponding angles are equal and (ii) all the corresponding\nsides are in the same ratio (or proportion)."
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0075_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            256.9,
+            1179.1,
+            342.9
+          ],
+          "conf": 0.954,
+          "text": "From the above, you can easily say that quadrilaterals ABCD and PQRS of\nFig. 6.5 are similar."
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            192.8,
+            351.3,
+            1099.2,
+            793.4
+          ],
+          "conf": 0.959,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            583.2,
+            830.3,
+            713.3,
+            882.0
+          ],
+          "conf": 0.913,
+          "text": "Fig. 6.5"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            888.8,
+            1178.5,
+            1010.4
+          ],
+          "conf": 0.947,
+          "text": "Remark : You can verify that if one polygon is similar to another polygon and this\nsecond polygon is similar to a third polygon, then the first polygon is similar to the third\npolygon."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1009.8,
+            1178.6,
+            1131.8
+          ],
+          "conf": 0.95,
+          "text": "You may note that in the two quadrilaterals (a square and a rectangle) of\nFig. 6.6, corresponding angles are equal, but their corresponding sides are not in the\nsame ratio."
+        },
+        {
+          "order": 5,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            234.9,
+            1140.6,
+            1066.5,
+            1456.0
+          ],
+          "conf": 0.947,
+          "text": ""
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            583.7,
+            1477.6,
+            713.3,
+            1528.0
+          ],
+          "conf": 0.886,
+          "text": "Fig. 6.6"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1548.3,
+            1178.3,
+            1711.7
+          ],
+          "conf": 0.96,
+          "text": "So, the two quadrilaterals are not similar. Similarly, you may note that in the two\nquadrilaterals (a square and a rhombus) of Fig. 6.7, corresponding sides are in the\nsame ratio, but their corresponding angles are not equal. Again, the two polygons\n(quadrilaterals) are not similar."
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0075_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            121.2,
+            263.3,
+            1178.3,
+            618.1
+          ],
+          "conf": 0.94,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            582.8,
+            629.5,
+            712.9,
+            678.9
+          ],
+          "conf": 0.922,
+          "text": "Fig. 6.7"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.0,
+            687.4,
+            1178.5,
+            773.3
+          ],
+          "conf": 0.952,
+          "text": "Thus, either of the above two conditions (i) and (ii) of similarity of two\npolygons is not sufficient for them to be similar."
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.3,
+            810.5,
+            773.0,
+            861.5
+          ],
+          "conf": 0.868,
+          "text": "EXERCISE 6.1"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.7,
+            868.1,
+            1179.4,
+            1249.1
+          ],
+          "conf": 0.726,
+          "text": "**1.** Fill in the blanks using the correct word given in brackets :\n(i) All circles are ________. (congruent, similar)\n(ii) All squares are ________. (similar, congruent)\n(iii) All ________ triangles are similar. (isosceles, equilateral)\n(iv) Two polygons of the same number of sides are similar, if (a) their corresponding\nangles are ________ and (b) their corresponding sides are ________. (equal,\nproportional)\n\n**2.** Give two different examples of pair of\n(i) similar figures.                                     (ii) non-similar figures."
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.4,
+            1245.1,
+            884.4,
+            1293.0
+          ],
+          "conf": 0.776,
+          "text": "3. State whether the following quadrilaterals are similar or not:"
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            269.4,
+            1298.5,
+            1018.9,
+            1605.3
+          ],
+          "conf": 0.944,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            583.4,
+            1613.3,
+            712.7,
+            1663.3
+          ],
+          "conf": 0.876,
+          "text": "Fig. 6.8"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0075_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.0,
+            257.5,
+            510.4,
+            309.5
+          ],
+          "conf": 0.899,
+          "text": "6.3 Similarity of Triangles"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            309.1,
+            819.9,
+            358.9
+          ],
+          "conf": 0.92,
+          "text": "What can you say about the similarity of two triangles?"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            356.6,
+            1177.9,
+            442.1
+          ],
+          "conf": 0.946,
+          "text": "You may recall that triangle is also a polygon. So, we can state the same conditions\nfor the similarity of two triangles. That is:"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.1,
+            441.8,
+            578.0,
+            492.1
+          ],
+          "conf": 0.904,
+          "text": "Two triangles are similiar, if"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            490.2,
+            1082.2,
+            586.7
+          ],
+          "conf": 0.945,
+          "text": "$(i)$ their corresponding angles are equal and\n$(ii)$ their corresponding sides are in the same ratio (or proportion)."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            585.2,
+            778.8,
+            780.3
+          ],
+          "conf": 0.967,
+          "text": "Note that if corresponding angles of two\ntriangles are equal, then they are known as\nequiangular triangles. A famous Greek\nmathematician Thales gave an important truth relating\nto two equiangular triangles which is as follows:"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            780.1,
+            778.4,
+            864.5
+          ],
+          "conf": 0.927,
+          "text": "The ratio of any two corresponding sides in\ntwo equiangular triangles is always the same."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            863.4,
+            778.4,
+            985.7
+          ],
+          "conf": 0.948,
+          "text": "It is believed that he had used a result called\nthe $Basic$ $Proportionality$ $Theorem$ (now known as\nthe $Thales$ $Theorem$) for the same."
+        },
+        {
+          "order": 8,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            778.4,
+            585.4,
+            1164.7,
+            1017.6
+          ],
+          "conf": 0.924,
+          "text": ""
+        },
+        {
+          "order": 9,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            843.7,
+            929.7,
+            1095.2,
+            1012.1
+          ],
+          "conf": 0.861,
+          "text": "Thales\n(640 – 546 B.C.)"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            985.3,
+            777.0,
+            1070.5
+          ],
+          "conf": 0.931,
+          "text": "To understand the Basic Proportionality\nTheorem, let us perform the following activity:"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1070.3,
+            778.4,
+            1190.5
+          ],
+          "conf": 0.919,
+          "text": "Activity 2 : Draw any angle XAY and on its one\narm AX, mark points (say five points) P, Q, D, R and\nB such that AP = PQ = QD = DR = RB."
+        },
+        {
+          "order": 12,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            783.9,
+            1096.3,
+            1136.2,
+            1335.1
+          ],
+          "conf": 0.901,
+          "text": ""
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1190.2,
+            778.4,
+            1274.9
+          ],
+          "conf": 0.908,
+          "text": "Now, through B, draw any line intersecting arm\nAY at C (see Fig. 6.9)."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1276.2,
+            1178.5,
+            1668.8
+          ],
+          "conf": 0.612,
+          "text": "Also, through the point D, draw a line parallel\nto BC to intersect AC at E. Do you observe from\nyour constructions that $\\frac{\\text{AD}}{\\text{DB}} = \\frac{3}{2}$ ? Measure AE and\nEC. What about $\\frac{\\text{AE}}{\\text{EC}}$ ? Observe that $\\frac{\\text{AE}}{\\text{EC}}$ is also equal to $\\frac{3}{2}$ . Thus, you can see that\nin $\\Delta$ ABC, DE $\\parallel$ BC and $\\frac{\\text{AD}}{\\text{DB}} = \\frac{\\text{AE}}{\\text{EC}}$ . Is it a coincidence? No, it is due to the following\ntheorem (known as the Basic Proportionality Theorem):"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0075_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            273.8,
+            1178.5,
+            393.5
+          ],
+          "conf": 0.865,
+          "text": "Theorem 6.1 : If a line is drawn parallel to one side of a triangle to intersect the\nother two sides in distinct points, the other two sides are divided in the same\nratio."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            394.6,
+            778.6,
+            516.4
+          ],
+          "conf": 0.942,
+          "text": "Proof : We are given a triangle ABC in which a line\nparallel to side BC intersects other two sides AB and\nAC at D and E respectively (see Fig. 6.10)."
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            755.3,
+            376.6,
+            1179.5,
+            645.2
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            891.7,
+            655.5,
+            1038.3,
+            705.7
+          ],
+          "conf": 0.907,
+          "text": "Fig. 6.10"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            530.5,
+            571.0,
+            620.9
+          ],
+          "conf": 0.887,
+          "text": "We need to prove that $\\frac{\\mathrm{AD}}{\\mathrm{DB}} = \\frac{\\mathrm{AE}}{\\mathrm{EC}}$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            625.7,
+            779.4,
+            708.3
+          ],
+          "conf": 0.941,
+          "text": "Let us join BE and CD and then draw DM $\\perp$ AC and\nEN $\\perp$ AB."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            722.6,
+            863.7,
+            816.8
+          ],
+          "conf": 0.916,
+          "text": "Now, area of $\\Delta$ ADE ($= \\frac{1}{2}$ base $\\times$ height) $= \\frac{1}{2}$ AD $\\times$ EN."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            818.7,
+            957.2,
+            867.9
+          ],
+          "conf": 0.911,
+          "text": "Recall from Class IX, that area of $\\Delta$ ADE is denoted as ar(ADE)."
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            882.0,
+            685.0,
+            972.0
+          ],
+          "conf": 0.896,
+          "text": "So, $\\text{ar}(\\text{ADE}) = \\frac{1}{2} \\text{AD} \\times \\text{EN}$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            987.2,
+            691.2,
+            1080.2
+          ],
+          "conf": 0.877,
+          "text": "Similarly, $\\quad \\text{ar(BDE)} = \\frac{1}{2} \\text{ DB } \\times \\text{ EN},$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            352.3,
+            1095.2,
+            1081.6,
+            1190.9
+          ],
+          "conf": 0.902,
+          "text": "$$ \\text{ar(ADE)} = \\frac{1}{2} \\text{ AE} \\times \\text{DM} \\text{ and } \\text{ar(DEC)} = \\frac{1}{2} \\text{ EC} \\times \\text{DM}. $$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            1212.8,
+            1176.4,
+            1372.0
+          ],
+          "conf": 0.927,
+          "text": "Therefore, $\\frac{\\text{ar(ADE)}}{\\text{ar(BDE)}} = \\frac{\\frac{1}{2} \\text{AD} \\times \\text{EN}}{\\frac{1}{2} \\text{DB} \\times \\text{EN}} = \\frac{\\text{AD}}{\\text{DB}}$ (1)"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            1408.3,
+            1176.4,
+            1565.0
+          ],
+          "conf": 0.916,
+          "text": "and $\\frac{\\text{ar(ADE)}}{\\text{ar(DEC)}} = \\frac{\\frac{1}{2} \\text{AE} \\times \\text{DM}}{\\frac{1}{2} \\text{EC} \\times \\text{DM}} = \\frac{\\text{AE}}{\\text{EC}}$ (2)"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1579.3,
+            1178.8,
+            1663.8
+          ],
+          "conf": 0.923,
+          "text": "Note that $\\Delta$ BDE and DEC are on the same base DE and between the same parallels\nBC and DE."
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            1664.4,
+            1176.2,
+            1714.0
+          ],
+          "conf": 0.866,
+          "text": "So, $\\qquad \\qquad \\text{ar(BDE) = ar(DEC)}$ $\\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0075_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            257.5,
+            667.7,
+            307.4
+          ],
+          "conf": 0.921,
+          "text": "Therefore, from (1), (2) and (3), we have :"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            410.7,
+            319.0,
+            580.2,
+            410.4
+          ],
+          "conf": 0.922,
+          "text": "$$ \\frac{\\mathrm{AD}}{\\mathrm{DB}} = \\frac{\\mathrm{AE}}{\\mathrm{EC}} $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            415.0,
+            1178.6,
+            501.8
+          ],
+          "conf": 0.955,
+          "text": "Is the converse of this theorem also true (For the meaning of converse, see\nAppendix 1)?To examine this, let us perform the following activity:"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            512.6,
+            719.9,
+            673.9
+          ],
+          "conf": 0.899,
+          "text": "Activity 3 : Draw an angle XAY on your\nnotebook and on ray AX, mark points $\\text{B}_1$, $\\text{B}_2$,\n$\\text{B}_3$, $\\text{B}_4$ and $\\text{B}$ such that $\\text{AB}_1 = \\text{B}_1\\text{B}_2 = \\text{B}_2\\text{B}_3 =$\n$\\text{B}_3\\text{B}_4 = \\text{B}_4\\text{B}$."
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            736.2,
+            506.4,
+            1174.8,
+            857.9
+          ],
+          "conf": 0.952,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            877.2,
+            831.4,
+            1018.8,
+            878.6
+          ],
+          "conf": 0.893,
+          "text": "Fig. 6.11"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            673.5,
+            719.5,
+            848.2
+          ],
+          "conf": 0.966,
+          "text": "Similarly, on ray AY, mark points\n$C_1$, $C_2$, $C_3$, $C_4$ and C such that $AC_1 = C_1C_2 =$\n$C_2C_3 = C_3C_4 = C_4C$. Then join $B_1C_1$ and BC\n(see Fig. 6.11)."
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.4,
+            863.0,
+            855.5,
+            959.1
+          ],
+          "conf": 0.923,
+          "text": "Note that $\\frac{AB_1}{B_1B} = \\frac{AC_1}{C_1C}$ (Each equal to $\\frac{1}{4}$)"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.8,
+            966.1,
+            1080.8,
+            1018.2
+          ],
+          "conf": 0.905,
+          "text": "You can also see that lines $\\mathrm{B}_1\\mathrm{C}_1$ and BC are parallel to each other, i.e.,"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            530.0,
+            1015.0,
+            1176.0,
+            1066.7
+          ],
+          "conf": 0.9,
+          "text": "$$B_1C_1 \\parallel BC \\hfill (1)$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1063.6,
+            868.8,
+            1116.6
+          ],
+          "conf": 0.91,
+          "text": "Similarly, by joining $\\text{B}_2\\text{C}_2$, $\\text{B}_3\\text{C}_3$ and $\\text{B}_4\\text{C}_4$, you can see that:"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            382.5,
+            1125.6,
+            1177.0,
+            1225.7
+          ],
+          "conf": 0.918,
+          "text": "$$\\frac{\\mathrm{AB}_2}{\\mathrm{B}_2\\mathrm{B}} = \\frac{\\mathrm{AC}_2}{\\mathrm{C}_2\\mathrm{C}} \\left( = \\frac{2}{3} \\right) \\text{ and } \\mathrm{B}_2\\mathrm{C}_2 \\parallel \\mathrm{BC} \\tag{2}$$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            386.1,
+            1239.9,
+            1176.9,
+            1337.6
+          ],
+          "conf": 0.915,
+          "text": "$$\\frac{\\mathrm{AB}_3}{\\mathrm{B}_3\\mathrm{B}} = \\frac{\\mathrm{AC}_3}{\\mathrm{C}_3\\mathrm{C}} \\left( = \\frac{3}{2} \\right) \\text{ and } \\mathrm{B}_3\\mathrm{C}_3 \\parallel \\mathrm{BC} \\tag{3}$$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            383.1,
+            1353.6,
+            1177.3,
+            1452.2
+          ],
+          "conf": 0.905,
+          "text": "$$ \\frac{\\mathrm{AB}_4}{\\mathrm{B}_4\\mathrm{B}} = \\frac{\\mathrm{AC}_4}{\\mathrm{C}_4\\mathrm{C}} \\quad \\left( = \\frac{4}{1} \\right) \\text{ and } \\mathrm{B}_4\\mathrm{C}_4 \\parallel \\mathrm{BC} \\eqno(4) $$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1461.7,
+            1179.2,
+            1550.0
+          ],
+          "conf": 0.925,
+          "text": "From (1), (2), (3) and (4), it can be observed that if a line divides two sides of a\ntriangle in the same ratio, then the line is parallel to the third side."
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1550.2,
+            1179.1,
+            1710.8
+          ],
+          "conf": 0.945,
+          "text": "You can repeat this activity by drawing any angle XAY of different measure and\ntaking any number of equal parts on arms AX and AY . Each time, you will arrive at\nthe same result. Thus, we obtain the following theorem, which is the converse of\nTheorem 6.1:"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0075_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            257.6,
+            780.0,
+            379.1
+          ],
+          "conf": 0.94,
+          "text": "Theorem 6.2 : If a line divides any two sides of a\ntriangle in the same ratio, then the line is parallel\nto the third side."
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            780.8,
+            257.6,
+            1179.2,
+            581.2
+          ],
+          "conf": 0.959,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            378.9,
+            778.6,
+            428.4
+          ],
+          "conf": 0.87,
+          "text": "This theorem can be proved by taking a line DE such"
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            904.9,
+            588.6,
+            1050.4,
+            638.0
+          ],
+          "conf": 0.918,
+          "text": "Fig. 6.12"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            429.6,
+            778.3,
+            560.3
+          ],
+          "conf": 0.824,
+          "text": "that $\\frac{\\mathrm{AD}}{\\mathrm{DB}} = \\frac{\\mathrm{AE}}{\\mathrm{EC}}$ and assuming that $\\mathrm{DE}$ is not parallel\nto $\\mathrm{BC}$ (see Fig. 6.12)."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            561.8,
+            778.8,
+            645.4
+          ],
+          "conf": 0.934,
+          "text": "If DE is not parallel to BC, draw a line DE'\nparallel to BC."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            659.3,
+            753.0,
+            748.8
+          ],
+          "conf": 0.883,
+          "text": "So, $\\frac{\\mathrm{AD}}{\\mathrm{DB}} = \\frac{\\mathrm{AE}'}{\\mathrm{E}'\\mathrm{C}}$ (Why ?)"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            769.1,
+            753.1,
+            860.1
+          ],
+          "conf": 0.872,
+          "text": "Therefore, $\\frac{\\text{AE}}{\\text{EC}} = \\frac{\\text{AE}'}{\\text{E}'\\text{C}}$ (Why ?)"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            863.4,
+            1175.7,
+            949.2
+          ],
+          "conf": 0.925,
+          "text": "Adding 1 to both sides of above, you can see that E and E' must coincide.\n(Why ?)"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            948.5,
+            1010.9,
+            997.1
+          ],
+          "conf": 0.89,
+          "text": "Let us take some examples to illustrate the use of the above theorems."
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1008.1,
+            1178.7,
+            1700.7
+          ],
+          "conf": 0.747,
+          "text": "Example 1 : If a line intersects sides AB and AC of a $\\Delta$ ABC at D and E respectively\nand is parallel to BC, prove that $\\frac{AD}{AB} = \\frac{AE}{AC}$ (see Fig. 6.13).\n\nSolution :\nSo,\n$$ \\frac{AD}{DB} = \\frac{AE}{EC} $$\nor,\n$$ \\frac{DB}{AD} = \\frac{EC}{AE} $$\nor,\n$$ \\frac{DB}{AD} + 1 = \\frac{EC}{AE} + 1 $$\nor,\n$$ \\frac{AB}{AD} = \\frac{AC}{AE} $$\nSo,\n$$ \\frac{AD}{AB} = \\frac{AE}{AC} $$\n\n(Given)\n(Theorem 6.1)\nA\nB\nC"
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            885.0,
+            1662.5,
+            1030.8,
+            1712.5
+          ],
+          "conf": 0.857,
+          "text": "Fig. 6.13"
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0075_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            274.4,
+            780.9,
+            909.7
+          ],
+          "conf": 0.517,
+          "text": "Example 2 : ABCD is a trapezium with AB $\\parallel$ DC. E\nand F are points on non-parallel sides AD and BC\nrespectively such that EF is parallel to AB\n\n(see Fig. 6.14). Show that $\\frac{\\text{AE}}{\\text{ED}} = \\frac{\\text{BF}}{\\text{FC}}$.\n\nSolution : Let us join AC to intersect EF at G\n(see Fig. 6.15).\n\nAB $\\parallel$ DC and EF $\\parallel$ AB (Given)\n\nSo, EF $\\parallel$ DC (Lines parallel to the same line are\nparallel to each other)\n\nNow, in $\\Delta$ ADC,\n\nEG $\\parallel$ DC (As EF $\\parallel$ DC)\n\nSo, $\\frac{\\text{AE}}{\\text{ED}} = \\frac{\\text{AG}}{\\text{GC}}$ (Theorem 6.1) (1)"
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            790.3,
+            274.0,
+            1179.6,
+            512.8
+          ],
+          "conf": 0.961,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            909.7,
+            520.8,
+            1055.1,
+            570.6
+          ],
+          "conf": 0.918,
+          "text": "Fig. 6.14"
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            760.8,
+            687.2,
+            1179.4,
+            930.2
+          ],
+          "conf": 0.952,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            896.1,
+            960.3,
+            1041.3,
+            1009.7
+          ],
+          "conf": 0.907,
+          "text": "Fig. 6.15"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            916.0,
+            428.1,
+            964.4
+          ],
+          "conf": 0.824,
+          "text": "Similarly, from $\\Delta$ CAB,"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            481.5,
+            975.3,
+            647.1,
+            1069.3
+          ],
+          "conf": 0.778,
+          "text": "$$ \\frac{\\text{CG}}{\\text{AG}} = \\frac{\\text{CF}}{\\text{BF}} $$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            1086.0,
+            648.0,
+            1175.7
+          ],
+          "conf": 0.765,
+          "text": "i.e., $\\frac{\\text{AG}}{\\text{GC}} = \\frac{\\text{BF}}{\\text{FC}}$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            1115.0,
+            1110.4,
+            1176.9,
+            1157.9
+          ],
+          "conf": 0.656,
+          "text": "(2)"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1180.9,
+            487.5,
+            1230.2
+          ],
+          "conf": 0.816,
+          "text": "Therefore, from (1) and (2),"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            488.3,
+            1242.2,
+            648.0,
+            1331.9
+          ],
+          "conf": 0.814,
+          "text": "$$ \\frac{\\text{AE}}{\\text{ED}} = \\frac{\\text{BF}}{\\text{FC}} $$"
+        },
+        {
+          "order": 11,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            796.6,
+            1137.2,
+            1142.4,
+            1504.2
+          ],
+          "conf": 0.949,
+          "text": ""
+        },
+        {
+          "order": 12,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1355.5,
+            1177.4,
+            1699.4
+          ],
+          "conf": 0.659,
+          "text": "Example 3 : In Fig. 6.16, $\\frac{\\text{PS}}{\\text{SQ}} = \\frac{\\text{PT}}{\\text{TR}}$ and $\\angle \\text{PST} =$\n$\\angle \\text{PRQ}$. Prove that PQR is an isosceles triangle.\n\nSolution : It is given that $\\frac{\\text{PS}}{\\text{SQ}} = \\frac{\\text{PT}}{\\text{TR}}$.\n\nSo, $\\text{ST} \\parallel \\text{QR}$ (Theorem 6.2)\nTherefore, $\\angle \\text{PST} = \\angle \\text{PQR}$ (Corresponding angles) (1)"
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0075_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            275.3,
+            386.8,
+            324.5
+          ],
+          "conf": 0.873,
+          "text": "Also, it is given that"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            321.9,
+            1173.8,
+            375.2
+          ],
+          "conf": 0.611,
+          "text": "$$ \\angle PST = \\angle PRQ \\tag{2} $$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            372.0,
+            938.6,
+            421.6
+          ],
+          "conf": 0.811,
+          "text": "So, $\\angle PRQ = \\angle PQR$ [From (1) and (2)]"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            419.5,
+            1112.8,
+            468.7
+          ],
+          "conf": 0.828,
+          "text": "Therefore, $\\text{PQ} = \\text{PR}$ (Sides opposite the equal angles)"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            467.2,
+            574.3,
+            516.2
+          ],
+          "conf": 0.894,
+          "text": "i.e., PQR is an isosceles triangle."
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            528.6,
+            552.7,
+            770.2,
+            602.7
+          ],
+          "conf": 0.846,
+          "text": "EXERCISE 6.2"
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.3,
+            614.8,
+            886.6,
+            665.8
+          ],
+          "conf": 0.88,
+          "text": "1. In Fig. 6.17, (i) and (ii), DE $\\parallel$ BC. Find EC in (i) and AD in (ii)."
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            246.7,
+            674.1,
+            1051.8,
+            986.3
+          ],
+          "conf": 0.954,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            574.5,
+            1010.8,
+            722.7,
+            1060.4
+          ],
+          "conf": 0.866,
+          "text": "Fig. 6.17"
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.3,
+            1075.8,
+            931.7,
+            1359.6
+          ],
+          "conf": 0.673,
+          "text": "2. E and F are points on the sides PQ and PR\nrespectively of a $\\Delta$ PQR. For each of the following\ncases, state whether EF $\\parallel$ QR :\n\n(i) PE = 3.9 cm, EQ = 3 cm, PF = 3.6 cm and FR = 2.4 cm\n\n(ii) PE = 4 cm, QE = 4.5 cm, PF = 8 cm and RF = 9 cm\n\n(iii) PQ = 1.28 cm, PR = 2.56 cm, PE = 0.18 cm and PF = 0.36 cm"
+        },
+        {
+          "order": 10,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            784.4,
+            1024.5,
+            1178.2,
+            1256.8
+          ],
+          "conf": 0.952,
+          "text": ""
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            965.8,
+            1271.5,
+            1111.4,
+            1321.3
+          ],
+          "conf": 0.857,
+          "text": "Fig. 6.18"
+        },
+        {
+          "order": 12,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.8,
+            1367.6,
+            778.6,
+            1501.6
+          ],
+          "conf": 0.879,
+          "text": "3. In Fig. 6.18, if LM $\\parallel$ CB and LN $\\parallel$ CD, prove that\n$$\\frac{\\text{AM}}{\\text{AB}} = \\frac{\\text{AN}}{\\text{AD}}.$$"
+        },
+        {
+          "order": 13,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            785.9,
+            1398.8,
+            1179.6,
+            1625.3
+          ],
+          "conf": 0.957,
+          "text": ""
+        },
+        {
+          "order": 14,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.1,
+            1505.0,
+            778.1,
+            1635.0
+          ],
+          "conf": 0.888,
+          "text": "**4.** In Fig. 6.19, DE $\\parallel$ AC and DF $\\parallel$ AE. Prove that\n\n$$\\frac{\\text{BF}}{\\text{FE}} = \\frac{\\text{BE}}{\\text{EC}}.$$"
+        },
+        {
+          "order": 15,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            919.6,
+            1639.5,
+            1065.6,
+            1690.0
+          ],
+          "conf": 0.862,
+          "text": "Fig. 6.19"
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0075_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.6,
+            255.6,
+            780.9,
+            896.4
+          ],
+          "conf": 0.548,
+          "text": "5. In Fig. 6.20, DE $\\parallel$ OQ and DF $\\parallel$ OR. Show that\nEF $\\parallel$ QR.\n\n6. In Fig. 6.21, A, B and C are points on OP, OQ and\nOR respectively such that AB $\\parallel$ PQ and AC $\\parallel$ PR.\nShow that BC $\\parallel$ QR.\n\n7. Using Theorem 6.1, prove that a line drawn through\nthe mid-point of one side of a triangle parallel to\nanother side bisects the third side. (Recall that you\nhave proved it in Class IX).\n\n8. Using Theorem 6.2, prove that the line joining the\nmid-points of any two sides of a triangle is parallel\nto the third side. (Recall that you have done it in\nClass IX).\n\n9. ABCD is a trapezium in which AB $\\parallel$ DC and its\ndiagonals intersect each other at the point O. Show\n\nthat $\\frac{\\text{AO}}{\\text{BO}} = \\frac{\\text{CO}}{\\text{DO}}$."
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            794.0,
+            255.4,
+            1159.7,
+            507.1
+          ],
+          "conf": 0.952,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            897.4,
+            504.8,
+            1042.2,
+            553.7
+          ],
+          "conf": 0.91,
+          "text": "Fig. 6.20"
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            786.1,
+            574.6,
+            1151.1,
+            835.0
+          ],
+          "conf": 0.949,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            897.3,
+            839.2,
+            1040.8,
+            888.1
+          ],
+          "conf": 0.883,
+          "text": "Fig. 6.21"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.3,
+            905.7,
+            1178.6,
+            1037.0
+          ],
+          "conf": 0.868,
+          "text": "10. The diagonals of a quadrilateral ABCD intersect each other at the point O such that\n\n$$\\frac{\\text{AO}}{\\text{BO}} = \\frac{\\text{CO}}{\\text{DO}} \\cdot \\text{Show that ABCD is a trapezium.}$$"
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.3,
+            1069.7,
+            675.1,
+            1122.3
+          ],
+          "conf": 0.9,
+          "text": "6.4 Criteria for Similarity of Triangles"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1121.0,
+            1178.1,
+            1205.5
+          ],
+          "conf": 0.936,
+          "text": "In the previous section, we stated that two triangles are similar, if (i) their corresponding\nangles are equal and (ii) their corresponding sides are in the same ratio (or proportion)."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.7,
+            1204.2,
+            607.0,
+            1253.8
+          ],
+          "conf": 0.86,
+          "text": "That is, in $\\Delta$ ABC and $\\Delta$ DEF, if"
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.2,
+            1251.0,
+            1082.5,
+            1399.9
+          ],
+          "conf": 0.678,
+          "text": "(i) $\\angle A = \\angle D$, $\\angle B = \\angle E$, $\\angle C = \\angle F$ and\n\n\n(ii) $\\frac{AB}{DE} = \\frac{BC}{EF} = \\frac{CA}{FD}$, then the two triangles are similar (see Fig. 6.22)."
+        },
+        {
+          "order": 10,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            309.1,
+            1415.3,
+            988.4,
+            1639.7
+          ],
+          "conf": 0.945,
+          "text": ""
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            576.2,
+            1656.6,
+            720.6,
+            1707.1
+          ],
+          "conf": 0.856,
+          "text": "Fig. 6.22"
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0075_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            257.6,
+            1179.5,
+            451.1
+          ],
+          "conf": 0.979,
+          "text": "Here, you can see that A corresponds to D, B corresponds to E and C\ncorresponds to F. Symbolically, we write the similarity of these two triangles as\n‘$\\Delta$ ABC $\\sim$ $\\Delta$ DEF’ and read it as ‘triangle ABC is similar to triangle DEF’. The\nsymbol ‘$\\sim$’ stands for ‘is similar to’. Recall that you have used the symbol ‘$\\equiv$’ for\n‘is congruent to’ in Class IX."
+        },
+        {
+          "order": 1,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            465.1,
+            1178.2,
+            708.7
+          ],
+          "conf": 0.965,
+          "text": "It must be noted that as done in the case of congruency of two triangles, the\nsimilarity of two triangles should also be expressed symbolically, using correct\ncorrespondence of their vertices. For example, for the triangles ABC and DEF of\nFig. 6.22, we cannot write $\\Delta$ ABC $\\sim$ $\\Delta$ EDF or $\\Delta$ ABC $\\sim$ $\\Delta$ FED. However, we\ncan write $\\Delta$ BAC $\\sim$ $\\Delta$ EDF."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            713.5,
+            1178.5,
+            836.6
+          ],
+          "conf": 0.908,
+          "text": "Now a natural question arises : For checking the similarity of two triangles, say\nABC and DEF, should we always look for all the equality relations of their corresponding\nangles ($\\angle A = \\angle D$, $\\angle B = \\angle E$, $\\angle C = \\angle F$) and all the equality relations of the ratios"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            836.4,
+            1177.5,
+            927.6
+          ],
+          "conf": 0.741,
+          "text": "of their corresponding sides $\\left( \\frac{\\text{AB}}{\\text{DE}} = \\frac{\\text{BC}}{\\text{EF}} = \\frac{\\text{CA}}{\\text{FD}} \\right)$? Let us examine. You may recall that"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            920.9,
+            1178.5,
+            1152.0
+          ],
+          "conf": 0.894,
+          "text": "in Class IX, you have obtained some criteria for congruency of two triangles involving\nonly three pairs of corresponding parts (or elements) of the two triangles. Here also,\nlet us make an attempt to arrive at certain criteria for similarity of two triangles involving\nrelationship between less number of pairs of corresponding parts of the two triangles,\ninstead of all the six pairs of corresponding parts. For this, let us perform the following\nactivity:"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1164.9,
+            1178.3,
+            1323.5
+          ],
+          "conf": 0.914,
+          "text": "Activity 4 : Draw two line segments BC and EF of two different lengths, say 3 cm\nand 5 cm respectively. Then, at the points B and C respectively, construct angles PBC\nand QCB of some measures, say, $60^\\circ$ and $40^\\circ$. Also, at the points E and F, construct\nangles REF and SFE of $60^\\circ$ and $40^\\circ$ respectively (see Fig. 6.23)."
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            220.1,
+            1336.8,
+            1078.9,
+            1676.4
+          ],
+          "conf": 0.946,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            576.0,
+            1670.5,
+            721.5,
+            1719.7
+          ],
+          "conf": 0.861,
+          "text": "Fig. 6.23"
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0075_p0014.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            257.6,
+            1179.2,
+            720.5
+          ],
+          "conf": 0.954,
+          "text": "Let rays BP and CQ intersect each other at A and rays ER and FS intersect each\nother at D. In the two triangles ABC and DEF, you can see that\n$\\angle \\text{B} = \\angle \\text{E}$, $\\angle \\text{C} = \\angle \\text{F}$ and $\\angle \\text{A} = \\angle \\text{D}$. That is, corresponding angles of these two\ntriangles are equal. What can you say about their corresponding sides ? Note that\n$\\frac{\\text{BC}}{\\text{EF}} = \\frac{3}{5} = 0.6$. What about $\\frac{\\text{AB}}{\\text{DE}}$ and $\\frac{\\text{CA}}{\\text{FD}}$? On measuring AB, DE, CA and FD, you\nwill find that $\\frac{\\text{AB}}{\\text{DE}}$ and $\\frac{\\text{CA}}{\\text{FD}}$ are also equal to 0.6 (or nearly equal to 0.6, if there is some\nerror in the measurement). Thus, $\\frac{\\text{AB}}{\\text{DE}} = \\frac{\\text{BC}}{\\text{EF}} = \\frac{\\text{CA}}{\\text{FD}}$. You can repeat this activity by\nconstructing several pairs of triangles having their corresponding angles equal. Every\ntime, you will find that their corresponding sides are in the same ratio (or proportion).\nThis activity leads us to the following criterion for similarity of two triangles."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            735.1,
+            1179.0,
+            857.3
+          ],
+          "conf": 0.871,
+          "text": "**Theorem 6.3 :** *If in two triangles, corresponding angles are equal, then their*\n*corresponding sides are in the same ratio (or proportion) and hence the two*\n*triangles are similar.*\n\\hfill D"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            857.1,
+            640.1,
+            977.7
+          ],
+          "conf": 0.941,
+          "text": "This criterion is referred to as the AAA\n(Angle–Angle–Angle) criterion of\nsimilarity of two triangles."
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            656.1,
+            824.4,
+            1179.0,
+            1084.9
+          ],
+          "conf": 0.954,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            977.5,
+            640.4,
+            1136.4
+          ],
+          "conf": 0.938,
+          "text": "This theorem can be proved by taking two\ntriangles ABC and DEF such that\n$\\angle A = \\angle D$, $\\angle B = \\angle E$ and $\\angle C = \\angle F$\n(see Fig. 6.24)"
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            842.7,
+            1103.1,
+            989.0,
+            1152.0
+          ],
+          "conf": 0.899,
+          "text": "Fig. 6.24"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1134.1,
+            657.0,
+            1185.0
+          ],
+          "conf": 0.852,
+          "text": "Cut DP = AB and DQ = AC and join PQ."
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            1182.8,
+            940.6,
+            1232.5
+          ],
+          "conf": 0.8,
+          "text": "So, $\\Delta \\mathrm{ABC} \\cong \\Delta \\mathrm{DPQ}$ (Why ?)"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            1231.8,
+            1037.5,
+            1281.7
+          ],
+          "conf": 0.789,
+          "text": "This gives $\\angle \\mathrm{B}=\\angle \\mathrm{P}=\\angle \\mathrm{E}$ and $\\mathrm{PQ} \\| \\mathrm{EF}$ (How?)"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            1296.0,
+            1036.4,
+            1383.8
+          ],
+          "conf": 0.878,
+          "text": "Therefore, $$\\frac{\\text{DP}}{\\text{PE}} = \\frac{\\text{DQ}}{\\text{QF}} \\qquad \\qquad \\qquad \\text{(Why?)}$$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            1396.9,
+            1035.6,
+            1480.7
+          ],
+          "conf": 0.872,
+          "text": "$$ \\text{i.e.,} \\qquad \\qquad \\qquad \\qquad \\frac{\\text{AB}}{\\text{DE}} = \\frac{\\text{AC}}{\\text{DF}} \\qquad \\qquad \\qquad \\qquad \\text{(Why?)} $$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            1493.0,
+            761.1,
+            1585.7
+          ],
+          "conf": 0.868,
+          "text": "Similarly, $\\frac{\\mathrm{AB}}{\\mathrm{DE}}=\\frac{\\mathrm{BC}}{\\mathrm{EF}}$ and so $\\frac{\\mathrm{AB}}{\\mathrm{DE}}=\\frac{\\mathrm{BC}}{\\mathrm{EF}}=\\frac{\\mathrm{AC}}{\\mathrm{DF}}$."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1589.2,
+            1178.2,
+            1710.4
+          ],
+          "conf": 0.903,
+          "text": "Remark : If two angles of a triangle are respectively equal to two angles of another\ntriangle, then by the angle sum property of a triangle their third angles will also be\nequal. Therefore, AAA similarity criterion can also be stated as follows:"
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0075_p0015.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            258.2,
+            1178.6,
+            343.3
+          ],
+          "conf": 0.954,
+          "text": "If two angles of one triangle are respectively equal to two angles of another\ntriangle, then the two triangles are similar."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.8,
+            342.8,
+            1105.1,
+            391.2
+          ],
+          "conf": 0.923,
+          "text": "This may be referred to as the AA similarity criterion for two triangles."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            390.4,
+            1178.3,
+            621.3
+          ],
+          "conf": 0.975,
+          "text": "You have seen above that if the three angles of one triangle are respectively\nequal to the three angles of another triangle, then their corresponding sides are\nproportional (i.e., in the same ratio). What about the converse of this statement? Is the\nconverse true? In other words, if the sides of a triangle are respectively proportional to\nthe sides of another triangle, is it true that their corresponding angles are equal? Let us\nexamine it through an activity :"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            635.4,
+            1177.3,
+            719.9
+          ],
+          "conf": 0.883,
+          "text": "Activity 5 : Draw two triangles ABC and DEF such that AB = 3 cm, BC = 6 cm,\nCA = 8 cm, DE = 4.5 cm, EF = 9 cm and FD = 12 cm (see Fig. 6.25)."
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            225.0,
+            724.1,
+            1061.7,
+            997.1
+          ],
+          "conf": 0.948,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            574.6,
+            1007.6,
+            721.5,
+            1056.4
+          ],
+          "conf": 0.913,
+          "text": "Fig. 6.25"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            1067.2,
+            957.6,
+            1160.3
+          ],
+          "conf": 0.769,
+          "text": "So, you have : $\\frac{\\text{AB}}{\\text{DE}} = \\frac{\\text{BC}}{\\text{EF}} = \\frac{\\text{CA}}{\\text{FD}}$ (each equal to $\\frac{2}{3}$)"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1155.4,
+            1178.3,
+            1277.2
+          ],
+          "conf": 0.948,
+          "text": "Now measure $\\angle$ A, $\\angle$ B, $\\angle$ C, $\\angle$ D, $\\angle$ E and $\\angle$ F. You will observe that\n$\\angle$ A = $\\angle$ D, $\\angle$ B = $\\angle$ E and $\\angle$ C = $\\angle$ F, i.e., the corresponding angles of the two\ntriangles are equal."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1275.8,
+            1178.2,
+            1397.6
+          ],
+          "conf": 0.953,
+          "text": "You can repeat this activity by drawing several such triangles (having their sides\nin the same ratio). Everytime you shall see that their corresponding angles are equal.\nIt is due to the following criterion of similarity of two triangles:"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1410.8,
+            1178.2,
+            1532.3
+          ],
+          "conf": 0.924,
+          "text": "Theorem 6.4 : If in two triangles, sides of one triangle are proportional to\n(i.e., in the same ratio of) the sides of the other triangle, then their corresponding\nangles are equal and hence the two triangles are similar."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1531.6,
+            1179.2,
+            1617.1
+          ],
+          "conf": 0.921,
+          "text": "This criterion is referred to as the SSS (Side–Side–Side) similarity criterion for\ntwo triangles."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            124.5,
+            1616.0,
+            1178.3,
+            1745.0
+          ],
+          "conf": 0.835,
+          "text": "This theorem can be proved by taking two triangles ABC and DEF such that\n$$\\frac{\\text{AB}}{\\text{DE}} = \\frac{\\text{BC}}{\\text{EF}} = \\frac{\\text{CA}}{\\text{FD}} \\quad (< 1) \\text{ (see Fig. 6.26):}$$"
+        }
+      ],
+      "page": 15
+    },
+    {
+      "image": "0075_p0016.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            247.8,
+            280.2,
+            1053.5,
+            604.6
+          ],
+          "conf": 0.962,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            575.5,
+            611.4,
+            721.8,
+            660.2
+          ],
+          "conf": 0.933,
+          "text": "Fig. 6.26"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            669.4,
+            657.9,
+            720.9
+          ],
+          "conf": 0.923,
+          "text": "Cut DP = AB and DQ = AC and join PQ."
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.6,
+            739.7,
+            989.2,
+            831.6
+          ],
+          "conf": 0.903,
+          "text": "It can be seen that $\\frac{\\mathrm{DP}}{\\mathrm{PE}} = \\frac{\\mathrm{DQ}}{\\mathrm{QF}}$ and $\\mathrm{PQ} \\parallel \\mathrm{EF}$ (How?)"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.4,
+            837.0,
+            916.8,
+            889.2
+          ],
+          "conf": 0.878,
+          "text": "So, $\\angle P = \\angle E$ and $\\angle Q = \\angle F$."
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            898.3,
+            796.5,
+            993.3
+          ],
+          "conf": 0.912,
+          "text": "Therefore, $\\frac{\\mathrm{DP}}{\\mathrm{DE}} = \\frac{\\mathrm{DQ}}{\\mathrm{DF}} = \\frac{\\mathrm{PQ}}{\\mathrm{EF}}$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            1007.4,
+            926.1,
+            1100.7
+          ],
+          "conf": 0.916,
+          "text": "So, $$\\frac{\\mathrm{DP}}{\\mathrm{DE}} = \\frac{\\mathrm{DQ}}{\\mathrm{DF}} = \\frac{\\mathrm{BC}}{\\mathrm{EF}} \\quad (\\text{Why?})$$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            1114.5,
+            930.0,
+            1168.7
+          ],
+          "conf": 0.848,
+          "text": "So, $\\text{BC} = \\text{PQ} \\quad (\\text{Why?})$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            1164.1,
+            939.6,
+            1216.8
+          ],
+          "conf": 0.845,
+          "text": "Thus, $\\Delta$ ABC $\\cong$ $\\Delta$ DPQ (Why ?)"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            1212.8,
+            1048.8,
+            1264.1
+          ],
+          "conf": 0.86,
+          "text": "So, $\\angle A = \\angle D$, $\\angle B = \\angle E$ and $\\angle C = \\angle F$ (How ?)"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1275.8,
+            1178.7,
+            1468.7
+          ],
+          "conf": 0.962,
+          "text": "Remark : You may recall that either of the two conditions namely, (i) corresponding\nangles are equal and (ii) corresponding sides are in the same ratio is not sufficient for\ntwo polygons to be similar. However, on the basis of Theorems 6.3 and 6.4, you can\nnow say that in case of similarity of the two triangles, it is not necessary to check both\nthe conditions as one condition implies the other."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1469.5,
+            1178.6,
+            1627.9
+          ],
+          "conf": 0.965,
+          "text": "Let us now recall the various criteria for congruency of two triangles learnt in\nClass IX. You may observe that SSS similarity criterion can be compared with the SSS\ncongruency criterion.This suggests us to look for a similarity criterion comparable to\nSAS congruency criterion of triangles. For this, let us perform an activity."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1639.9,
+            1177.8,
+            1726.5
+          ],
+          "conf": 0.839,
+          "text": "Activity 6 : Draw two triangles ABC and DEF such that AB = 2 cm, $\\angle$ A = $50^\\circ$,\nAC = 4 cm, DE = 3 cm, $\\angle$ D = $50^\\circ$ and DF = 6 cm (see Fig.6.27)."
+        }
+      ],
+      "page": 16
+    },
+    {
+      "image": "0075_p0017.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            243.1,
+            276.8,
+            1048.7,
+            535.4
+          ],
+          "conf": 0.949,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            575.5,
+            564.9,
+            721.2,
+            613.5
+          ],
+          "conf": 0.928,
+          "text": "Fig. 6.27"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            635.2,
+            1179.0,
+            877.6
+          ],
+          "conf": 0.967,
+          "text": "Here, you may observe that $\\frac{\\mathrm{AB}}{\\mathrm{DE}} = \\frac{\\mathrm{AC}}{\\mathrm{DF}}$ (each equal to $\\frac{2}{3}$) and $\\angle \\mathrm{A}$ (included\nbetween the sides $\\mathrm{AB}$ and $\\mathrm{AC}$) $= \\angle \\mathrm{D}$ (included between the sides $\\mathrm{DE}$ and $\\mathrm{DF}$). That\nis, one angle of a triangle is equal to one angle of another triangle and sides including\nthese angles are in the same ratio (i.e., proportion). Now let us measure $\\angle \\mathrm{B}$, $\\angle \\mathrm{C}$,\n$\\angle \\mathrm{E}$ and $\\angle \\mathrm{F}$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            877.2,
+            1178.8,
+            1108.8
+          ],
+          "conf": 0.975,
+          "text": "You will find that $\\angle \\mathrm{B} = \\angle \\mathrm{E}$ and $\\angle \\mathrm{C} = \\angle \\mathrm{F}$. That is, $\\angle \\mathrm{A} = \\angle \\mathrm{D}$, $\\angle \\mathrm{B} = \\angle \\mathrm{E}$ and\n$\\angle \\mathrm{C} = \\angle \\mathrm{F}$. So, by AAA similarity criterion, $\\Delta \\mathrm{ABC} \\sim \\Delta \\mathrm{DEF}$. You may repeat this\nactivity by drawing several pairs of such triangles with one angle of a triangle equal to\none angle of another triangle and the sides including these angles are proportional.\nEverytime, you will find that the triangles are similar. It is due to the following criterion\nof similarity of triangles:"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1123.3,
+            1178.7,
+            1244.5
+          ],
+          "conf": 0.921,
+          "text": "Theorem 6.5 : If one angle of a triangle is equal to one angle of the other\ntriangle and the sides including these angles are proportional, then the two\ntriangles are similar."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1243.9,
+            579.8,
+            1400.1
+          ],
+          "conf": 0.949,
+          "text": "This criterion is referred to as\nthe SAS (Side-Angle-Side)\nsimilarity criterion for two\ntriangles."
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            593.7,
+            1298.7,
+            1178.7,
+            1580.6
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1401.2,
+            580.5,
+            1691.4
+          ],
+          "conf": 0.781,
+          "text": "As before, this theorem can\nbe proved by taking two triangles\nABC and DEF such that\n\n$$\\frac{\\text{AB}}{\\text{DE}} = \\frac{\\text{AC}}{\\text{DF}} \\quad (< 1) \\text{ and } \\angle \\text{A} = \\angle \\text{D}$$\n\n(see Fig. 6.28). Cut $\\text{DP} = \\text{AB}$, $\\text{DQ}$\n$= \\text{AC}$ and join $\\text{PQ}$."
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            809.3,
+            1608.9,
+            954.9,
+            1658.7
+          ],
+          "conf": 0.856,
+          "text": "Fig. 6.28"
+        }
+      ],
+      "page": 17
+    },
+    {
+      "image": "0075_p0018.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            256.9,
+            1046.4,
+            403.6
+          ],
+          "conf": 0.646,
+          "text": "Now, $\\qquad \\qquad \\qquad \\text{PQ } \\parallel \\text{ EF and } \\Delta \\text{ ABC } \\cong \\Delta \\text{ DPQ} \\qquad \\text{(How ?)}$\nSo, $\\qquad \\qquad \\quad \\angle \\text{ A } = \\angle \\text{ D}, \\angle \\text{ B } = \\angle \\text{ P and } \\angle \\text{ C } = \\angle \\text{ Q}$\nTherefore, $\\qquad \\quad \\Delta \\text{ ABC } \\sim \\Delta \\text{ DEF} \\qquad \\qquad \\qquad \\qquad \\qquad \\text{(Why ?)}$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.8,
+            401.7,
+            1021.3,
+            452.4
+          ],
+          "conf": 0.89,
+          "text": "We now take some examples to illustrate the use of these criteria."
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            462.1,
+            973.8,
+            514.1
+          ],
+          "conf": 0.842,
+          "text": "Example 4 : In Fig. 6.29, if PQ $\\parallel$ RS, prove that $\\Delta$ POQ $\\sim \\Delta$ SOR."
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            450.7,
+            528.4,
+            841.5,
+            813.2
+          ],
+          "conf": 0.956,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            576.0,
+            818.9,
+            721.0,
+            867.9
+          ],
+          "conf": 0.91,
+          "text": "Fig. 6.29"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            875.5,
+            1176.6,
+            1116.6
+          ],
+          "conf": 0.749,
+          "text": "**Solution :**\nPQ $\\parallel$ RS\n(Given)\nSo,\n$\\angle P = \\angle S$\n(Alternate angles)\nand\n$\\angle Q = \\angle R$\nAlso,\n$\\angle POQ = \\angle SOR$\n(Vertically opposite angles)\nTherefore,\n$\\Delta POQ \\sim \\Delta SOR$\n(AAA similarity criterion)"
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1129.9,
+            766.1,
+            1180.9
+          ],
+          "conf": 0.836,
+          "text": "Example 5 : Observe Fig. 6.30 and then find $\\angle$ P."
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            176.5,
+            1208.0,
+            1128.1,
+            1568.3
+          ],
+          "conf": 0.951,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            576.2,
+            1585.4,
+            721.9,
+            1636.1
+          ],
+          "conf": 0.885,
+          "text": "Fig. 6.30"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1641.6,
+            561.3,
+            1692.1
+          ],
+          "conf": 0.783,
+          "text": "Solution : In $\\Delta$ ABC and $\\Delta$ PQR,"
+        }
+      ],
+      "page": 18
+    },
+    {
+      "image": "0075_p0019.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            319.9,
+            274.5,
+            977.5,
+            370.9
+          ],
+          "conf": 0.934,
+          "text": "$$\\frac{\\text{AB}}{\\text{RQ}} = \\frac{3.8}{7.6} = \\frac{1}{2}, \\frac{\\text{BC}}{\\text{QP}} = \\frac{6}{12} = \\frac{1}{2} \\text{ and } \\frac{\\text{CA}}{\\text{PR}} = \\frac{3\\sqrt{3}}{6\\sqrt{3}} = \\frac{1}{2}$$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            392.9,
+            541.7,
+            484.3
+          ],
+          "conf": 0.908,
+          "text": "That is, $\\frac{\\mathrm{AB}}{\\mathrm{RQ}} = \\frac{\\mathrm{BC}}{\\mathrm{QP}} = \\frac{\\mathrm{CA}}{\\mathrm{PR}}$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            505.2,
+            1175.2,
+            767.4
+          ],
+          "conf": 0.632,
+          "text": "So, $\\Delta$ ABC $\\sim$ $\\Delta$ RQP (SSS similarity)\n\nTherefore, $\\angle$ C = $\\angle$ P (Corresponding angles of similar triangles)\n\nBut $\\angle$ C = $180^{\\circ} - \\angle$ A – $\\angle$ B (Angle sum property)\n\n= $180^{\\circ} - 80^{\\circ} - 60^{\\circ} = 40^{\\circ}$\n\nSo, $\\angle$ P = $40^{\\circ}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            725.8,
+            549.5,
+            773.9
+          ],
+          "conf": 0.697,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            758.9,
+            1174.4,
+            1251.0
+          ],
+          "conf": 0.837,
+          "text": "Example 6 : In Fig. 6.31,\n$$OA \\cdot OB = OC \\cdot OD.$$\nShow that $\\angle A = \\angle C$ and $\\angle B = \\angle D$.\nSolution : $OA \\cdot OB = OC \\cdot OD$ (Given)\n\nSo, $$\\frac{OA}{OC} = \\frac{OD}{OB}$$ (1)\n\nAlso, we have $$\\angle AOD = \\angle COB$$ (Vertically opposite angles) (2)\nTherefore, from (1) and (2), $\\Delta AOD \\sim \\Delta COB$ (SAS similarity criterion)\nSo, $$\\angle A = \\angle C \\text{ and } \\angle D = \\angle B$$\n(Corresponding angles of similar triangles)"
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1269.4,
+            1178.5,
+            1692.9
+          ],
+          "conf": 0.552,
+          "text": "Example 7 : A girl of height 90 cm is\nwalking away from the base of a\nlamp-post at a speed of 1.2 m/s. If the lamp\nis 3.6 m above the ground, find the length\nof her shadow after 4 seconds.\n\nSolution : Let AB denote the lamp-post\nand CD the girl after walking for 4 seconds\naway from the lamp-post (see Fig. 6.32).\nFrom the figure, you can see that DE is the\nshadow of the girl. Let DE be $x$ metres.\n\nFig. 6.32"
+        }
+      ],
+      "page": 19
+    },
+    {
+      "image": "0075_p0020.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.1,
+            190.8,
+            1179.4,
+            240.5
+          ],
+          "conf": 0.853,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.0,
+            192.9,
+            262.3,
+            237.5
+          ],
+          "conf": 0.523,
+          "text": "TRIANGLES"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            256.7,
+            524.4,
+            307.2
+          ],
+          "conf": 0.786,
+          "text": "Now, BD = 1.2 m $\\times$ 4 = 4.8 m."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            304.6,
+            543.8,
+            355.1
+          ],
+          "conf": 0.896,
+          "text": "Note that in $\\Delta$ ABE and $\\Delta$ CDE,"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.5,
+            348.8,
+            1176.1,
+            475.6
+          ],
+          "conf": 0.527,
+          "text": "$\\angle B = \\angle D$ (Each is of $90^\\circ$ because lamp-post\nas well as the girl are standing\nvertical to the ground)"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.4,
+            473.7,
+            1177.3,
+            524.0
+          ],
+          "conf": 0.876,
+          "text": "and $\\angle \\mathrm{E}=\\angle \\mathrm{E}$ (Same angle)"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.4,
+            521.2,
+            1177.8,
+            571.5
+          ],
+          "conf": 0.873,
+          "text": "So, $\\Delta$ ABE $\\sim$ $\\Delta$ CDE (AA similarity criterion)"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            584.8,
+            704.1,
+            675.1
+          ],
+          "conf": 0.844,
+          "text": "Therefore, $\\frac{\\mathrm{BE}}{\\mathrm{DE}} = \\frac{\\mathrm{AB}}{\\mathrm{CD}}$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.8,
+            691.2,
+            1178.2,
+            784.3
+          ],
+          "conf": 0.915,
+          "text": "i.e., $\\frac{4.8 + x}{x} = \\frac{3.6}{0.9}$ $(90 \\text{ cm} = \\frac{90}{100} \\text{ m} = 0.9 \\text{ m})$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.6,
+            786.2,
+            682.8,
+            837.5
+          ],
+          "conf": 0.84,
+          "text": "i.e.,                                                                 $4.8 + x = 4x$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.3,
+            836.0,
+            689.9,
+            884.6
+          ],
+          "conf": 0.85,
+          "text": "i.e., $3x = 4.8$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.5,
+            885.0,
+            689.1,
+            934.6
+          ],
+          "conf": 0.851,
+          "text": "i.e., $x = 1.6$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            931.6,
+            974.0,
+            982.9
+          ],
+          "conf": 0.911,
+          "text": "So, the shadow of the girl after walking for 4 seconds is 1.6 m long."
+        },
+        {
+          "order": 13,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.8,
+            984.2,
+            1177.7,
+            1697.6
+          ],
+          "conf": 0.56,
+          "text": "Example 8 : In Fig. 6.33, CM and RN are\nrespectively the medians of $\\Delta$ ABC and\n$\\Delta$ PQR. If $\\Delta$ ABC $\\sim$ $\\Delta$ PQR, prove that :\n(i) $\\Delta$ AMC $\\sim$ $\\Delta$ PNR\n(ii) $\\frac{\\text{CM}}{\\text{RN}} = \\frac{\\text{AB}}{\\text{PQ}}$\n(iii) $\\Delta$ CMB $\\sim$ $\\Delta$ RNQ\nSolution : (i) $\\Delta$ ABC $\\sim$ $\\Delta$ PQR\n(Given)\nSo,\n$$\\frac{\\text{AB}}{\\text{PQ}} = \\frac{\\text{BC}}{\\text{QR}} = \\frac{\\text{CA}}{\\text{RP}}$$\n(1)\nand\n$$\\angle \\text{A} = \\angle \\text{P}, \\angle \\text{B} = \\angle \\text{Q} \\text{ and } \\angle \\text{C} = \\angle \\text{R}$$\n(2)\nBut\n$$\\text{AB} = 2 \\text{ AM} \\text{ and } \\text{PQ} = 2 \\text{ PN}$$\n(As CM and RN are medians)\nSo, from (1),\n$$\\frac{2 \\text{ AM}}{2 \\text{ PN}} = \\frac{\\text{CA}}{\\text{RP}}$$"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1620.3,
+            610.3,
+            1714.0
+          ],
+          "conf": 0.862,
+          "text": ""
+        }
+      ],
+      "page": 20
+    },
+    {
+      "image": "0075_p0021.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.8,
+            260.5,
+            1177.4,
+            345.8
+          ],
+          "conf": 0.917,
+          "text": "i.e., $\\frac{\\mathrm{AM}}{\\mathrm{PN}} = \\frac{\\mathrm{CA}}{\\mathrm{RP}}$ (3)"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.3,
+            349.8,
+            1176.2,
+            404.5
+          ],
+          "conf": 0.897,
+          "text": "Also, $\\angle \\text{MAC} = \\angle \\text{NPR}$ [From (2)] (4)"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            400.3,
+            397.9,
+            451.2
+          ],
+          "conf": 0.601,
+          "text": "So, from (3) and (4),"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            122.8,
+            441.0,
+            1168.8,
+            497.8
+          ],
+          "conf": 0.563,
+          "text": "$$ \\Delta \\text{ AMC } \\sim \\Delta \\text{ PNR} \\qquad \\qquad \\text{(SAS similarity)} \\quad (5) $$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            512.1,
+            1177.1,
+            598.3
+          ],
+          "conf": 0.915,
+          "text": "(ii) From (5), $\\frac{\\text{CM}}{\\text{RN}} = \\frac{\\text{CA}}{\\text{RP}}$ (6)"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            612.2,
+            1176.8,
+            698.2
+          ],
+          "conf": 0.908,
+          "text": "$$ \\text{But} \\qquad \\qquad \\qquad \\qquad \\frac{\\text{CA}}{\\text{RP}} = \\frac{\\text{AB}}{\\text{PQ}} \\qquad \\qquad \\qquad \\qquad \\text{[From (1)] (7)} $$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            714.6,
+            1176.5,
+            802.0
+          ],
+          "conf": 0.893,
+          "text": "Therefore, $\\frac{\\text{CM}}{\\text{RN}} = \\frac{\\text{AB}}{\\text{PQ}}$ [From (6) and (7)] (8)"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            814.0,
+            1176.5,
+            904.8
+          ],
+          "conf": 0.905,
+          "text": "(iii) Again, $$\\frac{\\mathrm{AB}}{\\mathrm{PQ}} = \\frac{\\mathrm{BC}}{\\mathrm{QR}} \\quad \\text{[From (1)]}$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            918.5,
+            1176.0,
+            1007.2
+          ],
+          "conf": 0.904,
+          "text": "Therefore, $\\frac{\\text{CM}}{\\text{RN}} = \\frac{\\text{BC}}{\\text{QR}}$ [From (8)] (9)"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            1016.5,
+            820.4,
+            1111.9
+          ],
+          "conf": 0.897,
+          "text": "$$ \\text{Also,} \\quad \\frac{\\text{CM}}{\\text{RN}} = \\frac{\\text{AB}}{\\text{PQ}} = \\frac{2 \\text{ BM}}{2 \\text{ QN}} $$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.2,
+            1129.4,
+            1176.6,
+            1216.0
+          ],
+          "conf": 0.89,
+          "text": "i.e.,\n$$ \\frac{\\text{CM}}{\\text{RN}} = \\frac{\\text{BM}}{\\text{QN}} \\eqno(10) $$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.4,
+            1242.2,
+            1175.1,
+            1329.4
+          ],
+          "conf": 0.899,
+          "text": "$$ \\text{i.e.,} \\quad \\frac{\\text{CM}}{\\text{RN}} = \\frac{\\text{BC}}{\\text{QR}} = \\frac{\\text{BM}}{\\text{QN}} \\quad [\\text{From (9) and (10)}] $$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            1338.7,
+            1176.2,
+            1391.9
+          ],
+          "conf": 0.864,
+          "text": "Therefore, $\\Delta$ CMB $\\sim \\Delta$ RNQ (SSS similarity)"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1387.0,
+            1178.7,
+            1475.5
+          ],
+          "conf": 0.925,
+          "text": "[Note : You can also prove part (iii) by following the same method as used for proving\npart (i).]"
+        },
+        {
+          "order": 14,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            527.8,
+            1510.7,
+            770.5,
+            1560.3
+          ],
+          "conf": 0.84,
+          "text": "EXERCISE 6.3"
+        },
+        {
+          "order": 15,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.0,
+            1566.5,
+            1178.2,
+            1678.8
+          ],
+          "conf": 0.908,
+          "text": "1. State which pairs of triangles in Fig. 6.34 are similar. Write the similarity criterion used by\nyou for answering the question and also write the pairs of similar triangles in the symbolic\nform:"
+        }
+      ],
+      "page": 21
+    },
+    {
+      "image": "0075_p0022.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            127.0,
+            256.3,
+            1180.3,
+            1132.0
+          ],
+          "conf": 0.933,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            576.3,
+            1158.4,
+            720.7,
+            1208.8
+          ],
+          "conf": 0.867,
+          "text": "Fig. 6.34"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.9,
+            1258.6,
+            699.3,
+            1415.3
+          ],
+          "conf": 0.933,
+          "text": "2. In Fig. 6.35, $\\Delta$ ODC $\\sim \\Delta$ OBA, $\\angle$ BOC $= 125^{\\circ}$\nand $\\angle$ CDO $= 70^{\\circ}$. Find $\\angle$ DOC, $\\angle$ DCO and\n$\\angle$ OAB."
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            711.8,
+            1303.0,
+            1135.0,
+            1514.7
+          ],
+          "conf": 0.924,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            849.3,
+            1533.7,
+            994.1,
+            1583.7
+          ],
+          "conf": 0.832,
+          "text": "Fig. 6.35"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.6,
+            1436.0,
+            699.3,
+            1684.2
+          ],
+          "conf": 0.944,
+          "text": "3. Diagonals AC and BD of a trapezium ABCD\nwith AB $\\parallel$ DC intersect each other at the\npoint O. Using a similarity criterion for two\ntriangles, show that $\\frac{\\text{OA}}{\\text{OC}} = \\frac{\\text{OB}}{\\text{OD}}$."
+        }
+      ],
+      "page": 22
+    },
+    {
+      "image": "0075_p0023.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.3,
+            271.7,
+            718.5,
+            400.5
+          ],
+          "conf": 0.953,
+          "text": "{\\bf 4.} In Fig. 6.36, $\\frac{\\text{QR}}{\\text{QS}} = \\frac{\\text{QT}}{\\text{PR}}$ and $\\angle 1 = \\angle 2$. Show\nthat $\\Delta \\text{PQS} \\sim \\Delta \\text{TQR}$."
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            734.2,
+            255.9,
+            1178.1,
+            493.1
+          ],
+          "conf": 0.952,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            885.4,
+            487.2,
+            1030.6,
+            536.0
+          ],
+          "conf": 0.902,
+          "text": "Fig. 6.36"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.9,
+            413.1,
+            719.0,
+            526.5
+          ],
+          "conf": 0.958,
+          "text": "**5.** S and T are points on sides PR and QR of\n$\\Delta$ PQR such that $\\angle$ P = $\\angle$ RTS. Show that\n$\\Delta$ RPQ $\\sim$ $\\Delta$ RTS."
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.3,
+            551.8,
+            718.5,
+            631.9
+          ],
+          "conf": 0.939,
+          "text": "\\textbf{6.} In Fig. 6.37, if $\\Delta$ ABE $\\cong \\Delta$ ACD, show that\n$\\Delta$ ADE $\\sim \\Delta$ ABC."
+        },
+        {
+          "order": 5,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            769.1,
+            554.6,
+            1107.7,
+            896.6
+          ],
+          "conf": 0.961,
+          "text": ""
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            157.0,
+            658.0,
+            678.3,
+            969.6
+          ],
+          "conf": 0.851,
+          "text": "7. In Fig. 6.38, altitudes AD and CE of $\\Delta$ ABC\nintersect each other at the point P. Show\nthat:\n\n(i) $\\Delta$ AEP $\\sim \\Delta$ CDP\n\n(ii) $\\Delta$ ABD $\\sim \\Delta$ CBE\n\n(iii) $\\Delta$ AEP $\\sim \\Delta$ ADB\n\n(iv) $\\Delta$ PDC $\\sim \\Delta$ BEC"
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            861.6,
+            907.4,
+            1006.7,
+            955.5
+          ],
+          "conf": 0.882,
+          "text": "Fig. 6.37"
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.0,
+            977.5,
+            679.8,
+            1088.7
+          ],
+          "conf": 0.948,
+          "text": "8. E is a point on the side AD produced of a\nparallelogram ABCD and BE intersects CD\nat F. Show that $\\Delta$ ABE $\\sim \\Delta$ CFB."
+        },
+        {
+          "order": 9,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            723.5,
+            979.4,
+            1167.5,
+            1266.5
+          ],
+          "conf": 0.958,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.0,
+            1115.5,
+            678.7,
+            1366.9
+          ],
+          "conf": 0.836,
+          "text": "9. In Fig. 6.39, ABC and AMP are two right\ntriangles, right angled at B and M\nrespectively. Prove that:\n\n(i) $\\Delta ABC \\sim \\Delta AMP$\n\n(ii) $\\frac{CA}{PA} = \\frac{BC}{MP}$"
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            868.3,
+            1276.6,
+            1014.1,
+            1326.0
+          ],
+          "conf": 0.861,
+          "text": "Fig. 6.38"
+        },
+        {
+          "order": 12,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            142.1,
+            1372.8,
+            678.7,
+            1708.3
+          ],
+          "conf": 0.849,
+          "text": "10. CD and GH are respectively the bisectors\nof $\\angle ACB$ and $\\angle EGF$ such that D and H lie\non sides AB and FE of $\\Delta ABC$ and $\\Delta EFG$\nrespectively. If $\\Delta ABC \\sim \\Delta FEG$, show that:\n\n(i) $\\frac{CD}{GH} = \\frac{AC}{FG}$\n\n(ii) $\\Delta DCB \\sim \\Delta HGE$\n\n(iii) $\\Delta DCA \\sim \\Delta HGF$"
+        },
+        {
+          "order": 13,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            751.5,
+            1339.5,
+            1151.7,
+            1647.3
+          ],
+          "conf": 0.962,
+          "text": ""
+        },
+        {
+          "order": 14,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            885.2,
+            1650.5,
+            1030.4,
+            1699.7
+          ],
+          "conf": 0.861,
+          "text": "Fig. 6.39"
+        }
+      ],
+      "page": 23
+    },
+    {
+      "image": "0075_p0024.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            143.3,
+            280.8,
+            659.2,
+            426.7
+          ],
+          "conf": 0.959,
+          "text": "11. In Fig. 6.40, E is a point on side CB\nproduced of an isosceles triangle ABC\nwith AB = AC. If AD $\\perp$ BC and EF $\\perp$ AC,\nprove that $\\Delta$ ABD $\\sim \\Delta$ ECF."
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            742.7,
+            281.6,
+            1000.2,
+            520.2
+          ],
+          "conf": 0.945,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            813.3,
+            526.1,
+            958.2,
+            573.4
+          ],
+          "conf": 0.91,
+          "text": "Fig. 6.40"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            142.0,
+            425.2,
+            659.2,
+            604.4
+          ],
+          "conf": 0.965,
+          "text": "12. Sides AB and BC and median AD of a\ntriangle ABC are respectively propor-\ntional to sides PQ and QR and median\nPM of $\\Delta$ PQR (see Fig. 6.41). Show that\n$\\Delta$ ABC $\\sim \\Delta$ PQR."
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.6,
+            604.2,
+            658.2,
+            716.3
+          ],
+          "conf": 0.949,
+          "text": "13. D is a point on the side BC of a triangle\nABC such that $\\angle ADC = \\angle BAC$. Show\nthat $CA^2 = CB.CD$."
+        },
+        {
+          "order": 5,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            653.2,
+            588.8,
+            1189.2,
+            794.0
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.2,
+            715.7,
+            658.8,
+            893.0
+          ],
+          "conf": 0.958,
+          "text": "**14.** Sides AB and AC and median AD of a\ntriangle ABC are respectively\nproportional to sides PQ and PR and\nmedian PM of another triangle PQR.\nShow that $\\Delta$ ABC $\\sim \\Delta$ PQR."
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            832.8,
+            815.7,
+            975.8,
+            864.9
+          ],
+          "conf": 0.887,
+          "text": "Fig. 6.41"
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.8,
+            892.6,
+            1177.7,
+            972.4
+          ],
+          "conf": 0.936,
+          "text": "**15.** A vertical pole of length 6 m casts a shadow 4 m long on the ground and at the same time\na tower casts a shadow 28 m long. Find the height of the tower."
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.1,
+            972.0,
+            1178.2,
+            1097.8
+          ],
+          "conf": 0.928,
+          "text": "16. If AD and PM are medians of triangles ABC and PQR, respectively where\n\n$$\\Delta ABC \\sim \\Delta PQR, \\text{ prove that } \\frac{AB}{PQ} = \\frac{AD}{PM}.$$"
+        },
+        {
+          "order": 10,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.6,
+            1139.6,
+            335.1,
+            1189.8
+          ],
+          "conf": 0.885,
+          "text": "6.5 Summary"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.2,
+            1190.7,
+            754.5,
+            1236.3
+          ],
+          "conf": 0.901,
+          "text": "In this chapter you have studied the following points :"
+        },
+        {
+          "order": 12,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.8,
+            1229.9,
+            1178.7,
+            1704.3
+          ],
+          "conf": 0.972,
+          "text": "1. Two figures having the same shape but not necessarily the same size are called similar\nfigures.\n2. All the congruent figures are similar but the converse is not true.\n3. Two polygons of the same number of sides are similar, if (i) their corresponding angles\nare equal and (ii) their corresponding sides are in the same ratio (i.e., proportion).\n4. If a line is drawn parallel to one side of a triangle to intersect the other two sides in\ndistinct points, then the other two sides are divided in the same ratio.\n5. If a line divides any two sides of a triangle in the same ratio, then the line is parallel to the\nthird side.\n6. If in two triangles, corresponding angles are equal, then their corresponding sides are in\nthe same ratio and hence the two triangles are similar (AAA similarity criterion).\n7. If in two triangles, two angles of one triangle are respectively equal to the two angles of\nthe other triangle, then the two triangles are similar (AA similarity criterion)."
+        }
+      ],
+      "page": 24
+    },
+    {
+      "image": "0075_p0025.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.4,
+            257.3,
+            1178.7,
+            442.7
+          ],
+          "conf": 0.934,
+          "text": "**8.** If in two triangles, corresponding sides are in the same ratio, then their corresponding\nangles are equal and hence the triangles are similar (SSS similarity criterion).\n**9.** If one angle of a triangle is equal to one angle of another triangle and the sides including\nthese angles are in the same ratio (proportional), then the triangles are similar\n(SAS similarity criterion)."
+        },
+        {
+          "order": 1,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.0,
+            449.7,
+            1178.2,
+            818.7
+          ],
+          "conf": 0.932,
+          "text": "A NOTE TO THE READER\n\nIf in two right triangles, hypotenuse and one side of one triangle are\nproportional to the hypotenuse and one side of the other triangle,\nthen the two triangles are similar. This may be referred to as the\nRHS Similarity Criterion.\n\nIf you use this criterion in Example 2, Chapter 8, the proof will become\nsimpler."
+        }
+      ],
+      "page": 25
+    }
+  ]
+}

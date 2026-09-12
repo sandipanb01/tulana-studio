@@ -1,0 +1,3506 @@
+{
+  "book": "1101",
+  "relpath": "dataset/input/eng/11/1101.pdf",
+  "num_pages": 23,
+  "pages": [
+    {
+      "image": "0084_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            625.6,
+            103.9,
+            1178.5,
+            332.9
+          ],
+          "conf": 0.863,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            681.5,
+            297.0,
+            783.2,
+            332.9
+          ],
+          "conf": 0.512,
+          "text": "11076CH01"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            904.1,
+            245.7,
+            1149.2,
+            322.6
+          ],
+          "conf": 0.63,
+          "text": "Chapter 1"
+        },
+        {
+          "order": 3,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            503.2,
+            377.7,
+            797.7,
+            477.7
+          ],
+          "conf": 0.824,
+          "text": "SETS"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            157.4,
+            513.6,
+            1150.0,
+            680.2
+          ],
+          "conf": 0.928,
+          "text": "❖In these days of conflict between ancient and modern studies; there\nmust surely be something to be said for a study which did not\nbegin with Pythagoras and will not end with Einstein; but\nis the oldest and the youngest. — G.H. HARDY ❖"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.0,
+            701.5,
+            372.4,
+            752.4
+          ],
+          "conf": 0.896,
+          "text": "1.1 Introduction"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            752.2,
+            867.8,
+            993.7
+          ],
+          "conf": 0.969,
+          "text": "The concept of set serves as a fundamental part of the\npresent day mathematics. Today this concept is being used\nin almost every branch of mathematics. Sets are used to\ndefine the concepts of relations and functions. The study of\ngeometry, sequences, probability, etc. requires the knowledge\nof sets."
+        },
+        {
+          "order": 7,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            846.8,
+            716.3,
+            1174.5,
+            1129.4
+          ],
+          "conf": 0.96,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            921.7,
+            1128.2,
+            1097.7,
+            1200.0
+          ],
+          "conf": 0.948,
+          "text": "Georg Cantor\n(1845-1918)"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            985.3,
+            865.3,
+            1189.0
+          ],
+          "conf": 0.962,
+          "text": "The theory of sets was developed by German\nmathematician Georg Cantor (1845-1918). He first\nencountered sets while working on “problems on trigonometric\nseries”. In this Chapter, we discuss some basic definitions\nand operations involving sets."
+        },
+        {
+          "order": 10,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.6,
+            1194.7,
+            632.7,
+            1247.3
+          ],
+          "conf": 0.87,
+          "text": "1.2 Sets and their Representations"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1245.3,
+            1181.4,
+            1409.8
+          ],
+          "conf": 0.965,
+          "text": "In everyday life, we often speak of collections of objects of a particular kind, such as,\na pack of cards, a crowd of people, a cricket team, etc. In mathematics also, we come\nacross collections, for example, of natural numbers, points, prime numbers, etc. More\nspecially, we examine the following collections:"
+        },
+        {
+          "order": 12,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            189.3,
+            1408.1,
+            971.4,
+            1650.0
+          ],
+          "conf": 0.952,
+          "text": "(i) Odd natural numbers less than 10, i.e., 1, 3, 5, 7, 9\n(ii) The rivers of India\n(iii) The vowels in the English alphabet, namely, $a$, $e$, $i$, $o$, $u$\n(iv) Various kinds of triangles\n(v) Prime factors of 210, namely, 2,3,5 and 7\n(vi) The solution of the equation: $x^2 - 5x + 6 = 0$, viz, 2 and 3."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.2,
+            1646.7,
+            1182.3,
+            1696.7
+          ],
+          "conf": 0.871,
+          "text": "We note that each of the above example is a well-defined collection of objects in"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0084_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            258.2,
+            1178.7,
+            414.8
+          ],
+          "conf": 0.97,
+          "text": "the sense that we can definitely decide whether a given particular object belongs to a\ngiven collection or not. For example, we can say that the river Nile does not belong to\nthe collection of rivers of India. On the other hand, the river Ganga does belong to this\ncolleciton."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.8,
+            413.6,
+            1178.5,
+            463.8
+          ],
+          "conf": 0.923,
+          "text": "We give below a few more examples of sets used particularly in mathematics, viz."
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            462.8,
+            762.5,
+            738.5
+          ],
+          "conf": 0.885,
+          "text": "$\\mathbf{N}$ : the set of all natural numbers\n$\\mathbf{Z}$ : the set of all integers\n$\\mathbf{Q}$ : the set of all rational numbers\n$\\mathbf{R}$ : the set of real numbers\n$\\mathbf{Z}^{+}$ : the set of positive integers\n$\\mathbf{Q}^{+}$ : the set of positive rational numbers, and\n$\\mathbf{R}^{+}$ : the set of positive real numbers."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.5,
+            702.8,
+            667.2,
+            753.0
+          ],
+          "conf": 0.721,
+          "text": "$\\mathbf{R}^+$ : the set of positive real numbers."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            741.4,
+            1179.0,
+            828.8
+          ],
+          "conf": 0.933,
+          "text": "The symbols for the special sets given above will be referred to throughout\nthis text."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            819.1,
+            1178.6,
+            946.2
+          ],
+          "conf": 0.959,
+          "text": "Again the collection of five most renowned mathematicians of the world is not\nwell-defined, because the criterion for determining a mathematician as most renowned\nmay vary from person to person. Thus, it is not a well-defined collection."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.7,
+            936.1,
+            978.2,
+            986.1
+          ],
+          "conf": 0.901,
+          "text": "We shall say that a set is a well-defined collection of objects."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.5,
+            975.6,
+            643.9,
+            1025.8
+          ],
+          "conf": 0.896,
+          "text": "The following points may be noted :"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            190.4,
+            1023.9,
+            1175.1,
+            1150.5
+          ],
+          "conf": 0.951,
+          "text": "(i) Objects, elements and members of a set are synonymous terms.\n(ii) Sets are usually denoted by capital letters A, B, C, X, Y, Z, etc.\n(iii) The elements of a set are represented by small letters $a, b, c, x, y, z,$ etc."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1147.6,
+            1177.3,
+            1273.6
+          ],
+          "conf": 0.955,
+          "text": "If $a$ is an element of a set A, we say that “ $a$ belongs to A” the Greek symbol $\\in$\n(epsilon) is used to denote the phrase ‘$belongs$ $to$’. Thus, we write $a \\in \\text{A}$. If ‘$b$’ is not\nan element of a set A, we write $b \\notin \\text{A}$ and read “$b$ does not belong to A”."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1262.5,
+            1177.7,
+            1354.5
+          ],
+          "conf": 0.873,
+          "text": "Thus, in the set V of vowels in the English alphabet, $a \\in \\text{V}$ but $b \\notin \\text{V}$. In the set\nP of prime factors of 30, $3 \\in \\text{P}$ but $15 \\notin \\text{P}$."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1341.8,
+            703.0,
+            1391.0
+          ],
+          "conf": 0.77,
+          "text": "There are two methods of representing a set :"
+        },
+        {
+          "order": 12,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            196.3,
+            1387.8,
+            552.5,
+            1473.8
+          ],
+          "conf": 0.934,
+          "text": "(i) Roster or tabular form\n(ii) Set-builder form."
+        },
+        {
+          "order": 13,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1484.3,
+            1178.8,
+            1651.5
+          ],
+          "conf": 0.825,
+          "text": "(i) In roster form, all the elements of a set are listed, the elements are being separated\nby commas and are enclosed within braces { } . For example, the set of all even\npositive integers less than 7 is described in roster form as $\\{2, 4, 6\\}$. Some more\nexamples of representing a set in roster form are given below :"
+        },
+        {
+          "order": 14,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            1651.9,
+            1175.3,
+            1702.6
+          ],
+          "conf": 0.858,
+          "text": "(a) The set of all natural numbers which divide 42 is $\\{1, 2, 3, 6, 7, 14, 21, 42\\}$."
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0084_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            125.1,
+            267.0,
+            1168.6,
+            367.8
+          ],
+          "conf": 0.698,
+          "text": "Note In roster form, the order in which the elements are listed is immaterial.\nThus, the above set can also be represented as $\\{1, 3, 7, 21, 2, 6, 14, 42\\}$."
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            360.2,
+            1162.6,
+            489.8
+          ],
+          "conf": 0.938,
+          "text": "(b) The set of all vowels in the English alphabet is $\\{a, e, i, o, u\\}$.\n(c) The set of odd natural numbers is represented by $\\{1, 3, 5, \\dots\\}$. The dots\ntell us that the list of odd numbers continue indefinitely."
+        },
+        {
+          "order": 2,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.1,
+            481.5,
+            1176.6,
+            658.7
+          ],
+          "conf": 0.903,
+          "text": "Note It may be noted that while writing the set in roster form an element is not\ngenerally repeated, i.e., all the elements are taken as distinct. For example, the set\nof letters forming the word ‘SCHOOL’ is $\\{ \\text{S}, \\text{C}, \\text{H}, \\text{O}, \\text{L} \\}$ or $\\{ \\text{H}, \\text{O}, \\text{L}, \\text{C}, \\text{S} \\}$. Here,\nthe order of listing elements has no relevance."
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            656.8,
+            1179.6,
+            865.5
+          ],
+          "conf": 0.835,
+          "text": "(ii) In set-builder form, all the elements of a set possess a single common property\nwhich is not possessed by any element outside the set. For example, in the set\n$\\{a, e, i, o, u\\}$, all the elements possess a common property, namely, each of them\nis a vowel in the English alphabet, and no other letter possess this property. Denoting\nthis set by V, we write"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.8,
+            849.9,
+            716.9,
+            902.3
+          ],
+          "conf": 0.772,
+          "text": "$$V = \\{x : x \\text{ is a vowel in English alphabet}\\}$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            889.8,
+            1178.7,
+            1171.7
+          ],
+          "conf": 0.965,
+          "text": "It may be observed that we describe the element of the set by using a symbol $x$\n(any other symbol like the letters $y$, $z$, etc. could be used) which is followed by a colon\n“ : ” . After the sign of colon, we write the characteristic property possessed by the\nelements of the set and then enclose the whole description within braces. The above\ndescription of the set V is read as “the set of all $x$ such that $x$ is a vowel of the English\nalphabet”. In this description the braces stand for “the set of all”, the colon stands for\n“such that”. For example, the set"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            184.6,
+            1163.0,
+            1178.2,
+            1288.2
+          ],
+          "conf": 0.849,
+          "text": "A = $\\{x : x \\text{ is a natural number and } 3 < x < 10\\}$ is read as “the set of all $x$ such that\n$x$ is a natural number and $x$ lies between 3 and 10.” Hence, the numbers 4, 5, 6,\n7, 8 and 9 are the elements of the set A."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1278.7,
+            1177.5,
+            1367.2
+          ],
+          "conf": 0.865,
+          "text": "If we denote the sets described in $(a)$, $(b)$ and $(c)$ above in roster form by A, B,\nC, respectively, then A, B, C can also be represented in set-builder form as follows:"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            1357.2,
+            788.6,
+            1483.0
+          ],
+          "conf": 0.745,
+          "text": "A= {x : x is a natural number which divides 42}\nB= {y : y is a vowel in the English alphabet}\nC= {z : z is an odd natural number}"
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.7,
+            1485.4,
+            1179.1,
+            1661.2
+          ],
+          "conf": 0.643,
+          "text": "Example 1 Write the solution set of the equation $x^2 + x - 2 = 0$ in roster form.\n\nSolution The given equation can be written as\n$$(x - 1) \\ (x + 2) = 0, \\text{ i. e., } \\quad x = 1, -2$$\nTherefore, the solution set of the given equation can be written in roster form as $\\{1, -2\\}$."
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1662.1,
+            1163.5,
+            1713.6
+          ],
+          "conf": 0.655,
+          "text": "Example 2 Write the set $\\{x : x \\text{ is a positive integer and } x^2 < 40\\}$ in the roster form."
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0084_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            258.4,
+            1178.5,
+            347.3
+          ],
+          "conf": 0.853,
+          "text": "**Solution** The required numbers are $1, 2, 3, 4, 5, 6$. So, the given set in the roster form\nis $\\{1, 2, 3, 4, 5, 6\\}$."
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            352.3,
+            1007.5,
+            404.9
+          ],
+          "conf": 0.842,
+          "text": "Example 3 Write the set $A = \\{1, 4, 9, 16, 25, \\dots\\}$ in set-builder form."
+        },
+        {
+          "order": 2,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            408.7,
+            890.0,
+            576.3
+          ],
+          "conf": 0.59,
+          "text": "Solution We may write the set A as\n$$A = \\{x : x \\text{ is the square of a natural number}\\}$$\nAlternatively, we can write\n$$A = \\{x : x = n^2, \\text{ where } n \\in \\mathbf{N}\\}$$"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            595.1,
+            1179.4,
+            915.8
+          ],
+          "conf": 0.646,
+          "text": "Example 4 Write the set $\\{\\frac{1}{2}, \\frac{2}{3}, \\frac{3}{4}, \\frac{4}{5}, \\frac{5}{6}, \\frac{6}{7}\\}$ in the set-builder form.\n\n\nSolution We see that each member in the given set has the numerator one less than\nthe denominator. Also, the numerator begin from 1 and do not exceed 6. Hence, in the\nset-builder form the given set is\n\n$$ \\left\\{ x : x = \\frac{n}{n+1}, \\text{ where } n \\text{ is a natural number and } 1 \\le n \\le 6 \\right\\} $$"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            925.5,
+            1177.0,
+            1171.2
+          ],
+          "conf": 0.721,
+          "text": "Example 5 Match each of the set on the left described in the roster form with the\nsame set on the right described in the set-builder form :\n(i) $\\{P, R, I, N, C, A, L\\}$ (a) $\\{x : x \\text{ is a positive integer and is a divisor of } 18\\}$\n(ii) $\\{0\\}$ (b) $\\{x : x \\text{ is an integer and } x^2 - 9 = 0\\}$\n(iii) $\\{1, 2, 3, 6, 9, 18\\}$ (c) $\\{x : x \\text{ is an integer and } x + 1 = 1\\}$\n(iv) $\\{3, -3\\}$ (d) $\\{x : x \\text{ is a letter of the word PRINCIPAL}\\}$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1169.3,
+            1180.1,
+            1336.7
+          ],
+          "conf": 0.865,
+          "text": "Solution Since in (d), there are 9 letters in the word PRINCIPAL and two letters P and I\nare repeated, so (i) matches (d). Similarly, (ii) matches (c) as $x + 1 = 1$ implies\n$x = 0$. Also, 1, 2 ,3, 6, 9, 18 are all divisors of 18 and so (iii) matches (a). Finally, $x^2 - 9 = 0$\nimplies $x = 3, -3$ and so (iv) matches (b)."
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.4,
+            1352.2,
+            770.2,
+            1409.6
+          ],
+          "conf": 0.743,
+          "text": "EXERCISE 1.1"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1413.0,
+            1108.5,
+            1717.2
+          ],
+          "conf": 0.686,
+          "text": "1. Which of the following are sets ? Justify your answer.\n(i) The collection of all the months of a year beginning with the letter J.\n(ii) The collection of ten most talented writers of India.\n(iii) A team of eleven best-cricket batsmen of the world.\n(iv) The collection of all boys in your class.\n(v) The collection of all natural numbers less than 100.\n(vi) A collection of novels written by the writer Munshi Prem Chand.\n(vii) The collection of all even integers."
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0084_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            173.6,
+            258.4,
+            918.6,
+            343.7
+          ],
+          "conf": 0.927,
+          "text": "(viii) The collection of questions in this Chapter.\n(ix) A collection of most dangerous animals of the world."
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            331.5,
+            1177.9,
+            421.2
+          ],
+          "conf": 0.914,
+          "text": "2. Let $A = \\{1, 2, 3, 4, 5, 6\\}$. Insert the appropriate symbol $\\in$ or $\\notin$ in the blank\nspaces:"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.2,
+            410.6,
+            987.1,
+            503.3
+          ],
+          "conf": 0.919,
+          "text": "(i) $5 \\dots A$          (ii) $8 \\dots A$          (iii) $0 \\dots A$\n(iv) $4 \\dots A$          (v) $2 \\dots A$          (vi) $10 \\dots A$"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            492.5,
+            679.0,
+            543.6
+          ],
+          "conf": 0.891,
+          "text": "3. Write the following sets in roster form:"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            189.0,
+            533.7,
+            1174.3,
+            790.6
+          ],
+          "conf": 0.956,
+          "text": "(i) $A = \\{x : x \\text{ is an integer and } -3 \\leq x < 7\\}$\n(ii) $B = \\{x : x \\text{ is a natural number less than } 6\\}$\n(iii) $C = \\{x : x \\text{ is a two-digit natural number such that the sum of its digits is } 8\\}$\n(iv) $D = \\{x : x \\text{ is a prime number which is divisor of } 60\\}$\n(v) $E = \\text{The set of all letters in the word TRIGONOMETRY}$\n(vi) $F = \\text{The set of all letters in the word BETTER}$"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            781.7,
+            790.0,
+            832.6
+          ],
+          "conf": 0.882,
+          "text": "4. Write the following sets in the set-builder form :"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.2,
+            820.4,
+            1095.5,
+            916.8
+          ],
+          "conf": 0.935,
+          "text": "(i) $(3, 6, 9, 12\\}$\n(ii) $\\{2,4,8,16,32\\}$\n(iii) $\\{5, 25, 125, 625\\}$\n(iv) $\\{2, 4, 6, \\dots\\}$\n(v) $\\{1,4,9, \\dots,100\\}$"
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            904.2,
+            723.7,
+            955.1
+          ],
+          "conf": 0.876,
+          "text": "5. List all the elements of the following sets :"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            191.9,
+            945.1,
+            1112.7,
+            1227.2
+          ],
+          "conf": 0.931,
+          "text": "(i) $A = \\{x : x \\text{ is an odd natural number}\\}$\n(ii) $B = \\{x : x \\text{ is an integer, } \\frac{1}{2} < x < \\frac{9}{2}\\}$\n(iii) $C = \\{x : x \\text{ is an integer, } x^2 \\le 4\\}$\n(iv) $D = \\{x : x \\text{ is a letter in the word \"LOYAL\"\\}\\}$\n(v) $E = \\{x : x \\text{ is a month of a year not having 31 days}\\}$\n(vi) $F = \\{x : x \\text{ is a consonant in the English alphabet which precedes } k \\}$."
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1218.3,
+            1178.7,
+            1305.5
+          ],
+          "conf": 0.902,
+          "text": "6. Match each of the set on the left in the roster form with the same set on the right\ndescribed in set-builder form:"
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.8,
+            1294.7,
+            1166.0,
+            1463.6
+          ],
+          "conf": 0.927,
+          "text": "(i) $\\{1, 2, 3, 6\\}$ (a) $\\{x : x \\text{ is a prime number and a divisor of } 6\\}$\n(ii) $\\{2, 3\\}$ (b) $\\{x : x \\text{ is an odd natural number less than } 10\\}$\n(iii) $\\{M,A,T,H,E,I,C,S\\}$ (c) $\\{x : x \\text{ is natural number and divisor of } 6\\}$\n(iv) $\\{1, 3, 5, 7, 9\\}$ (d) $\\{x : x \\text{ is a letter of the word MATHEMATICS}\\}$."
+        },
+        {
+          "order": 11,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            121.0,
+            1465.3,
+            410.9,
+            1519.8
+          ],
+          "conf": 0.857,
+          "text": "1.3 The Empty Set"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1516.6,
+            344.9,
+            1564.3
+          ],
+          "conf": 0.852,
+          "text": "Consider the set"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            220.2,
+            1553.1,
+            1054.4,
+            1603.0
+          ],
+          "conf": 0.774,
+          "text": "$$A = \\{ x : x \\text{ is a student of Class XI presently studying in a school } \\}$$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1592.0,
+            1178.6,
+            1677.7
+          ],
+          "conf": 0.773,
+          "text": "We can go to the school and count the number of students presently studying in\nClass XI in the school. Thus, the set A contains a finite number of elements."
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.7,
+            1669.5,
+            694.7,
+            1717.6
+          ],
+          "conf": 0.851,
+          "text": "We now write another set B as follows:"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0084_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            184.5,
+            258.0,
+            1045.8,
+            309.5
+          ],
+          "conf": 0.821,
+          "text": "$$ \\mathrm{B} = \\{ x : x \\text{ is a student presently studying in both Classes X and XI } \\} $$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            298.1,
+            1178.5,
+            386.6
+          ],
+          "conf": 0.857,
+          "text": "We observe that a student cannot study simultaneously in both Classes X and XI.\nThus, the set B contains no element at all."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            385.3,
+            1177.8,
+            470.2
+          ],
+          "conf": 0.826,
+          "text": "Definition 1 A set which does not contain any element is called the $empty$ $set$ or the\n$null$ $set$ or the $void$ $set$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            458.8,
+            1178.6,
+            545.5
+          ],
+          "conf": 0.931,
+          "text": "According to this definition, B is an empty set while A is not an empty set. The\nempty set is denoted by the symbol $\\phi$ or $\\{ \\ \\}$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.4,
+            532.6,
+            775.7,
+            583.9
+          ],
+          "conf": 0.884,
+          "text": "We give below a few examples of empty sets."
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            189.8,
+            570.8,
+            1179.0,
+            876.1
+          ],
+          "conf": 0.963,
+          "text": "(i) Let $A = \\{x : 1 < x < 2, x \\text{ is a natural number}\\}$. Then $A$ is the empty set,\nbecause there is no natural number between $1$ and $2$.\n(ii) $B = \\{x : x^2 - 2 = 0 \\text{ and } x \\text{ is rational number}\\}$. Then $B$ is the empty set because\nthe equation $x^2 - 2 = 0$ is not satisfied by any rational value of $x$.\n(iii) $C = \\{x : x \\text{ is an even prime number greater than } 2\\}$. Then $C$ is the empty set,\nbecause $2$ is the only even prime number.\n(iv) $D = \\{ x : x^2 = 4, x \\text{ is odd } \\}$. Then $D$ is the empty set, because the equation\n$x^2 = 4$ is not satisfied by any odd value of $x$."
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.9,
+            881.6,
+            517.9,
+            933.1
+          ],
+          "conf": 0.854,
+          "text": "1.4 Finite and Infinite Sets"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            931.2,
+            805.7,
+            981.9
+          ],
+          "conf": 0.815,
+          "text": "Let $A = \\{1, 2, 3, 4, 5\\}, \\quad B = \\{a, b, c, d, e, g\\}$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            968.4,
+            944.7,
+            1019.3
+          ],
+          "conf": 0.832,
+          "text": "and $C = \\{ \\text{men living presently in different parts of the world} \\}$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1006.6,
+            1179.2,
+            1199.1
+          ],
+          "conf": 0.927,
+          "text": "We observe that A contains 5 elements and B contains 6 elements. How many elements\ndoes C contain? As it is, we do not know the number of elements in C, but it is some\nnatural number which may be quite a big number. By number of elements of a set S,\nwe mean the number of distinct elements of the set and we denote it by $n$ (S). If $n$ (S)\nis a natural number, then S is \\textit{non-empty finite} set."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1188.4,
+            1178.6,
+            1347.3
+          ],
+          "conf": 0.956,
+          "text": "Consider the set of natural numbers. We see that the number of elements of this\nset is not finite since there are infinite number of natural numbers. We say that the set\nof natural numbers is an infinite set. The sets A, B and C given above are finite sets\nand $n(\\mathrm{A}) = 5$, $n(\\mathrm{B}) = 6$ and $n(\\mathrm{C}) =$ some finite number."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1350.3,
+            1178.6,
+            1436.8
+          ],
+          "conf": 0.782,
+          "text": "Definition 2 A set which is empty or consists of a definite number of elements is\ncalled finite otherwise, the set is called infinite."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            1425.6,
+            530.3,
+            1474.6
+          ],
+          "conf": 0.854,
+          "text": "Consider some examples :"
+        },
+        {
+          "order": 13,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            189.3,
+            1465.1,
+            1148.0,
+            1596.6
+          ],
+          "conf": 0.926,
+          "text": "(i) Let W be the set of the days of the week. Then W is finite.\n(ii) Let S be the set of solutions of the equation $x^2-16=0$. Then S is finite.\n(iii) Let G be the set of points on a line. Then G is infinite."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1587.1,
+            1179.4,
+            1714.2
+          ],
+          "conf": 0.93,
+          "text": "When we represent a set in the roster form, we write all the elements of the set\nwithin braces $\\{ \\ \\}$. It is not possible to write all the elements of an infinite set within\nbraces $\\{ \\ \\}$ because the numbers of elements of such a set is not finite. So, we represent"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0084_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            260.7,
+            1178.3,
+            346.6
+          ],
+          "conf": 0.951,
+          "text": "some infinite set in the roster form by writing a few elements which clearly indicate the\nstructure of the set followed ( or preceded ) by three dots."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            337.8,
+            1178.8,
+            461.7
+          ],
+          "conf": 0.961,
+          "text": "For example, $\\{1, 2, 3 \\dots\\}$ is the set of natural numbers, $\\{1, 3, 5, 7, \\dots\\}$ is the set\nof odd natural numbers, $\\{. \\dots, -3, -2, -1, 0, 1, 2, 3, \\dots\\}$ is the set of integers. All these\nsets are infinite."
+        },
+        {
+          "order": 2,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            461.3,
+            1178.6,
+            607.1
+          ],
+          "conf": 0.944,
+          "text": "Note All infinite sets cannot be described in the roster form. For example, the\nset of real numbers cannot be described in this form, because the elements of this\nset do not follow any particular pattern."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            606.7,
+            1179.6,
+            1116.8
+          ],
+          "conf": 0.646,
+          "text": "Example 6 State which of the following sets are finite or infinite :\n(i) $\\{x : x \\in \\text{N} \\text{ and } (x - 1) (x - 2) = 0\\}$\n(ii) $\\{x : x \\in \\text{N} \\text{ and } x^2 = 4\\}$\n(iii) $\\{x : x \\in \\text{N} \\text{ and } 2x - 1 = 0\\}$\n(iv) $\\{x : x \\in \\text{N} \\text{ and } x \\text{ is prime}\\}$\n(v) $\\{x : x \\in \\text{N} \\text{ and } x \\text{ is odd}\\}$\nSolution (i) Given set $= \\{1, 2\\}$. Hence, it is finite.\n(ii) Given set $= \\{2\\}$. Hence, it is finite.\n(iii) Given set $= \\phi$. Hence, it is finite.\n(iv) The given set is the set of all prime numbers and since set of prime\nnumbers is infinite. Hence the given set is infinite\n(v) Since there are infinite number of odd numbers, hence, the given set is\ninfinite."
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.0,
+            1122.1,
+            351.5,
+            1174.0
+          ],
+          "conf": 0.862,
+          "text": "1.5 Equal Sets"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1170.2,
+            1178.1,
+            1293.3
+          ],
+          "conf": 0.951,
+          "text": "Given two sets A and B, if every element of A is also an element of B and if every\nelement of B is also an element of A, then the sets A and B are said to be equal.\nClearly, the two sets have exactly the same elements."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1295.4,
+            1178.6,
+            1417.0
+          ],
+          "conf": 0.842,
+          "text": "Definition 3 Two sets A and B are said to be $equal$ if they have exactly the same\nelements and we write $A = B$. Otherwise, the sets are said to be $unequal$ and we write\n$A \\neq B$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.4,
+            1407.3,
+            666.8,
+            1457.7
+          ],
+          "conf": 0.865,
+          "text": "We consider the following examples :"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            194.7,
+            1446.1,
+            1181.3,
+            1609.7
+          ],
+          "conf": 0.932,
+          "text": "(i) Let $A = \\{1, 2, 3, 4\\}$ and $B = \\{3, 1, 4, 2\\}$. Then $A = B$.\n(ii) Let $A$ be the set of prime numbers less than $6$ and $P$ the set of prime factors\nof $30$. Then $A$ and $P$ are equal, since $2, 3$ and $5$ are the only prime factors of\n$30$ and also these are less than $6$."
+        },
+        {
+          "order": 9,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.5,
+            1604.9,
+            1179.0,
+            1707.3
+          ],
+          "conf": 0.873,
+          "text": "Note A set does not change if one or more elements of the set are repeated.\nFor example, the sets $A = \\{1, 2, 3\\}$ and $B = \\{2, 2, 1, 3, 3\\}$ are equal, since each"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0084_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            261.2,
+            1175.3,
+            351.7
+          ],
+          "conf": 0.835,
+          "text": "element of A is in B and vice-versa. That is why we generally do not repeat any\nelement in describing a set."
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.8,
+            351.5,
+            1061.8,
+            514.5
+          ],
+          "conf": 0.924,
+          "text": "Example 7 Find the pairs of equal sets, if any, give reasons:\n$$A = \\{0\\}, \\qquad \\qquad \\qquad \\qquad B = \\{x : x > 15 \\text{ and } x < 5\\},$$\n$$C = \\{x : x - 5 = 0 \\}, \\qquad \\quad D = \\{x: x^2 = 25\\},$$\n$$E = \\{x : x \\text{ is an integral positive root of the equation } x^2 - 2x - 15 = 0\\}.$$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            515.5,
+            1178.7,
+            747.8
+          ],
+          "conf": 0.722,
+          "text": "Solution Since $0 \\in A$ and $0$ does not belong to any of the sets $B$, $C$, $D$ and $E$, it\nfollows that, $A \\neq B$, $A \\neq C$, $A \\neq D$, $A \\neq E$.\nSince $B = \\phi$ but none of the other sets are empty. Therefore $B \\neq C$, $B \\neq D$\nand $B \\neq E$. Also $C = \\{5\\}$ but $-5 \\in D$, hence $C \\neq D$.\nSince $E = \\{5\\}$, $C = E$. Further, $D = \\{-5, 5\\}$ and $E = \\{5\\}$, we find that, $D \\neq E$.\nThus, the only pair of equal sets is $C$ and $E$."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            748.0,
+            1179.4,
+            1037.4
+          ],
+          "conf": 0.57,
+          "text": "Example 8 Which of the following pairs of sets are equal? Justify your answer.\n(i) X, the set of letters in “ALLOY” and B, the set of letters in “LOYAL”.\n(ii) A = $\\{n : n \\in Z \\text{ and } n^2 \\leq 4\\}$ and B = $\\{x : x \\in R \\text{ and } x^2 - 3x + 2 = 0\\}$.\n\nSolution (i) We have, X = {A, L, L, O, Y}, B = {L, O, Y, A, L}. Then X and B are\nequal sets as repetition of elements in a set do not change a set. Thus,\n$$X = \\{A, L, O, Y\\} = B$$\n(ii) A = {-2, -1, 0, 1, 2}, B = {1, 2}. Since 0 $\\in$ A and 0 $\\notin$ B, A and B are not equal sets."
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            520.3,
+            1050.7,
+            773.5,
+            1110.0
+          ],
+          "conf": 0.806,
+          "text": "EXERCISE 1.2"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.8,
+            1116.1,
+            913.5,
+            1706.8
+          ],
+          "conf": 0.869,
+          "text": "1. Which of the following are examples of the null set\n(i) Set of odd natural numbers divisible by 2\n(ii) Set of even prime numbers\n(iii) $\\{ x : x \\text{ is a natural numbers, } x < 5 \\text{ and } x > 7 \\}$\n(iv) $\\{ y : y \\text{ is a point common to any two parallel lines} \\}$\n2. Which of the following sets are finite or infinite\n(i) The set of months of a year\n(ii) $\\{1, 2, 3, \\dots\\}$\n(iii) $\\{1, 2, 3, \\dots 99, 100\\}$\n(iv) The set of positive integers greater than 100\n(v) The set of prime numbers less than 99\n3. State whether each of the following set is finite or infinite:\n(i) The set of lines which are parallel to the $x$-axis\n(ii) The set of letters in the English alphabet\n(iii) The set of numbers which are multiple of 5"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0084_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.4,
+            260.5,
+            874.2,
+            347.3
+          ],
+          "conf": 0.938,
+          "text": "(iv) The set of animals living on the earth\n(v) The set of circles passing through the origin $(0,0)$"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            337.8,
+            748.1,
+            387.0
+          ],
+          "conf": 0.833,
+          "text": "4. In the following, state whether $A = B$ or not:"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            189.3,
+            373.7,
+            1126.3,
+            542.4
+          ],
+          "conf": 0.869,
+          "text": "(i) $A = \\{ a, b, c, d \\}$      $B = \\{ d, c, b, a \\}$\n(ii) $A = \\{ 4, 8, 12, 16 \\}$      $B = \\{ 8, 4, 16, 18 \\}$\n(iii) $A = \\{ 2, 4, 6, 8, 10 \\}$      $B = \\{ x : x \\text{ is positive even integer and } x \\leq 10 \\}$\n(iv) $A = \\{ x : x \\text{ is a multiple of } 10 \\},$      $B = \\{ 10, 15, 20, 25, 30, \\dots \\}$"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            531.8,
+            836.9,
+            581.6
+          ],
+          "conf": 0.786,
+          "text": "5. Are the following pair of sets equal ? Give reasons."
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            195.3,
+            566.8,
+            938.1,
+            695.6
+          ],
+          "conf": 0.817,
+          "text": "(i) $A = \\{2, 3\\}, \\quad B = \\{x : x \\text{ is solution of } x^2 + 5x + 6 = 0\\}$\n(ii) $A = \\{ x : x \\text{ is a letter in the word FOLLOW}\\}$\n$B = \\{ y : y \\text{ is a letter in the word WOLF}\\}$"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            684.2,
+            1136.7,
+            813.8
+          ],
+          "conf": 0.836,
+          "text": "6. From the sets given below, select equal sets :\n$A = \\{2, 4, 8, 12\\}, \\quad B = \\{1, 2, 3, 4\\}, \\quad C = \\{4, 8, 12, 14\\}, \\quad D = \\{3, 1, 4, 2\\}$\n$E = \\{-1, 1\\}, \\quad F = \\{0, a\\}, \\quad G = \\{1, -1\\}, \\quad H = \\{0, 1\\}$"
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.2,
+            815.5,
+            312.1,
+            865.3
+          ],
+          "conf": 0.822,
+          "text": "1.6 Subsets"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            855.8,
+            1178.3,
+            939.0
+          ],
+          "conf": 0.946,
+          "text": "Consider the sets : $X =$ set of all students in your school, $Y =$ set of all students in your\nclass."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            928.7,
+            1178.8,
+            1049.9
+          ],
+          "conf": 0.962,
+          "text": "We note that every element of $Y$ is also an element of $X$; we say that $Y$ is a subset\nof $X$. The fact that $Y$ is subset of $X$ is expressed in symbols as $Y \\subset X$. The symbol $\\subset$\nstands for ‘is a subset of’ or ‘is contained in’."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            1054.5,
+            1178.1,
+            1139.0
+          ],
+          "conf": 0.773,
+          "text": "Definition 4 A set A is said to be a subset of a set B if every element of A is also an\nelement of B."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1128.0,
+            1177.5,
+            1248.7
+          ],
+          "conf": 0.948,
+          "text": "In other words, $\\mathrm{A} \\subset \\mathrm{B}$ if whenever $a \\in \\mathrm{A}$, then $a \\in \\mathrm{B}$. It is often convenient to\nuse the symbol “$\\Rightarrow$” which means $implies$. Using this symbol, we can write the definiton\nof $subset$ as follows:"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            419.5,
+            1238.4,
+            760.1,
+            1288.0
+          ],
+          "conf": 0.887,
+          "text": "$$A \\subset B \\text{ if } a \\in A \\Rightarrow a \\in B$$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1283.5,
+            1177.3,
+            1369.0
+          ],
+          "conf": 0.935,
+          "text": "We read the above statement as “A is a subset of B if a is an element of A\nimplies that a is also an element of B”. If A is not a subset of B, we write $A \\not\\subset B$."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1358.9,
+            1179.2,
+            1587.5
+          ],
+          "conf": 0.962,
+          "text": "We may note that for A to be a subset of B, all that is needed is that every\nelement of A is in B. It is possible that every element of B may or may not be in A. If\nit so happens that every element of B is also in A, then we shall also have $B \\subset A$. In this\ncase, A and B are the same sets so that we have $A \\subset B$ and $B \\subset A \\Leftrightarrow A = B$, where\n“$\\Leftrightarrow$” is a symbol for two way implications, and is usually read as *if and only if* (briefly\nwritten as “iff”)."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1578.0,
+            1181.3,
+            1703.5
+          ],
+          "conf": 0.947,
+          "text": "It follows from the above definition that every set $A$ is a subset of itself, i.e.,\n$A \\subset A$. Since the empty set $\\phi$ has no elements, we agree to say that $\\phi$ is a subset of\nevery set. We now consider some examples :"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0084_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            190.6,
+            257.6,
+            1179.2,
+            561.6
+          ],
+          "conf": 0.965,
+          "text": "(i) The set $\\mathbf{Q}$ of rational numbers is a subset of the set $\\mathbf{R}$ of real numbes, and\nwe write $\\mathbf{Q} \\subset \\mathrm{R}$.\n(ii) If $\\mathrm{A}$ is the set of all divisors of $56$ and $\\mathrm{B}$ the set of all prime divisors of $56$,\nthen $\\mathrm{B}$ is a subset of $\\mathrm{A}$ and we write $\\mathrm{B} \\subset \\mathrm{A}$.\n(iii) Let $\\mathrm{A} = \\{1, 3, 5\\}$ and $\\mathrm{B} = \\{x : x \\text{ is an odd natural number less than } 6\\}$. Then\n$\\mathrm{A} \\subset \\mathrm{B}$ and $\\mathrm{B} \\subset \\mathrm{A}$ and hence $\\mathrm{A} = \\mathrm{B}$.\n(iv) Let $\\mathrm{A} = \\{ a, e, i, o, u\\}$ and $\\mathrm{B} = \\{ a, b, c, d\\}$. Then $\\mathrm{A}$ is not a subset of $\\mathrm{B}$,\nalso $\\mathrm{B}$ is not a subset of $\\mathrm{A}$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            550.8,
+            1179.2,
+            636.7
+          ],
+          "conf": 0.938,
+          "text": "Let A and B be two sets. If $A \\subset B$ and $A \\neq B$ , then A is called a \\textit{proper subset}\n\\textit{of} B and B is called \\textit{superset} of A. For example,"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            184.5,
+            623.4,
+            826.1,
+            674.9
+          ],
+          "conf": 0.857,
+          "text": "$A = \\{1, 2, 3\\}$ is a proper subset of $B = \\{1, 2, 3, 4\\}$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            662.5,
+            1178.7,
+            746.5
+          ],
+          "conf": 0.916,
+          "text": "If a set A has only one element, we call it a \\textit{singleton set}. Thus, $\\{ a \\}$ is a\nsingleton set."
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            747.3,
+            1005.0,
+            1081.9
+          ],
+          "conf": 0.657,
+          "text": "Example 9 Consider the sets\n$$ \\phi, A = \\{ 1, 3 \\}, \\quad B = \\{1, 5, 9\\}, \\quad C = \\{1, 3, 5, 7, 9\\}. $$\nInsert the symbol $\\subset$ or $\\not\\subset$ between each of the following pair of sets:\n(i) $\\phi \\dots B$      (ii) $A \\dots B$      (iii) $A \\dots C$      (iv) $B \\dots C$\nSolution (i) $\\phi \\subset B$ as $\\phi$ is a subset of every set.\n(ii) $A \\not\\subset B$ as $3 \\in A$ and $3 \\not\\in B$\n(iii) $A \\subset C$ as $1, 3 \\in A$ also belongs to $C$\n(iv) $B \\subset C$ as each element of $B$ is also an element of $C$."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1084.5,
+            1177.0,
+            1384.7
+          ],
+          "conf": 0.627,
+          "text": "Example 10 Let $A = \\{a, e, i, o, u\\}$ and $B = \\{a, b, c, d\\}$. Is A a subset of B ? No.\n(Why?). Is B a subset of A? No. (Why?)\n\nExample 11 Let A, B and C be three sets. If $A \\in B$ and $B \\subset C$, is it true that\n$A \\subset C$? If not, give an example.\n\nSolution No. Let $A = \\{1\\}$, $B = \\{\\{1\\}, 2\\}$ and $C = \\{\\{1\\}, 2, 3\\}$. Here $A \\in B$ as $A = \\{1\\}$\nand $B \\subset C$. But $A \\not\\subset C$ as $1 \\in A$ and $1 \\notin C$.\nNote that an element of a set can never be a subset of itself."
+        },
+        {
+          "order": 6,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.2,
+            1391.6,
+            617.5,
+            1442.1
+          ],
+          "conf": 0.84,
+          "text": "1.6.1 Subsets of set of real numbers"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1430.1,
+            1178.5,
+            1513.7
+          ],
+          "conf": 0.909,
+          "text": "As noted in Section 1.6, there are many important subsets of $\\mathbf{R}$. We give below the\nnames of some of these subsets."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.3,
+            1503.1,
+            998.7,
+            1590.3
+          ],
+          "conf": 0.794,
+          "text": "The set of natural numbers $\\mathbf{N} = \\{1, 2, 3, 4, 5, \\dots\\}$\nThe set of integers $\\mathbf{Z} = \\{\\dots, -3, -2, -1, 0, 1, 2, 3, \\dots\\}$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.6,
+            1596.4,
+            1046.8,
+            1688.5
+          ],
+          "conf": 0.785,
+          "text": "The set of rational numbers $\\mathbf{Q} = \\{ x : x = \\frac{p}{q} , p, q \\in \\mathbf{Z} \\text{ and } q \\neq 0 \\}$"
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0084_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            284.8,
+            1177.7,
+            506.9
+          ],
+          "conf": 0.762,
+          "text": "which is read “ $\\mathbf{Q}$ is the set of all numbers $x$ such that $x$ equals the quotient $\\frac{p}{q}$ , where\n$p$ and $q$ are integers and $q$ is not zero”. Members of $\\mathbf{Q}$ include $-5$ (which can be\nexpressed as $-\\frac{5}{1}$ ), $\\frac{5}{7}$, $3\\frac{1}{2}$ (which can be expressed as $\\frac{7}{2}$) and $-\\frac{11}{3}$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            499.1,
+            1176.9,
+            588.2
+          ],
+          "conf": 0.841,
+          "text": "The set of irrational numbers, denoted by $\\mathbf{T}$, is composed of all other real numbers.\nThus $\\quad \\mathbf{T} = \\{x : x \\in \\mathbf{R} \\text{ and } x \\notin \\mathbf{Q}\\}$, i.e., all real numbers that are not rational."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            582.5,
+            651.2,
+            638.0
+          ],
+          "conf": 0.827,
+          "text": "Members of $\\mathbf{T}$ include $\\sqrt{2}$ , $\\sqrt{5}$ and $\\pi$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.2,
+            631.2,
+            884.3,
+            717.4
+          ],
+          "conf": 0.53,
+          "text": "Some of the obvious relations among these subsets are:\n$$ \\mathbf{N} \\subset \\mathbf{Z} \\subset \\mathbf{Q}, \\mathbf{Q} \\subset \\mathbf{R}, \\mathbf{T} \\subset \\mathbf{R}, \\mathbf{N} \\not\\subset \\mathbf{T}. $$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            720.3,
+            1178.3,
+            878.6
+          ],
+          "conf": 0.934,
+          "text": "1.6.2 *Intervals as subsets of R* Let $a, b \\in \\mathbf{R}$ and $a < b$. Then the set of real numbers\n$\\{ y : a < y < b \\}$ is called an *open interval* and is denoted by $(a, b)$. All the points\nbetween $a$ and $b$ belong to the open interval $(a, b)$ but $a, b$ themselves do not belong to\nthis interval."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            867.2,
+            1178.6,
+            953.2
+          ],
+          "conf": 0.927,
+          "text": "The interval which contains the end points also is called closed interval and is\ndenoted by $[ a, b ]$. Thus"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.5,
+            940.7,
+            511.3,
+            992.9
+          ],
+          "conf": 0.796,
+          "text": "$$[a, b] = \\{x : a \\le x \\le b\\}$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            977.5,
+            1014.4,
+            1027.3
+          ],
+          "conf": 0.874,
+          "text": "We can also have intervals closed at one end and open at the other, i.e.,"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.1,
+            1015.5,
+            1176.1,
+            1068.8
+          ],
+          "conf": 0.763,
+          "text": "$$[a, b) = \\{x : a \\le x < b\\}$$ is an $open$ $interval$ from $a$ to $b$, including $a$ but excluding $b$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            1053.5,
+            1177.0,
+            1105.8
+          ],
+          "conf": 0.78,
+          "text": "$$(a, b] = \\{x : a < x \\le b\\}$$ is an $open$ $interval$ from $a$ to $b$ including $b$ but excluding $a$."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1092.3,
+            1179.8,
+            1286.5
+          ],
+          "conf": 0.931,
+          "text": "These notations provide an alternative way of designating the subsets of set of\nreal numbers. For example , if $A = (-3, 5)$ and $B = [-7, 9]$, then $A \\subset B$. The set $[ 0, \\infty)$\ndefines the set of non-negative real numbers, while set $( -\\infty, 0 )$ defines the set of\nnegative real numbers. The set $( -\\infty, \\infty )$ describes the set of real numbers in relation\nto a line extending from $-\\infty$ to $\\infty$."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1277.4,
+            1177.3,
+            1365.2
+          ],
+          "conf": 0.911,
+          "text": "On real number line, various types of intervals described above as subsets of $\\mathbf{R}$,\nare shown in the Fig 1.1."
+        },
+        {
+          "order": 12,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            126.4,
+            1380.2,
+            1169.2,
+            1504.8
+          ],
+          "conf": 0.873,
+          "text": ""
+        },
+        {
+          "order": 13,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            597.0,
+            1484.5,
+            701.7,
+            1530.8
+          ],
+          "conf": 0.832,
+          "text": "Fig 1.1"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1548.5,
+            890.8,
+            1599.4
+          ],
+          "conf": 0.875,
+          "text": "Here, we note that an interval contains infinitely many points."
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1586.5,
+            1178.5,
+            1712.5
+          ],
+          "conf": 0.911,
+          "text": "For example, the set $\\{x : x \\in \\mathbf{R}, -5 < x \\leq 7\\}$, written in set-builder form, can be\nwritten in the form of interval as $[-5, 7]$ and the interval $[-3, 5)$ can be written in set-\nbuilder form as $\\{x : -3 \\leq x < 5\\}$."
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0084_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            256.7,
+            1177.8,
+            344.8
+          ],
+          "conf": 0.951,
+          "text": "The number $(b - a)$ is called the \\textit{length of any of the intervals} $(a, b), [a, b],$\n$[a, b)$ or $(a, b].$"
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.5,
+            346.6,
+            392.3,
+            399.2
+          ],
+          "conf": 0.884,
+          "text": "1.7 Universal Set"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            396.1,
+            1178.7,
+            626.1
+          ],
+          "conf": 0.974,
+          "text": "Usually, in a particular context, we have to deal with the elements and subsets of a\nbasic set which is relevant to that particular context. For example, while studying the\nsystem of numbers, we are interested in the set of natural numbers and its subsets such\nas the set of all prime numbers, the set of all even numbers, and so forth. This basic set\nis called the “*Universal Set*”. The universal set is usually denoted by U, and all its\nsubsets by the letters A, B, C, etc."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            615.6,
+            1179.0,
+            739.5
+          ],
+          "conf": 0.959,
+          "text": "For example, for the set of all integers, the universal set can be the set of rational\nnumbers or, for that matter, the set $\\mathbf{R}$ of real numbers. For another example, in human\npopulation studies, the universal set consists of all the people in the world."
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            522.1,
+            752.2,
+            775.2,
+            815.5
+          ],
+          "conf": 0.765,
+          "text": "EXERCISE 1.3"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.9,
+            815.5,
+            1179.1,
+            1689.1
+          ],
+          "conf": 0.704,
+          "text": "1. Make correct statements by filling in the symbols $\\subset$ or $\\not\\subset$ in the blank spaces :\n(i) $\\{2, 3, 4\\} \\dots \\{1, 2, 3, 4, 5\\}$ (ii) $\\{a, b, c\\} \\dots \\{b, c, d\\}$\n(iii) $\\{x : x \\text{ is a student of Class XI of your school}\\} \\dots \\{x : x \\text{ student of your school}\\}$\n(iv) $\\{x : x \\text{ is a circle in the plane}\\} \\dots \\{x : x \\text{ is a circle in the same plane with radius 1 unit}\\}$\n(v) $\\{x : x \\text{ is a triangle in a plane}\\} \\dots \\{x : x \\text{ is a rectangle in the plane}\\}$\n(vi) $\\{x : x \\text{ is an equilateral triangle in a plane}\\} \\dots \\{x : x \\text{ is a triangle in the same plane}\\}$\n(vii) $\\{x : x \\text{ is an even natural number}\\} \\dots \\{x : x \\text{ is an integer}\\}$\n\n2. Examine whether the following statements are true or false:\n(i) $\\{a, b\\} \\not\\subset \\{b, c, a\\}$\n(ii) $\\{a, e\\} \\subset \\{x : x \\text{ is a vowel in the English alphabet}\\}$\n(iii) $\\{1, 2, 3\\} \\subset \\{1, 3, 5\\}$\n(iv) $\\{a\\} \\subset \\{a, b, c\\}$\n(v) $\\{a\\} \\in \\{a, b, c\\}$\n(vi) $\\{x : x \\text{ is an even natural number less than 6}\\} \\subset \\{x : x \\text{ is a natural number which divides 36}\\}$\n\n3. Let $A = \\{1, 2, \\{3, 4\\}, 5\\}$. Which of the following statements are incorrect and why?\n(i) $\\{3, 4\\} \\subset A$ (ii) $\\{3, 4\\} \\in A$ (iii) $\\{\\{3, 4\\}\\} \\subset A$\n(iv) $1 \\in A$ (v) $1 \\subset A$ (vi) $\\{1, 2, 5\\} \\subset A$\n(vii) $\\{1, 2, 5\\} \\in A$ (viii) $\\{1, 2, 3\\} \\subset A$ (ix) $\\phi \\in A$\n(x) $\\phi \\subset A$ (xi) $\\{\\phi\\} \\subset A$\n\n4. Write down all the subsets of the following sets\n(i) $\\{a\\}$ (ii) $\\{a, b\\}$ (iii) $\\{1, 2, 3\\}$ (iv) $\\phi$"
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0084_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            259.0,
+            1033.9,
+            377.3
+          ],
+          "conf": 0.737,
+          "text": "5. Write the following as intervals :\n(i) $\\{x : x \\in \\mathrm{R}, -4 < x \\leq 6\\}$ (ii) $\\{x : x \\in \\mathrm{R}, -12 < x < -10\\}$\n(iii) $\\{x : x \\in \\mathrm{R}, 0 \\leq x < 7\\}$ (iv) $\\{x : x \\in \\mathrm{R}, 3 \\leq x \\leq 4\\}$"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            365.9,
+            1127.4,
+            450.3
+          ],
+          "conf": 0.717,
+          "text": "6. Write the following intervals in set-builder form :\n(i) $(-3, 0)$ (ii) $[6, 12]$ (iii) $(6, 12]$ (iv) $[-23, 5)$"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            439.1,
+            1147.6,
+            522.3
+          ],
+          "conf": 0.742,
+          "text": "7. What universal set(s) would you propose for each of the following :\n(i) The set of right triangles. (ii) The set of isosceles triangles."
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            509.0,
+            1177.7,
+            740.2
+          ],
+          "conf": 0.739,
+          "text": "8. Given the sets $A = \\{1, 3, 5\\}$, $B = \\{2, 4, 6\\}$ and $C = \\{0, 2, 4, 6, 8\\}$, which of the\nfollowing may be considered as universal set (s) for all the three sets A, B and C\n(i) $\\{0, 1, 2, 3, 4, 5, 6\\}$\n(ii) $\\phi$\n(iii) $\\{0,1,2,3,4,5,6,7,8,9,10\\}$\n(iv) $\\{1,2,3,4,5,6,7,8\\}$"
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.5,
+            738.9,
+            418.1,
+            790.0
+          ],
+          "conf": 0.882,
+          "text": "1.8 Venn Diagrams"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            783.8,
+            766.4,
+            1051.1
+          ],
+          "conf": 0.956,
+          "text": "Most of the relationships between sets can be\nrepresented by means of diagrams which are known\nas \\textit{Venn diagrams}. Venn diagrams are named after\nthe English logician, John Venn (1834-1883). These\ndiagrams consist of rectangles and closed curves\nusually circles. The universal set is represented\nusually by a rectangle and its subsets by circles."
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            758.2,
+            780.9,
+            1181.8,
+            1076.7
+          ],
+          "conf": 0.946,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            921.2,
+            1075.0,
+            1027.3,
+            1121.8
+          ],
+          "conf": 0.887,
+          "text": "Fig 1.2"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1040.1,
+            765.7,
+            1125.4
+          ],
+          "conf": 0.884,
+          "text": "In Venn diagrams, the elements of the sets are\nwritten in their respective circles (Figs 1.2 and 1.3)"
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1122.9,
+            749.7,
+            1247.3
+          ],
+          "conf": 0.809,
+          "text": "Illustration 1 In Fig 1.2, $U = \\{1,2,3, ..., 10\\}$ is the\nuniversal set of which\n$A = \\{2,4,6,8,10\\}$ is a subset."
+        },
+        {
+          "order": 10,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            756.2,
+            1143.6,
+            1180.0,
+            1391.0
+          ],
+          "conf": 0.941,
+          "text": ""
+        },
+        {
+          "order": 11,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.5,
+            1251.7,
+            1096.2,
+            1482.8
+          ],
+          "conf": 0.584,
+          "text": "Illustration 2 In Fig 1.3, $U = \\{1,2,3, ..., 10\\}$ is the\nuniversal set of which\n$A = \\{2,4,6,8,10\\}$ and $B = \\{4, 6\\}$ are subsets,\nand also $B \\subset A$.\nThe reader will see an extensive use of the\nVenn diagrams when we discuss the union, intersection and difference of sets.\nFig 1.3"
+        },
+        {
+          "order": 12,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.4,
+            1483.3,
+            468.0,
+            1535.4
+          ],
+          "conf": 0.85,
+          "text": "1.9 Operations on Sets"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1530.3,
+            1178.8,
+            1723.1
+          ],
+          "conf": 0.956,
+          "text": "In earlier classes, we have learnt how to perform the operations of addition, subtraction,\nmultiplication and division on numbers. Each one of these operations was performed\non a pair of numbers to get another number. For example, when we perform the\noperation of addition on the pair of numbers $5$ and $13$, we get the number $18$. Again,\nperforming the operation of multiplication on the pair of numbers $5$ and $13$, we get $65$."
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0084_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            258.2,
+            1178.7,
+            380.0
+          ],
+          "conf": 0.967,
+          "text": "Similarly, there are some operations which when performed on two sets give rise to\nanother set. We will now define certain operations on sets and examine their properties.\nHenceforth, we will refer all our sets as subsets of some universal set."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            384.4,
+            1178.8,
+            543.2
+          ],
+          "conf": 0.952,
+          "text": "1.9.1 *Union of sets* Let A and B be any two sets. The union of A and B is the set\nwhich consists of all the elements of A and all the elements of B, the common elements\nbeing taken only once. The symbol ‘$\\cup$’ is used to denote the *union*. *Symbolically, we*\n*write* $A \\cup B$ *and usually read as ‘A union B’."
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            540.2,
+            1003.9,
+            592.4
+          ],
+          "conf": 0.804,
+          "text": "Example 12 Let $A = \\{ 2, 4, 6, 8 \\}$ and $B = \\{ 6, 8, 10, 12 \\}$. Find $A \\cup B$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            587.9,
+            742.0,
+            640.1
+          ],
+          "conf": 0.788,
+          "text": "Solution We have $A \\cup B = \\{2, 4, 6, 8, 10, 12\\}$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            624.9,
+            1179.2,
+            711.7
+          ],
+          "conf": 0.833,
+          "text": "Note that the common elements 6 and 8 have been taken only once while writing\n$A \\cup B$."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            709.8,
+            1176.9,
+            896.0
+          ],
+          "conf": 0.555,
+          "text": "Example 13 Let $A = \\{ a, e, i, o, u \\}$ and $B = \\{ a, i, u \\}$. Show that $A \\cup B = A$\nSolution We have, $A \\cup B = \\{ a, e, i, o, u \\} = A$.\nThis example illustrates that union of sets $A$ and its subset $B$ is the set $A$\nitself, i.e., if $B \\subset A$, then $A \\cup B = A$."
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            900.0,
+            1178.6,
+            1024.7
+          ],
+          "conf": 0.859,
+          "text": "Example 14 Let $X = \\{Ram, Geeta, Akbar\\}$ be the set of students of Class XI, who are\nin school hockey team. Let $Y = \\{Geeta, David, Ashok\\}$ be the set of students from\nClass XI who are in the school football team. Find $X \\cup Y$ and interpret the set."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1030.4,
+            1180.9,
+            1116.8
+          ],
+          "conf": 0.873,
+          "text": "**Solution** We have, $X \\cup Y = \\{\\text{Ram, Geeta, Akbar, David, Ashok}\\}$. This is the set of\nstudents from Class XI who are in the hockey team or the football team or both."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1118.3,
+            792.4,
+            1168.7
+          ],
+          "conf": 0.872,
+          "text": "Thus, we can define the union of two sets as follows:"
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1161.9,
+            1178.2,
+            1453.5
+          ],
+          "conf": 0.591,
+          "text": "Definition 5 The union of two sets A and B is the set C which consists of all those\nelements which are either in A or in B (including\nthose which are in both). In symbols, we write.\n$$A \\cup B = \\{x : x \\in A \\text{ or } x \\in B\\}$$\nThe union of two sets can be represented by\na Venn diagram as shown in Fig 1.4.\nThe shaded portion in Fig 1.4 represents $A \\cup B$.\n$$A \\cup B$$"
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            913.9,
+            1459.8,
+            1020.5,
+            1507.8
+          ],
+          "conf": 0.842,
+          "text": "Fig 1.4"
+        },
+        {
+          "order": 11,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.1,
+            1427.3,
+            727.7,
+            1477.8
+          ],
+          "conf": 0.818,
+          "text": "Some Properties of the Operation of Union"
+        },
+        {
+          "order": 12,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            191.2,
+            1464.9,
+            1065.0,
+            1646.4
+          ],
+          "conf": 0.922,
+          "text": "(i) $A \\cup B = B \\cup A$ (Commutative law)                                                                                                   **Fig 1.4**\n\n(ii) $( A \\cup B ) \\cup C = A \\cup ( B \\cup C)$\n                                                                                                                            (Associative law )\n\n(iii) $A \\cup \\phi = A$                                     (Law of identity element, $\\phi$ is the identity of $\\cup$)"
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0084_p0014.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.8,
+            257.8,
+            698.0,
+            355.1
+          ],
+          "conf": 0.92,
+          "text": "(iv) $A \\cup A = A$ (Idempotent law)\n(v) $U \\cup A = U$ (Law of U)"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            361.8,
+            1178.2,
+            522.9
+          ],
+          "conf": 0.938,
+          "text": "1.9.2 Intersection of sets The intersection of sets A and B is the set of all elements\nwhich are common to both A and B. The symbol ‘$\\cap$’ is used to denote the intersection.\nThe intersection of two sets A and B is the set of all those elements which belong to\nboth A and B. Symbolically, we write $\\mathrm{A} \\cap \\mathrm{B} = \\{x : x \\in \\mathrm{A} \\text{ and } x \\in \\mathrm{B}\\}$."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            518.3,
+            981.8,
+            569.4
+          ],
+          "conf": 0.853,
+          "text": "Example 15 Consider the sets A and B of Example 12. Find $A \\cap B$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            564.9,
+            1177.8,
+            650.9
+          ],
+          "conf": 0.916,
+          "text": "Solution We see that 6, 8 are the only elements which are common to both A and B.\nHence $A \\cap B = \\{ 6, 8 \\}$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            645.2,
+            980.5,
+            696.0
+          ],
+          "conf": 0.851,
+          "text": "Example 16 Consider the sets $X$ and $Y$ of Example 14. Find $X \\cap Y$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            691.2,
+            1158.6,
+            778.0
+          ],
+          "conf": 0.904,
+          "text": "Solution We see that element ‘Geeta’ is the only element common to both. Hence,\n$$X \\cap Y = \\{Geeta\\}.$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            772.3,
+            1178.6,
+            859.8
+          ],
+          "conf": 0.786,
+          "text": "Example 17 Let $A = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\}$ and $B = \\{2, 3, 5, 7\\}$. Find $A \\cap B$ and\nhence show that $A \\cap B = B$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            854.4,
+            760.5,
+            941.1
+          ],
+          "conf": 0.862,
+          "text": "Solution We have $A \\cap B = \\{ 2, 3, 5, 7 \\} = B$. We\nnote that $B \\subset A$ and that $A \\cap B = B$."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            935.2,
+            759.2,
+            1058.9
+          ],
+          "conf": 0.885,
+          "text": "Definition 6 The intersection of two sets A and B\nis the set of all those elements which belong to both\nA and B. Symbolically, we write"
+        },
+        {
+          "order": 9,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            753.0,
+            858.8,
+            1175.8,
+            1116.1
+          ],
+          "conf": 0.956,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            926.1,
+            1110.2,
+            1033.0,
+            1156.9
+          ],
+          "conf": 0.884,
+          "text": "Fig 1.5"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            1053.9,
+            530.7,
+            1104.7
+          ],
+          "conf": 0.727,
+          "text": "$$A \\cap B = \\{x : x \\in A \\text{ and } x \\in B\\}$$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1095.9,
+            758.7,
+            1183.3
+          ],
+          "conf": 0.875,
+          "text": "The shaded portion in Fig 1.5 indicates the\nintersection of A and B."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1173.1,
+            759.7,
+            1255.3
+          ],
+          "conf": 0.872,
+          "text": "If A and B are two sets such that $A \\cap B = \\phi$, then\nA and B are called \\textit{disjoint sets}."
+        },
+        {
+          "order": 14,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            752.4,
+            1170.0,
+            1175.6,
+            1427.7
+          ],
+          "conf": 0.958,
+          "text": ""
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1243.0,
+            759.6,
+            1462.0
+          ],
+          "conf": 0.909,
+          "text": "For example, let $A = \\{ 2, 4, 6, 8 \\}$ and\n$B = \\{ 1, 3, 5, 7 \\}$. Then $A$ and $B$ are disjoint sets,\nbecause there are no elements which are common to\n$A$ and $B$. The disjoint sets can be represented by\nmeans of Venn diagram as shown in the Fig 1.6\nIn the above diagram, $A$ and $B$ are disjoint sets."
+        },
+        {
+          "order": 16,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            911.0,
+            1422.2,
+            1018.2,
+            1468.7
+          ],
+          "conf": 0.859,
+          "text": "Fig 1.6"
+        },
+        {
+          "order": 17,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.0,
+            1454.3,
+            759.1,
+            1503.5
+          ],
+          "conf": 0.76,
+          "text": "Some Properties of Operation of Intersection"
+        },
+        {
+          "order": 18,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.2,
+            1492.1,
+            972.7,
+            1646.4
+          ],
+          "conf": 0.926,
+          "text": "(i) $A \\cap B = B \\cap A$ (Commutative law).\n(ii) $( A \\cap B ) \\cap C = A \\cap ( B \\cap C )$ (Associative law).\n(iii) $\\phi \\cap A = \\phi, U \\cap A = A$ (Law of $\\phi$ and $U$).\n(iv) $A \\cap A = A$ (Idempotent law)"
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0084_p0015.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.7,
+            257.1,
+            1092.5,
+            377.9
+          ],
+          "conf": 0.55,
+          "text": "(v) $A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$ (Distributive law ) i. e.,\n$\\cap$ distributes over $\\cup$\nThis can be seen easily from the following Venn diagrams [Figs 1.7 (i) to (v)]."
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            199.9,
+            620.7,
+            413.0,
+            670.7
+          ],
+          "conf": 0.754,
+          "text": "(i) (B $\\cup$ C)"
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            152.0,
+            378.7,
+            1156.1,
+            1277.9
+          ],
+          "conf": 0.692,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            828.4,
+            619.6,
+            1003.9,
+            671.8
+          ],
+          "conf": 0.801,
+          "text": "(iii) $(A \\cap B)$"
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            199.7,
+            930.8,
+            430.3,
+            982.7
+          ],
+          "conf": 0.779,
+          "text": "(ii) $\\mathrm{A} \\cap (\\mathrm{B} \\cup \\mathrm{C})$"
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            827.3,
+            932.9,
+            1009.2,
+            984.2
+          ],
+          "conf": 0.743,
+          "text": "(iv) $(A \\cap C)$"
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            493.9,
+            1225.5,
+            767.1,
+            1276.6
+          ],
+          "conf": 0.745,
+          "text": "(v) $(A \\cap B) \\cup (A \\cap C)$"
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            540.0,
+            1277.0,
+            755.8,
+            1326.4
+          ],
+          "conf": 0.851,
+          "text": "Figs 1.7 (i) to (v)"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1355.7,
+            1178.5,
+            1476.9
+          ],
+          "conf": 0.919,
+          "text": "1.9.3 Difference of sets The difference of the sets A and B in this order is the set\nof elements which belong to A but not to B. Symbolically, we write $A - B$ and read as\n“A minus B”."
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1482.6,
+            1177.7,
+            1655.5
+          ],
+          "conf": 0.844,
+          "text": "Example 18. Let $A = \\{ 1, 2, 3, 4, 5, 6 \\}$, $B = \\{ 2, 4, 6, 8 \\}$. Find $A - B$ and $B - A$.\n\nSolution We have, $A - B = \\{ 1, 3, 5 \\}$, since the elements $1, 3, 5$ belong to $A$ but\nnot to $B$ and $B - A = \\{ 8 \\}$, since the element $8$ belongs to $B$ and not to $A$.\nWe note that $A - B \\neq B - A$."
+        }
+      ],
+      "page": 15
+    },
+    {
+      "image": "0084_p0016.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            265.2,
+            762.5,
+            880.1
+          ],
+          "conf": 0.521,
+          "text": "Example 19 Let $V = \\{ a, e, i, o, u \\}$ and\n$B = \\{ a, i, k, u \\}$. Find $V - B$ and $B - V$\n\nSolution We have, $V - B = \\{ e, o \\}$, since the elements\n$e, o$ belong to $V$ but not to $B$ and $B - V = \\{ k \\}$, since\nthe element $k$ belongs to $B$ but not to $V$.\n\nWe note that $V - B \\neq B - V$. Using the set-\nbuilder notation, we can rewrite the definition of\ndifference as\n$$A - B = \\{ x : x \\in A \\text{ and } x \\notin B \\}$$\nThe difference of two sets $A$ and $B$ can be\nrepresented by Venn diagram as shown in Fig 1.8.\nThe shaded portion represents the difference of\nthe two sets $A$ and $B$.\n\nRemark The sets $A - B$, $A \\cap B$ and $B - A$ are\nmutually disjoint sets, i.e., the intersection of any of\nthese two sets is the null set as shown in Fig 1.9."
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            754.1,
+            263.7,
+            1176.5,
+            517.6
+          ],
+          "conf": 0.952,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            921.6,
+            510.9,
+            1029.1,
+            557.3
+          ],
+          "conf": 0.904,
+          "text": "Fig 1.8"
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            753.6,
+            571.5,
+            1175.5,
+            827.1
+          ],
+          "conf": 0.951,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            919.9,
+            818.3,
+            1028.8,
+            865.1
+          ],
+          "conf": 0.892,
+          "text": "Fig 1.9"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            523.0,
+            907.2,
+            773.1,
+            966.5
+          ],
+          "conf": 0.822,
+          "text": "EXERCISE 1.4"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.5,
+            968.6,
+            1176.1,
+            1687.8
+          ],
+          "conf": 0.798,
+          "text": "1. Find the union of each of the following pairs of sets :\n(i) $X = \\{1, 3, 5\\}$ $Y = \\{1, 2, 3\\}$\n(ii) $A = [ a, e, i, o, u \\}$ $B = \\{a, b, c\\}$\n(iii) $A = \\{x : x \\text{ is a natural number and multiple of } 3\\}$\n$B = \\{x : x \\text{ is a natural number less than } 6\\}$\n(iv) $A = \\{x : x \\text{ is a natural number and } 1 < x \\le 6 \\}$\n$B = \\{x : x \\text{ is a natural number and } 6 < x < 10 \\}$\n(v) $A = \\{1, 2, 3\\}, B = \\phi$\n2. Let $A = \\{ a, b \\}, B = \\{a, b, c\\}$. Is $A \\subset B$ ? What is $A \\cup B$ ?\n3. If $A$ and $B$ are two sets such that $A \\subset B$, then what is $A \\cup B$ ?\n4. If $A = \\{1, 2, 3, 4\\}, B = \\{3, 4, 5, 6\\}, C = \\{5, 6, 7, 8 \\}$and $D = \\{ 7, 8, 9, 10 \\}$; find\n(i) $A \\cup B$ (ii) $A \\cup C$ (iii) $B \\cup C$ (iv) $B \\cup D$\n(v) $A \\cup B \\cup C$ (vi) $A \\cup B \\cup D$ (vii) $B \\cup C \\cup D$\n5. Find the intersection of each pair of sets of question 1 above.\n6. If $A = \\{ 3, 5, 7, 9, 11 \\}, B = \\{7, 9, 11, 13\\}, C = \\{11, 13, 15\\}$and $D = \\{15, 17\\}$; find\n(i) $A \\cap B$ (ii) $B \\cap C$ (iii) $A \\cap C \\cap D$\n(iv) $A \\cap C$ (v) $B \\cap D$ (vi) $A \\cap (B \\cup C)$\n(vii) $A \\cap D$ (viii) $A \\cap (B \\cup D)$ (ix) $(A \\cap B) \\cap (B \\cup C)$\n(x) $(A \\cup D) \\cap (B \\cup C)$"
+        }
+      ],
+      "page": 16
+    },
+    {
+      "image": "0084_p0017.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            134.9,
+            256.9,
+            1179.4,
+            415.5
+          ],
+          "conf": 0.789,
+          "text": "7. If $A = \\{x : x \\text{ is a natural number }\\}$, $B = \\{x : x \\text{ is an even natural number}\\}$\n$C = \\{x : x \\text{ is an odd natural number}\\} \\text{and} D = \\{x : x \\text{ is a prime number }\\}$, find\n(i) $A \\cap B$ (ii) $A \\cap C$ (iii) $A \\cap D$\n(iv) $B \\cap C$ (v) $B \\cap D$ (vi) $C \\cap D$"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.7,
+            404.1,
+            970.6,
+            562.8
+          ],
+          "conf": 0.728,
+          "text": "8. Which of the following pairs of sets are disjoint\n(i) $\\{1, 2, 3, 4\\}$ and $\\{x : x \\text{ is a natural number and } 4 \\le x \\le 6 \\}$\n(ii) $\\{ a, e, i, o, u \\}$ and $\\{ c, d, e, f \\}$\n(iii) $\\{x : x \\text{ is an even integer } \\}$ and $\\{x : x \\text{ is an odd integer}\\}$"
+        },
+        {
+          "order": 2,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.0,
+            550.8,
+            1103.2,
+            744.8
+          ],
+          "conf": 0.7,
+          "text": "9. If $A = \\{3, 6, 9, 12, 15, 18, 21\\}, B = \\{4, 8, 12, 16, 20 \\},$\n$C = \\{2, 4, 6, 8, 10, 12, 14, 16\\}, D = \\{5, 10, 15, 20 \\}$; find\n(i) $A - B$          (ii) $A - C$          (iii) $A - D$          (iv) $B - A$\n(v) $C - A$          (vi) $D - A$          (vii) $B - C$          (viii) $B - D$\n(ix) $C - B$          (x) $D - B$          (xi) $C - D$          (xii) $D - C$"
+        },
+        {
+          "order": 3,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            734.0,
+            927.4,
+            820.6
+          ],
+          "conf": 0.676,
+          "text": "10. If $X = \\{ a, b, c, d \\}$ and $Y = \\{ f, b, d, g \\}$, find\n(i) $X - Y$ (ii) $Y - X$ (iii) $X \\cap Y$"
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            808.4,
+            1178.5,
+            893.8
+          ],
+          "conf": 0.886,
+          "text": "11. If $\\mathbf{R}$ is the set of real numbers and $\\mathbf{Q}$ is the set of rational numbers, then what is\n$\\mathbf{R} - \\mathbf{Q}$?"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            890.9,
+            1180.5,
+            1094.6
+          ],
+          "conf": 0.579,
+          "text": "12. State whether each of the following statement is true or false. Justify your answer.\n(i) $\\{ 2, 3, 4, 5 \\}$ and $\\{ 3, 6 \\}$ are disjoint sets.\n(ii) $\\{ a, e, i, o, u \\}$ and $\\{ a, b, c, d \\}$ are disjoint sets.\n(iii) $\\{ 2, 6, 10, 14 \\}$ and $\\{ 3, 7, 11, 15 \\}$ are disjoint sets.\n(iv) $\\{ 2, 6, 10 \\}$ and $\\{ 3, 7, 11 \\}$ are disjoint sets."
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.0,
+            1096.1,
+            510.2,
+            1151.6
+          ],
+          "conf": 0.869,
+          "text": "1.10 Complement of a Set"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1150.8,
+            1179.4,
+            1450.1
+          ],
+          "conf": 0.953,
+          "text": "Let U be the universal set which consists of all prime numbers and A be the subset of\nU which consists of all those prime numbers that are not divisors of 42. Thus,\nA = $\\{x : x \\in U \\text{ and } x \\text{ is not a divisor of } 42 \\}$. We see that $2 \\in U$ but $2 \\notin A$, because\n2 is divisor of 42. Similarly, $3 \\in U$ but $3 \\notin A$, and $7 \\in U$ but $7 \\notin A$. Now 2, 3 and 7 are\nthe only elements of U which do not belong to A. The set of these three prime numbers,\ni.e., the set $\\{2, 3, 7\\}$ is called the Complement of A with respect to U, and is denoted by\n$A'$. So we have $A' = \\{2, 3, 7\\}$. Thus, we see that"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            219.2,
+            1435.3,
+            1066.3,
+            1488.6
+          ],
+          "conf": 0.773,
+          "text": "$$A' = \\{x : x \\in U \\text{ and } x \\notin A \\}.$$ This leads to the following definition."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1487.9,
+            1180.0,
+            1611.6
+          ],
+          "conf": 0.88,
+          "text": "Definition 7 Let U be the universal set and A a subset of U. Then the complement of\nA is the set of all elements of U which are not the elements of A. Symbolically, we\nwrite $A'$ to denote the complement of A with respect to U. Thus,"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            336.1,
+            1597.1,
+            997.0,
+            1648.8
+          ],
+          "conf": 0.716,
+          "text": "$$A' = \\{x : x \\in U \\text{ and } x \\notin A \\}.$$ Obviously $A' = U - A$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1636.1,
+            1178.6,
+            1722.9
+          ],
+          "conf": 0.871,
+          "text": "We note that the complement of a set A can be looked upon, alternatively, as the\ndifference between a universal set U and the set A."
+        }
+      ],
+      "page": 17
+    },
+    {
+      "image": "0084_p0018.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            255.9,
+            1178.2,
+            391.6
+          ],
+          "conf": 0.814,
+          "text": "Example 20 Let $U = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\}$ and $A = \\{1, 3, 5, 7, 9\\}$. Find $A'$.\nSolution We note that $2, 4, 6, 8, 10$ are the only elements of $U$ which do not belong to\n$A$. Hence $A' = \\{ 2, 4, 6, 8, 10 \\}$."
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            395.2,
+            1179.1,
+            481.1
+          ],
+          "conf": 0.806,
+          "text": "Example 21 Let U be universal set of all the students of Class XI of a coeducational\nschool and A be the set of all girls in Class XI. Find A'."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            485.6,
+            1136.2,
+            535.8
+          ],
+          "conf": 0.841,
+          "text": "Solution Since A is the set of all girls, $A'$ is clearly the set of all boys in the class."
+        },
+        {
+          "order": 3,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.2,
+            544.5,
+            1177.3,
+            865.6
+          ],
+          "conf": 0.943,
+          "text": "**Note** If A is a subset of the universal set U, then its complement $A'$ is also a\nsubset of U.\nAgain in Example 20 above, we have $A' = \\{ 2, 4, 6, 8, 10 \\}$\nHence $$(A')' = \\{x : x \\in U \\text{ and } x \\notin A'\\}$$\n$$= \\{1, 3, 5, 7, 9\\} = A$$\nIt is clear from the definition of the complement that for any subset of the universal\nset U, we have $$(A')' = A$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            866.4,
+            1179.0,
+            958.9
+          ],
+          "conf": 0.872,
+          "text": "Now, we want to find the results for ( A $\\cup$ B )' and A' $\\cap$ B' in the followng\nexample."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            961.8,
+            1050.3,
+            1061.2
+          ],
+          "conf": 0.822,
+          "text": "Example 22 Let $U = \\{1, 2, 3, 4, 5, 6\\}, A = \\{2, 3\\}$ and $B = \\{3, 4, 5\\}$.\nFind $A', B' , A' \\cap B', A \\cup B$ and hence show that $( A \\cup B )' = A' \\cap B'$."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1070.1,
+            1073.9,
+            1210.7
+          ],
+          "conf": 0.517,
+          "text": "Solution Clearly $A' = \\{1, 4, 5, 6\\}, B' = \\{ 1, 2, 6 \\}$. Hence $A' \\cap B' = \\{ 1, 6 \\}$\nAlso $A \\cup B = \\{ 2, 3, 4, 5 \\}$, so that $(A \\cup B)' = \\{ 1, 6 \\}$\n$$(A \\cup B)' = \\{ 1, 6 \\} = A' \\cap B'$$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            352.2,
+            1165.7,
+            774.5,
+            1219.8
+          ],
+          "conf": 0.602,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1212.0,
+            1178.1,
+            1299.4
+          ],
+          "conf": 0.693,
+          "text": "It can be shown that the above result is true in general. If A and B are any two\nsubsets of the universal set U, then"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1292.6,
+            1179.0,
+            1385.3
+          ],
+          "conf": 0.66,
+          "text": "$( \\mathrm{A} \\cup \\mathrm{B} )' = \\mathrm{A}' \\cap \\mathrm{B}'$. Similarly, $( \\mathrm{A} \\cap \\mathrm{B} )' = \\mathrm{A}' \\cup \\mathrm{B}'$. These two results are stated\nin words as follows :"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1377.1,
+            879.4,
+            1714.2
+          ],
+          "conf": 0.802,
+          "text": "The complement of the union of two sets is\nthe intersection of their complements and the\ncomplement of the intersection of two sets is the\nunion of their complements. These are called De\nMorgan's laws. These are named after the\nmathematician De Morgan.\nThe complement $A'$ of a set $A$ can be represented\nby a Venn diagram as shown in Fig 1.10.\nThe shaded portion represents the complement of the set $A$."
+        },
+        {
+          "order": 11,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            753.1,
+            1377.7,
+            1177.1,
+            1634.2
+          ],
+          "conf": 0.959,
+          "text": ""
+        },
+        {
+          "order": 12,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            908.1,
+            1628.1,
+            1029.6,
+            1674.5
+          ],
+          "conf": 0.858,
+          "text": "Fig 1.10"
+        }
+      ],
+      "page": 18
+    },
+    {
+      "image": "0084_p0019.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.3,
+            257.5,
+            656.4,
+            308.4
+          ],
+          "conf": 0.884,
+          "text": "Some Properties of Complement Sets"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            184.7,
+            300.6,
+            1165.2,
+            528.4
+          ],
+          "conf": 0.861,
+          "text": "**1. Complement laws:** (i) $A \\cup A' = U$ (ii) $A \\cap A' = \\phi$\n\n**2. De Morgan's law:** (i) $(A \\cup B)' = A' \\cap B'$ (ii) $(A \\cap B)' = A' \\cup B'$\n\n**3. Law of double complementation :** $(A')' = A$\n\n**4. Laws of empty set and universal set** $\\phi' = U$ and $U' = \\phi$.\n\nse laws can be verified by using Venn diagrams."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            487.0,
+            780.5,
+            536.9
+          ],
+          "conf": 0.818,
+          "text": "These laws can be verified by using Venn diagrams."
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            521.6,
+            550.6,
+            775.8,
+            609.7
+          ],
+          "conf": 0.78,
+          "text": "EXERCISE 1.5"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            613.7,
+            1182.9,
+            1476.3
+          ],
+          "conf": 0.851,
+          "text": "1. Let $U = \\{ 1, 2, 3, 4, 5, 6, 7, 8, 9 \\}, A = \\{ 1, 2, 3, 4 \\}, B = \\{ 2, 4, 6, 8 \\}$ and\n$C = \\{ 3, 4, 5, 6 \\}$. Find (i) $A'$ (ii) $B'$ (iii) $(A \\cup C)'$ (iv) $(A \\cup B)'$ (v) $(A')'$\n(vi) $(B - C)'$\n2. If $U = \\{ a, b, c, d, e, f, g, h \\}$, find the complements of the following sets :\n(i) $A = \\{ a, b, c \\}$ (ii) $B = \\{ d, e, f, g \\}$\n(iii) $C = \\{ a, c, e, g \\}$ (iv) $D = \\{ f, g, h, a \\}$\n3. Taking the set of natural numbers as the universal set, write down the complements\nof the following sets:\n(i) $\\{ x : x \\text{ is an even natural number} \\}$ (ii) $\\{ x : x \\text{ is an odd natural number} \\}$\n(iii) $\\{ x : x \\text{ is a positive multiple of } 3 \\}$ (iv) $\\{ x : x \\text{ is a prime number} \\}$\n(v) $\\{ x : x \\text{ is a natural number divisible by } 3 \\text{ and } 5 \\}$\n(vi) $\\{ x : x \\text{ is a perfect square} \\}$ (vii) $\\{ x : x \\text{ is a perfect cube} \\}$\n(viii) $\\{ x : x + 5 = 8 \\}$ (ix) $\\{ x : 2x + 5 = 9 \\}$\n(x) $\\{ x : x \\geq 7 \\}$ (xi) $\\{ x : x \\in \\mathbb{N} \\text{ and } 2x + 1 > 10 \\}$\n4. If $U = \\{ 1, 2, 3, 4, 5, 6, 7, 8, 9 \\}, A = \\{ 2, 4, 6, 8 \\}$ and $B = \\{ 2, 3, 5, 7 \\}$. Verify that\n(i) $(A \\cup B)' = A' \\cap B'$ (ii) $(A \\cap B)' = A' \\cup B'$\n5. Draw appropriate Venn diagram for each of the following :\n(i) $(A \\cup B)'$, (ii) $A' \\cap B'$, (iii) $(A \\cap B)'$, (iv) $A' \\cup B'$\n6. Let $U$ be the set of all triangles in a plane. If $A$ is the set of all triangles with at\nleast one angle different from $60^{\\circ}$, what is $A'$?\n7. Fill in the blanks to make each of the following a true statement :\n(i) $A \\cup A' = \\dots$ (ii) $\\phi' \\cap A = \\dots$\n(iii) $A \\cap A' = \\dots$ (iv) $U' \\cap A = \\dots$"
+        },
+        {
+          "order": 5,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            469.2,
+            1500.8,
+            839.0,
+            1553.2
+          ],
+          "conf": 0.828,
+          "text": "Miscellaneous Examples"
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1557.6,
+            1144.5,
+            1733.9
+          ],
+          "conf": 0.766,
+          "text": "Example 23 Show that the set of letters needed to spell “ CATARACT ” and the\nset of letters needed to spell “ TRACT” are equal.\n\nSolution Let $X$ be the set of letters in “CATARACT”. Then\n$$X = \\{ C, A, T, R \\}$$"
+        }
+      ],
+      "page": 19
+    },
+    {
+      "image": "0084_p0020.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            257.5,
+            711.4,
+            304.9
+          ],
+          "conf": 0.875,
+          "text": "Let Y be the set of letters in “ TRACT”. Then"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            320.1,
+            294.5,
+            799.9,
+            345.2
+          ],
+          "conf": 0.848,
+          "text": "$$Y = \\{ T, R, A, C, T \\} = \\{ T, R, A, C \\}$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            331.5,
+            1177.0,
+            381.7
+          ],
+          "conf": 0.905,
+          "text": "Since every element in X is in Y and every element in Y is in X. It follows that $X = Y$."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            380.8,
+            813.9,
+            431.7
+          ],
+          "conf": 0.817,
+          "text": "Example 24 List all the subsets of the set $\\{ -1, 0, 1 \\}$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            430.9,
+            1179.4,
+            629.3
+          ],
+          "conf": 0.882,
+          "text": "Solution Let $A = \\{-1, 0, 1\\}$. The subset of $A$ having no element is the empty\nset $\\phi$. The subsets of $A$ having one element are $\\{-1\\}$, $\\{0\\}$, $\\{1\\}$. The subsets of\n$A$ having two elements are $\\{-1, 0\\}$, $\\{-1, 1\\}$, $\\{0, 1\\}$. The subset of $A$ having three\nelements of $A$ is $A$ itself. So, all the subsets of $A$ are $\\phi$, $\\{-1\\}$, $\\{0\\}$, $\\{1\\}$, $\\{-1, 0\\}$, $\\{-1, 1\\}$,\n$\\{0, 1\\}$ and $\\{-1, 0, 1\\}$."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            625.5,
+            834.5,
+            677.2
+          ],
+          "conf": 0.765,
+          "text": "Example 25 Show that $A \\cup B = A \\cap B$ implies $A = B$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            677.0,
+            1177.7,
+            803.3
+          ],
+          "conf": 0.859,
+          "text": "Solution Let $a \\in \\mathrm{A}$. Then $a \\in \\mathrm{A} \\cup \\mathrm{B}$. Since $\\mathrm{A} \\cup \\mathrm{B} = \\mathrm{A} \\cap \\mathrm{B}$, $a \\in \\mathrm{A} \\cap \\mathrm{B}$. So $a \\in \\mathrm{B}$.\nTherefore, $\\mathrm{A} \\subset \\mathrm{B}$. Similarly, if $b \\in \\mathrm{B}$, then $b \\in \\mathrm{A} \\cup \\mathrm{B}$. Since\n$\\mathrm{A} \\cup \\mathrm{B} = \\mathrm{A} \\cap \\mathrm{B}$, $b \\in \\mathrm{A} \\cap \\mathrm{B}$. So, $b \\in \\mathrm{A}$. Therefore, $\\mathrm{B} \\subset \\mathrm{A}$. Thus, $\\mathrm{A} = \\mathrm{B}$"
+        },
+        {
+          "order": 7,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            382.5,
+            810.9,
+            922.6,
+            864.5
+          ],
+          "conf": 0.785,
+          "text": "Miscellaneous Exercise on Chapter 1"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.9,
+            868.3,
+            1179.5,
+            1684.3
+          ],
+          "conf": 0.938,
+          "text": "1. Decide, among the following sets, which sets are subsets of one and another:\n$A = \\{ x : x \\in \\mathbf{R} \\text{ and } x \\text{ satisfy } x^2 - 8x + 12 = 0 \\}$,\n$B = \\{ 2, 4, 6 \\}$, $C = \\{ 2, 4, 6, 8, \\dots \\}$, $D = \\{ 6 \\}$.\n2. In each of the following, determine whether the statement is true or false. If it is\ntrue, prove it. If it is false, give an example.\n(i) If $x \\in A$ and $A \\in B$, then $x \\in B$\n(ii) If $A \\subset B$ and $B \\in C$, then $A \\in C$\n(iii) If $A \\subset B$ and $B \\subset C$, then $A \\subset C$\n(iv) If $A \\not\\subset B$ and $B \\not\\subset C$, then $A \\not\\subset C$\n(v) If $x \\in A$ and $A \\not\\subset B$, then $x \\in B$\n(vi) If $A \\subset B$ and $x \\notin B$, then $x \\notin A$\n3. Let $A, B$, and $C$ be the sets such that $A \\cup B = A \\cup C$ and $A \\cap B = A \\cap C$. Show\nthat $B = C$.\n4. Show that the following four conditions are equivalent :\n(i) $A \\subset B$ (ii) $A - B = \\phi$ (iii) $A \\cup B = B$ (iv) $A \\cap B = A$\n5. Show that if $A \\subset B$, then $C - B \\subset C - A$.\n6. Show that for any sets $A$ and $B$,\n$A = ( A \\cap B ) \\cup ( A - B )$ and $A \\cup ( B - A ) = ( A \\cup B )$\n7. Using properties of sets, show that\n(i) $A \\cup ( A \\cap B ) = A$ (ii) $A \\cap ( A \\cup B ) = A$.\n8. Show that $A \\cap B = A \\cap C$ need not imply $B = C$."
+        }
+      ],
+      "page": 20
+    },
+    {
+      "image": "0084_p0021.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            119.5,
+            192.9,
+            380.8,
+            234.7
+          ],
+          "conf": 0.894,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.1,
+            192.7,
+            381.0,
+            235.0
+          ],
+          "conf": 0.698,
+          "text": "22 MATHEMATICS"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            129.7,
+            257.5,
+            1178.1,
+            455.6
+          ],
+          "conf": 0.725,
+          "text": "9. Let $A$ and $B$ be sets. If $A \\cap X = B \\cap X = \\phi$ and $A \\cup X = B \\cup X$ for some set\n$X$, show that $A = B$.\n(Hints $A = A \\cap (A \\cup X)$, $B = B \\cap (B \\cup X)$ and use Distributive law)\n10. Find sets $A$, $B$ and $C$ such that $A \\cap B$, $B \\cap C$ and $A \\cap C$ are non-empty\nsets and $A \\cap B \\cap C = \\phi$."
+        },
+        {
+          "order": 3,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            569.5,
+            495.1,
+            729.7,
+            545.9
+          ],
+          "conf": 0.803,
+          "text": "Summary"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            153.3,
+            551.6,
+            1145.0,
+            635.9
+          ],
+          "conf": 0.947,
+          "text": "This chapter deals with some basic definitions and operations involving sets. These\nare summarised below:"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.0,
+            629.5,
+            1145.6,
+            1192.1
+          ],
+          "conf": 0.979,
+          "text": "$\\diamond$ A set is a well-defined collection of objects.\n$\\diamond$ A set which does not contain any element is called $empty$ $set$.\n$\\diamond$ A set which consists of a definite number of elements is called $finite$ $set$,\notherwise, the set is called $infinite$ $set$.\n$\\diamond$ Two sets A and B are said to be equal if they have exactly the same elements.\n$\\diamond$ A set A is said to be subset of a set B, if every element of A is also an element\nof B. Intervals are subsets of $\\mathbf{R}$.\n$\\diamond$ The union of two sets A and B is the set of all those elements which are either\nin A or in B.\n$\\diamond$ The intersection of two sets A and B is the set of all elements which are\ncommon. The difference of two sets A and B in this order is the set of elements\nwhich belong to A but not to B.\n$\\diamond$ The complement of a subset A of universal set U is the set of all elements of U\nwhich are not the elements of A.\n$\\diamond$ For any two sets A and B, $(A \\cup B)' = A' \\cap B'$ and $(A \\cap B)' = A' \\cup B'$"
+        },
+        {
+          "order": 6,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.0,
+            1254.2,
+            1181.7,
+            1670.7
+          ],
+          "conf": 0.918,
+          "text": "Historical Note\n\nThe modern theory of sets is considered to have been originated largely by the\nGerman mathematician Georg Cantor (1845-1918). His papers on set theory\nappeared sometimes during 1874 to 1897. His study of set theory came when he\nwas studying trigonometric series of the form $a_1 \\sin x + a_2 \\sin 2x + a_3 \\sin 3x + ...$\nHe published in a paper in 1874 that the set of real numbers could not be put into\none-to-one correspondence wih the integers. From 1879 onwards, he publishd\nseveral papers showing various properties of abstract sets."
+        }
+      ],
+      "page": 21
+    },
+    {
+      "image": "0084_p0022.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            260.7,
+            1159.2,
+            1174.4
+          ],
+          "conf": 0.72,
+          "text": "Cantor’s work was well received by another famous mathematician Richard\nDedekind (1831-1916). But Kronecker (1810-1893) castigated him for regarding\ninfinite set the same way as finite sets. Another German mathematician Gottlob\nFrege, at the turn of the century, presented the set theory as principles of logic.\nTill then the entire set theory was based on the assumption of the existence of the\nset of all sets. It was the famous Englih Philosopher Bertand Russell (1872-\n1970 ) who showed in 1902 that the assumption of existence of a set of all sets\nleads to a contradiction. This led to the famous Russell’s Paradox. Paul R.Halmos\nwrites about it in his book ‘Naïve Set Theory’ that “nothing contains everything”.\nThe Russell’s Paradox was not the only one which arose in set theory.\nMany paradoxes were produced later by several mathematicians and logicians.\nAs a consequence of all these paradoxes, the first axiomatisation of set theory\nwas published in 1908 by Ernst Zermelo. Another one was proposed by Abraham\nFraenkel in 1922. John Von Neumann in 1925 introduced explicitly the axiom of\nregularity. Later in 1937 Paul Bernays gave a set of more satisfactory\naxiomatisation. A modification of these axioms was done by Kurt Gödel in his\nmonograph in 1940. This was known as Von Neumann-Bernays (VNB) or Gödel-\nBernays (GB) set theory.\nDespite all these difficulties, Cantor’s set theory is used in present day\nmathematics. In fact, these days most of the concepts and results in mathematics\nare expressed in the set theoretic language."
+        },
+        {
+          "order": 1,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            565.6,
+            1354.9,
+            733.5,
+            1404.1
+          ],
+          "conf": 0.784,
+          "text": ""
+        }
+      ],
+      "page": 22
+    }
+  ]
+}

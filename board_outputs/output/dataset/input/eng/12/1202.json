@@ -1,0 +1,2059 @@
+{
+  "book": "1202",
+  "relpath": "dataset/input/eng/12/1202.pdf",
+  "num_pages": 16,
+  "pages": [
+    {
+      "image": "0099_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            690.3,
+            110.6,
+            1178.5,
+            339.1
+          ],
+          "conf": 0.879,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            906.2,
+            243.4,
+            1148.3,
+            320.3
+          ],
+          "conf": 0.51,
+          "text": "Chapter 2"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            746.2,
+            301.9,
+            849.2,
+            339.1
+          ],
+          "conf": 0.526,
+          "text": "12079CHO2"
+        },
+        {
+          "order": 3,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            121.2,
+            348.6,
+            1183.0,
+            539.6
+          ],
+          "conf": 0.767,
+          "text": "INVERSE TRIGONOMETRIC\nFUNCTIONS"
+        },
+        {
+          "order": 4,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            250.6,
+            540.9,
+            1053.4,
+            635.0
+          ],
+          "conf": 0.732,
+          "text": "❖ Mathematics, in general, is fundamentally the science of\nself-evident things. — FELIX KLEIN ❖"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.3,
+            643.0,
+            372.2,
+            693.1
+          ],
+          "conf": 0.9,
+          "text": "2.1 Introduction"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            692.4,
+            839.8,
+            1116.8
+          ],
+          "conf": 0.984,
+          "text": "In Chapter 1, we have studied that the inverse of a function\n$f$, denoted by $f^{-1}$, exists if $f$ is one-one and onto. There are\nmany functions which are not one-one, onto or both and\nhence we can not talk of their inverses. In Class XI, we\nstudied that trigonometric functions are not one-one and\nonto over their natural domains and ranges and hence their\ninverses do not exist. In this chapter, we shall study about\nthe restrictions on domains and ranges of trigonometric\nfunctions which ensure the existence of their inverses and\nobserve their behaviour through graphical representations.\nBesides, some elementary properties will also be discussed."
+        },
+        {
+          "order": 7,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            841.6,
+            687.0,
+            1184.0,
+            1122.0
+          ],
+          "conf": 0.971,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1114.9,
+            1175.8,
+            1239.4
+          ],
+          "conf": 0.941,
+          "text": "The inverse trigonometric functions play an important\nrole in calculus for they serve to define many integrals.\nThe concepts of inverse trigonometric functions is also used in science and engineering.\nAryabhata\n(476-550 A. D.)"
+        },
+        {
+          "order": 9,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.6,
+            1246.2,
+            418.5,
+            1297.3
+          ],
+          "conf": 0.863,
+          "text": "2.2 Basic Concepts"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1293.9,
+            1154.3,
+            1343.7
+          ],
+          "conf": 0.904,
+          "text": "In Class XI, we have studied trigonometric functions, which are defined as follows:"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            170.3,
+            1338.5,
+            1118.3,
+            1700.7
+          ],
+          "conf": 0.573,
+          "text": "sine function, i.e., $\\text{sine} : \\mathbf{R} \\rightarrow [-1, 1]$\ncosine function, i.e., $\\cos : \\mathbf{R} \\rightarrow [-1, 1]$\n\ntangent function, i.e., $\\tan : \\mathbf{R} - \\{ x : x = (2n + 1) \\frac{\\pi}{2}, n \\in \\mathbf{Z} \\} \\rightarrow \\mathbf{R}$\ncotangent function, i.e., $\\cot : \\mathbf{R} - \\{ x : x = n\\pi, n \\in \\mathbf{Z} \\} \\rightarrow \\mathbf{R}$\n\nsecant function, i.e., $\\text{sec} : \\mathbf{R} - \\{ x : x = (2n + 1) \\frac{\\pi}{2}, n \\in \\mathbf{Z} \\} \\rightarrow \\mathbf{R} - (-1, 1)$\ncosecant function, i.e., $\\text{cosec} : \\mathbf{R} - \\{ x : x = n\\pi, n \\in \\mathbf{Z} \\} \\rightarrow \\mathbf{R} - (-1, 1)$"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0099_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            257.6,
+            1178.3,
+            450.9
+          ],
+          "conf": 0.958,
+          "text": "We have also learnt in Chapter 1 that if $f : \\mathrm{X} \\to \\mathrm{Y}$ such that $f(x) = y$ is one-one and\nonto, then we can define a unique function $g : \\mathrm{Y} \\to \\mathrm{X}$ such that $g(y) = x$, where $x \\in \\mathrm{X}$\nand $y = f(x), y \\in \\mathrm{Y}$. Here, the domain of $g = \\text{range of } f$ and the range of $g = \\text{ domain}$\nof $f$. The function $g$ is called the inverse of $f$ and is denoted by $f^{-1}$. Further, $g$ is also\none-one and onto and inverse of $g$ is $f$. Thus, $g^{-1} = (f^{-1})^{-1} = f$. We also have"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            319.7,
+            446.7,
+            812.6,
+            498.0
+          ],
+          "conf": 0.806,
+          "text": "$$ (f^{-1} \\circ f)(x) = f^{-1} (f(x)) = f^{-1}(y) = x $$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            490.2,
+            776.6,
+            541.3
+          ],
+          "conf": 0.733,
+          "text": "and $(f \\circ f^{-1}) (y) = f (f^{-1}(y)) = f(x) = y$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            535.8,
+            1178.1,
+            716.7
+          ],
+          "conf": 0.836,
+          "text": "Since the domain of sine function is the set of all real numbers and range is the\n\n\nclosed interval $[-1, 1]$. If we restrict its domain to $\\left[ \\frac{-\\pi}{2}, \\frac{\\pi}{2} \\right]$, then it becomes one-one\n\n\nand onto with range $[-1, 1]$. Actually, sine function restricted to any of the intervals"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.5,
+            722.6,
+            1177.1,
+            899.3
+          ],
+          "conf": 0.644,
+          "text": "$\\left[ \\frac{-3\\pi}{2}, \\frac{\\pi}{2} \\right], \\left[ \\frac{-\\pi}{2}, \\frac{\\pi}{2} \\right], \\left[ \\frac{\\pi}{2}, \\frac{3\\pi}{2} \\right]$ etc., is one-one and its range is $[-1, 1]$. We can,\ntherefore, define the inverse of sine function in each of these intervals. We denote the\ninverse of sine function by $\\sin^{-1}$ (arc sine function). Thus, $\\sin^{-1}$ is a function whose"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            902.1,
+            1178.1,
+            1002.8
+          ],
+          "conf": 0.784,
+          "text": "domain is $[-1, 1]$ and range could be any of the intervals $\\left[ \\frac{-3\\pi}{2}, \\frac{-\\pi}{2} \\right], \\left[ \\frac{-\\pi}{2}, \\frac{\\pi}{2} \\right]$ or"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.9,
+            1001.3,
+            1177.8,
+            1101.0
+          ],
+          "conf": 0.801,
+          "text": "$\\left[ \\frac{\\pi}{2}, \\frac{3\\pi}{2} \\right]$, and so on. Corresponding to each such interval, we get a $branch$ of the"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            1084.5,
+            1177.4,
+            1243.5
+          ],
+          "conf": 0.803,
+          "text": "function $\\sin^{-1}$. The branch with range $\\left[\\frac{-\\pi}{2}, \\frac{\\pi}{2}\\right]$ is called the *principal value branch*,\n*whereas other intervals as range give different branches of* $\\sin^{-1}$. When we refer\nto the function $\\sin^{-1}$, we take it as the function whose domain is $[-1, 1]$ and range is"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            125.1,
+            1238.4,
+            713.7,
+            1335.5
+          ],
+          "conf": 0.842,
+          "text": "$$ \\left[ \\frac{-\\pi}{2}, \\frac{\\pi}{2} \\right]. \\text{ We write } \\sin^{-1} : [-1, 1] \\to \\left[ \\frac{-\\pi}{2}, \\frac{\\pi}{2} \\right] $$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            170.4,
+            1326.8,
+            1179.1,
+            1375.2
+          ],
+          "conf": 0.831,
+          "text": "From the definition of the inverse functions, it follows that $\\sin (\\sin^{-1} x) = x$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1381.3,
+            1177.8,
+            1503.7
+          ],
+          "conf": 0.825,
+          "text": "if $-1 \\leq x \\leq 1$ and $\\sin^{-1} (\\sin x) = x$ if $-\\frac{\\pi}{2} \\leq x \\leq \\frac{\\pi}{2}$. In other words, if $y = \\sin^{-1} x$, then\n$\\sin y = x$."
+        },
+        {
+          "order": 11,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.8,
+            1510.5,
+            263.2,
+            1557.0
+          ],
+          "conf": 0.838,
+          "text": "Remarks"
+        },
+        {
+          "order": 12,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            143.9,
+            1553.6,
+            1178.8,
+            1705.8
+          ],
+          "conf": 0.943,
+          "text": "(i) We know from Chapter 1, that if $y=f(x)$ is an invertible function, then $x=f^{-1}(y)$.\nThus, the graph of $\\sin^{-1}$ function can be obtained from the graph of original\nfunction by interchanging $x$ and $y$ axes, i.e., if $(a, b)$ is a point on the graph of\nsine function, then $(b, a)$ becomes the corresponding point on the graph of inverse"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0099_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            192.5,
+            258.0,
+            1180.0,
+            402.6
+          ],
+          "conf": 0.96,
+          "text": "of sine function. Thus, the graph of the function $y = \\sin^{-1} x$ can be obtained from\nthe graph of $y = \\sin x$ by interchanging $x$ and $y$ axes. The graphs of $y = \\sin x$ and\n$y = \\sin^{-1} x$ are as given in Fig 2.1 (i), (ii), (iii). The dark portion of the graph of\n$y = \\sin^{-1} x$ represent the principal value branch."
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            137.0,
+            394.4,
+            1178.7,
+            550.6
+          ],
+          "conf": 0.916,
+          "text": "(ii) It can be shown that the graph of an inverse function can be obtained from the\ncorresponding graph of original function as a mirror image (i.e., reflection) along\nthe line $y = x$. This can be visualised by looking the graphs of $y = \\sin x$ and\n$y = \\sin^{-1} x$ as given in the same axes (Fig 2.1 (iii))."
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            285.5,
+            557.8,
+            990.6,
+            799.9
+          ],
+          "conf": 0.924,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            571.0,
+            788.5,
+            706.5,
+            837.1
+          ],
+          "conf": 0.915,
+          "text": "Fig 2.1 (i)"
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            127.9,
+            832.4,
+            1151.7,
+            1526.7
+          ],
+          "conf": 0.789,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            181.0,
+            1518.3,
+            326.0,
+            1566.2
+          ],
+          "conf": 0.801,
+          "text": "Fig 2.1 (ii)"
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            736.1,
+            1518.5,
+            888.7,
+            1567.1
+          ],
+          "conf": 0.831,
+          "text": "Fig 2.1 (iii)"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1591.1,
+            1178.6,
+            1706.6
+          ],
+          "conf": 0.937,
+          "text": "Like sine function, the cosine function is a function whose domain is the set of all\nreal numbers and range is the set $[-1, 1]$. If we restrict the domain of cosine function\nto $[0, \\pi]$, then it becomes one-one and onto with range $[-1, 1]$. Actually, cosine function"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0099_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            261.2,
+            1176.5,
+            600.2
+          ],
+          "conf": 0.941,
+          "text": "restricted to any of the intervals $[-\\pi, 0]$, $[0,\\pi]$, $[\\pi, 2\\pi]$ etc., is bijective with range as\n$[-1, 1]$. We can, therefore, define the inverse of cosine function in each of these\nintervals. We denote the inverse of the cosine function by $\\cos^{-1}$ (arc cosine function).\nThus, $\\cos^{-1}$ is a function whose domain is $[-1, 1]$ and range\ncould be any of the intervals $[-\\pi, 0]$, $[0, \\pi]$, $[\\pi, 2\\pi]$ etc.\nCorresponding to each such interval, we get a branch of the\nfunction $\\cos^{-1}$. The branch with range $[0, \\pi]$ is called the principal\nvalue branch of the function $\\cos^{-1}$. We write"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            355.9,
+            602.3,
+            670.8,
+            653.6
+          ],
+          "conf": 0.901,
+          "text": "$$ \\cos^{-1} : [-1, 1] \\rightarrow [0, \\pi]. $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            653.0,
+            907.4,
+            784.9
+          ],
+          "conf": 0.957,
+          "text": "The graph of the function given by $y = \\cos^{-1} x$ can be drawn\nin the same way as discussed about the graph of $y = \\sin^{-1} x$. The\ngraphs of $y = \\cos x$ and $y = \\cos^{-1} x$ are given in Fig 2.2 (i) and (ii)."
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            899.2,
+            396.3,
+            1177.5,
+            1123.3
+          ],
+          "conf": 0.949,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            121.7,
+            832.4,
+            837.5,
+            1136.8
+          ],
+          "conf": 0.885,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            406.4,
+            1121.0,
+            543.1,
+            1167.9
+          ],
+          "conf": 0.831,
+          "text": "Fig 2.2 (i)"
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            966.6,
+            1122.0,
+            1111.5,
+            1168.5
+          ],
+          "conf": 0.853,
+          "text": "Fig 2.2 (ii)"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            171.3,
+            1216.8,
+            820.2,
+            1264.8
+          ],
+          "conf": 0.891,
+          "text": "Let us now discuss $\\csc^{-1}x$ and $\\sec^{-1}x$ as follows:"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1262.9,
+            1183.0,
+            1707.9
+          ],
+          "conf": 0.606,
+          "text": "Since, $\\text{cosec } x = \\frac{1}{\\sin x}$, the domain of the cosec function is the set $\\{x : x \\in \\mathbf{R} \\text{ and } x \\neq n\\pi, n \\in \\mathbf{Z}\\}$ and the range is the set $\\{y : y \\in \\mathbf{R}, y \\geq 1 \\text{ or } y \\leq -1\\}$ i.e., the set $\\mathbf{R} - (-1, 1)$. It means that $y = \\text{cosec } x$ assumes all real values except $-1 < y < 1$ and is not defined for integral multiple of $\\pi$. If we restrict the domain of cosec function to $\\left[ -\\frac{\\pi}{2}, \\frac{\\pi}{2} \\right] - \\{0\\}$, then it is one to one and onto with its range as the set $\\mathbf{R} - (-1, 1)$. Actually, $\\text{cosec}$ function restricted to any of the intervals $\\left[ \\frac{-3\\pi}{2}, \\frac{-\\pi}{2} \\right] - \\{-\\pi\\}, \\left[ \\frac{-\\pi}{2}, \\frac{\\pi}{2} \\right] - \\{0\\}$, $\\left[ \\frac{\\pi}{2}, \\frac{3\\pi}{2} \\right] - \\{\\pi\\}$ etc., is bijective and its range is the set of all real numbers $\\mathbf{R} - (-1, 1)$."
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0099_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            257.8,
+            1177.8,
+            523.5
+          ],
+          "conf": 0.581,
+          "text": "Thus $\\text{cosec}^{-1}$ can be defined as a function whose domain is $\\mathbf{R} - (-1, 1)$ and range could\nbe any of the intervals $\\left[ \\frac{-3\\pi}{2}, \\frac{-\\pi}{2} \\right] - \\{-\\pi\\}$, $\\left[ \\frac{-\\pi}{2}, \\frac{\\pi}{2} \\right] - \\{0\\}$, $\\left[ \\frac{\\pi}{2}, \\frac{3\\pi}{2} \\right] - \\{\\pi\\}$ etc. The\nfunction corresponding to the range $\\left[ \\frac{-\\pi}{2}, \\frac{\\pi}{2} \\right] - \\{0\\}$ is called the *principal value branch*\nof $\\text{cosec}^{-1}$. We thus have principal branch as"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            394.8,
+            520.8,
+            895.7,
+            615.8
+          ],
+          "conf": 0.915,
+          "text": "$$ \\text{cosec}^{-1} : \\mathbf{R} - (-1, 1) \\rightarrow \\left[ \\frac{-\\pi}{2}, \\frac{\\pi}{2} \\right] - \\{0\\} $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            170.0,
+            606.3,
+            1066.8,
+            658.7
+          ],
+          "conf": 0.888,
+          "text": "The graphs of $y = \\text{cosec } x$ and $y = \\text{cosec}^{-1} x$ are given in Fig 2.3 (i), (ii)."
+        },
+        {
+          "order": 3,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            123.9,
+            707.0,
+            1180.7,
+            1322.8
+          ],
+          "conf": 0.752,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            259.9,
+            1317.3,
+            395.8,
+            1364.6
+          ],
+          "conf": 0.856,
+          "text": "Fig 2.3 (i)"
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            880.4,
+            1316.5,
+            1024.3,
+            1363.6
+          ],
+          "conf": 0.869,
+          "text": "Fig 2.3 (ii)"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1392.5,
+            1178.2,
+            1703.9
+          ],
+          "conf": 0.926,
+          "text": "Also, since $\\sec x = \\frac{1}{\\cos x}$, the domain of $y = \\sec x$ is the set $\\mathbf{R} - \\{x : x = (2n + 1) \\frac{\\pi}{2}$,\n$n \\in \\mathbf{Z}\\}$ and range is the set $\\mathbf{R} - (-1, 1)$. It means that $\\sec$ (secant function) assumes\nall real values except $-1 < y < 1$ and is not defined for odd multiples of $\\frac{\\pi}{2}$. If we\nrestrict the domain of secant function to $[0, \\pi] - \\{ \\frac{\\pi}{2} \\}$, then it is one-one and onto with"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0099_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            261.1,
+            1177.1,
+            548.1
+          ],
+          "conf": 0.828,
+          "text": "its range as the set $\\mathbf{R} - (-1, 1)$. Actually, secant function restricted to any of the\nintervals $[-\\pi, 0] - \\{ \\frac{-\\pi}{2} \\}, [0, \\pi] - \\{ \\frac{\\pi}{2} \\}, [\\pi, 2\\pi] - \\{ \\frac{3\\pi}{2} \\}$ etc., is bijective and its range\nis $\\mathbf{R} - \\{-1, 1\\}$. Thus $\\sec^{-1}$ can be defined as a function whose domain is $\\mathbf{R} - (-1, 1)$ and\nrange could be any of the intervals $[-\\pi, 0] - \\{ \\frac{-\\pi}{2} \\}, [0, \\pi] - \\{ \\frac{\\pi}{2} \\}, [\\pi, 2\\pi] - \\{ \\frac{3\\pi}{2} \\}$ etc.\nCorresponding to each of these intervals, we get different branches of the function $\\sec^{-1}$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            553.5,
+            1178.1,
+            669.0
+          ],
+          "conf": 0.918,
+          "text": "The branch with range $[0, \\pi] - \\{ \\frac{\\pi}{2} \\}$ is called the \\textit{principal value branch} of the\nfunction $\\sec^{-1}$. We thus have"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            423.3,
+            671.8,
+            872.6,
+            750.9
+          ],
+          "conf": 0.898,
+          "text": "$$ \\sec^{-1} : \\mathbf{R} - (-1,1) \\rightarrow [0, \\pi] - \\{ \\frac{\\pi}{2} \\} $$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            169.7,
+            740.4,
+            1172.1,
+            791.9
+          ],
+          "conf": 0.898,
+          "text": "The graphs of the functions $y = \\sec x$ and $y = \\sec^{-1} x$ are given in Fig 2.4 (i), (ii)."
+        },
+        {
+          "order": 4,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            123.8,
+            781.8,
+            1180.3,
+            1399.0
+          ],
+          "conf": 0.557,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            257.1,
+            1385.5,
+            393.6,
+            1433.7
+          ],
+          "conf": 0.82,
+          "text": "Fig 2.4 (i)"
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            876.5,
+            1383.2,
+            1020.0,
+            1431.1
+          ],
+          "conf": 0.865,
+          "text": "Fig 2.4 (ii)"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            169.9,
+            1451.4,
+            663.8,
+            1500.4
+          ],
+          "conf": 0.839,
+          "text": "Finally, we now discuss $\\tan^{-1}$ and $\\cot^{-1}$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.6,
+            1491.9,
+            1178.6,
+            1703.7
+          ],
+          "conf": 0.857,
+          "text": "We know that the domain of the tan function (tangent function) is the set\n$\\{x : x \\in \\mathbf{R} \\text{ and } x \\neq (2n + 1) \\frac{\\pi}{2}, n \\in \\mathbf{Z}\\}$ and the range is $\\mathbf{R}$. It means that tan function\nis not defined for odd multiples of $\\frac{\\pi}{2}$. If we restrict the domain of tangent function to"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0099_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            266.2,
+            1177.9,
+            692.0
+          ],
+          "conf": 0.926,
+          "text": "$\\left(\\frac{-\\pi}{2}, \\frac{\\pi}{2}\\right)$, then it is one-one and onto with its range as $\\mathbf{R}$. Actually, tangent function\nrestricted to any of the intervals $\\left(\\frac{-3\\pi}{2}, \\frac{-\\pi}{2}\\right), \\left(\\frac{-\\pi}{2}, \\frac{\\pi}{2}\\right), \\left(\\frac{\\pi}{2}, \\frac{3\\pi}{2}\\right)$ etc., is bijective\nand its range is $\\mathbf{R}$. Thus $\\tan^{-1}$ can be defined as a function whose domain is $\\mathbf{R}$ and\nrange could be any of the intervals $\\left(\\frac{-3\\pi}{2}, \\frac{-\\pi}{2}\\right), \\left(\\frac{-\\pi}{2}, \\frac{\\pi}{2}\\right), \\left(\\frac{\\pi}{2}, \\frac{3\\pi}{2}\\right)$ and so on. These\nintervals give different branches of the function $\\tan^{-1}$. The branch with range $\\left(\\frac{-\\pi}{2}, \\frac{\\pi}{2}\\right)$\nis called the *principal value branch* of the function $\\tan^{-1}$.\nWe thus have"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            170.8,
+            665.4,
+            362.6,
+            711.5
+          ],
+          "conf": 0.725,
+          "text": "We thus have"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            501.4,
+            703.0,
+            793.4,
+            797.8
+          ],
+          "conf": 0.907,
+          "text": "$$\\tan^{-1} : \\mathbf{R} \\rightarrow \\left( \\frac{-\\pi}{2}, \\frac{\\pi}{2} \\right)$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            169.8,
+            784.3,
+            1156.3,
+            836.2
+          ],
+          "conf": 0.89,
+          "text": "The graphs of the function $y = \\tan x$ and $y = \\tan^{-1}x$ are given in Fig 2.5 (i), (ii)."
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            128.4,
+            833.7,
+            1179.0,
+            1430.5
+          ],
+          "conf": 0.618,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            262.1,
+            1426.5,
+            398.7,
+            1475.7
+          ],
+          "conf": 0.846,
+          "text": "Fig 2.5 (i)"
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            901.4,
+            1426.9,
+            1053.0,
+            1475.3
+          ],
+          "conf": 0.86,
+          "text": "Fig 2.5 (ii)"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1476.9,
+            1178.7,
+            1706.0
+          ],
+          "conf": 0.97,
+          "text": "We know that domain of the cot function (cotangent function) is the set\n$\\{x : x \\in \\mathbf{R} \\text{ and } x \\neq n\\pi, n \\in \\mathbf{Z}\\}$ and range is $\\mathbf{R}$. It means that cotangent function is not\ndefined for integral multiples of $\\pi$. If we restrict the domain of cotangent function to\n$(0, \\pi)$, then it is bijective with and its range as $\\mathbf{R}$. In fact, cotangent function restricted\nto any of the intervals $(-\\pi, 0), (0, \\pi), (\\pi, 2\\pi)$ etc., is bijective and its range is $\\mathbf{R}$. Thus\n$\\cot^{-1}$ can be defined as a function whose domain is the $\\mathbf{R}$ and range as any of the"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0099_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.9,
+            257.5,
+            1182.1,
+            377.5
+          ],
+          "conf": 0.955,
+          "text": "intervals $(-\\pi, 0), (0, \\pi), (\\pi, 2\\pi)$ etc. These intervals give different branches of the\nfunction $\\cot^{-1}$. The function with range $(0, \\pi)$ is called the *principal value branch* of\nthe function $\\cot^{-1}$. We thus have"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            528.2,
+            369.2,
+            774.0,
+            416.3
+          ],
+          "conf": 0.882,
+          "text": "$$ \\cot^{-1} : \\mathbf{R} \\rightarrow (0, \\pi) $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            172.5,
+            413.1,
+            997.1,
+            463.4
+          ],
+          "conf": 0.891,
+          "text": "The graphs of $y = \\cot x$ and $y = \\cot^{-1}x$ are given in Fig 2.6 (i), (ii)."
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            127.7,
+            456.8,
+            1176.5,
+            1055.8
+          ],
+          "conf": 0.577,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            261.7,
+            1047.5,
+            396.5,
+            1094.4
+          ],
+          "conf": 0.85,
+          "text": "Fig 2.6 (i)"
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            905.3,
+            1051.8,
+            1048.6,
+            1097.6
+          ],
+          "conf": 0.88,
+          "text": "Fig 2.6 (ii)"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            1090.8,
+            1177.9,
+            1173.2
+          ],
+          "conf": 0.94,
+          "text": "The following table gives the inverse trigonometric function (principal value\nbranches) along with their domains and ranges."
+        },
+        {
+          "order": 7,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            274.0,
+            1166.4,
+            1022.6,
+            1705.4
+          ],
+          "conf": 0.938,
+          "text": "<table>\n<tbody>\n<tr>\n<td>$\\sin^{-1}$</td>\n<td>:</td>\n<td>$[-1, 1]$</td>\n<td>$\\rightarrow$</td>\n<td>$\\left[ -\\frac{\\pi}{2}, \\frac{\\pi}{2} \\right]$</td>\n</tr>\n<tr>\n<td>$\\cos^{-1}$</td>\n<td>:</td>\n<td>$[-1, 1]$</td>\n<td>$\\rightarrow$</td>\n<td>$[0, \\pi]$</td>\n</tr>\n<tr>\n<td>$\\text{cosec}^{-1}$</td>\n<td>:</td>\n<td>$\\mathbf{R} - (-1, 1)$</td>\n<td>$\\rightarrow$</td>\n<td>$\\left[ -\\frac{\\pi}{2}, \\frac{\\pi}{2} \\right] - \\{0\\}$</td>\n</tr>\n<tr>\n<td>$\\sec^{-1}$</td>\n<td>:</td>\n<td>$\\mathbf{R} - (-1, 1)$</td>\n<td>$\\rightarrow$</td>\n<td>$[0, \\pi] - \\{\\frac{\\pi}{2}\\}$</td>\n</tr>\n<tr>\n<td>$\\tan^{-1}$</td>\n<td>:</td>\n<td>$\\mathbf{R}$</td>\n<td>$\\rightarrow$</td>\n<td>$\\left( \\frac{-\\pi}{2}, \\frac{\\pi}{2} \\right)$</td>\n</tr>\n<tr>\n<td>$\\cot^{-1}$</td>\n<td>:</td>\n<td>$\\mathbf{R}$</td>\n<td>$\\rightarrow$</td>\n<td>$(0, \\pi)$</td>\n</tr>\n</tbody>\n</table>"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0099_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            258.8,
+            1175.2,
+            602.3
+          ],
+          "conf": 0.746,
+          "text": "Note\n\n1. $\\sin^{-1}x$ should not be confused with $(\\sin x)^{-1}$. In fact $(\\sin x)^{-1} = \\frac{1}{\\sin x}$ and\nsimilarly for other trigonometric functions.\n2. Whenever no branch of an inverse trigonometric functions is mentioned, we\nmean the principal value branch of that function.\n3. The value of an inverse trigonometric functions which lies in the range of\nprincipal branch is called the principal value of that inverse trigonometric\nfunctions."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            170.6,
+            595.8,
+            608.8,
+            645.4
+          ],
+          "conf": 0.913,
+          "text": "We now consider some examples:"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            638.2,
+            1183.1,
+            1368.8
+          ],
+          "conf": 0.571,
+          "text": "Example 1 Find the principal value of $\\sin^{-1} \\left( \\frac{1}{\\sqrt{2}} \\right)$.\n\nSolution Let $\\sin^{-1} \\left( \\frac{1}{\\sqrt{2}} \\right) = y$. Then, $\\sin y = \\frac{1}{\\sqrt{2}}$.\n\nWe know that the range of the principal value branch of $\\sin^{-1}$ is $\\left( \\frac{-\\pi}{2}, \\frac{\\pi}{2} \\right)$ and\n\n$\\sin \\left( \\frac{\\pi}{4} \\right) = \\frac{1}{\\sqrt{2}}$. Therefore, principal value of $\\sin^{-1} \\left( \\frac{1}{\\sqrt{2}} \\right)$ is $\\frac{\\pi}{4}$\n\nExample 2 Find the principal value of $\\cot^{-1} \\left( \\frac{-1}{\\sqrt{3}} \\right)$\n\nSolution Let $\\cot^{-1} \\left( \\frac{-1}{\\sqrt{3}} \\right) = y$. Then,\n\n$$\\cot y = \\frac{-1}{\\sqrt{3}} = -\\cot \\left( \\frac{\\pi}{3} \\right) = \\cot \\left( \\pi - \\frac{\\pi}{3} \\right) = \\cot \\left( \\frac{2\\pi}{3} \\right)$$\n\nWe know that the range of principal value branch of $\\cot^{-1}$ is $(0, \\pi)$ and\n\n$\\cot \\left( \\frac{2\\pi}{3} \\right) = \\frac{-1}{\\sqrt{3}}$. Hence, principal value of $\\cot^{-1} \\left( \\frac{-1}{\\sqrt{3}} \\right)$ is $\\frac{2\\pi}{3}$"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            522.5,
+            1386.1,
+            772.1,
+            1443.6
+          ],
+          "conf": 0.747,
+          "text": "EXERCISE 2.1"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1446.7,
+            642.2,
+            1497.4
+          ],
+          "conf": 0.864,
+          "text": "Find the principal values of the following:"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            144.6,
+            1500.4,
+            962.5,
+            1713.8
+          ],
+          "conf": 0.897,
+          "text": "1. $\\sin^{-1} \\left( -\\frac{1}{2} \\right)$      2. $\\cos^{-1} \\left( \\frac{\\sqrt{3}}{2} \\right)$      3. $\\text{cosec}^{-1} (2)$\n\n\n4. $\\tan^{-1} (-\\sqrt{3})$      5. $\\cos^{-1} \\left( -\\frac{1}{2} \\right)$      6. $\\tan^{-1} (-1)$"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0099_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            143.5,
+            269.2,
+            1000.6,
+            374.9
+          ],
+          "conf": 0.544,
+          "text": "7. $\\sec^{-1} \\left( \\frac{2}{\\sqrt{3}} \\right)$      8. $\\cot^{-1} (\\sqrt{3})$      9. $\\cos^{-1} \\left( -\\frac{1}{\\sqrt{2}} \\right)$"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            125.2,
+            374.7,
+            407.9,
+            429.2
+          ],
+          "conf": 0.725,
+          "text": "10. $\\mathrm{cosec}^{-1} (-\\sqrt{2})$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            421.0,
+            540.4,
+            470.2
+          ],
+          "conf": 0.876,
+          "text": "Find the values of the following:"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            129.0,
+            472.9,
+            1112.4,
+            572.7
+          ],
+          "conf": 0.593,
+          "text": "11. $\\tan^{-1}(1) + \\cos^{-1} \\quad -\\frac{1}{2} \\quad + \\sin^{-1} \\quad -\\frac{1}{2}$ \\qquad \\qquad 12. $\\cos^{-1} \\quad \\frac{1}{2} \\quad + 2 \\sin^{-1} \\quad \\frac{1}{2}$"
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            127.8,
+            569.8,
+            439.9,
+            619.6
+          ],
+          "conf": 0.803,
+          "text": "13. If $\\sin^{-1} x = y$, then"
+        },
+        {
+          "order": 5,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            191.8,
+            630.0,
+            860.1,
+            804.8
+          ],
+          "conf": 0.71,
+          "text": "(A) $0 \\le y \\le \\pi$                                                                    (B) $-\\frac{\\pi}{2} \\le y \\le \\frac{\\pi}{2}$\n\n\n(C) $0 < y < \\pi$                                                                    (D) $-\\frac{\\pi}{2} < y < \\frac{\\pi}{2}$"
+        },
+        {
+          "order": 6,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            128.1,
+            813.4,
+            955.4,
+            970.7
+          ],
+          "conf": 0.688,
+          "text": "14. $\\tan^{-1} \\sqrt{3} - \\sec^{-1}(-2)$ is equal to\n\n(A) $\\pi$ (B) $-\\frac{\\pi}{3}$ (C) $\\frac{\\pi}{3}$ (D) $\\frac{2\\pi}{3}$"
+        },
+        {
+          "order": 7,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.0,
+            980.8,
+            841.5,
+            1032.3
+          ],
+          "conf": 0.917,
+          "text": "2.3 Properties of Inverse Trigonometric Functions"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1030.8,
+            1179.2,
+            1301.7
+          ],
+          "conf": 0.973,
+          "text": "In this section, we shall prove some important properties of inverse trigonometric\nfunctions. It may be mentioned here that these results are valid within the principal\nvalue branches of the corresponding inverse trigonometric functions and wherever\nthey are defined. Some results may not be valid for all values of the domains of inverse\ntrigonometric functions. In fact, they will be valid only for some values of $x$ for which\ninverse trigonometric functions are defined. We will not go into the details of these\nvalues of $x$ in the domain as this discussion goes beyond the scope of this textbook."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1300.7,
+            1178.6,
+            1385.5
+          ],
+          "conf": 0.918,
+          "text": "Let us recall that if $y = \\sin^{-1}x$, then $x = \\sin y$ and if $x = \\sin y$, then $y = \\sin^{-1}x$. This\nis equivalent to"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            269.8,
+            1386.8,
+            1081.6,
+            1486.2
+          ],
+          "conf": 0.87,
+          "text": "$\\sin \\left(\\sin ^{-1} x\\right)=x, x \\in[-1,1]$ and $\\sin ^{-1}(\\sin x)=x, x \\in\\left[\\frac{-\\pi}{2}, \\frac{\\pi}{2}\\right]$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            129.6,
+            1490.4,
+            1188.1,
+            1573.0
+          ],
+          "conf": 0.913,
+          "text": "For suitable values of domain similar results follow for remaining trigonometric\nfunctions."
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0099_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            172.0,
+            297.4,
+            613.1,
+            347.9
+          ],
+          "conf": 0.899,
+          "text": "We now consider some examples."
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.0,
+            361.8,
+            1136.1,
+            891.3
+          ],
+          "conf": 0.573,
+          "text": "Example 3 Show that\n\n(i) $\\sin^{-1} \\left(2x\\sqrt{1-x^2}\\right) = 2 \\sin^{-1} x, -\\frac{1}{\\sqrt{2}} \\le x \\le \\frac{1}{\\sqrt{2}}$\n\n(ii) $\\sin^{-1} \\left(2x\\sqrt{1-x^2}\\right) = 2 \\cos^{-1} x, \\frac{1}{\\sqrt{2}} \\le x \\le 1$\n\nSolution\n\n(i) Let $x = \\sin \\theta$. Then $\\sin^{-1} x = \\theta$. We have\n\n$$\\sin^{-1} \\left(2x\\sqrt{1-x^2}\\right) = \\sin^{-1} \\left(2\\sin \\theta \\sqrt{1-\\sin^2 \\theta}\\right)$$\n\n$$= \\sin^{-1} (2\\sin \\theta \\cos \\theta) = \\sin^{-1} (\\sin 2\\theta) = 2\\theta$$\n\n$$= 2 \\sin^{-1} x$$\n\n(ii) Take $x = \\cos \\theta$, then proceeding as above, we get, $\\sin^{-1} \\left(2x\\sqrt{1-x^2}\\right) = 2 \\cos^{-1} x$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            139.4,
+            840.0,
+            1139.2,
+            900.4
+          ],
+          "conf": 0.655,
+          "text": "(ii) Take $x = \\cos \\theta$, then proceeding as above, we get, $\\sin^{-1} \\left( 2x\\sqrt{1-x^2} \\right) = 2 \\cos^{-1} x$"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.8,
+            930.4,
+            1063.0,
+            1779.2
+          ],
+          "conf": 0.579,
+          "text": "Example 4 Express $\\tan^{-1} \\frac{\\cos x}{1-\\sin x}$, $-\\frac{3\\pi}{2} < x < \\frac{\\pi}{2}$ in the simplest form.\nSolution We write\n\n$$ \\tan^{-1}\\left(\\frac{\\cos x}{1-\\sin x}\\right) = \\tan^{-1}\\left[\\frac{\\cos^2 \\frac{x}{2} - \\sin^2 \\frac{x}{2}}{\\cos^2 \\frac{x}{2} + \\sin^2 \\frac{x}{2} - 2 \\sin \\frac{x}{2} \\cos \\frac{x}{2}}\\right] $$\n\n$$ = \\tan^{-1}\\left[\\frac{\\left(\\cos \\frac{x}{2} + \\sin \\frac{x}{2}\\right)\\left(\\cos \\frac{x}{2} - \\sin \\frac{x}{2}\\right)}{\\left(\\cos \\frac{x}{2} - \\sin \\frac{x}{2}\\right)^2}\\right] $$\n\n$$ = \\tan^{-1}\\left[\\frac{\\cos \\frac{x}{2} + \\sin \\frac{x}{2}}{\\cos \\frac{x}{2} - \\sin \\frac{x}{2}}\\right] = \\tan^{-1}\\left[\\frac{1 + \\tan \\frac{x}{2}}{1 - \\tan \\frac{x}{2}}\\right] $$\n\n$$ = \\tan^{-1}\\left[\\tan\\left(\\frac{\\pi}{4} + \\frac{x}{2}\\right)\\right] = \\frac{\\pi}{4} + \\frac{x}{2} $$"
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0099_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            276.3,
+            917.7,
+            382.1
+          ],
+          "conf": 0.816,
+          "text": "Example 5 Write $\\cot^{-1}\\left(\\frac{1}{\\sqrt{x^2-1}}\\right)$, $x > 1$ in the simplest form."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            405.1,
+            857.4,
+            469.3
+          ],
+          "conf": 0.699,
+          "text": "Solution Let $x = \\sec \\theta$, then $\\sqrt{x^2 - 1} = \\sqrt{\\sec^2 \\theta - 1} = \\tan \\theta$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            168.6,
+            491.2,
+            1177.4,
+            591.1
+          ],
+          "conf": 0.803,
+          "text": "Therefore, $\\cot^{-1} \\frac{1}{\\sqrt{x^2 - 1}} = \\cot^{-1} (\\cot \\theta) = \\theta = \\sec^{-1} x$, which is the simplest form."
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            521.0,
+            611.4,
+            777.0,
+            670.3
+          ],
+          "conf": 0.791,
+          "text": "EXERCISE 2.2"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            673.0,
+            388.2,
+            722.0
+          ],
+          "conf": 0.893,
+          "text": "Prove the following:"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            143.8,
+            722.8,
+            707.3,
+            909.3
+          ],
+          "conf": 0.806,
+          "text": "1. $3\\sin^{-1} x = \\sin^{-1} (3x - 4x^3)$, $x \\in \\left[ -\\frac{1}{2}, \\frac{1}{2} \\right]$\n\n\n2. $3\\cos^{-1} x = \\cos^{-1} (4x^3 - 3x)$, $x \\in \\left[ \\frac{1}{2}, 1 \\right]$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            912.9,
+            748.7,
+            962.3
+          ],
+          "conf": 0.886,
+          "text": "Write the following functions in the simplest form:"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            142.9,
+            959.1,
+            1083.4,
+            1391.9
+          ],
+          "conf": 0.762,
+          "text": "3. $\\tan^{-1} \\frac{\\sqrt{1+x^2}-1}{x}, x \\neq 0$\n\n4. $\\tan^{-1}\\left(\\sqrt{\\frac{1-\\cos x}{1+\\cos x}}\\right), 0<x<\\pi$\n\n5. $\\tan^{-1}\\left(\\frac{\\cos x-\\sin x}{\\cos x+\\sin x}\\right), \\frac{-\\pi}{4}<x<\\frac{3 \\pi}{4}$\n\n6. $\\tan^{-1} \\frac{x}{\\sqrt{a^2-x^2}},|x|<a$\n\n7. $\\tan^{-1}\\left(\\frac{3 a^2 x-x^3}{a^3-3 a x^2}\\right), a>0 ; \\frac{-a}{\\sqrt{3}}<x<\\frac{a}{\\sqrt{3}}$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1396.3,
+            631.8,
+            1446.1
+          ],
+          "conf": 0.876,
+          "text": "Find the values of each of the following:"
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            143.0,
+            1442.9,
+            938.5,
+            1670.5
+          ],
+          "conf": 0.694,
+          "text": "8. $\\tan^{-1}\\left[2 \\cos \\left(2 \\sin^{-1} \\frac{1}{2}\\right)\\right]$\n\n\n9. $\\tan \\frac{1}{2}\\left[\\sin^{-1} \\frac{2 x}{1+x^{2}}+\\cos^{-1} \\frac{1-y^{2}}{1+y^{2}}\\right],|x|<1, y>0$ and $x y<1$"
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0099_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            300.2,
+            927.7,
+            350.9
+          ],
+          "conf": 0.916,
+          "text": "Find the values of each of the expressions in Exercises 16 to 18."
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            127.9,
+            353.8,
+            397.1,
+            450.5
+          ],
+          "conf": 0.809,
+          "text": "10. $\\sin^{-1}\\left(\\sin\\frac{2\\pi}{3}\\right)$"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            630.8,
+            357.2,
+            901.0,
+            455.2
+          ],
+          "conf": 0.73,
+          "text": "11. $\\tan^{-1}\\left(\\tan\\frac{3\\pi}{4}\\right)$"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            128.3,
+            452.2,
+            490.2,
+            546.4
+          ],
+          "conf": 0.84,
+          "text": "12. $\\tan \\left( \\sin^{-1} \\frac{3}{5} + \\cot^{-1} \\frac{3}{2} \\right)$"
+        },
+        {
+          "order": 4,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            127.9,
+            546.2,
+            939.4,
+            731.5
+          ],
+          "conf": 0.856,
+          "text": "13. $\\cos^{-1}\\left(\\cos\\frac{7\\pi}{6}\\right)$ is equal to\n\n(A) $\\frac{7\\pi}{6}$          (B) $\\frac{5\\pi}{6}$          (C) $\\frac{\\pi}{3}$          (D) $\\frac{\\pi}{6}$"
+        },
+        {
+          "order": 5,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            128.1,
+            733.8,
+            925.5,
+            907.6
+          ],
+          "conf": 0.862,
+          "text": "14. $\\sin\\left(\\frac{\\pi}{3}-\\sin^{-1}\\left(-\\frac{1}{2}\\right)\\right)$ is equal to\n\n(A) $\\frac{1}{2}$          (B) $\\frac{1}{3}$          (C) $\\frac{1}{4}$          (D) 1"
+        },
+        {
+          "order": 6,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            128.3,
+            909.1,
+            969.0,
+            1047.3
+          ],
+          "conf": 0.85,
+          "text": "15. $\\tan^{-1} \\sqrt{3} - \\cot^{-1}(-\\sqrt{3})$ is equal to\n\n(A) $\\pi$ (B) $-\\frac{\\pi}{2}$ (C) $0$ (D) $2\\sqrt{3}$"
+        },
+        {
+          "order": 7,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            466.2,
+            1074.5,
+            833.3,
+            1126.7
+          ],
+          "conf": 0.799,
+          "text": "Miscellaneous Examples"
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            1155.0,
+            1015.0,
+            1644.1
+          ],
+          "conf": 0.553,
+          "text": "Example 6 Find the value of $\\sin^{-1}(\\sin \\frac{3\\pi}{5})$\n\n\nSolution We know that $\\sin^{-1}(\\sin x) = x$. Therefore, $\\sin^{-1}(\\sin \\frac{3\\pi}{5}) = \\frac{3\\pi}{5}$\n\n\nBut $\\frac{3\\pi}{5} \\notin \\left[ -\\frac{\\pi}{2}, \\frac{\\pi}{2} \\right]$, which is the principal branch of $\\sin^{-1} x$\n\n\nHowever $\\sin(\\frac{3\\pi}{5}) = \\sin(\\pi - \\frac{3\\pi}{5}) = \\sin \\frac{2\\pi}{5}$ and $\\frac{2\\pi}{5} \\in \\left[ -\\frac{\\pi}{2}, \\frac{\\pi}{2} \\right]$\n\n\nTherefore $\\sin^{-1}(\\sin \\frac{3\\pi}{5}) = \\sin^{-1}(\\sin \\frac{2\\pi}{5}) = \\frac{2\\pi}{5}$"
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0099_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            377.8,
+            256.9,
+            921.1,
+            308.8
+          ],
+          "conf": 0.813,
+          "text": "Miscellaneous Exercise on Chapter 2"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            312.0,
+            518.7,
+            361.4
+          ],
+          "conf": 0.895,
+          "text": "Find the value of the following:"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            144.3,
+            369.4,
+            422.0,
+            464.6
+          ],
+          "conf": 0.84,
+          "text": "1. $\\cos^{-1} \\left( \\cos \\frac{13\\pi}{6} \\right)$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            645.2,
+            369.7,
+            901.5,
+            464.9
+          ],
+          "conf": 0.823,
+          "text": "2. $\\tan^{-1}\\left(\\tan \\frac{7\\pi}{6}\\right)$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            467.2,
+            273.3,
+            514.1
+          ],
+          "conf": 0.892,
+          "text": "Prove that"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            143.5,
+            515.5,
+            460.3,
+            606.5
+          ],
+          "conf": 0.813,
+          "text": "3. $2\\sin^{-1}\\frac{3}{5} = \\tan^{-1}\\frac{24}{7}$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            644.9,
+            514.5,
+            1071.3,
+            608.2
+          ],
+          "conf": 0.822,
+          "text": "4. $\\sin^{-1} \\frac{8}{17} + \\sin^{-1} \\frac{3}{5} = \\tan^{-1} \\frac{77}{36}$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            144.8,
+            616.9,
+            572.0,
+            709.8
+          ],
+          "conf": 0.813,
+          "text": "5. $\\cos^{-1} \\frac{4}{5} + \\cos^{-1} \\frac{12}{13} = \\cos^{-1} \\frac{33}{65}$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            645.2,
+            616.4,
+            1071.3,
+            709.1
+          ],
+          "conf": 0.825,
+          "text": "6. $\\cos^{-1} \\frac{12}{13} + \\sin^{-1} \\frac{3}{5} = \\sin^{-1} \\frac{56}{65}$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            145.5,
+            719.5,
+            564.2,
+            811.5
+          ],
+          "conf": 0.836,
+          "text": "7. $\\tan^{-1} \\frac{63}{16} = \\sin^{-1} \\frac{5}{13} + \\cos^{-1} \\frac{3}{5}$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            811.3,
+            273.6,
+            858.4
+          ],
+          "conf": 0.892,
+          "text": "Prove that"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            145.1,
+            868.7,
+            686.4,
+            962.2
+          ],
+          "conf": 0.835,
+          "text": "8. $\\tan^{-1} \\sqrt{x} = \\frac{1}{2} \\cos^{-1} \\frac{1-x}{1+x}$ , $x \\in [0, 1]$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            144.9,
+            982.5,
+            776.6,
+            1091.7
+          ],
+          "conf": 0.846,
+          "text": "9. $\\cot^{-1}\\left(\\frac{\\sqrt{1+\\sin x}+\\sqrt{1-\\sin x}}{\\sqrt{1+\\sin x}-\\sqrt{1-\\sin x}}\\right)=\\frac{x}{2}, x \\in\\left(0, \\frac{\\pi}{4}\\right)$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            128.8,
+            1114.9,
+            1148.9,
+            1225.1
+          ],
+          "conf": 0.779,
+          "text": "10. $\\tan^{-1}\\left(\\frac{\\sqrt{1+x}-\\sqrt{1-x}}{\\sqrt{1+x}+\\sqrt{1-x}}\\right)=\\frac{\\pi}{4}-\\frac{1}{2} \\cos ^{-1} x,-\\frac{1}{\\sqrt{2}} \\leq x \\leq 1$ [Hint: Put $x=\\cos 2 \\theta$]"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            1232.1,
+            504.9,
+            1282.5
+          ],
+          "conf": 0.892,
+          "text": "Solve the following equations:"
+        },
+        {
+          "order": 15,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            130.8,
+            1288.0,
+            1074.7,
+            1379.8
+          ],
+          "conf": 0.541,
+          "text": "11. $2\\tan^{-1} (\\cos x) = \\tan^{-1} (2 \\text{ cosec } x)$ 12. $\\tan^{-1} \\frac{1-x}{1+x} = \\frac{1}{2} \\tan^{-1} x, (x > 0)$"
+        },
+        {
+          "order": 16,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            128.8,
+            1377.1,
+            1011.9,
+            1536.3
+          ],
+          "conf": 0.795,
+          "text": "13. $\\sin \\left(\\tan ^{-1} x\\right),|x|<1$ is equal to\n\n(A) $\\frac{x}{\\sqrt{1-x^{2}}}$ (B) $\\frac{1}{\\sqrt{1-x^{2}}}$ (C) $\\frac{1}{\\sqrt{1+x^{2}}}$ (D) $\\frac{x}{\\sqrt{1+x^{2}}}$"
+        },
+        {
+          "order": 17,
+          "label": "MCQ",
+          "type": "Text",
+          "bbox_xyxy": [
+            128.8,
+            1558.2,
+            938.0,
+            1746.3
+          ],
+          "conf": 0.767,
+          "text": "14. $\\sin^{-1}(1-x)-2\\sin^{-1}x=\\frac{\\pi}{2}$, then $x$ is equal to\n\n\n(A) $0, \\frac{1}{2}$          (B) $1, \\frac{1}{2}$          (C) $0$          (D) $\\frac{1}{2}$"
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0099_p0014.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            570.6,
+            266.4,
+            729.3,
+            317.5
+          ],
+          "conf": 0.806,
+          "text": "Summary"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            157.2,
+            322.2,
+            1145.3,
+            408.7
+          ],
+          "conf": 0.891,
+          "text": "The domains and ranges (principal value branches) of inverse trigonometric\nfunctions are given in the following table:"
+        },
+        {
+          "order": 2,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            199.8,
+            399.2,
+            1147.6,
+            1012.5
+          ],
+          "conf": 0.986,
+          "text": "<table>\n<thead>\n<tr>\n<th>Functions</th>\n<th>Domain</th>\n<th>Range<br/>(Principal Value Branches)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>y = \\sin^{-1} x</td>\n<td>[-1, 1]</td>\n<td>\\left[\\frac{-\\pi}{2}, \\frac{\\pi}{2}\\right]</td>\n</tr>\n<tr>\n<td>y = \\cos^{-1} x</td>\n<td>[-1, 1]</td>\n<td>[0, \\pi]</td>\n</tr>\n<tr>\n<td>y = \\text{cosec}^{-1} x</td>\n<td>\\mathbf{R} - (-1, 1)</td>\n<td>\\left[\\frac{-\\pi}{2}, \\frac{\\pi}{2}\\right] - \\{0\\}</td>\n</tr>\n<tr>\n<td>y = \\sec^{-1} x</td>\n<td>\\mathbf{R} - (-1, 1)</td>\n<td>[0, \\pi] - \\{\\frac{\\pi}{2}\\}</td>\n</tr>\n<tr>\n<td>y = \\tan^{-1} x</td>\n<td>\\mathbf{R}</td>\n<td>\\left(-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right)</td>\n</tr>\n<tr>\n<td>y = \\cot^{-1} x</td>\n<td>\\mathbf{R}</td>\n<td>(0, \\pi)</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            157.0,
+            1015.5,
+            1144.3,
+            1143.0
+          ],
+          "conf": 0.89,
+          "text": "$\\diamond$ $\\sin^{-1}x$ should not be confused with $(\\sin x)^{-1}$. In fact $(\\sin x)^{-1} = \\frac{1}{\\sin x}$ and\nsimilarly for other trigonometric functions."
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.0,
+            1138.1,
+            1145.0,
+            1260.6
+          ],
+          "conf": 0.904,
+          "text": "The value of an inverse trigonometric functions which lies in its principal\nvalue branch is called the *principal value* of that inverse trigonometric\nfunctions."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            153.4,
+            1256.7,
+            653.9,
+            1307.0
+          ],
+          "conf": 0.887,
+          "text": "For suitable values of domain, we have"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.0,
+            1301.5,
+            1081.1,
+            1398.0
+          ],
+          "conf": 0.916,
+          "text": "$$ y = \\sin^{-1} x \\Rightarrow x = \\sin y \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad"
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0099_p0015.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            528.7,
+            282.1,
+            770.9,
+            331.7
+          ],
+          "conf": 0.81,
+          "text": "Historical Note"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            152.4,
+            338.2,
+            1145.8,
+            596.0
+          ],
+          "conf": 0.972,
+          "text": "The study of trigonometry was first started in India. The ancient Indian\nMathematicians, Aryabhata (476A.D.), Brahmagupta (598 A.D.), Bhaskara I\n(600 A.D.) and Bhaskara II (1114 A.D.) got important results of trigonometry. All\nthis knowledge went from India to Arabia and then from there to Europe. The\nGreeks had also started the study of trigonometry but their approach was so\nclumsy that when the Indian approach became known, it was immediately adopted\nthroughout the world."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            152.4,
+            593.4,
+            1145.3,
+            745.9
+          ],
+          "conf": 0.964,
+          "text": "In India, the predecessor of the modern trigonometric functions, known as\nthe sine of an angle, and the introduction of the sine function represents one of\nthe main contribution of the $siddhantas$ (Sanskrit astronomical works) to\nmathematics."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            152.0,
+            742.7,
+            1145.6,
+            896.4
+          ],
+          "conf": 0.966,
+          "text": "Bhaskara I (about 600 A.D.) gave formulae to find the values of sine functions\nfor angles more than $90^\\circ$. A sixteenth century Malayalam work $Yuktibhasa$\ncontains a proof for the expansion of $\\sin$ (A + B). Exact expression for sines or\ncosines of $18^\\circ$, $36^\\circ$, $54^\\circ$, $72^\\circ$, etc., were given by Bhaskara II."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            152.1,
+            892.6,
+            1145.6,
+            1116.1
+          ],
+          "conf": 0.972,
+          "text": "The symbols $\\sin^{-1} x$, $\\cos^{-1} x$, etc., for arc $\\sin x$, arc $\\cos x$, etc., were suggested\nby the astronomer Sir John F.W. Hersehel (1813) The name of Thales\n(about 600 B.C.) is invariably associated with height and distance problems. He\nis credited with the determination of the height of a great pyramid in Egypt by\nmeasuring shadows of the pyramid and an auxiliary staff (or gnomon) of known\nheight, and comparing the ratios:"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            465.9,
+            1125.4,
+            838.1,
+            1222.1
+          ],
+          "conf": 0.917,
+          "text": "$$\\frac{\\mathrm{H}}{\\mathrm{S}} = \\frac{h}{s} = \\tan \\text{ (sun's altitude)}$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            153.0,
+            1218.3,
+            1144.9,
+            1340.1
+          ],
+          "conf": 0.947,
+          "text": "Thales is also said to have calculated the distance of a ship at sea through\nthe proportionality of sides of similar triangles. Problems on height and distance\nusing the similarity property are also found in ancient Indian works."
+        },
+        {
+          "order": 7,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            577.3,
+            1428.4,
+            724.9,
+            1479.3
+          ],
+          "conf": 0.743,
+          "text": ""
+        }
+      ],
+      "page": 15
+    }
+  ]
+}

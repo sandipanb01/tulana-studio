@@ -1,0 +1,3600 @@
+{
+  "book": "1109",
+  "relpath": "dataset/input/eng/11/1109.pdf",
+  "num_pages": 25,
+  "pages": [
+    {
+      "image": "0092_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            619.3,
+            108.9,
+            1178.5,
+            335.3
+          ],
+          "conf": 0.842,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            904.5,
+            260.3,
+            1073.3,
+            317.9
+          ],
+          "conf": 0.567,
+          "text": "Chapter"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            673.3,
+            300.4,
+            779.1,
+            336.5
+          ],
+          "conf": 0.523,
+          "text": "11076CH10"
+        },
+        {
+          "order": 3,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            310.1,
+            357.6,
+            991.0,
+            464.6
+          ],
+          "conf": 0.829,
+          "text": "STRAIGHT LINES"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            164.8,
+            549.1,
+            1138.1,
+            680.2
+          ],
+          "conf": 0.88,
+          "text": "❖ Geometry, as a logical system, is a means and even the most powerful\nmeans to make children feel the strength of the human spirit that is\nof their own spirit. – H. FREUDENTHAL❖"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.8,
+            699.0,
+            372.6,
+            750.5
+          ],
+          "conf": 0.912,
+          "text": "9.1 Introduction"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            748.4,
+            1179.6,
+            1274.5
+          ],
+          "conf": 0.843,
+          "text": "We are familiar with two-dimensional coordinate geometry\nfrom earlier classes. Mainly, it is a combination of algebra\nand geometry. A systematic study of geometry by the use\nof algebra was first carried out by celebrated French\nphilosopher and mathematician René Descartes, in his book\n‘La Géométrie, published in 1637. This book introduced the\nnotion of the equation of a curve and related analytical\nmethods into the study of geometry. The resulting\ncombination of analysis and geometry is referred now as\nanalytical geometry. In the earlier classes, we initiated\nthe study of coordinate geometry, where we studied about\ncoordinate axes, coordinate plane, plotting of points in a\nplane, distance between two points, section formulae, etc. All these concepts are the\nbasics of coordinate geometry.\n\nRené Descartes\n(1596 -1650)"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1268.1,
+            1178.3,
+            1388.5
+          ],
+          "conf": 0.913,
+          "text": "Let us have a brief recall of coordinate geometry done in earlier classes. To\nrecapitulate, the location of the points $(6, -4)$ and\n$(3, 0)$ in the XY-plane is shown in Fig 9.1."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1378.3,
+            771.8,
+            1642.6
+          ],
+          "conf": 0.929,
+          "text": "We may note that the point $(6, -4)$ is at 6 units\ndistance from the $y$-axis measured along the positive\n$x$-axis and at 4 units distance from the $x$-axis\nmeasured along the negative $y$-axis. Similarly, the\npoint $(3, 0)$ is at 3 units distance from the $y$-axis\nmeasured along the positive $x$-axis and has zero\ndistance from the $x$-axis."
+        },
+        {
+          "order": 9,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            766.4,
+            1327.5,
+            1177.0,
+            1653.6
+          ],
+          "conf": 0.949,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            917.3,
+            1643.9,
+            1022.3,
+            1690.0
+          ],
+          "conf": 0.87,
+          "text": "Fig 9.1"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1634.0,
+            717.9,
+            1716.6
+          ],
+          "conf": 0.897,
+          "text": "We also studied there following important\nformulae:"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0092_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            138.2,
+            255.6,
+            878.1,
+            308.9
+          ],
+          "conf": 0.809,
+          "text": "I. Distance between the points P $(x_1, y_1)$ and Q $(x_2, y_2)$ is"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            281.7,
+            306.1,
+            661.8,
+            384.0
+          ],
+          "conf": 0.902,
+          "text": "$$PQ=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            380.6,
+            899.7,
+            432.6
+          ],
+          "conf": 0.914,
+          "text": "For example, distance between the points $(6, -4)$ and $(3, 0)$ is"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            283.8,
+            431.3,
+            836.0,
+            503.3
+          ],
+          "conf": 0.907,
+          "text": "$$ \\sqrt{(3-6)^2 + (0+4)^2} = \\sqrt{9+16} = 5 \\text{ units.} $$"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            126.8,
+            498.2,
+            1139.1,
+            552.1
+          ],
+          "conf": 0.787,
+          "text": "II. The coordinates of a point dividing the line segment joining the points $(x_1, y_1)$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.5,
+            551.0,
+            1079.0,
+            656.6
+          ],
+          "conf": 0.807,
+          "text": "and $(x_2, y_2)$ internally, in the ratio $m$: $n$ are $\\left( \\frac{m x_2 + n x_1}{m + n}, \\frac{m y_2 + n y_1}{m + n} \\right)$."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            654.2,
+            1179.4,
+            706.6
+          ],
+          "conf": 0.901,
+          "text": "For example, the coordinates of the point which divides the line segment joining"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.2,
+            703.2,
+            1172.2,
+            799.3
+          ],
+          "conf": 0.795,
+          "text": "A $(1, -3)$ and B $(-3, 9)$ internally, in the ratio 1:3 are given by $x = \\frac{1.(-3) + 3.1}{1 + 3} = 0$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.2,
+            804.6,
+            549.8,
+            903.4
+          ],
+          "conf": 0.915,
+          "text": "and $y = \\frac{1.9 + 3.(-3)}{1 + 3} = 0.$"
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            898.5,
+            1112.2,
+            950.8
+          ],
+          "conf": 0.794,
+          "text": "III. In particular, if $m = n$, the coordinates of the mid-point of the line segment"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            184.1,
+            953.2,
+            952.4,
+            1056.4
+          ],
+          "conf": 0.788,
+          "text": "joining the points $(x_1, y_1)$ and $(x_2, y_2)$ are $\\left( \\frac{x_1 + x_2}{2}, \\frac{y_1 + y_2}{2} \\right)$."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.8,
+            1054.9,
+            1056.5,
+            1110.9
+          ],
+          "conf": 0.768,
+          "text": "IV. Area of the triangle whose vertices are $(x_1, y_1)$, $(x_2, y_2)$ and $(x_3, y_3)$ is"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            190.8,
+            1109.8,
+            755.6,
+            1197.9
+          ],
+          "conf": 0.871,
+          "text": "$$ \\frac{1}{2} \\left| x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2) \\right| . $$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1190.3,
+            1175.2,
+            1241.5
+          ],
+          "conf": 0.89,
+          "text": "For example, the area of the triangle, whose vertices are $(4, 4)$, $(3, -2)$ and $(-3, 16)$ is"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            190.4,
+            1240.1,
+            840.1,
+            1338.7
+          ],
+          "conf": 0.906,
+          "text": "$$\\frac{1}{2} | 4(-2 - 16) + 3(16 - 4) + (-3)(4 + 2) | = \\frac{|-54|}{2} = 27.$$"
+        },
+        {
+          "order": 15,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1343.7,
+            1178.6,
+            1613.7
+          ],
+          "conf": 0.629,
+          "text": "$\\textit{Remark}$ If the area of the triangle ABC is zero, then three points A, B and C lie on\na line, i.e., they are collinear.\nIn the this Chapter, we shall continue the study of coordinate geometry to study\nproperties of the simplest geometric figure – $\\textit{straight line}$. Despite its simplicity, the\nline is a vital concept of geometry and enters into our daily experiences in numerous\ninteresting and useful ways. Main focus is on representing the line algebraically, for\nwhich $\\textit{slope}$ is most essential."
+        },
+        {
+          "order": 16,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.5,
+            1617.5,
+            413.1,
+            1669.5
+          ],
+          "conf": 0.826,
+          "text": "9.2 Slope of a Line"
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            1658.9,
+            1178.3,
+            1709.4
+          ],
+          "conf": 0.891,
+          "text": "A line in a coordinate plane forms two angles with the $x$-axis, which are supplementary."
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0092_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            258.0,
+            723.8,
+            416.9
+          ],
+          "conf": 0.958,
+          "text": "The angle (say) $\\theta$ made by the line $l$ with positive\ndirection of $x$-axis and measured anti clockwise\nis called the $inclination$ $of$ $the$ $line$. Obviously\n$0^{\\circ} \\leq \\theta \\leq 180^{\\circ}$ (Fig 9.2)."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            407.9,
+            724.0,
+            565.1
+          ],
+          "conf": 0.957,
+          "text": "We observe that lines parallel to $x$-axis, or\ncoinciding with $x$-axis, have inclination of $0^{\\circ}$. The\ninclination of a vertical line (parallel to or\ncoinciding with $y$-axis) is $90^{\\circ}$."
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            715.8,
+            258.0,
+            1178.6,
+            698.1
+          ],
+          "conf": 0.95,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.7,
+            570.8,
+            1170.4,
+            891.3
+          ],
+          "conf": 0.67,
+          "text": "**Definition 1** If $\\theta$ is the inclination of a line\n$l$, then $\\tan \\theta$ is called the *slope* or *gradient* of\nthe line $l$.\nThe slope of a line whose inclination is $90^\\circ$ is not\ndefined.\nThe slope of a line is denoted by $m$.\nThus, $m = \\tan \\theta$, $\\theta \\neq 90^\\circ$\nIt may be observed that the slope of $x$-axis is zero and slope of $y$-axis is not defined."
+        },
+        {
+          "order": 4,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.2,
+            897.9,
+            1142.2,
+            948.3
+          ],
+          "conf": 0.863,
+          "text": "9.2.1 Slope of a line when coordinates of any two points on the line are given"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            936.7,
+            1175.5,
+            1091.7
+          ],
+          "conf": 0.877,
+          "text": "We know that a line is completely determined when we are given two points on it.\nHence, we proceed to find the slope of a\nline in terms of the coordinates of two points\non the line."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1081.5,
+            672.6,
+            1346.7
+          ],
+          "conf": 0.945,
+          "text": "Let $P(x_1, y_1)$ and $Q(x_2, y_2)$ be two\npoints on non-vertical line $l$ whose inclination\nis $\\theta$. Obviously, $x_1 \\neq x_2$, otherwise the line\nwill become perpendicular to $x$-axis and its\nslope will not be defined. The inclination of\nthe line $l$ may be acute or obtuse. Let us\ntake these two cases."
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            659.1,
+            1001.1,
+            1179.8,
+            1456.7
+          ],
+          "conf": 0.96,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            844.0,
+            1452.5,
+            986.3,
+            1500.0
+          ],
+          "conf": 0.868,
+          "text": "Fig 9. 3 (i)"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1337.8,
+            671.8,
+            1459.0
+          ],
+          "conf": 0.909,
+          "text": "Draw perpendicular QR to $x$-axis and\nPM perpendicular to RQ as shown in ,\nFigs. 9.3 (i) and (ii)."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1466.0,
+            534.3,
+            1516.2
+          ],
+          "conf": 0.812,
+          "text": "Case 1 When angle $\\theta$ is acute:"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1514.3,
+            1112.8,
+            1565.6
+          ],
+          "conf": 0.684,
+          "text": "In Fig 9.3 (i), $\\angle MPQ = \\theta$. \\hfill ... (1)"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1561.2,
+            602.8,
+            1609.5
+          ],
+          "conf": 0.787,
+          "text": "Therefore, slope of line $l = m = \\tan \\theta$."
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            1611.8,
+            1114.0,
+            1705.1
+          ],
+          "conf": 0.843,
+          "text": "But in $\\Delta$MPQ, we have $\\tan \\theta = \\frac{\\text{MQ}}{\\text{MP}} = \\frac{y_2 - y_1}{x_2 - x_1}$. \\hfill ... (2)"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0092_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            257.3,
+            592.0,
+            308.0
+          ],
+          "conf": 0.91,
+          "text": "From equations (1) and (2), we have"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            123.9,
+            315.4,
+            293.5,
+            407.0
+          ],
+          "conf": 0.895,
+          "text": "$$m = \\frac{y_2 - y_1}{x_2 - x_1}.$$"
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            657.9,
+            257.5,
+            1176.6,
+            652.8
+          ],
+          "conf": 0.961,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            422.2,
+            554.4,
+            650.4
+          ],
+          "conf": 0.845,
+          "text": "Case II When angle $\\theta$ is obtuse:\nIn Fig 9.3 (ii), we have\n$\\angle MPQ = 180^\\circ - \\theta$.\n\nTherefore, $\\theta = 180^\\circ - \\angle MPQ$.\n\nNow, slope of the line $l$"
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            821.9,
+            638.4,
+            972.7,
+            684.6
+          ],
+          "conf": 0.9,
+          "text": "Fig 9. 3 (ii)"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            234.8,
+            710.2,
+            785.6,
+            903.8
+          ],
+          "conf": 0.843,
+          "text": "$$m = \\tan \\theta$$\n$$= \\tan ( 180^\\circ - \\angle MPQ) = - \\tan \\angle MPQ$$\n$$= -\\frac{MQ}{MP} = -\\frac{y_2 - y_1}{x_1 - x_2} = \\frac{y_2 - y_1}{x_2 - x_1}$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            901.0,
+            1178.3,
+            1050.7
+          ],
+          "conf": 0.648,
+          "text": "Consequently, we see that in both the cases the slope $m$ of the line through the points\n\n$(x_1, y_1)$ and $(x_2, y_2)$ is given by $m = \\frac{y_2 - y_1}{x_2 - x_1}$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1077.9,
+            1177.8,
+            1234.4
+          ],
+          "conf": 0.825,
+          "text": "9.2.2 Conditions for parallelism and perpendicularity of lines in terms of their\nslopes In a coordinate plane, suppose that non-vertical lines $l_1$ and $l_2$ have slopes $m_1$\nand $m_2$, respectively. Let their inclinations be $\\alpha$ and\n$\\beta$, respectively."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1231.4,
+            757.0,
+            1316.9
+          ],
+          "conf": 0.888,
+          "text": "If the line $l_1$ is parallel to $l_2$ (Fig 9.4), then their\ninclinations are equal, i.e.,"
+        },
+        {
+          "order": 9,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            749.2,
+            1164.3,
+            1169.7,
+            1513.2
+          ],
+          "conf": 0.957,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1314.2,
+            731.8,
+            1495.1
+          ],
+          "conf": 0.803,
+          "text": "$\\alpha = \\beta$, and hence, $\\tan \\alpha = \\tan \\beta$\nTherefore $m_1 = m_2$, i.e., their slopes are equal.\nConversely, if the slope of two lines $l_1$ and $l_2$\nis same, i.e.,"
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            903.4,
+            1520.0,
+            1015.4,
+            1567.3
+          ],
+          "conf": 0.851,
+          "text": "Fig 9. 4"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            354.5,
+            1502.0,
+            484.8,
+            1553.8
+          ],
+          "conf": 0.75,
+          "text": "$$m_1 = m_2.$$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1549.8,
+            551.9,
+            1597.3
+          ],
+          "conf": 0.635,
+          "text": "Then $\\tan \\alpha = \\tan \\beta.$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1599.8,
+            954.6,
+            1692.5
+          ],
+          "conf": 0.802,
+          "text": "By the property of tangent function (between $0^{\\circ}$ and $180^{\\circ}$), $\\alpha = \\beta$.\nTherefore, the lines are parallel."
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0092_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            257.6,
+            1175.6,
+            342.6
+          ],
+          "conf": 0.944,
+          "text": "Hence, two non vertical lines $l_1$ and $l_2$ are parallel if and only if their slopes\nare equal."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            338.0,
+            1055.9,
+            432.8
+          ],
+          "conf": 0.635,
+          "text": "**If the lines $l_1$ and $l_2$ are perpendicular** (Fig 9.5), then $\\beta = \\alpha + 90^\\circ$.\nTherefore, $\\tan \\beta = \\tan (\\alpha + 90^\\circ)$                                                                    $\\mathbf{Y}$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            338.9,
+            436.1,
+            610.7,
+            528.4
+          ],
+          "conf": 0.877,
+          "text": "$$= -\\cot \\alpha = -\\frac{1}{\\tan \\alpha}$$"
+        },
+        {
+          "order": 3,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            818.1,
+            398.6,
+            1177.0,
+            698.6
+          ],
+          "conf": 0.957,
+          "text": ""
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            942.9,
+            699.2,
+            1057.2,
+            746.5
+          ],
+          "conf": 0.884,
+          "text": "Fig 9.5"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            535.8,
+            697.2,
+            624.9
+          ],
+          "conf": 0.865,
+          "text": "i.e., $m_2 = -\\frac{1}{m_1}$ or $m_1 m_2 = -1$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            634.6,
+            802.5,
+            817.8
+          ],
+          "conf": 0.62,
+          "text": "Conversely, if $m_1$ $m_2 = -1$, i.e., $\\tan \\alpha \\tan \\beta = -1$.\nThen $\\tan \\alpha = -\\cot \\beta = \\tan (\\beta + 90^\\circ)$ or $\\tan (\\beta - 90^\\circ)$\nTherefore, $\\alpha$ and $\\beta$ differ by $90^\\circ$.\nThus, lines $l_1$ and $l_2$ are perpendicular to each other."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            816.0,
+            1179.5,
+            901.0
+          ],
+          "conf": 0.907,
+          "text": "Hence, two non-vertical lines are perpendicular to each other if and only if\ntheir slopes are negative reciprocals of each other,"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            904.2,
+            631.4,
+            999.6
+          ],
+          "conf": 0.852,
+          "text": "i.e., $m_2 = -\\frac{1}{m_1}$ or, $m_1 m_2 = -1$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.4,
+            1003.0,
+            690.3,
+            1054.7
+          ],
+          "conf": 0.862,
+          "text": "Let us consider the following example."
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1071.8,
+            1079.3,
+            1712.5
+          ],
+          "conf": 0.596,
+          "text": "Example 1 Find the slope of the lines:\n\n(a) Passing through the points $(3, -2)$ and $(-1, 4)$,\n\n(b) Passing through the points $(3, -2)$ and $(7, -2)$,\n\n(c) Passing through the points $(3, -2)$ and $(3, 4)$,\n\n(d) Making inclination of $60^{\\circ}$ with the positive direction of $x$-axis.\n\nSolution (a) The slope of the line through $(3, -2)$ and $(-1, 4)$ is\n\n$$m = \\frac{4 - (-2)}{-1 - 3} = \\frac{6}{-4} = -\\frac{3}{2} \\cdot$$\n\n(b) The slope of the line through the points $(3, -2)$ and $(7, -2)$ is\n\n$$m = \\frac{-2 - (-2)}{7 - 3} = \\frac{0}{4} = 0.$$\n\n(c) The slope of the line through the points $(3, -2)$ and $(3, 4)$ is"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0092_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            423.3,
+            269.4,
+            955.6,
+            364.0
+          ],
+          "conf": 0.921,
+          "text": "$$m = \\frac{4 - (-2)}{3 - 3} = \\frac{6}{0}, \\text{ which is not defined.}$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            253.2,
+            358.0,
+            1126.1,
+            458.8
+          ],
+          "conf": 0.81,
+          "text": "(d) Here inclination of the line $\\alpha = 60^{\\circ}$. Therefore, slope of the line is\n$$m = \\tan 60^{\\circ} = \\sqrt{3} \\text{ .}$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            477.9,
+            1178.2,
+            627.0
+          ],
+          "conf": 0.89,
+          "text": "9.2.3 Angle between two lines When we think about more than one line in a plane,\nthen we find that these lines are either intersecting or parallel. Here we will discuss the\nangle between two lines in terms of their slopes."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            620.7,
+            1176.9,
+            712.7
+          ],
+          "conf": 0.933,
+          "text": "Let $\\mathrm{L}_1$ and $\\mathrm{L}_2$ be two non-vertical lines with slopes $m_1$ and $m_2$, respectively. If $\\alpha_1$\nand $\\alpha_2$ are the inclinations of lines $\\mathrm{L}_1$ and $\\mathrm{L}_2$, respectively. Then"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            424.6,
+            710.6,
+            820.0,
+            764.9
+          ],
+          "conf": 0.909,
+          "text": "$$m_1 = \\tan \\alpha_1 \\text{ and } m_2 = \\tan \\alpha_2 .$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            765.7,
+            1180.1,
+            916.2
+          ],
+          "conf": 0.957,
+          "text": "We know that when two lines intersect each other, they make two pairs of\nvertically opposite angles such that sum of any two adjacent angles is $180^{\\circ}$. Let $\\theta$ and\n$\\phi$ be the adjacent angles between the lines $L_{1}$ and $L_{2}$ (Fig 9.6). Then"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            420.3,
+            906.3,
+            821.2,
+            962.0
+          ],
+          "conf": 0.878,
+          "text": "$\\theta = \\alpha_2 - \\alpha_1$ and $\\alpha_1, \\alpha_2 \\neq 90^\\circ$."
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            962.0,
+            1143.9,
+            1058.5
+          ],
+          "conf": 0.871,
+          "text": "Therefore $\\tan \\theta = \\tan (\\alpha_2 - \\alpha_1) = \\frac{\\tan \\alpha_2 - \\tan \\alpha_1}{1 + \\tan \\alpha_1 \\tan \\alpha_2} = \\frac{m_2 - m_1}{1 + m_1 m_2}$ (as $1 + m_1 m_2 \\neq 0$)"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1050.1,
+            460.5,
+            1101.2
+          ],
+          "conf": 0.731,
+          "text": "and $\\phi = 180^\\circ - \\theta$ so that"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.9,
+            1108.3,
+            996.8,
+            1197.2
+          ],
+          "conf": 0.892,
+          "text": "$$\\tan \\phi = \\tan (180^\\circ - \\theta) = -\\tan \\theta = -\\frac{m_2 - m_1}{1 + m_1 m_2}, \\text{ as } 1 + m_1 m_2 \\neq 0$$"
+        },
+        {
+          "order": 10,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            339.0,
+            1198.3,
+            916.2,
+            1667.6
+          ],
+          "conf": 0.95,
+          "text": ""
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            722.3,
+            1626.8,
+            833.7,
+            1673.5
+          ],
+          "conf": 0.84,
+          "text": "Fig 9. 6"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            1659.7,
+            550.5,
+            1707.9
+          ],
+          "conf": 0.876,
+          "text": "Now, there arise two cases:"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0092_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            280.8,
+            1177.3,
+            372.8
+          ],
+          "conf": 0.854,
+          "text": "Case I If $\\frac{m_2 - m_1}{1 + m_1m_2}$ is positive, then $\\tan \\theta$ will be positive and $\\tan \\phi$ will be negative,"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            375.8,
+            755.2,
+            426.6
+          ],
+          "conf": 0.863,
+          "text": "which means $\\theta$ will be acute and $\\phi$ will be obtuse."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            440.6,
+            1177.7,
+            538.1
+          ],
+          "conf": 0.857,
+          "text": "Case II If $\\frac{m_2 - m_1}{1 + m_1 m_2}$ is negative, then $\\tan \\theta$ will be negative and $\\tan \\phi$ will be positive,"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            536.0,
+            809.1,
+            585.8
+          ],
+          "conf": 0.887,
+          "text": "which means that $\\theta$ will be obtuse and $\\phi$ will be acute."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            577.6,
+            1176.4,
+            666.1
+          ],
+          "conf": 0.921,
+          "text": "Thus, the acute angle (say $\\theta$) between lines $\\mathrm{L}_1$ and $\\mathrm{L}_2$ with slopes $m_1$ and $m_2$,\nrespectively, is given by"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            360.1,
+            667.8,
+            1080.7,
+            767.8
+          ],
+          "conf": 0.898,
+          "text": "$$\\tan \\theta = \\left| \\frac{m_2 - m_1}{1 + m_1 m_2} \\right|, \\text{ as } 1 + m_1 m_2 \\neq 0 \\quad \\dots (1)$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            763.2,
+            883.7,
+            814.7
+          ],
+          "conf": 0.901,
+          "text": "The obtuse angle (say $\\phi$) can be found by using $\\phi = 180^0 - \\theta$."
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            816.8,
+            1177.9,
+            955.3
+          ],
+          "conf": 0.821,
+          "text": "Example 2 If the angle between two lines is $\\frac{\\pi}{4}$ and slope of one of the lines is $\\frac{1}{2}$, find\nthe slope of the other line."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            949.0,
+            1158.0,
+            1002.1
+          ],
+          "conf": 0.82,
+          "text": "Solution We know that the acute angle $\\theta$ between two lines with slopes $m_1$ and $m_2$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1002.1,
+            1080.3,
+            1099.2
+          ],
+          "conf": 0.831,
+          "text": "is given by $\\quad \\tan \\theta = \\left| \\frac{m_2 - m_1}{1 + m_1 m_2} \\right| \\quad \\dots (1)$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            1113.2,
+            534.3,
+            1208.4
+          ],
+          "conf": 0.776,
+          "text": "Let $m_1 = \\frac{1}{2}$, $m_2 = m$ and $\\theta = \\frac{\\pi}{4}$."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1210.7,
+            629.5,
+            1261.6
+          ],
+          "conf": 0.885,
+          "text": "Now, putting these values in (1), we get"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            358.8,
+            1267.7,
+            875.8,
+            1437.9
+          ],
+          "conf": 0.897,
+          "text": "$$ \\tan \\frac{\\pi}{4} = \\left| \\frac{m - \\frac{1}{2}}{1 + \\frac{1}{2} m} \\right| \\quad \\text{or} \\quad 1 = \\left| \\frac{m - \\frac{1}{2}}{1 + \\frac{1}{2} m} \\right| , $$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            1460.1,
+            809.6,
+            1626.8
+          ],
+          "conf": 0.86,
+          "text": "which gives $$\\frac{m - \\frac{1}{2}}{1 + \\frac{1}{2} m} = 1 \\quad \\text{or} \\quad \\frac{m - \\frac{1}{2}}{1 + \\frac{1}{2} m} = -1.$$"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0092_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            277.6,
+            540.5,
+            549.7
+          ],
+          "conf": 0.918,
+          "text": "Therefore $m=3$ or $m=-\\frac{1}{3}$.\nHence, slope of the other line is\n$3$ or $-\\frac{1}{3}$. Fig 9.7 explains the\nreason of two answers."
+        },
+        {
+          "order": 1,
+          "label": "Chart",
+          "type": "Figure",
+          "bbox_xyxy": [
+            524.3,
+            261.2,
+            1176.8,
+            674.5
+          ],
+          "conf": 0.844,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            732.8,
+            664.0,
+            838.6,
+            709.8
+          ],
+          "conf": 0.917,
+          "text": "Fig 9.7"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            736.1,
+            1117.6,
+            823.5
+          ],
+          "conf": 0.887,
+          "text": "Example 3 Line through the points $(-2, 6)$ and $(4, 8)$ is perpendicular to the line\nthrough the points $(8, 12)$ and $(x, 24)$. Find the value of $x$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            840.2,
+            937.3,
+            891.1
+          ],
+          "conf": 0.875,
+          "text": "Solution Slope of the line through the points $(-2, 6)$ and $(4, 8)$ is"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            350.4,
+            891.5,
+            639.0,
+            986.1
+          ],
+          "conf": 0.891,
+          "text": "$$m_1 = \\frac{8 - 6}{4 - (-2)} = \\frac{2}{6} = \\frac{1}{3}$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            986.9,
+            820.0,
+            1037.8
+          ],
+          "conf": 0.899,
+          "text": "Slope of the line through the points $(8, 12)$ and $(x, 24)$ is"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            341.5,
+            1035.3,
+            614.6,
+            1134.9
+          ],
+          "conf": 0.896,
+          "text": "$$m_2 = \\frac{24 - 12}{x - 8} = \\frac{12}{x - 8}$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1129.7,
+            552.2,
+            1225.9
+          ],
+          "conf": 0.879,
+          "text": "Since two lines are perpendicular,\n$m_1 m_2 = -1$, which gives"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            333.6,
+            1224.2,
+            651.7,
+            1318.6
+          ],
+          "conf": 0.878,
+          "text": "$$ \\frac{1}{3} \\times \\frac{12}{x-8} = -1 \\text{ or } x = 4. $$"
+        },
+        {
+          "order": 10,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            525.1,
+            1340.3,
+            772.6,
+            1392.1
+          ],
+          "conf": 0.734,
+          "text": "EXERCISE 9.1"
+        },
+        {
+          "order": 11,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.6,
+            1399.5,
+            1177.4,
+            1577.8
+          ],
+          "conf": 0.934,
+          "text": "1. Draw a quadrilateral in the Cartesian plane, whose vertices are $(-4, 5)$, $(0, 7)$,\n$(5, -5)$ and $(-4, -2)$. Also, find its area.\n2. The base of an equilateral triangle with side $2a$ lies along the $y$-axis such that the\nmid-point of the base is at the origin. Find vertices of the triangle."
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0092_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            132.1,
+            256.1,
+            1178.3,
+            1000.7
+          ],
+          "conf": 0.787,
+          "text": "3. Find the distance between P $(x_1, y_1)$ and Q $(x_2, y_2)$ when : (i) PQ is parallel to the\n$y$-axis, (ii) PQ is parallel to the $x$-axis.\n\n4. Find a point on the $x$-axis, which is equidistant from the points $(7, 6)$ and $(3, 4)$.\n\n5. Find the slope of a line, which passes through the origin, and the mid-point of the\nline segment joining the points P $(0, -4)$ and B $(8, 0)$.\n\n6. Without using the Pythagoras theorem, show that the points $(4, 4)$, $(3, 5)$ and\n$(-1, -1)$ are the vertices of a right angled triangle.\n\n7. Find the slope of the line, which makes an angle of $30^\\circ$ with the positive direction\nof $y$-axis measured anticlockwise.\n\n8. Without using distance formula, show that points $(-2, -1)$, $(4, 0)$, $(3, 3)$ and\n$(-3, 2)$ are the vertices of a parallelogram.\n\n9. Find the angle between the $x$-axis and the line joining the points $(3, -1)$ and $(4, -2)$.\n\n10. The slope of a line is double of the slope of another line. If tangent of the angle\nbetween them is $\\frac{1}{3}$, find the slopes of the lines.\n\n11. A line passes through $(x_1, y_1)$ and $(h, k)$. If slope of the line is $m$, show that\n$$k - y_1 = m(h - x_1).$$"
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.0,
+            1005.9,
+            764.4,
+            1058.9
+          ],
+          "conf": 0.891,
+          "text": "9.3 Various Forms of the Equation of a Line"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1054.5,
+            1177.8,
+            1138.7
+          ],
+          "conf": 0.94,
+          "text": "We know that every line in a plane contains infinitely many points on it. This relationship\nbetween line and points leads us to find the solution of the following problem:"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1127.7,
+            1178.2,
+            1394.6
+          ],
+          "conf": 0.969,
+          "text": "How can we say that a given point lies on the given line? Its answer may be that\nfor a given line we should have a definite condition on the points lying on the line.\nSuppose P $(x, y)$ is an arbitrary point in the XY-plane and L is the given line. For the\nequation of L, we wish to construct a statement or condition for the point P that is\ntrue, when P is on L, otherwise false. Of course the statement is merely an algebraic\nequation involving the variables $x$ and $y$. Now, we will discuss the equation of a line\nunder different conditions."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1399.2,
+            1177.9,
+            1630.8
+          ],
+          "conf": 0.952,
+          "text": "9.3.1 Horizontal and vertical lines If a horizontal line L is at a distance $a$ from the $x$-\naxis then ordinate of every point lying on the line is either $a$ or $- a$ [Fig 9.8 (a)].\nTherefore, equation of the line L is either $y = a$ or $y = - a$. Choice of sign will depend\nupon the position of the line according as the line is above or below the $y$-axis. Similarly,\nthe equation of a vertical line at a distance $b$ from the $y$-axis is either $x = b$ or\n$x = - b$ [Fig 9.8(b)]."
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0092_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            133.2,
+            262.0,
+            1174.9,
+            783.9
+          ],
+          "conf": 0.887,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            615.8,
+            728.6,
+            728.6,
+            777.1
+          ],
+          "conf": 0.848,
+          "text": "Fig 9.8"
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            842.8,
+            734.2,
+            950.7,
+            786.0
+          ],
+          "conf": 0.598,
+          "text": "(b) $Y'$"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            818.7,
+            704.1,
+            941.3
+          ],
+          "conf": 0.877,
+          "text": "Example 4 Find the equations of the lines\nparallel to axes and passing through\n$(-2, 3)$."
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            699.5,
+            823.1,
+            1178.5,
+            1196.6
+          ],
+          "conf": 0.925,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            944.7,
+            704.5,
+            1211.1
+          ],
+          "conf": 0.958,
+          "text": "Solution Position of the lines is shown in the\nFig 9.9. The $y$-coordinate of every point on the\nline parallel to $x$-axis is 3, therefore, equation\nof the line parallel tox-axis and passing through\n$(-2, 3)$ is $y = 3$. Similarly, equation of the line\nparallel to $y$-axis and passing through $(-2, 3)$\nis $x = -2$."
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            884.5,
+            1190.7,
+            996.8,
+            1237.7
+          ],
+          "conf": 0.897,
+          "text": "Fig 9.9"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1202.5,
+            673.8,
+            1431.1
+          ],
+          "conf": 0.911,
+          "text": "9.3.2 *Point-slope form* Suppose that\n$\\mathrm{P}_0\\left(x_0, y_0\\right)$ is a fixed point on a non-vertical\nline $\\mathrm{L}$, whose slope is $m$. Let $\\mathrm{P}(x, y)$ be an\narbitrary point on $\\mathrm{L}$ (Fig 9.10).\nThen, by the definition, the slope of $\\mathrm{L}$ is given\nby"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            123.8,
+            1443.6,
+            632.2,
+            1539.0
+          ],
+          "conf": 0.874,
+          "text": "$$m = \\frac{y - y_0}{x - x_0}, \\text{ i.e., } y - y_0 = m(x - x_0)$$"
+        },
+        {
+          "order": 9,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            666.2,
+            1266.7,
+            1191.3,
+            1704.9
+          ],
+          "conf": 0.845,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            513.1,
+            1535.2,
+            598.6,
+            1585.5
+          ],
+          "conf": 0.697,
+          "text": "...(1)"
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            871.4,
+            1686.4,
+            992.7,
+            1733.6
+          ],
+          "conf": 0.84,
+          "text": "Fig 9.10"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1586.3,
+            675.1,
+            1745.7
+          ],
+          "conf": 0.942,
+          "text": "Since the point $\\mathrm{P}_0\\left(x_0, y_0\\right)$ along with\nall points $(x, y)$ on $\\mathrm{L}$ satisfies (1) and no other\npoint in the plane satisfies (1). Equation (1)\nis indeed the equation for the given line $\\mathrm{L}$."
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0092_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            257.3,
+            1178.5,
+            343.9
+          ],
+          "conf": 0.939,
+          "text": "Thus, the point $(x, y)$ lies on the line with slope $m$ through the fixed point $(x_0, y_0)$,\nif and only if, its coordinates satisfy the equation"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            416.5,
+            333.8,
+            679.8,
+            385.9
+          ],
+          "conf": 0.901,
+          "text": "$$y - y_0 = m (x - x_0)$$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            384.2,
+            1019.9,
+            435.5
+          ],
+          "conf": 0.791,
+          "text": "Example 5 Find the equation of the line through $(-2, 3)$ with slope $-4$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            437.2,
+            853.2,
+            489.4
+          ],
+          "conf": 0.81,
+          "text": "Solution Here $m = -4$ and given point $(x_0, y_0)$ is $(-2, 3)$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            489.2,
+            523.4,
+            607.1
+          ],
+          "conf": 0.895,
+          "text": "By slope-intercept form formula\n(1) above, equation of the given\nline is"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            598.1,
+            523.5,
+            720.5
+          ],
+          "conf": 0.896,
+          "text": "$$y - 3 = - 4 \\ (x + 2) \\text{ or}$$\n$$4x + y + 5 = 0, \\text{ which is the}$$\n$$\\text{required equation.}$$"
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            514.3,
+            523.8,
+            1177.8,
+            932.5
+          ],
+          "conf": 0.936,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            725.2,
+            524.3,
+            919.2
+          ],
+          "conf": 0.932,
+          "text": "9.3.3 Two-point form Let the\nline L passes through two given\npoints $\\mathrm{P}_1\\left(x_1, y_1\\right)$ and $\\mathrm{P}_2\\left(x_2, y_2\\right)$.\nLet $\\mathrm{P}(x, y)$ be a general point\non $\\mathrm{L}$ (Fig 9.11)."
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            786.9,
+            928.5,
+            904.7,
+            975.3
+          ],
+          "conf": 0.893,
+          "text": "Fig 9.11"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            924.9,
+            522.5,
+            1050.9
+          ],
+          "conf": 0.918,
+          "text": "The three points $P_1$, $P_2$ and $P$ are\ncollinear, therefore, we have\nslope of $P_1P = \\text{slope of } P_1P_2$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.5,
+            1050.3,
+            903.6,
+            1146.3
+          ],
+          "conf": 0.914,
+          "text": "i.e., $\\frac{y-y_{1}}{x-x_{1}}=\\frac{y_{2}-y_{1}}{x_{2}-x_{1}}$, or $y-y_{1}=\\frac{y_{2}-y_{1}}{x_{2}-x_{1}}(x-x_{1})$."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1137.2,
+            1154.5,
+            1193.4
+          ],
+          "conf": 0.863,
+          "text": "Thus, equation of the line passing through the points $(x_1, y_1)$ and $(x_2, y_2)$ is given by"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            365.4,
+            1196.0,
+            1114.5,
+            1295.2
+          ],
+          "conf": 0.906,
+          "text": "$$y - y_1 = \\frac{y_2 - y_1}{x_2 - x_1} (x - x_1) \\quad \\dots (2)$$"
+        },
+        {
+          "order": 13,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            1285.9,
+            1146.3,
+            1570.9
+          ],
+          "conf": 0.524,
+          "text": "Example 6 Write the equation of the line through the points $(1, -1)$ and $(3, 5)$.\n\nSolution Here $x_1 = 1, y_1 = -1, x_2 = 3$ and $y_2 = 5$. Using two-point form (2) above\nfor the equation of the line, we have\n\n$$y - (-1) = \\frac{5 - (-1)}{3 - 1} (x - 1)$$\n\nor $-3x + y + 4 = 0$, which is the required equation."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1576.0,
+            1178.5,
+            1661.7
+          ],
+          "conf": 0.864,
+          "text": "9.3.4 Slope-intercept form Sometimes a line is known to us with its slope and an\nintercept on one of the axes. We will now find equations of such lines."
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0092_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            257.3,
+            665.6,
+            597.7
+          ],
+          "conf": 0.93,
+          "text": "Case I Suppose a line L with slope $m$ cuts\nthe $y$-axis at a distance $c$ from the origin\n(Fig 9.12). The distance $c$ is called the $y$-\nintercept of the line L. Obviously,\ncoordinates of the point where the line meet\nthe $y$-axis are $(0, c)$. Thus, L has slope $m$\nand passes through a fixed point $(0, c)$.\nTherefore, by point-slope form, the equation\nof L is"
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            653.5,
+            256.3,
+            1177.5,
+            581.0
+          ],
+          "conf": 0.951,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            857.7,
+            582.9,
+            977.7,
+            628.7
+          ],
+          "conf": 0.904,
+          "text": "Fig 9.12"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            191.5,
+            598.3,
+            618.0,
+            647.9
+          ],
+          "conf": 0.884,
+          "text": "$$y-c=m(x-0) \\quad \\text{or} \\quad y=mx+c$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            639.9,
+            1179.1,
+            724.3
+          ],
+          "conf": 0.931,
+          "text": "Thus, the point $(x, y)$ on the line with slope $m$ and $y$-intercept $c$ lies on the line if and\nonly if"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            188.4,
+            715.0,
+            1105.0,
+            764.4
+          ],
+          "conf": 0.708,
+          "text": "$$y = mx + c \\dots (3)$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            752.2,
+            1178.5,
+            836.2
+          ],
+          "conf": 0.927,
+          "text": "Note that the value of $c$ will be positive or negative according as the intercept is made\non the positive or negative side of the $y$-axis, respectively."
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            831.2,
+            1117.0,
+            952.3
+          ],
+          "conf": 0.629,
+          "text": "Case II Suppose line L with slope $m$ makes $x$-intercept $d$. Then equation of L is\n$$y = m(x - d) \\dots (4)$$\nStudents may derive this equation themselves by the same method as in Case I."
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.0,
+            955.9,
+            1181.3,
+            1677.3
+          ],
+          "conf": 0.529,
+          "text": "Example 7 Write the equation of the lines for which $\\tan \\theta = \\frac{1}{2}$, where $\\theta$ is the\n\ninclination of the line and (i) $y$-intercept is $-\\frac{3}{2}$ (ii) $x$-intercept is 4.\n\nSolution (i) Here, slope of the line is $m = \\tan \\theta = \\frac{1}{2}$ and $y$ - intercept $c = -\\frac{3}{2}$.\n\nTherefore, by slope-intercept form (3) above, the equation of the line is\n\n$$y = \\frac{1}{2}x - \\frac{3}{2} \\text{ or } 2y - x + 3 = 0,$$\n\nwhich is the required equation.\n\n(ii) Here, we have $m = \\tan \\theta = \\frac{1}{2}$ and $d = 4$.\n\nTherefore, by slope-intercept form (4) above, the equation of the line is\n\n$$y = \\frac{1}{2}(x - 4) \\text{ or } 2y - x + 4 = 0,$$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1662.9,
+            517.3,
+            1712.3
+          ],
+          "conf": 0.851,
+          "text": "which is the required equation."
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0092_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            260.9,
+            1177.9,
+            472.7
+          ],
+          "conf": 0.564,
+          "text": "9.3.5 Intercept - form Suppose a line L makes $x$-intercept $a$ and $y$-intercept $b$ on the\naxes. Obviously L meets $x$-axis at the point L Y\n$(a, 0)$ and $y$-axis at the point $(0, b)$ (Fig .9.13).\nBy two-point form of the equation of the line,\nwe have"
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            670.9,
+            305.7,
+            1178.3,
+            726.8
+          ],
+          "conf": 0.954,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            132.5,
+            480.7,
+            669.6,
+            573.8
+          ],
+          "conf": 0.911,
+          "text": "$$y-0=\\frac{b-0}{0-a}(x-a) \\quad \\text{or} \\quad ay=-bx+ab,$$"
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            863.6,
+            713.3,
+            984.6,
+            760.8
+          ],
+          "conf": 0.9,
+          "text": "Fig 9.13"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            585.0,
+            488.7,
+            672.8
+          ],
+          "conf": 0.899,
+          "text": "i.e., $\\frac{x}{a} + \\frac{y}{b} = 1.$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            685.9,
+            679.2,
+            777.9
+          ],
+          "conf": 0.933,
+          "text": "Thus, equation of the line making intercepts\n$a$ and $b$ on $x$-and $y$-axis, respectively, is"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            323.7,
+            783.9,
+            1114.0,
+            877.6
+          ],
+          "conf": 0.774,
+          "text": "$$ \\frac{x}{a} + \\frac{y}{b} = 1 \\dots (5) $$"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            888.2,
+            1177.4,
+            1205.0
+          ],
+          "conf": 0.533,
+          "text": "Example 8 Find the equation of the line, which makes intercepts $-3$ and $2$ on the\n$x$- and $y$-axes respectively.\n\nSolution Here $a = -3$ and $b = 2$. By intercept form (5) above, equation of the line is\n\n$$\\frac{x}{-3} + \\frac{y}{2} = 1 \\quad \\text{or} \\quad 2x - 3y + 6 = 0$$\n\nAny equation of the form $Ax + By + C = 0$, where A and B are not zero simultaneously\nis called \\textit{general linear equation} or \\textit{general equation of a line}."
+        },
+        {
+          "order": 8,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            526.6,
+            1240.5,
+            771.6,
+            1292.4
+          ],
+          "conf": 0.732,
+          "text": "EXERCISE 9.2"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            1300.9,
+            1142.0,
+            1350.0
+          ],
+          "conf": 0.893,
+          "text": "In Exercises 1 to 8, find the equation of the line which satisfy the given conditions:"
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.2,
+            1346.0,
+            1178.5,
+            1702.0
+          ],
+          "conf": 0.968,
+          "text": "1. Write the equations for the $x$-and $y$-axes.\n\n2. Passing through the point $(-4, 3)$ with slope $\\frac{1}{2}$.\n\n3. Passing through $(0, 0)$ with slope $m$.\n\n4. Passing through $(2, 2\\sqrt{3})$and inclined with the $x$-axis at an angle of $75^{\\circ}$.\n\n5. Intersecting the $x$-axis at a distance of 3 units to the left of origin with slope $-2$.\n\n6. Intersecting the $y$-axis at a distance of 2 units above the origin and making an\nangle of $30^{\\circ}$ with positive direction of the $x$-axis."
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0092_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            125.6,
+            265.4,
+            1179.2,
+            1509.9
+          ],
+          "conf": 0.713,
+          "text": "7. Passing through the points $(-1, 1)$ and $(2, -4)$.\n8. The vertices of $\\Delta$ PQR are P $(2, 1)$, Q $(-2, 3)$ and R $(4, 5)$. Find equation of the\nmedian through the vertex R.\n9. Find the equation of the line passing through $(-3, 5)$ and perpendicular to the line\nthrough the points $(2, 5)$ and $(-3, 6)$.\n10. A line perpendicular to the line segment joining the points $(1, 0)$ and $(2, 3)$ divides\nit in the ratio $1:n$. Find the equation of the line.\n11. Find the equation of a line that cuts off equal intercepts on the coordinate axes\nand passes through the point $(2, 3)$.\n12. Find equation of the line passing through the point $(2, 2)$ and cutting off intercepts\non the axes whose sum is $9$.\n\n13. Find equation of the line through the point $(0, 2)$ making an angle $\\frac{2\\pi}{3}$ with the\npositive $x$-axis. Also, find the equation of line parallel to it and crossing the $y$-axis\nat a distance of $2$ units below the origin.\n14. The perpendicular from the origin to a line meets it at the point $(-2, 9)$, find the\nequation of the line.\n15. The length L (in centimetre) of a copper rod is a linear function of its Celsius\ntemperature C. In an experiment, if L = $124.942$ when C = $20$ and L = $125.134$\nwhen C = $110$, express L in terms of C.\n16. The owner of a milk store finds that, he can sell $980$ litres of milk each week at\nRs $14$/litre and $1220$ litres of milk each week at Rs $16$/litre. Assuming a linear\nrelationship between selling price and demand, how many litres could he sell\nweekly at Rs $17$/litre?\n17. P $(a, b)$ is the mid-point of a line segment between axes. Show that equation\nof the line is $\\frac{x}{a} + \\frac{y}{b} = 2$.\n18. Point R $(h, k)$ divides a line segment between the axes in the ratio $1:2$. Find\nequation of the line.\n19. By using the concept of equation of a line, prove that the three points $(3, 0)$,\n$(-2, -2)$ and $(8, 2)$ are collinear."
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.4,
+            1506.7,
+            651.9,
+            1559.1
+          ],
+          "conf": 0.895,
+          "text": "9.4 Distance of a Point From a Line"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1556.9,
+            1179.0,
+            1684.0
+          ],
+          "conf": 0.938,
+          "text": "The distance of a point from a line is the length of the perpendicular drawn from the\npoint to the line. Let L : $Ax + By + C = 0$ be a line, whose distance from the point\nP $(x_1, y_1)$ is $d$. Draw a perpendicular PM from the point P to the line L (Fig 9.14). If the"
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0092_p0014.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            332.4,
+            259.4,
+            999.2,
+            736.6
+          ],
+          "conf": 0.957,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            606.7,
+            719.7,
+            728.9,
+            766.1
+          ],
+          "conf": 0.919,
+          "text": "Fig 9.14"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            786.0,
+            1180.5,
+            836.4
+          ],
+          "conf": 0.882,
+          "text": "line meets the $x$-and $y$-axes at the points Q and R, respectively. Then, coordinates of"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            836.6,
+            1178.6,
+            979.3
+          ],
+          "conf": 0.799,
+          "text": "the points are $Q\\left(-\\frac{C}{A}, 0\\right)$ and $R\\left(0, -\\frac{C}{B}\\right)$. Thus, the area of the triangle PQR is\ngiven by"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.2,
+            982.1,
+            1113.8,
+            1073.9
+          ],
+          "conf": 0.906,
+          "text": "$$ \\text{area } (\\Delta PQR) = \\frac{1}{2} \\text{ PM.QR , which gives } \\text{PM} = \\frac{2 \\text{ area } (\\Delta PQR)}{\\text{QR}} \\quad \\dots (1) $$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.9,
+            1081.1,
+            963.4,
+            1296.0
+          ],
+          "conf": 0.689,
+          "text": "Also, area ($\\Delta$PQR) = $\\frac{1}{2}\\left|x_{1}\\left(0+\\frac{\\mathrm{C}}{\\mathrm{B}}\\right)+\\left(-\\frac{\\mathrm{C}}{\\mathrm{A}}\\right)\\left(-\\frac{\\mathrm{C}}{\\mathrm{B}}-y_{1}\\right)+0\\left(y_{1}-0\\right)\\right|$\n$=\\frac{1}{2}\\left|x_{1} \\frac{\\mathrm{C}}{\\mathrm{B}}+y_{1} \\frac{\\mathrm{C}}{\\mathrm{A}}+\\frac{\\mathrm{C}^{2}}{\\mathrm{AB}}\\right|$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.9,
+            1312.1,
+            769.9,
+            1407.0
+          ],
+          "conf": 0.876,
+          "text": "or $2 \\text{ area } (\\Delta PQR) = \\left| \\frac{\\text{C}}{\\text{AB}} \\right| \\cdot |A_{x_1} + B y_1 + \\text{C}|, \\text{ and}$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            191.2,
+            1420.1,
+            855.1,
+            1533.5
+          ],
+          "conf": 0.906,
+          "text": "$$QR = \\sqrt{\\left(0 + \\frac{C}{A}\\right)^2 + \\left(\\frac{C}{B} - 0\\right)^2} = \\left|\\frac{C}{AB}\\right| \\sqrt{A^2 + B^2}$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1532.0,
+            897.4,
+            1582.5
+          ],
+          "conf": 0.886,
+          "text": "Substituting the values of area ($\\Delta$PQR) and QR in (1), we get"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            365.7,
+            1586.1,
+            673.8,
+            1694.0
+          ],
+          "conf": 0.902,
+          "text": "$$ \\mathrm{PM} = \\frac{\\left| \\mathrm{A}_{x_1} + \\mathrm{B} y_1 + \\mathrm{C} \\right|}{\\sqrt{\\mathrm{A}^2 + \\mathrm{B}^2}} $$"
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0092_p0015.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            135.8,
+            260.7,
+            660.8,
+            371.4
+          ],
+          "conf": 0.918,
+          "text": "or $$d = \\frac{| \\mathrm{A}_{x_1} + \\mathrm{B}y_1 + \\mathrm{C}|}{\\sqrt{\\mathrm{A}^2 + \\mathrm{B}^2}}.$$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            365.9,
+            1160.1,
+            453.3
+          ],
+          "conf": 0.945,
+          "text": "Thus, the perpendicular distance ($d$) of a line $Ax + By + C = 0$ from a point $(x_1, y_1)$\nis given by"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            391.4,
+            455.4,
+            684.6,
+            565.4
+          ],
+          "conf": 0.93,
+          "text": "$$d = \\frac{\\left| \\mathrm{A}_{x_1} + \\mathrm{B} y_1 + \\mathrm{C} \\right|}{\\sqrt{\\mathrm{A}^2 + \\mathrm{B}^2}}.$$"
+        },
+        {
+          "order": 3,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.7,
+            577.6,
+            508.6,
+            625.1
+          ],
+          "conf": 0.886,
+          "text": "9.4.1 Distance between two"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.0,
+            616.7,
+            615.0,
+            705.9
+          ],
+          "conf": 0.839,
+          "text": "\\textit{parallel lines} We know that slopes of\ntwo parallel lines are equal."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            698.1,
+            577.1,
+            785.1
+          ],
+          "conf": 0.85,
+          "text": "Therefore, two parallel lines can be\ntaken in the form"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.4,
+            785.6,
+            580.8,
+            878.8
+          ],
+          "conf": 0.733,
+          "text": "$$ y = mx + c_1 \\quad \\dots (1) $$\nand $$ y = mx + c_2 \\quad \\dots (2) $$"
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            605.5,
+            524.8,
+            1193.9,
+            1000.2
+          ],
+          "conf": 0.943,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            874.0,
+            612.8,
+            923.8
+          ],
+          "conf": 0.885,
+          "text": "Line (1) will intersect $x$-axis at the point"
+        },
+        {
+          "order": 9,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            842.5,
+            994.6,
+            964.2,
+            1040.6
+          ],
+          "conf": 0.901,
+          "text": "Fig 9.15"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            927.2,
+            571.2,
+            1029.8
+          ],
+          "conf": 0.879,
+          "text": "$$ \\mathrm{A}\\left(-\\frac{c_{1}}{m}, \\quad 0\\right) \\text { as shown in Fig 9.15. } $$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1047.3,
+            1175.8,
+            1136.8
+          ],
+          "conf": 0.945,
+          "text": "Distance between two lines is equal to the length of the perpendicular from point\nA to line (2). Therefore, distance between the lines (1) and (2) is"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            386.0,
+            1175.7,
+            914.9,
+            1330.2
+          ],
+          "conf": 0.919,
+          "text": "$$ \\frac{\\left|(-m)\\left(-\\frac{c_{1}}{m}\\right)+\\left(-c_{2}\\right)\\right|}{\\sqrt{1+m^{2}}} \\text { or } d=\\frac{\\left|c_{1}-c_{2}\\right|}{\\sqrt{1+m^{2}}} . $$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1338.4,
+            1155.0,
+            1389.5
+          ],
+          "conf": 0.875,
+          "text": "Thus, the distance $d$ between two parallel lines $y = mx + c_1$ and $y = mx + c_2$ is given by"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            524.7,
+            1396.1,
+            726.6,
+            1503.1
+          ],
+          "conf": 0.882,
+          "text": "$$d=\\frac{|c_{1}-c_{2}|}{\\sqrt{1+m^{2}}}.$$"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.1,
+            1499.5,
+            1175.1,
+            1552.1
+          ],
+          "conf": 0.855,
+          "text": "If lines are given in general form, i.e., $Ax + By + C_1 = 0$ and $Ax + By + C_2 = 0$,"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.4,
+            1552.5,
+            813.4,
+            1661.0
+          ],
+          "conf": 0.81,
+          "text": "then above formula will take the form $d = \\frac{|\\mathrm{C}_1 - \\mathrm{C}_2|}{\\sqrt{\\mathrm{A}^2 + \\mathrm{B}^2}}$"
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1660.4,
+            558.9,
+            1709.4
+          ],
+          "conf": 0.83,
+          "text": "Students can derive it themselves."
+        }
+      ],
+      "page": 15
+    },
+    {
+      "image": "0092_p0016.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            259.0,
+            1122.2,
+            618.1
+          ],
+          "conf": 0.66,
+          "text": "Example 9 Find the distance of the point $(3, -5)$ from the line $3x - 4y - 26 = 0$.\n\nSolution Given line is $3x - 4y - 26 = 0$ ... (1)\n\nComparing (1) with general equation of line $Ax + By + C = 0$, we get\n\n$$A = 3, B = -4 \\text{ and } C = -26.$$\n\nGiven point is $(x_1, y_1) = (3, -5)$. The distance of the given point from given line is\n\n$$d = \\frac{|Ax_1 + By_1 + C|}{\\sqrt{A^2 + B^2}} = \\frac{|3.3 + (-4)(-5) - 26|}{\\sqrt{3^2 + (-4)^2}} = \\frac{3}{5}.$$"
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.1,
+            623.6,
+            1170.9,
+            885.8
+          ],
+          "conf": 0.676,
+          "text": "Example 10 Find the distance between the parallel lines $3x - 4y + 7 = 0$ and\n$$3x - 4y + 5 = 0$$\nSolution Here A = 3, B = $-4$, $C_1 = 7$ and $C_2 = 5$. Therefore, the required distance is\n$$d = \\frac{|7 - 5|}{\\sqrt{3^2 + (-4)^2}} = \\frac{2}{5}.$$"
+        },
+        {
+          "order": 2,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            526.2,
+            916.0,
+            771.3,
+            968.2
+          ],
+          "conf": 0.805,
+          "text": "EXERCISE 9.3"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.9,
+            977.2,
+            1180.0,
+            1718.2
+          ],
+          "conf": 0.937,
+          "text": "1. Reduce the following equations into slope - intercept form and find their slopes\nand the y - intercepts.\n(i) $x + 7y = 0$, (ii) $6x + 3y - 5 = 0$, (iii) $y = 0$.\n2. Reduce the following equations into intercept form and find their intercepts on\nthe axes.\n(i) $3x + 2y - 12 = 0$, (ii) $4x - 3y = 6$, (iii) $3y + 2 = 0$.\n3. Find the distance of the point $(-1, 1)$ from the line $12(x + 6) = 5(y - 2)$.\n\n4. Find the points on the x-axis, whose distances from the line $\\frac{x}{3} + \\frac{y}{4} = 1$ are 4 units.\n\n5. Find the distance between parallel lines\n(i) $15x + 8y - 34 = 0$ and $15x + 8y + 31 = 0$ (ii) $l(x + y) + p = 0$ and $l(x + y) - r = 0$.\n6. Find equation of the line parallel to the line $3x - 4y + 2 = 0$ and passing through\nthe point $(-2, 3)$.\n7. Find equation of the line perpendicular to the line $x - 7y + 5 = 0$ and having\nx intercept 3.\n\n8. Find angles between the lines $\\sqrt{3}x + y = 1$and $x + \\sqrt{3}y = 1$.\n9. The line through the points $(h, 3)$ and $(4, 1)$ intersects the line $7x - 9y - 19 = 0$.\nat right angle. Find the value of $h$."
+        }
+      ],
+      "page": 16
+    },
+    {
+      "image": "0092_p0017.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            258.4,
+            1178.1,
+            1027.3
+          ],
+          "conf": 0.628,
+          "text": "10. Prove that the line through the point $(x_1, y_1)$ and parallel to the line $Ax + By + C = 0$ is\n$$A(x - x_1) + B(y - y_1) = 0.$$\n11. Two lines passing through the point $(2, 3)$ intersects each other at an angle of $60^\\circ$.\nIf slope of one line is $2$, find equation of the other line.\n12. Find the equation of the right bisector of the line segment joining the points $(3, 4)$\nand $(-1, 2)$.\n13. Find the coordinates of the foot of perpendicular from the point $(-1, 3)$ to the\nline $3x - 4y - 16 = 0$.\n14. The perpendicular from the origin to the line $y = mx + c$ meets it at the point\n$(-1, 2)$. Find the values of $m$ and $c$.\n15. If $p$ and $q$ are the lengths of perpendiculars from the origin to the\nlines $x \\cos \\theta - y \\sin \\theta = k \\cos 2\\theta$ and $x \\sec \\theta + y \\csc \\theta = k$, respectively, prove\nthat $p^2 + 4q^2 = k^2$.\n16. In the triangle ABC with vertices A $(2, 3)$, B $(4, -1)$ and C $(1, 2)$, find the equation\nand length of altitude from the vertex A.\n17. If $p$ is the length of perpendicular from the origin to the line whose intercepts on\nthe axes are $a$ and $b$, then show that $\\frac{1}{p^2} = \\frac{1}{a^2} + \\frac{1}{b^2}$."
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            465.4,
+            1061.0,
+            832.9,
+            1114.0
+          ],
+          "conf": 0.8,
+          "text": "Miscellaneous Examples"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1125.6,
+            1182.0,
+            1710.4
+          ],
+          "conf": 0.637,
+          "text": "Example 11 If the lines $2x + y - 3 = 0$, $5x + ky - 3 = 0$ and $3x - y - 2 = 0$ are\nconcurrent, find the value of $k$.\n\nSolution Three lines are said to be concurrent, if they pass through a common point,\ni.e., point of intersection of any two lines lies on the third line. Here given lines are\n$$2x + y - 3 = 0 \\quad \\dots (1)$$\n$$5x + ky - 3 = 0 \\quad \\dots (2)$$\n$$3x - y - 2 = 0 \\quad \\dots (3)$$\n\nSolving (1) and (3) by cross-multiplication method, we get\n$$\\frac{x}{-2 - 3} = \\frac{y}{-9 + 4} = \\frac{1}{-2 - 3} \\quad \\text{or} \\quad x = 1, \\ y = 1.$$\n\nTherefore, the point of intersection of two lines is $(1, 1)$. Since above three lines are\nconcurrent, the point $(1, 1)$ will satisfy equation (2) so that\n$$5.1 + k . 1 - 3 = 0 \\text{ or } k = -2.$$"
+        }
+      ],
+      "page": 17
+    },
+    {
+      "image": "0092_p0018.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            251.6,
+            1179.5,
+            799.1
+          ],
+          "conf": 0.587,
+          "text": "Example 12 Find the distance of the line $4x - y = 0$ from the point P $(4, 1)$ measured\nalong the line making an angle of $135^{\\circ}$ with the positive $x$-axis.\n\nSolution Given line is $4x - y = 0$\nIn order to find the distance of the\nline (1) from the point P $(4, 1)$ along\nanother line, we have to find the point\nof intersection of both the lines. For\nthis purpose, we will first find the\nequation of the second line\n(Fig 9.16). Slope of second line is\n$\\tan 135^{\\circ} = -1$. Equation of the line\nwith slope $- 1$ through the point\nP $(4, 1)$ is"
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            818.2,
+            798.6,
+            940.2,
+            846.1
+          ],
+          "conf": 0.879,
+          "text": "Fig 9.16"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            217.4,
+            835.8,
+            1124.1,
+            889.0
+          ],
+          "conf": 0.785,
+          "text": "$$y - 1 = -1 \\ (x - 4) \\text{ or } x + y - 5 = 0 \\quad \\dots (2)$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            894.1,
+            1175.2,
+            1100.9
+          ],
+          "conf": 0.711,
+          "text": "Solving (1) and (2), we get $x=1$ and $y=4$ so that point of intersection of the two lines\nis Q (1, 4). Now, distance of line (1) from the point P (4, 1) along the line (2)\n= the distance between the points P (4, 1) and Q (1, 4).\n$$=\\sqrt{(1-4)^{2}+(4-1)^{2}}=3 \\sqrt{2} \\text { units. }$$"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1098.6,
+            1149.1,
+            1323.2
+          ],
+          "conf": 0.582,
+          "text": "Example 13 Assuming that straight lines work as the plane mirror for a point, find\nthe image of the point $(1, 2)$ in the line $x - 3y + 4 = 0$.\n\nSolution Let Q $(h, k)$ is the image of the point P $(1, 2)$ in the line\n$$x - 3y + 4 = 0 \\qquad \\dots (1)$$\nTherefore, the line $(1)$ is the perpendicular bisector of line segment PQ (Fig 9.17)."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1277.8,
+            1143.0,
+            1329.6
+          ],
+          "conf": 0.827,
+          "text": "Therefore, the line (1) is the perpendicular bisector of line segment PQ (Fig 9.17)."
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            369.1,
+            1327.7,
+            994.6,
+            1785.8
+          ],
+          "conf": 0.945,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            699.5,
+            1733.6,
+            820.3,
+            1782.4
+          ],
+          "conf": 0.807,
+          "text": "Fig 9.17"
+        }
+      ],
+      "page": 18
+    },
+    {
+      "image": "0092_p0019.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            271.1,
+            854.5,
+            368.8
+          ],
+          "conf": 0.912,
+          "text": "Hence Slope of line PQ = $\\frac{-1}{\\text{Slope of line } x - 3y + 4 = 0}$,"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            382.9,
+            1114.5,
+            510.7
+          ],
+          "conf": 0.922,
+          "text": "so that $\\frac{k-2}{h-1} = \\frac{-1}{\\frac{1}{3}}$ or $3h+k=5$ ... (2)"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            521.9,
+            1161.8,
+            627.0
+          ],
+          "conf": 0.801,
+          "text": "and the mid-point of PQ, i.e., point $\\left(\\frac{h+1}{2}, \\frac{k+2}{2}\\right)$ will satisfy the equation (1) so that"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            324.0,
+            632.9,
+            1116.8,
+            737.0
+          ],
+          "conf": 0.909,
+          "text": "$$\\frac{h+1}{2}-3\\left(\\frac{k+2}{2}\\right)+4=0 \\text { or } h-3 k=-3 \\quad \\text { (3) }$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            747.3,
+            693.2,
+            844.2
+          ],
+          "conf": 0.806,
+          "text": "Solving (2) and (3), we get $h = \\frac{6}{5}$ and $k = \\frac{7}{5}$."
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            853.7,
+            896.0,
+            948.5
+          ],
+          "conf": 0.765,
+          "text": "Hence, the image of the point $(1, 2)$ in the line $(1)$ is $\\left(\\frac{6}{5}, \\frac{7}{5}\\right)$."
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            959.9,
+            964.2,
+            1011.4
+          ],
+          "conf": 0.782,
+          "text": "Example 14 Show that the area of the triangle formed by the lines"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            116.7,
+            1014.8,
+            766.6,
+            1143.4
+          ],
+          "conf": 0.873,
+          "text": "$y = m_1x + c_1, y = m_2x + c_2$ and $x = 0$ is $\\frac{(c_1 - c_2)^2}{2|m_1 - m_2|}$."
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            117.4,
+            1146.3,
+            721.4,
+            1325.6
+          ],
+          "conf": 0.563,
+          "text": "**Solution** Given lines are\n$y = m_1 x + c_1$ ... (1)\n$y = m_2 x + c_2$ ... (2)\n$x = 0$ ... (3)"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1319.0,
+            600.2,
+            1638.6
+          ],
+          "conf": 0.704,
+          "text": "We know that line $y = mx + c$ meets\nthe line $x = 0$ ($y$-axis) at the point\n$(0, c)$. Therefore, two vertices of the\ntriangle formed by lines (1) to (3) are\n$\\mathrm{P} (0, c_1)$ and $\\mathrm{Q} (0, c_2)$ (Fig 9.18).\nThird vertex can be obtained by solving\nequations (1) and (2). Solving (1) and\n(2), we get"
+        },
+        {
+          "order": 10,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            590.2,
+            1156.0,
+            1176.8,
+            1652.2
+          ],
+          "conf": 0.928,
+          "text": ""
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            812.4,
+            1656.2,
+            933.8,
+            1702.6
+          ],
+          "conf": 0.868,
+          "text": "Fig 9.18"
+        }
+      ],
+      "page": 19
+    },
+    {
+      "image": "0092_p0020.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            405.7,
+            273.2,
+            886.5,
+            378.1
+          ],
+          "conf": 0.938,
+          "text": "$$x = \\frac{(c_2 - c_1)}{(m_1 - m_2)} \\text{ and } y = \\frac{(m_1 c_2 - m_2 c_1)}{(m_1 - m_2)}$$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            390.8,
+            1038.4,
+            500.5
+          ],
+          "conf": 0.821,
+          "text": "Therefore, third vertex of the triangle is $R \\left( \\frac{(c_2 - c_1)}{(m_1 - m_2)}, \\frac{(m_1 c_2 - m_2 c_1)}{(m_1 - m_2)} \\right)$."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            499.1,
+            522.1,
+            547.8
+          ],
+          "conf": 0.922,
+          "text": "Now, the area of the triangle is"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            122.8,
+            555.9,
+            1156.3,
+            684.9
+          ],
+          "conf": 0.934,
+          "text": "$$=\\frac{1}{2}\\left|0\\left(\\frac{m_{1} c_{2}-m_{2} c_{1}}{m_{1}-m_{2}}-c_{2}\\right)+\\frac{c_{2}-c_{1}}{m_{1}-m_{2}}\\left(c_{2}-c_{1}\\right)+0\\left(c_{1}-\\frac{m_{1} c_{2}-m_{2} c_{1}}{m_{1}-m_{2}}\\right)\\right|=\\frac{\\left(c_{2}-c_{1}\\right)^{2}}{2\\left|m_{1}-m_{2}\\right|}$$"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            683.0,
+            735.8,
+            840.6
+          ],
+          "conf": 0.864,
+          "text": "Example 15 A line is such that its segment\nbetween the lines\n$5x - y + 4 = 0$ and $3x + 4y - 4 = 0$ is bisected at\nthe point $(1, 5)$. Obtain its equation."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            837.7,
+            445.6,
+            885.8
+          ],
+          "conf": 0.898,
+          "text": "Solution Given lines are"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            882.4,
+            573.8,
+            966.3
+          ],
+          "conf": 0.891,
+          "text": "$$5x - y + 4 = 0 \\quad \\dots (1)$$\n$$3x + 4y - 4 = 0 \\quad \\dots (2)$$"
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            746.7,
+            698.1,
+            1179.2,
+            1205.2
+          ],
+          "conf": 0.957,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            956.5,
+            735.1,
+            1081.1
+          ],
+          "conf": 0.941,
+          "text": "Let the required line intersects the lines (1) and\n(2) at the points, $(\\alpha_1, \\beta_1)$ and $(\\alpha_2, \\beta_2)$, respectively\n(Fig 9.19). Therefore"
+        },
+        {
+          "order": 9,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            900.5,
+            1209.2,
+            1021.1,
+            1254.8
+          ],
+          "conf": 0.906,
+          "text": "Fig 9.19"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.5,
+            1071.8,
+            469.9,
+            1160.1
+          ],
+          "conf": 0.874,
+          "text": "$5\\alpha_1 - \\beta_1 + 4 = 0$ and\n$3 \\alpha_2 + 4 \\beta_2 - 4 = 0$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1160.1,
+            575.5,
+            1245.5
+          ],
+          "conf": 0.848,
+          "text": "or $\\beta_1 = 5\\alpha_1 + 4$ and $\\beta_2 = \\frac{4 - 3\\alpha_2}{4}$."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1241.6,
+            949.1,
+            1329.0
+          ],
+          "conf": 0.913,
+          "text": "We are given that the mid point of the segment of\nthe required line between $(\\alpha_1, \\beta_1)$ and $(\\alpha_2, \\beta_2)$ is $(1, 5)$. Therefore"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            325.8,
+            1336.7,
+            734.6,
+            1429.9
+          ],
+          "conf": 0.892,
+          "text": "$$\\frac{\\alpha_1 + \\alpha_2}{2} = 1 \\text{ and } \\frac{\\beta_1 + \\beta_2}{2} = 5,$$"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.8,
+            1444.6,
+            880.5,
+            1575.1
+          ],
+          "conf": 0.879,
+          "text": "or $$\\alpha_1 + \\alpha_2 = 2 \\text{ and } \\frac{5\\alpha_1 + 4 + \\frac{4 - 3\\alpha_2}{4}}{2} = 5,$$"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            320.6,
+            1579.7,
+            1113.2,
+            1635.3
+          ],
+          "conf": 0.813,
+          "text": "or $\\alpha_1 + \\alpha_2 = 2$ and $20\\alpha_1 - 3\\alpha_2 = 20$ ... (3)"
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1628.9,
+            702.8,
+            1680.2
+          ],
+          "conf": 0.799,
+          "text": "Solving equations in (3) for $\\alpha_1$ and $\\alpha_2$, we get"
+        }
+      ],
+      "page": 20
+    },
+    {
+      "image": "0092_p0021.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            324.5,
+            271.1,
+            1039.3,
+            368.8
+          ],
+          "conf": 0.928,
+          "text": "$\\alpha_{1}=\\frac{26}{23}$ and $\\alpha_{2}=\\frac{20}{23}$ and hence, $\\beta_{1}=5.\\frac{26}{23}+4=\\frac{222}{23}$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            368.0,
+            948.9,
+            420.7
+          ],
+          "conf": 0.924,
+          "text": "Equation of the required line passing through $(1, 5)$ and $(\\alpha_1, \\beta_1)$ is"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            323.1,
+            428.4,
+            920.1,
+            590.1
+          ],
+          "conf": 0.939,
+          "text": "$$y-5 = \\frac{\\beta_1 - 5}{\\alpha_1 - 1} (x-1)_{\\text{or}} \\quad y-5 = \\frac{\\frac{222}{23} - 5}{\\frac{26}{23} - 1} (x-1)$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            601.5,
+            582.0,
+            650.6
+          ],
+          "conf": 0.864,
+          "text": "or $107x - 3y - 92 = 0,$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            646.8,
+            601.2,
+            696.4
+          ],
+          "conf": 0.923,
+          "text": "which is the equation of required line."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            699.2,
+            1157.4,
+            785.6
+          ],
+          "conf": 0.89,
+          "text": "Example 16 Show that the path of a moving point such that its distances from two\nlines $3x - 2y = 5$ and $3x + 2y = 5$ are equal is a straight line."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            789.6,
+            446.4,
+            838.1
+          ],
+          "conf": 0.884,
+          "text": "Solution Given lines are"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.4,
+            834.7,
+            1120.2,
+            886.0
+          ],
+          "conf": 0.832,
+          "text": "$$3x - 2y = 5 \\qquad \\dots (1)$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            883.1,
+            1119.6,
+            937.1
+          ],
+          "conf": 0.837,
+          "text": "and $3x + 2y = 5$ ... (2)"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            935.6,
+            1181.2,
+            986.5
+          ],
+          "conf": 0.881,
+          "text": "Let $(h, k)$ is any point, whose distances from the lines (1) and (2) are equal. Therefore"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            271.8,
+            984.4,
+            1070.0,
+            1095.2
+          ],
+          "conf": 0.903,
+          "text": "$$ \\frac{|3h - 2k - 5|}{\\sqrt{9 + 4}} = \\frac{|3h + 2k - 5|}{\\sqrt{9 + 4}} \\text{ or } |3h - 2k - 5| = |3h + 2k - 5|, $$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            1095.7,
+            1034.0,
+            1150.5
+          ],
+          "conf": 0.781,
+          "text": "which gives $3h - 2k - 5 = 3h + 2k - 5$ or $-(3h - 2k - 5) = 3h + 2k - 5.$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1155.0,
+            1181.2,
+            1247.3
+          ],
+          "conf": 0.839,
+          "text": "Solving these two relations we get $k=0$ or $h=\\frac{5}{3}$. Thus, the point $(h, k)$ satisfies the"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1250.4,
+            1181.4,
+            1387.8
+          ],
+          "conf": 0.815,
+          "text": "equations $y = 0$ or $x = \\frac{5}{3}$, which represent straight lines. Hence, path of the point\nequidistant from the lines (1) and (2) is a straight line."
+        },
+        {
+          "order": 14,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            379.3,
+            1414.9,
+            921.6,
+            1466.8
+          ],
+          "conf": 0.8,
+          "text": "Miscellaneous Exercise on Chapter 9"
+        },
+        {
+          "order": 15,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.2,
+            1473.5,
+            1181.3,
+            1703.3
+          ],
+          "conf": 0.934,
+          "text": "1. Find the values of $k$ for which the line $(k-3) x - (4 - k^2) y + k^2 - 7k + 6 = 0$ is\n(a) Parallel to the $x$-axis,\n(b) Parallel to the $y$-axis,\n(c) Passing through the origin.\n2. Find the equations of the lines, which cut-off intercepts on the axes whose sum\nand product are $1$ and $- 6$, respectively."
+        }
+      ],
+      "page": 21
+    },
+    {
+      "image": "0092_p0022.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            134.4,
+            264.3,
+            1182.9,
+            1722.2
+          ],
+          "conf": 0.706,
+          "text": "3. What are the points on the $y$-axis whose distance from the line $\\frac{x}{3} + \\frac{y}{4} = 1$ is\n4 units.\n4. Find perpendicular distance from the origin to the line joining the points $(\\cos\\theta, \\sin\\theta)$\nand $(\\cos\\phi, \\sin\\phi)$.\n5. Find the equation of the line parallel to $y$-axis and drawn through the point of\nintersection of the lines $x - 7y + 5 = 0$ and $3x + y = 0$.\n\n6. Find the equation of a line drawn perpendicular to the line $\\frac{x}{4} + \\frac{y}{6} = 1$ through the\npoint, where it meets the $y$-axis.\n7. Find the area of the triangle formed by the lines $y - x = 0$, $x + y = 0$ and $x - k = 0$.\n8. Find the value of $p$ so that the three lines $3x + y - 2 = 0$, $px + 2y - 3 = 0$ and\n$2x - y - 3 = 0$ may intersect at one point.\n9. If three lines whose equations are $y = m_1x + c_1$, $y = m_2x + c_2$ and $y = m_3x + c_3$ are\nconcurrent, then show that $m_1(c_2 - c_3) + m_2(c_3 - c_1) + m_3(c_1 - c_2) = 0$.\n10. Find the equation of the lines through the point $(3, 2)$ which make an angle of $45^\\circ$\nwith the line $x - 2y = 3$.\n11. Find the equation of the line passing through the point of intersection of the lines\n$4x + 7y - 3 = 0$ and $2x - 3y + 1 = 0$ that has equal intercepts on the axes.\n12. Show that the equation of the line passing through the origin and making an angle\n$\\theta$ with the line $y = mx + c$ is $\\frac{y}{x} = \\frac{m \\pm \\tan}{1 \\mp m \\tan}$.\n\n13. In what ratio, the line joining $(-1, 1)$ and $(5, 7)$ is divided by the line $x + y = 4$?\n14. Find the distance of the line $4x + 7y + 5 = 0$ from the point $(1, 2)$ along the line\n$2x - y = 0$.\n15. Find the direction in which a straight line must be drawn through the point $(-1, 2)$\nso that its point of intersection with the line $x + y = 4$ may be at a distance of\n3 units from this point.\n16. The hypotenuse of a right angled triangle has its ends at the points $(1, 3)$ and\n$(-4, 1)$. Find an equation of the legs (perpendicular sides) of the triangle which\nare parallel to the axes.\n17. Find the image of the point $(3, 8)$ with respect to the line $x + 3y = 7$ assuming the\nline to be a plane mirror.\n18. If the lines $y = 3x + 1$ and $2y = x + 3$ are equally inclined to the line $y = mx + 4$, find\nthe value of $m$.\n19. If sum of the perpendicular distances of a variable point P $(x, y)$ from the lines\n$x + y - 5 = 0$ and $3x - 2y + 7 = 0$ is always 10. Show that P must move on a line."
+        }
+      ],
+      "page": 22
+    },
+    {
+      "image": "0092_p0023.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            257.3,
+            1170.1,
+            342.0
+          ],
+          "conf": 0.919,
+          "text": "20. Find equation of the line which is equidistant from parallel lines $9x + 6y - 7 = 0$\nand $3x + 2y + 6 = 0$."
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            331.7,
+            1177.8,
+            416.3
+          ],
+          "conf": 0.895,
+          "text": "21. A ray of light passing through the point $(1, 2)$ reflects on the $x$-axis at point A and the\nreflected ray passes through the point $(5, 3)$. Find the coordinates of A."
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            405.5,
+            1128.1,
+            543.2
+          ],
+          "conf": 0.592,
+          "text": "22. Prove that the product of the lengths of the perpendiculars drawn from the\npoints $\\left(\\sqrt{a^2-b^2}, 0\\right)$ and $\\left(-\\sqrt{a^2-b^2}, 0\\right)$ to the line $\\frac{x}{a}\\cos\\theta + \\frac{y}{b}\\sin\\theta = 1$ is $b^2$."
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            538.5,
+            1178.3,
+            696.4
+          ],
+          "conf": 0.935,
+          "text": "23. A person standing at the junction (crossing) of two straight paths represented by\nthe equations $2x - 3y + 4 = 0$ and $3x + 4y - 5 = 0$ wants to reach the path whose\nequation is $6x - 7y + 8 = 0$ in the least time. Find equation of the path that he\nshould follow."
+        },
+        {
+          "order": 4,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            701.7,
+            1179.1,
+            1676.9
+          ],
+          "conf": 0.845,
+          "text": "Summary\n\n$\\diamond$ Slope ($m$) of a non-vertical line passing through the points $(x_1, y_1)$ and $(x_2, y_2)$\nis given by $m = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{y_1 - y_2}{x_1 - x_2}$, $x_1 \\neq x_2$.\n$\\diamond$ If a line makes an angle á with the positive direction of $x$-axis, then the\nslope of the line is given by $m = \\tan \\alpha$, $\\alpha \\neq 90^\\circ$.\n$\\diamond$ Slope of horizontal line is zero and slope of vertical line is undefined.\n$\\diamond$ An acute angle (say $\\theta$) between lines L$_1$ and L$_2$ with slopes $m_1$ and $m_2$ is\ngiven by $\\tan \\theta = \\left| \\frac{m_2 - m_1}{1 + m_1 m_2} \\right|, 1 + m_1 m_2 \\neq 0$.\n\n$\\diamond$ Two lines are parallel if and only if their slopes are equal.\n$\\diamond$ Two lines are perpendicular if and only if product of their slopes is $-1$.\n$\\diamond$ Three points A, B and C are collinear, if and only if slope of AB = slope of BC.\n$\\diamond$ Equation of the horizontal line having distance $a$ from the $x$-axis is either\n$y = a$ or $y = -a$.\n$\\diamond$ Equation of the vertical line having distance $b$ from the $y$-axis is either\n$x = b$ or $x = -b$.\n$\\diamond$ The point $(x, y)$ lies on the line with slope $m$ and through the fixed point $(x_0, y_0)$,\nif and only if its coordinates satisfy the equation $y - y_0 = m$ ($x - x_0$).\n$\\diamond$ Equation of the line passing through the points $(x_1, y_1)$ and $(x_2, y_2)$ is given by\n\n$$y - y_1 = \\frac{y_2 - y_1}{x_2 - x_1} (x - x_1).$$"
+        }
+      ],
+      "page": 23
+    },
+    {
+      "image": "0092_p0024.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.7,
+            278.5,
+            1144.5,
+            994.8
+          ],
+          "conf": 0.959,
+          "text": "The point $(x, y)$ on the line with slope $m$ and $y$-intercept $c$ lies on the line if and\nonly if $y = mx + c$.\nIf a line with slope $m$ makes $x$-intercept $d$. Then equation of the line is\n$y = m(x - d)$.\nEquation of a line making intercepts $a$ and $b$ on the $x$-and $y$-axis,\n\nrespectively, is $\\frac{x}{a} + \\frac{y}{b} = 1$.\nAny equation of the form $Ax + By + C = 0$, with A and B are not zero,\nsimultaneously, is called the *general linear equation or general equation of*\n*a line*.\nThe perpendicular distance ($d$) of a line $Ax + By + C = 0$ from a point $(x_1, y_1)$\n\nis given by $d = \\frac{|Ax_1 + By_1 + C|}{\\sqrt{A^2 + B^2}}$.\nDistance between the parallel lines $Ax + By + C_1 = 0$ and $Ax + By + C_2 = 0$,\nis given by $d = \\frac{|C_1 - C_2|}{\\sqrt{A^2 + B^2}}$."
+        }
+      ],
+      "page": 24
+    }
+  ]
+}

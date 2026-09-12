@@ -1,0 +1,1447 @@
+{
+  "book": "1004",
+  "relpath": "dataset/input/eng/10/1004.pdf",
+  "num_pages": 11,
+  "pages": [
+    {
+      "image": "0073_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            547.2,
+            216.6,
+            759.1,
+            445.2
+          ],
+          "conf": 0.902,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            608.3,
+            410.6,
+            700.7,
+            444.8
+          ],
+          "conf": 0.606,
+          "text": "$1062\\text{CH}04$"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            291.2,
+            477.9,
+            1179.2,
+            646.6
+          ],
+          "conf": 0.892,
+          "text": "QUADRATIC EQUATIONS 4"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.3,
+            709.1,
+            373.4,
+            760.2
+          ],
+          "conf": 0.902,
+          "text": "4.1 Introduction"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            761.9,
+            1178.1,
+            1172.1
+          ],
+          "conf": 0.925,
+          "text": "In Chapter 2, you have studied different types of polynomials. One type was the\nquadratic polynomial of the form $ax^2 + bx + c, a \\neq 0$. When we equate this polynomial\nto zero, we get a quadratic equation. Quadratic equations come up when we deal with\nmany real-life situations. For instance, suppose a\ncharity trust decides to build a prayer hall having\na carpet area of 300 square metres with its length\none metre more than twice its breadth. What\nshould be the length and breadth of the hall?\nSuppose the breadth of the hall is $x$ metres. Then,\nits length should be $(2x + 1)$ metres. We can depict\nthis information pictorially as shown in Fig. 4.1.\n\n$\\begin{array}{|c|}\n\\hline\nx \\\\\n\\hline\n\\end{array}$\n$300 \\text{ m}^2$\n$2x + 1$\n\nFig. 4.1"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1179.0,
+            956.4,
+            1230.6
+          ],
+          "conf": 0.821,
+          "text": "Now, $\\quad$ area of the hall $= (2x + 1)$. $x \\text{ m}^2 = (2x^2 + x) \\text{ m}^2$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1228.2,
+            863.7,
+            1278.7
+          ],
+          "conf": 0.812,
+          "text": "So, $2x^2 + x = 300$ (Given)"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            1275.8,
+            617.2,
+            1326.4
+          ],
+          "conf": 0.796,
+          "text": "Therefore, $2x^2 + x - 300 = 0$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1324.3,
+            1178.3,
+            1411.3
+          ],
+          "conf": 0.931,
+          "text": "So, the breadth of the hall should satisfy the equation $2x^2 + x - 300 = 0$ which is a\nquadratic equation."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1410.4,
+            1179.2,
+            1711.7
+          ],
+          "conf": 0.971,
+          "text": "Many people believe that Babylonians were the first to solve quadratic equations.\nFor instance, they knew how to find two positive numbers with a given positive sum\nand a given positive product, and this problem is equivalent to solving a quadratic\nequation of the form $x^2 - px + q = 0$. Greek mathematician Euclid developed a\ngeometrical approach for finding out lengths which, in our present day terminology,\nare solutions of quadratic equations. Solving of quadratic equations, in general form, is\noften credited to ancient Indian mathematicians. In fact, Brahmagupta (C.E.598–665)\ngave an explicit formula to solve a quadratic equation of the form $ax^2 + bx = c$. Later,"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0073_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            119.7,
+            190.2,
+            1179.8,
+            238.6
+          ],
+          "conf": 0.821,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.0,
+            191.5,
+            381.7,
+            238.1
+          ],
+          "conf": 0.54,
+          "text": "QUADRATIC EQUATIONS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            257.5,
+            1178.5,
+            488.5
+          ],
+          "conf": 0.98,
+          "text": "Sridharacharya (C.E. 1025) derived a formula, now known as the quadratic formula,\n(as quoted by Bhaskara II) for solving a quadratic equation by the method of completing\nthe square. An Arab mathematician Al-Khwarizmi (about C.E. 800) also studied\nquadratic equations of different types. Abraham bar Hiyya Ha-Nasi, in his book\n‘Liber embadorum’ published in Europe in C.E. 1145 gave complete solutions of\ndifferent quadratic equations."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            490.0,
+            1177.9,
+            609.3
+          ],
+          "conf": 0.964,
+          "text": "In this chapter, you will study quadratic equations, and various ways of finding\ntheir roots. You will also see some applications of quadratic equations in daily life\nsituations."
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.8,
+            623.6,
+            487.8,
+            676.0
+          ],
+          "conf": 0.907,
+          "text": "4.2 Quadratic Equations"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            675.6,
+            1177.5,
+            833.5
+          ],
+          "conf": 0.972,
+          "text": "A quadratic equation in the variable $x$ is an equation of the form $ax^2 + bx + c = 0$, where\n$a, b, c$ are real numbers, $a \\neq 0$. For example, $2x^2 + x - 300 = 0$ is a quadratic equation.\nSimilarly, $2x^2 - 3x + 1 = 0$, $4x - 3x^2 + 2 = 0$ and $1 - x^2 + 300 = 0$ are also quadratic\nequations."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            833.5,
+            1178.5,
+            1000.9
+          ],
+          "conf": 0.971,
+          "text": "In fact, any equation of the form $p(x) = 0$, where $p(x)$ is a polynomial of degree\n2, is a quadratic equation. But when we write the terms of $p(x)$ in descending order of\ntheir degrees, then we get the standard form of the equation. That is, $ax^2 + bx + c = 0$,\n$a \\neq 0$ is called the **standard form of a quadratic equation**."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            999.6,
+            1178.2,
+            1084.5
+          ],
+          "conf": 0.943,
+          "text": "Quadratic equations arise in several situations in the world around us and in\ndifferent fields of mathematics. Let us consider a few examples."
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1096.7,
+            1178.6,
+            1423.7
+          ],
+          "conf": 0.75,
+          "text": "Example 1 : Represent the following situations mathematically:\n\n(i) John and Jivanti together have 45 marbles. Both of them lost 5 marbles each, and\nthe product of the number of marbles they now have is 124. We would like to find\nout how many marbles they had to start with.\n\n(ii) A cottage industry produces a certain number of toys in a day. The cost of\nproduction of each toy (in rupees) was found to be 55 minus the number of toys\nproduced in a day. On a particular day, the total cost of production was\n$₹ 750$. We would like to find out the number of toys produced on that day."
+        },
+        {
+          "order": 9,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.0,
+            1423.1,
+            272.9,
+            1473.8
+          ],
+          "conf": 0.809,
+          "text": "Solution :"
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.0,
+            1473.3,
+            1164.5,
+            1708.9
+          ],
+          "conf": 0.805,
+          "text": "(i) Let the number of marbles John had be $x$.\nThen the number of marbles Jivanti had $= 45 - x$ (Why?).\nThe number of marbles left with John, when he lost 5 marbles $= x - 5$\nThe number of marbles left with Jivanti, when she lost 5 marbles $= 45 - x - 5$\n$= 40 - x$"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0073_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.6,
+            257.8,
+            795.0,
+            400.7
+          ],
+          "conf": 0.919,
+          "text": "Therefore, their product $= (x - 5) (40 - x)$\n$= 40x - x^2 - 200 + 5x$\n$= - x^2 + 45x - 200$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.8,
+            400.5,
+            1007.4,
+            545.5
+          ],
+          "conf": 0.786,
+          "text": "So, $-x^2 + 45x - 200 = 124$ (Given that product $= 124$)\ni.e., $-x^2 + 45x - 324 = 0$\ni.e., $x^2 - 45x + 324 = 0$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            546.1,
+            1136.3,
+            595.3
+          ],
+          "conf": 0.91,
+          "text": "Therefore, the number of marbles John had, satisfies the quadratic equation"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            415.0,
+            593.8,
+            673.7,
+            642.2
+          ],
+          "conf": 0.876,
+          "text": "$$x^2 - 45x + 324 = 0$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            190.1,
+            641.6,
+            1038.6,
+            691.8
+          ],
+          "conf": 0.924,
+          "text": "which is the required representation of the problem mathematically."
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            144.7,
+            689.1,
+            1123.5,
+            787.0
+          ],
+          "conf": 0.548,
+          "text": "(ii) Let the number of toys produced on that day be $x$.\nTherefore, the cost of production (in rupees) of each toy that day $= 55 - x$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            785.1,
+            988.8,
+            835.4
+          ],
+          "conf": 0.862,
+          "text": "So, the total cost of production (in rupees) that day $= x (55 - x)$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.3,
+            833.1,
+            703.2,
+            1023.1
+          ],
+          "conf": 0.803,
+          "text": "Therefore, $x(55-x)=750$\ni.e., $55x-x^2=750$\ni.e., $-x^2+55x-750=0$\ni.e., $x^2-55x+750=0$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.6,
+            1025.0,
+            1178.5,
+            1074.6
+          ],
+          "conf": 0.874,
+          "text": "Therefore, the number of toys produced that day satisfies the quadratic equation"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            415.1,
+            1071.2,
+            673.8,
+            1122.0
+          ],
+          "conf": 0.845,
+          "text": "$$x^2 - 55x + 750 = 0$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.7,
+            1120.6,
+            1036.0,
+            1170.2
+          ],
+          "conf": 0.897,
+          "text": "which is the required representation of the problem mathematically."
+        },
+        {
+          "order": 11,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.7,
+            1179.7,
+            1161.0,
+            1717.2
+          ],
+          "conf": 0.578,
+          "text": "Example 2 : Check whether the following are quadratic equations:\n(i) $(x - 2)^2 + 1 = 2x - 3$          (ii) $x(x + 1) + 8 = (x + 2) (x - 2)$\n\n(iii) $x (2x + 3) = x^2 + 1$          (iv) $(x + 2)^3 = x^3 - 4$\n\nSolution :\n\n(i) $LHS = (x - 2)^2 + 1 = x^2 - 4x + 4 + 1 = x^2 - 4x + 5$\n\nTherefore, $(x - 2)^2 + 1 = 2x - 3$ can be rewritten as\n\n$$x^2 - 4x + 5 = 2x - 3$$\n\ni.e., $x^2 - 6x + 8 = 0$\n\nIt is of the form $ax^2 + bx + c = 0$.\n\nTherefore, the given equation is a quadratic equation."
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0073_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.1,
+            191.0,
+            1177.7,
+            238.8
+          ],
+          "conf": 0.789,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.1,
+            192.1,
+            381.3,
+            237.9
+          ],
+          "conf": 0.555,
+          "text": "QUADRATIC EQUATIONS"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.5,
+            258.0,
+            915.9,
+            482.6
+          ],
+          "conf": 0.717,
+          "text": "(ii) Since $x(x + 1) + 8 = x^2 + x + 8$ and $(x + 2)(x - 2) = x^2 - 4$\nTherefore, $x^2 + x + 8 = x^2 - 4$\ni.e., $x + 12 = 0$\nIt is not of the form $ax^2 + bx + c = 0$.\nTherefore, the given equation is not a quadratic equation."
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.3,
+            481.5,
+            970.2,
+            751.1
+          ],
+          "conf": 0.675,
+          "text": "(iii) Here, \\hspace{3cm} LHS $= x(2x + 3) = 2x^2 + 3x$\nSo, \\hspace{4cm} $x(2x + 3) = x^2 + 1$ can be rewritten as\n\\hspace{5cm} $2x^2 + 3x = x^2 + 1$\nTherefore, we get \\hspace{1cm} $x^2 + 3x - 1 = 0$\nIt is of the form $ax^2 + bx + c = 0$.\nSo, the given equation is a quadratic equation."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            183.6,
+            707.9,
+            766.7,
+            757.2
+          ],
+          "conf": 0.848,
+          "text": "So, the given equation is a quadratic equation."
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            752.0,
+            977.3,
+            1021.2
+          ],
+          "conf": 0.655,
+          "text": "(iv) Here,          LHS = $(x + 2)^3 = x^3 + 6x^2 + 12x + 8$\n    Therefore,               $(x + 2)^3 = x^3 - 4$ can be rewritten as\n                  $x^3 + 6x^2 + 12x + 8 = x^3 - 4$\n    i.e.,               $6x^2 + 12x + 12 = 0$ or, $x^2 + 2x + 2 = 0$\n    It is of the form $ax^2 + bx + c = 0$.\n    So, the given equation is a quadratic equation."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.8,
+            977.9,
+            772.7,
+            1027.5
+          ],
+          "conf": 0.837,
+          "text": "So, the given equation is a quadratic equation."
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1022.4,
+            1177.8,
+            1261.0
+          ],
+          "conf": 0.54,
+          "text": "Remark : Be careful! In (ii) above, the given equation appears to be a quadratic\nequation, but it is not a quadratic equation.\nIn (iv) above, the given equation appears to be a cubic equation (an equation of\ndegree 3) and not a quadratic equation. But it turns out to be a quadratic equation. As\nyou can see, often we need to simplify the given equation before deciding whether it\nis quadratic or not."
+        },
+        {
+          "order": 8,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.4,
+            1300.7,
+            771.9,
+            1350.3
+          ],
+          "conf": 0.867,
+          "text": "EXERCISE 4.1"
+        },
+        {
+          "order": 9,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.3,
+            1357.5,
+            1177.8,
+            1699.5
+          ],
+          "conf": 0.563,
+          "text": "**1.** Check whether the following are quadratic equations :\n(i) $(x+1)^2 = 2(x-3)$                                     (ii) $x^2 - 2x = (-2)(3-x)$\n(iii) $(x-2)(x+1) = (x-1)(x+3)$                              (iv) $(x-3)(2x+1) = x(x+5)$\n(v) $(2x-1)(x-3) = (x+5)(x-1)$                              (vi) $x^2 + 3x + 1 = (x-2)^2$\n(vii) $(x+2)^3 = 2x(x^2-1)$                                   (viii) $x^3 - 4x^2 - x + 1 = (x-2)^3$\n**2.** Represent the following situations in the form of quadratic equations :\n(i) The area of a rectangular plot is $528 \\text{ m}^2$. The length of the plot (in metres) is one\nmore than twice its breadth. We need to find the length and breadth of the plot."
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0073_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            205.4,
+            258.0,
+            1177.7,
+            524.2
+          ],
+          "conf": 0.946,
+          "text": "(ii) The product of two consecutive positive integers is 306. We need to find the\nintegers.\n\n(iii) Rohan's mother is 26 years older than him. The product of their ages (in years)\n3 years from now will be 360. We would like to find Rohan's present age.\n\n(iv) A train travels a distance of 480 km at a uniform speed. If the speed had been\n8 km/h less, then it would have taken 3 hours more to cover the same distance. We\nneed to find the speed of the train."
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.6,
+            538.8,
+            884.8,
+            590.5
+          ],
+          "conf": 0.913,
+          "text": "4.3 Solution of a Quadratic Equation by Factorisation"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            589.6,
+            1177.7,
+            748.0
+          ],
+          "conf": 0.976,
+          "text": "Consider the quadratic equation $2x^2 - 3x + 1 = 0$. If we replace $x$ by $1$ on the\nLHS of this equation, we get $(2 \\times 1^2) - (3 \\times 1) + 1 = 0 =$ RHS of the equation.\nWe say that $1$ is a root of the quadratic equation $2x^2 - 3x + 1 = 0$. This also means that\n$1$ is a zero of the quadratic polynomial $2x^2 - 3x + 1$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            748.4,
+            1178.6,
+            943.4
+          ],
+          "conf": 0.975,
+          "text": "In general, a real number $\\alpha$ is called a root of the quadratic equation\n$ax^2 + bx + c = 0$, $a \\neq 0$ if $a \\alpha^2 + b \\alpha + c = 0$. We also say that $x = \\boldsymbol{\\alpha}$ is a solution of\nthe quadratic equation, or that $\\boldsymbol{\\alpha}$ satisfies the quadratic equation. Note that the\nzeroes of the quadratic polynomial $ax^2 + bx + c$ and the roots of the quadratic\nequation $ax^2 + bx + c = 0$ are the same."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            941.3,
+            1178.5,
+            1026.2
+          ],
+          "conf": 0.945,
+          "text": "You have observed, in Chapter 2, that a quadratic polynomial can have at most\ntwo zeroes. So, any quadratic equation can have atmost two roots."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1026.0,
+            1177.9,
+            1148.4
+          ],
+          "conf": 0.959,
+          "text": "You have learnt in Class IX, how to factorise quadratic polynomials by splitting\ntheir middle terms. We shall use this knowledge for finding the roots of a quadratic\nequation. Let us see how."
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1162.2,
+            1179.9,
+            1708.7
+          ],
+          "conf": 0.742,
+          "text": "Example 3 : Find the roots of the equation $2x^2 - 5x + 3 = 0$, by factorisation.\n\nSolution : Let us first split the middle term $-5x$ as $-2x -3x$ [because $(-2x) \\times (-3x) =$\n$6x^2 = (2x^2) \\times 3$].\n\nSo, $2x^2 - 5x + 3 = 2x^2 - 2x - 3x + 3 = 2x (x - 1) -3(x - 1) = (2x - 3)(x - 1)$\n\nNow, $2x^2 - 5x + 3 = 0$ can be rewritten as $(2x - 3)(x - 1) = 0$.\n\nSo, the values of $x$ for which $2x^2 - 5x + 3 = 0$ are the same for which $(2x - 3)(x - 1) = 0$,\ni.e., either $2x - 3 = 0$ or $x - 1 = 0$.\n\nNow, $2x - 3 = 0$ gives $x = \\frac{3}{2}$ and $x - 1 = 0$ gives $x = 1$.\n\nSo, $x = \\frac{3}{2}$ and $x = 1$ are the solutions of the equation.\n\nIn other words, $1$ and $\\frac{3}{2}$ are the roots of the equation $2x^2 - 5x + 3 = 0$.\n\nVerify that these are the roots of the given equation."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1666.1,
+            787.4,
+            1714.8
+          ],
+          "conf": 0.831,
+          "text": "**Verify** that these are the roots of the given equation."
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0073_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.1,
+            190.6,
+            1178.2,
+            238.3
+          ],
+          "conf": 0.808,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.3,
+            192.1,
+            381.7,
+            237.7
+          ],
+          "conf": 0.529,
+          "text": "QUADRATIC EQUATIONS"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            256.7,
+            1178.8,
+            343.5
+          ],
+          "conf": 0.953,
+          "text": "Note that we have found the roots of $2x^2 - 5x + 3 = 0$ by factorising\n$2x^2 - 5x + 3$ into two linear factors and equating each factor to zero."
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            366.7,
+            995.9,
+            417.1
+          ],
+          "conf": 0.802,
+          "text": "Example 4 : Find the roots of the quadratic equation $6x^2 - x - 2 = 0$."
+        },
+        {
+          "order": 4,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            373.9,
+            1117.2,
+            1003.6
+          ],
+          "conf": 0.558,
+          "text": "Example 4 : Find the roots of the quadratic equation $6x^2 - x - 2 = 0$.\n\nSolution : We have\n\n$$6x^2 - x - 2 = 6x^2 + 3x - 4x - 2$$\n$$= 3x (2x + 1) - 2 (2x + 1)$$\n$$= (3x - 2)(2x + 1)$$\n\nThe roots of $6x^2 - x - 2 = 0$ are the values of $x$ for which $(3x - 2)(2x + 1) = 0$\n\nTherefore, $3x - 2 = 0$ or $2x + 1 = 0$,\n\ni.e., $x = \\frac{2}{3}$ or $x = -\\frac{1}{2}$\n\nTherefore, the roots of $6x^2 - x - 2 = 0$ are $\\frac{2}{3}$ and $-\\frac{1}{2}$.\n\nWe verify the roots, by checking that $\\frac{2}{3}$ and $-\\frac{1}{2}$ satisfy $6x^2 - x - 2 = 0$."
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1006.0,
+            1058.3,
+            1708.1
+          ],
+          "conf": 0.517,
+          "text": "Example 5 : Find the roots of the quadratic equation $3x^2 - 2\\sqrt{6}x + 2 = 0$.\n\nSolution : $3x^2 - 2\\sqrt{6}x + 2 = 3x^2 - \\sqrt{6}x - \\sqrt{6}x + 2$\n$$= \\sqrt{3}x(\\sqrt{3}x - \\sqrt{2}) - \\sqrt{2}(\\sqrt{3}x - \\sqrt{2})$$\n$$= (\\sqrt{3}x - \\sqrt{2})(\\sqrt{3}x - \\sqrt{2})$$\n\nSo, the roots of the equation are the values of $x$ for which\n$$(\\sqrt{3}x - \\sqrt{2})(\\sqrt{3}x - \\sqrt{2}) = 0$$\n\nNow, $\\sqrt{3}x - \\sqrt{2} = 0$ for $x = \\sqrt{\\frac{2}{3}}$.\n\nSo, this root is repeated twice, one for each repeated factor $\\sqrt{3}x - \\sqrt{2}$.\n\nTherefore, the roots of $3x^2 - 2\\sqrt{6}x + 2 = 0$ are $\\sqrt{\\frac{2}{3}}$, $\\sqrt{\\frac{2}{3}}$."
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0073_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            257.6,
+            1178.5,
+            699.2
+          ],
+          "conf": 0.554,
+          "text": "Example 6 : Find the dimensions of the prayer hall discussed in Section 4.1.\n\nSolution : In Section 4.1, we found that if the breadth of the hall is $x$ m, then $x$\nsatisfies the equation $2x^2 + x - 300 = 0$. Applying the factorisation method, we write\nthis equation as\n\n$$2x^2 - 24x + 25x - 300 = 0$$\n$$2x(x - 12) + 25(x - 12) = 0$$\ni.e.,\n$$(x - 12)(2x + 25) = 0$$\n\nSo, the roots of the given equation are $x = 12$ or $x = -12.5$. Since $x$ is the breadth\nof the hall, it cannot be negative.\n\nThus, the breadth of the hall is $12$ m. Its length $= 2x + 1 = 25$ m."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            654.5,
+            930.0,
+            704.5
+          ],
+          "conf": 0.878,
+          "text": "Thus, the breadth of the hall is 12 m. Its length = $2x + 1 = 25$ m."
+        },
+        {
+          "order": 2,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            528.7,
+            730.0,
+            769.6,
+            779.6
+          ],
+          "conf": 0.854,
+          "text": "EXERCISE 4.2"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.0,
+            785.1,
+            1179.5,
+            1344.6
+          ],
+          "conf": 0.848,
+          "text": "**1.** Find the roots of the following quadratic equations by factorisation:\n\n(i) $x^2 - 3x - 10 = 0$                                     (ii) $2x^2 + x - 6 = 0$\n\n(iii) $\\sqrt{2}x^2 + 7x + 5\\sqrt{2} = 0$                                (iv) $2x^2 - x + \\frac{1}{8} = 0$\n\n(v) $100x^2 - 20x + 1 = 0$\n\n**2.** Solve the problems given in Example 1.\n**3.** Find two numbers whose sum is 27 and product is 182.\n**4.** Find two consecutive positive integers, sum of whose squares is 365.\n**5.** The altitude of a right triangle is 7 cm less than its base. If the hypotenuse is 13 cm, find\nthe other two sides.\n**6.** A cottage industry produces a certain number of pottery articles in a day. It was observed\non a particular day that the cost of production of each article (in rupees) was 3 more than\ntwice the number of articles produced on that day. If the total cost of production on that\nday was ₹ 90, find the number of articles produced and the cost of each article."
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.2,
+            1359.8,
+            429.0,
+            1410.4
+          ],
+          "conf": 0.859,
+          "text": "4.4 Nature of Roots"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1410.8,
+            675.5,
+            1461.1
+          ],
+          "conf": 0.891,
+          "text": "The equation $ax^2 + bx + c = 0$ are given by"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            446.7,
+            1462.2,
+            715.6,
+            1564.1
+          ],
+          "conf": 0.886,
+          "text": "$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.7,
+            1551.5,
+            1179.0,
+            1655.3
+          ],
+          "conf": 0.779,
+          "text": "If $b^2 - 4ac > 0$, we get two distinct real roots $-\\frac{b}{2a} + \\frac{\\sqrt{b^2 - 4ac}}{2a}$ and"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            125.8,
+            1640.3,
+            392.3,
+            1744.0
+          ],
+          "conf": 0.854,
+          "text": "$$ -\\frac{b}{2a} - \\frac{\\sqrt{b^2 - 4ac}}{2a}. $$"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0073_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.2,
+            269.4,
+            938.0,
+            366.3
+          ],
+          "conf": 0.924,
+          "text": "If $b^2 - 4ac = 0$, then $x = -\\frac{b}{2a} \\pm 0$, i.e., $x = -\\frac{b}{2a}$ or $-\\frac{b}{2a}$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            382.9,
+            867.9,
+            474.2
+          ],
+          "conf": 0.869,
+          "text": "So, the roots of the equation $ax^2 + bx + c = 0$ are both $\\frac{-b}{2a}$."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            474.1,
+            1178.3,
+            560.7
+          ],
+          "conf": 0.943,
+          "text": "Therefore, we say that the quadratic equation $ax^2 + bx + c = 0$ has two equal\nreal roots in this case."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            558.4,
+            1177.9,
+            646.8
+          ],
+          "conf": 0.939,
+          "text": "If $b^2 - 4ac < 0$, then there is no real number whose square is $b^2 - 4ac$. Therefore,\nthere are no real roots for the given quadratic equation in this case."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            643.5,
+            1178.5,
+            730.6
+          ],
+          "conf": 0.933,
+          "text": "Since $b^2 - 4ac$ determines whether the quadratic equation $ax^2 + bx + c = 0$ has\nreal roots or not, $b^2 - 4ac$ is called the **discriminant** of this quadratic equation."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            729.2,
+            699.1,
+            781.1
+          ],
+          "conf": 0.871,
+          "text": "So, a quadratic equation $ax^2 + bx + c = 0$ has"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            134.0,
+            777.1,
+            722.3,
+            921.5
+          ],
+          "conf": 0.918,
+          "text": "(i) two distinct real roots, if $b^2 - 4ac > 0$,\n(ii) two equal real roots, if $b^2 - 4ac = 0$,\n(iii) no real roots, if $b^2 - 4ac < 0$."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            920.0,
+            604.9,
+            969.4
+          ],
+          "conf": 0.866,
+          "text": "Let us consider some examples."
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            980.6,
+            1177.1,
+            1244.1
+          ],
+          "conf": 0.699,
+          "text": "Example 7: Find the discriminant of the quadratic equation $2x^2 - 4x + 3 = 0$, and\nhence find the nature of its roots.\n\nSolution : The given equation is of the form $ax^2 + bx + c = 0$, where $a = 2$, $b = -4$ and\n$c = 3$. Therefore, the discriminant\n$$b^2 - 4ac = (-4)^2 - (4 \\times 2 \\times 3) = 16 - 24 = -8 < 0$$\nSo, the given equation has no real roots."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1199.5,
+            633.5,
+            1250.0
+          ],
+          "conf": 0.86,
+          "text": "So, the given equation has no real roots."
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1259.5,
+            1173.4,
+            1730.0
+          ],
+          "conf": 0.667,
+          "text": "Example 8 : A pole has to be erected at a point on the boundary of a circular park of\ndiameter 13 metres in such a way that the differences of its distances from two\ndiametrically opposite fixed gates A and B on the boundary is 7 metres. Is it possible to\ndo so? If yes, at what distances from the two gates should the pole be erected?\n\nSolution : Let us first draw the diagram\n(see Fig. 4.2).\n\nLet P be the required location of the\npole. Let the distance of the pole from the\ngate B be $x$ m, i.e., $BP = x$ m. Now the\ndifference of the distances of the pole from\nthe two gates = $AP - BP$ (or, $BP - AP$) =\n7 m. Therefore, $AP = (x + 7)$ m."
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            857.7,
+            1731.3,
+            987.1,
+            1782.2
+          ],
+          "conf": 0.873,
+          "text": "Fig. 4.2"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0073_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.2,
+            257.6,
+            762.7,
+            307.0
+          ],
+          "conf": 0.908,
+          "text": "Now, AB = 13m, and since AB is a diameter,"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            514.9,
+            304.8,
+            858.3,
+            352.6
+          ],
+          "conf": 0.782,
+          "text": "$\\angle APB = 90^\\circ \\quad \\text{(Why?)}$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            341.6,
+            1076.9,
+            392.5
+          ],
+          "conf": 0.774,
+          "text": "Therefore, $AP^2 + PB^2 = AB^2$ (By Pythagoras theorem)"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.4,
+            388.9,
+            701.9,
+            440.4
+          ],
+          "conf": 0.857,
+          "text": "i.e.,                                                                 $(x + 7)^2 + x^2 = 13^2$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            437.4,
+            704.5,
+            487.0
+          ],
+          "conf": 0.853,
+          "text": "i.e., $x^2 + 14x + 49 + x^2 = 169$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.0,
+            485.3,
+            675.6,
+            534.7
+          ],
+          "conf": 0.888,
+          "text": "i.e., $2x^2 + 14x - 120 = 0$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            533.5,
+            940.3,
+            583.7
+          ],
+          "conf": 0.93,
+          "text": "So, the distance ‘$x$’ of the pole from gate B satisfies the equation"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            446.4,
+            581.0,
+            676.3,
+            631.0
+          ],
+          "conf": 0.892,
+          "text": "$$x^2 + 7x - 60 = 0$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            628.1,
+            1175.6,
+            713.8
+          ],
+          "conf": 0.956,
+          "text": "So, it would be possible to place the pole if this equation has real roots. To see if this\nis so or not, let us consider its discriminant. The discriminant is"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            227.2,
+            711.4,
+            760.6,
+            763.2
+          ],
+          "conf": 0.912,
+          "text": "$$b^2 - 4ac = 7^2 - 4 \\times 1 \\times (-60) = 289 > 0.$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            761.9,
+            1177.4,
+            847.0
+          ],
+          "conf": 0.953,
+          "text": "So, the given quadratic equation has two real roots, and it is possible to erect the\npole on the boundary of the park."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.5,
+            845.5,
+            1177.8,
+            896.6
+          ],
+          "conf": 0.908,
+          "text": "Solving the quadratic equation $x^2 + 7x - 60 = 0$, by the quadratic formula, we get"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            582.5,
+            907.1,
+            949.4,
+            1002.6
+          ],
+          "conf": 0.912,
+          "text": "$$x = \\frac{-7 \\pm \\sqrt{289}}{2} = \\frac{-7 \\pm 17}{2}$$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            995.6,
+            449.4,
+            1044.8
+          ],
+          "conf": 0.887,
+          "text": "Therefore, $x = 5$ or $-12$."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            1045.4,
+            1174.7,
+            1134.5
+          ],
+          "conf": 0.947,
+          "text": "Since $x$ is the distance between the pole and the gate B, it must be positive.\nTherefore, $x = -12$ will have to be ignored. So, $x = 5$."
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1135.4,
+            1176.1,
+            1224.5
+          ],
+          "conf": 0.94,
+          "text": "Thus, the pole has to be erected on the boundary of the park at a distance of $5\\text{m}$\nfrom the gate B and $12\\text{m}$ from the gate A."
+        },
+        {
+          "order": 16,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            1242.4,
+            1177.0,
+            1707.1
+          ],
+          "conf": 0.717,
+          "text": "Example 9 : Find the discriminant of the equation $3x^2 - 2x + \\frac{1}{3} = 0$ and hence find the\nnature of its roots. Find them, if they are real.\n\nSolution : Here $a = 3$, $b = - 2$ and $c = \\frac{1}{3}$.\n\nTherefore, discriminant $b^2 - 4ac = (- 2)^2 - 4 \\times 3 \\times \\frac{1}{3} = 4 - 4 = 0$.\n\nHence, the given quadratic equation has two equal real roots.\n\nThe roots are $\\frac{-b}{2a}$, $\\frac{-b}{2a}$, i.e., $\\frac{2}{6}$, $\\frac{2}{6}$, i.e., $\\frac{1}{3}$, $\\frac{1}{3}$."
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0073_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.4,
+            189.8,
+            1177.9,
+            238.4
+          ],
+          "conf": 0.742,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.2,
+            191.9,
+            381.4,
+            237.9
+          ],
+          "conf": 0.521,
+          "text": "QUADRATIC EQUATIONS"
+        },
+        {
+          "order": 2,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            524.6,
+            256.3,
+            773.5,
+            306.5
+          ],
+          "conf": 0.825,
+          "text": "EXERCISE 4.3"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.6,
+            313.1,
+            1178.5,
+            901.2
+          ],
+          "conf": 0.758,
+          "text": "**1.** Find the nature of the roots of the following quadratic equations. If the real roots exist,\nfind them:\n\n(i) $2x^2 - 3x + 5 = 0$                                     (ii) $3x^2 - 4\\sqrt{3}x + 4 = 0$\n(iii) $2x^2 - 6x + 3 = 0$\n\n**2.** Find the values of $k$ for each of the following quadratic equations, so that they have two\nequal roots.\n\n(i) $2x^2 + kx + 3 = 0$                                     (ii) $kx (x - 2) + 6 = 0$\n\n**3.** Is it possible to design a rectangular mango grove whose length is twice its breadth,\nand the area is $800 \\text{ m}^2$? If so, find its length and breadth.\n\n**4.** Is the following situation possible? If so, determine their present ages.\nThe sum of the ages of two friends is 20 years. Four years ago, the product of their ages\nin years was 48.\n\n**5.** Is it possible to design a rectangular park of perimeter $80 \\text{ m}$ and area $400 \\text{ m}^2$? If so, find\nits length and breadth."
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.0,
+            925.9,
+            334.8,
+            975.8
+          ],
+          "conf": 0.89,
+          "text": "4.5 Summary"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            975.3,
+            752.7,
+            1022.4
+          ],
+          "conf": 0.917,
+          "text": "In this chapter, you have studied the following points:"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.6,
+            1021.6,
+            1178.6,
+            1624.9
+          ],
+          "conf": 0.832,
+          "text": "**1.** A quadratic equation in the variable $x$ is of the form $ax^2 + bx + c = 0$, where $a, b, c$ are real numbers and $a \\neq 0$.\n\n**2.** A real number $\\alpha$ is said to be a root of the quadratic equation $ax^2 + bx + c = 0$, if $\\alpha\\alpha^2 + b\\alpha + c = 0$. The zeroes of the quadratic polynomial $ax^2 + bx + c$ and the roots of the quadratic equation $ax^2 + bx + c = 0$ are the same.\n\n**3.** If we can factorise $ax^2 + bx + c$, $a \\neq 0$, into a product of two linear factors, then the roots of the quadratic equation $ax^2 + bx + c = 0$ can be found by equating each factor to zero.\n\n**4.** Quadratic formula: The roots of a quadratic equation $ax^2 + bx + c = 0$ are given by $\\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$, provided $b^2 - 4ac \\geq 0$.\n\n**5.** A quadratic equation $ax^2 + bx + c = 0$ has\n(i) two distinct real roots, if $b^2 - 4ac > 0$,\n(ii) two equal roots (i.e., coincident roots), if $b^2 - 4ac = 0$, and\n(iii) no real roots, if $b^2 - 4ac < 0$."
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0073_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            93.5,
+            162.6,
+            1196.1,
+            338.4
+          ],
+          "conf": 0.721,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            572.0,
+            261.2,
+            724.2,
+            324.7
+          ],
+          "conf": 0.79,
+          "text": "NOTE"
+        }
+      ],
+      "page": 10
+    }
+  ]
+}

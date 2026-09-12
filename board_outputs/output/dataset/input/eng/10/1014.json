@@ -1,0 +1,2761 @@
+{
+  "book": "1014",
+  "relpath": "dataset/input/eng/10/1014.pdf",
+  "num_pages": 16,
+  "pages": [
+    {
+      "image": "0083_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            544.2,
+            249.3,
+            755.8,
+            478.0
+          ],
+          "conf": 0.901,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            605.3,
+            443.3,
+            698.2,
+            477.5
+          ],
+          "conf": 0.641,
+          "text": "$1062\\mathrm{CH}15$"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            117.3,
+            509.0,
+            1179.0,
+            680.8
+          ],
+          "conf": 0.547,
+          "text": "PROBABILITY 14"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            218.3,
+            740.2,
+            1079.5,
+            862.8
+          ],
+          "conf": 0.957,
+          "text": "The theory of probabilities and the theory of errors now constitute\na formidable body of great mathematical interest and of great\npractical importance."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            830.3,
+            867.7,
+            1079.4,
+            917.1
+          ],
+          "conf": 0.904,
+          "text": "– R.S. Woodward"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.6,
+            984.2,
+            747.8,
+            1038.2
+          ],
+          "conf": 0.919,
+          "text": "14.1 Probability — A Theoretical Approach"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.2,
+            1037.4,
+            624.1,
+            1086.8
+          ],
+          "conf": 0.928,
+          "text": "Let us consider the following situation :"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.0,
+            1085.5,
+            660.0,
+            1134.5
+          ],
+          "conf": 0.915,
+          "text": "Suppose a coin is tossed at random."
+        },
+        {
+          "order": 8,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            1137.5,
+            1179.0,
+            1339.3
+          ],
+          "conf": 0.956,
+          "text": "When we speak of a coin, we assume it to be ‘fair’, that is, it is symmetrical so\nthat there is no reason for it to come down more often on one side than the other.\nWe call this property of the coin as being ‘unbiased’. By the phrase ‘random toss’,\nwe mean that the coin is allowed to fall freely without any $bias$ or $interference$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1346.2,
+            1179.8,
+            1538.2
+          ],
+          "conf": 0.963,
+          "text": "We know, in advance, that the coin can only land in one of two possible ways —\neither head up or tail up (we dismiss the possibility of its ‘landing’ on its edge, which\nmay be possible, for example, if it falls on sand). We can reasonably assume that each\noutcome, head or tail, is $as$ $likely$ $to$ $occur$ $as$ $the$ $other$. We refer to this by saying that\n$the$ $outcomes$ head and tail, $are$ $equally$ $likely$."
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1538.8,
+            1179.2,
+            1696.1
+          ],
+          "conf": 0.959,
+          "text": "For another example of equally likely outcomes, suppose we throw a die\nonce. For us, a die will always mean a fair die. What are the possible outcomes?\nThey are $1, 2, 3, 4, 5, 6$. Each number has the same possibility of showing up. So\nthe $equally$ $likely$ $outcomes$ of throwing a die are $1, 2, 3, 4, 5$ and $6$."
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0083_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.9,
+            191.5,
+            1177.7,
+            238.4
+          ],
+          "conf": 0.854,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.0,
+            192.7,
+            277.9,
+            237.3
+          ],
+          "conf": 0.504,
+          "text": "PROBABILITY"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.8,
+            257.5,
+            1013.5,
+            307.8
+          ],
+          "conf": 0.923,
+          "text": "Are the outcomes of every experiment equally likely? Let us see."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            305.9,
+            1178.2,
+            573.2
+          ],
+          "conf": 0.981,
+          "text": "Suppose that a bag contains 4 red balls and 1 blue ball, and you draw a ball\nwithout looking into the bag. What are the outcomes? Are the outcomes — a red ball\nand a blue ball equally likely? Since there are 4 red balls and only one blue ball, you\nwould agree that you are more likely to get a red ball than a blue ball. So, the outcomes\n(a red ball or a blue ball) are $not$ equally likely. However, the outcome of drawing a\nball of any colour from the bag is equally likely. So, all experiments do not necessarily\nhave equally likely outcomes."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            573.6,
+            1178.5,
+            658.5
+          ],
+          "conf": 0.949,
+          "text": "However, in this chapter, from now on, we will assume that all the experiments\nhave equally likely outcomes."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            657.0,
+            1178.5,
+            742.1
+          ],
+          "conf": 0.948,
+          "text": "In Class IX, we defined the experimental or empirical probability P(E) of an\nevent E as"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            276.5,
+            751.5,
+            980.3,
+            843.4
+          ],
+          "conf": 0.934,
+          "text": "$$P(E) = \\frac{\\text{Number of trials in which the event happened}}{\\text{Total number of trials}}$$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            839.8,
+            1178.7,
+            1153.7
+          ],
+          "conf": 0.982,
+          "text": "The empirical interpretation of probability can be applied to every event associated\nwith an experiment which can be repeated a large number of times. The requirement\nof repeating an experiment has some limitations, as it may be very expensive or\nunfeasible in many situations. Of course, it worked well in coin tossing or die throwing\nexperiments. But how about repeating the experiment of launching a satellite in order\nto compute the empirical probability of its failure during launching, or the repetition of\nthe phenomenon of an earthquake to compute the empirical probability of a multi-\nstoreyed building getting destroyed in an earthquake?"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1154.8,
+            1178.1,
+            1354.3
+          ],
+          "conf": 0.971,
+          "text": "In experiments where we are prepared to make certain assumptions, the repetition\nof an experiment can be avoided, as the assumptions help in directly calculating the\nexact (theoretical) probability. The assumption of equally likely outcomes (which is\nvalid in many experiments, as in the two examples above, of a coin and of a die) is one\nsuch assumption that leads us to the following definition of probability of an event."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1355.5,
+            1178.1,
+            1441.9
+          ],
+          "conf": 0.94,
+          "text": "The **theoretical probability** (also called **classical probability**) of an event E,\nwritten as P(E), is defined as"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            276.5,
+            1455.6,
+            1068.6,
+            1550.0
+          ],
+          "conf": 0.924,
+          "text": "$$ \\text{P(E)} = \\frac{\\text{Number of outcomes favourable to E}}{\\text{Number of all possible outcomes of the experiment}}, $$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1560.8,
+            1061.3,
+            1610.4
+          ],
+          "conf": 0.894,
+          "text": "where we assume that the outcomes of the experiment are $equally$ $likely$."
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.7,
+            1609.5,
+            939.0,
+            1659.1
+          ],
+          "conf": 0.877,
+          "text": "We will briefly refer to theoretical probability as probability."
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            1655.9,
+            1101.4,
+            1705.6
+          ],
+          "conf": 0.881,
+          "text": "This definition of probability was given by Pierre Simon Laplace in 1795."
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0083_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.3,
+            275.3,
+            1155.3,
+            764.6
+          ],
+          "conf": 0.581,
+          "text": "Probability theory had its origin in the 16th century when\nan Italian physician and mathematician J.Cardan wrote the\nfirst book on the subject, *The Book on Games of Chance*.\nSince its inception, the study of probability has attracted\nthe attention of great mathematicians. James Bernoulli\n(1654 – 1705), A. de Moivre (1667 – 1754), and\nPierre Simon Laplace are among those who made significant\ncontributions to this field. Laplace’s *Theorie Analytique*\n*des Probabilités*, 1812, is considered to be the greatest\ncontribution by a single person to the theory of probability.\nIn recent years, probability has been used extensively in\nmany areas such as biology, economics, genetics, physics,\nsociology etc.\n\nPierre Simon Laplace\n(1749 – 1827)"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            792.1,
+            1177.4,
+            876.3
+          ],
+          "conf": 0.947,
+          "text": "Let us find the probability for some of the events associated with experiments\nwhere the equally likely assumption holds."
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            893.0,
+            1177.5,
+            1339.5
+          ],
+          "conf": 0.607,
+          "text": "Example 1 : Find the probability of getting a head when a coin is tossed once. Also\nfind the probability of getting a tail.\n\nSolution : In the experiment of tossing a coin once, the number of possible outcomes\nis two — Head (H) and Tail (T). Let E be the event ‘getting a head’. The number of\noutcomes favourable to E, (i.e., of getting a head) is 1. Therefore,\n\n$$P(E) = P \\text{ (head)} = \\frac{\\text{Number of outcomes favourable to E}}{\\text{Number of all possible outcomes}} = \\frac{1}{2}$$\n\nSimilarly, if F is the event ‘getting a tail’, then\n\n$$P(F) = P(\\text{tail}) = \\frac{1}{2} \\quad (\\text{Why ?})$$"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1370.5,
+            1177.9,
+            1627.7
+          ],
+          "conf": 0.628,
+          "text": "Example 2 : A bag contains a red ball, a blue ball and a yellow ball, all the balls being\nof the same size. Kritika takes out a ball from the bag without looking into it. What is\nthe probability that she takes out the\n\n(i) yellow ball? (ii) red ball? (iii) blue ball?\n\nSolution : Kritika takes out a ball from the bag without looking into it. So, it is equally\nlikely that she takes out any one of them."
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0083_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.6,
+            191.3,
+            1177.7,
+            238.4
+          ],
+          "conf": 0.853,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.6,
+            192.9,
+            278.2,
+            236.9
+          ],
+          "conf": 0.539,
+          "text": "PROBABILITY"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            257.6,
+            1178.2,
+            342.4
+          ],
+          "conf": 0.951,
+          "text": "Let Y be the event ‘the ball taken out is yellow’, B be the event ‘the ball taken\nout is blue’, and R be the event ‘the ball taken out is red’."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            343.3,
+            677.2,
+            392.0
+          ],
+          "conf": 0.909,
+          "text": "Now, the number of possible outcomes $= 3$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            389.9,
+            872.0,
+            439.1
+          ],
+          "conf": 0.848,
+          "text": "(i) The number of outcomes favourable to the event $Y = 1$."
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            443.1,
+            475.9,
+            531.8
+          ],
+          "conf": 0.828,
+          "text": "So, $P(Y) = \\frac{1}{3}$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            532.2,
+            737.2,
+            621.1
+          ],
+          "conf": 0.878,
+          "text": "Similarly, (ii) $P(R) = \\frac{1}{3}$ and (iii) $P(B) = \\frac{1}{3}$."
+        },
+        {
+          "order": 7,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            120.0,
+            616.4,
+            288.6,
+            663.9
+          ],
+          "conf": 0.869,
+          "text": "Remarks :"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            663.3,
+            1178.6,
+            880.1
+          ],
+          "conf": 0.872,
+          "text": "1. An event having only one outcome of the experiment is called an $elementary$\n$event$. In Example 1, both the events E and F are elementary events. Similarly, in\nExample 2, all the three events, Y, B and R are elementary events.\n\n2. In Example 1, we note that : $P(E) + P(F) = 1$\n\nIn Example 2, we note that : $P(Y) + P(R) + P(B) = 1$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            881.0,
+            1180.0,
+            965.6
+          ],
+          "conf": 0.927,
+          "text": "Observe that the sum of the probabilities of all the elementary events of\nan experiment is 1. This is true in general also."
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            979.6,
+            1178.2,
+            1099.7
+          ],
+          "conf": 0.894,
+          "text": "Example 3 : Suppose we throw a die once. (i) What is the probability of getting a\nnumber greater than 4 ? (ii) What is the probability of getting a number less than or\nequal to 4 ?"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1103.7,
+            1178.1,
+            1224.9
+          ],
+          "conf": 0.856,
+          "text": "Solution : (i) Here, let E be the event ‘getting a number greater than 4’. The number\nof possible outcomes is six : 1, 2, 3, 4, 5 and 6, and the outcomes favourable to E are 5\nand 6. Therefore, the number of outcomes favourable to E is 2. So,"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            405.3,
+            1230.2,
+            961.6,
+            1321.5
+          ],
+          "conf": 0.887,
+          "text": "$$P(E) = P(\\text{number greater than } 4) = \\frac{2}{6} = \\frac{1}{3}$$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1319.4,
+            936.7,
+            1368.8
+          ],
+          "conf": 0.846,
+          "text": "(ii) Let F be the event ‘getting a number less than or equal to 4’."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1369.7,
+            558.7,
+            1418.0
+          ],
+          "conf": 0.849,
+          "text": "Number of possible outcomes $= 6$"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1419.5,
+            756.0,
+            1469.3
+          ],
+          "conf": 0.879,
+          "text": "Outcomes favourable to the event F are 1, 2, 3, 4."
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1470.6,
+            742.8,
+            1519.6
+          ],
+          "conf": 0.858,
+          "text": "So, the number of outcomes favourable to F is 4."
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            1521.3,
+            618.3,
+            1609.9
+          ],
+          "conf": 0.855,
+          "text": "Therefore, $P(F) = \\frac{4}{6} = \\frac{2}{3}$"
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0083_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            257.5,
+            1178.3,
+            342.6
+          ],
+          "conf": 0.958,
+          "text": "Are the events E and F in the example above elementary events? No, they are\n\\textbf{not} because the event E has 2 outcomes and the event F has 4 outcomes."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            345.0,
+            667.7,
+            394.1
+          ],
+          "conf": 0.902,
+          "text": "Remarks : From Example 1, we note that"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.4,
+            400.3,
+            1176.8,
+            490.8
+          ],
+          "conf": 0.924,
+          "text": "$$P(E) + P(F) = \\frac{1}{2} + \\frac{1}{2} = 1 \\tag{1}$$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            487.9,
+            1011.5,
+            537.7
+          ],
+          "conf": 0.927,
+          "text": "where E is the event ‘getting a head’ and F is the event ‘getting a tail’."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.5,
+            536.0,
+            735.0,
+            586.0
+          ],
+          "conf": 0.922,
+          "text": "From (i) and (ii) of Example 3, we also get"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            318.8,
+            597.5,
+            1176.2,
+            688.4
+          ],
+          "conf": 0.928,
+          "text": "$$P(E) + P(F) = \\frac{1}{3} + \\frac{2}{3} = 1 \\tag{2}$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            694.3,
+            1177.9,
+            744.0
+          ],
+          "conf": 0.92,
+          "text": "where E is the event ‘getting a number $>4$’ and F is the event ‘getting a number $\\le 4$’."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            744.8,
+            1178.5,
+            830.9
+          ],
+          "conf": 0.949,
+          "text": "Note that getting a number $not$ greater than 4 is same as getting a number less\nthan or equal to 4, and vice versa."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.2,
+            831.2,
+            1178.3,
+            930.0
+          ],
+          "conf": 0.947,
+          "text": "In (1) and (2) above, is F not the same as ‘not E’? Yes, it is. We denote the event\n‘not E’ by $\\bar{\\text{E}}$ ."
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            922.8,
+            541.4,
+            972.2
+          ],
+          "conf": 0.838,
+          "text": "So, $P(E) + P(\\text{not } E) = 1$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            976.6,
+            1012.3,
+            1027.3
+          ],
+          "conf": 0.804,
+          "text": "i.e., $P(E) + P(\\bar{E}) = 1$, which gives us $P(\\bar{E}) = 1 - P(E)$."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.8,
+            1027.5,
+            756.5,
+            1078.1
+          ],
+          "conf": 0.909,
+          "text": "In general, it is true that for an event E,"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            388.6,
+            1080.9,
+            639.1,
+            1131.3
+          ],
+          "conf": 0.893,
+          "text": "$$ \\mathbf{P}(\\overline{\\mathbf{E}}) = 1 - \\mathbf{P}(\\mathbf{E}) $$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1135.2,
+            1177.9,
+            1233.3
+          ],
+          "conf": 0.927,
+          "text": "The event $\\overline{\\text{E}}$ , representing ‘not E’, is called the **complement** of the event E.\nWe also say that E and $\\overline{\\text{E}}$ are **complementary** events."
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.5,
+            1235.6,
+            1177.4,
+            1286.3
+          ],
+          "conf": 0.904,
+          "text": "Before proceeding further, let us try to find the answers to the following questions:"
+        },
+        {
+          "order": 15,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            144.4,
+            1285.9,
+            1178.3,
+            1386.2
+          ],
+          "conf": 0.94,
+          "text": "(i) What is the probability of getting a number 8 in a single throw of a die?\n\n(ii) What is the probability of getting a number less than 7 in a single throw of a die?"
+        },
+        {
+          "order": 16,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.0,
+            1388.0,
+            395.2,
+            1436.6
+          ],
+          "conf": 0.786,
+          "text": "Let us answer (i) :"
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1442.9,
+            1178.6,
+            1611.2
+          ],
+          "conf": 0.956,
+          "text": "We know that there are only six possible outcomes in a single throw of a die. These\noutcomes are 1, 2, 3, 4, 5 and 6. Since no face of the die is marked 8, so there is no\noutcome favourable to 8, i.e., the number of such outcomes is zero. In other words,\ngetting 8 in a single throw of a die, is $impossible$."
+        },
+        {
+          "order": 18,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            1619.8,
+            607.0,
+            1706.4
+          ],
+          "conf": 0.886,
+          "text": "So, $P(\\text{getting } 8) = \\frac{0}{6} = 0$"
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0083_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.6,
+            190.8,
+            1177.9,
+            238.8
+          ],
+          "conf": 0.863,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.9,
+            192.9,
+            277.9,
+            236.7
+          ],
+          "conf": 0.533,
+          "text": "PROBABILITY"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            257.6,
+            1178.2,
+            342.8
+          ],
+          "conf": 0.958,
+          "text": "That is, the probability of an event which is $impossible$ to occur is 0. Such an\nevent is called an **impossible event**."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            342.6,
+            401.8,
+            391.0
+          ],
+          "conf": 0.838,
+          "text": "Let us answer (ii) :"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            389.9,
+            1178.8,
+            512.1
+          ],
+          "conf": 0.961,
+          "text": "Since every face of a die is marked with a number less than 7, it is $sure$ that we\nwill always get a number less than 7 when it is thrown once. So, the number of\nfavourable outcomes is the same as the number of all possible outcomes, which is 6."
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            516.8,
+            1023.5,
+            603.4
+          ],
+          "conf": 0.911,
+          "text": "Therefore, $P(E) = P(\\text{getting a number less than } 7) = \\frac{6}{6} = 1$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            609.7,
+            1178.3,
+            693.3
+          ],
+          "conf": 0.946,
+          "text": "So, the probability of an event which is $sure$ (or $certain$) to occur is 1. Such an event\nis called a **sure event** or a **certain event**."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            693.5,
+            1178.5,
+            820.2
+          ],
+          "conf": 0.959,
+          "text": "**Note :** From the definition of the probability $P(E)$, we see that the numerator (number\nof outcomes favourable to the event $E$) is always less than or equal to the denominator\n(the number of all possible outcomes). Therefore,"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            521.3,
+            826.5,
+            723.5,
+            875.5
+          ],
+          "conf": 0.865,
+          "text": "$$0 \\le P(E) \\le 1$$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            878.0,
+            1178.8,
+            1109.0
+          ],
+          "conf": 0.971,
+          "text": "Now, let us take an example related to playing cards. Have you seen a deck of\nplaying cards? It consists of 52 cards which are divided into 4 suits of 13 cards each—\nspades ($\\spades$), hearts ($\\heartsuit$), diamonds ($\\spadesuit$) and clubs ($\\spadesuit$). Clubs and spades are of black\ncolour, while hearts and diamonds are of red colour. The cards in each suit are ace,\nking, queen, jack, 10, 9, 8, 7, 6, 5, 4, 3 and 2. Kings, queens and jacks are called $face$\n$cards$."
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            1107.9,
+            1176.9,
+            1691.9
+          ],
+          "conf": 0.663,
+          "text": "Example 4 : One card is drawn from a well-shuffled deck of 52 cards. Calculate the\nprobability that the card will\n\n(i) be an ace,\n\n(ii) not be an ace.\n\nSolution : Well-shuffling ensures $equally$ $likely$ outcomes.\n\n(i) There are 4 aces in a deck. Let E be the event ‘the card is an ace’.\n\nThe number of outcomes favourable to E = 4\n\nThe number of possible outcomes = 52 (Why ?)\n\nTherefore, $$P(E) = \\frac{4}{52} = \\frac{1}{13}$$\n\n(ii) Let F be the event ‘card drawn is not an ace’.\n\nThe number of outcomes favourable to the event F = 52 - 4 = 48 (Why?)"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0083_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            187.8,
+            270.4,
+            691.1,
+            320.2
+          ],
+          "conf": 0.887,
+          "text": "The number of possible outcomes $= 52$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            189.0,
+            325.5,
+            665.3,
+            420.3
+          ],
+          "conf": 0.909,
+          "text": "Therefore, $P(F) = \\frac{48}{52} = \\frac{12}{13}$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            423.5,
+            1178.6,
+            473.9
+          ],
+          "conf": 0.851,
+          "text": "Remark : Note that F is nothing but $\\overline{\\text{E}}$ . Therefore, we can also calculate P(F) as"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            480.5,
+            737.4,
+            572.3
+          ],
+          "conf": 0.892,
+          "text": "follows: $P(F) = P(\\bar{E}) = 1 - P(E) = 1 - \\frac{1}{13} = \\frac{12}{13}.$"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.9,
+            586.9,
+            1178.8,
+            1004.1
+          ],
+          "conf": 0.575,
+          "text": "Example 5 : Two players, Sangeeta and Reshma, play a tennis match. It is known\nthat the probability of Sangeeta winning the match is 0.62. What is the probability of\nReshma winning the match?\n\nSolution : Let S and R denote the events that Sangeeta wins the match and Reshma\nwins the match, respectively.\n\nThe probability of Sangeeta's winning = $P(S) = 0.62$ (given)\n\nThe probability of Reshma's winning = $P(R) = 1 - P(S)$\n\n[As the events R and S are complementary]\n= $1 - 0.62 = 0.38$"
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1016.5,
+            1177.8,
+            1103.1
+          ],
+          "conf": 0.867,
+          "text": "Example 6 : Savita and Hamida are friends. What is the probability that both will\nhave (i) different birthdays? (ii) the same birthday? (ignoring a leap year)."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1102.0,
+            1177.7,
+            1187.5
+          ],
+          "conf": 0.799,
+          "text": "**Solution :** Out of the two friends, one girl, say, Savita’s birthday can be any day of the\nyear. Now, Hamida’s birthday can also be any day of 365 days in the year."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1185.2,
+            814.2,
+            1235.8
+          ],
+          "conf": 0.854,
+          "text": "We assume that these 365 outcomes are equally likely."
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            148.7,
+            1233.9,
+            1178.2,
+            1319.4
+          ],
+          "conf": 0.845,
+          "text": "(i) If Hamida's birthday is different from Savita's, the number of favourable outcomes\nfor her birthday is $365 - 1 = 364$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            188.9,
+            1322.2,
+            1047.3,
+            1408.9
+          ],
+          "conf": 0.831,
+          "text": "So, $P$ (Hamida's birthday is different from Savita's birthday) $= \\frac{364}{365}$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            143.7,
+            1402.8,
+            1088.2,
+            1687.4
+          ],
+          "conf": 0.685,
+          "text": "(ii) P(Savita and Hamida have the same birthday)\n$= 1 - \\text{P (both have different birthdays)}$\n$= 1 - \\frac{364}{365} \\quad [\\text{Using } \\text{P}(\\bar{\\text{E}}) = 1 - \\text{P}(\\text{E})]$\n$= \\frac{1}{365}$"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0083_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            119.9,
+            192.1,
+            1177.4,
+            237.7
+          ],
+          "conf": 0.859,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.5,
+            192.9,
+            278.3,
+            236.7
+          ],
+          "conf": 0.617,
+          "text": "PROBABILITY"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            256.5,
+            1177.8,
+            489.1
+          ],
+          "conf": 0.925,
+          "text": "Example 7 : There are 40 students in Class X of a school of whom 25 are girls and 15\nare boys. The class teacher has to select one student as a class representative. She\nwrites the name of each student on a separate card, the cards being identical. Then\nshe puts cards in a bag and stirs them thoroughly. She then draws one card from the\nbag. What is the probability that the name written on the card is the name of (i) a girl?\n(ii) a boy?"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            490.0,
+            1082.1,
+            539.2
+          ],
+          "conf": 0.86,
+          "text": "Solution : There are 40 students, and only one name card has to be chosen."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            147.9,
+            536.9,
+            729.4,
+            586.7
+          ],
+          "conf": 0.705,
+          "text": "(i) The number of all possible outcomes is 40"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.1,
+            584.6,
+            1177.1,
+            634.6
+          ],
+          "conf": 0.828,
+          "text": "The number of outcomes favourable for a card with the name of a girl = 25 (Why?)"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.6,
+            635.7,
+            937.7,
+            725.4
+          ],
+          "conf": 0.852,
+          "text": "Therefore, $P$ (card with name of a girl) $= P(Girl) = \\frac{25}{40} = \\frac{5}{8}$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            143.9,
+            719.3,
+            1178.1,
+            769.5
+          ],
+          "conf": 0.793,
+          "text": "(ii) The number of outcomes favourable for a card with the name of a boy $= 15$ (Why?)"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            188.5,
+            771.0,
+            943.4,
+            860.7
+          ],
+          "conf": 0.855,
+          "text": "Therefore, $P(\\text{card with name of a boy}) = P(\\text{Boy}) = \\frac{15}{40} = \\frac{3}{8}$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            865.5,
+            744.9,
+            915.6
+          ],
+          "conf": 0.891,
+          "text": "**Note :** We can also determine $P(Boy)$, by taking"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            413.5,
+            925.7,
+            1073.0,
+            1016.7
+          ],
+          "conf": 0.885,
+          "text": "$$P(Boy) = 1 - P(not Boy) = 1 - P(Girl) = 1 - \\frac{5}{8} = \\frac{3}{8}$$"
+        },
+        {
+          "order": 11,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1020.5,
+            1178.7,
+            1152.9
+          ],
+          "conf": 0.732,
+          "text": "Example 8 : A box contains 3 blue, 2 white, and 4 red marbles. If a marble is drawn\nat $random$ from the box, what is the probability that it will be\n\n(i) white?          (ii) blue?          (iii) red?"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1160.1,
+            1178.1,
+            1244.7
+          ],
+          "conf": 0.851,
+          "text": "Solution : Saying that a marble is drawn at random is a short way of saying that all the\nmarbles are equally likely to be drawn. Therefore, the"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.0,
+            1248.5,
+            918.6,
+            1299.8
+          ],
+          "conf": 0.783,
+          "text": "number of possible outcomes $= 3 + 2 + 4 = 9$      (Why?)"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            1303.0,
+            1175.3,
+            1387.2
+          ],
+          "conf": 0.918,
+          "text": "Let W denote the event ‘the marble is white’, B denote the event ‘the marble is blue’\nand R denote the event ‘marble is red’."
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1392.9,
+            873.6,
+            1441.1
+          ],
+          "conf": 0.759,
+          "text": "(i) The number of outcomes favourable to the event $W = 2$"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.5,
+            1445.1,
+            554.8,
+            1532.0
+          ],
+          "conf": 0.82,
+          "text": "So, $P(W) = \\frac{2}{9}$"
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            1539.8,
+            903.4,
+            1629.4
+          ],
+          "conf": 0.839,
+          "text": "Similarly, (ii) $P(B) = \\frac{3}{9} = \\frac{1}{3}$ and (iii) $P(R) = \\frac{4}{9}$"
+        },
+        {
+          "order": 18,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1646.7,
+            582.1,
+            1697.6
+          ],
+          "conf": 0.82,
+          "text": "Note that $P(W) + P(B) + P(R) = 1.$"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0083_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            257.3,
+            1176.5,
+            342.4
+          ],
+          "conf": 0.909,
+          "text": "Example 9 : Harpreet tosses two different coins simultaneously (say, one is of ₹ 1\nand other of ₹ 2). What is the probability that she gets *at least* one head?"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            347.3,
+            1178.8,
+            541.9
+          ],
+          "conf": 0.914,
+          "text": "**Solution :** We write H for ‘head’ and T for ‘tail’. When two coins are tossed\nsimultaneously, the possible outcomes are (H, H), (H, T), (T, H), (T, T), which are all\n*equally likely*. Here (H, H) means head up on the first coin (say on ₹ 1) and head up\non the second coin (₹ 2). Similarly (H, T) means head up on the first coin and tail up on\nthe second coin and so on."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            542.4,
+            1178.7,
+            628.7
+          ],
+          "conf": 0.943,
+          "text": "The outcomes favourable to the event E, ‘at least one head’ are (H, H), (H, T)\nand (T, H). (Why?)"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            626.8,
+            745.3,
+            675.6
+          ],
+          "conf": 0.919,
+          "text": "So, the number of outcomes favourable to E is 3."
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            679.1,
+            496.6,
+            766.8
+          ],
+          "conf": 0.888,
+          "text": "Therefore, $P(E) = \\frac{3}{4}$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.3,
+            755.1,
+            887.0,
+            836.2
+          ],
+          "conf": 0.906,
+          "text": "i.e., the probability that Harpreet gets at least one head is $\\frac{3}{4}$."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            827.6,
+            653.1,
+            877.0
+          ],
+          "conf": 0.9,
+          "text": "**Note :** You can also find P(E) as follows:"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            340.7,
+            869.2,
+            1174.5,
+            966.0
+          ],
+          "conf": 0.92,
+          "text": "$$P(E) = 1 - P(\\bar{E}) = 1 - \\frac{1}{4} = \\frac{3}{4} \\quad \\left( \\text{Since } P(\\bar{E}) = P(\\text{no head}) = \\frac{1}{4} \\right)$$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            960.6,
+            1177.9,
+            1044.6
+          ],
+          "conf": 0.941,
+          "text": "Did you observe that in all the examples discussed so far, the number of possible\noutcomes in each experiment was finite? If not, check it now."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1044.8,
+            1179.0,
+            1310.6
+          ],
+          "conf": 0.972,
+          "text": "There are many experiments in which the outcome is any number between two\ngiven numbers, or in which the outcome is every point within a circle or rectangle, etc.\nCan you now count the number of all possible outcomes? As you know, this is not\npossible since there are infinitely many numbers between two given numbers, or there\nare infinitely many points within a circle. So, the definition of (theoretical) probability\nwhich you have learnt so far cannot be applied in the present form. What is the way\nout? To answer this, let us consider the following example :"
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1302.8,
+            1178.3,
+            1460.9
+          ],
+          "conf": 0.874,
+          "text": "Example 10* : In a musical chair game, the person playing the music has been\nadvised to stop playing the music at any time within 2 minutes after she starts\nplaying. What is the probability that the music will stop within the first half-minute\nafter starting?"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1461.5,
+            1179.2,
+            1546.4
+          ],
+          "conf": 0.87,
+          "text": "Solution : Here the possible outcomes are all the numbers between 0 and 2. This is\nthe portion of the number line from 0 to 2 (see Fig. 14.1)."
+        },
+        {
+          "order": 12,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            422.0,
+            1542.6,
+            879.7,
+            1612.5
+          ],
+          "conf": 0.885,
+          "text": ""
+        },
+        {
+          "order": 13,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            556.1,
+            1596.4,
+            701.4,
+            1644.6
+          ],
+          "conf": 0.833,
+          "text": "Fig. 14.1"
+        },
+        {
+          "order": 14,
+          "label": "Footnote",
+          "type": "Footnote",
+          "bbox_xyxy": [
+            120.9,
+            1664.6,
+            614.2,
+            1711.1
+          ],
+          "conf": 0.855,
+          "text": "* Not from the examination point of view."
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0083_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.8,
+            191.3,
+            1177.7,
+            239.4
+          ],
+          "conf": 0.852,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.5,
+            192.3,
+            278.1,
+            237.3
+          ],
+          "conf": 0.512,
+          "text": "PROBABILITY"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            257.1,
+            1045.3,
+            308.0
+          ],
+          "conf": 0.921,
+          "text": "Let E be the event that ‘the music is stopped within the first half-minute’."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            317.5,
+            1047.9,
+            402.8
+          ],
+          "conf": 0.864,
+          "text": "The outcomes favourable to E are points on the number line from 0 to $\\frac{1}{2}$."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            392.0,
+            967.7,
+            478.4
+          ],
+          "conf": 0.867,
+          "text": "The distance from 0 to 2 is 2, while the distance from 0 to $\\frac{1}{2}$ is $\\frac{1}{2}$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            472.0,
+            1177.9,
+            610.7
+          ],
+          "conf": 0.934,
+          "text": "Since all the outcomes are equally likely, we can argue that, of the total distance\n\nof 2, the distance favourable to the event E is $\\frac{1}{2}$."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            626.6,
+            1039.0,
+            757.0
+          ],
+          "conf": 0.917,
+          "text": "So, $P(E) = \\frac{\\text{Distance favourable to the event E}}{\\text{Total distance in which outcomes can lie}} = \\frac{\\frac{1}{2}}{2} = \\frac{1}{4}$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            766.1,
+            1179.1,
+            852.7
+          ],
+          "conf": 0.933,
+          "text": "Can we now extend the idea of Example 10 for finding the probability as the ratio of\nthe favourable area to the total area?"
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            865.1,
+            1177.1,
+            986.9
+          ],
+          "conf": 0.903,
+          "text": "Example 11* : A missing helicopter is reported to have crashed somewhere in the\nrectangular region shown in Fig. 14.2. What is the probability that it crashed inside the\nlake shown in the figure?"
+        },
+        {
+          "order": 9,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            248.3,
+            982.3,
+            1101.8,
+            1448.2
+          ],
+          "conf": 0.906,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            575.2,
+            1453.3,
+            721.4,
+            1504.8
+          ],
+          "conf": 0.887,
+          "text": "Fig. 14.2"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1511.8,
+            1056.4,
+            1660.0
+          ],
+          "conf": 0.537,
+          "text": "Solution : The helicopter is equally likely to crash anywhere in the region.\nArea of the entire region where the helicopter can crash\n$$= (4.5 \\times 9) \\text{ km}^2 = 40.5 \\text{ km}^2$$"
+        },
+        {
+          "order": 12,
+          "label": "Footnote",
+          "type": "Footnote",
+          "bbox_xyxy": [
+            121.9,
+            1669.7,
+            614.9,
+            1717.0
+          ],
+          "conf": 0.873,
+          "text": "* Not from the examination point of view."
+        },
+        {
+          "order": 13,
+          "label": "Footer",
+          "type": "PageFooter",
+          "bbox_xyxy": [
+            122.5,
+            1670.3,
+            741.0,
+            1871.5
+          ],
+          "conf": 0.573,
+          "text": ""
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0083_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            274.0,
+            670.3,
+            326.4
+          ],
+          "conf": 0.804,
+          "text": "Area of the lake $= (2.5 \\times 3) \\text{ km}^2 = 7.5 \\text{ km}^2$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            327.2,
+            941.7,
+            422.0
+          ],
+          "conf": 0.917,
+          "text": "Therefore, P (helicopter crashed in the lake) = $\\frac{7.5}{40.5}$ = $\\frac{75}{405}$ = $\\frac{5}{27}$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.3,
+            436.1,
+            1178.2,
+            761.3
+          ],
+          "conf": 0.532,
+          "text": "Example 12 : A carton consists of 100 shirts of which 88 are good, 8 have minor\ndefects and 4 have major defects. Jimmy, a trader, will only accept the shirts which\nare good, but Sujatha, another trader, will only reject the shirts which have major\ndefects. One shirt is drawn at random from the carton. What is the probability that\n\n(i) it is acceptable to Jimmy?\n\n(ii) it is acceptable to Sujatha?"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            780.9,
+            1177.5,
+            875.3
+          ],
+          "conf": 0.906,
+          "text": "Solution : One shirt is drawn at random from the carton of 100 shirts. Therefore,\nthere are 100 equally likely outcomes."
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            147.7,
+            893.2,
+            1159.3,
+            1165.7
+          ],
+          "conf": 0.621,
+          "text": "(i) The number of outcomes favourable (i.e., acceptable) to Jimmy = 88 (Why?)\n\nTherefore, P (shirt is acceptable to Jimmy) = $\\frac{88}{100}$ = 0.88\n\n(ii) The number of outcomes favourable to Sujatha = 88 + 8 = 96 (Why?)\n\nSo, P (shirt is acceptable to Sujatha) = $\\frac{96}{100}$ = 0.96"
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1171.5,
+            1179.2,
+            1381.9
+          ],
+          "conf": 0.578,
+          "text": "Example 13 : Two dice, one blue and one grey, are thrown at the same time. Write\ndown all the possible outcomes. What is the probability that the sum of the two numbers\nappearing on the top of the dice is\n\n(i) 8?          (ii) 13?          (iii) less than or equal to 12?"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            1399.9,
+            1178.5,
+            1624.5
+          ],
+          "conf": 0.925,
+          "text": "**Solution :** When the blue die shows ‘1’, the grey die could show any one of the\nnumbers 1, 2, 3, 4, 5, 6. The same is true when the blue die shows ‘2’, ‘3’, ‘4’, ‘5’ or\n‘6’. The possible outcomes of the experiment are listed in the table below; the first\nnumber in each ordered pair is the number appearing on the blue die and the second\nnumber is that on the grey die."
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0083_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            149.5,
+            263.5,
+            1072.0,
+            781.8
+          ],
+          "conf": 0.654,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            308.6,
+            264.7,
+            1071.1,
+            776.9
+          ],
+          "conf": 0.65,
+          "text": "<table>\n<thead>\n<tr>\n<th></th>\n<th>1</th>\n<th>2</th>\n<th>3</th>\n<th>4</th>\n<th>5</th>\n<th>6</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>(1, 1)</td>\n<td>(1, 2)</td>\n<td>(1, 3)</td>\n<td>(1, 4)</td>\n<td>(1, 5)</td>\n<td>(1, 6)</td>\n</tr>\n<tr>\n<td>2</td>\n<td>(2, 1)</td>\n<td>(2, 2)</td>\n<td>(2, 3)</td>\n<td>(2, 4)</td>\n<td>(2, 5)</td>\n<td>(2, 6)</td>\n</tr>\n<tr>\n<td>3</td>\n<td>(3, 1)</td>\n<td>(3, 2)</td>\n<td>(3, 3)</td>\n<td>(3, 4)</td>\n<td>(3, 5)</td>\n<td>(3, 6)</td>\n</tr>\n<tr>\n<td>4</td>\n<td>(4, 1)</td>\n<td>(4, 2)</td>\n<td>(4, 3)</td>\n<td>(4, 4)</td>\n<td>(4, 5)</td>\n<td>(4, 6)</td>\n</tr>\n<tr>\n<td>5</td>\n<td>(5, 1)</td>\n<td>(5, 2)</td>\n<td>(5, 3)</td>\n<td>(5, 4)</td>\n<td>(5, 5)</td>\n<td>(5, 6)</td>\n</tr>\n<tr>\n<td>6</td>\n<td>(6, 1)</td>\n<td>(6, 2)</td>\n<td>(6, 3)</td>\n<td>(6, 4)</td>\n<td>(6, 5)</td>\n<td>(6, 6)</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            577.7,
+            781.7,
+            721.2,
+            830.3
+          ],
+          "conf": 0.883,
+          "text": "Fig. 14.3"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            842.8,
+            827.7,
+            894.9
+          ],
+          "conf": 0.902,
+          "text": "Note that the pair $(1, 4)$ is different from $(4, 1)$. (Why?)"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            895.5,
+            760.2,
+            945.6
+          ],
+          "conf": 0.887,
+          "text": "So, the number of possible outcomes $= 6 \\times 6 = 36.$"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            150.9,
+            948.3,
+            1178.1,
+            1183.1
+          ],
+          "conf": 0.565,
+          "text": "(i) The outcomes favourable to the event ‘the sum of the two numbers is 8’ denoted\nby E, are: $(2, 6), (3, 5), (4, 4), (5, 3), (6, 2)$ (see Fig. 14.3)\n\ni.e., the number of outcomes favourable to E = 5.\n\nHence, $$P(E) = \\frac{5}{36}$$"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            143.3,
+            1205.7,
+            1176.5,
+            1386.2
+          ],
+          "conf": 0.564,
+          "text": "(ii) As you can see from Fig. 14.3, there is no outcome favourable to the event F,\n‘the sum of two numbers is 13’.\n\nSo, $$P(F) = \\frac{0}{36} = 0$$"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            137.5,
+            1412.1,
+            1176.5,
+            1593.2
+          ],
+          "conf": 0.5,
+          "text": "(iii) As you can see from Fig. 14.3, all the outcomes are favourable to the event G\n‘sum of two numbers $\\le 12$’.\n\nSo, $$P(G) = \\frac{36}{36} = 1$$"
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0083_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            520.0,
+            278.2,
+            778.6,
+            329.6
+          ],
+          "conf": 0.861,
+          "text": "EXERCISE 14.1"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.3,
+            335.9,
+            614.5,
+            383.2
+          ],
+          "conf": 0.88,
+          "text": "1. Complete the following statements:"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            204.0,
+            377.5,
+            1178.6,
+            738.0
+          ],
+          "conf": 0.758,
+          "text": "(i) Probability of an event E + Probability of the event ‘not E’ = \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.3,
+            735.9,
+            1057.2,
+            785.1
+          ],
+          "conf": 0.867,
+          "text": "2. Which of the following experiments have equally likely outcomes? Explain."
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            207.5,
+            780.3,
+            1132.6,
+            960.3
+          ],
+          "conf": 0.856,
+          "text": "(i) A driver attempts to start a car. The car starts or does not start.\n(ii) A player attempts to shoot a basketball. She/he shoots or misses the shot.\n(iii) A trial is made to answer a true-false question. The answer is right or wrong.\n(iv) A baby is born. It is a boy or a girl."
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.7,
+            958.0,
+            1177.5,
+            1038.9
+          ],
+          "conf": 0.915,
+          "text": "3. Why is tossing a coin considered to be a fair way of deciding which team should get the\nball at the beginning of a football game?"
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.6,
+            1035.9,
+            914.8,
+            1084.1
+          ],
+          "conf": 0.848,
+          "text": "4. Which of the following cannot be the probability of an event?"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            194.6,
+            1097.2,
+            895.6,
+            1176.5
+          ],
+          "conf": 0.733,
+          "text": "(A) $\\frac{2}{3}$ (B) $-1.5$ (C) $15\\%$ (D) $0.7$"
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            153.7,
+            1182.8,
+            750.4,
+            1231.8
+          ],
+          "conf": 0.871,
+          "text": "5. If $P(E) = 0.05$, what is the probability of ‘not E’?"
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            155.5,
+            1229.9,
+            1178.1,
+            1397.1
+          ],
+          "conf": 0.625,
+          "text": "6. A bag contains lemon flavoured candies only. Malini takes out one candy without\nlooking into the bag. What is the probability that she takes out\n\n(i) an orange flavoured candy?\n\n(ii) a lemon flavoured candy?"
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.0,
+            1394.8,
+            1177.7,
+            1508.4
+          ],
+          "conf": 0.9,
+          "text": "7. It is given that in a group of 3 students, the probability of 2 students not having the\nsame birthday is 0.992. What is the probability that the 2 students have the same\nbirthday?"
+        },
+        {
+          "order": 11,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.0,
+            1505.0,
+            1177.5,
+            1586.1
+          ],
+          "conf": 0.88,
+          "text": "**8.** A bag contains 3 red balls and 5 black balls. A ball is drawn at random from the bag.\nWhat is the probability that the ball drawn is (i) red? (ii) not red?"
+        },
+        {
+          "order": 12,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.8,
+            1597.1,
+            1178.3,
+            1712.1
+          ],
+          "conf": 0.882,
+          "text": "9. A box contains 5 red marbles, 8 white marbles and 4 green marbles. One marble is taken\nout of the box at random. What is the probability that the marble taken out will be\n(i) red? (ii) white? (iii) not green?"
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0083_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            121.0,
+            191.1,
+            1177.4,
+            237.9
+          ],
+          "conf": 0.852,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.0,
+            193.0,
+            277.9,
+            236.7
+          ],
+          "conf": 0.51,
+          "text": "PROBABILITY"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.3,
+            257.1,
+            1178.1,
+            402.4
+          ],
+          "conf": 0.952,
+          "text": "10. A piggy bank contains hundred 50p coins, fifty ₹ 1 coins, twenty ₹ 2 coins and ten ₹ 5\ncoins. If it is equally likely that one of the coins will fall out when the bank is turned\nupside down, what is the probability that the coin (i) will be a 50 p coin ? (ii) will not be\na ₹ 5 coin?"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            143.7,
+            400.7,
+            777.7,
+            580.3
+          ],
+          "conf": 0.958,
+          "text": "11. Gopi buys a fish from a shop for his aquarium. The\nshopkeeper takes out one fish at random from a\ntank containing 5 male fish and 8 female fish (see\nFig. 14.4). What is the probability that the fish taken\nout is a male fish?"
+        },
+        {
+          "order": 4,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            814.2,
+            370.9,
+            1114.0,
+            618.5
+          ],
+          "conf": 0.94,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            892.8,
+            620.5,
+            1038.3,
+            670.5
+          ],
+          "conf": 0.921,
+          "text": "Fig. 14.4"
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            142.0,
+            593.8,
+            797.2,
+            927.0
+          ],
+          "conf": 0.862,
+          "text": "12. A game of chance consists of spinning an arrow\nwhich comes to rest pointing at one of the numbers\n$1, 2, 3, 4, 5, 6, 7, 8$ (see Fig. 14.5 ), and these are equally\nlikely outcomes. What is the probability that it will\npoint at\n(i) $8$ ?\n(ii) an odd number?\n(iii) a number greater than $2$?\n(iv) a number less than $9$?"
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            877.1,
+            686.7,
+            1082.6,
+            895.8
+          ],
+          "conf": 0.935,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            908.1,
+            897.0,
+            1052.6,
+            946.4
+          ],
+          "conf": 0.894,
+          "text": "Fig. 14.5"
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.8,
+            928.0,
+            1177.5,
+            1012.9
+          ],
+          "conf": 0.799,
+          "text": "13. A die is thrown once. Find the probability of getting\n(i) a prime number; (ii) a number lying between 2 and 6; (iii) an odd number."
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.7,
+            1010.8,
+            1177.1,
+            1133.5
+          ],
+          "conf": 0.835,
+          "text": "**14.** One card is drawn from a well-shuffled deck of 52 cards. Find the probability of getting\n(i) a king of red colour\n(ii) a face card\n(iii) a red face card\n(iv) the jack of hearts\n(v) a spade\n(vi) the queen of diamonds"
+        },
+        {
+          "order": 11,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.1,
+            1133.7,
+            1178.2,
+            1322.4
+          ],
+          "conf": 0.819,
+          "text": "15. Five cards—the ten, jack, queen, king and ace of diamonds, are well-shuffled with their\nface downwards. One card is then picked up at random.\n(i) What is the probability that the card is the queen?\n(ii) If the queen is drawn and put aside, what is the probability that the second card\npicked up is (a) an ace? (b) a queen?"
+        },
+        {
+          "order": 12,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.1,
+            1321.1,
+            1177.3,
+            1433.9
+          ],
+          "conf": 0.927,
+          "text": "16. 12 defective pens are accidentally mixed with 132 good ones. It is not possible to just\nlook at a pen and tell whether or not it is defective. One pen is taken out at random from\nthis lot. Determine the probability that the pen taken out is a good one."
+        },
+        {
+          "order": 13,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.9,
+            1431.8,
+            1177.9,
+            1615.0
+          ],
+          "conf": 0.789,
+          "text": "17. (i) A lot of 20 bulbs contain 4 defective ones. One bulb is drawn at random from the lot.\nWhat is the probability that this bulb is defective?\n(ii) Suppose the bulb drawn in (i) is not defective and is not replaced. Now one bulb\nis drawn at random from the rest. What is the probability that this bulb is not\ndefective ?"
+        },
+        {
+          "order": 14,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.6,
+            1614.2,
+            1178.2,
+            1726.9
+          ],
+          "conf": 0.905,
+          "text": "18. A box contains 90 discs which are numbered from 1 to 90. If one disc is drawn at random\nfrom the box, find the probability that it bears (i) a two-digit number (ii) a perfect\nsquare number (iii) a number divisible by 5."
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0083_p0014.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.1,
+            256.9,
+            953.2,
+            305.5
+          ],
+          "conf": 0.918,
+          "text": "19. A child has a die whose six faces show the letters as given below:"
+        },
+        {
+          "order": 1,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            403.0,
+            311.2,
+            834.6,
+            383.4
+          ],
+          "conf": 0.854,
+          "text": ""
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            195.7,
+            385.3,
+            1049.4,
+            433.8
+          ],
+          "conf": 0.893,
+          "text": "The die is thrown once. What is the probability of getting  (i) A?  (ii) D?"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            126.4,
+            429.2,
+            1177.7,
+            510.9
+          ],
+          "conf": 0.946,
+          "text": "**20***. Suppose you drop a die at random on the rectangular region shown in Fig. 14.6. What is\nthe probability that it will land inside the circle with diameter $1\\text{ m}$?"
+        },
+        {
+          "order": 4,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            435.1,
+            508.4,
+            902.6,
+            760.0
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            575.6,
+            757.0,
+            721.6,
+            805.4
+          ],
+          "conf": 0.906,
+          "text": "Fig. 14.6"
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.7,
+            804.3,
+            1177.4,
+            917.5
+          ],
+          "conf": 0.914,
+          "text": "**21.** A lot consists of 144 ball pens of which 20 are defective and the others are good. Nuri\nwill buy a pen if it is good, but will not buy if it is defective. The shopkeeper draws one\npen at random and gives it to her. What is the probability that"
+        },
+        {
+          "order": 7,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            211.9,
+            915.2,
+            503.9,
+            1005.5
+          ],
+          "conf": 0.906,
+          "text": "(i) She will buy it ?\n(ii) She will not buy it ?"
+        },
+        {
+          "order": 8,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            140.1,
+            1003.2,
+            804.4,
+            1051.3
+          ],
+          "conf": 0.886,
+          "text": "22. Refer to Example 13. (i) Complete the following table:"
+        },
+        {
+          "order": 9,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            186.4,
+            1043.7,
+            1178.1,
+            1239.8
+          ],
+          "conf": 0.962,
+          "text": "<table>\n<thead>\n<tr>\n<th>Event :<br/>'Sum on 2 dice'</th>\n<th>2</th>\n<th>3</th>\n<th>4</th>\n<th>5</th>\n<th>6</th>\n<th>7</th>\n<th>8</th>\n<th>9</th>\n<th>10</th>\n<th>11</th>\n<th>12</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<th>Probability</th>\n<td>$\\frac{1}{36}$</td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td>$\\frac{5}{36}$</td>\n<td></td>\n<td></td>\n<td></td>\n<td>$\\frac{1}{36}$</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            209.7,
+            1249.2,
+            1178.6,
+            1382.2
+          ],
+          "conf": 0.875,
+          "text": "(ii) A student argues that ‘there are 11 possible outcomes 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 and\n12. Therefore, each of them has a probability $\\frac{1}{11}$ . Do you agree with this argument?\nJustify your answer."
+        },
+        {
+          "order": 11,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.1,
+            1383.2,
+            1177.7,
+            1494.3
+          ],
+          "conf": 0.931,
+          "text": "**23.** A game consists of tossing a one rupee coin 3 times and noting its outcome each time.\nHanif wins if all the tosses give the same result i.e., three heads or three tails, and loses\notherwise. Calculate the probability that Hanif will lose the game."
+        },
+        {
+          "order": 12,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            141.2,
+            1493.8,
+            1036.0,
+            1580.0
+          ],
+          "conf": 0.829,
+          "text": "**24.** A die is thrown twice. What is the probability that\n(i) 5 will not come up either time? (ii) 5 will come up at least once?"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            195.4,
+            1577.0,
+            1178.1,
+            1655.3
+          ],
+          "conf": 0.843,
+          "text": "[Hint : Throwing a die twice and throwing two dice simultaneously are treated as the\nsame experiment]"
+        },
+        {
+          "order": 14,
+          "label": "Footnote",
+          "type": "Footnote",
+          "bbox_xyxy": [
+            121.7,
+            1669.5,
+            605.5,
+            1716.6
+          ],
+          "conf": 0.875,
+          "text": "* Not from the examination point of view."
+        },
+        {
+          "order": 15,
+          "label": "Footer",
+          "type": "PageFooter",
+          "bbox_xyxy": [
+            122.6,
+            1670.5,
+            741.1,
+            1870.0
+          ],
+          "conf": 0.77,
+          "text": ""
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0083_p0015.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            120.9,
+            191.1,
+            1177.4,
+            238.3
+          ],
+          "conf": 0.819,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            119.7,
+            192.7,
+            277.9,
+            236.6
+          ],
+          "conf": 0.539,
+          "text": "PROBABILITY"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            142.2,
+            258.4,
+            1178.5,
+            605.0
+          ],
+          "conf": 0.78,
+          "text": "25. Which of the following arguments are correct and which are not correct? Give reasons\nfor your answer.\n(i) If two coins are tossed simultaneously there are three possible outcomes—two\nheads, two tails or one of each. Therefore, for each of these outcomes, the\nprobability is $\\frac{1}{3}$.\n(ii) If a die is thrown, there are two possible outcomes—an odd number or an even\nnumber. Therefore, the probability of getting an odd number is $\\frac{1}{2}$."
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.7,
+            613.7,
+            350.4,
+            665.4
+          ],
+          "conf": 0.887,
+          "text": "14.2 Summary"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            665.0,
+            759.2,
+            711.9
+          ],
+          "conf": 0.93,
+          "text": "In this chapter, you have studied the following points :"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            154.0,
+            707.8,
+            1177.7,
+            1285.3
+          ],
+          "conf": 0.72,
+          "text": "1. The theoretical (classical) probability of an event E, written as P(E), is defined as\n\n\n$$P(E) = \\frac{\\text{Number of outcomes favourable to E}}{\\text{Number of all possible outcomes of the experiment}}$$\n\n\nwhere we assume that the outcomes of the experiment are equally likely.\n\n\n2. The probability of a sure event (or certain event) is 1.\n\n\n3. The probability of an impossible event is 0.\n\n\n4. The probability of an event E is a number P(E) such that\n\n\n$$0 \\le P(E) \\le 1$$\n\n\n5. An event having only one outcome is called an elementary event. The sum of the\nprobabilities of all the elementary events of an experiment is 1.\n\n\n6. For any event E, P (E) + P ($\\bar{\\text{E}}$) = 1, where $\\bar{\\text{E}}$ stands for 'not E'. E and $\\bar{\\text{E}}$ are called\ncomplementary events."
+        },
+        {
+          "order": 6,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1350.1,
+            1178.2,
+            1693.5
+          ],
+          "conf": 0.945,
+          "text": "A NOTE TO THE READER\n\nThe experimental or empirical probability of an event is based on\nwhat has actually happened while the theoretical probability of the\nevent attempts to predict what will happen on the basis of certain\nassumptions. As the number of trials in an experiment, go on\nincreasing we may expect the experimental and theoretical\nprobabilities to be nearly the same."
+        }
+      ],
+      "page": 15
+    }
+  ]
+}

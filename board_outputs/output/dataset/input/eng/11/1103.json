@@ -1,0 +1,4561 @@
+{
+  "book": "1103",
+  "relpath": "dataset/input/eng/11/1103.pdf",
+  "num_pages": 33,
+  "pages": [
+    {
+      "image": "0086_p0000.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            654.7,
+            111.5,
+            1178.3,
+            341.4
+          ],
+          "conf": 0.876,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            905.3,
+            248.3,
+            1150.4,
+            330.2
+          ],
+          "conf": 0.513,
+          "text": "Chapter 3"
+        },
+        {
+          "order": 2,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            120.2,
+            372.4,
+            1178.5,
+            471.4
+          ],
+          "conf": 0.896,
+          "text": "TRIGONOMETRIC FUNCTIONS"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            308.4,
+            534.5,
+            991.6,
+            623.4
+          ],
+          "conf": 0.889,
+          "text": "❖ A mathematician knows how to solve a problem,\nhe can not solve it. – MILNE ❖"
+        },
+        {
+          "order": 4,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.1,
+            655.7,
+            373.0,
+            707.2
+          ],
+          "conf": 0.897,
+          "text": "3.1 Introduction"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            704.7,
+            854.9,
+            1082.6
+          ],
+          "conf": 0.976,
+          "text": "The word ‘trigonometry’ is derived from the Greek words\n‘trigon’ and ‘metron’ and it means ‘measuring the sides of\na triangle’. The subject was originally developed to solve\ngeometric problems involving triangles. It was studied by\nsea captains for navigation, surveyor to map out the new\nlands, by engineers and others. Currently, trigonometry is\nused in many areas such as the science of seismology,\ndesigning electric circuits, describing the state of an atom,\npredicting the heights of tides in the ocean, analysing a\nmusical tone and in many other areas."
+        },
+        {
+          "order": 6,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            851.2,
+            675.1,
+            1180.4,
+            1082.8
+          ],
+          "conf": 0.948,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1072.2,
+            1179.2,
+            1302.8
+          ],
+          "conf": 0.955,
+          "text": "In earlier classes, we have studied the trigonometric\nratios of acute angles as the ratio of the sides of a right\nangled triangle. We have also studied the trigonometric identities and application of\ntrigonometric ratios in solving the problems related to heights and distances. In this\nChapter, we will generalise the concept of trigonometric ratios to trigonometric functions\nand study their properties.\n\nArya Bhatt\n(476-550)"
+        },
+        {
+          "order": 8,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.1,
+            1306.8,
+            297.7,
+            1358.9
+          ],
+          "conf": 0.881,
+          "text": "3.2 Angles"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1355.5,
+            1178.8,
+            1406.2
+          ],
+          "conf": 0.913,
+          "text": "Angle is a measure of rotation of a given ray about its initial point. The original ray is"
+        },
+        {
+          "order": 10,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            166.1,
+            1409.8,
+            1137.6,
+            1702.0
+          ],
+          "conf": 0.873,
+          "text": ""
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            268.3,
+            1656.2,
+            503.1,
+            1706.4
+          ],
+          "conf": 0.69,
+          "text": "(i)Positive angle"
+        },
+        {
+          "order": 12,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            623.7,
+            1656.4,
+            1057.5,
+            1706.4
+          ],
+          "conf": 0.583,
+          "text": "Fig 3.1 (ii) Negative angle"
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0086_p0001.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            257.8,
+            1179.9,
+            415.0
+          ],
+          "conf": 0.962,
+          "text": "called the *initial side* and the final position of the ray after rotation is called the\n*terminal side* of the angle. The point of rotation is called the *vertex*. If the direction of\nrotation is anticlockwise, the angle is said to be positive and if the direction of rotation\nis clockwise, then the angle is *negative* (Fig 3.1)."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            403.4,
+            1178.1,
+            632.5
+          ],
+          "conf": 0.883,
+          "text": "The measure of an angle is the amount of\nrotation performed to get the terminal side from\nthe initial side. There are several units for\nmeasuring angles. The definition of an angle\nsuggests a unit, viz. *one complete revolution* from the position of the initial side as\nindicated in Fig 3.2."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            624.3,
+            1178.6,
+            782.2
+          ],
+          "conf": 0.959,
+          "text": "This is often convenient for large angles. For example, we can say that a rapidly\nspinning wheel is making an angle of say 15 revolution per second. We shall describe\ntwo other units of measurement of an angle which are most commonly used, viz.\ndegree measure and radian measure."
+        },
+        {
+          "order": 3,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            117.9,
+            789.4,
+            1181.2,
+            886.9
+          ],
+          "conf": 0.6,
+          "text": "3.2.1 *Degree measure* If a rotation from the initial side to terminal side is $\\left( \\frac{1}{360} \\right)^{\\text{th}}$ of"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            883.1,
+            1178.8,
+            1040.2
+          ],
+          "conf": 0.939,
+          "text": "a revolution, the angle is said to have a measure of one degree, written as $1^{\\circ}$. A degree is\ndivided into 60 minutes, and a minute is divided into 60 seconds . One sixtieth of a degree is\ncalled a minute, written as $1'$, and one sixtieth of a minute is called a second, written as $1''$.\nThus, $1^{\\circ} = 60'$, $1' = 60''$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1029.2,
+            1178.6,
+            1115.9
+          ],
+          "conf": 0.91,
+          "text": "Some of the angles whose measures are $360^{\\circ}, 180^{\\circ}, 270^{\\circ}, 420^{\\circ}, -30^{\\circ}, -420^{\\circ}$ are\nshown in Fig 3.3."
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            122.8,
+            1106.4,
+            1161.3,
+            1689.1
+          ],
+          "conf": 0.899,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            587.2,
+            1657.8,
+            697.2,
+            1703.2
+          ],
+          "conf": 0.801,
+          "text": "Fig 3.3"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0086_p0002.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            259.0,
+            1179.5,
+            420.5
+          ],
+          "conf": 0.928,
+          "text": "3.2.2 *Radian measure* There is another unit for measurement of an angle, called\nthe *radian* measure. Angle subtended at the centre by an arc of length 1 unit in a\nunit circle (circle of radius 1 unit) is said to have a measure of 1 radian. In the Fig\n3.4(i) to (iv), OA is the initial side and OB is the terminal side. The figures show the"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.8,
+            421.8,
+            1095.6,
+            512.1
+          ],
+          "conf": 0.872,
+          "text": "angles whose measures are $1$ radian, $-1$ radian, $1\\frac{1}{2}$ radian and $-1\\frac{1}{2}$ radian."
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            120.8,
+            512.1,
+            1174.8,
+            1199.3
+          ],
+          "conf": 0.933,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            589.7,
+            1196.0,
+            800.7,
+            1243.2
+          ],
+          "conf": 0.897,
+          "text": "Fig 3.4 (i) to (iv)"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1241.5,
+            1178.8,
+            1326.8
+          ],
+          "conf": 0.925,
+          "text": "We know that the circumference of a circle of radius $1$ unit is $2\\pi$. Thus, one\ncomplete revolution of the initial side subtends an angle of $2\\pi$ radian."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1328.1,
+            1179.8,
+            1695.2
+          ],
+          "conf": 0.956,
+          "text": "More generally, in a circle of radius $r$, an arc of length $r$ will subtend an angle of\n1 radian. It is well-known that equal arcs of a circle subtend equal angle at the centre.\nSince in a circle of radius $r$, an arc of length $r$ subtends an angle whose measure is 1\nradian, an arc of length $l$ will subtend an angle whose measure is $\\frac{l}{r}$ radian. Thus, if in\na circle of radius $r$, an arc of length $l$ subtends an angle $\\theta$ radian at the centre, we have\n$\\theta = \\frac{l}{r}$ or $l = r \\theta$."
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0086_p0003.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.2,
+            267.5,
+            822.1,
+            319.8
+          ],
+          "conf": 0.881,
+          "text": "3.2.3 Relation between radian and real numbers"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            312.6,
+            829.9,
+            859.9
+          ],
+          "conf": 0.98,
+          "text": "Consider the unit circle with centre O. Let A be any point\non the circle. Consider OA as initial side of an angle.\nThen the length of an arc of the circle will give the radian\nmeasure of the angle which the arc will subtend at the\ncentre of the circle. Consider the line PAQ which is\ntangent to the circle at A. Let the point A represent the\nreal number zero, AP represents positive real number and\nAQ represents negative real numbers (Fig 3.5). If we\nrope the line AP in the anticlockwise direction along the\ncircle, and AQ in the clockwise direction, then every real\nnumber will correspond to a radian measure and\nconversely. Thus, radian measures and real numbers can\nbe considered as one and the same."
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            824.1,
+            257.5,
+            1177.7,
+            817.8
+          ],
+          "conf": 0.955,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            917.7,
+            776.9,
+            1031.5,
+            825.0
+          ],
+          "conf": 0.858,
+          "text": "Fig 3.5"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            884.3,
+            1178.2,
+            971.5
+          ],
+          "conf": 0.883,
+          "text": "3.2.4 *Relation between degree and radian* Since a circle subtends at the centre\nan angle whose radian measure is $2\\pi$ and its degree measure is $360^\\circ$, it follows that"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            276.8,
+            969.8,
+            810.2,
+            1021.2
+          ],
+          "conf": 0.888,
+          "text": "$$2\\pi \\text{ radian} = 360^\\circ \\quad \\text{or} \\quad \\pi \\text{ radian} = 180^\\circ$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1018.2,
+            1178.3,
+            1201.2
+          ],
+          "conf": 0.922,
+          "text": "The above relation enables us to express a radian measure in terms of degree\nmeasure and a degree measure in terms of radian measure. Using approximate value\nof $\\pi$ as $\\frac{22}{7}$, we have"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            279.0,
+            1209.7,
+            802.8,
+            1306.1
+          ],
+          "conf": 0.893,
+          "text": "$$1 \\text{ radian} = \\frac{180^\\circ}{\\pi} = 57^\\circ 16' \\text{ approximately.}$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1326.4,
+            922.5,
+            1404.5
+          ],
+          "conf": 0.855,
+          "text": "Also $1^{\\circ} = \\frac{\\pi}{180}$ radian $= 0.01746$ radian approximately."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1426.7,
+            1178.5,
+            1516.4
+          ],
+          "conf": 0.917,
+          "text": "The relation between degree measures and radian measure of some common angles\nare given in the following table:"
+        },
+        {
+          "order": 10,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            129.3,
+            1522.7,
+            1171.4,
+            1704.7
+          ],
+          "conf": 0.964,
+          "text": "<table>\n<thead>\n<tr>\n<th>Degree</th>\n<th>30°</th>\n<th>45°</th>\n<th>60°</th>\n<th>90°</th>\n<th>180°</th>\n<th>270°</th>\n<th>360°</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Radian</td>\n<td>$\\frac{\\pi}{6}$</td>\n<td>$\\frac{\\pi}{4}$</td>\n<td>$\\frac{\\pi}{3}$</td>\n<td>$\\frac{\\pi}{2}$</td>\n<td>$\\pi$</td>\n<td>$\\frac{3\\pi}{2}$</td>\n<td>$2\\pi$</td>\n</tr>\n</tbody>\n</table>"
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0086_p0004.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            122.7,
+            261.2,
+            460.3,
+            311.0
+          ],
+          "conf": 0.846,
+          "text": "Notational Convention"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.6,
+            301.1,
+            1178.5,
+            420.9
+          ],
+          "conf": 0.947,
+          "text": "Since angles are measured either in degrees or in radians, we adopt the convention\nthat whenever we write angle $\\theta^\\circ$, we mean the angle whose degree measure is $\\theta$ and\nwhenever we write angle $\\beta$, we mean the angle whose radian measure is $\\beta$."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            188.1,
+            411.4,
+            1178.5,
+            460.9
+          ],
+          "conf": 0.85,
+          "text": "Note that when an angle is expressed in radians, the word ‘radian’ is frequently"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.3,
+            465.5,
+            1170.8,
+            577.0
+          ],
+          "conf": 0.758,
+          "text": "omitted. Thus, $\\pi = 180^\\circ$ and $\\frac{\\pi}{4} = 45^\\circ$ are written with the understanding that $\\pi$ and $\\frac{\\pi}{4}$\nare radian measures. Thus, we can say that"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.2,
+            546.4,
+            686.0,
+            594.9
+          ],
+          "conf": 0.816,
+          "text": "are radian measures. Thus, we can say that"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            188.4,
+            600.6,
+            744.5,
+            688.2
+          ],
+          "conf": 0.897,
+          "text": "$$ \\text{Radian measure} = \\frac{\\pi}{180} \\times \\text{Degree measure} $$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            188.2,
+            692.7,
+            735.5,
+            787.5
+          ],
+          "conf": 0.892,
+          "text": "$$ \\text{Degree measure} = \\frac{180}{\\pi} \\times \\text{Radian measure} $$"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.0,
+            791.7,
+            1052.6,
+            1080.7
+          ],
+          "conf": 0.718,
+          "text": "Example 1 Convert $40^{\\circ} 20'$ into radian measure.\n\nSolution We know that $180^{\\circ} = \\pi$ radian.\n\nHence $40^{\\circ} 20' = 40 \\frac{1}{3}$ degree $= \\frac{\\pi}{180} \\times \\frac{121}{3}$ radian $= \\frac{121\\pi}{540}$ radian.\n\nTherefore $40^{\\circ} 20' = \\frac{121\\pi}{540}$ radian."
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            123.2,
+            1093.1,
+            1176.8,
+            1556.9
+          ],
+          "conf": 0.759,
+          "text": "Example 2 Convert 6 radians into degree measure.\nSolution We know that $\\pi$ radian $= 180^{\\circ}$.\n\nHence $6 \\text{ radians} = \\frac{180}{\\pi} \\times 6 \\text{ degree} = \\frac{1080 \\times 7}{22} \\text{ degree}$\n$= 343 \\frac{7}{11} \\text{ degree} \\quad = 343^{\\circ} + \\frac{7 \\times 60}{11} \\text{ minute} \\quad [\\text{as } 1^{\\circ} = 60']$\n$= 343^{\\circ} + 38' + \\frac{2}{11} \\text{ minute} \\quad [\\text{as } 1' = 60'']$\n$= 343^{\\circ} + 38' + 10.9'' \\quad = 343^{\\circ} 38' 11'' \\text{ approximately.}$\nHence $6 \\text{ radians} = 343^{\\circ} 38' 11'' \\text{ approximately.}$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            1514.1,
+            829.3,
+            1565.0
+          ],
+          "conf": 0.597,
+          "text": "Hence $6 \\text{ radians} = 343^\\circ 38' 11''$ approximately."
+        },
+        {
+          "order": 10,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            1568.1,
+            1178.5,
+            1703.5
+          ],
+          "conf": 0.855,
+          "text": "Example 3 Find the radius of the circle in which a central angle of $60^{\\circ}$ intercepts an\narc of length $37.4 \\text{ cm}$ (use $\\pi = \\frac{22}{7}$)."
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0086_p0005.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            273.2,
+            870.4,
+            365.4
+          ],
+          "conf": 0.775,
+          "text": "Solution Here $l = 37.4$ cm and $\\theta = 60^\\circ = \\frac{60\\pi}{180}$ radian $= \\frac{\\pi}{3}$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            372.2,
+            538.5,
+            458.1
+          ],
+          "conf": 0.735,
+          "text": "Hence, by $r = \\frac{l}{\\theta}$, we have"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            315.5,
+            465.9,
+            777.4,
+            559.9
+          ],
+          "conf": 0.918,
+          "text": "$$r = \\frac{37.4 \\times 3}{\\pi} = \\frac{37.4 \\times 3 \\times 7}{22} = 35.7 \\text{ cm}$$"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            566.8,
+            1178.8,
+            653.6
+          ],
+          "conf": 0.872,
+          "text": "Example 4 The minute hand of a watch is 1.5 cm long. How far does its tip move in\n40 minutes? (Use $\\pi = 3.14$)."
+        },
+        {
+          "order": 4,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            655.3,
+            1177.3,
+            990.7
+          ],
+          "conf": 0.586,
+          "text": "Solution In 60 minutes, the minute hand of a watch completes one revolution. Therefore,\nin 40 minutes, the minute hand turns through $\\frac{2}{3}$ of a revolution. Therefore, $\\theta = \\frac{2}{3} \\times 360^{\\circ}$\nor $\\frac{4\\pi}{3}$ radian. Hence, the required distance travelled is given by\n$$l = r \\theta = 1.5 \\times \\frac{4\\pi}{3} \\text{ cm} = 2\\pi \\text{ cm} = 2 \\times 3.14 \\text{ cm} = 6.28 \\text{ cm}.$$"
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            115.0,
+            1000.0,
+            1181.2,
+            1533.1
+          ],
+          "conf": 0.528,
+          "text": "Example 5 If the arcs of the same lengths in two circles subtend angles $65^{\\circ}$and $110^{\\circ}$\nat the centre, find the ratio of their radii.\n\nSolution Let $r_1$ and $r_2$ be the radii of the two circles. Given that\n\n$$\\theta_1 = 65^{\\circ} = \\frac{\\pi}{180} \\times 65 = \\frac{13\\pi}{36} \\text{ radian}$$\n\nand $\\theta_2 = 110^{\\circ} = \\frac{\\pi}{180} \\times 110 = \\frac{22\\pi}{36} \\text{ radian}$\n\nLet $l$ be the length of each of the arc. Then $l = r_1\\theta_1 = r_2\\theta_2$, which gives\n\n$$\\frac{13\\pi}{36} \\times r_1 = \\frac{22\\pi}{36} \\times r_2, \\text{ i.e., } \\frac{r_1}{r_2} = \\frac{22}{13}$$\n\nHence $r_1 : r_2 = 22 : 13.$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1485.6,
+            502.3,
+            1539.8
+          ],
+          "conf": 0.739,
+          "text": "Hence $r_1 : r_2 = 22 : 13.$"
+        },
+        {
+          "order": 7,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            527.4,
+            1554.6,
+            768.3,
+            1607.0
+          ],
+          "conf": 0.772,
+          "text": "EXERCISE 3.1"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1613.5,
+            1122.3,
+            1711.0
+          ],
+          "conf": 0.734,
+          "text": "1. Find the radian measures corresponding to the following degree measures:\n(i) $25^{\\circ}$ (ii) $-47^{\\circ}30'$ (iii) $240^{\\circ}$ (iv) $520^{\\circ}$"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0086_p0006.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            259.2,
+            1170.3,
+            499.1
+          ],
+          "conf": 0.694,
+          "text": "2. Find the degree measures corresponding to the following radian measures\n(Use $\\pi = \\frac{22}{7}$).\n\n(i) $\\frac{11}{16}$ (ii) $-4$ (iii) $\\frac{5\\pi}{3}$ (iv) $\\frac{7\\pi}{6}$"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.7,
+            490.4,
+            1169.2,
+            573.2
+          ],
+          "conf": 0.887,
+          "text": "3. A wheel makes 360 revolutions in one minute. Through how many radians does\nit turn in one second?"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            563.9,
+            1171.2,
+            695.4
+          ],
+          "conf": 0.855,
+          "text": "4. Find the degree measure of the angle subtended at the centre of a circle of\nradius 100 cm by an arc of length 22 cm (Use $\\pi = \\frac{22}{7}$)."
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            696.9,
+            1171.3,
+            782.2
+          ],
+          "conf": 0.886,
+          "text": "5. In a circle of diameter 40 cm, the length of a chord is 20 cm. Find the length of\nminor arc of the chord."
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            771.8,
+            1169.1,
+            855.4
+          ],
+          "conf": 0.88,
+          "text": "6. If in two circles, arcs of the same length subtend angles $60^{\\circ}$ and $75^{\\circ}$ at the\ncentre, find the ratio of their radii."
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.4,
+            845.3,
+            1168.6,
+            965.2
+          ],
+          "conf": 0.767,
+          "text": "7. Find the angle in radian through which a pendulum swings if its length is 75 cm\nand th e tip describes an arc of length\n(i) 10 cm (ii) 15 cm (iii) 21 cm"
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.1,
+            972.6,
+            539.1,
+            1023.0
+          ],
+          "conf": 0.892,
+          "text": "3.3 Trigonometric Functions"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1020.7,
+            1170.4,
+            1141.0
+          ],
+          "conf": 0.951,
+          "text": "In earlier classes, we have studied trigonometric ratios for acute angles as the ratio of\nsides of a right angled triangle. We will now extend the definition of trigonometric\nratios to any angle in terms of radian measure and study them as trigonometric functions."
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1130.3,
+            621.1,
+            1323.9
+          ],
+          "conf": 0.935,
+          "text": "Consider a unit circle with centre\nat origin of the coordinate axes. Let\n$\\mathrm{P}$ $(a, b)$ be any point on the circle with\nangle $\\mathrm{AOP} = x$ radian, i.e., length of arc\n$\\mathrm{AP} = x$ (Fig 3.6)."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1313.1,
+            621.3,
+            1396.3
+          ],
+          "conf": 0.814,
+          "text": "We define $\\cos x = a$ and $\\sin x = b$\nSince $\\Delta$OMP is a right triangle, we have"
+        },
+        {
+          "order": 10,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            604.8,
+            1144.0,
+            1175.5,
+            1638.4
+          ],
+          "conf": 0.963,
+          "text": ""
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            187.8,
+            1382.4,
+            618.3,
+            1433.7
+          ],
+          "conf": 0.711,
+          "text": "OM$^2$ + MP$^2$ = OP$^2$ or $a^2 + b^2 = 1$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1422.7,
+            619.4,
+            1505.9
+          ],
+          "conf": 0.855,
+          "text": "Thus, for every point on the unit circle,\nwe have"
+        },
+        {
+          "order": 13,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            838.5,
+            1639.7,
+            950.6,
+            1685.7
+          ],
+          "conf": 0.844,
+          "text": "Fig 3.6"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.7,
+            1494.7,
+            597.1,
+            1543.6
+          ],
+          "conf": 0.831,
+          "text": "$$a^2 + b^2 = 1 \\text{ or } \\cos^2 x + \\sin^2 x = 1$$"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1533.5,
+            621.4,
+            1617.3
+          ],
+          "conf": 0.867,
+          "text": "Since one complete revolution\nsubtends an angle of $2\\pi$ radian at the"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1626.2,
+            620.4,
+            1707.9
+          ],
+          "conf": 0.808,
+          "text": "centre of the circle, $\\angle AOB = \\frac{\\pi}{2}$,"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0086_p0007.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            272.3,
+            1177.9,
+            440.2
+          ],
+          "conf": 0.612,
+          "text": "$\\angle \\mathrm{AOC}=\\pi$ and $\\angle \\mathrm{AOD}=\\frac{3 \\pi}{2}$. All angles which are integral multiples of $\\frac{\\pi}{2}$ are called\nquadrantal angles. The coordinates of the points A, B, C and D are, respectively,\n$(1, 0), (0, 1), (-1, 0)$ and $(0, -1)$. Therefore, for quadrantal angles, we have"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            232.7,
+            444.8,
+            599.4,
+            494.6
+          ],
+          "conf": 0.883,
+          "text": "$$\\cos 0^{\\circ} = 1 \\qquad \\sin 0^{\\circ} = 0,$$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            228.1,
+            503.7,
+            592.0,
+            586.0
+          ],
+          "conf": 0.885,
+          "text": "$$\\cos \\frac{\\pi}{2} = 0 \\qquad \\sin \\frac{\\pi}{2} = 1$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            250.0,
+            581.0,
+            592.9,
+            628.3
+          ],
+          "conf": 0.867,
+          "text": "$$ \\cos\\pi = -1 \\qquad \\sin\\pi = 0 $$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            213.2,
+            632.5,
+            607.5,
+            722.0
+          ],
+          "conf": 0.898,
+          "text": "$$\\cos \\frac{3\\pi}{2} = 0 \\qquad \\sin \\frac{3\\pi}{2} = -1$$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            225.8,
+            716.5,
+            593.6,
+            762.7
+          ],
+          "conf": 0.875,
+          "text": "$$ \\cos 2\\pi = 1 \\qquad \\sin 2\\pi = 0 $$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            760.0,
+            1178.3,
+            881.2
+          ],
+          "conf": 0.954,
+          "text": "Now, if we take one complete revolution from the point P, we again come back to\nsame point P. Thus, we also observe that if $x$ increases (or decreases) by any integral\nmultiple of $2\\pi$, the values of sine and cosine functions do not change. Thus,"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            869.2,
+            1178.1,
+            957.0
+          ],
+          "conf": 0.742,
+          "text": "$$\\sin (2n\\pi + x) = \\sin x, n \\in \\mathbf{Z} , \\cos (2n\\pi + x) = \\cos x, n \\in \\mathbf{Z}$$\nFurther, $\\sin x = 0$, if $x = 0, \\pm \\pi, \\pm 2\\pi, \\pm 3\\pi, ...$, i.e., when $x$ is an integral multiple of $\\pi$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            957.8,
+            1177.5,
+            1121.4
+          ],
+          "conf": 0.758,
+          "text": "and $\\cos x = 0$, if $x = \\pm \\frac{\\pi}{2}, \\pm \\frac{3\\pi}{2}, \\pm \\frac{5\\pi}{2}, ...$ i.e., $\\cos x$ vanishes when $x$ is an odd\n\nmultiple of $\\frac{\\pi}{2}$. Thus"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.9,
+            1126.5,
+            835.0,
+            1177.6
+          ],
+          "conf": 0.784,
+          "text": "$\\sin x = 0$ implies $x = n\\pi$, where $n$ is any integer"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.8,
+            1179.9,
+            944.2,
+            1256.5
+          ],
+          "conf": 0.862,
+          "text": "$\\cos x = 0$ implies $x = (2n + 1) \\frac{\\pi}{2}$, where $n$ is any integer."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            1260.5,
+            1147.1,
+            1309.9
+          ],
+          "conf": 0.91,
+          "text": "We now define other trigonometric functions in terms of sine and cosine functions:"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            277.4,
+            1318.8,
+            905.1,
+            1415.9
+          ],
+          "conf": 0.884,
+          "text": "$\\csc x = \\frac{1}{\\sin x}, x \\neq n\\pi$, where $n$ is any integer."
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            276.1,
+            1418.0,
+            1008.3,
+            1515.2
+          ],
+          "conf": 0.888,
+          "text": "$$ \\sec x = \\frac{1}{\\cos x}, x \\neq (2n + 1) \\frac{\\pi}{2}, \\text{ where } n \\text{ is any integer.} $$"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            276.4,
+            1518.7,
+            983.4,
+            1611.4
+          ],
+          "conf": 0.88,
+          "text": "$$\\tan x = \\frac{\\sin x}{\\cos x}, x \\neq (2n + 1)\\frac{\\pi}{2}, \\text{ where } n \\text{ is any integer.}$$"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            276.0,
+            1616.7,
+            906.6,
+            1707.7
+          ],
+          "conf": 0.874,
+          "text": "$$\\cot x = \\frac{\\cos x}{\\sin x}, x \\neq n \\pi, \\text{ where } n \\text{ is any integer.}$$"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0086_p0008.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            277.6,
+            794.4,
+            327.2
+          ],
+          "conf": 0.911,
+          "text": "We have shown that for all real $x$, $\\sin^2 x + \\cos^2 x = 1$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            344.7,
+            314.6,
+            392.0
+          ],
+          "conf": 0.908,
+          "text": "It follows that"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            357.8,
+            410.8,
+            783.9,
+            461.3
+          ],
+          "conf": 0.844,
+          "text": "$$1 + \\tan^2 x = \\sec^2 x \\qquad (\\text{why?})$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            357.2,
+            477.3,
+            783.8,
+            527.6
+          ],
+          "conf": 0.865,
+          "text": "$$1 + \\cot^2 x = \\csc^2 x \\qquad (\\text{why?})$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            525.7,
+            1178.8,
+            681.0
+          ],
+          "conf": 0.97,
+          "text": "In earlier classes, we have discussed the values of trigonometric ratios for $0^{\\circ}$,\n$30^{\\circ}$, $45^{\\circ}$, $60^{\\circ}$ and $90^{\\circ}$. The values of trigonometric functions for these angles are same\nas that of trigonometric ratios studied in earlier classes. Thus, we have the following\ntable:"
+        },
+        {
+          "order": 5,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            142.9,
+            677.7,
+            1159.2,
+            1098.8
+          ],
+          "conf": 0.985,
+          "text": "<table>\n<thead>\n<tr>\n<th></th>\n<th>0^{\\circ}</th>\n<th>\\frac{\\pi}{6}</th>\n<th>\\frac{\\pi}{4}</th>\n<th>\\frac{\\pi}{3}</th>\n<th>\\frac{\\pi}{2}</th>\n<th>\\pi</th>\n<th>\\frac{3\\pi}{2}</th>\n<th>2\\pi</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>sin</td>\n<td>0</td>\n<td>\\frac{1}{2}</td>\n<td>\\frac{1}{\\sqrt{2}}</td>\n<td>\\frac{\\sqrt{3}}{2}</td>\n<td>1</td>\n<td>0</td>\n<td>-1</td>\n<td>0</td>\n</tr>\n<tr>\n<td>cos</td>\n<td>1</td>\n<td>\\frac{\\sqrt{3}}{2}</td>\n<td>\\frac{1}{\\sqrt{2}}</td>\n<td>\\frac{1}{2}</td>\n<td>0</td>\n<td>-1</td>\n<td>0</td>\n<td>1</td>\n</tr>\n<tr>\n<td>tan</td>\n<td>0</td>\n<td>\\frac{1}{\\sqrt{3}}</td>\n<td>1</td>\n<td>\\sqrt{3}</td>\n<td>not<br/>defined</td>\n<td>0</td>\n<td>not<br/>defined</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1118.3,
+            612.7,
+            1248.9
+          ],
+          "conf": 0.951,
+          "text": "The values of cosec $x$, sec $x$ and cot $x$\nare the reciprocal of the values of $\\sin x$,\n$\\cos x$ and $\\tan x$, respectively."
+        },
+        {
+          "order": 7,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            119.0,
+            1258.2,
+            611.6,
+            1308.7
+          ],
+          "conf": 0.875,
+          "text": "3.3.1 Sign of trigonometric functions"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1301.3,
+            612.8,
+            1513.3
+          ],
+          "conf": 0.927,
+          "text": "Let P $(a, b)$ be a point on the unit circle\nwith centre at the origin such that\n$\\angle AOP = x$. If $\\angle AOQ = -x$, then the\ncoordinates of the point Q will be $(a,-b)$\n(Fig 3.7). Therefore"
+        },
+        {
+          "order": 9,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            593.3,
+            1131.6,
+            1174.5,
+            1650.0
+          ],
+          "conf": 0.961,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.9,
+            1512.8,
+            440.3,
+            1602.7
+          ],
+          "conf": 0.62,
+          "text": "$$\\cos (-x) = \\cos x$$\nand $$\\sin (-x) = -\\sin x$$"
+        },
+        {
+          "order": 11,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            829.5,
+            1655.9,
+            941.3,
+            1702.6
+          ],
+          "conf": 0.846,
+          "text": "Fig 3.7"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1610.6,
+            612.7,
+            1700.1
+          ],
+          "conf": 0.903,
+          "text": "Since for every point P $(a, b)$ on\nthe unit circle, $-1 \\leq a \\leq 1$ and"
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0086_p0009.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            262.2,
+            1178.7,
+            870.4
+          ],
+          "conf": 0.866,
+          "text": "$-1 \\leq b \\leq 1$, we have $-1 \\leq \\cos x \\leq 1$ and $-1 \\leq \\sin x \\leq 1$ for all $x$. We have learnt in\n\nprevious classes that in the first quadrant $(0 < x < \\frac{\\pi}{2})$ $a$ and $b$ are both positive, in the\n\nsecond quadrant $(\\frac{\\pi}{2} < x < \\pi)$ $a$ is negative and $b$ is positive, in the third quadrant\n\n$(\\pi < x < \\frac{3\\pi}{2})$ $a$ and $b$ are both negative and in the fourth quadrant $(\\frac{3\\pi}{2} < x < 2\\pi)$ $a$ is\n\npositive and $b$ is negative. Therefore, $\\sin x$ is positive for $0 < x < \\pi$, and negative for\n\n$\\pi < x < 2\\pi$. Similarly, $\\cos x$ is positive for $0 < x < \\frac{\\pi}{2}$, negative for $\\frac{\\pi}{2} < x < \\frac{3\\pi}{2}$ and also\n\npositive for $\\frac{3\\pi}{2} < x < 2\\pi$. Likewise, we can find the signs of other trigonometric\n\nformations in different quadrants. In fact, we have the following table."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            847.4,
+            979.0,
+            899.8
+          ],
+          "conf": 0.829,
+          "text": "functions in different quadrants. In fact, we have the following table."
+        },
+        {
+          "order": 2,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            120.6,
+            894.3,
+            1178.2,
+            1407.7
+          ],
+          "conf": 0.984,
+          "text": "<table>\n<thead>\n<tr>\n<th></th>\n<th>I</th>\n<th>II</th>\n<th>III</th>\n<th>IV</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$\\sin x$</td>\n<td>+</td>\n<td>+</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>$\\cos x$</td>\n<td>+</td>\n<td>-</td>\n<td>-</td>\n<td>+</td>\n</tr>\n<tr>\n<td>$\\tan x$</td>\n<td>+</td>\n<td>-</td>\n<td>+</td>\n<td>-</td>\n</tr>\n<tr>\n<td>$\\csc x$</td>\n<td>+</td>\n<td>+</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>$\\sec x$</td>\n<td>+</td>\n<td>-</td>\n<td>-</td>\n<td>+</td>\n</tr>\n<tr>\n<td>$\\cot x$</td>\n<td>+</td>\n<td>-</td>\n<td>+</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1428.0,
+            1178.1,
+            1553.4
+          ],
+          "conf": 0.875,
+          "text": "3.3.2 Domain and range of trigonometric functions From the definition of sine\nand cosine functions, we observe that they are defined for all real numbers. Further,\nwe observe that for each real number $x$,"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            421.7,
+            1549.1,
+            881.5,
+            1598.7
+          ],
+          "conf": 0.888,
+          "text": "$$-1 \\le \\sin x \\le 1 \\text{ and } -1 \\le \\cos x \\le 1$$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            1608.2,
+            1177.9,
+            1706.2
+          ],
+          "conf": 0.926,
+          "text": "Thus, domain of $y = \\sin x$ and $y = \\cos x$ is the set of all real numbers and range\nis the interval $[-1, 1]$, i.e., $- 1 \\le y \\le 1$."
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0086_p0010.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.5,
+            256.1,
+            1179.6,
+            684.0
+          ],
+          "conf": 0.979,
+          "text": "Since cosec $x = \\frac{1}{\\sin x}$, the domain of $y = \\text{cosec } x$ is the set $\\{ x : x \\in \\mathbf{R} \\text{ and }$\n$x \\neq n \\pi, n \\in \\mathbf{Z} \\}$ and range is the set $\\{y : y \\in \\mathbf{R}, y \\geq 1 \\text{ or } y \\leq -1\\}$. Similarly, the domain\nof $y = \\sec x$ is the set $\\{x : x \\in \\mathbf{R} \\text{ and } x \\neq (2n + 1) \\frac{\\pi}{2}, n \\in \\mathbf{Z}\\}$ and range is the set\n$\\{y : y \\in \\mathbf{R}, y \\leq -1 \\text{ or } y \\geq 1\\}$. The domain of $y = \\tan x$ is the set $\\{x : x \\in \\mathbf{R} \\text{ and }$\n$x \\neq (2n + 1) \\frac{\\pi}{2}, n \\in \\mathbf{Z}\\}$ and range is the set of all real numbers. The domain of\n$y = \\cot x$ is the set $\\{x : x \\in \\mathbf{R} \\text{ and } x \\neq n \\pi, n \\in \\mathbf{Z}\\}$ and the range is the set of all real\nnumbers."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            701.3,
+            1178.5,
+            1058.1
+          ],
+          "conf": 0.975,
+          "text": "We further observe that in the first quadrant, as $x$ increases from $0$ to $\\frac{\\pi}{2}$, $\\sin x$\nincreases from $0$ to $1$, as $x$ increases from $\\frac{\\pi}{2}$ to $\\pi$, $\\sin x$ decreases from $1$ to $0$. In the\nthird quadrant, as $x$ increases from $\\pi$ to $\\frac{3\\pi}{2}$, $\\sin x$ decreases from $0$ to $-1$and finally, in\nthe fourth quadrant, $\\sin x$ increases from $-1$ to $0$ as $x$ increases from $\\frac{3\\pi}{2}$ to $2\\pi$.\nSimilarly, we can discuss the behaviour of other trigonometric functions. In fact, we\nhave the following table:"
+        },
+        {
+          "order": 2,
+          "label": "Table",
+          "type": "Table",
+          "bbox_xyxy": [
+            120.6,
+            1066.8,
+            1177.3,
+            1516.8
+          ],
+          "conf": 0.982,
+          "text": "<table>\n<thead>\n<tr>\n<th></th>\n<th>I quadrant</th>\n<th>II quadrant</th>\n<th>III quadrant</th>\n<th>IV quadrant</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>sin</td>\n<td>increases from 0 to 1</td>\n<td>decreases from 1 to 0</td>\n<td>decreases from 0 to -1</td>\n<td>increases from -1 to 0</td>\n</tr>\n<tr>\n<td>cos</td>\n<td>decreases from 1 to 0</td>\n<td>decreases from 0 to -1</td>\n<td>increases from -1 to 0</td>\n<td>increases from 0 to 1</td>\n</tr>\n<tr>\n<td>tan</td>\n<td>increases from 0 to \\infty</td>\n<td>increases from -\\infty to 0</td>\n<td>increases from 0 to \\infty</td>\n<td>increases from -\\infty to 0</td>\n</tr>\n<tr>\n<td>cot</td>\n<td>decreases from \\infty to 0</td>\n<td>decreases from 0 to -\\infty</td>\n<td>decreases from \\infty to 0</td>\n<td>decreases from 0 to -\\infty</td>\n</tr>\n<tr>\n<td>sec</td>\n<td>increases from 1 to \\infty</td>\n<td>increases from -\\infty to -1</td>\n<td>decreases from -1 to -\\infty</td>\n<td>decreases from \\infty to 1</td>\n</tr>\n<tr>\n<td>cosec</td>\n<td>decreases from \\infty to 1</td>\n<td>increases from 1 to \\infty</td>\n<td>increases from -\\infty to -1</td>\n<td>decreases from -1 to -\\infty</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            1567.1,
+            1178.8,
+            1719.7
+          ],
+          "conf": 0.927,
+          "text": "Remark In the above table, the statement $\\tan x$ increases from $0$ to $\\infty$ (infinity) for\n\n\n$0 < x < \\frac{\\pi}{2}$ simply means that $\\tan x$ increases as $x$ increases for $0 < x < \\frac{\\pi}{2}$ and"
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0086_p0011.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            275.3,
+            1179.2,
+            584.2
+          ],
+          "conf": 0.974,
+          "text": "assumes arbitrarily large positive values as $x$ approaches to $\\frac{\\pi}{2}$. Similarly, to say that\ncosec $x$ decreases from $-1$ to $-\\infty$ (minus infinity) in the fourth quadrant means that\ncosec $x$ decreases for $x \\in \\left(\\frac{3\\pi}{2}, 2\\pi\\right)$ and assumes arbitrarily large negative values as\n$x$ approaches to $2\\pi$. The symbols $\\infty$ and $-\\infty$ simply specify certain types of behaviour\nof functions and variables."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            585.2,
+            1180.5,
+            680.4
+          ],
+          "conf": 0.942,
+          "text": "We have already seen that values of $\\sin x$ and $\\cos x$ repeats after an interval of\n$2\\pi$. Hence, values of $\\operatorname{cosec} x$ and $\\sec x$ will also repeat after an interval of $2\\pi$. We"
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            127.5,
+            674.9,
+            1169.7,
+            1710.4
+          ],
+          "conf": 0.667,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            844.7,
+            953.0,
+            949.9,
+            1001.5
+          ],
+          "conf": 0.832,
+          "text": "Fig 3.8"
+        },
+        {
+          "order": 4,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            850.3,
+            1205.7,
+            955.6,
+            1253.2
+          ],
+          "conf": 0.819,
+          "text": "Fig 3.9"
+        },
+        {
+          "order": 5,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            430.3,
+            1658.9,
+            550.0,
+            1707.7
+          ],
+          "conf": 0.765,
+          "text": "Fig 3.10"
+        },
+        {
+          "order": 6,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            973.4,
+            1662.5,
+            1089.0,
+            1712.3
+          ],
+          "conf": 0.755,
+          "text": "Fig 3.11"
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0086_p0012.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            118.8,
+            257.3,
+            1178.2,
+            752.0
+          ],
+          "conf": 0.602,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            261.3,
+            739.9,
+            381.2,
+            787.0
+          ],
+          "conf": 0.893,
+          "text": "Fig 3.12"
+        },
+        {
+          "order": 2,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            787.4,
+            741.4,
+            906.6,
+            788.1
+          ],
+          "conf": 0.892,
+          "text": "Fig 3.13"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            796.5,
+            1179.0,
+            977.7
+          ],
+          "conf": 0.971,
+          "text": "shall see in the next section that $\\tan (\\pi + x) = \\tan x$. Hence, values of $\\tan x$ will repeat\nafter an interval of $\\pi$. Since $\\cot x$ is reciprocal of $\\tan x$, its values will also repeat after\nan interval of $\\pi$. Using this knowledge and behaviour of trigonometric functions, we can\nsketch the graph of these functions. The graph of these functions are given above:"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            996.5,
+            1178.3,
+            1717.8
+          ],
+          "conf": 0.675,
+          "text": "Example 6 If $\\cos x = - \\frac{3}{5}$, $x$ lies in the third quadrant, find the values of other five\ntrigonometric functions.\n\nSolution Since $\\cos x = - \\frac{3}{5}$, we have $\\sec x = - \\frac{5}{3}$\n\nNow $\\sin^2 x + \\cos^2 x = 1$, i.e., $\\sin^2 x = 1 - \\cos^2 x$\n\nor $\\sin^2 x = 1 - \\frac{9}{25} = \\frac{16}{25}$\n\nHence $\\sin x = \\pm \\frac{4}{5}$\n\nSince $x$ lies in third quadrant, $\\sin x$ is negative. Therefore\n\n$\\sin x = - \\frac{4}{5}$\n\nwhich also gives\n\n$\\text{cosec } x = - \\frac{5}{4}$"
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0086_p0013.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            257.6,
+            352.6,
+            306.1
+          ],
+          "conf": 0.909,
+          "text": "Further, we have"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            275.6,
+            308.8,
+            859.3,
+            404.7
+          ],
+          "conf": 0.942,
+          "text": "$$\\tan x = \\frac{\\sin x}{\\cos x} = \\frac{4}{3} \\quad \\text{and} \\quad \\cot x = \\frac{\\cos x}{\\sin x} = \\frac{3}{4}.$$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.9,
+            412.5,
+            1179.1,
+            538.1
+          ],
+          "conf": 0.885,
+          "text": "Example 7 If $\\cot x = -\\frac{5}{12}$, $x$ lies in second quadrant, find the values of other five\ntrigonometric functions."
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            557.3,
+            827.8,
+            651.9
+          ],
+          "conf": 0.806,
+          "text": "Solution Since $\\cot x = -\\frac{5}{12}$, we have $\\tan x = -\\frac{12}{5}$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            655.7,
+            800.9,
+            747.6
+          ],
+          "conf": 0.858,
+          "text": "Now $\\sec^2 x = 1 + \\tan^2 x = 1 + \\frac{144}{25} = \\frac{169}{25}$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            753.9,
+            523.6,
+            842.6
+          ],
+          "conf": 0.849,
+          "text": "Hence $\\sec x = \\pm \\frac{13}{5}$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            849.1,
+            938.7,
+            900.6
+          ],
+          "conf": 0.889,
+          "text": "Since $x$ lies in second quadrant, $\\sec x$ will be negative. Therefore"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            338.7,
+            901.7,
+            534.7,
+            989.7
+          ],
+          "conf": 0.897,
+          "text": "$$ \\sec x = - \\frac{13}{5}, $$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            985.0,
+            345.9,
+            1033.2
+          ],
+          "conf": 0.884,
+          "text": "which also gives"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            349.7,
+            1034.4,
+            526.4,
+            1125.6
+          ],
+          "conf": 0.875,
+          "text": "$$\\cos x = -\\frac{5}{13}$$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1120.4,
+            351.3,
+            1167.6
+          ],
+          "conf": 0.849,
+          "text": "Further, we have"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            346.6,
+            1166.2,
+            913.4,
+            1261.0
+          ],
+          "conf": 0.885,
+          "text": "$$ \\sin x = \\tan x \\cos x = (-\\frac{12}{5}) \\times (-\\frac{5}{13}) = \\frac{12}{13} $$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1262.4,
+            607.6,
+            1361.9
+          ],
+          "conf": 0.836,
+          "text": "and $\\operatorname{cosec} x=\\frac{1}{\\sin x}=\\frac{13}{12}$."
+        },
+        {
+          "order": 13,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            1385.9,
+            1149.6,
+            1646.7
+          ],
+          "conf": 0.607,
+          "text": "Example 8 Find the value of $\\sin \\frac{31\\pi}{3}$.\n\nSolution We know that values of $\\sin x$ repeats after an interval of $2\\pi$. Therefore\n\n$$\\sin \\frac{31\\pi}{3} = \\sin (10\\pi + \\frac{\\pi}{3}) = \\sin \\frac{\\pi}{3} = \\frac{\\sqrt{3}}{2}.$$"
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0086_p0014.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            258.2,
+            1180.1,
+            434.3
+          ],
+          "conf": 0.667,
+          "text": "Example 9 Find the value of $\\cos (-1710^{\\circ})$.\n\nSolution We know that values of $\\cos x$ repeats after an interval of $2\\pi$ or $360^{\\circ}$.\nTherefore, $\\cos (-1710^{\\circ}) = \\cos (-1710^{\\circ} + 5 \\times 360^{\\circ})$\n$= \\cos (-1710^{\\circ} + 1800^{\\circ}) = \\cos 90^{\\circ} = 0.$"
+        },
+        {
+          "order": 1,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            523.2,
+            450.7,
+            773.9,
+            506.0
+          ],
+          "conf": 0.739,
+          "text": "EXERCISE 3.2"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            511.9,
+            1022.4,
+            561.6
+          ],
+          "conf": 0.93,
+          "text": "Find the values of other five trigonometric functions in Exercises 1 to 5."
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            134.9,
+            577.8,
+            697.2,
+            1059.8
+          ],
+          "conf": 0.929,
+          "text": "1. $\\cos x = -\\frac{1}{2}, x$ lies in third quadrant.\n\n2. $\\sin x = \\frac{3}{5}, x$ lies in second quadrant.\n\n3. $\\cot x = \\frac{3}{4}, x$ lies in third quadrant.\n\n4. $\\sec x = \\frac{13}{5}, x$ lies in fourth quadrant.\n\n5. $\\tan x = -\\frac{5}{12}, x$ lies in second quadrant."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1072.2,
+            950.6,
+            1122.3
+          ],
+          "conf": 0.913,
+          "text": "Find the values of the trigonometric functions in Exercises 6 to 10."
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            130.9,
+            1127.5,
+            892.1,
+            1363.6
+          ],
+          "conf": 0.888,
+          "text": "6. $\\sin 765^{\\circ}$                                                                                                   7. $\\text{cosec } (-1410^{\\circ})$\n\n8. $\\tan \\frac{19\\pi}{3}$                                                                                                   9. $\\sin (-\\frac{11\\pi}{3})$\n\n10. $\\cot (-\\frac{15\\pi}{4})$"
+        },
+        {
+          "order": 6,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            118.2,
+            1377.9,
+            1059.9,
+            1428.4
+          ],
+          "conf": 0.883,
+          "text": "3.4 Trigonometric Functions of Sum and Difference of Two Angles"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1418.7,
+            1179.0,
+            1539.8
+          ],
+          "conf": 0.955,
+          "text": "In this Section, we shall derive expressions for trigonometric functions of the sum and\ndifference of two numbers (angles) and related expressions. The basic results in this\nconnection are called *trigonometric identities*. We have seen that"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            134.9,
+            1558.6,
+            458.0,
+            1655.9
+          ],
+          "conf": 0.863,
+          "text": "1. $\\sin (-x) = -\\sin x$\n\n2. $\\cos (-x) = \\cos x$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1658.9,
+            628.2,
+            1706.6
+          ],
+          "conf": 0.888,
+          "text": "We shall now prove some more results:"
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0086_p0015.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.2,
+            267.7,
+            707.1,
+            317.7
+          ],
+          "conf": 0.806,
+          "text": "3. $\\cos (x + y) = \\cos x \\cos y - \\sin x \\sin y$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            326.6,
+            1179.5,
+            511.5
+          ],
+          "conf": 0.973,
+          "text": "Consider the unit circle with centre at the origin. Let $x$ be the angle $\\mathrm{P}_4\\mathrm{OP}_1$and $y$ be\nthe angle $\\mathrm{P}_1\\mathrm{OP}_2$. Then $(x+y)$ is the angle $\\mathrm{P}_4\\mathrm{OP}_2$. Also let $(-y)$ be the angle $\\mathrm{P}_4\\mathrm{OP}_3$.\nTherefore, $\\mathrm{P}_1$, $\\mathrm{P}_2$, $\\mathrm{P}_3$ and $\\mathrm{P}_4$ will have the coordinates $\\mathrm{P}_1(\\cos x, \\sin x)$,\n$\\mathrm{P}_2 [\\cos (x+y), \\sin (x+y)]$, $\\mathrm{P}_3 [\\cos (-y), \\sin (-y)]$ and $\\mathrm{P}_4 (1, 0)$ (Fig 3.14)."
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            234.0,
+            504.1,
+            1051.7,
+            1192.4
+          ],
+          "conf": 0.958,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            632.8,
+            1199.8,
+            762.2,
+            1244.9
+          ],
+          "conf": 0.914,
+          "text": "Fig 3.14"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1246.2,
+            1178.5,
+            1334.9
+          ],
+          "conf": 0.938,
+          "text": "Consider the triangles $P_1OP_3$ and $P_2OP_4$. They are congruent (Why?). Therefore,\n$P_1P_3$ and $P_2P_4$ are equal. By using distance formula, we get"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            220.0,
+            1332.9,
+            1108.4,
+            1544.3
+          ],
+          "conf": 0.91,
+          "text": "$$\\text{P}_1\\text{P}_3^2 = [\\cos x - \\cos (-y)]^2 + [\\sin x - \\sin(-y)]^2$$\n$$= (\\cos x - \\cos y)^2 + (\\sin x + \\sin y)^2$$\n$$= \\cos^2 x + \\cos^2 y - 2 \\cos x \\cos y + \\sin^2 x + \\sin^2 y + 2\\sin x \\sin y$$\n$$= 2 - 2 (\\cos x \\cos y - \\sin x \\sin y) \\qquad (\\text{Why?})$$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            1547.9,
+            915.5,
+            1707.5
+          ],
+          "conf": 0.877,
+          "text": "Also, $\\quad \\mathrm{P}_{2} \\mathrm{P}_{4}^{2} \\quad=[1-\\cos (x+y)]^{2}+[0-\\sin (x+y)]^{2}$\n$\\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\"
+        }
+      ],
+      "page": 15
+    },
+    {
+      "image": "0086_p0016.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            260.3,
+            734.4,
+            320.0
+          ],
+          "conf": 0.756,
+          "text": "Since $\\mathrm{P}_1 \\mathrm{P}_3 = \\mathrm{P}_2 \\mathrm{P}_4$, we have $\\mathrm{P}_1 \\mathrm{P}_3^2 = \\mathrm{P}_2 \\mathrm{P}_4^2$."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            308.2,
+            907.3,
+            358.0
+          ],
+          "conf": 0.85,
+          "text": "Therefore, $2 -2 (\\cos x \\cos y - \\sin x \\sin y) = 2 - 2 \\cos (x + y)$."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            358.7,
+            704.5,
+            408.1
+          ],
+          "conf": 0.85,
+          "text": "Hence $\\cos (x + y) = \\cos x \\cos y - \\sin x \\sin y$"
+        },
+        {
+          "order": 3,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            408.1,
+            810.3,
+            566.2
+          ],
+          "conf": 0.601,
+          "text": "4. $\\cos (x - y) = \\cos x \\cos y + \\sin x \\sin y$\nReplacing $y$ by $-y$ in identity 3, we get\n$\\cos (x + (-y)) = \\cos x \\cos (-y) - \\sin x \\sin (-y)$\nor $\\cos (x - y) = \\cos x \\cos y + \\sin x \\sin y$"
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            574.9,
+            468.5,
+            656.1
+          ],
+          "conf": 0.733,
+          "text": "5. $\\cos \\left(\\frac{\\pi}{2}-x\\right)=\\sin x$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            673.5,
+            822.9,
+            753.4
+          ],
+          "conf": 0.818,
+          "text": "If we replace $x$ by $\\frac{\\pi}{2}$ and $y$ by $x$ in Identity (4), we get"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.3,
+            769.1,
+            818.0,
+            854.8
+          ],
+          "conf": 0.83,
+          "text": "$$\\cos \\left(\\frac{\\pi}{2}-x\\right)=\\cos \\frac{\\pi}{2} \\cos x+\\sin \\frac{\\pi}{2} \\sin x=\\sin x.$$"
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            868.7,
+            466.7,
+            950.4
+          ],
+          "conf": 0.762,
+          "text": "6. $\\sin \\left( \\frac{\\pi}{2} - x \\right) = \\cos x$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            944.9,
+            503.5,
+            995.2
+          ],
+          "conf": 0.885,
+          "text": "Using the Identity 5, we have"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.4,
+            998.1,
+            720.9,
+            1096.3
+          ],
+          "conf": 0.888,
+          "text": "$$\\sin \\left( \\frac{\\pi}{2} - x \\right) = \\cos \\left[ \\frac{\\pi}{2} - \\left( \\frac{\\pi}{2} - x \\right) \\right] = \\cos x.$$"
+        },
+        {
+          "order": 10,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1093.6,
+            703.4,
+            1177.4
+          ],
+          "conf": 0.609,
+          "text": "7. $\\sin (x + y) = \\sin x \\cos y + \\cos x \\sin y$\nWe know that"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            194.6,
+            1180.5,
+            851.2,
+            1417.8
+          ],
+          "conf": 0.762,
+          "text": "$$\\sin (x + y) = \\cos \\left( \\frac{\\pi}{2} - (x + y) \\right) = \\cos \\left( \\left( \\frac{\\pi}{2} - x \\right) - y \\right)$$\n\n$$= \\cos \\left( \\frac{\\pi}{2} - x \\right) \\cos y + \\sin \\left( \\frac{\\pi}{2} - x \\right) \\sin y$$\n\n$$= \\sin x \\cos y + \\cos x \\sin y$$"
+        },
+        {
+          "order": 12,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1410.9,
+            839.4,
+            1495.1
+          ],
+          "conf": 0.658,
+          "text": "8. $\\sin (x - y) = \\sin x \\cos y - \\cos x \\sin y$\nIf we replace $y$ by $-y$, in the Identity 7, we get the result."
+        },
+        {
+          "order": 13,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            1491.1,
+            1177.8,
+            1575.1
+          ],
+          "conf": 0.802,
+          "text": "9. By taking suitable values of $x$ and $y$ in the identities 3, 4, 7 and 8, we get the\nfollowing results:"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.2,
+            1583.7,
+            874.2,
+            1708.7
+          ],
+          "conf": 0.753,
+          "text": "$$ \\cos \\left(\\frac{\\pi}{2}+x\\right)=-\\sin x \\qquad \\sin \\left(\\frac{\\pi}{2}+x\\right)=\\cos x $$\n$$ \\cos (\\pi-x)=-\\cos x \\qquad \\sin (\\pi-x)=\\sin x $$"
+        }
+      ],
+      "page": 16
+    },
+    {
+      "image": "0086_p0017.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.6,
+            259.7,
+            949.0,
+            342.9
+          ],
+          "conf": 0.854,
+          "text": "$\\cos (\\pi + x) = - \\cos x$      $\\sin (\\pi + x) = - \\sin x$\n$\\cos (2\\pi - x) = \\cos x$      $\\sin (2\\pi - x) = - \\sin x$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            347.9,
+            1178.6,
+            432.6
+          ],
+          "conf": 0.954,
+          "text": "Similar results for $\\tan x$, $\\cot x$, $\\sec x$ and $\\csc x$ can be obtained from the results of $\\sin$\n$x$ and $\\cos x$."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            445.9,
+            1097.3,
+            525.7
+          ],
+          "conf": 0.737,
+          "text": "10. If none of the angles $x$, $y$ and $(x + y)$ is an odd multiple of $\\frac{\\pi}{2}$, then"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            287.7,
+            536.4,
+            678.1,
+            626.8
+          ],
+          "conf": 0.913,
+          "text": "$$ \\tan (x + y) = \\frac{\\tan x + \\tan y}{1 - \\tan x \\tan y} $$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            650.2,
+            1179.1,
+            773.9
+          ],
+          "conf": 0.93,
+          "text": "Since none of the $x$, $y$ and $(x + y)$ is an odd multiple of $\\frac{\\pi}{2}$, it follows that $\\cos x$,\n$\\cos y$ and $\\cos (x + y)$ are non-zero. Now"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            286.3,
+            781.1,
+            965.8,
+            880.1
+          ],
+          "conf": 0.931,
+          "text": "$$\\tan (x+y) = \\frac{\\sin (x+y)}{\\cos (x+y)} = \\frac{\\sin x \\cos y + \\cos x \\sin y}{\\cos x \\cos y - \\sin x \\sin y}.$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            880.7,
+            890.1,
+            930.4
+          ],
+          "conf": 0.908,
+          "text": "Dividing numerator and denominator by $\\cos x \\cos y$, we have"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            285.7,
+            941.8,
+            805.2,
+            1122.9
+          ],
+          "conf": 0.901,
+          "text": "$$\\tan (x+y) = \\frac{\\frac{\\sin x \\cos y}{\\cos x \\cos y} + \\frac{\\cos x \\sin y}{\\cos x \\cos y}}{\\frac{\\cos x \\cos y}{\\cos x \\cos y} - \\frac{\\sin x \\sin y}{\\cos x \\cos y}}$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            433.8,
+            1146.7,
+            656.9,
+            1237.5
+          ],
+          "conf": 0.851,
+          "text": "$$ = \\frac{\\tan x + \\tan y}{1 - \\tan x \\tan y} $$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            1254.2,
+            681.3,
+            1346.9
+          ],
+          "conf": 0.716,
+          "text": "11. $\\tan (x-y)=\\frac{\\tan x-\\tan y}{1+\\tan x \\tan y}$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1345.2,
+            683.1,
+            1395.0
+          ],
+          "conf": 0.875,
+          "text": "If we replace $y$ by $-y$ in Identity 10, we get"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            296.3,
+            1391.0,
+            898.3,
+            1534.4
+          ],
+          "conf": 0.797,
+          "text": "$$\\tan (x-y) = \\tan [x + (-y)]$$\n$$= \\frac{\\tan x + \\tan (-y)}{1 - \\tan x \\tan (-y)} = \\frac{\\tan x - \\tan y}{1 + \\tan x \\tan y}$$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1542.0,
+            1010.1,
+            1593.0
+          ],
+          "conf": 0.698,
+          "text": "12. If none of the angles $x$, $y$ and $(x + y)$ is a multiple of $\\pi$, then"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            289.4,
+            1603.2,
+            668.6,
+            1694.2
+          ],
+          "conf": 0.877,
+          "text": "$$ \\cot (x+y) = \\frac{\\cot x \\cot y - 1}{\\cot y + \\cot x} $$"
+        }
+      ],
+      "page": 17
+    },
+    {
+      "image": "0086_p0018.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            258.2,
+            1178.7,
+            343.3
+          ],
+          "conf": 0.954,
+          "text": "Since, none of the $x$, $y$ and $(x + y)$ is multiple of $\\pi$, we find that $\\sin x \\sin y$ and\n$\\sin (x + y)$ are non-zero. Now,"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.2,
+            348.5,
+            844.2,
+            440.8
+          ],
+          "conf": 0.945,
+          "text": "$$ \\cot (x+y) = \\frac{\\cos (x+y)}{\\sin (x+y)} = \\frac{\\cos x \\cos y - \\sin x \\sin y}{\\sin x \\cos y + \\cos x \\sin y} $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.9,
+            439.7,
+            939.0,
+            487.9
+          ],
+          "conf": 0.925,
+          "text": "Dividing numerator and denominator by $\\sin x \\sin y$, we have"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.9,
+            493.1,
+            545.9,
+            584.1
+          ],
+          "conf": 0.935,
+          "text": "$$ \\cot (x + y) = \\frac{\\cot x \\cot y - 1}{\\cot y + \\cot x} $$"
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            601.9,
+            1144.3,
+            695.6
+          ],
+          "conf": 0.728,
+          "text": "13. $\\mathbf{cot} (x - y) = \\frac{\\mathbf{cot} x \\mathbf{cot} y + 1}{\\mathbf{cot} y - \\mathbf{cot} x}$ if none of angles $x, y$ and $x-y$ is a multiple of $\\pi$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            691.2,
+            792.1,
+            741.6
+          ],
+          "conf": 0.886,
+          "text": "If we replace $y$ by $-y$ in identity 12, we get the result"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            744.4,
+            1056.9,
+            839.0
+          ],
+          "conf": 0.833,
+          "text": "14. $\\cos 2x = \\cos^2 x - \\sin^2 x = 2 \\cos^2 x - 1 = 1 - 2 \\sin^2 x = \\frac{1 - \\tan^2 x}{1 + \\tan^2 x}$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            840.9,
+            317.1,
+            887.5
+          ],
+          "conf": 0.905,
+          "text": "We know that"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            269.6,
+            888.1,
+            762.3,
+            934.6
+          ],
+          "conf": 0.812,
+          "text": "$$\\cos (x + y) = \\cos x \\cos y - \\sin x \\sin y$$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.4,
+            923.4,
+            514.5,
+            971.7
+          ],
+          "conf": 0.841,
+          "text": "Replacing $y$ by $x$, we get"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            325.3,
+            962.3,
+            866.4,
+            1046.7
+          ],
+          "conf": 0.797,
+          "text": "$$\\cos 2x = \\cos^2 x - \\sin^2 x$$\n$$= \\cos^2 x - (1 - \\cos^2 x) = 2 \\cos^2 x - 1$$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.9,
+            1032.8,
+            844.6,
+            1118.0
+          ],
+          "conf": 0.763,
+          "text": "Again, $\\cos 2x = \\cos^2 x - \\sin^2 x$\n$= 1 - \\sin^2 x - \\sin^2 x = 1 - 2 \\sin^2 x.$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            121.0,
+            1124.4,
+            873.2,
+            1219.4
+          ],
+          "conf": 0.836,
+          "text": "We have $\\cos 2x = \\cos^2 x - \\sin^2 x = \\frac{\\cos^2 x - \\sin^2 x}{\\cos^2 x + \\sin^2 x}$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            186.2,
+            1218.3,
+            872.8,
+            1266.9
+          ],
+          "conf": 0.877,
+          "text": "Dividing numerator and denominator by $\\cos^2 x$, we get"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            324.5,
+            1269.4,
+            1032.1,
+            1366.7
+          ],
+          "conf": 0.893,
+          "text": "$\\cos 2x = \\frac{1 - \\tan^2 x}{1 + \\tan^2 x}, \\quad x \\neq n\\pi + \\frac{\\pi}{2}, \\text{ where } n \\text{ is an integer}$"
+        },
+        {
+          "order": 15,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1386.2,
+            1095.6,
+            1477.6
+          ],
+          "conf": 0.705,
+          "text": "15. $\\sin 2x = 2 \\sin x \\cos x = \\frac{2 \\tan x}{1 + \\tan^2 x} \\quad x \\neq n\\pi + \\frac{\\pi}{2}$, where n is an integer"
+        },
+        {
+          "order": 16,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.8,
+            1475.9,
+            254.7,
+            1521.7
+          ],
+          "conf": 0.82,
+          "text": "We have"
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            253.0,
+            1515.8,
+            729.6,
+            1563.5
+          ],
+          "conf": 0.77,
+          "text": "$$ \\sin (x + y) = \\sin x \\cos y + \\cos x \\sin y $$"
+        },
+        {
+          "order": 18,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.7,
+            1560.8,
+            725.1,
+            1609.7
+          ],
+          "conf": 0.834,
+          "text": "Replacing $y$ by $x$, we get $\\sin 2x = 2 \\sin x \\cos x$."
+        },
+        {
+          "order": 19,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1613.1,
+            583.8,
+            1702.6
+          ],
+          "conf": 0.853,
+          "text": "Again $\\sin 2x = \\frac{2\\sin x \\cos x}{\\cos^2 x + \\sin^2 x}$"
+        }
+      ],
+      "page": 18
+    },
+    {
+      "image": "0086_p0019.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            185.1,
+            257.6,
+            660.8,
+            308.2
+          ],
+          "conf": 0.916,
+          "text": "Dividing each term by $\\cos^2 x$, we get"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            275.7,
+            310.1,
+            518.8,
+            403.4
+          ],
+          "conf": 0.919,
+          "text": "$$ \\sin 2x = \\frac{2\\tan x}{1+\\tan^2 x} $$"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            419.7,
+            948.2,
+            514.5
+          ],
+          "conf": 0.894,
+          "text": "16. $\\tan 2x = \\frac{2\\tan x}{1 - \\tan^2 x}$ if $2x \\neq n\\pi + \\frac{\\pi}{2}$, where n is an integer"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.6,
+            510.3,
+            317.7,
+            556.7
+          ],
+          "conf": 0.894,
+          "text": "We know that"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            276.2,
+            564.3,
+            640.2,
+            654.7
+          ],
+          "conf": 0.907,
+          "text": "$$ \\tan (x + y) = \\frac{\\tan x + \\tan y}{1 - \\tan x \\tan y} $$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.5,
+            669.9,
+            753.0,
+            764.0
+          ],
+          "conf": 0.864,
+          "text": "Replacing $y$ by $x$ , we get $\\tan 2x = \\frac{2 \\tan x}{1 - \\tan^2 x}$"
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            761.9,
+            555.0,
+            811.3
+          ],
+          "conf": 0.778,
+          "text": "17. $\\sin 3x = 3 \\sin x - 4 \\sin^3 x$"
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            799.3,
+            259.4,
+            847.0
+          ],
+          "conf": 0.846,
+          "text": "We have,"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            233.3,
+            836.0,
+            828.0,
+            1066.7
+          ],
+          "conf": 0.894,
+          "text": "$$\\begin{aligned} \\sin 3x &= \\sin (2x + x) \\\\ &= \\sin 2x \\cos x + \\cos 2x \\sin x \\\\ &= 2 \\sin x \\cos x \\cos x + (1 - 2\\sin^2 x) \\sin x \\\\ &= 2 \\sin x (1 - \\sin^2 x) + \\sin x - 2 \\sin^3 x \\\\ &= 2 \\sin x - 2 \\sin^3 x + \\sin x - 2 \\sin^3 x \\\\ &= 3 \\sin x - 4 \\sin^3 x \\end{aligned}$$"
+        },
+        {
+          "order": 9,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.3,
+            1055.8,
+            846.3,
+            1358.9
+          ],
+          "conf": 0.51,
+          "text": "18. $\\cos 3x = 4 \\cos^3 x - 3 \\cos x$\nWe have,\n$$\\begin{aligned} \\cos 3x &= \\cos (2x + x) \\\\ &= \\cos 2x \\cos x - \\sin 2x \\sin x \\\\ &= (2\\cos^2 x - 1) \\cos x - 2\\sin x \\cos x \\sin x \\\\ &= (2\\cos^2 x - 1) \\cos x - 2\\cos x (1 - \\cos^2 x) \\\\ &= 2\\cos^3 x - \\cos x - 2\\cos x + 2 \\cos^3 x \\\\ &= 4\\cos^3 x - 3\\cos x. \\end{aligned}$$"
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1366.5,
+            1009.7,
+            1464.5
+          ],
+          "conf": 0.867,
+          "text": "19. $\\tan 3x = \\frac{3 \\tan x - \\tan^3 x}{1 - 3 \\tan^2 x}$ if $3x \\neq n\\pi + \\frac{\\pi}{2}$, where n is an integer"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1460.9,
+            522.9,
+            1510.7
+          ],
+          "conf": 0.791,
+          "text": "We have $\\tan 3x = \\tan (2x + x)$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            418.7,
+            1519.2,
+            914.4,
+            1690.0
+          ],
+          "conf": 0.889,
+          "text": "$$ = \\frac{\\tan 2x + \\tan x}{1 - \\tan 2x \\tan x} = \\frac{\\frac{2\\tan x}{1 - \\tan^2 x} + \\tan x}{1 - \\frac{2\\tan x \\cdot \\tan x}{1 - \\tan^2 x}} $$"
+        }
+      ],
+      "page": 19
+    },
+    {
+      "image": "0086_p0020.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            256.6,
+            275.3,
+            806.1,
+            373.5
+          ],
+          "conf": 0.934,
+          "text": "$$ = \\frac{2 \\tan x + \\tan x - \\tan^3 x}{1 - \\tan^2 x - 2 \\tan^2 x} = \\frac{3 \\tan x - \\tan^3 x}{1 - 3 \\tan^2 x} $$"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            391.2,
+            773.8,
+            768.2
+          ],
+          "conf": 0.813,
+          "text": "20. (i) $\\cos x + \\cos y = 2\\cos \\frac{x+y}{2} \\cos \\frac{x-y}{2}$\n\n(ii) $\\cos x - \\cos y = - 2\\sin \\frac{x+y}{2} \\sin \\frac{x-y}{2}$\n\n(iii) $\\sin x + \\sin y = 2\\sin \\frac{x+y}{2} \\cos \\frac{x-y}{2}$\n\n(iv) $\\sin x - \\sin y = 2\\cos \\frac{x+y}{2} \\sin \\frac{x-y}{2}$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.9,
+            764.9,
+            317.2,
+            811.7
+          ],
+          "conf": 0.904,
+          "text": "We know that"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            252.8,
+            806.4,
+            1079.1,
+            855.2
+          ],
+          "conf": 0.828,
+          "text": "$$ \\cos (x + y) = \\cos x \\cos y - \\sin x \\sin y \\qquad \\dots (1) $$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            846.8,
+            1079.9,
+            895.5
+          ],
+          "conf": 0.845,
+          "text": "and $\\cos (x-y) = \\cos x \\cos y + \\sin x \\sin y$ ... (2)"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.2,
+            886.7,
+            667.5,
+            936.9
+          ],
+          "conf": 0.883,
+          "text": "Adding and subtracting (1) and (2), we get"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            254.0,
+            928.7,
+            1079.7,
+            977.9
+          ],
+          "conf": 0.859,
+          "text": "$$ \\cos (x + y) + \\cos(x - y) = 2 \\cos x \\cos y \\qquad ... (3) $$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            969.2,
+            1079.4,
+            1019.7
+          ],
+          "conf": 0.833,
+          "text": "and $\\cos (x+y)-\\cos (x-y)=-2 \\sin x \\sin y \\ldots(4)$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.0,
+            1009.5,
+            1079.4,
+            1060.0
+          ],
+          "conf": 0.807,
+          "text": "Further $\\sin (x+y)=\\sin x \\cos y+\\cos x \\sin y$ ... (5)"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.2,
+            1050.5,
+            1080.2,
+            1100.3
+          ],
+          "conf": 0.836,
+          "text": "and $\\sin (x-y)=\\sin x \\cos y-\\cos x \\sin y$ ... (6)"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            1091.4,
+            664.2,
+            1141.3
+          ],
+          "conf": 0.89,
+          "text": "Adding and subtracting (5) and (6), we get"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            253.0,
+            1132.6,
+            1079.1,
+            1182.0
+          ],
+          "conf": 0.86,
+          "text": "$$ \\sin (x + y) + \\sin (x - y) = 2 \\sin x \\cos y \\quad \\dots (7) $$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            251.8,
+            1173.8,
+            1079.7,
+            1222.5
+          ],
+          "conf": 0.853,
+          "text": "$$ \\sin (x + y) - \\sin (x - y) = 2 \\cos x \\sin y \\qquad \\dots (8) $$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1214.5,
+            622.3,
+            1263.1
+          ],
+          "conf": 0.854,
+          "text": "Let $x + y = \\theta$ and $x - y = \\phi$. Therefore"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            258.6,
+            1264.5,
+            592.4,
+            1362.9
+          ],
+          "conf": 0.921,
+          "text": "$$x = \\left( \\frac{\\theta + \\phi}{2} \\right) \\text{and } y = \\left( \\frac{\\theta - \\phi}{2} \\right)$$"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1359.6,
+            914.7,
+            1408.9
+          ],
+          "conf": 0.904,
+          "text": "Substituting the values of $x$ and $y$ in (3), (4), (7) and (8), we get"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            252.2,
+            1410.0,
+            788.2,
+            1507.1
+          ],
+          "conf": 0.898,
+          "text": "$$\\cos \\theta + \\cos \\phi = 2 \\cos \\left( \\frac{\\theta + \\phi}{2} \\right) \\cos \\left( \\frac{\\theta - \\phi}{2} \\right)$$"
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            252.8,
+            1515.4,
+            810.4,
+            1615.0
+          ],
+          "conf": 0.905,
+          "text": "$$\\cos \\theta - \\cos \\phi = -2 \\sin \\left( \\frac{\\theta + \\phi}{2} \\right) \\sin \\left( \\frac{\\theta - \\phi}{2} \\right)$$"
+        },
+        {
+          "order": 18,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            253.0,
+            1623.4,
+            780.0,
+            1722.9
+          ],
+          "conf": 0.878,
+          "text": "$$ \\sin \\theta + \\sin \\phi = 2 \\sin \\left( \\frac{\\theta + \\phi}{2} \\right) \\cos \\left( \\frac{\\theta - \\phi}{2} \\right) $$"
+        }
+      ],
+      "page": 20
+    },
+    {
+      "image": "0086_p0021.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.9,
+            270.8,
+            711.1,
+            371.8
+          ],
+          "conf": 0.916,
+          "text": "$$ \\sin \\theta - \\sin \\phi = 2 \\cos \\left( \\frac{\\theta + \\phi}{2} \\right) \\sin \\left( \\frac{\\theta - \\phi}{2} \\right) $$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            365.6,
+            1052.9,
+            449.9
+          ],
+          "conf": 0.933,
+          "text": "Since $\\theta$ and $\\phi$ can take any real values, we can replace $\\theta$ by $x$ and $\\phi$ by $y$.\nThus, we get"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.0,
+            453.7,
+            1150.1,
+            547.0
+          ],
+          "conf": 0.918,
+          "text": "$$\\cos x + \\cos y = 2 \\cos \\frac{x+y}{2} \\cos \\frac{x-y}{2} ; \\cos x - \\cos y = -2 \\sin \\frac{x+y}{2} \\sin \\frac{x-y}{2} ,$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.1,
+            552.7,
+            1081.3,
+            644.5
+          ],
+          "conf": 0.909,
+          "text": "$$\\sin x + \\sin y = 2 \\sin \\frac{x+y}{2} \\cos \\frac{x-y}{2} ; \\sin x - \\sin y = 2 \\cos \\frac{x+y}{2} \\sin \\frac{x-y}{2} .$$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            645.2,
+            1117.7,
+            695.4
+          ],
+          "conf": 0.81,
+          "text": "$\\mathit{Remark}$ As a part of identities given in 20, we can prove the following results:"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            690.6,
+            807.8,
+            850.8
+          ],
+          "conf": 0.876,
+          "text": "21. (i) $2 \\cos x \\cos y = \\cos (x + y) + \\cos (x - y)$\n(ii) $-2 \\sin x \\sin y = \\cos (x + y) - \\cos (x - y)$\n(iii) $2 \\sin x \\cos y = \\sin (x + y) + \\sin (x - y)$\n(iv) $2 \\cos x \\sin y = \\sin (x + y) - \\sin (x - y).$"
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.9,
+            850.8,
+            883.9,
+            1329.2
+          ],
+          "conf": 0.691,
+          "text": "Example 10 Prove that\n\n$$3 \\sin \\frac{\\pi}{6} \\sec \\frac{\\pi}{3} - 4 \\sin \\frac{5\\pi}{6} \\cot \\frac{\\pi}{4} = 1$$\n\nSolution We have\n\n$$\\text{L.H.S.} = 3 \\sin \\frac{\\pi}{6} \\sec \\frac{\\pi}{3} - 4 \\sin \\frac{5\\pi}{6} \\cot \\frac{\\pi}{4}$$\n\n$$= 3 \\times \\frac{1}{2} \\times 2 - 4 \\sin \\left( \\pi - \\frac{\\pi}{6} \\right) \\times 1 = 3 - 4 \\sin \\frac{\\pi}{6}$$\n\n$$= 3 - 4 \\times \\frac{1}{2} = 1 = \\text{R.H.S.}$$"
+        },
+        {
+          "order": 7,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            1329.2,
+            748.0,
+            1599.2
+          ],
+          "conf": 0.747,
+          "text": "Example 11 Find the value of $\\sin 15^{\\circ}$.\n\nSolution We have\n$$\\begin{aligned} \\sin 15^{\\circ} &= \\sin (45^{\\circ} - 30^{\\circ}) \\\\ &= \\sin 45^{\\circ} \\cos 30^{\\circ} - \\cos 45^{\\circ} \\sin 30^{\\circ} \\\\ &= \\frac{1}{\\sqrt{2}} \\times \\frac{\\sqrt{3}}{2} - \\frac{1}{\\sqrt{2}} \\times \\frac{1}{2} = \\frac{\\sqrt{3} - 1}{2\\sqrt{2}} \\end{aligned}$$"
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1612.7,
+            641.8,
+            1701.3
+          ],
+          "conf": 0.804,
+          "text": "Example 12 Find the value of $\\tan \\frac{13\\pi}{12}$."
+        }
+      ],
+      "page": 21
+    },
+    {
+      "image": "0086_p0022.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.4,
+            258.0,
+            372.6,
+            305.3
+          ],
+          "conf": 0.854,
+          "text": "Solution We have"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            186.5,
+            311.2,
+            788.7,
+            408.1
+          ],
+          "conf": 0.903,
+          "text": "$$\\tan \\frac{13\\pi}{12} = \\tan \\left( \\pi + \\frac{\\pi}{12} \\right) = \\tan \\frac{\\pi}{12} = \\tan \\left( \\frac{\\pi}{4} - \\frac{\\pi}{6} \\right)$$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            292.5,
+            427.7,
+            873.9,
+            594.1
+          ],
+          "conf": 0.9,
+          "text": "$$ = \\frac{\\tan \\frac{\\pi}{4} - \\tan \\frac{\\pi}{6}}{1 + \\tan \\frac{\\pi}{4} \\tan \\frac{\\pi}{6}} = \\frac{1 - \\frac{1}{\\sqrt{3}}}{1 + \\frac{1}{\\sqrt{3}}} = \\frac{\\sqrt{3} - 1}{\\sqrt{3} + 1} = 2 - \\sqrt{3} $$"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            122.6,
+            612.2,
+            993.7,
+            1061.0
+          ],
+          "conf": 0.692,
+          "text": "Example 13 Prove that\n\n$$\\frac{\\sin(x+y)}{\\sin(x-y)} = \\frac{\\tan x + \\tan y}{\\tan x - \\tan y}$$\n\nSolution We have\n\n$$\\text{L.H.S.} \\quad = \\frac{\\sin(x+y)}{\\sin(x-y)} = \\frac{\\sin x \\cos y + \\cos x \\sin y}{\\sin x \\cos y - \\cos x \\sin y}$$\n\nDividing the numerator and denominator by $\\cos x \\cos y$, we get\n\n$$\\frac{\\sin(x+y)}{\\sin(x-y)} = \\frac{\\tan x + \\tan y}{\\tan x - \\tan y}$$"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.2,
+            1073.9,
+            892.6,
+            1683.6
+          ],
+          "conf": 0.575,
+          "text": "Example 14 Show that\n$$\\tan 3 \\ x \\ \\tan 2 \\ x \\ \\tan x = \\tan 3x - \\tan 2 \\ x - \\tan x$$\nSolution We know that $3x = 2x + x$\nTherefore, $\\tan 3x = \\tan (2x + x)$\nor $\\tan 3x = \\frac{\\tan 2x + \\tan x}{1 - \\tan 2x \\tan x}$\nor $\\tan 3x - \\tan 3x \\tan 2x \\tan x = \\tan 2x + \\tan x$\nor $\\tan 3x - \\tan 2x - \\tan x = \\tan 3x \\tan 2x \\tan x$\nor $\\tan 3x \\tan 2x \\tan x = \\tan 3x - \\tan 2x - \\tan x$.\nExample 15 Prove that\n$$\\cos \\left( \\frac{\\pi}{4} + x \\right) + \\cos \\left( \\frac{\\pi}{4} - x \\right) = \\sqrt{2} \\cos x$$\nSolution Using the Identity 20(i), we have"
+        }
+      ],
+      "page": 22
+    },
+    {
+      "image": "0086_p0023.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            271.6,
+            270.9,
+            1124.5,
+            680.2
+          ],
+          "conf": 0.688,
+          "text": "L.H.S. $\\quad = \\cos \\left( \\frac{\\pi}{4} + x \\right) + \\cos \\left( \\frac{\\pi}{4} - x \\right)$\n\n\n$$= 2 \\cos \\left( \\frac{\\frac{\\pi}{4} + x + \\frac{\\pi}{4} - x}{2} \\right) \\cos \\left( \\frac{\\frac{\\pi}{4} + x - \\left( \\frac{\\pi}{4} - x \\right)}{2} \\right)$$\n\n\n$$= 2 \\cos \\frac{\\pi}{4} \\cos x = 2 \\times \\frac{1}{\\sqrt{2}} \\cos x = \\sqrt{2} \\cos x = \\text{R.H.S.}$$"
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            724.9,
+            1113.7,
+            1064.4
+          ],
+          "conf": 0.649,
+          "text": "Example 16 Prove that $\\frac{\\cos 7x + \\cos 5x}{\\sin 7x - \\sin 5x} = \\cot x$\n\nSolution Using the Identities 20 (i) and 20 (iv), we get\n\n$$ \\text{L.H.S.} \\quad = \\frac{2\\cos \\frac{7x + 5x}{2} \\cos \\frac{7x - 5x}{2}}{2\\cos \\frac{7x + 5x}{2} \\sin \\frac{7x - 5x}{2}} = \\frac{\\cos x}{\\sin x} = \\cot x = \\text{R.H.S.} $$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.3,
+            1102.2,
+            925.2,
+            1651.3
+          ],
+          "conf": 0.585,
+          "text": "Example 17 Prove that = $\\frac{\\sin 5x - 2\\sin 3x + \\sin x}{\\cos 5x - \\cos x} = \\tan x$\n\nSolution We have\n\n$$ \\text{L.H.S.} = \\frac{\\sin 5x - 2\\sin 3x + \\sin x}{\\cos 5x - \\cos x} = \\frac{\\sin 5x + \\sin x - 2\\sin 3x}{\\cos 5x - \\cos x} $$\n\n$$ = \\frac{2\\sin 3x \\cos 2x - 2\\sin 3x}{-2\\sin 3x \\sin 2x} = -\\frac{\\sin 3x (\\cos 2x - 1)}{\\sin 3x \\sin 2x} $$\n\n$$ = \\frac{1 - \\cos 2x}{\\sin 2x} = \\frac{2\\sin^2 x}{2\\sin x \\cos x} = \\tan x = \\text{R.H.S.} $$"
+        }
+      ],
+      "page": 23
+    },
+    {
+      "image": "0086_p0024.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            517.1,
+            262.2,
+            779.0,
+            316.7
+          ],
+          "conf": 0.774,
+          "text": "EXERCISE 3.3"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            310.3,
+            278.2,
+            357.2
+          ],
+          "conf": 0.896,
+          "text": "Prove that:"
+        },
+        {
+          "order": 2,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            134.4,
+            361.6,
+            1159.1,
+            640.7
+          ],
+          "conf": 0.602,
+          "text": "1. $\\sin^2 \\frac{\\pi}{6} + \\cos^2 \\frac{\\pi}{3} - \\tan^2 \\frac{\\pi}{4} = -\\frac{1}{2}$      2. $2\\sin^2 \\frac{\\pi}{6} + \\text{cosec}^2 \\frac{7\\pi}{6} \\cos^2 \\frac{\\pi}{3} = \\frac{3}{2}$\n\n3. $\\cot^2 \\frac{\\pi}{6} + \\text{cosec}^2 \\frac{5\\pi}{6} + 3\\tan^2 \\frac{\\pi}{6} = 6$      4. $2\\sin^2 \\frac{3\\pi}{4} + 2\\cos^2 \\frac{\\pi}{4} + 2\\sec^2 \\frac{\\pi}{3} = 10$\n\n5. Find the value of:\n(i) $\\sin 75^\\circ$                                     (ii) $\\tan 15^\\circ$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            660.8,
+            389.7,
+            709.3
+          ],
+          "conf": 0.922,
+          "text": "Prove the following:"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            135.5,
+            710.6,
+            950.3,
+            812.1
+          ],
+          "conf": 0.818,
+          "text": "6. $\\cos \\left(\\frac{\\pi}{4}-x\\right) \\cos \\left(\\frac{\\pi}{4}-y\\right)-\\sin \\left(\\frac{\\pi}{4}-x\\right) \\sin \\left(\\frac{\\pi}{4}-y\\right)=\\sin (x+y)$"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            137.2,
+            830.7,
+            1171.3,
+            1002.8
+          ],
+          "conf": 0.525,
+          "text": "7. $\\frac{\\tan \\left(\\frac{\\pi}{4}+x\\right)}{\\tan \\left(\\frac{\\pi}{4}-x\\right)}=\\left(\\frac{1+\\tan x}{1-\\tan x}\\right)^{2}$ 8. $\\frac{\\cos (\\pi+x) \\cos (-x)}{\\sin (\\pi-x) \\cos \\left(\\frac{\\pi}{2}+x\\right)}=\\cot ^{2} x$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            135.8,
+            1023.9,
+            971.9,
+            1123.3
+          ],
+          "conf": 0.773,
+          "text": "9. $\\cos \\left(\\frac{3 \\pi}{2}+x\\right) \\cos (2 \\pi+x)\\left[\\cot \\left(\\frac{3 \\pi}{2}-x\\right)+\\cot (2 \\pi+x)\\right]=1$"
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1120.6,
+            944.5,
+            1170.8
+          ],
+          "conf": 0.707,
+          "text": "10. $\\sin (n+1)x \\sin (n+2)x + \\cos (n+1)x \\cos (n+2)x = \\cos x$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            1173.4,
+            742.6,
+            1270.0
+          ],
+          "conf": 0.815,
+          "text": "11. $\\cos \\left(\\frac{3 \\pi}{4}+x\\right)-\\cos \\left(\\frac{3 \\pi}{4}-x\\right)=-\\sqrt{2} \\sin x$"
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.4,
+            1276.2,
+            603.1,
+            1326.6
+          ],
+          "conf": 0.714,
+          "text": "12. $\\sin^2 6x - \\sin^2 4x = \\sin 2x \\sin 10x$"
+        },
+        {
+          "order": 10,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            670.4,
+            1275.7,
+            1142.7,
+            1324.7
+          ],
+          "conf": 0.67,
+          "text": "13. $\\cos^2 2x - \\cos^2 6x = \\sin 4x \\sin 8x$"
+        },
+        {
+          "order": 11,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.6,
+            1323.9,
+            725.5,
+            1373.5
+          ],
+          "conf": 0.754,
+          "text": "14. $\\sin 2 x + 2 \\sin 4x + \\sin 6x = 4 \\cos^2 x \\sin 4x$"
+        },
+        {
+          "order": 12,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            117.6,
+            1371.8,
+            789.4,
+            1421.8
+          ],
+          "conf": 0.73,
+          "text": "15. $\\cot 4x (\\sin 5x + \\sin 3x) = \\cot x (\\sin 5x - \\sin 3x)$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            1429.0,
+            559.0,
+            1524.8
+          ],
+          "conf": 0.802,
+          "text": "16. $\\frac{\\cos 9x - \\cos 5x}{\\sin 17x - \\sin 3x} = -\\frac{\\sin 2x}{\\cos 10x}$"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            670.3,
+            1429.8,
+            1036.9,
+            1524.0
+          ],
+          "conf": 0.813,
+          "text": "17. $\\frac{\\sin 5x + \\sin 3x}{\\cos 5x + \\cos 3x} = \\tan 4x$"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.2,
+            1525.5,
+            521.8,
+            1618.6
+          ],
+          "conf": 0.797,
+          "text": "18. $\\frac{\\sin x - \\sin y}{\\cos x + \\cos y} = \\tan \\frac{x - y}{2}$"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            665.7,
+            1528.7,
+            1035.5,
+            1622.6
+          ],
+          "conf": 0.807,
+          "text": "19. $\\frac{\\sin x + \\sin 3x}{\\cos x + \\cos 3x} = \\tan 2x$"
+        },
+        {
+          "order": 17,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.8,
+            1623.7,
+            515.5,
+            1717.0
+          ],
+          "conf": 0.795,
+          "text": "20. $\\frac{\\sin x - \\sin 3x}{\\sin^2 x - \\cos^2 x} = 2 \\sin x$"
+        },
+        {
+          "order": 18,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            665.3,
+            1623.7,
+            1155.6,
+            1717.6
+          ],
+          "conf": 0.837,
+          "text": "21. $\\frac{\\cos 4x + \\cos 3x + \\cos 2x}{\\sin 4x + \\sin 3x + \\sin 2x} = \\cot 3x$"
+        }
+      ],
+      "page": 24
+    },
+    {
+      "image": "0086_p0025.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            258.0,
+            771.4,
+            306.3
+          ],
+          "conf": 0.882,
+          "text": "22. $\\cot x \\cot 2x - \\cot 2x \\cot 3x - \\cot 3x \\cot x = 1$"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            312.7,
+            1101.5,
+            411.0
+          ],
+          "conf": 0.644,
+          "text": "23. $\\tan 4x = \\frac{4\\tan x (1 - \\tan^2 x)}{1 - 6 \\tan^2 x + \\tan^4 x}$          24. $\\cos 4x = 1 - 8\\sin^2 x \\cos^2 x$"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            421.0,
+            767.6,
+            470.2
+          ],
+          "conf": 0.852,
+          "text": "25. $\\cos 6x = 32 \\cos^6 x - 48\\cos^4 x + 18 \\cos^2 x - 1$"
+        },
+        {
+          "order": 3,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            463.6,
+            492.3,
+            833.6,
+            543.0
+          ],
+          "conf": 0.811,
+          "text": "Miscellaneous Examples"
+        },
+        {
+          "order": 4,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            541.7,
+            1179.0,
+            673.0
+          ],
+          "conf": 0.829,
+          "text": "Example 18 If $\\sin x = \\frac{3}{5}$, $\\cos y = -\\frac{12}{13}$, where $x$ and $y$ both lie in second quadrant,\nfind the value of $\\sin (x + y)$."
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            676.8,
+            444.2,
+            726.2
+          ],
+          "conf": 0.754,
+          "text": "Solution We know that"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            276.6,
+            713.8,
+            1081.6,
+            766.1
+          ],
+          "conf": 0.684,
+          "text": "$$ \\sin (x + y) = \\sin x \\cos y + \\cos x \\sin y \\quad \\dots (1) $$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.7,
+            761.0,
+            719.8,
+            855.2
+          ],
+          "conf": 0.817,
+          "text": "Now $\\cos^2 x = 1 - \\sin^2 x = 1 - \\frac{9}{25} = \\frac{16}{25}$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.1,
+            855.6,
+            457.7,
+            943.7
+          ],
+          "conf": 0.844,
+          "text": "Therefore $\\cos x = \\pm \\frac{4}{5}$."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            936.5,
+            748.8,
+            985.5
+          ],
+          "conf": 0.815,
+          "text": "Since $x$ lies in second quadrant, $\\cos x$ is negative."
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            984.8,
+            447.5,
+            1076.0
+          ],
+          "conf": 0.845,
+          "text": "Hence $\\cos x = -\\frac{4}{5}$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.2,
+            1075.0,
+            729.2,
+            1171.2
+          ],
+          "conf": 0.83,
+          "text": "Now $\\sin^2 y = 1 - \\cos^2 y = 1 - \\frac{144}{169} = \\frac{25}{169}$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.3,
+            1170.0,
+            458.6,
+            1260.1
+          ],
+          "conf": 0.832,
+          "text": "i.e. $\\sin y = \\pm \\frac{5}{13}.$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            1262.2,
+            1180.4,
+            1391.0
+          ],
+          "conf": 0.876,
+          "text": "Since $y$ lies in second quadrant, hence $\\sin y$ is positive. Therefore, $\\sin y = \\frac{5}{13}$. Substituting\nthe values of $\\sin x$, $\\sin y$, $\\cos x$ and $\\cos y$ in (1), we get"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            320.8,
+            1388.7,
+            1104.9,
+            1490.4
+          ],
+          "conf": 0.869,
+          "text": "$$sin(x+y) = \\frac{3}{5} \\times \\left(-\\frac{12}{13}\\right) + \\left(-\\frac{4}{5}\\right) \\times \\frac{5}{13} \\quad = -\\frac{36}{65} - \\frac{20}{65} = -\\frac{56}{65}.$$"
+        },
+        {
+          "order": 15,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1480.3,
+            859.7,
+            1624.1
+          ],
+          "conf": 0.72,
+          "text": "Example 19. Prove that\n\n$$\\cos 2x \\cos \\frac{x}{2} - \\cos 3x \\cos \\frac{9x}{2} = \\sin 5x \\sin \\frac{5x}{2}.$$"
+        },
+        {
+          "order": 16,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.0,
+            1616.3,
+            398.3,
+            1665.2
+          ],
+          "conf": 0.674,
+          "text": "Solution We have"
+        }
+      ],
+      "page": 25
+    },
+    {
+      "image": "0086_p0026.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            175.4,
+            273.6,
+            1117.4,
+            885.4
+          ],
+          "conf": 0.712,
+          "text": "L.H.S. $\\quad = \\frac{1}{2} \\left[ 2 \\cos 2x \\cos \\frac{x}{2} - 2 \\cos \\frac{9x}{2} \\cos 3x \\right]$\n\n$= \\frac{1}{2} \\left[ \\cos \\left( 2x + \\frac{x}{2} \\right) + \\cos \\left( 2x - \\frac{x}{2} \\right) - \\cos \\left( \\frac{9x}{2} + 3x \\right) - \\cos \\left( \\frac{9x}{2} - 3x \\right) \\right]$\n\n$= \\frac{1}{2} \\left[ \\cos \\frac{5x}{2} + \\cos \\frac{3x}{2} - \\cos \\frac{15x}{2} - \\cos \\frac{3x}{2} \\right] = \\frac{1}{2} \\left[ \\cos \\frac{5x}{2} - \\cos \\frac{15x}{2} \\right]$\n\n$= \\frac{1}{2} \\left[ -2 \\sin \\left\\{ \\frac{\\frac{5x}{2} + \\frac{15x}{2}}{2} \\right\\} \\sin \\left\\{ \\frac{\\frac{5x}{2} - \\frac{15x}{2}}{2} \\right\\} \\right]$\n\n$= - \\sin 5x \\sin \\left( - \\frac{5x}{2} \\right) = \\sin 5x \\sin \\frac{5x}{2} = \\text{R.H.S.}$"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            903.3,
+            627.6,
+            982.9
+          ],
+          "conf": 0.71,
+          "text": "Example 20 Find the value of $\\tan \\frac{\\pi}{8}$."
+        },
+        {
+          "order": 2,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.0,
+            995.0,
+            770.2,
+            1634.2
+          ],
+          "conf": 0.54,
+          "text": "Solution Let $x = \\frac{\\pi}{8}$. Then $2x = \\frac{\\pi}{4}$.\n\nNow $$\\tan 2x = \\frac{2 \\tan x}{1 - \\tan^2 x}$$\n\nor $$\\tan \\frac{\\pi}{4} = \\frac{2 \\tan \\frac{\\pi}{8}}{1 - \\tan^2 \\frac{\\pi}{8}}$$\n\nLet $y = \\tan \\frac{\\pi}{8}$. Then $1 = \\frac{2y}{1 - y^2}$\n\nor $$y^2 + 2y - 1 = 0$$\n\nTherefore $$y = \\frac{-2 \\pm 2\\sqrt{2}}{2} = -1 \\pm \\sqrt{2}$$"
+        }
+      ],
+      "page": 26
+    },
+    {
+      "image": "0086_p0027.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.6,
+            257.1,
+            938.0,
+            346.8
+          ],
+          "conf": 0.806,
+          "text": "Since $\\frac{\\pi}{8}$ lies in the first quadrant, $y = \\tan \\frac{\\pi}{8}$ is positve. Hence"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            424.6,
+            359.3,
+            638.0,
+            439.5
+          ],
+          "conf": 0.919,
+          "text": "$$ \\tan \\frac{\\pi}{8} = \\sqrt{2} - 1. $$"
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.1,
+            456.8,
+            1110.9,
+            550.6
+          ],
+          "conf": 0.832,
+          "text": "Example 21 If $\\tan x = \\frac{3}{4}, \\pi < x < \\frac{3\\pi}{2}$, find the value of $\\sin \\frac{x}{2}, \\cos \\frac{x}{2}$ and $\\tan \\frac{x}{2}$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            564.1,
+            700.6,
+            654.4
+          ],
+          "conf": 0.792,
+          "text": "Solution Since $\\pi < x < \\frac{3\\pi}{2}$, $\\cos x$ is negative."
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.6,
+            662.3,
+            536.1,
+            753.0
+          ],
+          "conf": 0.863,
+          "text": "Also $\\frac{\\pi}{2} < \\frac{x}{2} < \\frac{3\\pi}{4}.$"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.2,
+            759.2,
+            766.5,
+            849.1
+          ],
+          "conf": 0.843,
+          "text": "Therefore, $\\sin \\frac{x}{2}$ is positive and $\\cos \\frac{x}{2}$ is negative."
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            848.4,
+            790.8,
+            941.3
+          ],
+          "conf": 0.883,
+          "text": "Now $\\sec^2 x = 1 + \\tan^2 x = 1 + \\frac{9}{16} = \\frac{25}{16}$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            943.4,
+            848.1,
+            1039.1
+          ],
+          "conf": 0.875,
+          "text": "Therefore $\\cos^2 x = \\frac{16}{25}$ or $\\cos x = -\\frac{4}{5}$ (Why?)"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.3,
+            1041.0,
+            814.1,
+            1136.6
+          ],
+          "conf": 0.878,
+          "text": "Now $2 \\sin^2 \\frac{x}{2} = 1 - \\cos x = 1 + \\frac{4}{5} = \\frac{9}{5}.$"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.6,
+            1137.3,
+            531.2,
+            1229.1
+          ],
+          "conf": 0.859,
+          "text": "Therefore $\\sin^2 \\frac{x}{2} = \\frac{9}{10}$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.9,
+            1230.4,
+            711.9,
+            1324.9
+          ],
+          "conf": 0.858,
+          "text": "or $\\sin \\frac{x}{2} = \\frac{3}{\\sqrt{10}}$ (Why?)"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.5,
+            1323.5,
+            840.4,
+            1419.7
+          ],
+          "conf": 0.869,
+          "text": "Again $2\\cos^2 \\frac{x}{2} = 1 + \\cos x = 1 - \\frac{4}{5} = \\frac{1}{5}$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            120.4,
+            1427.3,
+            602.9,
+            1519.4
+          ],
+          "conf": 0.833,
+          "text": "Therefore $\\cos^2 \\frac{x}{2} = \\frac{1}{10}$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            119.1,
+            1520.8,
+            739.8,
+            1615.8
+          ],
+          "conf": 0.844,
+          "text": "or $\\cos \\frac{x}{2} = -\\frac{1}{\\sqrt{10}}$ (Why?)"
+        }
+      ],
+      "page": 27
+    },
+    {
+      "image": "0086_p0028.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            118.7,
+            232.8,
+            830.6,
+            393.7
+          ],
+          "conf": 0.925,
+          "text": "Hence $\\tan \\frac{x}{2}=\\frac{\\sin \\frac{x}{2}}{\\cos \\frac{x}{2}}=\\frac{3}{\\sqrt{10}} \\times\\left(\\frac{-\\sqrt{10}}{1}\\right)=-3$."
+        },
+        {
+          "order": 1,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            118.6,
+            381.9,
+            971.6,
+            479.4
+          ],
+          "conf": 0.819,
+          "text": "Example 22 Prove that $\\cos^2 x + \\cos^2 \\left( x + \\frac{\\pi}{3} \\right) + \\cos^2 \\left( x - \\frac{\\pi}{3} \\right) = \\frac{3}{2}$."
+        },
+        {
+          "order": 2,
+          "label": "Answer",
+          "type": "Text",
+          "bbox_xyxy": [
+            121.0,
+            488.1,
+            1038.0,
+            1241.6
+          ],
+          "conf": 0.647,
+          "text": "Solution We have\n\n$$ \\text{L.H.S.} = \\frac{1 + \\cos 2x}{2} + \\frac{1 + \\cos \\left( 2x + \\frac{2\\pi}{3} \\right)}{2} + \\frac{1 + \\cos \\left( 2x - \\frac{2\\pi}{3} \\right)}{2} . $$\n\n$$ = \\frac{1}{2} \\left[ 3 + \\cos 2x + \\cos \\left( 2x + \\frac{2\\pi}{3} \\right) + \\cos \\left( 2x - \\frac{2\\pi}{3} \\right) \\right] $$\n\n$$ = \\frac{1}{2} \\left[ 3 + \\cos 2x + 2\\cos 2x \\cos \\frac{2\\pi}{3} \\right] $$\n\n$$ = \\frac{1}{2} \\left[ 3 + \\cos 2x + 2\\cos 2x \\cos \\left( \\pi - \\frac{\\pi}{3} \\right) \\right] $$\n\n$$ = \\frac{1}{2} \\left[ 3 + \\cos 2x - 2\\cos 2x \\cos \\frac{\\pi}{3} \\right] $$\n\n$$ = \\frac{1}{2} [3 + \\cos 2x - \\cos 2x] = \\frac{3}{2} = \\text{R.H.S.} $$"
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            378.2,
+            1274.9,
+            920.1,
+            1326.8
+          ],
+          "conf": 0.818,
+          "text": "Miscellaneous Exercise on Chapter 3"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.3,
+            1339.7,
+            277.8,
+            1387.0
+          ],
+          "conf": 0.869,
+          "text": "Prove that:"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            134.8,
+            1397.6,
+            826.7,
+            1632.3
+          ],
+          "conf": 0.925,
+          "text": "1. $2 \\cos \\frac{\\pi}{13} \\cos \\frac{9\\pi}{13} + \\cos \\frac{3\\pi}{13} + \\cos \\frac{5\\pi}{13} = 0$\n\n2. $(\\sin 3x + \\sin x) \\sin x + (\\cos 3x - \\cos x) \\cos x = 0$\n\n3. $(\\cos x + \\cos y)^2 + (\\sin x - \\sin y)^2 = 4 \\cos^2 \\frac{x + y}{2}$"
+        }
+      ],
+      "page": 28
+    },
+    {
+      "image": "0086_p0029.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            136.0,
+            271.9,
+            772.6,
+            347.7
+          ],
+          "conf": 0.831,
+          "text": "4. $(\\cos x - \\cos y)^2 + (\\sin x - \\sin y)^2 = 4 \\sin^2 \\frac{x - y}{2}$"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            134.7,
+            339.0,
+            868.1,
+            388.9
+          ],
+          "conf": 0.895,
+          "text": "5. $\\sin x + \\sin 3x + \\sin 5x + \\sin 7x = 4 \\cos x \\cos 2x \\sin 4x$"
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            132.6,
+            384.9,
+            752.3,
+            470.4
+          ],
+          "conf": 0.879,
+          "text": "6. $\\frac{(\\sin 7x + \\sin 5x) + (\\sin 9x + \\sin 3x)}{(\\cos 7x + \\cos 5x) + (\\cos 9x + \\cos 3x)} = \\tan 6x$"
+        },
+        {
+          "order": 3,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            135.5,
+            472.0,
+            763.0,
+            563.5
+          ],
+          "conf": 0.832,
+          "text": "7. $\\sin 3x + \\sin 2x - \\sin x = 4\\sin x \\cos \\frac{x}{2} \\cos \\frac{3x}{2}$"
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            566.4,
+            825.9,
+            655.9
+          ],
+          "conf": 0.786,
+          "text": "Find $\\sin \\frac{x}{2}$, $\\cos \\frac{x}{2}$ and $\\tan \\frac{x}{2}$ in each of the following :"
+        },
+        {
+          "order": 5,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            134.5,
+            655.1,
+            575.5,
+            748.8
+          ],
+          "conf": 0.832,
+          "text": "8. $\\tan x = -\\frac{4}{3}, x$ in quadrant II"
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            710.8,
+            654.4,
+            1143.2,
+            746.7
+          ],
+          "conf": 0.826,
+          "text": "9. $\\cos x = -\\frac{1}{3}$, $x$ in quadrant III"
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.1,
+            751.1,
+            554.3,
+            836.0
+          ],
+          "conf": 0.882,
+          "text": "10. $\\sin x = \\frac{1}{4}$ , $x$ in quadrant II"
+        },
+        {
+          "order": 8,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            124.4,
+            848.0,
+            1180.3,
+            1728.4
+          ],
+          "conf": 0.862,
+          "text": "Summary\n\nIf in a circle of radius $r$, an arc of length $l$ subtends an angle of $\\theta$ radians, then\n$l = r \\theta$\n\n$\\diamond$ Radian measure $= \\frac{\\pi}{180} \\times$ Degree measure\n\n$\\diamond$ Degree measure $= \\frac{180}{\\pi} \\times$ Radian measure\n\n$\\diamond \\cos^2 x + \\sin^2 x = 1$\n\n$\\diamond 1 + \\tan^2 x = \\sec^2 x$\n\n$\\diamond 1 + \\cot^2 x = \\text{cosec}^2 x$\n\n$\\diamond \\cos (2n\\pi + x) = \\cos x$\n\n$\\diamond \\sin (2n\\pi + x) = \\sin x$\n\n$\\diamond \\sin (-x) = -\\sin x$\n\n$\\diamond \\cos (-x) = \\cos x$\n\n$\\diamond \\cos (x + y) = \\cos x \\cos y - \\sin x \\sin y$\n\n$\\diamond \\cos (x - y) = \\cos x \\cos y + \\sin x \\sin y$\n\n$\\diamond \\cos (\\frac{\\pi}{2} - x) = \\sin x$"
+        }
+      ],
+      "page": 29
+    },
+    {
+      "image": "0086_p0030.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.0,
+            279.1,
+            1164.4,
+            1705.4
+          ],
+          "conf": 0.579,
+          "text": "$\\sin \\left(\\frac{\\pi}{2}-x\\right)=\\cos x$\n\n$\\sin (x+y)=\\sin x \\cos y+\\cos x \\sin y$\n\n$\\sin (x-y)=\\sin x \\cos y-\\cos x \\sin y$\n\n$\\cos \\left(\\frac{\\pi}{2}+x\\right)=-\\sin x \\quad \\sin \\left(\\frac{\\pi}{2}+x\\right)=\\cos x$\n\n$\\cos (\\pi-x)=-\\cos x \\quad \\sin (\\pi-x)=\\sin x$\n\n$\\cos (\\pi+x)=-\\cos x \\quad \\sin (\\pi+x)=-\\sin x$\n\n$\\cos (2 \\pi-x)=\\cos x \\quad \\sin (2 \\pi-x)=-\\sin x$\n\nIf none of the angles $x, y$ and $(x \\pm y)$ is an odd multiple of $\\frac{\\pi}{2}$, then\n\n$$\\tan (x+y)=\\frac{\\tan x+\\tan y}{1-\\tan x \\tan y}$$\n\n$$\\tan (x-y)=\\frac{\\tan x-\\tan y}{1+\\tan x \\tan y}$$\n\nIf none of the angles $x, y$ and $(x \\pm y)$ is a multiple of $\\pi$, then\n\n$$\\cot (x+y)=\\frac{\\cot x \\cot y-1}{\\cot y+\\cot x}$$\n\n$$\\cot (x-y)=\\frac{\\cot x \\cot y+1}{\\cot y-\\cot x}$$\n\n$$\\cos 2 x=\\cos ^{2} x-\\sin ^{2} x=2 \\cos ^{2} x-1=1-2 \\sin ^{2} x=\\frac{1-\\tan ^{2} x}{1+\\tan ^{2} x}$$\n\n$$\\sin 2 x=2 \\sin x \\cos x=\\frac{2 \\tan x}{1+\\tan ^{2} x}$$\n\n$$\\tan 2 x=\\frac{2 \\tan x}{1-\\tan ^{2} x}$$\n\n$$\\sin 3 x=3 \\sin x-4 \\sin ^{3} x$$\n\n$$\\cos 3 x=4 \\cos ^{3} x-3 \\cos x$$"
+        }
+      ],
+      "page": 30
+    },
+    {
+      "image": "0086_p0031.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            155.7,
+            263.3,
+            499.6,
+            361.0
+          ],
+          "conf": 0.829,
+          "text": "$$\\tan 3x = \\frac{3 \\tan x - \\tan^3 x}{1 - 3 \\tan^2 x}$$"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            156.0,
+            376.6,
+            780.9,
+            963.9
+          ],
+          "conf": 0.712,
+          "text": "(i) $\\cos x + \\cos y = 2\\cos \\frac{x+y}{2} \\cos \\frac{x-y}{2}$\n\n(ii) $\\cos x - \\cos y = - 2\\sin \\frac{x+y}{2} \\sin \\frac{x-y}{2}$\n\n(iii) $\\sin x + \\sin y = 2 \\sin \\frac{x+y}{2} \\cos \\frac{x-y}{2}$\n\n(iv) $\\sin x - \\sin y = 2\\cos \\frac{x+y}{2} \\sin \\frac{x-y}{2}$\n\n(i) $2\\cos x \\cos y = \\cos (x + y) + \\cos (x - y)$\n\n(ii) $- 2\\sin x \\sin y = \\cos (x + y) - \\cos (x - y)$\n\n(iii) $2\\sin x \\cos y = \\sin (x + y) + \\sin (x - y)$\n\n(iv) $2 \\cos x \\sin y = \\sin (x + y) - \\sin (x - y).$"
+        },
+        {
+          "order": 2,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            114.5,
+            1019.0,
+            1183.6,
+            1703.5
+          ],
+          "conf": 0.753,
+          "text": "Historical Note\n\nThe study of trigonometry was first started in India. The ancient Indian\nMathematicians, Aryabhatta (476), Brahmagupta (598), Bhaskara I (600) and\nBhaskara II (1114) got important results. All this knowledge first went from\nIndia to middle-east and from there to Europe. The Greeks had also started the\nstudy of trigonometry but their approach was so clumsy that when the Indian\napproach became known, it was immediately adopted throughout the world.\nIn India, the predecessor of the modern trigonometric functions, known as\nthe sine of an angle, and the introduction of the sine function represents the main\ncontribution of the $siddhantas$ (Sanskrit astronomical works) to the history of\nmathematics.\nBhaskara I (about 600) gave formulae to find the values of sine functions\nfor angles more than $90^\\circ$. A sixteenth century Malayalam work $Yuktibhasa$\n(period) contains a proof for the expansion of $\\sin (A + B)$. Exact expression for\nsines or cosines of $18^\\circ$, $36^\\circ$, $54^\\circ$, $72^\\circ$, etc., are given by\nBhaskara II."
+        }
+      ],
+      "page": 31
+    },
+    {
+      "image": "0086_p0032.png",
+      "width": 1300,
+      "height": 1900,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            152.0,
+            268.1,
+            1146.1,
+            500.1
+          ],
+          "conf": 0.965,
+          "text": "The symbols $\\sin^{-1} x$, $\\cos^{-1} x$, etc., for arc $\\sin x$, arc $\\cos x$, etc., were\nsuggested by the astronomer Sir John F.W. Hersehel (1813) The names of Thales\n(about 600 B.C.) is invariably associated with height and distance problems. He\nis credited with the determination of the height of a great pyramid in Egypt by\nmeasuring shadows of the pyramid and an auxiliary staff (or gnomon) of known\nheight, and comparing the ratios:"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            498.2,
+            503.3,
+            873.2,
+            595.1
+          ],
+          "conf": 0.916,
+          "text": "$$\\frac{\\mathrm{H}}{\\mathrm{S}} = \\frac{h}{s} = \\tan \\text{ (sun's altitude)}$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            152.0,
+            594.9,
+            1147.2,
+            717.8
+          ],
+          "conf": 0.936,
+          "text": "Thales is also said to have calculated the distance of a ship at sea through\nthe proportionality of sides of similar triangles. Problems on height and distance\nusing the similarity property are also found in ancient Indian works."
+        }
+      ],
+      "page": 32
+    }
+  ]
+}

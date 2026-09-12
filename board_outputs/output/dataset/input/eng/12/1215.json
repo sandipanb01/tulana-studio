@@ -1,0 +1,2795 @@
+{
+  "book": "1215",
+  "relpath": "dataset/input/eng/12/1215.pdf",
+  "num_pages": 17,
+  "pages": [
+    {
+      "image": "0108_p0000.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Header",
+          "type": "PageHeader",
+          "bbox_xyxy": [
+            640.8,
+            61.0,
+            1127.9,
+            287.6
+          ],
+          "conf": 0.882,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            856.0,
+            208.6,
+            1021.7,
+            266.6
+          ],
+          "conf": 0.512,
+          "text": "Chapter"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            699.7,
+            253.8,
+            797.3,
+            288.7
+          ],
+          "conf": 0.543,
+          "text": "$12080\\text{CH}11$"
+        },
+        {
+          "order": 3,
+          "label": "Chapter-title",
+          "type": "Title",
+          "bbox_xyxy": [
+            77.5,
+            317.0,
+            1122.6,
+            412.4
+          ],
+          "conf": 0.897,
+          "text": "THREE DIMENSIONAL GEOMETRY"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            237.1,
+            491.4,
+            964.8,
+            582.1
+          ],
+          "conf": 0.835,
+          "text": "❖ *The moving power of mathematical invention is not*\n*reasoning but imagination. – A. DEMORGAN* ❖"
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            70.6,
+            606.4,
+            336.7,
+            655.2
+          ],
+          "conf": 0.909,
+          "text": "11.1 Introduction"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            654.8,
+            784.7,
+            956.9
+          ],
+          "conf": 0.978,
+          "text": "In Class XI, while studying Analytical Geometry in two\ndimensions, and the introduction to three dimensional\ngeometry, we confined to the Cartesian methods only. In\nthe previous chapter of this book, we have studied some\nbasic concepts of vectors. We will now use vector algebra\nto three dimensional geometry. The purpose of this\napproach to 3-dimensional geometry is that it makes the\nstudy simple and elegant*."
+        },
+        {
+          "order": 7,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            790.0,
+            654.8,
+            1131.1,
+            1090.3
+          ],
+          "conf": 0.978,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            953.5,
+            1127.4,
+            1286.1
+          ],
+          "conf": 0.969,
+          "text": "In this chapter, we shall study the direction cosines\nand direction ratios of a line joining two points and also\ndiscuss about the equations of lines and planes in space\nunder different conditions, angle between two lines, two\nplanes, a line and a plane, shortest distance between two\nskew lines and distance of a point from a plane. Most of\nthe above results are obtained in vector form. Nevertheless, we shall also translate\nthese results in the Cartesian form which, at times, presents a more clear geometric\nand analytic picture of the situation."
+        },
+        {
+          "order": 9,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            70.0,
+            1289.3,
+            843.1,
+            1340.3
+          ],
+          "conf": 0.895,
+          "text": "11.2 Direction Cosines and Direction Ratios of a Line"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            1336.3,
+            1128.0,
+            1489.0
+          ],
+          "conf": 0.957,
+          "text": "From Chapter 10, recall that if a directed line L passing through the origin makes\nangles $\\alpha$, $\\beta$ and $\\gamma$ with $x$, $y$ and $z$-axes, respectively, called direction angles, then cosine\nof these angles, namely, $\\cos \\alpha$, $\\cos \\beta$ and $\\cos \\gamma$ are called direction cosines of the\ndirected line L."
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            1487.7,
+            1127.5,
+            1572.7
+          ],
+          "conf": 0.928,
+          "text": "If we reverse the direction of L, then the direction angles are replaced by their supplements,\ni.e., $\\pi - \\alpha$, $\\pi - \\beta$ and $\\pi - \\gamma$. Thus, the signs of the direction cosines are reversed."
+        },
+        {
+          "order": 12,
+          "label": "Footnote",
+          "type": "Footnote",
+          "bbox_xyxy": [
+            94.3,
+            1578.4,
+            1127.3,
+            1666.8
+          ],
+          "conf": 0.899,
+          "text": "* For various activities in three dimensional geometry, one may refer to the Book\n“A Hand Book for designing Mathematics Laboratory in Schools”, NCERT, 2005"
+        },
+        {
+          "order": 13,
+          "label": "Footer",
+          "type": "PageFooter",
+          "bbox_xyxy": [
+            93.2,
+            1577.2,
+            1126.8,
+            1767.6
+          ],
+          "conf": 0.83,
+          "text": ""
+        }
+      ],
+      "page": 0
+    },
+    {
+      "image": "0108_p0001.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            381.7,
+            205.6,
+            776.0,
+            732.2
+          ],
+          "conf": 0.962,
+          "text": ""
+        },
+        {
+          "order": 1,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            513.6,
+            716.2,
+            631.4,
+            761.4
+          ],
+          "conf": 0.929,
+          "text": "Fig 11.1"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            754.7,
+            1129.0,
+            909.4
+          ],
+          "conf": 0.975,
+          "text": "Note that a given line in space can be extended in two opposite directions and so it\nhas two sets of direction cosines. In order to have a unique set of direction cosines for\na given line in space, we must take the given line as a directed line. These unique\ndirection cosines are denoted by $l$, $m$ and $n$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            907.9,
+            1128.2,
+            1065.1
+          ],
+          "conf": 0.965,
+          "text": "$Remark$ If the given line in space does not pass through the origin, then, in order to find\nits direction cosines, we draw a line through the origin and parallel to the given line.\nNow take one of the directed lines from the origin and find its direction cosines as two\nparallel line have same set of direction cosines."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            1063.1,
+            1128.1,
+            1183.5
+          ],
+          "conf": 0.965,
+          "text": "Any three numbers which are proportional to the direction cosines of a line are\ncalled the *direction ratios* of the line. If $l$, $m$, $n$ are direction cosines and $a$, $b$, $c$ are\ndirection ratios of a line, then $a = \\lambda l$, $b = \\lambda m$ and $c = \\lambda n$, for any nonzero $\\lambda \\in \\mathbf{R}$."
+        },
+        {
+          "order": 5,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            71.0,
+            1180.1,
+            1128.2,
+            1249.7
+          ],
+          "conf": 0.896,
+          "text": "Some authors also call direction ratios as direction numbers."
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            1248.8,
+            1127.5,
+            1332.0
+          ],
+          "conf": 0.943,
+          "text": "Let $a, b, c$ be direction ratios of a line and let $l, m$ and $n$ be the direction cosines\n$(d.c's)$ of the line. Then"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            420.4,
+            1337.9,
+            974.6,
+            1426.7
+          ],
+          "conf": 0.909,
+          "text": "$\\frac{l}{a} = \\frac{m}{b} = \\frac{n}{c} = k$ (say), $k$ being a constant."
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.7,
+            1421.8,
+            1127.8,
+            1471.7
+          ],
+          "conf": 0.842,
+          "text": "Therefore $l = ak, m = bk, n = ck$ ... (1)"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.8,
+            1463.2,
+            594.6,
+            1543.7
+          ],
+          "conf": 0.67,
+          "text": "But $l^2 + m^2 + n^2 = 1$\nTherefore $k^2 (a^2 + b^2 + c^2) = 1$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.2,
+            1550.7,
+            777.6,
+            1654.7
+          ],
+          "conf": 0.906,
+          "text": "or $$k = \\pm \\frac{1}{\\sqrt{a^2 + b^2 + c^2}}$$"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "image": "0108_p0002.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            208.3,
+            597.0,
+            257.4
+          ],
+          "conf": 0.913,
+          "text": "Hence, from (1), the $d.c.$'s of the line are"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            227.3,
+            261.5,
+            965.0,
+            367.4
+          ],
+          "conf": 0.93,
+          "text": "$$l = \\pm \\frac{a}{\\sqrt{a^2 + b^2 + c^2}}, m = \\pm \\frac{b}{\\sqrt{a^2 + b^2 + c^2}}, n = \\pm \\frac{c}{\\sqrt{a^2 + b^2 + c^2}}$$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            362.2,
+            1127.9,
+            444.4
+          ],
+          "conf": 0.949,
+          "text": "where, depending on the desired sign of $k$, either a positive or a negative sign is to be\ntaken for $l$, $m$ and $n$."
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            442.1,
+            1128.2,
+            562.5
+          ],
+          "conf": 0.966,
+          "text": "For any line, if $a, b, c$ are direction ratios of a line, then $ka, kb, kc; k \\neq 0$ is also a\nset of direction ratios. So, any two sets of direction ratios of a line are also proportional.\nAlso, for any line there are infinitely many sets of direction ratios."
+        },
+        {
+          "order": 4,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.5,
+            567.4,
+            885.7,
+            616.3
+          ],
+          "conf": 0.899,
+          "text": "11.2.1 Direction cosines of a line passing through two points"
+        },
+        {
+          "order": 5,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            612.7,
+            1128.1,
+            732.8
+          ],
+          "conf": 0.968,
+          "text": "Since one and only one line passes through two given points, we can determine the\ndirection cosines of a line passing through the given points $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$\nas follows (Fig 11.2 (a))."
+        },
+        {
+          "order": 6,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            171.0,
+            737.5,
+            1027.7,
+            1120.5
+          ],
+          "conf": 0.953,
+          "text": ""
+        },
+        {
+          "order": 7,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            539.2,
+            1120.7,
+            657.7,
+            1166.8
+          ],
+          "conf": 0.913,
+          "text": "Fig 11.2"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.7,
+            1165.5,
+            1130.3,
+            1250.3
+          ],
+          "conf": 0.929,
+          "text": "Let $l, m, n$ be the direction cosines of the line PQ and let it makes angles $\\alpha, \\beta$ and $\\gamma$\nwith the $x, y$ and $z$-axis, respectively."
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            1247.6,
+            1130.5,
+            1367.8
+          ],
+          "conf": 0.946,
+          "text": "Draw perpendiculars from P and Q to XY-plane to meet at R and S. Draw a\nperpendicular from P to QS to meet at N. Now, in right angle triangle PNQ, $\\angle PQN = \\gamma$\n(Fig 11.2 (b)."
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.7,
+            1371.2,
+            611.2,
+            1462.9
+          ],
+          "conf": 0.853,
+          "text": "Therefore, $\\cos \\gamma = \\frac{\\text{NQ}}{\\text{PQ}} = \\frac{z_2 - z_1}{\\text{PQ}}$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.2,
+            1476.4,
+            762.2,
+            1564.7
+          ],
+          "conf": 0.872,
+          "text": "Similarly $\\cos \\alpha = \\frac{x_2 - x_1}{\\text{PQ}}$ and $\\cos \\beta = \\frac{y_2 - y_1}{\\text{PQ}}$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            1560.8,
+            1128.6,
+            1650.8
+          ],
+          "conf": 0.919,
+          "text": "Hence, the direction cosines of the line segment joining the points $P(x_1, y_1, z_1)$ and\n$Q(x_2, y_2, z_2)$ are"
+        }
+      ],
+      "page": 2
+    },
+    {
+      "image": "0108_p0003.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            415.3,
+            229.0,
+            802.3,
+            317.0
+          ],
+          "conf": 0.919,
+          "text": "$$ \\frac{x_2 - x_1}{\\text{PQ}} , \\frac{y_2 - y_1}{\\text{PQ}} , \\frac{z_2 - z_1}{\\text{PQ}} $$"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.1,
+            326.3,
+            938.9,
+            400.5
+          ],
+          "conf": 0.865,
+          "text": "where $PQ = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$"
+        },
+        {
+          "order": 2,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.6,
+            403.6,
+            1127.5,
+            554.9
+          ],
+          "conf": 0.927,
+          "text": "Note The direction ratios of the line segment joining $\\mathrm{P}(x_1, y_1, z_1)$ and $\\mathrm{Q}(x_2, y_2, z_2)$\nmay be taken as\n$$x_2 - x_1, y_2 - y_1, z_2 - z_1 \\text{ or } x_1 - x_2, y_1 - y_2, z_1 - z_2$$"
+        },
+        {
+          "order": 3,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            554.6,
+            1128.5,
+            636.5
+          ],
+          "conf": 0.883,
+          "text": "**Example 1** If a line makes angle $90^\\circ$, $60^\\circ$ and $30^\\circ$ with the positive direction of $x$, $y$ and\n$z$-axis respectively, find its direction cosines."
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.0,
+            638.6,
+            1128.6,
+            721.3
+          ],
+          "conf": 0.794,
+          "text": "Solution Let the $d.c.$'s of the lines be $l, m, n$. Then $l = \\cos 90^0 = 0, m = \\cos 60^0 = \\frac{1}{2}$,"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.2,
+            720.5,
+            327.0,
+            815.8
+          ],
+          "conf": 0.895,
+          "text": "$$n = \\cos 30^{\\circ} = \\frac{\\sqrt{3}}{2}.$$"
+        },
+        {
+          "order": 6,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            64.2,
+            802.6,
+            1107.7,
+            1082.5
+          ],
+          "conf": 0.54,
+          "text": "Example 2 If a line has direction ratios $2, -1, -2$, determine its direction cosines.\n\nSolution Direction cosines are\n\n$$\\frac{2}{\\sqrt{2^2 + (-1)^2 + (-2)^2}}, \\frac{-1}{\\sqrt{2^2 + (-1)^2 + (-2)^2}}, \\frac{-2}{\\sqrt{2^2 + (-1)^2 + (-2)^2}}$$\n\nor $$\\frac{2}{3}, \\frac{-1}{3}, \\frac{-2}{3}$$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.0,
+            1012.7,
+            312.7,
+            1101.2
+          ],
+          "conf": 0.843,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            1097.1,
+            1128.0,
+            1661.6
+          ],
+          "conf": 0.589,
+          "text": "Example 3 Find the direction cosines of the line passing through the two points\n$(-2, 4, -5)$ and $(1, 2, 3)$.\nSolution We know the direction cosines of the line passing through two points\n$P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$ are given by\n\n$$\\frac{x_2 - x_1}{PQ}, \\frac{y_2 - y_1}{PQ}, \\frac{z_2 - z_1}{PQ}$$\n\nwhere $$PQ = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$$\n\nHere $P$ is $(-2, 4, -5)$ and $Q$ is $(1, 2, 3)$.\nSo $$PQ = \\sqrt{(1 - (-2))^2 + (2 - 4)^2 + (3 - (-5))^2} = \\sqrt{77}$$\n\nThus, the direction cosines of the line joining two points is\n\n$$\\frac{3}{\\sqrt{77}}, \\frac{-2}{\\sqrt{77}}, \\frac{8}{\\sqrt{77}}$$"
+        }
+      ],
+      "page": 3
+    },
+    {
+      "image": "0108_p0004.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            205.9,
+            779.9,
+            256.0
+          ],
+          "conf": 0.838,
+          "text": "Example 4 Find the direction cosines of $x$, $y$ and $z$-axis."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            256.0,
+            1128.4,
+            373.7
+          ],
+          "conf": 0.8,
+          "text": "**Solution** The $x$-axis makes angles $0^{\\circ}$, $90^{\\circ}$ and $90^{\\circ}$ respectively with $x$, $y$ and $z$-axis.\nTherefore, the direction cosines of $x$-axis are $\\cos 0^{\\circ}$, $\\cos 90^{\\circ}$, $\\cos 90^{\\circ}$ i.e., 1,0,0.\nSimilarly, direction cosines of $y$-axis and $z$-axis are 0, 1, 0 and 0, 0, 1 respectively."
+        },
+        {
+          "order": 2,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.7,
+            377.6,
+            1130.5,
+            741.1
+          ],
+          "conf": 0.697,
+          "text": "Example 5 Show that the points A ($2, 3, - 4$), B ($1, - 2, 3$) and C ($3, 8, - 11$) are\ncollinear.\n\nSolution Direction ratios of line joining A and B are\n$1 - 2, - 2 - 3, 3 + 4$ i.e., $- 1, - 5, 7$.\nThe direction ratios of line joining B and C are\n$3 - 1, 8 + 2, - 11 - 3$, i.e., $2, 10, - 14$.\nIt is clear that direction ratios of AB and BC are proportional, hence, AB is parallel\nto BC. But point B is common to both AB and BC. Therefore, A, B, C are\ncollinear points."
+        },
+        {
+          "order": 3,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            466.6,
+            755.6,
+            733.0,
+            811.8
+          ],
+          "conf": 0.695,
+          "text": "EXERCISE 11.1"
+        },
+        {
+          "order": 4,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.1,
+            816.8,
+            1128.7,
+            1154.9
+          ],
+          "conf": 0.978,
+          "text": "1. If a line makes angles $90^{\\circ}$, $135^{\\circ}$, $45^{\\circ}$ with the $x, y$ and $z$-axes respectively, find its\ndirection cosines.\n2. Find the direction cosines of a line which makes equal angles with the coordinate\naxes.\n3. If a line has the direction ratios $-18, 12, -4$, then what are its direction cosines ?\n4. Show that the points $(2, 3, 4), (-1, -2, 1), (5, 8, 7)$ are collinear.\n5. Find the direction cosines of the sides of the triangle whose vertices are\n$(3, 5, -4), (-1, 1, 2)$ and $(-5, -5, -2)$."
+        },
+        {
+          "order": 5,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            70.6,
+            1160.6,
+            538.4,
+            1212.8
+          ],
+          "conf": 0.86,
+          "text": "11.3 Equation of a Line in Space"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            1205.5,
+            1128.4,
+            1290.2
+          ],
+          "conf": 0.934,
+          "text": "We have studied equation of lines in two dimensions in Class XI, we shall now study\nthe vector and cartesian equations of a line in space."
+        },
+        {
+          "order": 7,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            120.5,
+            1286.5,
+            523.1,
+            1336.0
+          ],
+          "conf": 0.806,
+          "text": "A line is uniquely determined if"
+        },
+        {
+          "order": 8,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            90.2,
+            1292.8,
+            865.1,
+            1426.0
+          ],
+          "conf": 0.75,
+          "text": "A line is uniquely determined if\n(i) it passes through a given point and has given direction, or\n(ii) it passes through two given points."
+        },
+        {
+          "order": 9,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.8,
+            1429.0,
+            1126.7,
+            1481.2
+          ],
+          "conf": 0.799,
+          "text": "11.3.1 Equation of a line through a given point and parallel to $\\vec{a}$ given vector $\\vec{b}$"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            1462.0,
+            1128.6,
+            1632.4
+          ],
+          "conf": 0.866,
+          "text": "Let $\\vec{a}$ be the position vector of the given point A with respect to the origin O of the\nrectangular coordinate system. Let $l$ be the line which passes through the point A and\nis parallel to a given vector $\\vec{b}$. Let $\\vec{r}$ be the position vector of an arbitrary point P on the\nline (Fig 11.3)."
+        }
+      ],
+      "page": 4
+    },
+    {
+      "image": "0108_p0005.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            219.6,
+            633.4,
+            321.8
+          ],
+          "conf": 0.943,
+          "text": "Then $\\overline{\\mathrm{AP}}$ is parallel to the vector $\\vec{b}$, i.e.,\n$\\overline{\\mathrm{AP}} = \\lambda \\vec{b}$, where $\\lambda$ is some real number."
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            331.0,
+            596.8,
+            436.0
+          ],
+          "conf": 0.738,
+          "text": "But $\\overline{\\mathrm{AP}} = \\overline{\\mathrm{OP}} - \\overline{\\mathrm{OA}}$\ni.e. $\\lambda \\vec{b} = \\vec{r} - \\vec{a}$"
+        },
+        {
+          "order": 2,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            629.5,
+            205.7,
+            1127.6,
+            577.4
+          ],
+          "conf": 0.925,
+          "text": ""
+        },
+        {
+          "order": 3,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            820.0,
+            533.9,
+            938.2,
+            581.6
+          ],
+          "conf": 0.912,
+          "text": "Fig 11.3"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            434.0,
+            631.9,
+            587.9
+          ],
+          "conf": 0.935,
+          "text": "Conversely, for each value of the\nparameter $\\lambda$, this equation gives the position\nvector of a point P on the line. Hence, the\nvector equation of the line is given by"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            502.8,
+            590.8,
+            1128.1,
+            646.2
+          ],
+          "conf": 0.883,
+          "text": "$$ \\vec{r} = \\vec{a} + \\text{''} \\vec{b} \\tag{1} $$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.5,
+            646.6,
+            1129.1,
+            794.5
+          ],
+          "conf": 0.946,
+          "text": "$\\textit{Remark}$ If $\\vec{b} = a\\hat{i} + b\\hat{j} + c\\hat{k}$, then $a, b, c$ are direction ratios of the line and conversely,\nif $a, b, c$ are direction ratios of a line, then $\\vec{b} = a\\hat{i} + b\\hat{j} + c\\hat{k}$ will be the parallel to\nthe line. Here, $b$ should not be confused with $|\\vec{b}|$."
+        },
+        {
+          "order": 7,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.1,
+            790.6,
+            711.5,
+            840.2
+          ],
+          "conf": 0.805,
+          "text": "Derivation of cartesian form from vector form"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.6,
+            834.8,
+            1129.2,
+            920.2
+          ],
+          "conf": 0.938,
+          "text": "Let the coordinates of the given point A be $(x_1, y_1, z_1)$ and the direction ratios of\nthe line be $a, b, c$. Consider the coordinates of any point P be $(x, y, z)$. Then"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            285.6,
+            921.8,
+            850.8,
+            980.1
+          ],
+          "conf": 0.895,
+          "text": "$$\\bar{r} = x\\hat{i} + y\\hat{j} + z\\hat{k}; \\bar{a} = x_1 \\hat{i} + y_1 \\hat{j} + z_1 \\hat{k}$$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.9,
+            984.8,
+            559.2,
+            1038.2
+          ],
+          "conf": 0.856,
+          "text": "and $\\bar{b} = a \\hat{i} + b \\hat{j} + c \\hat{k}$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            1034.5,
+            1108.4,
+            1087.9
+          ],
+          "conf": 0.893,
+          "text": "Substituting these values in (1) and equating the coefficients of $\\hat{i}$, $\\hat{j}$ and $\\hat{k}$, we get"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            334.6,
+            1078.7,
+            1127.4,
+            1130.9
+          ],
+          "conf": 0.88,
+          "text": "$$x = x_1 + \\lambda a; \\ y = y_1 + \\lambda b; \\ z = z_1 + \\lambda c \\qquad \\dots (2)$$"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            1121.4,
+            1127.2,
+            1203.8
+          ],
+          "conf": 0.919,
+          "text": "These are parametric equations of the line. Eliminating the parameter $\\lambda$ from (2),\nwe get"
+        },
+        {
+          "order": 14,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            359.5,
+            1200.6,
+            1127.9,
+            1287.4
+          ],
+          "conf": 0.815,
+          "text": "$$ \\frac{x - x_1}{a} = \\frac{y - y_1}{b} = \\frac{z - z_1}{c} \\dots (3) $$"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            119.5,
+            1274.2,
+            643.6,
+            1323.0
+          ],
+          "conf": 0.834,
+          "text": "This is the Cartesian equation of the line."
+        },
+        {
+          "order": 16,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            72.4,
+            1319.0,
+            1127.6,
+            1485.0
+          ],
+          "conf": 0.911,
+          "text": "If $l, m, n$ are the direction cosines of the line, the equation of the line is\n\n$$\\frac{x - x_1}{l} = \\frac{y - y_1}{m} = \\frac{z - z_1}{n}$$"
+        },
+        {
+          "order": 17,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            67.8,
+            1478.3,
+            1128.2,
+            1668.8
+          ],
+          "conf": 0.731,
+          "text": "Example 6 Find the vector and the Cartesian equations of the line through the point\n$(5, 2, -4)$ and which is parallel to the vector $3\\hat{i} + 2\\hat{j} - 8\\hat{k}$.\nSolution We have\n$$\\vec{a} = 5\\hat{i} + 2\\hat{j} - 4\\hat{k} \\text{ and } \\vec{b} = 3\\hat{i} + 2\\hat{j} - 8\\hat{k}$$"
+        }
+      ],
+      "page": 5
+    },
+    {
+      "image": "0108_p0006.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            206.5,
+            623.2,
+            254.0
+          ],
+          "conf": 0.896,
+          "text": "Therefore, the vector equation of the line is"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            436.7,
+            252.4,
+            974.2,
+            306.7
+          ],
+          "conf": 0.911,
+          "text": "$$ \\vec{r} = 5 \\hat{i} + 2 \\hat{j} - 4 \\hat{k} + \\lambda ( 3 \\hat{i} + 2 \\hat{j} - 8 \\hat{k} ) $$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            299.7,
+            853.3,
+            349.0
+          ],
+          "conf": 0.908,
+          "text": "Now, $\\vec{r}$ is the position vector of any point $\\mathrm{P}(x, y, z)$ on the line."
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.6,
+            346.0,
+            939.8,
+            451.3
+          ],
+          "conf": 0.881,
+          "text": "Therefore, $x\\hat{i} + y\\hat{j} + z\\hat{k} = 5\\hat{i} + 2\\hat{j} - 4\\hat{k} + \\lambda ( 3\\hat{i} + 2\\hat{j} - 8\\hat{k} )$\n$= (5 + 3\\lambda)\\hat{i} + (2 + 2\\lambda)\\hat{j} + (-4 - 8\\lambda)\\hat{k}$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            440.8,
+            359.8,
+            487.3
+          ],
+          "conf": 0.887,
+          "text": "Eliminating $\\lambda$, we get"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            388.0,
+            487.6,
+            662.2,
+            575.3
+          ],
+          "conf": 0.915,
+          "text": "$$ \\frac{x-5}{3} = \\frac{y-2}{2} = \\frac{z+4}{-8} $$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            574.9,
+            709.3,
+            622.6
+          ],
+          "conf": 0.908,
+          "text": "which is the equation of the line in Cartesian form."
+        },
+        {
+          "order": 7,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.8,
+            626.2,
+            522.0,
+            676.4
+          ],
+          "conf": 0.88,
+          "text": "11.4 Angle between Two Lines"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            675.5,
+            716.3,
+            1015.6
+          ],
+          "conf": 0.977,
+          "text": "Let $\\text{L}_1$ and $\\text{L}_2$ be two lines passing through the origin\nand with direction ratios $a_1$, $b_1$, $c_1$ and $a_2$, $b_2$, $c_2$,\nrespectively. Let P be a point on $\\text{L}_1$ and Q be a point\non $\\text{L}_2$. Consider the directed lines OP and OQ as\ngiven in Fig 11.6. Let $\\theta$ be the acute angle between\nOP and OQ. Now recall that the directed line\nsegments OP and OQ are vectors with components\n$a_1$, $b_1$, $c_1$ and $a_2$, $b_2$, $c_2$, respectively. Therefore, the\nangle $\\theta$ between them is given by"
+        },
+        {
+          "order": 9,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            709.9,
+            634.9,
+            1129.4,
+            1003.5
+          ],
+          "conf": 0.948,
+          "text": ""
+        },
+        {
+          "order": 10,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            858.4,
+            975.4,
+            979.8,
+            1021.1
+          ],
+          "conf": 0.892,
+          "text": "Fig 11.4"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            183.4,
+            1026.4,
+            1127.2,
+            1142.3
+          ],
+          "conf": 0.819,
+          "text": "$$ \\cos \\theta = \\left| \\frac{a_1 a_2 + b_1 b_2 + c_1 c_2}{\\sqrt{a_1^2 + b_1^2 + c_1^2} \\sqrt{a_2^2 + b_2^2 + c_2^2}} \\right| \\quad \\dots (1) $$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            1150.4,
+            779.8,
+            1198.6
+          ],
+          "conf": 0.892,
+          "text": "The angle between the lines in terms of $\\sin \\theta$ is given by"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            197.0,
+            1198.6,
+            1129.8,
+            1646.6
+          ],
+          "conf": 0.95,
+          "text": "$\\sin \\theta = \\sqrt{1 - \\cos^2 \\theta}$\n\n$= \\sqrt{1 - \\frac{(a_1 a_2 + b_1 b_2 + c_1 c_2)^2}{(a_1^2 + b_1^2 + c_1^2)(a_2^2 + b_2^2 + c_2^2)}}$\n\n$= \\frac{\\sqrt{(a_1^2 + b_1^2 + c_1^2)(a_2^2 + b_2^2 + c_2^2) - (a_1 a_2 + b_1 b_2 + c_1 c_2)^2}}{\\sqrt{(a_1^2 + b_1^2 + c_1^2)} \\sqrt{(a_2^2 + b_2^2 + c_2^2)}}$\n\n$= \\frac{\\sqrt{(a_1 b_2 - a_2 b_1)^2 + (b_1 c_2 - b_2 c_1)^2 + (c_1 a_2 - c_2 a_1)^2}}{\\sqrt{a_1^2 + b_1^2 + c_1^2} \\sqrt{a_2^2 + b_2^2 + c_2^2}} \\quad \\dots (2)$"
+        }
+      ],
+      "page": 6
+    },
+    {
+      "image": "0108_p0007.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            72.6,
+            212.2,
+            1128.7,
+            367.0
+          ],
+          "conf": 0.917,
+          "text": "Note In case the lines $L_1$ and $L_2$ do not pass through the origin, we may take\nlines $L'_1$ and $L'_2$ which are parallel to $L_1$ and $L_2$ respectively and pass through\nthe origin."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.4,
+            365.6,
+            1128.4,
+            456.7
+          ],
+          "conf": 0.95,
+          "text": "If instead of direction ratios for the lines $\\mathrm{L}_1$ and $\\mathrm{L}_2$, direction cosines, namely,\n$l_1, m_1, n_1$ for $\\mathrm{L}_1$ and $l_2, m_2, n_2$ for $\\mathrm{L}_2$ are given, then (1) and (2) takes the following form:"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.4,
+            458.6,
+            1127.9,
+            518.9
+          ],
+          "conf": 0.898,
+          "text": "$$\\cos \\theta = |l_1 l_2 + m_1 m_2 + n_1 n_2| \\quad (\\text{as } l_1^2 + m_1^2 + n_1^2 = 1 = l_2^2 + m_2^2 + n_2^2) \\quad \\dots (3)$$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.2,
+            523.1,
+            1127.5,
+            593.3
+          ],
+          "conf": 0.908,
+          "text": "and $\\quad \\sin \\theta = \\sqrt{(l_1 m_2 - l_2 m_1)^2 - (m_1 n_2 - m_2 n_1)^2 + (n_1 l_2 - n_2 l_1)^2} \\quad \\dots (4)$"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            590.0,
+            793.6,
+            642.8
+          ],
+          "conf": 0.907,
+          "text": "Two lines with direction ratios $a_1$, $b_1$, $c_1$ and $a_2$, $b_2$, $c_2$ are"
+        },
+        {
+          "order": 5,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            89.9,
+            634.0,
+            788.2,
+            871.0
+          ],
+          "conf": 0.653,
+          "text": "(i) perpendicular i.e. if $\\theta = 90^{\\circ}$ by (1)\n$$a_1a_2 + b_1b_2 + c_1c_2 = 0$$\n(ii) parallel i.e. if $\\theta = 0$ by (2)\n$$\\frac{a_1}{a_2} = \\frac{b_1}{b_2} = \\frac{c_1}{c_2}$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.6,
+            863.8,
+            1129.0,
+            950.4
+          ],
+          "conf": 0.948,
+          "text": "Now, we find the angle between two lines when their equations are given. If $\\theta$ is\nacute the angle between the lines"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            501.8,
+            958.3,
+            910.9,
+            1015.6
+          ],
+          "conf": 0.862,
+          "text": "$$\\vec{r} = \\vec{a}_1 + \\lambda b_1 \\text{ and } \\vec{r} = \\vec{a}_2 + \\mu \\vec{b}_2$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            1019.2,
+            685.9,
+            1126.8
+          ],
+          "conf": 0.895,
+          "text": "then $\\cos \\theta = \\left| \\frac{\\vec{b}_1 \\cdot \\vec{b}_2}{|\\vec{b}_1| |\\vec{b}_2|} \\right|$"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            1116.9,
+            733.9,
+            1166.4
+          ],
+          "conf": 0.909,
+          "text": "In Cartesian form, if $\\theta$ is the angle between the lines"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            72.7,
+            1169.8,
+            1128.0,
+            1260.9
+          ],
+          "conf": 0.83,
+          "text": "$$ \\frac{x-x_1}{a_1} = \\frac{y-y_1}{b_1} = \\frac{z-z_1}{c_1} \\dots (1) $$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.2,
+            1270.8,
+            1127.8,
+            1359.0
+          ],
+          "conf": 0.904,
+          "text": "and $$\\frac{x-x_{2}}{a_{2}}=\\frac{y-y_{2}}{b_{2}}=\\frac{z-z_{2}}{c_{2}} \\quad \\dots (2)$$"
+        },
+        {
+          "order": 12,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            1356.1,
+            1128.7,
+            1441.8
+          ],
+          "conf": 0.918,
+          "text": "where, $a_1, b_1, c_1$ and $a_2, b_2, c_2$ are the direction ratios of the lines (1) and (2), respectively,\nthen"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            452.5,
+            1449.0,
+            940.1,
+            1561.0
+          ],
+          "conf": 0.896,
+          "text": "$$\\cos \\theta = \\left| \\frac{a_1 a_2 + b_1 b_2 + c_1 c_2}{\\sqrt{a_1^2 + b_1^2 + c_1^2} \\sqrt{a_2^2 + b_2^2 + c_2^2}} \\right|$$"
+        },
+        {
+          "order": 14,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            1554.5,
+            835.8,
+            1662.1
+          ],
+          "conf": 0.744,
+          "text": "Example 7 Find the angle between the pair of lines given by\n\n$$ \\vec{r} = 3\\hat{i} + 2\\hat{j} - 4\\hat{k} + \\lambda(\\hat{i} + 2\\hat{j} + 2\\hat{k}) $$"
+        }
+      ],
+      "page": 7
+    },
+    {
+      "image": "0108_p0008.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.7,
+            210.6,
+            631.3,
+            266.9
+          ],
+          "conf": 0.875,
+          "text": "and $\\vec{r} = 5\\hat{i} - 2\\hat{j} + \\mu(3\\hat{i} + 2\\hat{j} + 6\\hat{k})$"
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.1,
+            273.2,
+            766.1,
+            330.8
+          ],
+          "conf": 0.787,
+          "text": "Solution Here $\\vec{b}_1 = \\hat{i} + 2\\hat{j} + 2\\hat{k}$ and $\\vec{b}_2 = 3\\hat{i} + 2\\hat{j} + 6\\hat{k}$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            325.3,
+            652.8,
+            375.5
+          ],
+          "conf": 0.89,
+          "text": "The angle $\\theta$ between the two lines is given by"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.0,
+            378.5,
+            815.0,
+            579.2
+          ],
+          "conf": 0.904,
+          "text": "$$\\cos \\theta = \\left| \\frac{\\vec{b}_1 \\cdot \\vec{b}_2}{|\\vec{b}_1||\\vec{b}_2|} \\right| = \\left| \\frac{(\\hat{i} + 2\\hat{j} + 2\\hat{k}) \\cdot (3\\hat{i} + 2\\hat{j} + 6\\hat{k})}{\\sqrt{1 + 4 + 4} \\sqrt{9 + 4 + 36}} \\right|$$\n$$= \\left| \\frac{3 + 4 + 12}{3 \\times 7} \\right| = \\frac{19}{21}$$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            576.5,
+            452.4,
+            664.7
+          ],
+          "conf": 0.87,
+          "text": "Hence $\\theta = \\cos^{-1} \\left( \\frac{19}{21} \\right)$"
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            656.1,
+            742.8,
+            869.9
+          ],
+          "conf": 0.707,
+          "text": "Example 8 Find the angle between the pair of lines\n$$\\frac{x+3}{3} = \\frac{y-1}{5} = \\frac{z+3}{4}$$\nand\n$$\\frac{x+1}{1} = \\frac{y-4}{1} = \\frac{z-5}{2}$$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.7,
+            867.4,
+            1128.2,
+            951.3
+          ],
+          "conf": 0.893,
+          "text": "Solution The direction ratios of the first line are 3, 5, 4 and the direction ratios of the\nsecond line are 1, 1, 2. If $\\theta$ is the angle between them, then"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            185.3,
+            951.5,
+            1024.8,
+            1062.4
+          ],
+          "conf": 0.858,
+          "text": "$$\\cos \\theta = \\left| \\frac{3.1 + 5.1 + 4.2}{\\sqrt{3^2 + 5^2 + 4^2} \\sqrt{1^2 + 1^2 + 2^2}} \\right| = \\frac{16}{\\sqrt{50} \\sqrt{6}} = \\frac{16}{5 \\sqrt{2} \\sqrt{6}} = \\frac{8 \\sqrt{3}}{15}$$"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.6,
+            1055.2,
+            615.1,
+            1162.1
+          ],
+          "conf": 0.789,
+          "text": "Hence, the required angle is $\\cos^{-1}\\left(\\frac{8\\sqrt{3}}{15}\\right)$."
+        },
+        {
+          "order": 9,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.6,
+            1162.1,
+            690.4,
+            1212.7
+          ],
+          "conf": 0.902,
+          "text": "11.5 Shortest Distance between Two Lines"
+        },
+        {
+          "order": 10,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.2,
+            1207.4,
+            603.8,
+            1469.5
+          ],
+          "conf": 0.957,
+          "text": "If two lines in space intersect at a point,\nthen the shortest distance between them is\nzero. Also, if two lines in space are parallel,\nthen the shortest distance between them\nwill be the perpendicular distance, i.e. the\nlength of the perpendicular drawn from a\npoint on one line onto the other line."
+        },
+        {
+          "order": 11,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            598.9,
+            1237.7,
+            1128.1,
+            1615.3
+          ],
+          "conf": 0.955,
+          "text": ""
+        },
+        {
+          "order": 12,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            818.8,
+            1600.2,
+            953.9,
+            1649.2
+          ],
+          "conf": 0.859,
+          "text": "Fig 11.5"
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.1,
+            1464.1,
+            603.5,
+            1690.4
+          ],
+          "conf": 0.938,
+          "text": "Further, in a space, there are lines which\nare neither intersecting nor parallel. In fact,\nsuch pair of lines are *non coplanar* and\nare called *skew lines*. For example, let us\nconsider a room of size 1, 3, 2 units along\n$x, y$ and $z$-axes respectively Fig 11.5."
+        }
+      ],
+      "page": 8
+    },
+    {
+      "image": "0108_p0009.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.6,
+            205.7,
+            1128.2,
+            320.6
+          ],
+          "conf": 0.951,
+          "text": "The line GE that goes diagonally across the ceiling and the line DB passes through\none corner of the ceiling directly above A and goes diagonally down the wall. These\nlines are skew because they are not parallel and also never meet."
+        },
+        {
+          "order": 1,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            315.4,
+            1128.1,
+            428.0
+          ],
+          "conf": 0.949,
+          "text": "By the shortest distance between two lines we mean the join of a point in one line\nwith one point on the other line so that the length of the segment so obtained is the\nsmallest."
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.8,
+            423.5,
+            1128.5,
+            506.7
+          ],
+          "conf": 0.938,
+          "text": "For skew lines, the line of the shortest distance will be perpendicular to both\nthe lines."
+        },
+        {
+          "order": 3,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.5,
+            507.6,
+            613.9,
+            557.1
+          ],
+          "conf": 0.874,
+          "text": "11.5.1 Distance between two skew lines"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            554.4,
+            1127.9,
+            644.8
+          ],
+          "conf": 0.949,
+          "text": "We now determine the shortest distance between two skew lines in the following way:\nLet $l_1$ and $l_2$ be two skew lines with equations (Fig. 11.6)"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.8,
+            643.3,
+            1127.9,
+            754.7
+          ],
+          "conf": 0.582,
+          "text": "$$ \\vec{r} = \\vec{a}_1 + \\lambda \\vec{b}_1 \\quad \\dots (1) $$\n\nand $$ \\vec{r} = \\vec{a}_2 + \\mu \\vec{b}_2 \\quad \\dots (2) $$"
+        },
+        {
+          "order": 6,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            764.1,
+            1126.2,
+            928.6
+          ],
+          "conf": 0.926,
+          "text": "Take any point S on $l_1$ with position vector $\\vec{a}_1$ and T on $l_2$, with position vector $\\vec{a}_2$.\nThen the magnitude of the shortest distance vector\nwill be equal to that of the projection of ST along the\ndirection of the line of shortest distance (See 10.6.2)."
+        },
+        {
+          "order": 7,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            726.0,
+            809.8,
+            1128.7,
+            1063.8
+          ],
+          "conf": 0.96,
+          "text": ""
+        },
+        {
+          "order": 8,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            871.1,
+            1057.5,
+            994.0,
+            1103.4
+          ],
+          "conf": 0.821,
+          "text": "Fig 11.6"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.8,
+            932.6,
+            716.0,
+            1081.4
+          ],
+          "conf": 0.943,
+          "text": "If $\\overrightarrow{\\text{PQ}}$ is the shortest distance vector between $l_1$\nand $l_2$, then it being perpendicular to both $\\vec{b}_1$ and $\\vec{b}_2$,\nthe unit vector $\\hat{n}$ along $\\overrightarrow{\\text{PQ}}$ would therefore be"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            499.0,
+            1099.6,
+            1127.5,
+            1200.6
+          ],
+          "conf": 0.862,
+          "text": "$$ \\hat{n} = \\frac{\\vec{b}_1 \\times \\vec{b}_2}{|\\vec{b}_1 \\times \\vec{b}_2|} \\qquad \\dots (3) $$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.8,
+            1202.4,
+            1128.2,
+            1332.4
+          ],
+          "conf": 0.896,
+          "text": "Then $\\overline{\\text{PQ}} = d \\hat{n}$\nwhere, $d$ is the magnitude of the shortest distance vector. Let $\\theta$ be the angle between\n$\\overline{\\text{ST}}$ and $\\overline{\\text{PQ}}$. Then"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            477.5,
+            1318.5,
+            713.3,
+            1368.2
+          ],
+          "conf": 0.791,
+          "text": "$$PQ = ST |\\cos \\theta|$$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.4,
+            1365.7,
+            1129.2,
+            1674.2
+          ],
+          "conf": 0.895,
+          "text": "But\n$$\\cos \\theta = \\left| \\frac{\\overline{\\text{PQ}} \\cdot \\overline{\\text{ST}}}{\\left| \\overline{\\text{PQ}} \\right| \\left| \\overline{\\text{ST}} \\right|} \\right|$$\n$$= \\left| \\frac{d \\hat{n} \\cdot (\\vec{a}_2 - \\vec{a}_1)}{d \\text{ ST}} \\right| \\quad (\\text{since } \\overline{\\text{ST}} = \\vec{a}_2 - \\vec{a}_1)$$\n$$= \\left| \\frac{(\\vec{b}_1 \\times \\vec{b}_2) \\cdot (\\vec{a}_2 - \\vec{a}_1)}{\\text{ST} \\left| \\vec{b}_1 \\times \\vec{b}_2 \\right|} \\right| \\quad [\\text{From (3)}]$$"
+        }
+      ],
+      "page": 9
+    },
+    {
+      "image": "0108_p0010.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            208.8,
+            576.5,
+            256.1
+          ],
+          "conf": 0.902,
+          "text": "Hence, the required shortest distance is"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            501.7,
+            252.2,
+            787.7,
+            300.4
+          ],
+          "conf": 0.884,
+          "text": "$$d = \\mathrm{PQ} = \\mathrm{ST} |\\cos \\theta|$$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.8,
+            304.4,
+            839.9,
+            400.9
+          ],
+          "conf": 0.894,
+          "text": "$$d = \\left| \\frac{(\\vec{b}_1 \\times \\vec{b}_2) \\cdot (\\vec{a}_2 \\times \\vec{a}_1)}{|\\vec{b}_1 \\times \\vec{b}_2|} \\right|$$"
+        },
+        {
+          "order": 3,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            69.6,
+            385.6,
+            297.6,
+            432.4
+          ],
+          "conf": 0.92,
+          "text": "Cartesian form"
+        },
+        {
+          "order": 4,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.0,
+            429.7,
+            576.0,
+            476.6
+          ],
+          "conf": 0.925,
+          "text": "The shortest distance between the lines"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            383.5,
+            473.8,
+            803.2,
+            566.3
+          ],
+          "conf": 0.888,
+          "text": "$$l_1: \\frac{x - x_1}{a_1} = \\frac{y - y_1}{b_1} = \\frac{z - z_1}{c_1}$$"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.4,
+            567.2,
+            805.7,
+            660.8
+          ],
+          "conf": 0.872,
+          "text": "and $l_2 : \\frac{x - x_2}{a_2} = \\frac{y - y_2}{b_2} = \\frac{z - z_2}{c_2}$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.7,
+            677.2,
+            934.4,
+            906.5
+          ],
+          "conf": 0.77,
+          "text": "is $\\sqrt{(b_1c_2 - b_2c_1)^2 + (c_1a_2 - c_2a_1)^2 + (a_1b_2 - a_2b_1)^2}$"
+        },
+        {
+          "order": 8,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            70.0,
+            936.5,
+            590.2,
+            985.3
+          ],
+          "conf": 0.889,
+          "text": "11.5.2 Distance between parallel lines"
+        },
+        {
+          "order": 9,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.8,
+            983.9,
+            1094.6,
+            1033.9
+          ],
+          "conf": 0.915,
+          "text": "If two lines $l_1$ and $l_2$ are parallel, then they are coplanar. Let the lines be given by"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.9,
+            1025.8,
+            1127.0,
+            1125.0
+          ],
+          "conf": 0.809,
+          "text": "$$ \\begin{aligned} \\bar{r} &= \\vec{a}_1 + \\lambda \\vec{b} & ... (1) \\\\ \\text{and} \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\vec{r} &= \\vec{a}_2 + \\mu \\vec{b} & ... (2) \\end{aligned} $$"
+        },
+        {
+          "order": 11,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            1135.3,
+            746.6,
+            1219.1
+          ],
+          "conf": 0.925,
+          "text": "where, $\\vec{\\text{a}}_1$ is the position vector of a point S on $l_1$ and $\\vec{\\text{a}}_2$\nis the position vector of a point T on $l_2$ Fig 11.7."
+        },
+        {
+          "order": 12,
+          "label": "Diagram",
+          "type": "Figure",
+          "bbox_xyxy": [
+            739.3,
+            1145.9,
+            1132.4,
+            1382.2
+          ],
+          "conf": 0.95,
+          "text": ""
+        },
+        {
+          "order": 13,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            1223.8,
+            746.9,
+            1352.2
+          ],
+          "conf": 0.947,
+          "text": "As $l_1, l_2$ are coplanar, if the foot of the perpendicular\nfrom T on the line $l_1$ is P, then the distance between the\nlines $l_1$ and $l_2 = |\\text{TP}|$."
+        },
+        {
+          "order": 14,
+          "label": "Image-caption",
+          "type": "Caption",
+          "bbox_xyxy": [
+            875.8,
+            1385.8,
+            993.8,
+            1431.5
+          ],
+          "conf": 0.832,
+          "text": "Fig 11.7"
+        },
+        {
+          "order": 15,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            1363.1,
+            747.0,
+            1451.5
+          ],
+          "conf": 0.919,
+          "text": "Let $\\theta$ be the angle between the vectors $\\overrightarrow{\\mathrm{ST}}$ and $\\vec{b}$.\nThen"
+        },
+        {
+          "order": 16,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            180.2,
+            1463.4,
+            1128.0,
+            1517.6
+          ],
+          "conf": 0.861,
+          "text": "$$ \\vec{b} \\times \\overrightarrow{\\text{ST}} = (|\\vec{b}||\\overrightarrow{\\text{ST}}|\\sin \\theta)\\hat{n} ... \\tag{3} $$"
+        },
+        {
+          "order": 17,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            69.2,
+            1525.0,
+            983.8,
+            1576.6
+          ],
+          "conf": 0.895,
+          "text": "where $\\hat{n}$ is the unit vector perpendicular to the plane of the lines $l_1$ and $l_2$."
+        },
+        {
+          "order": 18,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.3,
+            1584.5,
+            662.8,
+            1636.9
+          ],
+          "conf": 0.83,
+          "text": "But $\\overline{\\text{ST}} = \\vec{a}_2 - \\vec{a}_1$"
+        }
+      ],
+      "page": 10
+    },
+    {
+      "image": "0108_p0011.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.9,
+            208.6,
+            433.0,
+            257.2
+          ],
+          "conf": 0.904,
+          "text": "Therefore, from (3), we get"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            359.2,
+            267.7,
+            1003.4,
+            322.9
+          ],
+          "conf": 0.89,
+          "text": "$$\\vec{b} \\times (\\vec{a}_2 - \\vec{a}_1) = \\vec{b} |\\text{PT } \\hat{n} \\quad (\\text{since PT = ST } \\sin \\theta)$$"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            68.8,
+            339.1,
+            903.6,
+            394.7
+          ],
+          "conf": 0.881,
+          "text": "i.e., $|\\vec{b} \\times (\\vec{a}_2 - \\vec{a}_1)| = |\\vec{b}| \\text{ PT} \\cdot 1 \\quad (\\text{as } |\\hat{n}| = 1)$"
+        },
+        {
+          "order": 3,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.9,
+            393.8,
+            752.4,
+            443.5
+          ],
+          "conf": 0.926,
+          "text": "Hence, the distance between the given parallel lines is"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            498.7,
+            446.4,
+            861.6,
+            553.5
+          ],
+          "conf": 0.936,
+          "text": "$$d = |\\overline{\\mathbf{P}\\mathbf{T}}| = \\left| \\frac{\\vec{b} \\times (\\vec{a}_2 - \\vec{a}_1)}{|\\vec{b}|} \\right|$$"
+        },
+        {
+          "order": 5,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.4,
+            568.8,
+            1128.7,
+            653.6
+          ],
+          "conf": 0.854,
+          "text": "Example 9 Find the shortest distance between the lines $l_1$ and $l_2$ whose vector\nequations are"
+        },
+        {
+          "order": 6,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            502.3,
+            651.2,
+            1128.2,
+            708.1
+          ],
+          "conf": 0.837,
+          "text": "$$ \\vec{r} = \\hat{i} + \\hat{j} + \\lambda ( 2 \\hat{i} - \\hat{j} + \\hat{k} ) \\quad ... (1) $$"
+        },
+        {
+          "order": 7,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.1,
+            710.6,
+            1127.4,
+            766.4
+          ],
+          "conf": 0.856,
+          "text": "and $\\vec{r} = 2 \\hat{i} + \\hat{j} - \\hat{k} + \\mu (3 \\hat{i} - 5 \\hat{j} + 2 \\hat{k}) \\quad \\dots (2)$"
+        },
+        {
+          "order": 8,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.6,
+            790.2,
+            1118.3,
+            846.2
+          ],
+          "conf": 0.895,
+          "text": "Solution Comparing (1) and (2) with $\\vec{r} = \\vec{a}_1 + \\lambda \\vec{b}_1$ and $\\vec{\\text{r}} = \\vec{\\text{a}}_2 + \\mu \\vec{\\text{b}}_2$ respectively,"
+        },
+        {
+          "order": 9,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            71.0,
+            853.6,
+            1018.3,
+            976.1
+          ],
+          "conf": 0.607,
+          "text": "we get $\\qquad \\qquad \\qquad \\qquad \\qquad \\bar{a}_1 = \\hat{i} + \\hat{j} \\text{ , } \\bar{b}_1 = 2 \\hat{i} - \\hat{j} + \\hat{k}$\n\n$\\qquad \\qquad \\qquad \\qquad \\qquad \\bar{a}_2 = 2 \\hat{i} + \\hat{j} - \\hat{k} \\text{ and } \\bar{b}_2 = 3 \\hat{i} - 5 \\hat{j} + 2 \\hat{k}$"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.7,
+            977.0,
+            649.0,
+            1031.8
+          ],
+          "conf": 0.808,
+          "text": "Therefore $\\vec{a}_2 - \\vec{a}_1 = \\hat{i} - \\hat{k}$"
+        },
+        {
+          "order": 11,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.6,
+            1037.0,
+            1014.7,
+            1095.8
+          ],
+          "conf": 0.826,
+          "text": "and $$\\vec{b}_1 \\times \\vec{b}_2 = (2\\hat{i} - \\hat{j} + \\hat{k}) \\times (3\\hat{i} - 5\\hat{j} + 2\\hat{k})$$"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            528.4,
+            1105.9,
+            949.7,
+            1264.9
+          ],
+          "conf": 0.861,
+          "text": "$$ = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 2 & -1 & 1 \\\\ 3 & -5 & 2 \\end{vmatrix} = 3 \\hat{i} - \\hat{j} - 7 \\hat{k} $$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            70.9,
+            1280.3,
+            823.6,
+            1340.8
+          ],
+          "conf": 0.847,
+          "text": "So $|\\vec{b}_1 \\times \\vec{b}_2| = \\sqrt{9 + 1 + 49} = \\sqrt{59}$"
+        },
+        {
+          "order": 14,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.8,
+            1333.1,
+            872.4,
+            1383.3
+          ],
+          "conf": 0.881,
+          "text": "Hence, the shortest distance between the given lines is given by"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            226.7,
+            1396.8,
+            922.3,
+            1502.3
+          ],
+          "conf": 0.911,
+          "text": "$$d = \\left| \\frac{(\\bar{\\mathbf{b}}_1 \\times \\bar{\\mathbf{b}}_2) \\cdot (\\bar{\\mathbf{a}}_2 - \\bar{\\mathbf{a}}_1)}{|\\bar{\\mathbf{b}}_1 \\times \\bar{\\mathbf{b}}_2|} \\right| = \\frac{|3 - 0 + 7|}{\\sqrt{59}} = \\frac{10}{\\sqrt{59}}$$"
+        },
+        {
+          "order": 16,
+          "label": "Solved-example",
+          "type": "Text",
+          "bbox_xyxy": [
+            67.9,
+            1503.5,
+            904.2,
+            1667.3
+          ],
+          "conf": 0.632,
+          "text": "Example 10 Find the distance between the lines $l_1$ and $l_2$ given by\n\n$$\\vec{r} = \\hat{i} + 2 \\hat{j} - 4 \\hat{k} + \\lambda ( 2 \\hat{i} + 3 \\hat{j} + 6 \\hat{k} )$$\n\nand $$\\vec{r} = 3 \\hat{i} + 3 \\hat{j} - 5 \\hat{k} + \\mu ( 2 \\hat{i} + 3 \\hat{j} + 6 \\hat{k} )$$"
+        }
+      ],
+      "page": 11
+    },
+    {
+      "image": "0108_p0012.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            209.3,
+            749.4,
+            259.7
+          ],
+          "conf": 0.894,
+          "text": "Solution The two lines are parallel (Why? ) We have"
+        },
+        {
+          "order": 1,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            228.5,
+            259.7,
+            963.0,
+            316.1
+          ],
+          "conf": 0.88,
+          "text": "$\\vec{a}_1 = \\hat{i} + 2\\hat{j} - 4\\hat{k}$, $\\vec{a}_2 = 3\\hat{i} + 3\\hat{j} - 5\\hat{k}$ and $\\vec{b} = 2\\hat{i} + 3\\hat{j} + 6\\hat{k}$"
+        },
+        {
+          "order": 2,
+          "label": "Paragraph",
+          "type": "Text",
+          "bbox_xyxy": [
+            70.3,
+            309.8,
+            734.5,
+            358.0
+          ],
+          "conf": 0.894,
+          "text": "Therefore, the distance between the lines is given by"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            235.2,
+            372.2,
+            730.6,
+            586.4
+          ],
+          "conf": 0.946,
+          "text": "$$ d = \\left| \\frac{\\vec{b} \\times (\\vec{a}_2 - \\vec{a}_1)}{|\\vec{b}|} \\right| = \\left| \\frac{\\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 2 & 3 & 6 \\\\ 2 & 1 & -1 \\end{vmatrix}}{\\sqrt{4 + 9 + 36}} \\right| $$"
+        },
+        {
+          "order": 4,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            69.8,
+            606.2,
+            746.6,
+            709.9
+          ],
+          "conf": 0.897,
+          "text": "or $$= \\frac{|-9\\hat{i} + 14\\hat{j} - 4\\hat{k}|}{\\sqrt{49}} = \\frac{\\sqrt{293}}{\\sqrt{49}} = \\frac{\\sqrt{293}}{7}$$"
+        },
+        {
+          "order": 5,
+          "label": "Sub-section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            462.1,
+            718.7,
+            734.5,
+            779.6
+          ],
+          "conf": 0.71,
+          "text": "EXERCISE 11.2"
+        },
+        {
+          "order": 6,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            95.9,
+            783.9,
+            1127.6,
+            1652.2
+          ],
+          "conf": 0.835,
+          "text": "1. Show that the three lines with direction cosines\n$\\frac{12}{13}, \\frac{-3}{13}, \\frac{-4}{13}; \\frac{4}{13}, \\frac{12}{13}, \\frac{3}{13}; \\frac{3}{13}, \\frac{-4}{13}, \\frac{12}{13}$ are mutually perpendicular.\n\n2. Show that the line through the points $(1, -1, 2), (3, 4, -2)$ is perpendicular to the\nline through the points $(0, 3, 2)$ and $(3, 5, 6)$.\n\n3. Show that the line through the points $(4, 7, 8), (2, 3, 4)$ is parallel to the line\nthrough the points $(-1, -2, 1), (1, 2, 5)$.\n\n4. Find the equation of the line which passes through the point $(1, 2, 3)$ and is\nparallel to the vector $3 \\hat{i} + 2 \\hat{j} - 2 \\hat{k}$.\n\n5. Find the equation of the line in vector and in cartesian form that passes through\nthe point with position vector $2 \\hat{i} - j + 4 \\hat{k}$ and is in the direction $\\hat{i} + 2 \\hat{j} - \\hat{k}$.\n\n6. Find the cartesian equation of the line which passes through the point $(-2, 4, -5)$\nand parallel to the line given by $\\frac{x + 3}{3} = \\frac{y - 4}{5} = \\frac{z + 8}{6}$.\n\n7. The cartesian equation of a line is $\\frac{x - 5}{3} = \\frac{y + 4}{7} = \\frac{z - 6}{2}$. Write its vector form.\n\n8. Find the angle between the following pairs of lines:\n(i) $\\vec{r} = 2 \\hat{i} - 5 \\hat{j} + \\hat{k} + \\lambda (3 \\hat{i} + 2 \\hat{j} + 6 \\hat{k})$ and\n$\\vec{r} = 7 \\hat{i} - 6 \\hat{k} + \\mu (\\hat{i} + 2 \\hat{j} + 2 \\hat{k})$"
+        }
+      ],
+      "page": 12
+    },
+    {
+      "image": "0108_p0013.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            170.8,
+            214.9,
+            673.4,
+            322.7
+          ],
+          "conf": 0.8,
+          "text": "(ii) $\\vec{r} = 3\\hat{i} + \\hat{j} - 2\\hat{k} + \\lambda(\\hat{i} - \\hat{j} - 2\\hat{k})$ and\n$\\vec{r} = 2\\hat{i} - \\hat{j} - 56\\hat{k} + \\mu(3\\hat{i} - 5\\hat{j} - 4\\hat{k})$"
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.3,
+            310.9,
+            774.0,
+            360.4
+          ],
+          "conf": 0.895,
+          "text": "9. Find the angle between the following pair of lines:"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            176.2,
+            357.3,
+            788.3,
+            447.7
+          ],
+          "conf": 0.907,
+          "text": "(i) $\\frac{x-2}{2} = \\frac{y-1}{5} = \\frac{z+3}{-3}$ and $\\frac{x+2}{-1} = \\frac{y-4}{8} = \\frac{z-5}{4}$"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            170.6,
+            452.0,
+            679.1,
+            542.3
+          ],
+          "conf": 0.896,
+          "text": "(ii) $\\frac{x}{2} = \\frac{y}{2} = \\frac{z}{1}$ and $\\frac{x-5}{4} = \\frac{y-2}{1} = \\frac{z-3}{8}$"
+        },
+        {
+          "order": 4,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.8,
+            536.8,
+            901.9,
+            628.7
+          ],
+          "conf": 0.887,
+          "text": "10. Find the values of $p$ so that the lines $\\frac{1-x}{3} = \\frac{7y-14}{2p} = \\frac{z-3}{2}$"
+        },
+        {
+          "order": 5,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            145.7,
+            629.6,
+            747.6,
+            724.0
+          ],
+          "conf": 0.884,
+          "text": "and $\\frac{7-7x}{3p}=\\frac{y-5}{1}=\\frac{6-z}{5}$ are at right angles."
+        },
+        {
+          "order": 6,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            81.0,
+            728.6,
+            1127.9,
+            850.7
+          ],
+          "conf": 0.901,
+          "text": "11. Show that the lines $\\frac{x-5}{7} = \\frac{y+2}{-5} = \\frac{z}{1}$ and $\\frac{x}{1} = \\frac{y}{2} = \\frac{z}{3}$ are perpendicular to\neach other."
+        },
+        {
+          "order": 7,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.1,
+            841.7,
+            701.8,
+            891.4
+          ],
+          "conf": 0.884,
+          "text": "12. Find the shortest distance between the lines"
+        },
+        {
+          "order": 8,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            145.0,
+            891.0,
+            612.1,
+            997.6
+          ],
+          "conf": 0.517,
+          "text": "$\\vec{r} = (\\hat{i} + 2 \\hat{j} + \\hat{k}) + \\lambda (\\hat{i} - \\hat{j} + \\hat{k})$ and\n$\\vec{r} = 2 \\hat{i} - \\hat{j} - \\hat{k} + \\mu (2 \\hat{i} + \\hat{j} + 2 \\hat{k})$"
+        },
+        {
+          "order": 9,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.0,
+            986.2,
+            701.8,
+            1035.2
+          ],
+          "conf": 0.876,
+          "text": "13. Find the shortest distance between the lines"
+        },
+        {
+          "order": 10,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            151.0,
+            1030.7,
+            767.5,
+            1121.9
+          ],
+          "conf": 0.899,
+          "text": "$\\frac{x+1}{7}=\\frac{y+1}{-6}=\\frac{z+1}{1}$ and $\\frac{x-3}{1}=\\frac{y-5}{-2}=\\frac{z-7}{1}$"
+        },
+        {
+          "order": 11,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.0,
+            1119.8,
+            1045.2,
+            1169.8
+          ],
+          "conf": 0.834,
+          "text": "14. Find the shortest distance between the lines whose vector equations are"
+        },
+        {
+          "order": 12,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            144.6,
+            1165.7,
+            608.0,
+            1221.3
+          ],
+          "conf": 0.837,
+          "text": "$$ \\vec{r} = (\\hat{i} + 2 \\hat{j} + 3 \\hat{k}) + \\lambda (\\hat{i} - 3 \\hat{j} + 2 \\hat{k}) $$"
+        },
+        {
+          "order": 13,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            144.7,
+            1220.9,
+            679.7,
+            1273.5
+          ],
+          "conf": 0.777,
+          "text": "and $\\vec{r} = 4 \\hat{i} + 5 \\hat{j} + 6 \\hat{k} + \\mu (2 \\hat{i} + 3 \\hat{j} + \\hat{k})$"
+        },
+        {
+          "order": 14,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            78.7,
+            1262.5,
+            1044.7,
+            1312.7
+          ],
+          "conf": 0.824,
+          "text": "15. Find the shortest distance between the lines whose vector equations are"
+        },
+        {
+          "order": 15,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            143.9,
+            1311.7,
+            638.9,
+            1415.3
+          ],
+          "conf": 0.697,
+          "text": "$\\vec{r} = (1 - t) \\hat{i} + (t - 2) \\hat{j} + (3 - 2 t) \\hat{k}$ and\n$\\vec{r} = (s + 1) \\hat{i} + (2s - 1) \\hat{j} - (2s + 1) \\hat{k}$"
+        },
+        {
+          "order": 16,
+          "label": "Section-title",
+          "type": "SectionHeader",
+          "bbox_xyxy": [
+            319.9,
+            1449.0,
+            875.3,
+            1500.7
+          ],
+          "conf": 0.842,
+          "text": "Miscellaneous Exercise on Chapter 11"
+        },
+        {
+          "order": 17,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            95.0,
+            1504.6,
+            1128.5,
+            1635.7
+          ],
+          "conf": 0.864,
+          "text": "1. Find the angle between the lines whose direction ratios are $a$, $b$, $c$ and\n$b - c$, $c - a$, $a - b$.\n\n2. Find the equation of a line parallel to $x$-axis and passing through the origin."
+        }
+      ],
+      "page": 13
+    },
+    {
+      "image": "0108_p0014.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.0,
+            223.6,
+            1127.0,
+            352.8
+          ],
+          "conf": 0.817,
+          "text": "3. If the lines $\\frac{x-1}{-3} = \\frac{y-2}{2k} = \\frac{z-3}{2}$ and $\\frac{x-1}{3k} = \\frac{y-1}{1} = \\frac{z-6}{-5}$ are perpendicular,\nfind the value of $k$."
+        },
+        {
+          "order": 1,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.4,
+            355.7,
+            1127.6,
+            465.5
+          ],
+          "conf": 0.779,
+          "text": "4. Find the shortest distance between lines $\\vec{r} = 6 \\hat{i} + 2 \\hat{j} + 2 \\hat{k} + \\lambda (\\hat{i} - 2 \\hat{j} + 2 \\hat{k})$\n\nand $\\vec{r} = -4 \\hat{i} - \\hat{k} + \\mu (3 \\hat{i} - 2 \\hat{j} - 2 \\hat{k})$."
+        },
+        {
+          "order": 2,
+          "label": "Question",
+          "type": "Text",
+          "bbox_xyxy": [
+            94.3,
+            455.8,
+            1127.4,
+            542.3
+          ],
+          "conf": 0.814,
+          "text": "5. Find the vector equation of the line passing through the point $(1, 2, -4)$ and\nperpendicular to the two lines:"
+        },
+        {
+          "order": 3,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            234.4,
+            546.8,
+            966.5,
+            639.4
+          ],
+          "conf": 0.915,
+          "text": "$$\\frac{x-8}{3} = \\frac{y+19}{-16} = \\frac{z-10}{7} \\text{ and } \\frac{x-15}{3} = \\frac{y-29}{8} = \\frac{z-5}{-5}.$$"
+        },
+        {
+          "order": 4,
+          "label": "Infobox",
+          "type": "Text",
+          "bbox_xyxy": [
+            68.9,
+            658.4,
+            1136.4,
+            1658.0
+          ],
+          "conf": 0.73,
+          "text": "Summary\n\nDirection cosines of a line are the cosines of the angles made by the line\nwith the positive directions of the coordinate axes.\nIf $l, m, n$ are the direction cosines of a line, then $l^2 + m^2 + n^2 = 1$.\nDirection cosines of a line joining two points $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$ are\n\n$$\\frac{x_2 - x_1}{PQ}, \\frac{y_2 - y_1}{PQ}, \\frac{z_2 - z_1}{PQ}$$\n\nwhere $PQ = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$\nDirection ratios of a line are the numbers which are proportional to the\ndirection cosines of a line.\nIf $l, m, n$ are the direction cosines and $a, b, c$ are the direction ratios of a line\nthen\n\n$$l = \\frac{a}{\\sqrt{a^2 + b^2 + c^2}} ; m = \\frac{b}{\\sqrt{a^2 + b^2 + c^2}} ; n = \\frac{c}{\\sqrt{a^2 + b^2 + c^2}}$$\n\nSkew lines are lines in space which are neither parallel nor intersecting.\nThey lie in different planes.\nAngle between skew lines is the angle between two intersecting lines\ndrawn from any point (preferably through the origin) parallel to each of the\nskew lines.\nIf $l_1, m_1, n_1$ and $l_2, m_2, n_2$ are the direction cosines of two lines; and $\\theta$ is the\nacute angle between the two lines; then\n\n$$\\cos \\theta = |l_1 l_2 + m_1 m_2 + n_1 n_2|$$"
+        }
+      ],
+      "page": 14
+    },
+    {
+      "image": "0108_p0015.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            104.8,
+            219.8,
+            1097.6,
+            1634.2
+          ],
+          "conf": 0.757,
+          "text": "If $a_1$, $b_1$, $c_1$ and $a_2$, $b_2$, $c_2$ are the direction ratios of two lines and $\\theta$ is the\nacute angle between the two lines; then\n$$\\cos \\theta = \\left| \\frac{a_1 \\ a_2 + b_1 \\ b_2 + c_1 \\ c_2}{\\sqrt{a_1^2 + b_1^2 + c_1^2} \\ \\sqrt{a_2^2 + b_2^2 + c_2^2}} \\right|$$\nVector equation of a line that passes through the given point whose position\nvector is $\\vec{a}$ and parallel to a given vector $\\vec{b}$ is $\\vec{r} = \\vec{a} + \\lambda \\ \\vec{b} \\cdot$\nEquation of a line through a point $(x_1, y_1, z_1)$ and having direction cosines $l, m, n$ is\n$$\\frac{x - x_1}{l} = \\frac{y - y_1}{m} = \\frac{z - z_1}{n}$$\nThe vector equation of a line which passes through two points whose position\nvectors are $\\vec{a}$ and $\\vec{b}$ is $\\vec{r} = \\vec{a} + \\lambda \\ (\\vec{b} - \\vec{a})$.\nIf $\\theta$ is the acute angle between $\\vec{r} = \\vec{a}_1 + \\lambda \\ \\vec{b}_1$ and $\\vec{r} = \\vec{a}_2 + \\lambda \\ \\vec{b}_2$, then\n$$\\cos \\theta = \\left| \\frac{\\vec{b}_1 \\cdot \\vec{b}_2}{|\\vec{b}_1| \\ |\\vec{b}_2||} \\right|$$\nIf $\\frac{x - x_1}{l_1} = \\frac{y - y_1}{m_1} = \\frac{z - z_1}{n_1}$ and $\\frac{x - x_2}{l_2} = \\frac{y - y_2}{m_2} = \\frac{z - z_2}{n_2}$\nare the equations of two lines, then the acute angle between the two lines is\ngiven by $\\cos \\theta = |l_1 l_2 + m_1 m_2 + n_1 n_2|$.\nShortest distance between two skew lines is the line segment perpendicular\nto both the lines.\nShortest distance between $\\vec{r} = \\vec{a}_1 + \\lambda \\ \\vec{b}_1$ and $\\vec{r} = \\vec{a}_2 + \\mu \\ \\vec{b}_2$ is\n$$\\left| \\frac{(\\vec{b}_1 \\times \\vec{b}_2) \\cdot (\\vec{a}_2 - \\vec{a}_1)}{|\\vec{b}_1 \\times \\vec{b}_2|} \\right|$$\nShortest distance between the lines: $\\frac{x - x_1}{a_1} = \\frac{y - y_1}{b_1} = \\frac{z - z_1}{c_1}$ and\n$$\\frac{x - x_2}{a_2} = \\frac{y - y_2}{b_2} = \\frac{z - z_2}{c_2} \\text{ is}$$"
+        }
+      ],
+      "page": 15
+    },
+    {
+      "image": "0108_p0016.png",
+      "width": 1200,
+      "height": 1800,
+      "blocks": [
+        {
+          "order": 0,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            328.7,
+            233.5,
+            916.4,
+            436.0
+          ],
+          "conf": 0.867,
+          "text": "$$\n\\frac{\\left| \\begin{array}{ccc} x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\\\ a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\end{array} \\right|}{\\sqrt{(b_1 c_2 - b_2 c_1)^2 + (c_1 a_2 - c_2 a_1)^2 + (a_1 b_2 - a_2 b_1)^2}}\n$$"
+        },
+        {
+          "order": 1,
+          "label": "List",
+          "type": "Text",
+          "bbox_xyxy": [
+            106.0,
+            457.0,
+            953.9,
+            510.1
+          ],
+          "conf": 0.892,
+          "text": "Distance between parallel lines $\\vec{r} = \\vec{a}_1 + \\lambda \\vec{b}$ and $\\vec{r} = \\vec{a}_2 + \\mu \\vec{b}$ is"
+        },
+        {
+          "order": 2,
+          "label": "Equation",
+          "type": "Equation",
+          "bbox_xyxy": [
+            493.1,
+            519.5,
+            703.3,
+            626.0
+          ],
+          "conf": 0.88,
+          "text": "$$ \\left| \\frac{\\vec{b} \\times (\\vec{a}_2 - \\vec{a}_1)}{|\\vec{b}|} \\right| $$"
+        },
+        {
+          "order": 3,
+          "label": "Image",
+          "type": "Picture",
+          "bbox_xyxy": [
+            527.5,
+            647.8,
+            674.3,
+            693.7
+          ],
+          "conf": 0.793,
+          "text": ""
+        }
+      ],
+      "page": 16
+    }
+  ]
+}
