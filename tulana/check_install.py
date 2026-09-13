@@ -60,10 +60,22 @@ html, js, api = read(static / "index.html"), read(static / "app.js"), read(HERE 
 # Both directions matter. Pushing only the Python leaves a tab invisible;
 # pushing only the interface leaves a tab that appears and then fails.
 FEATURES = [
-    ("Blocks (the parsed layout)", "/api/blocks", 'data-page="Blocks"', "loadBlocks"),
-    ("Layout annotation", "/api/layout/page", 'data-page="Layout"', "loadLayout"),
-    ("Missing-textbook diagnosis", "/api/library/diagnose", None, "library/diagnose"),
+    ("Blocks (the workspace)", "/api/blocks", 'data-page="Blocks"', "loadBlocks"),
+    ("Saved pairs", "/api/pairs/block", 'data-page="Pairs"', "loadPairs"),
+    ("Export", "/api/pairs/formats", 'data-page="Export"', "loadExport"),
 ]
+
+# Deliberately served by the API but absent from the interface. Clipping from
+# PDFs and hand-drawn layout annotation were removed from the workspace, and
+# their endpoints were kept so the work already saved by them stays reachable.
+# An automatic check cannot tell that apart from a half-finished deployment, so
+# it is stated here rather than reported as a fault every time.
+BACKEND_ONLY = [
+    ("Layout annotation (API only)", "/api/layout/page"),
+    ("Missing-textbook diagnosis (API only)", "/api/library/diagnose"),
+    ("PDF clipping (API only)", "/api/clips"),
+]
+
 for label, backend, html_marker, js_marker in FEATURES:
     in_backend = backend in api
     in_ui = ((html_marker in html) if html_marker else True) and \
@@ -78,6 +90,10 @@ for label, backend, html_marker, js_marker in FEATURES:
             "copy app.py, and blocks.py for the Blocks tab")
     else:
         notes.append(f"{label}: not installed on either side")
+
+for label, marker in BACKEND_ONLY:
+    if marker in api:
+        ok(f"{label}: reachable, interface removed on purpose")
 
 try:
     sys.path.insert(0, str(HERE))
