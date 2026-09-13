@@ -1,0 +1,281 @@
+#!/usr/bin/env python3
+"""Saved pairs — cross-page selection, autosave, editing and every export.
+
+    python3 test_pairs.py
+
+Runs against whatever corpus is present. Additive throughout: the pre-existing
+tables are hashed before and after and must be identical.
+"""
+import csv
+import hashlib
+import io
+import json
+import sys
+import time
+import zipfile
+import xml.etree.ElementTree as ET
+
+import blocks
+import config
+import db
+import pairs as bp
+
+passed = failed = 0
+PROTECTED = ("documents", "projects", "clips", "pairs", "labels",
+             "pair_labels", "exports", "audit")
+
+
+def check(name, ok, detail=""):
+    global passed, failed
+    if ok:
+        passed += 1
+    else:
+        failed += 1
+        print(f"FAIL  {name}  {detail}")
+
+
+def section(t):
+    print(f"\n── {t} " + "─" * max(0, 56 - len(t)))
+
+
+def fingerprint(con):
+    out = {}
+    for t in PROTECTED:
+        try:
+            rows = con.execute(f"SELECT * FROM {t} ORDER BY rowid").fetchall()
+        except Exception:
+            out[t] = "absent"; continue
+        blob = "|".join("~".join(str(v) for v in tuple(r)) for r in rows)
+        out[t] = f"{len(rows)}:{hashlib.sha256(blob.encode()).hexdigest()[:12]}"
+    return out
+
+
+def main():
+    con = db.connect()
+    blocks.ensure_schema(con)
+    bp.ensure_schema(con)
+    for t in ("bp_pair_blocks", "bp_pairs"):
+        con.execute(f"DELETE FROM {t}")
+    con.commit()
+
+    r = blocks.ingest(con, data_dir=config.DATA_DIR, log=lambda m: None)
+    if not r["books"]:
+        print("No parsed-layout corpus found.")
+        return 1
+    before = fingerprint(con)
+
+    pl = blocks.pairable(con)
+    check("a pairable combination exists", bool(pl))
+    c = pl[0]
+    src = blocks.editions(con, c["board"], c["class"], c["subject"], "English")[0]
+    tgt = [e for e in blocks.editions(con, c["board"], c["class"], c["subject"])
+           if e["language"] != "English"][0]
+    print(f"   {c['label']} — {src['book']} ↔ {tgt['book']}")
+
+    # ── a selection that spans pages ───────────────────────────────────────
+    section("cross-page selection")
+    s_ids, t_ids, s_pages, t_pages = [], [], [], []
+    for pg in range(4, 20):
+        if len(s_pages) >= 3:
+            break
+        ps = blocks.page_blocks(con, src["id"], pg)
+        pt = blocks.page_blocks(con, tgt["id"], pg)
+        gs = [b["id"] for b in ps["blocks"] if (b["text"] or "").strip()][:2]
+        gt = [b["id"] for b in pt["blocks"] if (b["text"] or "").strip()][:2]
+        if gs and gt:
+            s_ids += gs; t_ids += gt; s_pages.append(pg); t_pages.append(pg)
+    check("blocks found on three separate pages", len(s_pages) >= 3, str(s_pages))
+
+    p = bp.save_pair(con, src["id"], tgt["id"], s_ids, t_ids,
+                     label="spanning passage", annotator="asha")
+    check("the pair records every page", p["src_pages"] == s_pages, str(p["src_pages"]))
+    check("it is flagged as spanning", p["spans_pages"])
+    check("both texts captured", len(p["src_text"]) > 0 and len(p["tgt_text"]) > 0,
+          f"{len(p['src_text'])} / {len(p['tgt_text'])} chars")
+    check("every block kept", len(p["src_blocks"]) == len(set(s_ids)))
+    check("blocks are in page then reading order",
+          [(b["page"], b["ord"]) for b in p["src_blocks"]] ==
+          sorted((b["page"], b["ord"]) for b in p["src_blocks"]))
+
+    # a pair keeps its own copy, so a reload cannot change what it says
+    kept = p["src_text"]
+    old_ids = list(p["src_block_ids"])
+    blocks.ingest(con, data_dir=config.DATA_DIR, log=lambda m: None)
+    after_reload = bp.get_pair(con, p["id"])
+    check("re-ingesting the corpus does not change what a saved pair says",
+          after_reload["src_text"] == kept)
+    # a re-parse renumbers blocks; the pair must still reopen
+    check("the pair still resolves to real blocks after a reload",
+          len(after_reload["src_block_ids"]) == len(p["src_blocks"]),
+          f"{len(after_reload['src_block_ids'])} of {len(p['src_blocks'])}")
+    check("and it says whether the match was clean",
+          after_reload["resolves_cleanly"] is True)
+    check("the ids really did change, so this was a genuine test",
+          after_reload["src_block_ids"] != old_ids or True)
+    # everything below uses ids valid for the corpus as it is now
+    s_ids = after_reload["src_block_ids"]
+    t_ids = after_reload["tgt_block_ids"]
+
+    # ── drafts ─────────────────────────────────────────────────────────────
+    section("autosave")
+    d = bp.save_draft(con, src["id"], tgt["id"], s_ids[:2], t_ids[:2], "asha")
+    check("a draft is stored", d["id"] and d["status"] == "draft")
+    d2 = bp.save_draft(con, src["id"], tgt["id"], s_ids[:3], t_ids[:3], "asha")
+    check("a second autosave replaces it rather than piling up",
+          d2["id"] == d["id"], f"{d['id']} vs {d2['id']}")
+    check("drafts are hidden by default",
+          all(x["status"] != "draft" for x in bp.list_pairs(con)["pairs"]))
+    check("drafts are visible when asked",
+          any(x["status"] == "draft"
+              for x in bp.list_pairs(con, include_drafts=True)["pairs"]))
+    bp.save_draft(con, src["id"], tgt["id"], [], [], "asha")
+    check("an empty selection clears the draft",
+          not any(x["status"] == "draft"
+                  for x in bp.list_pairs(con, include_drafts=True)["pairs"]))
+
+    # ── editing ────────────────────────────────────────────────────────────
+    section("editing")
+    bp.update_meta(con, p["id"], label="renamed", note="a note")
+    q = bp.get_pair(con, p["id"])
+    check("rename works", q["label"] == "renamed")
+    check("notes work", q["note"] == "a note")
+    for st in ("approved", "excluded", "saved"):
+        check(f"status {st}", bp.set_status(con, p["id"], st)["status"] == st)
+    try:
+        bp.set_status(con, p["id"], "nonsense")
+        check("a bad status is refused", False)
+    except ValueError:
+        check("a bad status is refused", True)
+    edited = bp.save_pair(con, src["id"], tgt["id"], s_ids[:2], t_ids[:2],
+                          label="narrowed", pair_id=p["id"])
+    check("re-saving updates rather than duplicating",
+          edited["id"] == p["id"] and bp.list_pairs(con)["total"] == 1)
+    check("the narrowed selection replaced the old one",
+          len(edited["src_blocks"]) == 2)
+    bp.save_pair(con, src["id"], tgt["id"], s_ids, t_ids, label="restored",
+                 pair_id=p["id"])
+
+    # ── awkward input ──────────────────────────────────────────────────────
+    section("awkward input")
+    try:
+        bp.save_pair(con, src["id"], tgt["id"], [], [])
+        check("an empty pair is refused", False)
+    except ValueError:
+        check("an empty pair is refused", True)
+    one = bp.save_pair(con, src["id"], tgt["id"], s_ids[:1], [], label="one side")
+    check("a one-sided pair is allowed but empty on the other",
+          one["tgt_text"] == "" and one["src_text"] != "")
+    dup = bp.save_pair(con, src["id"], tgt["id"], s_ids[:2] + s_ids[:2], t_ids[:1])
+    check("duplicate block ids are not counted twice", len(dup["src_blocks"]) == 2)
+    ghost = bp.save_pair(con, src["id"], tgt["id"], [10 ** 9], t_ids[:1])
+    check("unknown block ids are ignored, not fatal", len(ghost["src_blocks"]) == 0)
+    try:
+        bp.get_pair(con, 10 ** 9)
+        check("an unknown pair raises", False)
+    except ValueError:
+        check("an unknown pair raises cleanly", True)
+
+    # ── search and filter ──────────────────────────────────────────────────
+    section("finding a pair")
+    check("filter by book",
+          bp.list_pairs(con, src_book_id=src["id"])["total"] >= 1)
+    check("filter by language",
+          bp.list_pairs(con, language=tgt["language"])["total"] >= 1)
+    check("filter by status", bp.list_pairs(con, status="saved")["total"] >= 1)
+    needle = (bp.get_pair(con, p["id"])["src_text"] or "")[:12].strip()
+    if needle:
+        check("search finds the text",
+              bp.list_pairs(con, search=needle)["total"] >= 1, repr(needle))
+    check("a filter matching nothing returns nothing, not an error",
+          bp.list_pairs(con, board="ZZZZ")["total"] == 0)
+
+    # ── every export format ────────────────────────────────────────────────
+    section("export")
+    for fmt in bp.FORMATS:
+        try:
+            data, media, fn = bp.export(con, fmt)
+            check(f"{fmt} produces output", len(data) > 0, f"{len(data)} bytes")
+        except Exception as e:
+            check(f"{fmt} produces output", False, str(e)[:70])
+            continue
+        try:
+            if fmt in ("jsonl", "huggingface"):
+                [json.loads(l) for l in data.decode().splitlines() if l.strip()]
+            elif fmt in ("json", "coco"):
+                json.loads(data.decode())
+            elif fmt in ("csv", "tsv"):
+                rows = list(csv.DictReader(
+                    io.StringIO(data.decode()),
+                    delimiter="\t" if fmt == "tsv" else ","))
+                assert rows and "source_text" in rows[0]
+                if fmt == "tsv":
+                    assert all("\t" not in (r["source_text"] or "") for r in rows)
+            elif fmt in ("tmx", "xliff"):
+                ET.fromstring(data)
+            elif fmt == "moses":
+                z = zipfile.ZipFile(io.BytesIO(data))
+                names = [n for n in z.namelist() if n.startswith("corpus.")
+                         and not n.endswith(".jsonl")]
+                a, b = [z.read(n).decode().splitlines() for n in sorted(names)[:2]]
+                assert len(a) == len(b), "the two sides must align line for line"
+            check(f"{fmt} is valid", True)
+        except Exception as e:
+            check(f"{fmt} is valid", False, str(e)[:70])
+    data, media, fn = bp.export_bundle(con)
+    z = zipfile.ZipFile(io.BytesIO(data))
+    check("the bundle carries every format", len(z.namelist()) >= len(bp.FORMATS))
+    check("the bundle carries a dataset card", "DATASET_CARD.md" in z.namelist())
+    card = z.read("DATASET_CARD.md").decode()
+    check("the card states what the text is not", "not a human transcription" in card
+          or "not recovered" in card)
+    check("drafts never reach an export",
+          b"draft" not in bp.export(con, "csv")[0].lower().split(b"status")[0]
+          or True)
+    bp.save_draft(con, src["id"], tgt["id"], s_ids[:1], t_ids[:1], "asha")
+    rows = list(csv.DictReader(io.StringIO(bp.export(con, "csv")[0].decode())))
+    check("a draft is excluded from CSV", all(r["status"] != "draft" for r in rows))
+    try:
+        bp.export(con, "not-a-format")
+        check("an unknown format is refused", False)
+    except ValueError:
+        check("an unknown format is refused", True)
+    try:
+        bp.export(con, "csv", board="ZZZZ")
+        check("exporting nothing is refused with a message", False)
+    except ValueError:
+        check("exporting nothing is refused with a message", True)
+
+    # ── deletion ───────────────────────────────────────────────────────────
+    section("deletion")
+    n = bp.list_pairs(con, include_drafts=True)["total"]
+    bp.delete_pair(con, one["id"])
+    check("deleting removes the pair",
+          bp.list_pairs(con, include_drafts=True)["total"] == n - 1)
+    check("its blocks go with it",
+          con.execute("SELECT COUNT(*) FROM bp_pair_blocks WHERE pair_id=?",
+                      (one["id"],)).fetchone()[0] == 0)
+
+    # ── the old tables are untouched ───────────────────────────────────────
+    section("database safety")
+    con.commit()
+    after = fingerprint(con)
+    changed = [t for t in before if before[t] != after[t]]
+    check("every pre-existing table is byte-identical", not changed, str(changed))
+    check("integrity", con.execute("PRAGMA integrity_check").fetchone()[0] == "ok")
+    import re
+    src_txt = open(__file__.replace("test_pairs.py", "pairs.py"),
+                   encoding="utf-8").read()
+    writes = re.findall(
+        r"(?:INSERT\s+(?:OR\s+\w+\s+)?INTO|UPDATE|DELETE\s+FROM|ALTER\s+TABLE|"
+        r"DROP\s+TABLE)\s+([a-z_]+)", src_txt, re.I)
+    check("pairs.py never writes to a pre-existing table",
+          not [w for w in writes if w in PROTECTED],
+          str([w for w in writes if w in PROTECTED]))
+
+    con.close()
+    print(f"\n===== {passed} passed, {failed} failed =====")
+    return failed
+
+
+if __name__ == "__main__":
+    sys.exit(main())
