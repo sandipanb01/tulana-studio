@@ -1,13 +1,13 @@
 # Tulana Studio
 
-A workspace for building **parallel corpora and layout ground truth from Indian
-school textbooks**. The English edition and its translation open side by side;
-an annotator clips matching passages, marks up page layout, and works with the
-blocks a document parser has already found.
+A workspace for building **parallel corpora from Indian school textbooks**. The
+English edition and its translation open side by side with the blocks a document
+parser has already found on each page. You select the blocks that say the same
+thing on each side — across pages if the passage runs on — and save the pair.
+The corpus is then exported in whichever format the next tool needs.
 
-Everything is board-, class-, subject-, language- and script-agnostic. Adding a
-new state board or a new regional language is a row of data, never a code
-change.
+Board-, class-, subject-, language- and script-agnostic. Adding a state board or
+a regional language is a row of data, never a code change.
 
 ---
 
@@ -19,14 +19,14 @@ cd tulana-studio
 git lfs install && git lfs pull      # the PDFs are LFS objects — see below
 cd tulana
 python3 -m pip install -r requirements.txt
-python3 check_install.py             # tells you exactly what, if anything, is wrong
+python3 check_install.py             # says exactly what, if anything, is wrong
 python3 app.py                       # http://localhost:7862
 ```
 
 `check_install.py` is the first thing to run after any clone, pull or push. It
-reports missing modules, an interface that does not match its backend, PDFs
-that are really Git LFS pointers, and a layout corpus it cannot find — each
-with the command that fixes it.
+reports missing modules, an interface that does not match its backend, PDFs that
+are really Git LFS pointers, and a layout corpus it cannot find — each with the
+command that fixes it.
 
 ### The PDFs are Git LFS objects, and this bites
 
@@ -40,21 +40,19 @@ oid sha256:798d2f27d45d2ccda3694005c2ed60bc0b413b8b299f3a5d4ade7c5867094896
 size 6254823
 ```
 
-It has the right name and the right extension, so `find … | wc -l` still counts
-150 and everything *looks* present. The studio then indexes nothing, or shows
-blank pages, with no obvious cause.
+Right name, right extension, so `find … | wc -l` still counts 150 and everything
+*looks* present. The pages then render blank with no obvious cause.
 
 ```bash
-# is this checkout real?
 find board_pdfs -name '*.pdf' | while read f; do
   head -c 5 "$f" | grep -q '%PDF-' || echo "POINTER: $f"
 done
 ```
 
-GitHub's free LFS allowance is 1 GB of storage and 1 GB of bandwidth per month.
+GitHub's free LFS allowance is 1 GB of storage and 1 GB of bandwidth a month.
 **Two full clones exhaust it**, after which every clone silently receives
-pointers again. If more than a couple of people will clone this, the PDFs
-belong on shared storage rather than in Git.
+pointers again. If more than a couple of people will clone this, the PDFs belong
+on shared storage rather than in Git.
 
 ---
 
@@ -74,59 +72,96 @@ tulana-studio/
 └── tulana/                      the application
     ├── app.py  config.py  db.py  library.py  pdflib.py
     ├── blocks.py                the parsed-layout corpus
-    ├── layout.py                human layout annotation
+    ├── pairs.py                 saved pairs and export
+    ├── layout.py                layout annotation (API only)
     ├── shelf.py                 register a newly added PDF
     ├── check_install.py         is this checkout complete?
     ├── test_*.py  windows_check.py
     ├── share_gradio.py
-    ├── docs/  static/
-    └── data → ../board_pdfs     optional; see below
+    └── docs/  static/
 ```
 
 **The two folders are joined by `relpath`.** Each layout JSON names the PDF it
 was parsed from, and that path matches `board_pdfs/` exactly. 152 books of
 layout; 144 of them map onto a PDF that is present.
 
-### `tulana/data` is optional
-
-The studio finds the corpus itself — it checks the configured folder, then
-`../board_pdfs`, then a few near neighbours, and says which it chose. Create
-the link if you like, or set `TULANA_DATA_DIR`; neither is required.
-
-```bash
-ln -s ../board_pdfs data            # Linux, macOS
-mklink /J data ..\board_pdfs        # Windows
-```
-
-`board_outputs/` is found the same way, including when it is nested a folder
-deeper, and the `__MACOSX/._*.json` resource forks a macOS zip leaves behind
-are ignored.
+The studio finds both folders itself — including `board_outputs/output/` nested
+a level deeper — and ignores the `__MACOSX/._*.json` resource forks a macOS zip
+leaves behind. `tulana/data` is optional; set `TULANA_DATA_DIR` if you keep the
+PDFs somewhere else.
 
 ---
 
-## What the studio does
+## The four tabs
 
-**Clip** — both editions side by side. Drag a rectangle around a passage in
-English, then around the same passage in the translation, and save the pair.
-Clippings are cut from the source at 300 DPI and exported as
-`eng_ncert_math_1.png` / `hin_ncert_math_1.png` alongside `manifest.json`,
-`pairs.jsonl`, `pairs.csv` and a readable summary.
+### Blocks
 
-**Layout** — mark up a page's regions in reading order: title, heading,
-paragraph, list, table, figure, caption, equation. Exports as COCO, so the
-result can train a layout model or merge with DocLayNet and PubLayNet. Also
-scores how far a translated page preserves the original's structure, across six
-separate measures.
+Choose a board and class, then the target language, then the two editions. Both
+pages open side by side with their blocks overlaid, each labelled and coloured
+by type, numbered in reading order.
 
-**Blocks** — the parsed layout over the original PDF page. Click blocks to
-select them on either side, shift-click for a range in reading order, and read
-the extracted text of the selection in both languages at once. Zoom per pane,
-filter by block type, 30 types read from the corpus itself.
+Click a block to select it. Shift-click takes a range **in reading order**, not
+click order. The extracted text of the selection appears underneath, both
+languages at once.
 
-**Saved pairs**, **Export** and **Guide** complete the set.
+**Your selection survives turning the page.** Translated text is longer, so a
+passage that fits one English page often runs onto the next in Marathi — a
+selection confined to a single page could not express that alignment at all. The
+panel tells you when blocks are selected on pages you are not looking at, so
+nothing is ever silently included.
 
-Everything works on a phone: the panes stack and the controls move behind a
-menu button.
+Zoom per pane, a draggable split, a filter by block type. 30 block types come
+from the corpus itself.
+
+**Nothing is lost if you stop.** The selection is written to the server about a
+second and a half after you stop clicking, and again as the tab closes. It says
+*Kept automatically* — and says so plainly if it could not.
+
+### Saved pairs
+
+Everything you have saved. Filter by textbook, language or status, or search the
+text in either language. Rename, approve, exclude, delete.
+
+**Open in Blocks** puts the selection back on the pages it came from, so a
+correction is an adjustment rather than starting again.
+
+A pair keeps its own copy of the text, not just a reference to the blocks.
+Re-running the parser renumbers every block; a pair you approved must not
+quietly change what it says because the corpus was reloaded underneath it. It
+also keeps each block's page and reading position, and uses those to re-resolve
+a pair whose ids no longer exist.
+
+### Export
+
+Eleven formats from the same rows:
+
+**JSONL** · **JSON** · **CSV** · **TSV** · **plain text** · **TMX** (OmegaT,
+memoQ, Trados) · **XLIFF** · **Markdown** · **Moses/fairseq** · **COCO** ·
+**Hugging Face datasets**
+
+Plus the full bundle — every format at once with a dataset card describing what
+the corpus is, how a pair was made, and what the text is and is not.
+
+Drafts are never exported. Pairs marked excluded are left out unless you ask.
+
+### Guide
+
+Six manuals, served from `tulana/docs/`.
+
+---
+
+## What the text is
+
+`source_text` and `target_text` are what the **parser** read inside the selected
+blocks, joined in reading order. They are not a human transcription.
+
+Say this plainly to anyone you give the corpus to: **the alignment is a human
+judgement and the characters are machine-read.** Treat the pairing as reliable
+and the text as needing review before the corpus is used as a reference. The
+dataset card says the same.
+
+A block over a diagram carries no text, and a page without a usable text layer
+yields none. Empty means *not recovered*, not *empty on the page*.
 
 ---
 
@@ -139,17 +174,17 @@ python3 share_gradio.py
 Prints an `https://….gradio.live` address. Annotators need nothing installed.
 The link is a tunnel — the database and images stay on the host, so a restart
 never loses work, only the address changes. Gradio links last about a week; for
-a permanent address, put the studio behind nginx or run the container.
+a permanent address, put the studio behind nginx.
 
-The port walks forward if 7862 is busy, and both `/studio` and `/studio/` work.
+Both `/studio` and `/studio/` work, assets are fingerprinted so a deployed
+change cannot be served stale, and the port walks forward if 7862 is busy.
 
 ---
 
 ## Adding a board, class, subject, language or script
 
-Nothing in the code names a board or a language. All five are registries:
-**32 boards, 23 languages, 12 scripts** ship as seed data, and more are added
-with `POST /api/registry` or a row in `config.py`.
+Nothing in the code names one. **32 boards, 23 languages and 12 scripts** ship as
+seed data; more are added with `POST /api/registry` or a row in `config.py`.
 
 Name a file so the studio can place it. All of these work:
 
@@ -162,17 +197,18 @@ Kerala_Class_X_Malayalam.pdf        roman numerals
 Kerala/Class 10/Malayalam/maths.pdf folders instead of a long name
 ```
 
-Board and language codes overlap — `guj` names both Gujarat and Gujarati,
-`pun` both Punjab and Punjabi — and that is handled: the board token is
-identified and consumed before languages are read.
+Board and language codes overlap — `guj` names both Gujarat and Gujarati, `pun`
+both Punjab and Punjabi — and that is handled: the board token is identified and
+consumed before languages are read.
 
-**If a textbook does not appear**, press *Why is a textbook missing?* on the
-Clip tab, or call `GET /api/library/diagnose`. Every PDF is accounted for as
-usable, unpaired or unreadable, with the reason and the fix. The commonest
-cause is not the file name at all — the **subject must match too**. A Malayalam
-*Science* book beside an English *Mathematics* book will never pair.
+Where a name says nothing, the parser's own text is used as evidence. The script
+is measured from the characters, and for a script shared by several languages,
+orthographic markers decide between them — `आहे` appears throughout Marathi and
+never in Hindi; `ৰ` is Assamese where Bengali writes `র`. Validated against every
+book whose language the file name already gives: **124 correct, 28 abstained,
+0 wrong.** Anything undecidable is left unset rather than guessed.
 
-Registering a PDF by hand, when the name genuinely cannot say what it is:
+Registering a PDF by hand:
 
 ```bash
 python3 shelf.py doctor
@@ -184,40 +220,44 @@ python3 shelf.py add FILE --board WB --class 10 --lang Bengali
 ## Tests
 
 ```bash
-python3 check_install.py     is this checkout complete and consistent
-python3 test_stress.py       edge cases, malformed input, database safety
-python3 test_blocks.py       every book in the layout corpus, sampled pages
-python3 test_naming.py       32 boards × 23 languages × every naming style
-python3 windows_check.py     cross-platform audit
-python3 selftest.py          the clipping workspace, end to end
+python3 check_install.py     22 — is this checkout complete and consistent
+python3 test_pairs.py        68 — cross-page selection, autosave, every format
+python3 test_stress.py      138 — edge cases, malformed input, database safety
+python3 test_blocks.py      645 — every book in the layout corpus
+python3 test_naming.py      265 — 32 boards × 23 languages × naming styles
+python3 windows_check.py      8 — cross-platform audit
 ```
+
+**1,146 checks**, run twice interleaved to prove they do not depend on order.
 
 `test_stress.py` feeds in malformed JSON, zero-size pages, inverted boxes,
 non-numeric coordinates, null bytes and emoji; asks for pages beyond the end of
-a book and negative pages; selects 5000 blocks at once; re-ingests to prove
-nothing duplicates; checks box placement at 72 and 150 dpi; and invents an
-Odisha Class 8 Odia book to prove a board added in future resolves end to end.
-
-It also proves the safety contract below rather than asserting it.
+a book and negative pages; selects 5000 blocks at once; checks box placement at
+72 and 150 dpi; and invents an Odisha Class 8 Odia book to prove a board added
+in future resolves end to end.
 
 ---
 
 ## The annotation database is protected
 
-`blocks.py` and `layout.py` create their own tables with
+`blocks.py`, `pairs.py` and `layout.py` create their own tables with
 `CREATE TABLE IF NOT EXISTS` and never write to `documents`, `projects`,
 `clips`, `pairs`, `labels`, `pair_labels`, `exports` or `audit`. No `ALTER`, no
 `DROP`.
 
-`test_stress.py` checks this two ways: it reads the source of each module for
-writes to those tables, and it seeds a project and a pair, runs everything, and
-hashes all eight tables before and after. If a future change ever writes to one
+This is proved two ways rather than asserted: the tests read each module's source
+for writes to those tables, and they seed a project and a pair, run everything,
+and hash all eight tables before and after. If a future change ever writes to one
 of them, the test fails.
 
 `shelf.py` is the deliberate exception — registering a document is its whole
-purpose — and it only ever inserts a row or updates the metadata columns of one
-it matched by path, so an existing document keeps its `id` and no clip or pair
-can be orphaned.
+purpose — and it only inserts a row or updates the metadata columns of one it
+matched by path, so an existing document keeps its `id` and no saved work can be
+orphaned.
+
+**Earlier work is not deleted.** PDF clipping and hand-drawn layout annotation
+were removed from the *interface*, not from the database. Everything they saved
+is untouched and still reachable through the API.
 
 ---
 
@@ -227,15 +267,14 @@ Python 3.10 or newer. **No PowerShell, no bash, no Node, no build step, no
 database server, no external binaries.** `.zip` and `.7z` are both read in pure
 Python.
 
-The interpreter is named `py` (or `python`) on Windows and `python3` on Linux
-and macOS — Debian and Ubuntu ship no `python` command at all. That naming is
-the only difference; the files are identical.
+The interpreter is `py` (or `python`) on Windows and `python3` on Linux and
+macOS — Debian and Ubuntu ship no `python` command at all. That naming is the
+only difference; the files are identical.
 
-`windows_check.py` audits the things that work on Linux and fail on Windows:
-hard-coded POSIX paths, text files opened without an explicit encoding (Windows
-defaults to cp1252, which cannot read Devanagari), shell invocation, filenames
-that are illegal on Windows, and any OS-specific separator reaching the
-database.
+`windows_check.py` audits what works on Linux and fails on Windows: hard-coded
+POSIX paths, text files opened without an explicit encoding (Windows defaults to
+cp1252, which cannot read Devanagari), shell invocation, filenames that are
+illegal on Windows, and any OS-specific separator reaching the database.
 
 ---
 
@@ -244,10 +283,9 @@ database.
 | variable | meaning | default |
 |---|---|---|
 | `TULANA_DATA_DIR` | where the PDFs live | discovered |
-| `TULANA_STATE_DIR` | database, clippings, exports | `./state` |
+| `TULANA_STATE_DIR` | database, page cache, exports | `./state` |
 | `TULANA_PORT` | preferred port | `7862` |
 | `TULANA_VIEW_DPI` | on-screen page resolution | `110` |
-| `TULANA_CROP_DPI` | resolution clippings are cut at | `300` |
 
 Back up `state/`. That folder is the annotators' work; the PDFs and the layout
 can always be fetched again.
@@ -256,24 +294,28 @@ can always be fetched again.
 
 ## Troubleshooting
 
-**The dropdown is empty.** Look at the startup log — it names the folder it
-searched and says whether the files it found were Git LFS pointers. Then run
-`check_install.py`.
+**Everything is blank and no pages render.** The PDFs are probably LFS pointers.
+`git lfs install && git lfs pull`.
 
-**A textbook is missing from the dropdown.** *Why is a textbook missing?* on
-the Clip tab, or `GET /api/library/diagnose`.
+**The Blocks tab is empty.** The layout corpus was not found.
+`check_install.py` says where it looked.
 
-**The Blocks tab is empty.** The layout corpus was not found. `check_install.py`
-says where it looked.
+**A textbook is missing from the dropdown.** `GET /api/blocks/mapping` names
+every book as mapped, missing or worth a look. The commonest cause is not the
+file name: the **subject must match too** — a Malayalam *Science* book beside an
+English *Mathematics* book will never pair.
 
-**A page shows blocks but no image.** The layout covers that page but the PDF
-does not — a truncated copy, or a different edition. The blocks and their text
-are still usable.
+**A page shows blocks but no image.** The layout covers that page and the PDF
+does not — a truncated copy, or a different edition. The blocks and text are
+still usable.
+
+**A block has no text.** Diagrams carry none, and a page without a text layer
+yields none. Select it anyway if it belongs to the passage; its position is
+recorded.
 
 **A change does not appear after deploying.** Assets are fingerprinted, so this
-should not happen; if it does, reload once with cache disabled. If a whole tab
-is missing, `check_install.py` will say whether the Python or the interface was
-the half that did not get copied.
+should not happen. If a whole tab is missing, `check_install.py` says whether the
+Python or the interface was the half that did not get copied.
 
 **`address already in use`.** The studio takes the next free port and prints
-which one it chose.
+which one.
