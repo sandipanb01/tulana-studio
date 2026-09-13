@@ -17,6 +17,7 @@
     <button data-page="Work" class="on">Clip</button>
     <button data-page="Pairs">Saved pairs</button>
     <button data-page="Layout">Layout</button>
+    <button data-page="Blocks">Blocks</button>
     <button data-page="Export">Export</button>
     <button data-page="Help">Guide</button>
   </nav>
@@ -155,6 +156,77 @@
         <button class="mini" data-lzoom="tgt" data-d="-1">−</button>
         <button class="mini" data-lzoom="tgt" data-d="1">+</button></div>
       <div class="scroll" id="lScrTgt"><div class="lhost" id="lHostTgt"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ PARSED BLOCKS ══════════════════════ -->
+<section class="page" id="pageBlocks">
+  <aside id="bSide">
+    <div class="grp">
+      <label class="lbl">Textbook</label>
+      <select id="bCombo"></select>
+      <select id="bLang"></select>
+      <select id="bSrcDoc"></select>
+      <select id="bTgtDoc"></select>
+      <button class="btn primary wide" id="bOpen">Open side by side</button>
+      <div id="bCorpus" class="sm faint"></div>
+    </div>
+    <div class="grp" id="bNav" hidden>
+      <label class="lbl">Page</label>
+      <div class="row">
+        <button class="btn" id="bPrev">‹</button>
+        <input id="bPageSrc" type="number" min="0" placeholder="src">
+        <input id="bPageTgt" type="number" min="0" placeholder="tgt">
+        <button class="btn" id="bNext">›</button>
+      </div>
+      <label class="row2"><input type="checkbox" id="bLock" checked> Turn both pages together</label>
+      <label class="row2"><input type="checkbox" id="bShowOrder" checked> Reading order</label>
+      <label class="row2"><input type="checkbox" id="bDim"> Dim unselected blocks</label>
+    </div>
+    <div class="grp" id="bFilter" hidden>
+      <label class="lbl">Show only</label>
+      <select id="bLabel"><option value="">All block types</option></select>
+      <div id="bLegend" class="sm"></div>
+    </div>
+    <div class="grp" id="bActions" hidden>
+      <div id="bSelInfo" class="sm mut">Nothing selected</div>
+      <div class="row">
+        <button class="btn" id="bClearSel">Clear selection</button>
+        <button class="btn" id="bSelAll">Select all on page</button>
+      </div>
+      <button class="btn primary wide" id="bCopy">Copy extracted text</button>
+      <a class="btn wide" id="bExport" href="#" style="margin-top:4px">Export blocks</a>
+    </div>
+  </aside>
+
+  <div id="bMain">
+    <div id="bPanes">
+      <div class="pane" id="bPaneSrc">
+        <div class="phead"><b id="bTitSrc">Source</b>
+          <span class="sm mut" id="bPosSrc"></span><span class="sp"></span>
+          <button class="mini" data-bzoom="src" data-d="-1">−</button>
+          <span class="sm mut" id="bZoomSrc">100%</span>
+          <button class="mini" data-bzoom="src" data-d="1">+</button>
+          <button class="mini" data-bfit="src" title="Fit">⤢</button></div>
+        <div class="scroll" id="bScrSrc"><div class="bhost" id="bHostSrc"></div></div>
+      </div>
+      <div id="bSplit"></div>
+      <div class="pane" id="bPaneTgt">
+        <div class="phead"><b id="bTitTgt">Target</b>
+          <span class="sm mut" id="bPosTgt"></span><span class="sp"></span>
+          <button class="mini" data-bzoom="tgt" data-d="-1">−</button>
+          <span class="sm mut" id="bZoomTgt">100%</span>
+          <button class="mini" data-bzoom="tgt" data-d="1">+</button>
+          <button class="mini" data-bfit="tgt" title="Fit">⤢</button></div>
+        <div class="scroll" id="bScrTgt"><div class="bhost" id="bHostTgt"></div></div>
+      </div>
+    </div>
+    <div id="bText" hidden>
+      <div class="tcol"><div class="thead" id="bTextHeadSrc">Source text</div>
+        <div class="tbody" id="bTextSrc"></div></div>
+      <div class="tcol"><div class="thead" id="bTextHeadTgt">Target text</div>
+        <div class="tbody" id="bTextTgt"></div></div>
     </div>
   </div>
 </section>
