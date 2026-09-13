@@ -34,6 +34,7 @@ from pydantic import BaseModel
 
 import config
 import db
+import blocks
 import layout
 import library
 from pdflib import fitz
@@ -105,6 +106,39 @@ def _index_on_startup():
     initialise()
 
 
+
+def interface_matches_backend() -> dict:
+    """Is the interface as new as the code serving it?
+
+    A half-deployed update is silent and confusing: `layout.py` ships, the
+    endpoints answer, and the annotator sees no Layout tab because
+    `static/index.html` was not copied. Nothing errors — the feature simply
+    appears not to exist. This compares what the backend can do with what the
+    interface offers, and says so out loud."""
+    static = Path(__file__).parent / "static"
+    report = {"ok": True, "missing": [], "static_dir": str(static)}
+    try:
+        html = (static / "index.html").read_text(encoding="utf-8")
+        js = (static / "app.js").read_text(encoding="utf-8")
+    except OSError as e:
+        report["ok"] = False
+        report["missing"].append(f"static files unreadable: {e}")
+        return report
+
+    # each entry: the backend feature, and the marker the interface must carry
+    for feature, marker, where in (
+            ("layout annotation", 'data-page="Layout"', "static/index.html"),
+            ("layout annotation", "loadLayout", "static/app.js"),
+            ("missing-textbook diagnosis", "library/diagnose", "static/app.js")):
+        blob = html if where.endswith("index.html") else js
+        if marker not in blob:
+            report["ok"] = False
+            report["missing"].append(
+                f"{feature}: the backend has it, but {where} does not "
+                f"(looked for {marker!r})")
+    return report
+
+
 def initialise():
     """Index the textbook folder however the application was launched.
 
@@ -149,12 +183,47 @@ def initialise():
             # empty dropdown ("these files are Git LFS pointers").
             n = library.scan(con, config.DATA_DIR, log=_scan_log)
         print(f"[studio] {n} textbook PDF(s) available from {config.DATA_DIR}")
+        try:
+            with db.tx() as bcon:
+                r = blocks.ingest(bcon, data_dir=config.DATA_DIR, log=lambda m: None)
+            if r["books"]:
+                print(f"[studio] parsed layout: {r['books']} books, "
+                      f"{r['blocks']} blocks from {r['corpus']}")
+                for p in r["problems"]:
+                    print(f"[studio]   {p}")
+            else:
+                print("[studio] no parsed-layout corpus found — the Blocks tab "
+                      "will be empty until one is placed beside the data folder")
+        except Exception as e:
+            print(f"[studio] could not load the parsed layout: {e}")
+
+        iface = interface_matches_backend()
+        if not iface["ok"]:
+            print("[studio] the interface is older than the code serving it — "
+                  "copy the static/ files as well as the Python ones:")
+            for m in iface["missing"]:
+                print(f"[studio]   {m}")
         if n == 0:
             print(f"[studio] nothing indexed. Checked {config.DATA_DIR} — set "
                   f"TULANA_DATA_DIR to the folder holding your PDFs, or run "
                   f"`git lfs pull` if the files are LFS pointers.")
     except Exception as e:                      # never block startup
         print(f"[studio] could not index {config.DATA_DIR}: {e}")
+
+
+@app.get("/api/version")
+def version_info():
+    """What this deployment can actually do, and whether its interface agrees."""
+    with db.tx() as con:
+        try:
+            layout.ensure_schema(con)
+            has_layout = True
+        except Exception:
+            has_layout = False
+    return {"backend": {"layout_annotation": has_layout,
+                        "layout_metrics_version": layout.METRICS_VERSION,
+                        "library_diagnose": True},
+            "interface": interface_matches_backend()}
 
 
 @app.get("/api/health")
@@ -1099,6 +1168,167 @@ def _layout_readme(pages, rows, comps) -> str:
         "  unstable and should not be quoted.", "",
     ]
     return "\n".join(lines)
+
+
+
+# ── parsed layout corpus ───────────────────────────────────────────────────
+# The blocks, reading order and extracted text produced by the document
+# parser. Additive: three new tables, nothing existing written to.
+
+@app.get("/api/blocks/mapping")
+def blocks_mapping():
+    """Which layout books map onto an original PDF, and which do not."""
+    with db.tx() as con:
+        return blocks.mapping_report(con, config.DATA_DIR)
+
+
+@app.get("/api/blocks/stats")
+def blocks_stats():
+    with db.tx() as con:
+        return blocks.stats(con)
+
+
+@app.post("/api/blocks/ingest")
+def blocks_ingest(path: str = None, x_annotator: str = Header("")):
+    """Load the parsed-layout corpus. Idempotent; safe to re-run."""
+    with db.tx() as con:
+        res = blocks.ingest(con, corpus=Path(path) if path else None,
+                            data_dir=config.DATA_DIR, log=lambda m: None)
+        db.log(con, x_annotator, "blocks_ingest", res.get("corpus") or "-",
+               {"books": res["books"], "blocks": res["blocks"]})
+    return res
+
+
+@app.get("/api/blocks/library")
+def blocks_library():
+    """Board/class/subject groups with an English and a target edition."""
+    with db.tx() as con:
+        out = []
+        for c in blocks.pairable(con):
+            eng = blocks.editions(con, c["board"], c["class"], c["subject"], "English")
+            tgt = [e for e in blocks.editions(con, c["board"], c["class"], c["subject"])
+                   if e["language"] != "English"]
+            out.append({**c, "english_editions": eng, "target_editions": tgt})
+        return out
+
+
+@app.get("/api/blocks/page/{book_id}/{page}")
+def blocks_page(book_id: int, page: int):
+    """Blocks on one page, with fractional geometry so any zoom lines up."""
+    with db.tx() as con:
+        try:
+            return blocks.page_blocks(con, book_id, page)
+        except ValueError as e:
+            raise HTTPException(404, str(e))
+
+
+@app.get("/api/blocks/page-image/{book_id}/{page}.png")
+def blocks_page_image(book_id: int, page: int,
+                      dpi: int | None = Query(None, ge=40, le=300)):
+    """The rendered PDF page behind a set of blocks.
+
+    404 when the PDF is not on disk — the parsed layout is still served, so the
+    interface falls back to drawing the blocks on a blank page of the right
+    proportions rather than showing nothing."""
+    dpi = 110 if not isinstance(dpi, int) else max(40, min(300, dpi))
+    with db.tx() as con:
+        b = blocks.book(con, book_id)
+    pdf = blocks._find_pdf(config.DATA_DIR, b["relpath"])
+    if not pdf:
+        raise HTTPException(404, f"The PDF for {b['book']} is not in "
+                                 f"{config.DATA_DIR}")
+    cache = config.PAGE_CACHE / f"pl{book_id}_{page}_{dpi}.png"
+    if not cache.exists():
+        with fitz.open(pdf) as doc:
+            if page < 0 or page >= doc.page_count:
+                raise HTTPException(404, f"Page out of range (0..{doc.page_count-1})")
+            pix = doc[page].get_pixmap(dpi=dpi)
+            cache.parent.mkdir(parents=True, exist_ok=True)
+            tmp = cache.with_name(cache.stem + f".{os.getpid()}.part.png")
+            pix.save(tmp)
+            tmp.replace(cache)
+    return FileResponse(cache, media_type="image/png",
+                        headers={"Cache-Control": "public, max-age=86400"})
+
+
+class SelectionIn(BaseModel):
+    block_ids: list[int] = []
+
+
+@app.post("/api/blocks/selection")
+def blocks_selection(body: SelectionIn):
+    """The text of the chosen blocks, assembled in reading order."""
+    with db.tx() as con:
+        return blocks.selection_text(con, body.block_ids[:2000])
+
+
+class PairSelectionIn(BaseModel):
+    src_block_ids: list[int] = []
+    tgt_block_ids: list[int] = []
+
+
+@app.post("/api/blocks/selection/pair")
+def blocks_selection_pair(body: PairSelectionIn):
+    """Both sides at once — what an annotator comparing editions actually wants."""
+    with db.tx() as con:
+        s = blocks.selection_text(con, body.src_block_ids[:2000])
+        t = blocks.selection_text(con, body.tgt_block_ids[:2000])
+    return {"source": s, "target": t,
+            "comparable": bool(s["n_blocks"] and t["n_blocks"]),
+            "label_match": sorted(s.get("labels") or []) == sorted(t.get("labels") or [])}
+
+
+@app.get("/api/blocks/export.zip")
+def blocks_export(board: str = None, cls: int = None, language: str = None,
+                  label: str = None, limit: int = 50000):
+    """The parsed layout as JSONL and CSV, filtered however you like."""
+    import csv as _csv
+    where, args = ["1=1"], []
+    for col, val in (("k.board", board), ("k.class", cls),
+                     ("k.language", language), ("b.label", label)):
+        if val not in (None, ""):
+            where.append(f"{col}=?")
+            args.append(val)
+    with db.tx() as con:
+        blocks.ensure_schema(con)
+        rows = [dict(r) for r in con.execute(f"""
+            SELECT k.book, k.relpath, k.board, k.class, k.subject, k.language,
+                   k.script, p.page, p.width, p.height, b.ord, b.label, b.type,
+                   b.x0, b.y0, b.x1, b.y1, b.fx0, b.fy0, b.fx1, b.fy1, b.conf, b.text
+            FROM pl_blocks b JOIN pl_pages p ON p.id=b.page_id
+            JOIN pl_books k ON k.id=p.book_id
+            WHERE {' AND '.join(where)}
+            ORDER BY k.book, p.page, b.ord LIMIT ?""", args + [min(limit, 200000)])]
+    if not rows:
+        raise HTTPException(400, "Nothing matches that selection")
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+        z.writestr("layout/blocks.jsonl",
+                   "\n".join(json.dumps(r, ensure_ascii=False) for r in rows))
+        sio = io.StringIO()
+        cols = [c for c in rows[0] if c != "text"] + ["text"]
+        w = _csv.DictWriter(sio, fieldnames=cols, extrasaction="ignore")
+        w.writeheader()
+        for r in rows:
+            w.writerow({**r, "text": (r["text"] or "").replace("\n", " ")[:2000]})
+        z.writestr("layout/blocks.csv", sio.getvalue())
+        z.writestr("layout/README.md", (
+            "# Parsed layout blocks\n\n"
+            f"{len(rows)} blocks.\n\n"
+            "## Coordinates\n\n"
+            "`x0,y0,x1,y1` are in the pixel space of the raster the parser measured\n"
+            "against, whose size is given per page as `width` and `height`. Those\n"
+            "rasters are not shipped, so `fx0,fy0,fx1,fy1` — the same boxes as\n"
+            "fractions of the page — are the portable form: multiply by whatever\n"
+            "size you render at.\n\n"
+            "## Text\n\n"
+            "`text` is what the parser read inside the box. About one block in ten\n"
+            "has none: diagrams and images legitimately carry no text, and a page\n"
+            "without a usable text layer yields none either. Empty means *not\n"
+            "recovered*, not *empty on the page*.\n"))
+    return Response(buf.getvalue(), media_type="application/zip",
+                    headers={"Content-Disposition":
+                             'attachment; filename="tulana_blocks.zip"'})
 
 
 app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), name="static")
