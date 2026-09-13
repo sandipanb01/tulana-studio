@@ -23,11 +23,16 @@ def sha256(path: Path, limit=4 << 20) -> str:
 
 
 def tokens(path: Path, root: Path):
+    """Lowercase tokens from a path, for board and language inference.
+
+    `as_posix()` matters even though nothing is stored: on Windows the separator
+    would otherwise be a backslash, the token split would differ from Linux, and
+    the same file could infer a different board on the two platforms."""
     try:
-        rel = path.relative_to(root)
+        rel = path.relative_to(root).as_posix()
     except ValueError:
-        rel = path
-    return [t.lower() for t in re.split(r"[^A-Za-z0-9]+", str(rel)) if t]
+        rel = path.as_posix()
+    return [t.lower() for t in re.split(r"[^A-Za-z0-9]+", rel) if t]
 
 
 ROMAN = {"i": 1, "ii": 2, "iii": 3, "iv": 4, "v": 5, "vi": 6, "vii": 7,
