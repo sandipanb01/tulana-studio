@@ -1,590 +1,279 @@
 # Tulana Studio
 
-Tulana Studio is a document-processing, OCR/alignment, PDF-ground-truth, and translation-quality research platform.
+A workspace for building **parallel corpora and layout ground truth from Indian
+school textbooks**. The English edition and its translation open side by side;
+an annotator clips matching passages, marks up page layout, and works with the
+blocks a document parser has already found.
 
-The repository contains both the application source code and the board textbook PDF corpus, kept as separate components within the same repository.
+Everything is board-, class-, subject-, language- and script-agnostic. Adding a
+new state board or a new regional language is a row of data, never a code
+change.
 
-## Repository Structure
+---
+
+## Before anything else
+
+```bash
+git clone https://github.com/sandipanb01/tulana-studio.git
+cd tulana-studio
+git lfs install && git lfs pull      # the PDFs are LFS objects — see below
+cd tulana
+python3 -m pip install -r requirements.txt
+python3 check_install.py             # tells you exactly what, if anything, is wrong
+python3 app.py                       # http://localhost:7862
+```
+
+`check_install.py` is the first thing to run after any clone, pull or push. It
+reports missing modules, an interface that does not match its backend, PDFs
+that are really Git LFS pointers, and a layout corpus it cannot find — each
+with the command that fixes it.
+
+### The PDFs are Git LFS objects, and this bites
+
+`board_pdfs/` holds 150 PDFs, about 600 MB, stored through Git LFS. A clone
+**without** `git lfs pull` leaves a 132-byte text pointer where each PDF should
+be:
+
+```
+version https://git-lfs.github.com/spec/v1
+oid sha256:798d2f27d45d2ccda3694005c2ed60bc0b413b8b299f3a5d4ade7c5867094896
+size 6254823
+```
+
+It has the right name and the right extension, so `find … | wc -l` still counts
+150 and everything *looks* present. The studio then indexes nothing, or shows
+blank pages, with no obvious cause.
+
+```bash
+# is this checkout real?
+find board_pdfs -name '*.pdf' | while read f; do
+  head -c 5 "$f" | grep -q '%PDF-' || echo "POINTER: $f"
+done
+```
+
+GitHub's free LFS allowance is 1 GB of storage and 1 GB of bandwidth per month.
+**Two full clones exhaust it**, after which every clone silently receives
+pointers again. If more than a couple of people will clone this, the PDFs
+belong on shared storage rather than in Git.
+
+---
+
+## Repository structure
 
 ```text
 tulana-studio/
-├── README.md
-├── .gitignore
-├── .gitattributes
+├── board_pdfs/                  the original textbook PDFs (Git LFS)
+│   ├── Boardwise_PDF_class10_Maths/CLASS-9/MH_EN_9_1.pdf
+│   ├── CLASS-10/KER_ML_10_1.pdf
+│   └── dataset/input/eng/10/1001.pdf
 │
-├── tulana/
-│   ├── app.py
-│   ├── config.py
-│   ├── db.py
-│   ├── fetcher.py
-│   ├── library.py
-│   ├── pdflib.py
-│   ├── share_gradio.py
-│   ├── requirements.txt
-│   ├── selftest.py
-│   ├── check_sources.py
-│   ├── docs/
-│   └── static/
+├── board_outputs/output/        the parsed layout, one JSON per book
+│   ├── Boardwise_PDF_class10_Maths/CLASS-9/MH_EN_9_1.json
+│   └── CLASS-10/KER_ML_10_1.json
 │
-└── board_pdfs/
-    └── board textbook PDF corpus
+└── tulana/                      the application
+    ├── app.py  config.py  db.py  library.py  pdflib.py
+    ├── blocks.py                the parsed-layout corpus
+    ├── layout.py                human layout annotation
+    ├── shelf.py                 register a newly added PDF
+    ├── check_install.py         is this checkout complete?
+    ├── test_*.py  windows_check.py
+    ├── share_gradio.py
+    ├── docs/  static/
+    └── data → ../board_pdfs     optional; see below
 ```
 
-The application code and PDF corpus are intentionally separated.
+**The two folders are joined by `relpath`.** Each layout JSON names the PDF it
+was parsed from, and that path matches `board_pdfs/` exactly. 152 books of
+layout; 144 of them map onto a PDF that is present.
+
+### `tulana/data` is optional
+
+The studio finds the corpus itself — it checks the configured folder, then
+`../board_pdfs`, then a few near neighbours, and says which it chose. Create
+the link if you like, or set `TULANA_DATA_DIR`; neither is required.
+
+```bash
+ln -s ../board_pdfs data            # Linux, macOS
+mklink /J data ..\board_pdfs        # Windows
+```
+
+`board_outputs/` is found the same way, including when it is nested a folder
+deeper, and the `__MACOSX/._*.json` resource forks a macOS zip leaves behind
+are ignored.
 
 ---
 
-# Quick Start
+## What the studio does
 
-## 1. Clone the repository
+**Clip** — both editions side by side. Drag a rectangle around a passage in
+English, then around the same passage in the translation, and save the pair.
+Clippings are cut from the source at 300 DPI and exported as
+`eng_ncert_math_1.png` / `hin_ncert_math_1.png` alongside `manifest.json`,
+`pairs.jsonl`, `pairs.csv` and a readable summary.
 
-```bash
-git clone https://github.com/sandipanb01/tulana-studio.git
-cd tulana-studio
-```
+**Layout** — mark up a page's regions in reading order: title, heading,
+paragraph, list, table, figure, caption, equation. Exports as COCO, so the
+result can train a layout model or merge with DocLayNet and PubLayNet. Also
+scores how far a translated page preserves the original's structure, across six
+separate measures.
 
-## 2. Download the PDF corpus
+**Blocks** — the parsed layout over the original PDF page. Click blocks to
+select them on either side, shift-click for a range in reading order, and read
+the extracted text of the selection in both languages at once. Zoom per pane,
+filter by block type, 30 types read from the corpus itself.
 
-The board PDFs are stored using Git LFS.
+**Saved pairs**, **Export** and **Guide** complete the set.
 
-```bash
-git lfs install
-git lfs pull
-```
-
-Verify the corpus.
-
-### Windows
-
-```text
-(Get-ChildItem ".\board_pdfs" -Recurse -File -Filter "*.pdf").Count
-```
-
-### Linux
-
-```bash
-find board_pdfs -type f -iname "*.pdf" | wc -l
-```
-
-The current repository contains 144 board PDFs.
+Everything works on a phone: the panes stack and the controls move behind a
+menu button.
 
 ---
 
-# Windows
+## A shareable link
 
-PowerShell is NOT required by Tulana. Any terminal capable of running Python can be used.
-
-## 1. Enter the application
-
-```text
-cd tulana
+```bash
+python3 share_gradio.py
 ```
 
-## 2. Create the Python environment
+Prints an `https://….gradio.live` address. Annotators need nothing installed.
+The link is a tunnel — the database and images stay on the host, so a restart
+never loses work, only the address changes. Gradio links last about a week; for
+a permanent address, put the studio behind nginx or run the container.
 
-```text
-python -m venv .venv
-```
-
-## 3. Install dependencies
-
-The complete Python dependency list is stored in `requirements.txt`.
-
-```text
-.venv\Scripts\python.exe -m pip install --upgrade pip
-.venv\Scripts\python.exe -m pip install -r requirements.txt
-```
-
-## 4. Verify Gradio and PyMuPDF
-
-```text
-.venv\Scripts\python.exe -c "import gradio; print('Gradio:', gradio.__version__)"
-.venv\Scripts\python.exe -c "import fitz; print('PyMuPDF:', fitz.__version__)"
-```
-
-## 5. Connect the PDF corpus
-
-Tulana expects the PDF corpus to be accessible through:
-
-```text
-tulana/data
-```
-
-Create a Windows directory junction from `tulana/data` to `board_pdfs`.
-
-From a Windows terminal:
-
-```text
-mklink /J data ..\board_pdfs
-```
-
-Verify:
-
-```text
-(Get-ChildItem ".\data" -Recurse -File -Filter "*.pdf").Count
-```
-
-Expected:
-
-```text
-144
-```
-
-## 6. Run the application
-
-```text
-.venv\Scripts\python.exe app.py
-```
-
-## 7. Run the Gradio interface
-
-```text
-.venv\Scripts\python.exe share_gradio.py
-```
-
-The terminal will display the local URL and, when sharing is enabled, a temporary `gradio.live` URL.
-
-No PowerShell-specific activation step is required.
+The port walks forward if 7862 is busy, and both `/studio` and `/studio/` work.
 
 ---
 
-# Linux / Cluster
+## Adding a board, class, subject, language or script
 
-## 1. Enter the application
+Nothing in the code names a board or a language. All five are registries:
+**32 boards, 23 languages, 12 scripts** ship as seed data, and more are added
+with `POST /api/registry` or a row in `config.py`.
+
+Name a file so the studio can place it. All of these work:
+
+```
+KER_ML_10.pdf                       BOARD_LANG_CLASS
+Kerala_Class10_Malayalam_Maths.pdf  written out
+kerala-class-9-malayalam.pdf        hyphenated
+SCERT_Kerala_Std10_Malayalam.pdf    Std, Grade, Class
+Kerala_Class_X_Malayalam.pdf        roman numerals
+Kerala/Class 10/Malayalam/maths.pdf folders instead of a long name
+```
+
+Board and language codes overlap — `guj` names both Gujarat and Gujarati,
+`pun` both Punjab and Punjabi — and that is handled: the board token is
+identified and consumed before languages are read.
+
+**If a textbook does not appear**, press *Why is a textbook missing?* on the
+Clip tab, or call `GET /api/library/diagnose`. Every PDF is accounted for as
+usable, unpaired or unreadable, with the reason and the fix. The commonest
+cause is not the file name at all — the **subject must match too**. A Malayalam
+*Science* book beside an English *Mathematics* book will never pair.
+
+Registering a PDF by hand, when the name genuinely cannot say what it is:
 
 ```bash
-cd tulana
-```
-
-## 2. Create the Python environment
-
-```bash
-python3 -m venv .venv
-```
-
-## 3. Install dependencies
-
-```bash
-.venv/bin/python -m pip install --upgrade pip
-.venv/bin/python -m pip install -r requirements.txt
-```
-
-## 4. Verify Gradio and PyMuPDF
-
-```bash
-.venv/bin/python -c "import gradio; print('Gradio:', gradio.__version__)"
-.venv/bin/python -c "import fitz; print('PyMuPDF:', fitz.__version__)"
-```
-
-## 5. Connect the PDF corpus
-
-From inside `tulana/`:
-
-```bash
-ln -s ../board_pdfs data
-```
-
-Verify:
-
-```bash
-find data -type f -iname "*.pdf" | wc -l
-```
-
-Expected:
-
-```text
-144
-```
-
-## 6. Run the application
-
-```bash
-.venv/bin/python app.py
-```
-
-## 7. Run the Gradio interface
-
-```bash
-.venv/bin/python share_gradio.py
-```
-
-For permanent deployment, use the target server or cluster's normal process manager and networking configuration rather than relying on a temporary Gradio share.
-
----
-
-# Dependencies
-
-All Python dependencies are declared in:
-
-```text
-tulana/requirements.txt
-```
-
-The environment should be created from this file rather than manually installing individual packages.
-
-Important runtime dependencies include:
-
-* Python
-* Gradio
-* PyMuPDF
-* other packages listed in `requirements.txt`
-
-Install everything with:
-
-```bash
-python -m pip install -r requirements.txt
+python3 shelf.py doctor
+python3 shelf.py add FILE --board WB --class 10 --lang Bengali
 ```
 
 ---
 
-# Application and PDF Layout
+## Tests
 
-The repository uses the following structure:
-
-```text
-tulana/
-    application source code
-
-board_pdfs/
-    board textbook PDF corpus
+```bash
+python3 check_install.py     is this checkout complete and consistent
+python3 test_stress.py       edge cases, malformed input, database safety
+python3 test_blocks.py       every book in the layout corpus, sampled pages
+python3 test_naming.py       32 boards × 23 languages × every naming style
+python3 windows_check.py     cross-platform audit
+python3 selftest.py          the clipping workspace, end to end
 ```
 
-Tulana accesses the PDF corpus through:
+`test_stress.py` feeds in malformed JSON, zero-size pages, inverted boxes,
+non-numeric coordinates, null bytes and emoji; asks for pages beyond the end of
+a book and negative pages; selects 5000 blocks at once; re-ingests to prove
+nothing duplicates; checks box placement at 72 and 150 dpi; and invents an
+Odisha Class 8 Odia book to prove a board added in future resolves end to end.
 
-```text
-tulana/data
-```
-
-which points to:
-
-```text
-../board_pdfs
-```
-
-The application and corpus therefore remain separate while being distributed together.
+It also proves the safety contract below rather than asserting it.
 
 ---
 
-# Validation
+## The annotation database is protected
 
-## Verify Python
+`blocks.py` and `layout.py` create their own tables with
+`CREATE TABLE IF NOT EXISTS` and never write to `documents`, `projects`,
+`clips`, `pairs`, `labels`, `pair_labels`, `exports` or `audit`. No `ALTER`, no
+`DROP`.
 
-```bash
-python --version
-```
+`test_stress.py` checks this two ways: it reads the source of each module for
+writes to those tables, and it seeds a project and a pair, runs everything, and
+hashes all eight tables before and after. If a future change ever writes to one
+of them, the test fails.
 
-## Verify Gradio
-
-Windows:
-
-```text
-.venv\Scripts\python.exe -c "import gradio; print(gradio.__version__)"
-```
-
-Linux:
-
-```bash
-.venv/bin/python -c "import gradio; print(gradio.__version__)"
-```
-
-## Verify PyMuPDF
-
-Windows:
-
-```text
-.venv\Scripts\python.exe -c "import fitz; print(fitz.__version__)"
-```
-
-Linux:
-
-```bash
-.venv/bin/python -c "import fitz; print(fitz.__version__)"
-```
-
-## Verify the PDF corpus
-
-Windows:
-
-```text
-(Get-ChildItem ".\board_pdfs" -Recurse -File -Filter "*.pdf").Count
-```
-
-Linux:
-
-```bash
-find board_pdfs -type f -iname "*.pdf" | wc -l
-```
-
-## Verify Git LFS
-
-```bash
-git lfs ls-files
-```
-
-## Run repository validation scripts
-
-If present:
-
-```bash
-python selftest.py
-```
-
-```bash
-python check_sources.py
-```
+`shelf.py` is the deliberate exception — registering a document is its whole
+purpose — and it only ever inserts a row or updates the metadata columns of one
+it matched by path, so an existing document keeps its `id` and no clip or pair
+can be orphaned.
 
 ---
 
-# Updating the Application
+## Windows, Linux, macOS
 
-Modify files inside:
+Python 3.10 or newer. **No PowerShell, no bash, no Node, no build step, no
+database server, no external binaries.** `.zip` and `.7z` are both read in pure
+Python.
 
-```text
-tulana/
-```
+The interpreter is named `py` (or `python`) on Windows and `python3` on Linux
+and macOS — Debian and Ubuntu ship no `python` command at all. That naming is
+the only difference; the files are identical.
 
-Then:
-
-```bash
-git add tulana/
-git commit -m "Update Tulana"
-git push
-```
-
----
-
-# Updating the PDF Corpus
-
-Add or replace PDFs inside:
-
-```text
-board_pdfs/
-```
-
-Then:
-
-```bash
-git add board_pdfs/
-git commit -m "Update board PDF corpus"
-git push
-```
-
-To retrieve updated PDFs on another machine:
-
-```bash
-git lfs pull
-```
+`windows_check.py` audits the things that work on Linux and fail on Windows:
+hard-coded POSIX paths, text files opened without an explicit encoding (Windows
+defaults to cp1252, which cannot read Devanagari), shell invocation, filenames
+that are illegal on Windows, and any OS-specific separator reaching the
+database.
 
 ---
 
-# Important
+## Configuration
 
-The following are intentionally not stored in GitHub:
+| variable | meaning | default |
+|---|---|---|
+| `TULANA_DATA_DIR` | where the PDFs live | discovered |
+| `TULANA_STATE_DIR` | database, clippings, exports | `./state` |
+| `TULANA_PORT` | preferred port | `7862` |
+| `TULANA_VIEW_DPI` | on-screen page resolution | `110` |
+| `TULANA_CROP_DPI` | resolution clippings are cut at | `300` |
 
-```text
-.venv/
-.gradio/
-__pycache__/
-*.pyc
-*.db
-*.sqlite
-.env
-```
-
-These are local environments, generated files, runtime state, caches, or secrets.
-
-They are recreated or configured on the target machine.
+Back up `state/`. That folder is the annotators' work; the PDFs and the layout
+can always be fetched again.
 
 ---
 
-# Portability
+## Troubleshooting
 
-Tulana should not depend on developer-specific filesystem paths.
+**The dropdown is empty.** Look at the startup log — it names the folder it
+searched and says whether the files it found were Git LFS pointers. Then run
+`check_install.py`.
 
-Avoid hard-coded paths such as:
+**A textbook is missing from the dropdown.** *Why is a textbook missing?* on
+the Clip tab, or `GET /api/library/diagnose`.
 
-```text
-D:\Tulana
-D:\Bodhan-Tulana-Studio
-C:\Users\...
-```
+**The Blocks tab is empty.** The layout corpus was not found. `check_install.py`
+says where it looked.
 
-Use repository-relative paths or configuration wherever machine-specific paths are required.
+**A page shows blocks but no image.** The layout covers that page but the PDF
+does not — a truncated copy, or a different edition. The blocks and their text
+are still usable.
 
----
+**A change does not appear after deploying.** Assets are fingerprinted, so this
+should not happen; if it does, reload once with cache disabled. If a whole tab
+is missing, `check_install.py` will say whether the Python or the interface was
+the half that did not get copied.
 
-# Troubleshooting
-
-## PyMuPDF is missing
-
-Windows:
-
-```text
-.venv\Scripts\python.exe -m pip install -r requirements.txt
-.venv\Scripts\python.exe -c "import fitz; print(fitz.__version__)"
-```
-
-Linux:
-
-```bash
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python -c "import fitz; print(fitz.__version__)"
-```
-
-## Gradio is missing
-
-Windows:
-
-```text
-.venv\Scripts\python.exe -m pip install -r requirements.txt
-.venv\Scripts\python.exe -c "import gradio; print(gradio.__version__)"
-```
-
-Linux:
-
-```bash
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python -c "import gradio; print(gradio.__version__)"
-```
-
-## PDFs are missing
-
-```bash
-git lfs install
-git lfs pull
-```
-
-## Tulana cannot see the PDFs
-
-Check that:
-
-```text
-tulana/data
-```
-
-exists and points to:
-
-```text
-../board_pdfs
-```
-
-Windows:
-
-```text
-dir data
-```
-
-Linux:
-
-```bash
-ls -la data
-```
-
-## Gradio port is busy
-
-Choose another port using the mechanism supported by the application environment.
-
-Example:
-
-```text
-set GRADIO_SERVER_PORT=7870
-```
-
-or use the equivalent environment-variable syntax for the shell being used.
-
----
-
-# Complete Windows Setup
-
-```text
-git clone https://github.com/sandipanb01/tulana-studio.git
-cd tulana-studio
-git lfs install
-git lfs pull
-cd tulana
-python -m venv .venv
-.venv\Scripts\python.exe -m pip install --upgrade pip
-.venv\Scripts\python.exe -m pip install -r requirements.txt
-mklink /J data ..\board_pdfs
-.venv\Scripts\python.exe app.py
-```
-
-For Gradio:
-
-```text
-.venv\Scripts\python.exe share_gradio.py
-```
-
----
-
-# Complete Linux / Cluster Setup
-
-```bash
-git clone https://github.com/sandipanb01/tulana-studio.git
-cd tulana-studio
-git lfs install
-git lfs pull
-cd tulana
-python3 -m venv .venv
-.venv/bin/python -m pip install --upgrade pip
-.venv/bin/python -m pip install -r requirements.txt
-ln -s ../board_pdfs data
-.venv/bin/python app.py
-```
-
-For Gradio:
-
-```bash
-.venv/bin/python share_gradio.py
-```
-
----
-
-# Workflow
-
-```text
-Clone repository
-      ↓
-git lfs pull
-      ↓
-Create .venv
-      ↓
-Install requirements.txt
-      ↓
-Connect tulana/data → board_pdfs
-      ↓
-Verify the PDF corpus
-      ↓
-Run app.py
-      ↓
-Run share_gradio.py when needed
-```
-
----
-
-# Repository Layout
-
-```text
-tulana-studio/
-│
-├── README.md
-├── .gitignore
-├── .gitattributes
-│
-├── tulana/
-│   ├── app.py
-│   ├── requirements.txt
-│   ├── config.py
-│   ├── db.py
-│   ├── fetcher.py
-│   ├── library.py
-│   ├── pdflib.py
-│   ├── share_gradio.py
-│   ├── docs/
-│   └── static/
-│
-└── board_pdfs/
-    └── board textbook PDFs
-```
-
-The repository is designed to run on Windows, Linux, and server/cluster environments without requiring PowerShell or any other specific shell as part of the application itself.
+**`address already in use`.** The studio takes the next free port and prints
+which one it chose.
