@@ -78,7 +78,7 @@ def extract_all(root: Path = None, log=print) -> int:
         r = subprocess.run([seven, "x", "-y", f"-o{a.parent}", str(a)],
                            capture_output=True, text=True)
         if r.returncode == 0:
-            marks.mkdir(exist_ok=True); mark.write_text("ok"); done += 1
+            marks.mkdir(exist_ok=True); mark.write_text("ok", encoding="utf-8"); done += 1
         else:
             log(f"  [warn] 7z failed on {a.name}: {r.stderr.strip()[:120]}")
     for z in sorted(p for p in root.rglob("*.zip")
@@ -99,7 +99,7 @@ def extract_all(root: Path = None, log=print) -> int:
                     continue
                 log(f"  [zip] unpacking {z.name} ({need/2**20:.0f} MB)")
                 zf.extractall(dest)
-            marks.mkdir(exist_ok=True); mark.write_text("ok"); done += 1
+            marks.mkdir(exist_ok=True); mark.write_text("ok", encoding="utf-8"); done += 1
         except zipfile.BadZipFile:
             log(f"  [warn] {z.name} is not a valid zip — skipped")
     return done
