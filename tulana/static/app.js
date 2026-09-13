@@ -41,7 +41,7 @@ const S = {
 };
 
 /* ── page navigation ───────────────────────────────────────────────────── */
-const LOADERS = { Pairs: loadPairs, Layout: loadLayout, Export: loadExport, Help: loadDocs };
+const LOADERS = { Pairs: loadPairs, Layout: loadLayout, Blocks: loadBlocks, Export: loadExport, Help: loadDocs };
 function show(name) {
   $$("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.page === name));
   $$(".page").forEach(p => p.classList.toggle("on", p.id === "page" + name));
@@ -953,3 +953,271 @@ if ($("#btnDiagnose")) $("#btnDiagnose").onclick = async () => {
     box.innerHTML = `<div class="sm" style="color:var(--danger);margin-top:8px">${esc(e.message)}</div>`;
   }
 };
+
+/* ══════════════ parsed blocks ══════════════════════════════════════════════
+   Both editions side by side with the parser's blocks overlaid. Click a block
+   to select it, click again to unselect; shift-click takes the range in
+   reading order. The extracted text of what is selected appears underneath,
+   both languages at once — which is the whole point: seeing that the Marathi
+   block you picked says what the English one does.
+
+   Boxes arrive as fractions of the page, so the overlay is correct at any
+   zoom and at whatever DPI the page happens to be rendered. */
+const BK = {
+  combo: null, labels: [], colors: {},
+  side: { src: { book:null, page:0, pages:0, blocks:[], sel:new Set(), zoom:1, last:null, w:0, h:0 },
+          tgt: { book:null, page:0, pages:0, blocks:[], sel:new Set(), zoom:1, last:null, w:0, h:0 } },
+};
+const BS = s => BK.side[s];
+const bhost = s => $(s === "src" ? "#bHostSrc" : "#bHostTgt");
+
+const BLOCK_COLOURS = ["#c2404a","#1f4e79","#c98a1b","#2e7bb8","#6a8f2f","#7a4fc0",
+  "#a8552f","#c2571f","#158a4a","#8a7bb8","#b8433a","#607089","#7d879c","#9aa5b8"];
+
+async function loadBlocks() {
+  if (!BK.labels.length) {
+    const s = await api("/api/blocks/stats");
+    BK.labels = s.labels || [];
+    BK.labels.forEach((l, i) => BK.colors[l.label] = BLOCK_COLOURS[i % BLOCK_COLOURS.length]);
+    $("#bCorpus").innerHTML = s.books
+      ? `${s.books} books · ${s.pages.toLocaleString()} pages ·
+         ${s.blocks.toLocaleString()} blocks · ${s.by_language.length} languages`
+      : `No parsed layout loaded.`;
+    fill($("#bLabel"), BK.labels.map(l => ({ value: l.label, label: `${l.label} (${l.n})` })),
+         "All block types");
+    $("#bLegend").innerHTML = BK.labels.slice(0, 14).map(l =>
+      `<span class="lgd"><i style="background:${BK.colors[l.label]}"></i>${esc(l.label)}</span>`).join("");
+  }
+  if (!$("#bCombo").dataset.filled) {
+    BK.library = await api("/api/blocks/library");
+    fill($("#bCombo"), BK.library.map((c, i) => ({ value: i, label: c.label })),
+         "Choose a board and class…");
+    $("#bCombo").dataset.filled = "1";
+    $("#bCombo").onchange = () => {
+      const c = BK.library[+$("#bCombo").value]; BK.combo = c;
+      if (!c) return;
+      fill($("#bLang"), c.target_languages.map(l => ({ value: l, label: l })),
+           "Choose the target language…");
+      fill($("#bSrcDoc"), c.english_editions.map(d =>
+        ({ value: d.id, label: `${d.book} · ${d.num_pages}pp · ${d.n_blocks} blocks` })), "");
+      fill($("#bTgtDoc"), [], "—");
+    };
+    $("#bLang").onchange = () => {
+      const c = BK.combo, lang = $("#bLang").value;
+      if (!c || !lang) return;
+      fill($("#bTgtDoc"), c.target_editions.filter(d => d.language === lang).map(d =>
+        ({ value: d.id, label: `${d.book} · ${d.num_pages}pp · ${d.n_blocks} blocks` })), "");
+    };
+  }
+}
+$("#bOpen").onclick = async () => {
+  const s = +$("#bSrcDoc").value, t = +$("#bTgtDoc").value;
+  if (!s || !t) { toast("Choose a board, class, language and both editions", true); return; }
+  BS("src").book = s; BS("src").page = 0; BS("src").sel.clear();
+  BS("tgt").book = t; BS("tgt").page = 0; BS("tgt").sel.clear();
+  ["#bNav","#bFilter","#bActions"].forEach(x => $(x).hidden = false);
+  await Promise.all([openBlockPage("src"), openBlockPage("tgt")]);
+  $("#bSide").classList.remove("open");
+};
+
+async function openBlockPage(side) {
+  const st = BS(side);
+  if (st.book === null) return;
+  try {
+    const d = await api(`/api/blocks/page/${st.book}/${st.page}`);
+    st.blocks = d.blocks || []; st.pages = d.pages; st.w = d.width; st.h = d.height;
+    st.imageAvailable = !!d.image_available;
+    st.sel.clear(); st.last = null;
+    $(side === "src" ? "#bTitSrc" : "#bTitTgt").textContent =
+      `${d.book.language} — ${d.book.book}`;
+    $(side === "src" ? "#bPosSrc" : "#bPosTgt").textContent =
+      `page ${st.page + 1} of ${d.pages} · ${st.blocks.length} blocks`
+      + (d.book.pdf_present ? "" : " · PDF not on disk");
+    $(side === "src" ? "#bPageSrc" : "#bPageTgt").value = st.page;
+    renderBlockSide(side);
+    refreshSelection();
+  } catch (e) { toast(e.message, true); }
+}
+
+function renderBlockSide(side) {
+  const st = BS(side), h = bhost(side);
+  const box = $(side === "src" ? "#bScrSrc" : "#bScrTgt");
+  const fitW = Math.max(240, (box.clientWidth || 600) - 28);
+  const w = Math.round(fitW * st.zoom);
+  const aspect = (st.h && st.w) ? st.h / st.w : 1.414;
+  $(side === "src" ? "#bZoomSrc" : "#bZoomTgt").textContent = Math.round(st.zoom * 100) + "%";
+  h.style.width = w + "px";
+  // Only request the image when the server has said it can render it. Letting
+  // an <img> discover a missing PDF by 404 works, but logs a red error that
+  // reads like a bug to whoever opens the developer tools next.
+  if (st.imageAvailable) {
+    h.innerHTML = `<img width="${w}" src="${BASE}/api/blocks/page-image/${st.book}/${st.page}.png" alt="">`;
+    const img = h.querySelector("img");
+    if (img) img.onload = () => drawBlocks(side);
+  } else {
+    h.innerHTML = "";
+    blockFallback(side, w, aspect);
+  }
+  drawBlocks(side);
+}
+// When the PDF is absent the layout is still usable: the blocks are drawn on a
+// blank page of the right proportions rather than the tab showing nothing.
+window.blockFallback = (side, w, aspect) => {
+  const h = bhost(side);
+  const d = document.createElement("div");
+  d.className = "blank";
+  d.style.cssText = `width:${w}px;height:${Math.round(w * aspect)}px`;
+  d.textContent = "The PDF for this book is not on disk — blocks and text are shown without the page image.";
+  h.appendChild(d);
+  drawBlocks(side);
+};
+
+function drawBlocks(side) {
+  const st = BS(side), h = bhost(side);
+  if (!h) return;
+  [...h.querySelectorAll(".blk")].forEach(e => e.remove());
+  const surface = h.querySelector("img") || h.querySelector(".blank");
+  if (!surface) return;
+  const W = surface.clientWidth || surface.offsetWidth;
+  const H = surface.clientHeight || surface.offsetHeight;
+  const only = $("#bLabel").value, dim = $("#bDim").checked, order = $("#bShowOrder").checked;
+  st.blocks.forEach((b, i) => {
+    const hidden = only && b.label !== only;
+    if (hidden && !dim) return;
+    const el = document.createElement("div");
+    const on = st.sel.has(b.id);
+    el.className = "blk" + (on ? " on" : "") + ((hidden || (dim && !on)) ? " dim" : "");
+    el.style.cssText = `--c:${BK.colors[b.label] || "#666"};left:${b.fx0*W}px;top:${b.fy0*H}px;` +
+      `width:${(b.fx1-b.fx0)*W}px;height:${(b.fy1-b.fy0)*H}px`;
+    el.dataset.id = b.id; el.dataset.i = i;
+    el.title = `${b.label} · ${b.type} · order ${b.ord} · confidence ${b.conf}`;
+    el.innerHTML = `<span class="lb">${esc(b.label || b.type || "")}</span>` +
+                   (order ? `<span class="no">${b.ord}</span>` : "");
+    h.appendChild(el);
+  });
+}
+
+["src","tgt"].forEach(side => {
+  const h = bhost(side);
+  if (!h) return;
+  h.addEventListener("click", ev => {
+    const el = ev.target.closest(".blk");
+    if (!el) return;
+    const st = BS(side), id = +el.dataset.id, i = +el.dataset.i;
+    if (ev.shiftKey && st.last !== null) {
+      // a range in reading order, which is what "everything from here to there"
+      // means on a page — not the order the two were clicked in
+      const [a, b] = [Math.min(st.last, i), Math.max(st.last, i)];
+      for (let k = a; k <= b; k++) st.sel.add(st.blocks[k].id);
+    } else {
+      st.sel.has(id) ? st.sel.delete(id) : st.sel.add(id);
+      st.last = i;
+    }
+    drawBlocks(side); refreshSelection();
+  });
+});
+
+let _selTimer = null;
+function refreshSelection() {
+  const s = BS("src"), t = BS("tgt");
+  const n = s.sel.size + t.sel.size;
+  $("#bSelInfo").textContent = n
+    ? `${s.sel.size} source · ${t.sel.size} target block(s) selected`
+    : "Nothing selected — click blocks on either page";
+  $("#bText").hidden = n === 0;
+  clearTimeout(_selTimer);
+  if (!n) return;
+  _selTimer = setTimeout(async () => {
+    try {
+      const r = await api("/api/blocks/selection/pair", { method: "POST",
+        body: JSON.stringify({ src_block_ids: [...s.sel], tgt_block_ids: [...t.sel] }) });
+      const render = (sel, el, head) => {
+        $(head).textContent = sel.n_blocks
+          ? `${sel.n_blocks} block(s) · ${sel.n_chars} characters` : "Nothing selected";
+        $(el).innerHTML = sel.blocks.map(b =>
+          `<div class="blkt"><b>${esc(b.label || "")}</b>${esc(b.text || "")}</div>`).join("")
+          || `<div class="sm faint">No text in the selected blocks — diagrams and
+               images carry none, and a page without a text layer yields none.</div>`;
+      };
+      render(r.source, "#bTextSrc", "#bTextHeadSrc");
+      render(r.target, "#bTextTgt", "#bTextHeadTgt");
+      BK.lastText = r;
+    } catch (e) { toast(e.message, true); }
+  }, 180);
+}
+
+$("#bClearSel").onclick = () => {
+  ["src","tgt"].forEach(s => { BS(s).sel.clear(); BS(s).last = null; drawBlocks(s); });
+  refreshSelection();
+};
+$("#bSelAll").onclick = () => {
+  const only = $("#bLabel").value;
+  ["src","tgt"].forEach(s => {
+    BS(s).blocks.forEach(b => { if (!only || b.label === only) BS(s).sel.add(b.id); });
+    drawBlocks(s);
+  });
+  refreshSelection();
+};
+$("#bCopy").onclick = async () => {
+  const r = BK.lastText;
+  if (!r) { toast("Select some blocks first", true); return; }
+  const text = `${r.source.text}\n\n---\n\n${r.target.text}`;
+  try { await navigator.clipboard.writeText(text); toast("Extracted text copied"); }
+  catch (e) { toast("Could not reach the clipboard — select the text and copy it", true); }
+};
+$("#bLabel").onchange = () => { drawBlocks("src"); drawBlocks("tgt"); };
+$("#bDim").onchange = () => { drawBlocks("src"); drawBlocks("tgt"); };
+$("#bShowOrder").onchange = () => { drawBlocks("src"); drawBlocks("tgt"); };
+$$("[data-bzoom]").forEach(b => b.onclick = () => {
+  const side = b.dataset.bzoom, st = BS(side);
+  st.zoom = Math.min(4, Math.max(0.3, st.zoom + 0.25 * (+b.dataset.d)));
+  renderBlockSide(side);
+});
+$$("[data-bfit]").forEach(b => b.onclick = () => {
+  const side = b.dataset.bfit; BS(side).zoom = 1; renderBlockSide(side);
+});
+function turnBlockPage(delta) {
+  const both = $("#bLock").checked;
+  for (const side of (both ? ["src","tgt"] : ["src"])) {
+    const st = BS(side);
+    if (st.book === null) continue;
+    const n = st.page + delta;
+    if (n >= 0 && n < st.pages) { st.page = n; openBlockPage(side); }
+  }
+}
+$("#bPrev").onclick = () => turnBlockPage(-1);
+$("#bNext").onclick = () => turnBlockPage(1);
+["#bPageSrc","#bPageTgt"].forEach((sel, i) => $(sel).onchange = () => {
+  const side = i === 0 ? "src" : "tgt", st = BS(side), v = +$(sel).value;
+  if (st.book !== null && v >= 0 && v < st.pages) { st.page = v; openBlockPage(side); }
+});
+$("#bExport").onclick = e => {
+  e.preventDefault();
+  const q = new URLSearchParams();
+  if (BK.combo) { q.set("board", BK.combo.board); q.set("cls", BK.combo.class); }
+  if ($("#bLabel").value) q.set("label", $("#bLabel").value);
+  window.location = `${BASE}/api/blocks/export.zip?${q}`;
+};
+$("#bSplit").addEventListener("pointerdown", ev => {
+  ev.preventDefault(); $("#bSplit").setPointerCapture(ev.pointerId);
+  const move = e => {
+    const w = $("#bPanes").getBoundingClientRect();
+    const pct = Math.min(80, Math.max(20, ((e.clientX - w.left) / w.width) * 100));
+    $("#bPaneSrc").style.flex = `0 0 ${pct}%`;
+    $("#bPaneTgt").style.flex = `0 0 ${100 - pct}%`;
+  };
+  const up = () => { window.removeEventListener("pointermove", move);
+                     window.removeEventListener("pointerup", up); };
+  window.addEventListener("pointermove", move); window.addEventListener("pointerup", up);
+});
+document.addEventListener("keydown", e => {
+  if (!$("#pageBlocks").classList.contains("on")) return;
+  if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName || "")) return;
+  if (e.key === "ArrowRight") turnBlockPage(1);
+  if (e.key === "ArrowLeft") turnBlockPage(-1);
+  if (e.key === "Escape") $("#bClearSel").click();
+  if (e.key === "+" || e.key === "=") { BS("src").zoom = Math.min(4, BS("src").zoom+0.25);
+    BS("tgt").zoom = BS("src").zoom; renderBlockSide("src"); renderBlockSide("tgt"); }
+  if (e.key === "-") { BS("src").zoom = Math.max(0.3, BS("src").zoom-0.25);
+    BS("tgt").zoom = BS("src").zoom; renderBlockSide("src"); renderBlockSide("tgt"); }
+});
