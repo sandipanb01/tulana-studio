@@ -36,6 +36,7 @@ import config
 import db
 import blocks
 import layout
+import pairs as bpairs
 import library
 from pdflib import fitz
 
@@ -1329,6 +1330,130 @@ def blocks_export(board: str = None, cls: int = None, language: str = None,
     return Response(buf.getvalue(), media_type="application/zip",
                     headers={"Content-Disposition":
                              'attachment; filename="tulana_blocks.zip"'})
+
+
+
+# ── saved pairs, built from parsed blocks ──────────────────────────────────
+
+class PairIn(BaseModel):
+    src_book_id: int
+    tgt_book_id: int
+    src_block_ids: list[int] = []
+    tgt_block_ids: list[int] = []
+    label: str = ""
+    note: str = ""
+    status: str = "saved"
+    pair_id: int | None = None
+
+
+@app.post("/api/pairs/block")
+def pairs_save(body: PairIn, x_annotator: str = Header("")):
+    """Save an aligned selection. Either side may span several pages."""
+    with db.tx() as con:
+        try:
+            p = bpairs.save_pair(con, body.src_book_id, body.tgt_book_id,
+                                 body.src_block_ids, body.tgt_block_ids,
+                                 body.label, body.note, body.status,
+                                 (x_annotator or "").strip(), body.pair_id)
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+        db.log(con, x_annotator, "pair_save", str(p["id"]),
+               {"src": len(body.src_block_ids), "tgt": len(body.tgt_block_ids)})
+        return p
+
+
+@app.post("/api/pairs/block/draft")
+def pairs_draft(body: PairIn, x_annotator: str = Header("")):
+    """Keep the in-progress selection without being asked.
+
+    Called as the annotator works, so a closed tab costs nothing."""
+    with db.tx() as con:
+        try:
+            return bpairs.save_draft(con, body.src_book_id, body.tgt_book_id,
+                                     body.src_block_ids, body.tgt_block_ids,
+                                     (x_annotator or "").strip())
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+
+
+@app.get("/api/pairs/block")
+def pairs_list(src_book_id: int = None, tgt_book_id: int = None,
+               status: str = None, board: str = None, language: str = None,
+               search: str = None, include_drafts: bool = False,
+               limit: int = 500, offset: int = 0):
+    with db.tx() as con:
+        return bpairs.list_pairs(con, src_book_id, tgt_book_id, status, board,
+                                 language, search, include_drafts, limit, offset)
+
+
+@app.get("/api/pairs/block/stats")
+def pairs_stats():
+    with db.tx() as con:
+        return bpairs.stats(con)
+
+
+@app.get("/api/pairs/block/{pair_id}")
+def pairs_get(pair_id: int):
+    with db.tx() as con:
+        try:
+            return bpairs.get_pair(con, pair_id)
+        except ValueError as e:
+            raise HTTPException(404, str(e))
+
+
+class PairMetaIn(BaseModel):
+    label: str | None = None
+    note: str | None = None
+    status: str | None = None
+
+
+@app.patch("/api/pairs/block/{pair_id}")
+def pairs_patch(pair_id: int, body: PairMetaIn, x_annotator: str = Header("")):
+    with db.tx() as con:
+        try:
+            if body.label is not None or body.note is not None:
+                bpairs.update_meta(con, pair_id, body.label, body.note)
+            if body.status is not None:
+                bpairs.set_status(con, pair_id, body.status,
+                                  (x_annotator or "").strip())
+            db.log(con, x_annotator, "pair_update", str(pair_id))
+            return bpairs.get_pair(con, pair_id)
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+
+
+@app.delete("/api/pairs/block/{pair_id}")
+def pairs_delete(pair_id: int, x_annotator: str = Header("")):
+    with db.tx() as con:
+        db.log(con, x_annotator, "pair_delete", str(pair_id))
+        return bpairs.delete_pair(con, pair_id)
+
+
+@app.get("/api/pairs/formats")
+def pairs_formats():
+    """Every export format, with what each is for."""
+    return [{"key": k, "name": n, "extension": e, "description": d}
+            for k, (n, _m, e, d) in bpairs.FORMATS.items()]
+
+
+@app.get("/api/pairs/export.{fmt}")
+def pairs_export(fmt: str, board: str = None, language: str = None,
+                 cls: int = None, status: str = None,
+                 include_excluded: bool = False):
+    with db.tx() as con:
+        try:
+            if fmt == "bundle":
+                data, media, fn = bpairs.export_bundle(
+                    con, board=board, language=language, cls=cls, status=status,
+                    include_excluded=include_excluded)
+            else:
+                data, media, fn = bpairs.export(
+                    con, fmt, board=board, language=language, cls=cls,
+                    status=status, include_excluded=include_excluded)
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+    return Response(data, media_type=media,
+                    headers={"Content-Disposition": f'attachment; filename="{fn}"'})
 
 
 app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), name="static")
