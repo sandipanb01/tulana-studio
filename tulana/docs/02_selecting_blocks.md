@@ -1,4 +1,28 @@
-# Selecting blocks
+# Selecting and cropping
+
+There are two tools, and they answer different questions.
+
+**Click blocks** takes what the parser found, and brings its text with it.
+**Drag to crop** takes what *you* decide, as a rectangle, and cuts exactly that.
+
+A figure with its caption and the line beneath may be one passage to a reader
+and three blocks to the parser. A hand-drawn diagram or a margin note was never
+a block at all, so no amount of clicking would reach it. Both tools work across
+pages, both are kept automatically, and both are cut from the original PDF as
+parallel images.
+
+Use them together in one pair if that is what the passage needs.
+
+## Drag to crop
+
+Switch the tool, then drag a rectangle over the passage. Drag inside a crop to
+move it, the corner grip to resize, the **×** to remove it. Every crop is listed
+in the sidebar with the page it is on; **go** jumps back to it.
+
+Draw as many as you need, on as many pages as you need. A tap without a drag
+does not create one.
+
+## Clicking blocks
 
 A **block** is a region the document parser found on a page — a paragraph, a
 table, an equation, a heading — with the text it read inside it. Each carries
