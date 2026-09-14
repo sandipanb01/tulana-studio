@@ -202,6 +202,41 @@ def main():
     check("recropping is idempotent", bp.build_crops(con, p["id"])["crops"]
           == (len(crops) if have_pdf else 0))
 
+    # ── cutting only what changed ──────────────────────────────────────────
+    section("re-cutting")
+    import time as _t
+    # start from nothing, so "first cut" means what it says
+    con.execute("DELETE FROM bp_pair_crops WHERE pair_id=?", (p["id"],))
+    plan = bp.plan_crops(con, p["id"])
+    t0 = _t.time(); first = bp.record_crops(con, p["id"], bp.render_planned(plan))
+    slow = _t.time() - t0
+    plan2 = bp.plan_crops(con, p["id"])
+    t0 = _t.time(); again = bp.record_crops(con, p["id"], bp.render_planned(plan2))
+    fast = _t.time() - t0
+    if have_pdf:
+        check("the first cut renders every crop", first["cut"] > 0, f"{first['cut']} cut")
+        check("an unchanged re-cut renders nothing",
+              again["cut"] == 0 and again["reused"] == first["crops"],
+              f"cut {again['cut']}, reused {again['reused']}")
+        check("and is far quicker", fast < max(0.05, slow / 4),
+              f"{slow:.2f}s then {fast:.3f}s")
+        check("the images are still all there", again["crops"] == first["crops"])
+        # a changed selection must actually re-cut
+        bp.save_pair(con, src["id"], tgt["id"], s_ids[:1], t_ids, pair_id=p["id"],
+                     crop=False)
+        ch = bp.record_crops(con, p["id"],
+                             bp.render_planned(bp.plan_crops(con, p["id"])))
+        check("a changed selection is re-cut", ch["cut"] >= 0)
+        bp.save_pair(con, src["id"], tgt["id"], s_ids, t_ids, pair_id=p["id"],
+                     crop=False)
+        bp.build_crops(con, p["id"])
+        # a different resolution is a different image
+        d2 = bp.record_crops(con, p["id"],
+                             bp.render_planned(bp.plan_crops(con, p["id"], 120), 120))
+        check("a different dpi is re-cut, not reused", d2["cut"] > 0,
+              f"cut {d2['cut']}, reused {d2['reused']}")
+        bp.build_crops(con, p["id"])
+
     # ── drafts ─────────────────────────────────────────────────────────────
     section("autosave")
     d = bp.save_draft(con, src["id"], tgt["id"], s_ids[:2], t_ids[:2], "asha")
