@@ -1357,22 +1357,45 @@ class PairIn(BaseModel):
     pair_id: int | None = None
 
 
+
+def _save_pair_and_crop(body, actor: str, status: str):
+    """Save, then cut the images — in that order, and in separate transactions.
+
+    Rendering a 300 DPI page is hundreds of milliseconds of CPU that needs no
+    database at all. Doing it inside the write transaction made one annotator's
+    autosave block every other writer for that whole time; with six people
+    working, the slowest wait was eight seconds. The pair is committed first, so
+    a failure to render can never lose the selection either.
+    """
+    with db.tx() as con:
+        p = bpairs.save_pair(con, body.src_book_id, body.tgt_book_id,
+                             body.src_block_ids, body.tgt_block_ids,
+                             getattr(body, "label", "") or "",
+                             getattr(body, "note", "") or "", status, actor,
+                             body.pair_id,
+                             [r.model_dump() for r in body.src_regions],
+                             [r.model_dump() for r in body.tgt_regions],
+                             crop=False)
+        plan = bpairs.plan_crops(con, p["id"])
+    rendered = bpairs.render_planned(plan)          # no lock held here
+    with db.tx() as con:
+        bpairs.record_crops(con, p["id"], rendered)
+        return bpairs.get_pair(con, p["id"])
+
+
 @app.post("/api/pairs/block")
 def pairs_save(body: PairIn, x_annotator: str = Header("")):
     """Save an aligned selection. Either side may span several pages."""
+    try:
+        p = _save_pair_and_crop(body, (x_annotator or "").strip(), body.status)
+    except ValueError as e:
+        raise HTTPException(400, str(e))
     with db.tx() as con:
-        try:
-            p = bpairs.save_pair(con, body.src_book_id, body.tgt_book_id,
-                                 body.src_block_ids, body.tgt_block_ids,
-                                 body.label, body.note, body.status,
-                                 (x_annotator or "").strip(), body.pair_id,
-                                 [r.model_dump() for r in body.src_regions],
-                                 [r.model_dump() for r in body.tgt_regions])
-        except ValueError as e:
-            raise HTTPException(400, str(e))
         db.log(con, x_annotator, "pair_save", str(p["id"]),
-               {"src": len(body.src_block_ids), "tgt": len(body.tgt_block_ids)})
-        return p
+               {"src": len(body.src_block_ids), "tgt": len(body.tgt_block_ids),
+                "regions": len(body.src_regions) + len(body.tgt_regions),
+                "images": sum(1 for c in p["src_crops"] + p["tgt_crops"] if c["path"])})
+    return p
 
 
 @app.post("/api/pairs/block/draft")
@@ -1380,15 +1403,21 @@ def pairs_draft(body: PairIn, x_annotator: str = Header("")):
     """Keep the in-progress selection without being asked.
 
     Called as the annotator works, so a closed tab costs nothing."""
-    with db.tx() as con:
-        try:
+    actor = (x_annotator or "").strip()
+    if not (body.src_block_ids or body.tgt_block_ids or
+            body.src_regions or body.tgt_regions):
+        with db.tx() as con:
             return bpairs.save_draft(con, body.src_book_id, body.tgt_book_id,
-                                     body.src_block_ids, body.tgt_block_ids,
-                                     (x_annotator or "").strip(),
-                                     [r.model_dump() for r in body.src_regions],
-                                     [r.model_dump() for r in body.tgt_regions])
-        except ValueError as e:
-            raise HTTPException(400, str(e))
+                                     [], [], actor)
+    with db.tx() as con:
+        row = con.execute("""SELECT id FROM bp_pairs WHERE status='draft' AND
+                             src_book_id=? AND tgt_book_id=? AND annotator=?""",
+                          (body.src_book_id, body.tgt_book_id, actor)).fetchone()
+        body.pair_id = row["id"] if row else None
+    try:
+        return _save_pair_and_crop(body, actor, "draft")
+    except ValueError as e:
+        raise HTTPException(400, str(e))
 
 
 @app.get("/api/pairs/block")
@@ -1461,7 +1490,10 @@ def pairs_crop(pair_id: int, crop_id: int):
 def pairs_recrop(pair_id: int, dpi: int = None, x_annotator: str = Header("")):
     """Cut the images again — after a PDF arrives, or at a different DPI."""
     with db.tx() as con:
-        res = bpairs.build_crops(con, pair_id, dpi)
+        plan = bpairs.plan_crops(con, pair_id)
+    rendered = bpairs.render_planned(plan, dpi)      # no lock held here
+    with db.tx() as con:
+        res = bpairs.record_crops(con, pair_id, rendered)
         db.log(con, x_annotator, "pair_recrop", str(pair_id), res)
         return {**res, "pair": bpairs.get_pair(con, pair_id)}
 
