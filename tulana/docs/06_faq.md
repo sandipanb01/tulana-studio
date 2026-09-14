@@ -25,6 +25,14 @@ That is deliberate. A passage that fits one English page often runs onto the
 next in the target language, so the selection is kept until you clear it. The
 panel tells you how many blocks are selected on pages you are not looking at.
 
+**A pair has no image.**
+The PDF was not on disk when it was saved. Fetch it — usually `git lfs pull` —
+then press **Try again** on the pair.
+
+**Why two images on one side?**
+The selection spans two pages. One image per page: a single image cannot cross a
+page break.
+
 **I closed the tab by mistake.**
 Your selection was kept. Reopen the same two editions and it is there.
 
