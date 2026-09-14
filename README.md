@@ -251,14 +251,14 @@ python3 shelf.py add FILE --board WB --class 10 --lang Bengali
 
 ```bash
 python3 check_install.py     22 — is this checkout complete and consistent
-python3 test_pairs.py       107 — cross-page selection, cropping, autosave, every format
+python3 test_pairs.py       113 — cross-page selection, cropping, autosave, every format
 python3 test_stress.py      138 — edge cases, malformed input, database safety
 python3 test_blocks.py      645 — every book in the layout corpus
 python3 test_naming.py      265 — 32 boards × 23 languages × naming styles
 python3 windows_check.py      8 — cross-platform audit
 ```
 
-**1,185 checks**, run twice interleaved to prove they do not depend on order.
+**1,191 checks**, run twice interleaved to prove they do not depend on order.
 
 `test_stress.py` feeds in malformed JSON, zero-size pages, inverted boxes,
 non-numeric coordinates, null bytes and emoji; asks for pages beyond the end of
