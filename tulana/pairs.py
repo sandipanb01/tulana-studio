@@ -157,24 +157,25 @@ def _render_crop(pdf: Path, page: int, box: tuple, dpi: int = None) -> tuple:
         return pix.tobytes("png"), pix.width, pix.height
 
 
-def build_crops(con, pair_id: int, dpi: int = None) -> dict:
-    """Cut and store one image per page each side of a pair touches.
+def plan_crops(con, pair_id: int, dpi: int = None) -> list:
+    """Work out what to cut, and what is already cut.
 
-    A pair may span pages, so one image per side would either span a page break
-    — which cannot be rendered — or silently drop everything after the first
-    page. One crop per page, in order, is the honest representation.
-
-    Never raises. A missing PDF is an ordinary state, not an error: the pair's
-    text and geometry are still worth having, and the reason is recorded
-    against the crop row so the interface can say why there is no picture.
+    Read-only and fast, so it is safe inside a transaction. Each item carries
+    the crop it would replace, if an identical one already exists — same page,
+    same box, same resolution, file still on disk. Autosave fires while an
+    annotator works, and re-cutting sixteen unchanged images every time is most
+    of a second of CPU for no result at all.
     """
     ensure_schema(con)
-    import hashlib
-    # Only the rendered images are replaced here. The drawn regions are input to
-    # this function, not output of it — clearing them would delete the very
-    # rectangles it is about to cut.
-    con.execute("DELETE FROM bp_pair_crops WHERE pair_id=?", (pair_id,))
-    made, problems = 0, []
+    dpi = dpi or CROP_DPI
+    have = {}
+    for c in con.execute("""SELECT side, page, x0, y0, x1, y1, dpi, path, sha256,
+                            width, height, bytes FROM bp_pair_crops
+                            WHERE pair_id=? AND path != ''""", (pair_id,)):
+        key = (c["side"], c["page"], round(c["x0"], 5), round(c["y0"], 5),
+               round(c["x1"], 5), round(c["y1"], 5), c["dpi"])
+        have[key] = dict(c)
+    plan = []
     for side in ("src", "tgt"):
         book_col = "src_book_id" if side == "src" else "tgt_book_id"
         row = con.execute(f"SELECT {book_col} FROM bp_pairs WHERE id=?",
@@ -195,52 +196,107 @@ def build_crops(con, pair_id: int, dpi: int = None) -> dict:
             p[0] = min(p[0], b["fx0"]); p[1] = min(p[1], b["fy0"])
             p[2] = max(p[2], b["fx1"]); p[3] = max(p[3], b["fy1"])
             p[4] += 1
-        wanted = [(page, x0, y0, x1, y1, n, "blocks")
-                  for page, (x0, y0, x1, y1, n) in sorted(pages.items())]
-        # every rectangle the annotator drew, in the order they drew it
+        items = [(page, x0, y0, x1, y1, n, "blocks")
+                 for page, (x0, y0, x1, y1, n) in sorted(pages.items())]
         for rg in con.execute("""SELECT page, x0, y0, x1, y1 FROM bp_pair_regions
                                  WHERE pair_id=? AND side=? ORDER BY page, seq""",
                               (pair_id, side)):
-            wanted.append((rg["page"], rg["x0"], rg["y0"], rg["x1"], rg["y1"],
-                           0, "region"))
-        for seq, (page, x0, y0, x1, y1, n, kind) in enumerate(wanted):
-            png = None
-            problem = ""
-            w = h = 0
-            if not pdf:
-                problem = (f"the PDF for {bk['book']} is not on disk, so this "
-                           f"region cannot be cropped")
+            items.append((rg["page"], rg["x0"], rg["y0"], rg["x1"], rg["y1"],
+                          0, "region"))
+        for seq, it in enumerate(items):
+            key = (side, it[0], round(it[1], 5), round(it[2], 5),
+                   round(it[3], 5), round(it[4], 5), dpi)
+            done = have.get(key)
+            if done and (Path(config.STATE_DIR) /
+                         Path(*done["path"].split("/"))).exists():
+                done = {k: done[k] for k in
+                        ("path", "sha256", "width", "height", "bytes")}
             else:
-                try:
-                    png, w, h = _render_crop(pdf, page, (x0, y0, x1, y1), dpi)
-                except Exception as e:
-                    problem = str(e)[:160]
-            path = ""
-            if png:
-                digest = hashlib.sha256(png).hexdigest()
-                f = crop_dir() / f"{digest[:2]}" / f"{digest}.png"
-                f.parent.mkdir(parents=True, exist_ok=True)
-                if not f.exists():
-                    tmp = f.with_suffix(f".{os.getpid()}.part")
-                    tmp.write_bytes(png)
-                    tmp.replace(f)
-                # Stored as posix deliberately. `str()` would write a backslash
-                # on Windows, and prune_crops compares stored paths against
-                # freshly computed ones — a separator mismatch would make every
-                # file look unreferenced and delete the lot.
-                path = f.relative_to(Path(config.STATE_DIR)).as_posix()
-                made += 1
-            else:
-                digest = ""
-                problems.append(problem)
-            con.execute("""INSERT INTO bp_pair_crops(pair_id, side, page, seq,
-                x0, y0, x1, y1, path, sha256, width, height, dpi, bytes,
-                n_blocks, kind, problem, created_at)
-                VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-                (pair_id, side, page, seq, x0, y0, x1, y1, path, digest, w, h,
-                 dpi or CROP_DPI, len(png) if png else 0, n, kind, problem,
-                 time.time()))
-    return {"crops": made, "problems": sorted(set(p for p in problems if p))}
+                done = None
+            plan.append({"side": side, "seq": seq, "page": it[0],
+                         "box": (it[1], it[2], it[3], it[4]), "n_blocks": it[5],
+                         "kind": it[6], "pdf": str(pdf) if pdf else "",
+                         "book": bk["book"], "reuse": done, "dpi": dpi})
+    return plan
+
+
+def render_planned(plan: list, dpi: int = None) -> list:
+    """Cut the images. Touches no database, so it must never hold a write lock.
+
+    Rendering a 300 DPI page is hundreds of milliseconds of CPU. Doing it inside
+    the transaction that saves the pair meant one annotator's autosave blocked
+    every other writer for that whole time — six people autosaving made the
+    slowest wait eight seconds. Nothing here needs the database, so nothing here
+    should hold it.
+    """
+    import hashlib
+    out = []
+    for item in plan:
+        # already cut, unchanged, still on disk
+        if item.get("reuse"):
+            out.append({**item, **item["reuse"], "problem": "",
+                        "dpi": item.get("dpi") or dpi or CROP_DPI})
+            continue
+        png = None
+        problem = ""
+        w = h = 0
+        if not item["pdf"]:
+            problem = (f"the PDF for {item['book']} is not on disk, so this "
+                       f"region cannot be cropped")
+        else:
+            try:
+                png, w, h = _render_crop(Path(item["pdf"]), item["page"],
+                                         item["box"], dpi)
+            except Exception as e:
+                problem = str(e)[:160]
+        path = digest = ""
+        if png:
+            digest = hashlib.sha256(png).hexdigest()
+            f = crop_dir() / digest[:2] / f"{digest}.png"
+            f.parent.mkdir(parents=True, exist_ok=True)
+            if not f.exists():
+                tmp = f.with_suffix(f".{os.getpid()}.part")
+                tmp.write_bytes(png)
+                tmp.replace(f)
+            path = f.relative_to(Path(config.STATE_DIR)).as_posix()
+        out.append({**item, "path": path, "sha256": digest, "width": w,
+                    "height": h, "bytes": len(png) if png else 0,
+                    "dpi": dpi or CROP_DPI, "problem": problem})
+    return out
+
+
+def record_crops(con, pair_id: int, rendered: list) -> dict:
+    """Write the crop rows. Fast, so it is safe inside a transaction."""
+    ensure_schema(con)
+    con.execute("DELETE FROM bp_pair_crops WHERE pair_id=?", (pair_id,))
+    for r in rendered:
+        x0, y0, x1, y1 = r["box"]
+        con.execute("""INSERT INTO bp_pair_crops(pair_id, side, page, seq,
+            x0, y0, x1, y1, path, sha256, width, height, dpi, bytes,
+            n_blocks, kind, problem, created_at)
+            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+            (pair_id, r["side"], r["page"], r["seq"], x0, y0, x1, y1, r["path"],
+             r["sha256"], r["width"], r["height"], r["dpi"], r["bytes"],
+             r["n_blocks"], r["kind"], r["problem"], time.time()))
+    made = sum(1 for r in rendered if r["path"])
+    reused = sum(1 for r in rendered if r.get("reuse"))
+    return {"crops": made, "reused": reused, "cut": made - reused,
+            "problems": sorted({r["problem"] for r in rendered if r["problem"]})}
+
+
+def build_crops(con, pair_id: int, dpi: int = None) -> dict:
+    """Cut and store one image per page each side of a pair touches.
+
+    A pair may span pages, so one image per side would either span a page break
+    — which cannot be rendered — or silently drop everything after the first
+    page. One crop per page, in order, is the honest representation.
+
+    Never raises. A missing PDF is an ordinary state, not an error: the pair's
+    text and geometry are still worth having, and the reason is recorded
+    against the crop row so the interface can say why there is no picture.
+    """
+    return record_crops(con, pair_id,
+                        render_planned(plan_crops(con, pair_id, dpi), dpi))
 
 
 def crops_for(con, pair_id: int) -> list:
@@ -288,7 +344,7 @@ def save_pair(con, src_book_id: int, tgt_book_id: int, src_block_ids: list,
               tgt_block_ids: list, label: str = "", note: str = "",
               status: str = "saved", annotator: str = "",
               pair_id: int = None, src_regions: list = None,
-              tgt_regions: list = None) -> dict:
+              tgt_regions: list = None, crop: bool = True) -> dict:
     """Create or update one aligned selection.
 
     Whole-selection replace rather than incremental edits: an annotator adjusts
@@ -369,22 +425,23 @@ def save_pair(con, src_book_id: int, tgt_book_id: int, src_block_ids: list,
                  max(0.0, x0), max(0.0, y0), min(1.0, x1), min(1.0, y1),
                  str(r.get("note", ""))[:200]))
 
-    # Cut the parallel images now rather than on demand. The point of a pair is
-    # to be looked at side by side, and a crop rendered later could differ if
-    # the corpus were reloaded in between. Failure here never fails the save —
-    # the text and the geometry are worth keeping either way.
-    try:
-        build_crops(con, pair_id)
-    except Exception as e:
-        con.execute("""INSERT INTO bp_pair_crops(pair_id, side, page, problem,
-                       created_at) VALUES(?,'src',-1,?,?)""",
-                    (pair_id, f"cropping failed: {str(e)[:150]}", time.time()))
+    if crop:
+        # Only when the caller has no better place to do it — a script, a test.
+        # The API renders outside the transaction instead, so that one
+        # annotator's images do not block every other writer.
+        try:
+            build_crops(con, pair_id)
+        except Exception as e:
+            con.execute("""INSERT INTO bp_pair_crops(pair_id, side, page, problem,
+                           created_at) VALUES(?,'src',-1,?,?)""",
+                        (pair_id, f"cropping failed: {str(e)[:150]}", time.time()))
     return get_pair(con, pair_id)
 
 
 def save_draft(con, src_book_id: int, tgt_book_id: int, src_block_ids: list,
                tgt_block_ids: list, annotator: str = "",
-               src_regions: list = None, tgt_regions: list = None) -> dict:
+               src_regions: list = None, tgt_regions: list = None,
+               crop: bool = True) -> dict:
     """Keep the in-progress selection, without the annotator asking.
 
     One draft per book pair per annotator, replaced as they work. It exists so
@@ -407,7 +464,8 @@ def save_draft(con, src_book_id: int, tgt_book_id: int, src_block_ids: list,
     return save_pair(con, src_book_id, tgt_book_id, src_block_ids, tgt_block_ids,
                      status=DRAFT_STATUS, annotator=annotator,
                      pair_id=row["id"] if row else None,
-                     src_regions=src_regions, tgt_regions=tgt_regions)
+                     src_regions=src_regions, tgt_regions=tgt_regions,
+                     crop=crop)
 
 
 def resolve_current_ids(con, pair_id: int, side: str) -> list:
