@@ -37,7 +37,8 @@ format is one segment per line; use JSONL if you need the paragraph breaks.
 
 **Hugging Face datasets** — JSONL in the `translation` shape, ready to push.
 
-**Cropped images** — the parallel PNGs, one folder per pair, with a
+**Cropped images** — the clipped parallel PNGs, one folder per pair, both the
+regions derived from selected blocks and the rectangles drawn by hand, with a
 `manifest.jsonl` giving each file its pair, side, language, page, the fraction
 of the page it covers, and the text the parser read there. Every other format
 names the same files in `source_images` and `target_images`, so a JSONL row and
