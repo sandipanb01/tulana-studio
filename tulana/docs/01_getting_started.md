@@ -26,6 +26,10 @@ correct.
 3. Click the matching block on the target page.
 4. Type a short name — *Practice set 1.1*, say — and press **Save pair**.
 
+As you select, a preview shows the region that will be cut from each page. The
+two cropped images are saved with the pair, so Saved pairs shows the passage as
+it appears in the book, not only as text.
+
 That is the whole loop. Everything else is refinement.
 
 ## Nothing is lost if you stop
@@ -34,6 +38,9 @@ Your selection is written to the server as you work, about a second and a half
 after you stop clicking, and again as the tab closes. Close the browser
 mid-selection and it is still there when you return. The panel says *Kept
 automatically* when this has happened, and says so plainly if it could not.
+
+**The cropped images are cut at the same time**, from the original PDF pages at
+300 DPI. Nothing waits for a manual save — a draft already has its pictures.
 
 Pressing **Save pair** turns that draft into an ordinary pair. Until then it
 stays out of the corpus and out of exports.
