@@ -116,10 +116,47 @@ def main():
     s_ids = after_reload["src_block_ids"]
     t_ids = after_reload["tgt_block_ids"]
 
+    # ── cropped parallel images ────────────────────────────────────────────
+    section("cropped images")
+    q = bp.get_pair(con, p["id"])
+    crops = q["src_crops"] + q["tgt_crops"]
+    check("a crop exists for every page each side touches",
+          len(q["src_crops"]) == len(q["src_pages"]) and
+          len(q["tgt_crops"]) == len(q["tgt_pages"]),
+          f"{len(q['src_crops'])}/{len(q['src_pages'])} and "
+          f"{len(q['tgt_crops'])}/{len(q['tgt_pages'])}")
+    have_pdf = any(c["path"] for c in crops)
+    if have_pdf:
+        check("images were cut without being asked", q["images_ready"])
+        for c in crops:
+            check(f"{c['side']} p{c['page']} is a real PNG",
+                  c["width"] > 20 and c["height"] > 20 and c["bytes"] > 200,
+                  f"{c['width']}x{c['height']} {c['bytes']}B")
+        data, fn = bp.crop_bytes(con, crops[0]["id"])
+        check("a crop reads back as a PNG", data[:8] == b"\x89PNG\r\n\x1a\n",
+              f"{len(data)} bytes")
+        check("its box is inside the page",
+              all(0 <= c["x0"] <= 1 and 0 <= c["y1"] <= 1.01 for c in crops))
+        check("crops are content-addressed",
+              all(len(c["sha256"]) == 64 for c in crops if c["path"]))
+        # the same region cropped twice must reuse one file
+        before_files = len(list(bp.crop_dir().rglob("*.png")))
+        bp.build_crops(con, p["id"])
+        check("re-cropping the same region adds no duplicate file",
+              len(list(bp.crop_dir().rglob("*.png"))) == before_files)
+    else:
+        check("a missing PDF is explained, not silent",
+              all(c["problem"] for c in crops), str(crops[:1]))
+    check("recropping is idempotent", bp.build_crops(con, p["id"])["crops"]
+          == (len(crops) if have_pdf else 0))
+
     # ── drafts ─────────────────────────────────────────────────────────────
     section("autosave")
     d = bp.save_draft(con, src["id"], tgt["id"], s_ids[:2], t_ids[:2], "asha")
     check("a draft is stored", d["id"] and d["status"] == "draft")
+    check("a draft is cropped too, so nothing waits for a manual save",
+          bool(d["src_crops"]) or not have_pdf,
+          f"{len(d['src_crops'])} crop(s)")
     d2 = bp.save_draft(con, src["id"], tgt["id"], s_ids[:3], t_ids[:3], "asha")
     check("a second autosave replaces it rather than piling up",
           d2["id"] == d["id"], f"{d['id']} vs {d2['id']}")
@@ -225,6 +262,23 @@ def main():
     z = zipfile.ZipFile(io.BytesIO(data))
     check("the bundle carries every format", len(z.namelist()) >= len(bp.FORMATS))
     check("the bundle carries a dataset card", "DATASET_CARD.md" in z.namelist())
+    if have_pdf:
+        check("the bundle carries the cropped images",
+              any(n.endswith(".png") for n in z.namelist()),
+              f"{sum(1 for n in z.namelist() if n.endswith('.png'))} PNG(s)")
+        idata, _, _ = bp.export(con, "images")
+        iz = zipfile.ZipFile(io.BytesIO(idata))
+        check("the images export has a manifest", "images/manifest.jsonl" in iz.namelist())
+        man = [json.loads(l) for l in
+               iz.read("images/manifest.jsonl").decode().splitlines()]
+        check("every image in the manifest is in the zip",
+              all(m["file"] in iz.namelist() for m in man), f"{len(man)} entries")
+        check("the manifest carries language and page",
+              all(m.get("page") is not None and "side" in m for m in man))
+        rows_csv = list(csv.DictReader(io.StringIO(bp.export(con, "csv")[0].decode())))
+        named = [n for r in rows_csv for n in (r["source_images"] or "").split(",") if n]
+        check("csv rows name image files that exist in the images zip",
+              all(n in iz.namelist() for n in named), f"{len(named)} referenced")
     card = z.read("DATASET_CARD.md").decode()
     check("the card states what the text is not", "not a human transcription" in card
           or "not recovered" in card)
@@ -249,6 +303,18 @@ def main():
     section("deletion")
     n = bp.list_pairs(con, include_drafts=True)["total"]
     bp.delete_pair(con, one["id"])
+    check("its crop rows go with it",
+          con.execute("SELECT COUNT(*) FROM bp_pair_crops WHERE pair_id=?",
+                      (one["id"],)).fetchone()[0] == 0)
+    pr = bp.prune_crops(con, dry_run=True)
+    check("pruning is a dry run unless asked", pr["dry_run"] is True)
+    live = {r[0] for r in con.execute(
+        "SELECT path FROM bp_pair_crops WHERE path != ''")}
+    check("pruning never targets a file a pair still uses",
+          not (set(pr["files"]) & live),
+          f"{len(set(pr['files']) & live)} live file(s) targeted")
+    check("stored crop paths are posix, so a database survives moving platform",
+          all("\\" not in x for x in live), str(list(live)[:1]))
     check("deleting removes the pair",
           bp.list_pairs(con, include_drafts=True)["total"] == n - 1)
     check("its blocks go with it",
