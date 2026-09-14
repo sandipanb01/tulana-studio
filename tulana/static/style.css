@@ -321,3 +321,29 @@ kbd{font:600 11px ui-monospace,monospace;background:#eef0f4;border:1px solid var
 .pv .pvbox{overflow:hidden;border:1px solid var(--line2);border-radius:7px;background:#fff;
   max-height:120px}
 .pv .pvbox img{display:block}
+
+/* ── the crop tool ─────────────────────────────────────────────────────── */
+.seg{display:flex;border:1px solid var(--line2);border-radius:9px;overflow:hidden}
+.segbtn{flex:1;padding:7px 6px;font-size:12.5px;font-weight:600;background:var(--surface);
+  color:var(--mut);border:0;cursor:pointer}
+.segbtn+.segbtn{border-left:1px solid var(--line2)}
+.segbtn.on{background:var(--accent);color:#fff}
+.bhost.cropping{cursor:crosshair}
+.bhost.cropping .blk{pointer-events:none}
+.crop{position:absolute;border:2px dashed var(--accent);background:rgba(14,122,114,.10);
+  border-radius:3px;cursor:move}
+.crop.live{border-style:solid;background:rgba(14,122,114,.18)}
+.crop .cx{position:absolute;top:-11px;right:-11px;width:22px;height:22px;border-radius:50%;
+  background:var(--danger,#b8433a);color:#fff;font-size:13px;font-weight:700;border:0;
+  display:grid;place-items:center;cursor:pointer;line-height:1}
+.crop .cn{position:absolute;left:-2px;top:-17px;background:var(--accent);color:#fff;
+  font-size:10px;font-weight:700;padding:1px 6px;border-radius:4px;white-space:nowrap}
+.crop .grip{position:absolute;right:-7px;bottom:-7px;width:13px;height:13px;background:#fff;
+  border:2px solid var(--accent);border-radius:2px;cursor:nwse-resize}
+#bRegions{display:flex;flex-direction:column;gap:4px;margin-top:7px;max-height:150px;
+  overflow:auto}
+.rgi{display:flex;align-items:center;gap:6px;font-size:12px;padding:4px 7px;
+  border:1px solid var(--line);border-radius:7px;background:var(--surface)}
+.rgi .nm{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rgi button{color:var(--faint);font-weight:700;background:0;border:0;cursor:pointer;padding:0 3px}
+.rgi button:hover{color:var(--danger)}
