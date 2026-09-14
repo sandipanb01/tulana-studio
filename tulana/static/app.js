@@ -116,6 +116,12 @@ async function loadPairs() {
         <span class="sm mut">${esc(p.board || "")} · Class ${p.class || "?"} ·
           ${esc(p.subject || "")} · p${p.src_pages.join(",")} ↔ p${p.tgt_pages.join(",")}</span>
       </div>
+      ${p.n_crops ? `<div class="pcrops">${(p.crop_ids || []).map(cid =>
+          `<img loading="lazy" src="${BASE}/api/pairs/block/${p.id}/crop/${cid}.png"
+                alt="cropped passage">`).join("")}</div>`
+        : `<div class="sm faint" style="margin:4px 0 8px">No cropped image —
+             the PDF was not on disk when this was saved.
+             <button class="btn sm" data-act="recrop">Try again</button></div>`}
       <div class="ptexts">
         <div class="col"><div class="lang">${esc(p.src_language || "source")}
           <span class="mut">${p.src_chars} chars</span></div>
@@ -147,6 +153,10 @@ async function loadPairs() {
           await api(`/api/pairs/block/${id}`, { method: "PATCH", body: JSON.stringify(
             { label: card.querySelector(".lbl-edit").value }) });
           toast("Renamed");
+        } else if (b.dataset.act === "recrop") {
+          const r = await api(`/api/pairs/block/${id}/recrop`, { method: "POST" });
+          toast(r.crops ? `${r.crops} image(s) cut` :
+                (r.problems[0] || "Still no image — is the PDF on disk?"), !r.crops);
         } else if (b.dataset.act === "open") {
           const p = await api(`/api/pairs/block/${id}`);
           openPairInBlocks(p);
@@ -480,6 +490,7 @@ function refreshSelection() {
     : "Nothing selected — click blocks on either page";
   $("#bText").hidden = n === 0;
   renderPageMap();
+  previewCrops();
   scheduleDraft();
   clearTimeout(_selTimer);
   if (!n) return;
@@ -626,6 +637,36 @@ function renderPageMap() {
   if (el) el.textContent = bits.join(" · ");
 }
 
+/* What the crop will look like, before it is saved. The pair is meant to be
+   read side by side, so seeing the two regions together is the check that
+   matters — far more than a count of selected blocks. */
+function previewCrops() {
+  const box = $("#bPreview");
+  if (!box) return;
+  const rows = [];
+  for (const side of ["src", "tgt"]) {
+    const st = BS(side);
+    const here = st.blocks.filter(b => st.sel.has(b.id));
+    if (!here.length) { rows.push(null); continue; }
+    const x0 = Math.min(...here.map(b => b.fx0)), y0 = Math.min(...here.map(b => b.fy0));
+    const x1 = Math.max(...here.map(b => b.fx1)), y1 = Math.max(...here.map(b => b.fy1));
+    rows.push({ side, x0, y0, x1, y1, n: here.length, page: st.page });
+  }
+  box.hidden = !rows.some(Boolean);
+  box.innerHTML = rows.filter(Boolean).map(r => `
+    <div class="pv">
+      <div class="sm faint">${r.side === "src" ? "source" : "target"} · page ${r.page}
+        · ${r.n} block(s)</div>
+      <div class="pvbox" style="aspect-ratio:${Math.max(0.05,(r.x1-r.x0))}/${Math.max(0.05,(r.y1-r.y0))}">
+        <img src="${BASE}/api/blocks/page-image/${BS(r.side).book}/${r.page}.png"
+             style="width:${100/Math.max(0.02,(r.x1-r.x0))}%;
+                    margin-left:${-100*r.x0/Math.max(0.02,(r.x1-r.x0))}%;
+                    margin-top:${-100*r.y0/Math.max(0.02,(r.y1-r.y0))*((r.x1-r.x0)/(r.y1-r.y0))*0}%;
+                    transform:translateY(${-100*r.y0/Math.max(0.02,(r.y1-r.y0))}%)">
+      </div>
+    </div>`).join("");
+}
+
 $("#bSavePair").onclick = async () => {
   const s = BS("src"), t = BS("tgt");
   if (!s.sel.size && !t.sel.size) { toast("Select some blocks first", true); return; }
@@ -638,8 +679,11 @@ $("#bSavePair").onclick = async () => {
       src_block_ids: [...s.sel], tgt_block_ids: [...t.sel],
       label: $("#bLabel2").value, status: "saved",
       pair_id: BK.editingPairId || null }) });
-    toast(BK.editingPairId ? `Pair #${p.id} updated` : `Saved pair #${p.id}`);
-    setBlockSaveState(`Saved as pair #${p.id}`);
+    const nimg = (p.src_crops || []).concat(p.tgt_crops || [])
+      .filter(c => c.path).length;
+    toast((BK.editingPairId ? `Pair #${p.id} updated` : `Saved pair #${p.id}`)
+          + (nimg ? ` · ${nimg} image(s) cut` : " · no image, the PDF is not on disk"));
+    setBlockSaveState(`Saved as pair #${p.id}${nimg ? ` with ${nimg} image(s)` : ""}`);
     BK.editingPairId = null;
     $("#bLabel2").value = "";
     ["src", "tgt"].forEach(x => { BS(x).sel.clear(); drawBlocks(x); });
