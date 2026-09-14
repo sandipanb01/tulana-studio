@@ -1335,11 +1335,22 @@ def blocks_export(board: str = None, cls: int = None, language: str = None,
 
 # ── saved pairs, built from parsed blocks ──────────────────────────────────
 
+class RegionIn(BaseModel):
+    page: int
+    x0: float
+    y0: float
+    x1: float
+    y1: float
+    note: str = ""
+
+
 class PairIn(BaseModel):
     src_book_id: int
     tgt_book_id: int
     src_block_ids: list[int] = []
     tgt_block_ids: list[int] = []
+    src_regions: list[RegionIn] = []
+    tgt_regions: list[RegionIn] = []
     label: str = ""
     note: str = ""
     status: str = "saved"
@@ -1354,7 +1365,9 @@ def pairs_save(body: PairIn, x_annotator: str = Header("")):
             p = bpairs.save_pair(con, body.src_book_id, body.tgt_book_id,
                                  body.src_block_ids, body.tgt_block_ids,
                                  body.label, body.note, body.status,
-                                 (x_annotator or "").strip(), body.pair_id)
+                                 (x_annotator or "").strip(), body.pair_id,
+                                 [r.model_dump() for r in body.src_regions],
+                                 [r.model_dump() for r in body.tgt_regions])
         except ValueError as e:
             raise HTTPException(400, str(e))
         db.log(con, x_annotator, "pair_save", str(p["id"]),
@@ -1371,7 +1384,9 @@ def pairs_draft(body: PairIn, x_annotator: str = Header("")):
         try:
             return bpairs.save_draft(con, body.src_book_id, body.tgt_book_id,
                                      body.src_block_ids, body.tgt_block_ids,
-                                     (x_annotator or "").strip())
+                                     (x_annotator or "").strip(),
+                                     [r.model_dump() for r in body.src_regions],
+                                     [r.model_dump() for r in body.tgt_regions])
         except ValueError as e:
             raise HTTPException(400, str(e))
 
