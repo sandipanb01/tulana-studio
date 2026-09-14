@@ -90,10 +90,27 @@ CREATE TABLE IF NOT EXISTS bp_pair_crops (
   path TEXT, sha256 TEXT,
   width INTEGER, height INTEGER, dpi INTEGER, bytes INTEGER,
   n_blocks INTEGER DEFAULT 0,
+  kind TEXT DEFAULT 'blocks',              -- 'blocks' or 'region'
   problem TEXT DEFAULT '',
   created_at REAL
 );
 CREATE INDEX IF NOT EXISTS ix_bp_crops ON bp_pair_crops(pair_id, side, page);
+
+-- Rectangles the annotator drew by hand. Blocks are what the parser found;
+-- these are what a person decided, and the two are different things. A figure
+-- with its caption and the sentence under it may be one passage to a reader and
+-- three blocks to the parser — and some things worth clipping (a hand-drawn
+-- diagram, a margin note) were never a block at all.
+CREATE TABLE IF NOT EXISTS bp_pair_regions (
+  id INTEGER PRIMARY KEY,
+  pair_id INTEGER NOT NULL,
+  side TEXT NOT NULL,
+  page INTEGER,
+  seq INTEGER DEFAULT 0,
+  x0 REAL, y0 REAL, x1 REAL, y1 REAL,   -- fractions of the page
+  note TEXT DEFAULT ''
+);
+CREATE INDEX IF NOT EXISTS ix_bp_regions ON bp_pair_regions(pair_id, side, page, seq);
 """
 
 DRAFT_STATUS = "draft"
@@ -153,6 +170,9 @@ def build_crops(con, pair_id: int, dpi: int = None) -> dict:
     """
     ensure_schema(con)
     import hashlib
+    # Only the rendered images are replaced here. The drawn regions are input to
+    # this function, not output of it — clearing them would delete the very
+    # rectangles it is about to cut.
     con.execute("DELETE FROM bp_pair_crops WHERE pair_id=?", (pair_id,))
     made, problems = 0, []
     for side in ("src", "tgt"):
@@ -175,7 +195,15 @@ def build_crops(con, pair_id: int, dpi: int = None) -> dict:
             p[0] = min(p[0], b["fx0"]); p[1] = min(p[1], b["fy0"])
             p[2] = max(p[2], b["fx1"]); p[3] = max(p[3], b["fy1"])
             p[4] += 1
-        for seq, (page, (x0, y0, x1, y1, n)) in enumerate(sorted(pages.items())):
+        wanted = [(page, x0, y0, x1, y1, n, "blocks")
+                  for page, (x0, y0, x1, y1, n) in sorted(pages.items())]
+        # every rectangle the annotator drew, in the order they drew it
+        for rg in con.execute("""SELECT page, x0, y0, x1, y1 FROM bp_pair_regions
+                                 WHERE pair_id=? AND side=? ORDER BY page, seq""",
+                              (pair_id, side)):
+            wanted.append((rg["page"], rg["x0"], rg["y0"], rg["x1"], rg["y1"],
+                           0, "region"))
+        for seq, (page, x0, y0, x1, y1, n, kind) in enumerate(wanted):
             png = None
             problem = ""
             w = h = 0
@@ -207,10 +235,11 @@ def build_crops(con, pair_id: int, dpi: int = None) -> dict:
                 problems.append(problem)
             con.execute("""INSERT INTO bp_pair_crops(pair_id, side, page, seq,
                 x0, y0, x1, y1, path, sha256, width, height, dpi, bytes,
-                n_blocks, problem, created_at)
-                VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                n_blocks, kind, problem, created_at)
+                VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
                 (pair_id, side, page, seq, x0, y0, x1, y1, path, digest, w, h,
-                 dpi or CROP_DPI, len(png) if png else 0, n, problem, time.time()))
+                 dpi or CROP_DPI, len(png) if png else 0, n, kind, problem,
+                 time.time()))
     return {"crops": made, "problems": sorted(set(p for p in problems if p))}
 
 
@@ -258,7 +287,8 @@ def _gather(con, block_ids: list) -> dict:
 def save_pair(con, src_book_id: int, tgt_book_id: int, src_block_ids: list,
               tgt_block_ids: list, label: str = "", note: str = "",
               status: str = "saved", annotator: str = "",
-              pair_id: int = None) -> dict:
+              pair_id: int = None, src_regions: list = None,
+              tgt_regions: list = None) -> dict:
     """Create or update one aligned selection.
 
     Whole-selection replace rather than incremental edits: an annotator adjusts
@@ -267,8 +297,10 @@ def save_pair(con, src_book_id: int, tgt_book_id: int, src_block_ids: list,
     ensure_schema(con)
     if status not in STATUSES:
         raise ValueError(f"status must be one of {', '.join(STATUSES)}")
-    if not src_block_ids and not tgt_block_ids:
-        raise ValueError("A pair needs at least one block on one side")
+    src_regions = src_regions or []
+    tgt_regions = tgt_regions or []
+    if not (src_block_ids or tgt_block_ids or src_regions or tgt_regions):
+        raise ValueError("A pair needs at least one block or one drawn region")
 
     src = _gather(con, src_block_ids)
     tgt = _gather(con, tgt_block_ids)
@@ -293,6 +325,7 @@ def save_pair(con, src_book_id: int, tgt_book_id: int, src_block_ids: list,
              json.dumps(tgt["labels"]), label.strip(), note.strip(), status,
              annotator.strip(), now, pair_id))
         con.execute("DELETE FROM bp_pair_blocks WHERE pair_id=?", (pair_id,))
+        con.execute("DELETE FROM bp_pair_regions WHERE pair_id=?", (pair_id,))
     else:
         seq = con.execute("""SELECT COALESCE(MAX(seq),0)+1 FROM bp_pairs
                              WHERE src_book_id=? AND tgt_book_id=?""",
@@ -321,6 +354,21 @@ def save_pair(con, src_book_id: int, tgt_book_id: int, src_block_ids: list,
             ord, label, type, fx0, fy0, fx1, fy1, text)
             VALUES(?,?,?,?,?,?,?,?,?,?,?,?)""", rows)
 
+    for side, regs in (("src", src_regions), ("tgt", tgt_regions)):
+        for seq, r in enumerate(regs):
+            try:
+                x0, x1 = sorted((float(r["x0"]), float(r["x1"])))
+                y0, y1 = sorted((float(r["y0"]), float(r["y1"])))
+            except (KeyError, TypeError, ValueError):
+                continue
+            if x1 - x0 < 0.004 or y1 - y0 < 0.004:
+                continue                      # a stray tap, not a rectangle
+            con.execute("""INSERT INTO bp_pair_regions(pair_id, side, page, seq,
+                x0, y0, x1, y1, note) VALUES(?,?,?,?,?,?,?,?,?)""",
+                (pair_id, side, int(r.get("page", 0)), seq,
+                 max(0.0, x0), max(0.0, y0), min(1.0, x1), min(1.0, y1),
+                 str(r.get("note", ""))[:200]))
+
     # Cut the parallel images now rather than on demand. The point of a pair is
     # to be looked at side by side, and a crop rendered later could differ if
     # the corpus were reloaded in between. Failure here never fails the save —
@@ -335,14 +383,15 @@ def save_pair(con, src_book_id: int, tgt_book_id: int, src_block_ids: list,
 
 
 def save_draft(con, src_book_id: int, tgt_book_id: int, src_block_ids: list,
-               tgt_block_ids: list, annotator: str = "") -> dict:
+               tgt_block_ids: list, annotator: str = "",
+               src_regions: list = None, tgt_regions: list = None) -> dict:
     """Keep the in-progress selection, without the annotator asking.
 
     One draft per book pair per annotator, replaced as they work. It exists so
     that a closed tab, a lost connection or a stray reload costs nothing; the
     moment they press Save it becomes an ordinary pair."""
     ensure_schema(con)
-    if not src_block_ids and not tgt_block_ids:
+    if not (src_block_ids or tgt_block_ids or src_regions or tgt_regions):
         # an empty selection clears the draft rather than storing nothing
         row = con.execute("""SELECT id FROM bp_pairs WHERE status=? AND
                              src_book_id=? AND tgt_book_id=? AND annotator=?""",
@@ -357,7 +406,8 @@ def save_draft(con, src_book_id: int, tgt_book_id: int, src_block_ids: list,
                        (annotator or "").strip())).fetchone()
     return save_pair(con, src_book_id, tgt_book_id, src_block_ids, tgt_block_ids,
                      status=DRAFT_STATUS, annotator=annotator,
-                     pair_id=row["id"] if row else None)
+                     pair_id=row["id"] if row else None,
+                     src_regions=src_regions, tgt_regions=tgt_regions)
 
 
 def resolve_current_ids(con, pair_id: int, side: str) -> list:
@@ -413,6 +463,11 @@ def get_pair(con, pair_id: int) -> dict:
            ORDER BY page, ord""", (pair_id,))]
     d["spans_pages"] = len(d["src_pages"]) > 1 or len(d["tgt_pages"]) > 1
     # what to re-select when this pair is reopened, valid against today's corpus
+    rg = [dict(x) for x in con.execute(
+        "SELECT * FROM bp_pair_regions WHERE pair_id=? ORDER BY side DESC, page, seq",
+        (pair_id,))]
+    d["src_regions"] = [r for r in rg if r["side"] == "src"]
+    d["tgt_regions"] = [r for r in rg if r["side"] == "tgt"]
     cr = crops_for(con, pair_id)
     d["src_crops"] = [c for c in cr if c["side"] == "src"]
     d["tgt_crops"] = [c for c in cr if c["side"] == "tgt"]
@@ -471,6 +526,7 @@ def delete_pair(con, pair_id: int) -> dict:
     ensure_schema(con)
     con.execute("DELETE FROM bp_pair_blocks WHERE pair_id=?", (pair_id,))
     con.execute("DELETE FROM bp_pair_crops WHERE pair_id=?", (pair_id,))
+    con.execute("DELETE FROM bp_pair_regions WHERE pair_id=?", (pair_id,))
     # The PNG itself is left alone: it is named by content hash, so another
     # pair over the same passage may be using it. Unreferenced files are
     # cleaned by `prune_crops`, deliberately a separate, explicit act.
