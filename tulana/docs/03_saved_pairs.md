@@ -3,8 +3,13 @@
 Everything you have saved, newest first.
 
 Each card shows the pair's number, its name, its status, the pages each side
-came from, and the first part of both texts. A pair drawn from more than one
-page is marked **spans pages**.
+came from, **the cropped images side by side**, and the first part of both
+texts. A pair drawn from more than one page is marked **spans pages** and has
+one image per page on each side.
+
+The images are the point: reading Devanagari against English in two columns of
+plain text tells you little, while the two passages as they appear in the books
+tell you immediately whether the alignment is right.
 
 ## Statuses
 
@@ -32,7 +37,12 @@ and press Save pair; the same pair is updated, not duplicated.
 **Approve**, **Exclude**, **Restore** — move the pair between statuses.
 
 **Delete** — removes it permanently. There is no undo, which is why exclude
-exists.
+exists. The image files are left alone, because they are named by content and
+another pair over the same passage may share one; an administrator clears
+unreferenced files deliberately with `POST /api/pairs/crops/prune?apply=true`.
+
+**Try again** — appears when a pair has no image because the PDF was missing
+when it was saved. Cuts them now.
 
 ## Finding a pair
 
@@ -46,4 +56,5 @@ Re-running the document parser renumbers blocks; a pair you approved must not
 quietly change what it says because the corpus was reloaded underneath it.
 
 It also keeps every block's box and page, so the pair can be exported as layout
-training data, not only as text.
+training data, not only as text — and so a pair whose block ids were renumbered
+by a corpus reload can still be reopened, matched by page and reading position.
