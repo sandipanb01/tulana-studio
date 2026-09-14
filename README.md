@@ -3,8 +3,9 @@
 A workspace for building **parallel corpora from Indian school textbooks**. The
 English edition and its translation open side by side with the blocks a document
 parser has already found on each page. You select the blocks that say the same
-thing on each side — across pages if the passage runs on — and save the pair.
-The corpus is then exported in whichever format the next tool needs.
+thing on each side — across pages if the passage runs on — and the two regions
+are **cropped from the original PDFs and saved automatically**, as images and as
+text. The corpus is then exported in whichever format the next tool needs.
 
 Board-, class-, subject-, language- and script-agnostic. Adding a state board or
 a regional language is a row of data, never a code change.
@@ -113,14 +114,27 @@ nothing is ever silently included.
 Zoom per pane, a draggable split, a filter by block type. 30 block types come
 from the corpus itself.
 
-**Nothing is lost if you stop.** The selection is written to the server about a
-second and a half after you stop clicking, and again as the tab closes. It says
-*Kept automatically* — and says so plainly if it could not.
+**The parallel images are cut as you go.** A preview shows the region that will
+be cut from each page; on save, both regions are rendered from the original PDFs
+at 300 DPI. One image per page a side touches — a single image cannot span a
+page break, and one that silently showed only the first page would be worse than
+two honest ones.
+
+**Nothing is lost if you stop.** The selection *and its images* are written to
+the server about a second and a half after you stop clicking, and again as the
+tab closes. It says *Kept automatically* — and says so plainly if it could not.
+A draft already has its pictures; nothing waits for a manual save.
 
 ### Saved pairs
 
-Everything you have saved. Filter by textbook, language or status, or search the
-text in either language. Rename, approve, exclude, delete.
+Everything you have saved, **with the cropped images shown side by side**. That
+is the point: reading Devanagari against English in two columns of plain text
+tells you little, while the two passages as they appear in the books tell you
+immediately whether the alignment is right.
+
+Filter by textbook, language or status, or search the text in either language.
+Rename, approve, exclude, delete. Where a PDF was missing when a pair was saved,
+**Try again** cuts the images once it arrives.
 
 **Open in Blocks** puts the selection back on the pages it came from, so a
 correction is an adjustment rather than starting again.
@@ -133,14 +147,21 @@ a pair whose ids no longer exist.
 
 ### Export
 
-Eleven formats from the same rows:
+Twelve formats from the same rows:
 
 **JSONL** · **JSON** · **CSV** · **TSV** · **plain text** · **TMX** (OmegaT,
 memoQ, Trados) · **XLIFF** · **Markdown** · **Moses/fairseq** · **COCO** ·
-**Hugging Face datasets**
+**Hugging Face datasets** · **Cropped images**
 
-Plus the full bundle — every format at once with a dataset card describing what
-the corpus is, how a pair was made, and what the text is and is not.
+The images export is one folder per pair with a `manifest.jsonl` giving each
+file its pair, side, language, page, the fraction of the page it covers and the
+text found there. Every other format names the same files in `source_images`
+and `target_images`, so a JSONL row and its pictures match up without guessing
+the convention.
+
+Plus the full bundle — every format at once, the images, and a dataset card
+describing what the corpus is, how a pair was made, and what the text is and is
+not.
 
 Drafts are never exported. Pairs marked excluded are left out unless you ask.
 
@@ -221,14 +242,14 @@ python3 shelf.py add FILE --board WB --class 10 --lang Bengali
 
 ```bash
 python3 check_install.py     22 — is this checkout complete and consistent
-python3 test_pairs.py        68 — cross-page selection, autosave, every format
+python3 test_pairs.py        93 — cross-page selection, cropping, autosave, every format
 python3 test_stress.py      138 — edge cases, malformed input, database safety
 python3 test_blocks.py      645 — every book in the layout corpus
 python3 test_naming.py      265 — 32 boards × 23 languages × naming styles
 python3 windows_check.py      8 — cross-platform audit
 ```
 
-**1,146 checks**, run twice interleaved to prove they do not depend on order.
+**1,171 checks**, run twice interleaved to prove they do not depend on order.
 
 `test_stress.py` feeds in malformed JSON, zero-size pages, inverted boxes,
 non-numeric coordinates, null bytes and emoji; asks for pages beyond the end of
@@ -286,9 +307,15 @@ illegal on Windows, and any OS-specific separator reaching the database.
 | `TULANA_STATE_DIR` | database, page cache, exports | `./state` |
 | `TULANA_PORT` | preferred port | `7862` |
 | `TULANA_VIEW_DPI` | on-screen page resolution | `110` |
+| `TULANA_CROP_DPI` | resolution the parallel images are cut at | `300` |
 
-Back up `state/`. That folder is the annotators' work; the PDFs and the layout
-can always be fetched again.
+Back up `state/`. That folder is the annotators' work — the database and the
+cropped images in `state/crops`; the PDFs and the layout can always be fetched
+again.
+
+Crops are named by content hash, so the same passage cropped twice costs one
+file. `POST /api/pairs/crops/prune` reports what no pair refers to any more;
+add `?apply=true` to delete it.
 
 ---
 
@@ -311,7 +338,10 @@ still usable.
 
 **A block has no text.** Diagrams carry none, and a page without a text layer
 yields none. Select it anyway if it belongs to the passage; its position is
-recorded.
+recorded and it still appears in the cropped image.
+
+**A pair has no image.** The PDF was not on disk when it was saved — usually
+`git lfs pull` away. Press **Try again** on the pair once it is there.
 
 **A change does not appear after deploying.** Assets are fingerprinted, so this
 should not happen. If a whole tab is missing, `check_install.py` says whether the
