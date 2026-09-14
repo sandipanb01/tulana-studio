@@ -37,9 +37,16 @@ format is one segment per line; use JSONL if you need the paragraph breaks.
 
 **Hugging Face datasets** — JSONL in the `translation` shape, ready to push.
 
+**Cropped images** — the parallel PNGs, one folder per pair, with a
+`manifest.jsonl` giving each file its pair, side, language, page, the fraction
+of the page it covers, and the text the parser read there. Every other format
+names the same files in `source_images` and `target_images`, so a JSONL row and
+its pictures can be matched without guessing the convention.
+
 ## The full bundle
 
-**Download the full bundle** gives every format at once plus a **dataset card**
+**Download the full bundle** gives every format at once, **the cropped images**,
+plus a **dataset card**
 — what the corpus is, how many pairs in which languages, how a pair was made,
 and what the text is and is not. Attach it when you share the corpus; a
 recipient who reads only the card should still use the data correctly.
