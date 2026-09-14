@@ -48,8 +48,13 @@ mistaken for something else.
 
 ## Where the work lives
 
-Everything is in `state/`: the database, the page cache, exports. **Back up that
-folder.** The PDFs and the layout can always be fetched again; the annotators'
+Everything is in `state/`: the database, the page cache, the cropped images in
+`state/crops`, exports. **Back up that folder.**
+
+Crops are named by content hash, so the same passage cropped twice costs one
+file. `POST /api/pairs/crops/prune` reports what no pair refers to any more;
+add `?apply=true` to delete it. `TULANA_CROP_DPI` sets the resolution — 300 by
+default, which is what a page is worth reading at. The PDFs and the layout can always be fetched again; the annotators'
 pairs cannot.
 
 ## Adding a board, language or subject
@@ -71,7 +76,7 @@ decide between them.
 python3 check_install.py   is this checkout complete
 python3 test_stress.py     edge cases and database safety
 python3 test_blocks.py     the whole layout corpus
-python3 test_pairs.py      saving, editing and every export format
+python3 test_pairs.py      saving, cropping, editing and every export format
 python3 test_naming.py     boards, languages, naming styles
 python3 windows_check.py   cross-platform audit
 ```
