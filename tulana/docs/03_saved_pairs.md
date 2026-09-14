@@ -3,8 +3,9 @@
 Everything you have saved, newest first.
 
 Each card shows the pair's number, its name, its status, the pages each side
-came from, **the cropped images side by side**, and the first part of both
-texts. A pair drawn from more than one page is marked **spans pages** and has
+came from, **the clipped parallel images side by side**, and the first part of both texts.
+Both kinds appear — the region around the blocks you clicked, and every
+rectangle you drew. A pair drawn from more than one page is marked **spans pages** and has
 one image per page on each side.
 
 The images are the point: reading Devanagari against English in two columns of
