@@ -35,6 +35,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
 
+import os
+
 import blocks as blocks_mod
 import config
 
@@ -73,6 +75,25 @@ CREATE TABLE IF NOT EXISTS bp_pair_blocks (
   text TEXT DEFAULT ''
 );
 CREATE INDEX IF NOT EXISTS ix_bp_pb ON bp_pair_blocks(pair_id, side, page, ord);
+
+-- One cropped image per (side, page) a pair touches: the region of the
+-- original PDF page covered by the blocks selected on it. Kept as files under
+-- state/crops, named by content hash, so re-cropping the same region costs
+-- nothing and two pairs over the same passage share one file.
+CREATE TABLE IF NOT EXISTS bp_pair_crops (
+  id INTEGER PRIMARY KEY,
+  pair_id INTEGER NOT NULL,
+  side TEXT NOT NULL,
+  page INTEGER,
+  seq INTEGER DEFAULT 0,
+  x0 REAL, y0 REAL, x1 REAL, y1 REAL,       -- fractions of the page
+  path TEXT, sha256 TEXT,
+  width INTEGER, height INTEGER, dpi INTEGER, bytes INTEGER,
+  n_blocks INTEGER DEFAULT 0,
+  problem TEXT DEFAULT '',
+  created_at REAL
+);
+CREATE INDEX IF NOT EXISTS ix_bp_crops ON bp_pair_crops(pair_id, side, page);
 """
 
 DRAFT_STATUS = "draft"
@@ -82,6 +103,134 @@ STATUSES = ("draft", "saved", "approved", "excluded")
 def ensure_schema(con):
     con.executescript(SCHEMA)
     con.commit()
+
+
+
+# ── cropping ───────────────────────────────────────────────────────────────
+CROP_DPI = int(os.environ.get("TULANA_CROP_DPI", "300"))
+CROP_PAD = 0.006          # a little breathing room, as a fraction of the page
+
+
+def crop_dir() -> Path:
+    d = Path(config.STATE_DIR) / "crops"
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+
+def _render_crop(pdf: Path, page: int, box: tuple, dpi: int = None) -> tuple:
+    """Cut one region out of a PDF page. Returns (png_bytes, width, height).
+
+    `box` is (x0, y0, x1, y1) as fractions of the page, so it is independent of
+    whatever raster the parser measured against and of the DPI asked for here.
+    """
+    from pdflib import fitz
+    dpi = dpi or CROP_DPI
+    with fitz.open(pdf) as doc:
+        if page < 0 or page >= doc.page_count:
+            raise ValueError(f"page {page} is outside this PDF (0..{doc.page_count-1})")
+        pg = doc[page]
+        r = pg.rect
+        x0 = max(0.0, box[0] - CROP_PAD) * r.width
+        y0 = max(0.0, box[1] - CROP_PAD) * r.height
+        x1 = min(1.0, box[2] + CROP_PAD) * r.width
+        y1 = min(1.0, box[3] + CROP_PAD) * r.height
+        if x1 - x0 < 1 or y1 - y0 < 1:
+            raise ValueError("the selected region is too small to crop")
+        pix = pg.get_pixmap(clip=fitz.Rect(x0, y0, x1, y1), dpi=dpi)
+        return pix.tobytes("png"), pix.width, pix.height
+
+
+def build_crops(con, pair_id: int, dpi: int = None) -> dict:
+    """Cut and store one image per page each side of a pair touches.
+
+    A pair may span pages, so one image per side would either span a page break
+    — which cannot be rendered — or silently drop everything after the first
+    page. One crop per page, in order, is the honest representation.
+
+    Never raises. A missing PDF is an ordinary state, not an error: the pair's
+    text and geometry are still worth having, and the reason is recorded
+    against the crop row so the interface can say why there is no picture.
+    """
+    ensure_schema(con)
+    import hashlib
+    con.execute("DELETE FROM bp_pair_crops WHERE pair_id=?", (pair_id,))
+    made, problems = 0, []
+    for side in ("src", "tgt"):
+        book_col = "src_book_id" if side == "src" else "tgt_book_id"
+        row = con.execute(f"SELECT {book_col} FROM bp_pairs WHERE id=?",
+                          (pair_id,)).fetchone()
+        book_id = row[0] if row else None
+        if not book_id:
+            continue
+        try:
+            bk = blocks_mod.book(con, book_id)
+        except ValueError:
+            continue
+        pdf = blocks_mod._find_pdf(Path(config.DATA_DIR), bk["relpath"])
+        pages = {}
+        for b in con.execute("""SELECT page, fx0, fy0, fx1, fy1 FROM bp_pair_blocks
+                                WHERE pair_id=? AND side=? ORDER BY page, ord""",
+                             (pair_id, side)):
+            p = pages.setdefault(b["page"], [1.0, 1.0, 0.0, 0.0, 0])
+            p[0] = min(p[0], b["fx0"]); p[1] = min(p[1], b["fy0"])
+            p[2] = max(p[2], b["fx1"]); p[3] = max(p[3], b["fy1"])
+            p[4] += 1
+        for seq, (page, (x0, y0, x1, y1, n)) in enumerate(sorted(pages.items())):
+            png = None
+            problem = ""
+            w = h = 0
+            if not pdf:
+                problem = (f"the PDF for {bk['book']} is not on disk, so this "
+                           f"region cannot be cropped")
+            else:
+                try:
+                    png, w, h = _render_crop(pdf, page, (x0, y0, x1, y1), dpi)
+                except Exception as e:
+                    problem = str(e)[:160]
+            path = ""
+            if png:
+                digest = hashlib.sha256(png).hexdigest()
+                f = crop_dir() / f"{digest[:2]}" / f"{digest}.png"
+                f.parent.mkdir(parents=True, exist_ok=True)
+                if not f.exists():
+                    tmp = f.with_suffix(f".{os.getpid()}.part")
+                    tmp.write_bytes(png)
+                    tmp.replace(f)
+                # Stored as posix deliberately. `str()` would write a backslash
+                # on Windows, and prune_crops compares stored paths against
+                # freshly computed ones — a separator mismatch would make every
+                # file look unreferenced and delete the lot.
+                path = f.relative_to(Path(config.STATE_DIR)).as_posix()
+                made += 1
+            else:
+                digest = ""
+                problems.append(problem)
+            con.execute("""INSERT INTO bp_pair_crops(pair_id, side, page, seq,
+                x0, y0, x1, y1, path, sha256, width, height, dpi, bytes,
+                n_blocks, problem, created_at)
+                VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                (pair_id, side, page, seq, x0, y0, x1, y1, path, digest, w, h,
+                 dpi or CROP_DPI, len(png) if png else 0, n, problem, time.time()))
+    return {"crops": made, "problems": sorted(set(p for p in problems if p))}
+
+
+def crops_for(con, pair_id: int) -> list:
+    ensure_schema(con)
+    return [dict(r) for r in con.execute(
+        """SELECT * FROM bp_pair_crops WHERE pair_id=? ORDER BY side DESC, seq""",
+        (pair_id,))]
+
+
+def crop_bytes(con, crop_id: int) -> tuple:
+    """(png_bytes, filename) for one stored crop."""
+    r = con.execute("SELECT * FROM bp_pair_crops WHERE id=?", (crop_id,)).fetchone()
+    if not r or not r["path"]:
+        raise ValueError(r["problem"] if r and r["problem"] else "No such crop")
+    f = Path(config.STATE_DIR) / Path(*r["path"].split("/"))
+    if not f.exists():
+        raise ValueError("the crop file is missing from state/crops")
+    lang_side = "src" if r["side"] == "src" else "tgt"
+    return f.read_bytes(), f"pair{r['pair_id']}_{lang_side}_p{r['page']:04d}.png"
 
 
 # ── writing ────────────────────────────────────────────────────────────────
@@ -171,6 +320,17 @@ def save_pair(con, src_book_id: int, tgt_book_id: int, src_block_ids: list,
         con.executemany("""INSERT INTO bp_pair_blocks(pair_id, side, block_id, page,
             ord, label, type, fx0, fy0, fx1, fy1, text)
             VALUES(?,?,?,?,?,?,?,?,?,?,?,?)""", rows)
+
+    # Cut the parallel images now rather than on demand. The point of a pair is
+    # to be looked at side by side, and a crop rendered later could differ if
+    # the corpus were reloaded in between. Failure here never fails the save —
+    # the text and the geometry are worth keeping either way.
+    try:
+        build_crops(con, pair_id)
+    except Exception as e:
+        con.execute("""INSERT INTO bp_pair_crops(pair_id, side, page, problem,
+                       created_at) VALUES(?,'src',-1,?,?)""",
+                    (pair_id, f"cropping failed: {str(e)[:150]}", time.time()))
     return get_pair(con, pair_id)
 
 
@@ -253,6 +413,10 @@ def get_pair(con, pair_id: int) -> dict:
            ORDER BY page, ord""", (pair_id,))]
     d["spans_pages"] = len(d["src_pages"]) > 1 or len(d["tgt_pages"]) > 1
     # what to re-select when this pair is reopened, valid against today's corpus
+    cr = crops_for(con, pair_id)
+    d["src_crops"] = [c for c in cr if c["side"] == "src"]
+    d["tgt_crops"] = [c for c in cr if c["side"] == "tgt"]
+    d["images_ready"] = bool(cr) and all(c["path"] for c in cr)
     d["src_block_ids"] = resolve_current_ids(con, pair_id, "src")
     d["tgt_block_ids"] = resolve_current_ids(con, pair_id, "tgt")
     d["resolves_cleanly"] = (len(d["src_block_ids"]) == len(d["src_blocks"]) and
@@ -288,6 +452,8 @@ def list_pairs(con, src_book_id: int = None, tgt_book_id: int = None,
                    src_language, tgt_language, src_pages, tgt_pages, label, note,
                    status, annotator, created_at, updated_at,
                    LENGTH(src_text) src_chars, LENGTH(tgt_text) tgt_chars,
+                   (SELECT COUNT(*) FROM bp_pair_crops c
+                    WHERE c.pair_id = bp_pairs.id AND c.path != '') n_crops,
                    substr(src_text,1,160) src_preview, substr(tgt_text,1,160) tgt_preview
             FROM bp_pairs WHERE {w} ORDER BY updated_at DESC LIMIT ? OFFSET ?""",
         args + [limit, offset])]
@@ -295,14 +461,39 @@ def list_pairs(con, src_book_id: int = None, tgt_book_id: int = None,
         d["src_pages"] = json.loads(d["src_pages"] or "[]")
         d["tgt_pages"] = json.loads(d["tgt_pages"] or "[]")
         d["spans_pages"] = len(d["src_pages"]) > 1 or len(d["tgt_pages"]) > 1
+        d["crop_ids"] = [r[0] for r in con.execute(
+            """SELECT id FROM bp_pair_crops WHERE pair_id=? AND path != ''
+               ORDER BY side DESC, seq""", (d["id"],))]
     return {"total": total, "pairs": rows, "limit": limit, "offset": offset}
 
 
 def delete_pair(con, pair_id: int) -> dict:
     ensure_schema(con)
     con.execute("DELETE FROM bp_pair_blocks WHERE pair_id=?", (pair_id,))
+    con.execute("DELETE FROM bp_pair_crops WHERE pair_id=?", (pair_id,))
+    # The PNG itself is left alone: it is named by content hash, so another
+    # pair over the same passage may be using it. Unreferenced files are
+    # cleaned by `prune_crops`, deliberately a separate, explicit act.
     n = con.execute("DELETE FROM bp_pairs WHERE id=?", (pair_id,)).rowcount
     return {"deleted": n}
+
+
+def prune_crops(con, dry_run: bool = True) -> dict:
+    """Remove crop files no pair refers to any more."""
+    ensure_schema(con)
+    used = {r[0] for r in con.execute(
+        "SELECT path FROM bp_pair_crops WHERE path != ''")}
+    root = crop_dir()
+    removed, freed = [], 0
+    for f in root.rglob("*.png"):
+        rel = f.relative_to(Path(config.STATE_DIR)).as_posix()
+        if rel not in used:
+            freed += f.stat().st_size
+            removed.append(rel)
+            if not dry_run:
+                f.unlink(missing_ok=True)
+    return {"dry_run": dry_run, "removed": len(removed), "bytes": freed,
+            "files": removed[:50]}
 
 
 def set_status(con, pair_id: int, status: str, annotator: str = "") -> dict:
@@ -371,6 +562,8 @@ FORMATS = {
              "the blocks with their boxes, for training a layout model"),
     "huggingface": ("Hugging Face datasets", "application/x-ndjson", "jsonl",
                     "JSONL with a dataset card, ready to push to the Hub"),
+    "images": ("Cropped images", "application/zip", "zip",
+               "the parallel crops as PNGs, side by side, with a manifest"),
 }
 
 
@@ -392,6 +585,15 @@ def _rows_for_export(con, **filters) -> list:
     for d in rows:
         for k in ("src_pages", "tgt_pages", "src_labels", "tgt_labels"):
             d[k] = json.loads(d[k] or "[]")
+        # the file names an export refers to, so a JSONL row and the images zip
+        # can be matched up without guessing the convention
+        for side, key in (("src", "_src_images"), ("tgt", "_tgt_images")):
+            lang = d["src_language"] if side == "src" else d["tgt_language"]
+            names = [f"images/pair{d['id']:05d}/"
+                     f"{side}_{(lang or 'xx').lower()}_p{c['page']:04d}.png"
+                     for c in crops_for(con, d["id"])
+                     if c["side"] == side and c["path"]]
+            d[key] = ",".join(names)
     return rows
 
 
@@ -408,6 +610,8 @@ def _flat(d: dict) -> dict:
         "label": d["label"], "note": d["note"], "status": d["status"],
         "annotator": d["annotator"],
         "source_text": d["src_text"], "target_text": d["tgt_text"],
+        "source_images": d.get("_src_images", ""),
+        "target_images": d.get("_tgt_images", ""),
     }
 
 
@@ -554,6 +758,50 @@ def export(con, fmt: str, **filters) -> tuple:
                            "categories": [{"id": v, "name": k} for k, v in cats.items()],
                            "images": imgs, "annotations": ann},
                           ensure_ascii=False, indent=1)
+    elif fmt == "images":
+        import zipfile
+        buf = io.BytesIO()
+        n = 0
+        with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+            manifest = []
+            for r in rows:
+                for c in crops_for(con, r["id"]):
+                    if not c["path"]:
+                        continue
+                    f = Path(config.STATE_DIR) / Path(*c["path"].split("/"))
+                    if not f.exists():
+                        continue
+                    lang = r["src_language"] if c["side"] == "src" else r["tgt_language"]
+                    name = (f"images/pair{r['id']:05d}/"
+                            f"{c['side']}_{(lang or 'xx').lower()}_p{c['page']:04d}.png")
+                    z.writestr(name, f.read_bytes())
+                    n += 1
+                    manifest.append({
+                        "file": name, "pair_id": r["id"], "side": c["side"],
+                        "page": c["page"], "language": lang, "board": r["board"],
+                        "class": r["class"], "subject": r["subject"],
+                        "label": r["label"], "blocks": c["n_blocks"],
+                        "dpi": c["dpi"], "width": c["width"], "height": c["height"],
+                        "bbox_fraction": [c["x0"], c["y0"], c["x1"], c["y1"]],
+                        "text": (r["src_text"] if c["side"] == "src" else r["tgt_text"]),
+                    })
+            if not n:
+                raise ValueError("No cropped images exist for that selection — the "
+                                 "PDFs may not be on disk. Everything else still "
+                                 "exports.")
+            z.writestr("images/manifest.jsonl", "\n".join(
+                json.dumps(m, ensure_ascii=False) for m in manifest))
+            z.writestr("images/README.md",
+                       "# Cropped parallel images\n\n"
+                       f"{n} PNG(s) from {len(rows)} pair(s), cut from the original\n"
+                       "PDF pages at the region the selected blocks cover.\n\n"
+                       "One image per page a side touches. A pair spanning two pages\n"
+                       "has two images on that side, numbered by page — a single image\n"
+                       "would have to span a page break, which cannot be rendered.\n\n"
+                       "`manifest.jsonl` gives each file its pair, side, language,\n"
+                       "page, the fraction of the page it covers, and the text the\n"
+                       "parser read there.\n")
+        return buf.getvalue(), "application/zip", f"tulana_images_{stamp}.zip"
     elif fmt == "moses":
         import zipfile
         sl = (rows[0]["src_language"] or "en").lower()
@@ -623,6 +871,17 @@ def export_bundle(con, **filters) -> tuple:
             except Exception as e:
                 z.writestr(f"pairs/{fmt}.FAILED.txt", str(e))
         z.writestr("DATASET_CARD.md", dataset_card(rows))
+        # the images live at the top of the bundle rather than nested in a zip
+        for r in rows:
+            for c in crops_for(con, r["id"]):
+                if not c["path"]:
+                    continue
+                f = Path(config.STATE_DIR) / Path(*c["path"].split("/"))
+                if f.exists():
+                    lang = r["src_language"] if c["side"] == "src" else r["tgt_language"]
+                    z.writestr(f"images/pair{r['id']:05d}/"
+                               f"{c['side']}_{(lang or 'xx').lower()}_p{c['page']:04d}.png",
+                               f.read_bytes())
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d")
     return buf.getvalue(), "application/zip", f"tulana_corpus_{stamp}.zip"
 
