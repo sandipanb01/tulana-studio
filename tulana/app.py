@@ -1429,6 +1429,35 @@ def pairs_delete(pair_id: int, x_annotator: str = Header("")):
         return bpairs.delete_pair(con, pair_id)
 
 
+@app.get("/api/pairs/block/{pair_id}/crop/{crop_id}.png")
+def pairs_crop(pair_id: int, crop_id: int):
+    """One cropped parallel image."""
+    with db.tx() as con:
+        try:
+            data, fn = bpairs.crop_bytes(con, crop_id)
+        except ValueError as e:
+            raise HTTPException(404, str(e))
+    return Response(data, media_type="image/png",
+                    headers={"Cache-Control": "public, max-age=31536000",
+                             "Content-Disposition": f'inline; filename="{fn}"'})
+
+
+@app.post("/api/pairs/block/{pair_id}/recrop")
+def pairs_recrop(pair_id: int, dpi: int = None, x_annotator: str = Header("")):
+    """Cut the images again — after a PDF arrives, or at a different DPI."""
+    with db.tx() as con:
+        res = bpairs.build_crops(con, pair_id, dpi)
+        db.log(con, x_annotator, "pair_recrop", str(pair_id), res)
+        return {**res, "pair": bpairs.get_pair(con, pair_id)}
+
+
+@app.post("/api/pairs/crops/prune")
+def pairs_prune(apply: bool = False):
+    """Delete crop files no pair refers to."""
+    with db.tx() as con:
+        return bpairs.prune_crops(con, dry_run=not apply)
+
+
 @app.get("/api/pairs/formats")
 def pairs_formats():
     """Every export format, with what each is for."""
