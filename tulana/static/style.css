@@ -311,3 +311,13 @@ kbd{font:600 11px ui-monospace,monospace;background:#eef0f4;border:1px solid var
 @media (max-width:760px){ .ptexts{grid-template-columns:1fr} }
 
 .wide-in{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radius:8px;font-size:13px;margin-bottom:6px}
+
+/* ── cropped parallel images ───────────────────────────────────────────── */
+.pcrops{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;
+  margin:4px 0 10px}
+.pcrops img{width:100%;height:auto;max-height:230px;object-fit:contain;object-position:top;
+  border:1px solid var(--line);border-radius:8px;background:#fff}
+#bPreview{display:flex;flex-direction:column;gap:7px;margin-top:6px}
+.pv .pvbox{overflow:hidden;border:1px solid var(--line2);border-radius:7px;background:#fff;
+  max-height:120px}
+.pv .pvbox img{display:block}
