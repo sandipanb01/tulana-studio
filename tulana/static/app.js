@@ -183,17 +183,22 @@ async function openPairInBlocks(p) {
   BK.editingPairId = p.id;
   BS("src").page = (p.src_pages || [0])[0];
   BS("tgt").page = (p.tgt_pages || [0])[0];
-  ["#bNav", "#bFilter", "#bActions"].forEach(x => $(x).hidden = false);
+  ["#bNav", "#bTool", "#bFilter", "#bActions"].forEach(x => $(x).hidden = false);
   await Promise.all([openBlockPage("src"), openBlockPage("tgt")]);
   // Use the ids resolved against today's corpus, not the ones stored when the
   // pair was saved — a re-parse renumbers blocks.
+  BS("src").regions = (p.src_regions || []).map(r =>
+    ({ page: r.page, x0: r.x0, y0: r.y0, x1: r.x1, y1: r.y1 }));
+  BS("tgt").regions = (p.tgt_regions || []).map(r =>
+    ({ page: r.page, x0: r.x0, y0: r.y0, x1: r.x1, y1: r.y1 }));
   BS("src").sel = new Set(p.src_block_ids || (p.src_blocks || []).map(b => b.block_id));
   BS("tgt").sel = new Set(p.tgt_block_ids || (p.tgt_blocks || []).map(b => b.block_id));
   if (p.resolves_cleanly === false) {
     toast("Some blocks were renumbered by a corpus reload and were matched by "
         + "page and reading order instead — check the selection before saving", true);
   }
-  drawBlocks("src"); drawBlocks("tgt"); refreshSelection();
+  drawBlocks("src"); drawBlocks("tgt");
+  drawRegions("src"); drawRegions("tgt"); refreshSelection();
   toast(`Editing pair #${p.id} — adjust the selection and save`);
 }
 
@@ -347,10 +352,10 @@ async function loadBlocks() {
 $("#bOpen").onclick = async () => {
   const s = +$("#bSrcDoc").value, t = +$("#bTgtDoc").value;
   if (!s || !t) { toast("Choose a board, class, language and both editions", true); return; }
-  BS("src").book = s; BS("src").page = 0; BS("src").sel.clear();
-  BS("tgt").book = t; BS("tgt").page = 0; BS("tgt").sel.clear();
+  BS("src").book = s; BS("src").page = 0; BS("src").sel.clear(); BS("src").regions = [];
+  BS("tgt").book = t; BS("tgt").page = 0; BS("tgt").sel.clear(); BS("tgt").regions = [];
   BK.editingPairId = null;
-  ["#bNav","#bFilter","#bActions"].forEach(x => $(x).hidden = false);
+  ["#bNav","#bTool","#bFilter","#bActions"].forEach(x => $(x).hidden = false);
   await Promise.all([openBlockPage("src"), openBlockPage("tgt")]);
   $("#bSide").classList.remove("open");
 };
@@ -373,6 +378,7 @@ async function openBlockPage(side) {
       + (d.book.pdf_present ? "" : " · PDF not on disk");
     $(side === "src" ? "#bPageSrc" : "#bPageTgt").value = st.page;
     renderBlockSide(side);
+    setTimeout(() => drawRegions(side), 60);
     refreshSelection();
   } catch (e) { toast(e.message, true); }
 }
@@ -484,11 +490,17 @@ function markSelected(side) {
 let _selTimer = null;
 function refreshSelection() {
   const s = BS("src"), t = BS("tgt");
-  const n = s.sel.size + t.sel.size;
+  const n = s.sel.size + t.sel.size + s.regions.length + t.regions.length;
+  const part = x => {
+    const st = BS(x), bits = [];
+    if (st.sel.size) bits.push(`${st.sel.size} block(s)`);
+    if (st.regions.length) bits.push(`${st.regions.length} crop(s)`);
+    return bits.join(" + ") || "nothing";
+  };
   $("#bSelInfo").textContent = n
-    ? `${s.sel.size} source · ${t.sel.size} target block(s) selected`
-    : "Nothing selected — click blocks on either page";
-  $("#bText").hidden = n === 0;
+    ? `source: ${part("src")} · target: ${part("tgt")}`
+    : "Nothing selected — click blocks, or switch to Drag to crop";
+  $("#bText").hidden = (s.sel.size + t.sel.size) === 0;
   renderPageMap();
   previewCrops();
   scheduleDraft();
@@ -514,7 +526,9 @@ function refreshSelection() {
 }
 
 $("#bClearSel").onclick = () => {
-  ["src","tgt"].forEach(s => { BS(s).sel.clear(); BS(s).last = null; markSelected(s); });
+  ["src","tgt"].forEach(s => {
+    BS(s).sel.clear(); BS(s).last = null; BS(s).regions = [];
+    markSelected(s); drawRegions(s); });
   refreshSelection();
 };
 $("#bSelAll").onclick = () => {
@@ -583,6 +597,152 @@ document.addEventListener("keydown", e => {
 });
 
 
+
+
+/* ══════════════ the crop tool ══════════════════════════════════════════════
+   Two ways to say what a passage is, because they answer different questions.
+
+   **Clicking blocks** takes what the parser found, and brings its text with it.
+   **Dragging a rectangle** takes what a person decided. A figure with its
+   caption and the line beneath may be one passage to a reader and three blocks
+   to the parser — and a hand-drawn diagram or a margin note was never a block
+   at all, so no amount of clicking would ever reach it.
+
+   Both work across pages, both are kept automatically, and both are cut from
+   the original PDF as parallel images. */
+function setTool(name) {
+  BK.tool = name;
+  $$(".segbtn").forEach(b => b.classList.toggle("on", b.dataset.tool === name));
+  ["src", "tgt"].forEach(s => {
+    const h = bhost(s);
+    if (h) h.classList.toggle("cropping", name === "crop");
+  });
+  $("#bToolHint").textContent = name === "crop"
+    ? "Drag a rectangle over the passage. Drag inside one to move it, the corner to resize."
+    : "Click a block to select it. Shift-click for a range.";
+  drawRegions("src"); drawRegions("tgt");
+}
+$$(".segbtn").forEach(b => b.onclick = () => setTool(b.dataset.tool));
+
+function drawRegions(side) {
+  const st = BS(side), h = bhost(side);
+  if (!h) return;
+  [...h.querySelectorAll(".crop")].forEach(e => e.remove());
+  const surface = h.querySelector("img") || h.querySelector(".blank");
+  if (!surface) return;
+  const W = surface.clientWidth || surface.offsetWidth;
+  const H = surface.clientHeight || surface.offsetHeight;
+  st.regions.filter(r => r.page === st.page).forEach(r => {
+    const i = st.regions.indexOf(r);
+    const el = document.createElement("div");
+    el.className = "crop";
+    el.style.cssText = `left:${r.x0*W}px;top:${r.y0*H}px;` +
+      `width:${(r.x1-r.x0)*W}px;height:${(r.y1-r.y0)*H}px`;
+    el.dataset.i = i;
+    el.innerHTML = `<span class="cn">crop ${i + 1}</span>` +
+      `<button class="cx" title="Remove">×</button><i class="grip"></i>`;
+    h.appendChild(el);
+  });
+  renderRegionList();
+}
+
+function renderRegionList() {
+  const box = $("#bRegions");
+  if (!box) return;
+  const rows = [];
+  for (const side of ["src", "tgt"]) {
+    BS(side).regions.forEach((r, i) => rows.push({ side, i, r }));
+  }
+  box.innerHTML = rows.length ? rows.map(({ side, i, r }) => `
+    <div class="rgi" data-side="${side}" data-i="${i}">
+      <span class="nm">${side === "src" ? "source" : "target"} · page ${r.page}
+        · crop ${i + 1}</span>
+      <button data-go>go</button><button data-del>✕</button>
+    </div>`).join("")
+    : `<div class="sm faint">No crops drawn.</div>`;
+  box.querySelectorAll(".rgi").forEach(el => {
+    const side = el.dataset.side, i = +el.dataset.i;
+    el.querySelector("[data-del]").onclick = () => {
+      BS(side).regions.splice(i, 1);
+      drawRegions(side); refreshSelection();
+    };
+    el.querySelector("[data-go]").onclick = () => {
+      const r = BS(side).regions[i];
+      if (r && BS(side).page !== r.page) { BS(side).page = r.page; openBlockPage(side); }
+    };
+  });
+}
+
+["src", "tgt"].forEach(side => {
+  const h = bhost(side);
+  if (!h) return;
+  let mode = null, start = null, origin = null, idx = -1, live = null;
+  const at = ev => {
+    const surface = h.querySelector("img") || h.querySelector(".blank");
+    const r = surface.getBoundingClientRect();
+    return { x: (ev.clientX - r.left) / r.width, y: (ev.clientY - r.top) / r.height };
+  };
+  h.addEventListener("pointerdown", ev => {
+    const st = BS(side);
+    if (st.book === null || ev.button === 2) return;
+    const existing = ev.target.closest(".crop");
+    if (existing) {
+      if (ev.target.classList.contains("cx")) {
+        st.regions.splice(+existing.dataset.i, 1);
+        drawRegions(side); refreshSelection();
+        ev.preventDefault(); return;
+      }
+      idx = +existing.dataset.i;
+      origin = { ...st.regions[idx] };
+      start = at(ev);
+      mode = ev.target.classList.contains("grip") ? "resize" : "move";
+    } else {
+      if (BK.tool !== "crop") return;
+      start = at(ev);
+      st.regions.push({ page: st.page, x0: start.x, y0: start.y,
+                        x1: start.x, y1: start.y });
+      idx = st.regions.length - 1;
+      mode = "draw";
+    }
+    h.setPointerCapture(ev.pointerId);
+    ev.preventDefault();
+  });
+  h.addEventListener("pointermove", ev => {
+    if (!mode || idx < 0) return;
+    const st = BS(side), p = at(ev), r = st.regions[idx];
+    const clamp = v => Math.max(0, Math.min(1, v));
+    if (mode === "draw") {
+      r.x0 = clamp(Math.min(start.x, p.x)); r.x1 = clamp(Math.max(start.x, p.x));
+      r.y0 = clamp(Math.min(start.y, p.y)); r.y1 = clamp(Math.max(start.y, p.y));
+    } else if (mode === "move") {
+      const dx = p.x - start.x, dy = p.y - start.y;
+      const w = origin.x1 - origin.x0, ht = origin.y1 - origin.y0;
+      r.x0 = clamp(Math.min(1 - w, origin.x0 + dx)); r.x1 = r.x0 + w;
+      r.y0 = clamp(Math.min(1 - ht, origin.y0 + dy)); r.y1 = r.y0 + ht;
+    } else {
+      r.x1 = clamp(Math.max(origin.x0 + 0.005, p.x));
+      r.y1 = clamp(Math.max(origin.y0 + 0.005, p.y));
+    }
+    drawRegions(side);
+    const el = h.querySelector(`.crop[data-i="${idx}"]`);
+    if (el) el.classList.add("live");
+  });
+  const finish = () => {
+    if (!mode) return;
+    const st = BS(side), r = st.regions[idx];
+    const drawing = mode === "draw";
+    mode = null;
+    // a tap is not a rectangle
+    if (drawing && r && (r.x1 - r.x0 < 0.006 || r.y1 - r.y0 < 0.006)) {
+      st.regions.splice(idx, 1);
+    }
+    drawRegions(side);
+    refreshSelection();
+  };
+  h.addEventListener("pointerup", finish);
+  h.addEventListener("pointercancel", finish);
+});
+
 /* ── the selection is kept without being asked ─────────────────────────────
    Written as a draft while the annotator works, so a closed tab, a lost
    connection or a stray reload costs nothing. It becomes an ordinary pair the
@@ -596,8 +756,10 @@ function scheduleDraft() {
     try {
       await api("/api/pairs/block/draft", { method: "POST", body: JSON.stringify({
         src_book_id: s.book, tgt_book_id: t.book,
-        src_block_ids: [...s.sel], tgt_block_ids: [...t.sel] }) });
-      if (s.sel.size || t.sel.size) setBlockSaveState("Kept automatically");
+        src_block_ids: [...s.sel], tgt_block_ids: [...t.sel],
+        src_regions: s.regions, tgt_regions: t.regions }) });
+      if (s.sel.size || t.sel.size || s.regions.length || t.regions.length)
+        setBlockSaveState("Kept automatically");
     } catch (e) {
       // Say so. Silence here would let an annotator believe the work is safe.
       setBlockSaveState(`Not kept on the server (${e.message})`, true);
@@ -612,11 +774,13 @@ function setBlockSaveState(text, warn) {
 }
 window.addEventListener("pagehide", () => {
   const s = BS("src"), t = BS("tgt");
-  if (s.book === null || !(s.sel.size || t.sel.size)) return;
+  if (s.book === null ||
+      !(s.sel.size || t.sel.size || s.regions.length || t.regions.length)) return;
   try {
     navigator.sendBeacon(`${BASE}/api/pairs/block/draft`, new Blob([JSON.stringify({
       src_book_id: s.book, tgt_book_id: t.book,
-      src_block_ids: [...s.sel], tgt_block_ids: [...t.sel] })],
+      src_block_ids: [...s.sel], tgt_block_ids: [...t.sel],
+      src_regions: s.regions, tgt_regions: t.regions })],
       { type: "application/json" }));
   } catch (e) {}
 });
@@ -669,14 +833,17 @@ function previewCrops() {
 
 $("#bSavePair").onclick = async () => {
   const s = BS("src"), t = BS("tgt");
-  if (!s.sel.size && !t.sel.size) { toast("Select some blocks first", true); return; }
-  if (!s.sel.size || !t.sel.size) {
-    if (!confirm("Only one side has a selection. Save it anyway?")) return;
+  const has = x => BS(x).sel.size || BS(x).regions.length;
+  if (!has("src") && !has("tgt")) {
+    toast("Select some blocks, or drag a crop, first", true); return; }
+  if (!has("src") || !has("tgt")) {
+    if (!confirm("Only one side has anything selected. Save it anyway?")) return;
   }
   try {
     const p = await api("/api/pairs/block", { method: "POST", body: JSON.stringify({
       src_book_id: s.book, tgt_book_id: t.book,
       src_block_ids: [...s.sel], tgt_block_ids: [...t.sel],
+      src_regions: s.regions, tgt_regions: t.regions,
       label: $("#bLabel2").value, status: "saved",
       pair_id: BK.editingPairId || null }) });
     const nimg = (p.src_crops || []).concat(p.tgt_crops || [])
@@ -686,7 +853,8 @@ $("#bSavePair").onclick = async () => {
     setBlockSaveState(`Saved as pair #${p.id}${nimg ? ` with ${nimg} image(s)` : ""}`);
     BK.editingPairId = null;
     $("#bLabel2").value = "";
-    ["src", "tgt"].forEach(x => { BS(x).sel.clear(); drawBlocks(x); });
+    ["src", "tgt"].forEach(x => {
+      BS(x).sel.clear(); BS(x).regions = []; drawBlocks(x); drawRegions(x); });
     refreshSelection();
   } catch (e) { toast(e.message, true); }
 };
