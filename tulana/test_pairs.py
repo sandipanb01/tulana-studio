@@ -116,6 +116,58 @@ def main():
     s_ids = after_reload["src_block_ids"]
     t_ids = after_reload["tgt_block_ids"]
 
+    # ── hand-drawn crop regions ────────────────────────────────────────────
+    section("the crop tool")
+    R = [{"page": s_pages[0], "x0": 0.10, "y0": 0.15, "x1": 0.90, "y1": 0.42},
+         {"page": s_pages[1], "x0": 0.12, "y0": 0.20, "x1": 0.88, "y1": 0.55}]
+    T = [{"page": t_pages[0], "x0": 0.10, "y0": 0.15, "x1": 0.90, "y1": 0.48}]
+    rp = bp.save_pair(con, src["id"], tgt["id"], [], [], label="drawn only",
+                      src_regions=R, tgt_regions=T)
+    check("a pair can be made from drawn rectangles alone",
+          len(rp["src_regions"]) == 2 and len(rp["tgt_regions"]) == 1,
+          f"{len(rp['src_regions'])} + {len(rp['tgt_regions'])}")
+    check("each drawn region is cropped",
+          len([c for c in rp["src_crops"] + rp["tgt_crops"]
+               if c["kind"] == "region"]) == 3)
+    check("drawn regions may span pages",
+          len({r["page"] for r in rp["src_regions"]}) == 2)
+    if any(c["path"] for c in rp["src_crops"]):
+        for c in rp["src_crops"] + rp["tgt_crops"]:
+            check(f"drawn crop {c['side']} p{c['page']} is a real image",
+                  c["width"] > 50 and c["bytes"] > 500,
+                  f"{c['width']}x{c['height']} {c['bytes']}B")
+    check("reopening returns the rectangles as drawn",
+          [round(r["x0"], 3) for r in bp.get_pair(con, rp["id"])["src_regions"]]
+          == [round(r["x0"], 3) for r in R])
+    tiny = bp.save_pair(con, src["id"], tgt["id"], s_ids[:1], [],
+                        src_regions=[{"page": 0, "x0": .5, "y0": .5,
+                                      "x1": .5005, "y1": .5005}])
+    check("a stray tap is not stored as a region", len(tiny["src_regions"]) == 0)
+    bad = bp.save_pair(con, src["id"], tgt["id"], s_ids[:1], [],
+                       src_regions=[{"page": 0, "x0": "x", "y0": 0, "x1": 1, "y1": 1}])
+    check("a malformed region is skipped, not fatal", len(bad["src_regions"]) == 0)
+    over = bp.save_pair(con, src["id"], tgt["id"], s_ids[:1], [],
+                        src_regions=[{"page": 0, "x0": -3, "y0": -3, "x1": 9, "y1": 9}])
+    check("a region is clamped to the page",
+          all(0 <= r["x0"] <= 1 and 0 <= r["y1"] <= 1 for r in over["src_regions"]))
+    flip = bp.save_pair(con, src["id"], tgt["id"], s_ids[:1], [],
+                        src_regions=[{"page": 0, "x0": .9, "y0": .8, "x1": .2, "y1": .1}])
+    check("a rectangle dragged upwards is normalised",
+          flip["src_regions"] and flip["src_regions"][0]["x0"] < flip["src_regions"][0]["x1"])
+    both = bp.save_pair(con, src["id"], tgt["id"], s_ids[:2], t_ids[:2],
+                        src_regions=R, tgt_regions=T, label="blocks and crops")
+    check("blocks and drawn regions coexist in one pair",
+          len(both["src_blocks"]) == 2 and len(both["src_regions"]) == 2)
+    check("and both kinds are cropped",
+          {c["kind"] for c in both["src_crops"]} == {"blocks", "region"},
+          str({c["kind"] for c in both["src_crops"]}))
+    d0 = bp.save_draft(con, src["id"], tgt["id"], [], [], "asha", src_regions=R)
+    check("a drawn region alone is enough to autosave",
+          d0.get("id") and len(d0["src_regions"]) == 2)
+    for extra in (rp, tiny, bad, over, flip, both, d0):
+        if extra.get("id"):
+            bp.delete_pair(con, extra["id"])
+
     # ── cropped parallel images ────────────────────────────────────────────
     section("cropped images")
     q = bp.get_pair(con, p["id"])
