@@ -101,9 +101,18 @@ Choose a board and class, then the target language, then the two editions. Both
 pages open side by side with their blocks overlaid, each labelled and coloured
 by type, numbered in reading order.
 
-Click a block to select it. Shift-click takes a range **in reading order**, not
-click order. The extracted text of the selection appears underneath, both
-languages at once.
+**Two tools, because they answer different questions.**
+
+*Click blocks* takes what the parser found and brings its text with it.
+Shift-click takes a range in reading order. *Drag to crop* takes what **you**
+decide: draw a rectangle over the passage, drag inside it to move, the corner to
+resize, **×** to remove. A figure with its caption may be one passage to a reader
+and three blocks to the parser — and a hand-drawn diagram or a margin note was
+never a block at all, so no amount of clicking would reach it.
+
+Both work across pages, both are kept automatically, both are cut as parallel
+images, and both can be used in the same pair. The extracted text of the
+selected blocks appears underneath, both languages at once.
 
 **Your selection survives turning the page.** Translated text is longer, so a
 passage that fits one English page often runs onto the next in Marathi — a
@@ -114,9 +123,9 @@ nothing is ever silently included.
 Zoom per pane, a draggable split, a filter by block type. 30 block types come
 from the corpus itself.
 
-**The parallel images are cut as you go.** A preview shows the region that will
-be cut from each page; on save, both regions are rendered from the original PDFs
-at 300 DPI. One image per page a side touches — a single image cannot span a
+**The parallel images are cut as you go.** Every rectangle you draw, and the
+region around the blocks you clicked, is rendered from the original PDFs at
+300 DPI. One image per page a side touches — a single image cannot span a
 page break, and one that silently showed only the first page would be worse than
 two honest ones.
 
@@ -242,14 +251,14 @@ python3 shelf.py add FILE --board WB --class 10 --lang Bengali
 
 ```bash
 python3 check_install.py     22 — is this checkout complete and consistent
-python3 test_pairs.py        93 — cross-page selection, cropping, autosave, every format
+python3 test_pairs.py       107 — cross-page selection, cropping, autosave, every format
 python3 test_stress.py      138 — edge cases, malformed input, database safety
 python3 test_blocks.py      645 — every book in the layout corpus
 python3 test_naming.py      265 — 32 boards × 23 languages × naming styles
 python3 windows_check.py      8 — cross-platform audit
 ```
 
-**1,171 checks**, run twice interleaved to prove they do not depend on order.
+**1,185 checks**, run twice interleaved to prove they do not depend on order.
 
 `test_stress.py` feeds in malformed JSON, zero-size pages, inverted boxes,
 non-numeric coordinates, null bytes and emoji; asks for pages beyond the end of
