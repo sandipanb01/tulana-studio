@@ -24,6 +24,9 @@ correct.
 2. Click a block on the English page. It highlights, and its text appears in the
    panel below.
 3. Click the matching block on the target page.
+
+   Or switch the tool to **Drag to crop** and draw a rectangle over each
+   passage instead. Use whichever fits — and both together if you like.
 4. Type a short name — *Practice set 1.1*, say — and press **Save pair**.
 
 As you select, a preview shows the region that will be cut from each page. The
