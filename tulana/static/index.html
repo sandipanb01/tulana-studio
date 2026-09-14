@@ -77,6 +77,16 @@
       <label class="row2"><input type="checkbox" id="bShowOrder" checked> Reading order</label>
       <label class="row2"><input type="checkbox" id="bDim"> Dim unselected blocks</label>
     </div>
+    <div class="grp" id="bTool" hidden>
+      <label class="lbl">Tool</label>
+      <div class="seg">
+        <button class="segbtn on" data-tool="select">Click blocks</button>
+        <button class="segbtn" data-tool="crop">Drag to crop</button>
+      </div>
+      <div class="sm faint" id="bToolHint">Click a block to select it.
+        Shift-click for a range.</div>
+      <div id="bRegions"></div>
+    </div>
     <div class="grp" id="bFilter" hidden>
       <label class="lbl">Show only</label>
       <select id="bLabel"><option value="">All block types</option></select>
