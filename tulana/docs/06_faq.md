@@ -25,6 +25,14 @@ That is deliberate. A passage that fits one English page often runs onto the
 next in the target language, so the selection is kept until you clear it. The
 panel tells you how many blocks are selected on pages you are not looking at.
 
+**Where is the crop tool?**
+In the Blocks tab, under **Tool** — switch from *Click blocks* to *Drag to
+crop*, then drag a rectangle. It appears once you have opened two editions.
+
+**Can I clip something the parser missed?**
+Yes — that is what the crop tool is for. A drawn rectangle is cut from the page
+regardless of whether a block was ever found there.
+
 **A pair has no image.**
 The PDF was not on disk when it was saved. Fetch it — usually `git lfs pull` —
 then press **Try again** on the pair.
