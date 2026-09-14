@@ -33,6 +33,19 @@ included.
 
 A pair that spans pages is marked **spans pages** in Saved pairs.
 
+## The cropped images
+
+While you select, the panel shows the region that will be cut from each page —
+the box around everything you have picked there. That is what gets saved as an
+image, cut from the original PDF at 300 DPI.
+
+**One image per page each side touches.** A pair spanning two pages has two
+images on that side. A single image cannot span a page break, and one image that
+silently showed only the first page would be worse than two honest ones.
+
+If the PDF is not on disk there is no image, and the pair says so rather than
+showing an empty box. Once the PDF arrives, **Try again** on the pair cuts them.
+
 ## Reading the selection
 
 The text of everything selected appears beneath the pages, both languages side
