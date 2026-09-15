@@ -116,20 +116,26 @@ async function loadPairs() {
         <span class="sm mut">${esc(p.board || "")} · Class ${p.class || "?"} ·
           ${esc(p.subject || "")} · p${p.src_pages.join(",")} ↔ p${p.tgt_pages.join(",")}</span>
       </div>
-      ${p.n_crops ? `<div class="pcrops">${(p.crop_ids || []).map(cid =>
-          `<img loading="lazy" src="${BASE}/api/pairs/block/${p.id}/crop/${cid}.png"
-                alt="cropped passage">`).join("")}</div>`
-        : `<div class="sm faint" style="margin:4px 0 8px">No cropped image —
-             the PDF was not on disk when this was saved.
-             <button class="btn sm" data-act="recrop">Try again</button></div>`}
       <div class="ptexts">
-        <div class="col"><div class="lang">${esc(p.src_language || "source")}
-          <span class="mut">${p.src_chars} chars</span></div>
-          <div class="body">${esc(p.src_preview || "")}${p.src_chars > 160 ? "…" : ""}</div></div>
-        <div class="col"><div class="lang">${esc(p.tgt_language || "target")}
-          <span class="mut">${p.tgt_chars} chars</span></div>
-          <div class="body">${esc(p.tgt_preview || "")}${p.tgt_chars > 160 ? "…" : ""}</div></div>
+        ${["src", "tgt"].map(side => {
+          const lang = side === "src" ? p.src_language : p.tgt_language;
+          const ids = (side === "src" ? p.src_crop_ids : p.tgt_crop_ids) || [];
+          const chars = side === "src" ? p.src_chars : p.tgt_chars;
+          const preview = side === "src" ? p.src_preview : p.tgt_preview;
+          const pages = side === "src" ? p.src_pages : p.tgt_pages;
+          return `<div class="col">
+            <div class="lang">${esc(lang || (side === "src" ? "source" : "target"))}
+              <span class="mut">${chars} chars · p${pages.join(",")}</span></div>
+            ${ids.length ? `<div class="pcrops">${ids.map(cid =>
+                `<img loading="lazy" src="${BASE}/api/pairs/block/${p.id}/crop/${cid}.png"
+                      alt="${esc(lang || side)} passage">`).join("")}</div>` : ""}
+            <div class="body">${esc(preview || "")}${chars > 160 ? "…" : ""}</div>
+          </div>`;
+        }).join("")}
       </div>
+      ${!p.n_crops ? `<div class="sm faint" style="margin:2px 0 8px">No cropped image —
+           the PDF was not on disk when this was saved.
+           <button class="btn sm" data-act="recrop">Try again</button></div>` : ""}
       <div class="acts">
         <input class="lbl-edit" value="${esc(p.label || "")}" placeholder="Name this passage…">
         <button class="btn sm" data-act="label">Rename</button>
