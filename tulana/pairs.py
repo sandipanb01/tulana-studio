@@ -302,7 +302,8 @@ def build_crops(con, pair_id: int, dpi: int = None) -> dict:
 def crops_for(con, pair_id: int) -> list:
     ensure_schema(con)
     return [dict(r) for r in con.execute(
-        """SELECT * FROM bp_pair_crops WHERE pair_id=? ORDER BY side DESC, seq""",
+        """SELECT * FROM bp_pair_crops WHERE pair_id=?
+           ORDER BY CASE side WHEN 'src' THEN 0 ELSE 1 END, page, seq""",
         (pair_id,))]
 
 
@@ -522,7 +523,8 @@ def get_pair(con, pair_id: int) -> dict:
     d["spans_pages"] = len(d["src_pages"]) > 1 or len(d["tgt_pages"]) > 1
     # what to re-select when this pair is reopened, valid against today's corpus
     rg = [dict(x) for x in con.execute(
-        "SELECT * FROM bp_pair_regions WHERE pair_id=? ORDER BY side DESC, page, seq",
+        """SELECT * FROM bp_pair_regions WHERE pair_id=?
+           ORDER BY CASE side WHEN 'src' THEN 0 ELSE 1 END, page, seq""",
         (pair_id,))]
     d["src_regions"] = [r for r in rg if r["side"] == "src"]
     d["tgt_regions"] = [r for r in rg if r["side"] == "tgt"]
@@ -574,9 +576,18 @@ def list_pairs(con, src_book_id: int = None, tgt_book_id: int = None,
         d["src_pages"] = json.loads(d["src_pages"] or "[]")
         d["tgt_pages"] = json.loads(d["tgt_pages"] or "[]")
         d["spans_pages"] = len(d["src_pages"]) > 1 or len(d["tgt_pages"]) > 1
-        d["crop_ids"] = [r[0] for r in con.execute(
-            """SELECT id FROM bp_pair_crops WHERE pair_id=? AND path != ''
-               ORDER BY side DESC, seq""", (d["id"],))]
+        # Per side, never merged. A flat list of ids carries no record of which
+        # column it belongs above, so the interface had to guess from its order
+        # — and `ORDER BY side DESC` puts 'tgt' first, which is how the Marathi
+        # crop came to sit over the English text.
+        # Per side, never merged. A flat list of ids carries no record of which
+        # column it belongs above, so the interface had to guess from its order
+        # — and `ORDER BY side DESC` puts 'tgt' first, which is how the Marathi
+        # crop came to sit over the English text.
+        for side, key in (("src", "src_crop_ids"), ("tgt", "tgt_crop_ids")):
+            d[key] = [r[0] for r in con.execute(
+                """SELECT id FROM bp_pair_crops WHERE pair_id=? AND side=?
+                   AND path != '' ORDER BY page, seq""", (d["id"], side))]
     return {"total": total, "pairs": rows, "limit": limit, "offset": offset}
 
 
