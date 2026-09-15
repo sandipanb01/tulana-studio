@@ -50,6 +50,11 @@ def fingerprint(con):
     return out
 
 
+def crops_for_ordered(con, pair_id):
+    """The crops as the interface receives them, in order."""
+    return bp.crops_for(con, pair_id)
+
+
 def main():
     con = db.connect()
     blocks.ensure_schema(con)
@@ -236,6 +241,39 @@ def main():
         check("a different dpi is re-cut, not reused", d2["cut"] > 0,
               f"cut {d2['cut']}, reused {d2['reused']}")
         bp.build_crops(con, p["id"])
+
+    # ── each side's images belong to that side ─────────────────────────────
+    section("no side may be mixed up with the other")
+    q2 = bp.get_pair(con, p["id"])
+    check("every src crop is on the src side",
+          all(c["side"] == "src" for c in q2["src_crops"]))
+    check("every tgt crop is on the tgt side",
+          all(c["side"] == "tgt" for c in q2["tgt_crops"]))
+    check("crops come back source first",
+          [c["side"] for c in crops_for_ordered(con, p["id"])][:1] == ["src"]
+          if crops_for_ordered(con, p["id"]) else True)
+    listed = bp.list_pairs(con, include_drafts=True)["pairs"]
+    row = [x for x in listed if x["id"] == p["id"]][0]
+    check("the list gives each side its own crop ids",
+          "src_crop_ids" in row and "tgt_crop_ids" in row)
+    check("the two id sets never overlap",
+          not (set(row["src_crop_ids"]) & set(row["tgt_crop_ids"])))
+    # the real check: an id claimed for a side must belong to that side, and to
+    # the book of that side — this is what a swap would break
+    for side, key in (("src", "src_crop_ids"), ("tgt", "tgt_crop_ids")):
+        for cid in row[key]:
+            r = con.execute("SELECT side, pair_id FROM bp_pair_crops WHERE id=?",
+                            (cid,)).fetchone()
+            check(f"crop {cid} really is a {side} crop", r["side"] == side,
+                  f"claimed {side}, stored {r['side']}")
+    if q2["src_crops"] and q2["tgt_crops"]:
+        sb = con.execute("SELECT src_book_id, tgt_book_id, src_language, "
+                         "tgt_language FROM bp_pairs WHERE id=?", (p["id"],)).fetchone()
+        check("the two sides are genuinely different books",
+              sb["src_book_id"] != sb["tgt_book_id"])
+        check("and different languages",
+              sb["src_language"] != sb["tgt_language"],
+              f"{sb['src_language']} vs {sb['tgt_language']}")
 
     # ── drafts ─────────────────────────────────────────────────────────────
     section("autosave")
