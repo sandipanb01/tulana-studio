@@ -60,7 +60,20 @@ def assets() -> dict:
 
 def build() -> gr.Blocks:
     """Construct the whole interface. Returns an unlaunched Blocks."""
-    with gr.Blocks(title="Setu — Tulana Studio", fill_width=True) as demo:
+    # Gradio's default theme is built on an ORANGE primary ramp (#f97316,
+    # #ea580c, #fb923c …) which colours every primary button, focus ring and
+    # selected tab. No amount of editing annotation.css removes it, because it
+    # arrives in Gradio's own theme.css. Setting the hues here is the only
+    # place it can be changed. Teal matches Tulana; slate keeps the chrome
+    # quiet so the two texts are what the eye lands on.
+    theme = gr.themes.Soft(
+        primary_hue=gr.themes.colors.teal,
+        secondary_hue=gr.themes.colors.slate,
+        neutral_hue=gr.themes.colors.slate,
+    )
+
+    with gr.Blocks(title="Setu — Tulana Studio", fill_width=True,
+                   theme=theme) as demo:
         state = gr.State(session.blank())
 
         gr.Markdown(
@@ -94,7 +107,10 @@ def _annotate_tab(state: gr.State) -> dict:
             annotator = gr.Textbox(
                 label="Your name", placeholder="so your work can be attributed",
                 scale=1, max_lines=1, elem_id="setu_annotator")
-            board = gr.Dropdown(label="State board", choices=ws.boards(), scale=2)
+            # Opens on the first pairable board rather than empty, so the
+            # cascade below fills in and the annotator lands on two books.
+            board = gr.Dropdown(label="State board", choices=ws.boards(),
+                                value=ws.first_board(), scale=2)
             klass = gr.Dropdown(label="Class", choices=[], interactive=False, scale=1)
             subject = gr.Dropdown(label="Subject", choices=[], interactive=False, scale=1)
         with gr.Row():
