@@ -40,10 +40,10 @@ STATUSES: tuple[Status, ...] = (
     Status("needs_correction", "Needs correction",
            "They mostly match, but something in the text is wrong — a typo, a "
            "wrong number, a garbled formula.",
-           "#b45309", "2", True),
+           "#be123c", "2", True),
     Status("incomplete", "Missing or incomplete",
            "Part of the text is missing on one side, or one side is empty.",
-           "#c2410c", "3", True),
+           "#a21caf", "3", True),
     Status("structural_mismatch", "Structural mismatch",
            "Both sides have text, but they are not the same piece of the book — "
            "or one side splits what the other keeps together.",
