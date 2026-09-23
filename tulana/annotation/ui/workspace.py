@@ -95,10 +95,9 @@ def boards() -> list:
         except (KeyError, IndexError, TypeError, ValueError):
             n = 0
         if n >= 2:
-            label = f"{b['name']}  ({b['n_books']} books · {n} languages)"
+            label = f"{b['name']} — {n} languages"
         else:
-            label = (f"{b['name']}  ({b['n_books']} books · one language only — "
-                     f"cannot be paired)")
+            label = f"{b['name']} — one language only, cannot be paired"
         out.append((label, b["code"]))
     return out
 
@@ -115,7 +114,15 @@ def on_board(board: str):
     with store.ro() as con:
         rows = corpus.CorpusRepo(con).classes(board)
     choices = [(f"Class {r['value']}", str(r["value"])) for r in rows]
-    value = choices[0][1] if len(choices) == 1 else None
+    # Pick one rather than leaving the rest of the form blank. A workspace
+    # that opens with Class, Subject, Language and Textbook all empty asks the
+    # annotator to guess five things before anything at all appears; the
+    # class with the most books is a better opening move than nothing, and it
+    # is one click to change.
+    value = choices[0][1] if choices else None
+    if len(choices) > 1:
+        best = max(rows, key=lambda r: r["n_books"])
+        value = str(best["value"])
     out = gr.update(choices=choices, value=value, interactive=True)
     if value:
         return (out,) + on_class(board, value)
@@ -139,14 +146,12 @@ def on_class(board: str, cls: str):
             n = int(r["n_languages"])
         except (KeyError, IndexError, TypeError, ValueError):
             n = 0
-        if n >= 2:
-            label = f"{r['value']}  ({n} languages)"
-        elif n == 1:
-            label = f"{r['value']}  (1 language only — nothing to compare)"
-        else:
-            label = f"{r['value']}  (no language recorded)"
+        # The board row already says how many languages there are; repeating
+        # it on every subject read as noise ("Mathematics (6 languages)") and
+        # confused people into thinking one textbook held six languages.
+        label = r["value"] if n >= 2 else f"{r['value']}  (cannot be paired)"
         choices.append((label, r["value"]))
-    value = choices[0][1] if len(choices) == 1 else None
+    value = choices[0][1] if choices else None
     out = gr.update(choices=choices, value=value, interactive=True)
     if value:
         return (out,) + on_subject(board, cls, value)
@@ -166,8 +171,10 @@ def _target_update(board: str, cls: str, subject: str, source_language: str):
         rest = corpus.CorpusRepo(con).languages(board, cls, subject,
                                                 exclude=source_language or "")
     if rest:
+        # Select one. Leaving it blank left the right-hand side empty and the
+        # workspace unopenable until the annotator noticed the dropdown.
         return gr.update(choices=[(l["value"], l["value"]) for l in rest],
-                         value=rest[0]["value"] if len(rest) == 1 else None,
+                         value=rest[0]["value"],
                          interactive=True,
                          label="Language")
     return gr.update(
@@ -191,15 +198,28 @@ def on_subject(board: str, cls: str, subject: str):
     src = gr.update(choices=choices, value=src_default, interactive=True,
                     label="Language")
     tgt = _target_update(board, cls, subject, src_default)
-    if src_default:
-        books = _books(board, cls, subject, src_default)
-        return (src, tgt,
-                gr.update(choices=books, value=books[0][1] if len(books) == 1 else None,
-                          interactive=True),
+
+    if not src_default:
+        off = gr.update(choices=[], value=None, interactive=False)
+        return (src, tgt, off, off)
+
+    src_books = _books(board, cls, subject, src_default)
+    src_pick = src_books[0][1] if src_books else None
+    src_books_up = gr.update(choices=src_books, value=src_pick, interactive=True)
+
+    # Fill the right-hand textbook too. Returning an empty, disabled dropdown
+    # here was the last gap: everything else was chosen, "Open these two books"
+    # still could not be pressed, and nothing said why.
+    tgt_lang = tgt.get("value") if isinstance(tgt, dict) else None
+    if not tgt_lang:
+        return (src, tgt, src_books_up,
                 gr.update(choices=[], value=None, interactive=False))
-    return (src, tgt,
-            gr.update(choices=[], value=None, interactive=False),
-            gr.update(choices=[], value=None, interactive=False))
+
+    tgt_books = _books(board, cls, subject, tgt_lang, exclude=src_pick or "")
+    return (src, tgt, src_books_up,
+            gr.update(choices=tgt_books,
+                      value=tgt_books[0][1] if tgt_books else None,
+                      interactive=bool(tgt_books)))
 
 
 def on_source_language(board: str, cls: str, subject: str, language: str,
@@ -221,7 +241,7 @@ def on_language(board: str, cls: str, subject: str, language: str, other_book: s
         return gr.update(choices=[], value=None, interactive=False)
     books = _books(board, cls, subject, language, exclude=other_book)
     return gr.update(choices=books,
-                     value=books[0][1] if len(books) == 1 else None,
+                     value=books[0][1] if books else None,
                      interactive=bool(books))
 
 
