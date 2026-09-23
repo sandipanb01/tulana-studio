@@ -1534,6 +1534,30 @@ def pairs_export(fmt: str, board: str = None, language: str = None,
 
 app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), name="static")
 
+# ── Setu: the annotation subsystem ─────────────────────────────────────────
+#
+# `annotation.api` is an HTTP surface over the same services that drive the
+# Gradio workspace — useful for scripting, and proof that the service layer is
+# not entangled with any one front end.
+#
+# The Gradio workspace itself is started by `launch_annotation.py`, not from
+# here: it owns the process, and this application is mounted underneath it.
+#
+# Mounted inside a try so that a failure to import it — a missing optional
+# dependency, say — leaves the rest of the studio working and says so, rather
+# than taking the whole application down at startup.
+
+SETU_READY = False
+SETU_ERROR = ""
+try:
+    from annotation.api import router as setu_router
+
+    app.include_router(setu_router)
+    SETU_READY = True
+except Exception as _setu_exc:                   # pragma: no cover - import-time
+    SETU_ERROR = f"{type(_setu_exc).__name__}: {_setu_exc}"
+    print(f"[studio] the annotation API could not be loaded: {SETU_ERROR}")
+
 
 @app.get("/", response_class=HTMLResponse)
 def index(request: Request):

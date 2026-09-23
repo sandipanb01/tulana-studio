@@ -10,6 +10,13 @@ text. The corpus is then exported in whichever format the next tool needs.
 Board-, class-, subject-, language- and script-agnostic. Adding a state board or
 a regional language is a row of data, never a code change.
 
+**[Setu](tulana/annotation/) is the annotation workspace**, and for most people
+it is the whole of Tulana Studio: the English edition on the left, the
+Indian-language edition on the right, both editable, everything saved as you
+type, and the printed page a click away when the text alone cannot settle a
+question. See *Setu* below. The rest of Tulana — page images, block selection,
+saved clippings — remains beside it at `/studio`.
+
 ---
 
 ## Before anything else
@@ -21,8 +28,13 @@ git lfs install && git lfs pull      # the PDFs are LFS objects — see below
 cd tulana
 python3 -m pip install -r requirements.txt
 python3 check_install.py             # says exactly what, if anything, is wrong
-python3 app.py                       # http://localhost:7862
+python3 launch_annotation.py         # Setu + a link to share
 ```
+
+`launch_annotation.py` is the usual entry point: it prepares the textbook text
+on first run, starts the annotation workspace, mounts the rest of Tulana Studio
+underneath it, and prints the links. `python3 app.py` still starts the original
+studio on its own if that is all you want.
 
 `check_install.py` is the first thing to run after any clone, pull or push. It
 reports missing modules, an interface that does not match its backend, PDFs that
@@ -72,6 +84,18 @@ tulana-studio/
 │
 └── tulana/                      the application
     ├── app.py  config.py  db.py  library.py  pdflib.py
+    ├── launch_annotation.py     start Setu and print a link to share
+    ├── annotation/              Setu — the bilingual annotation subsystem
+    │   ├── core/                services; imports no UI library
+    │   │   ├── store.py  schema.sql  ids.py  models.py
+    │   │   ├── corpus.py  align.py  workspace.py  annotate.py
+    │   │   └── search.py  exporters.py  sources.py
+    │   ├── ui/                  the Gradio Blocks workspace
+    │   │   ├── app.py  workspace.py  panels.py  session.py  render.py
+    │   │   └── static/annotation.css  static/annotation.js
+    │   ├── api.py               an HTTP surface over the same services
+    │   ├── docs/                manual, FAQ, developer guide
+    │   └── README.md
     ├── blocks.py                the parsed-layout corpus
     ├── pairs.py                 saved pairs and export
     ├── layout.py                layout annotation (API only)
@@ -90,6 +114,95 @@ The studio finds both folders itself — including `board_outputs/output/` neste
 a level deeper — and ignores the `__MACOSX/._*.json` resource forks a macOS zip
 leaves behind. `tulana/data` is optional; set `TULANA_DATA_DIR` if you keep the
 PDFs somewhere else.
+
+---
+
+## Setu — the annotation workspace
+
+```bash
+cd tulana
+python3 launch_annotation.py
+```
+
+That prints a `https://….gradio.live` link to share with annotators, a local
+link, and a third link to the rest of Tulana Studio under the same server. The
+first start prepares the textbook text — about a minute, once.
+
+```bash
+python3 launch_annotation.py --no-share      # this machine only
+python3 launch_annotation.py --port 7870
+python3 launch_annotation.py --prepare       # rebuild the text layer first
+```
+
+Setu shows one textbook twice — English on the left, the Indian-language edition
+on the right — as **editable text**. An annotator corrects whatever the parser
+misread on either side and says whether the two halves match. It is built for
+people who have never annotated before: plain words on every control, one
+obvious action per pair, nothing to configure before starting.
+
+### What it does
+
+**Opens two books together.** Board → class → subject → language → book, every
+list generated from what is actually in the database, so no combination that
+does not exist can be chosen.
+
+**Lays out the pairs for you.** Mathematics survives translation unchanged —
+`$2 \times 3 \times 7$` reads the same in Marathi as in English — so Setu uses
+shared formulas, then shared section numbers, as anchors, and keeps only the set
+of anchors that do not cross. Measured against the page-parallel Maharashtra
+editions, anchored pairs land within one page **99–100%** of the time, covering
+about a third of the book; the rest is filled in reading order and marked as the
+weaker guess it is. Every pairing arrives as a *suggestion*, never a decision.
+
+**Two panes that are actually readable.** Equal, fixed height, both scrolling,
+linked by default so a long passage stays together — with a one-click toggle to
+unlink them when the two sides are very different lengths. Text size and pane
+height are adjustable and remembered; Compact and Focus hide everything else.
+
+**Saves without being asked.** On leaving a box, on setting an answer, on moving
+to another pair, and every three seconds while typing. `synchronous=FULL`, so
+"saved" means on disk.
+
+**Never overwrites.** Every save carries the revision it was based on. A save
+that would land on top of somebody else's is refused, both versions are shown
+side by side, and the annotator chooses. Every version is kept for ever, and the
+parser's original extraction is stored separately and never modified.
+
+**Shows the printed page.** "Check the printed page" cuts the exact region the
+text came from out of the original PDF, using Tulana's existing crop renderer
+pointed at the segment's own box. It opens below the panes without disturbing
+anything being typed.
+
+**Exports eleven ways.** JSON Lines, JSON, CSV, TSV, XML, plain text, Moses,
+TMX, Excel, Parquet and a Hugging Face dataset — filtered by answer, chapter or
+completeness, or all of them at once as a zip. Formats that can only represent
+true pairs say so and report what they left out.
+
+### The six answers
+
+Exact · Needs correction · Missing or incomplete · Structural mismatch ·
+Unclear · Not applicable. Defined once in `annotation/core/models.py`; adding a
+seventh is one entry in one tuple.
+
+### Keyboard
+
+<kbd>1</kbd>–<kbd>6</kbd> set the answer · <kbd>n</kbd> next unchecked ·
+<kbd>Alt</kbd>+<kbd>←</kbd>/<kbd>→</kbd> or <kbd>j</kbd>/<kbd>k</kbd> move ·
+<kbd>Ctrl</kbd>+<kbd>S</kbd> save now · <kbd>Ctrl</kbd>+<kbd>±</kbd> text size ·
+<kbd>Ctrl</kbd>+<kbd>0</kbd> reset the view. <kbd>Ctrl</kbd>+<kbd>Z</kbd> is
+left to the browser, whose undo stack is finer than anything the tool could add.
+
+### Several annotators on one link
+
+Each gets their own session. One person's current pair, filters and unsaved text
+are invisible to everyone else — per-session state lives in a `gr.State` and
+there is no mutable module-level state in the interface, which a test enforces.
+Two people editing the same pair are both told and neither is overwritten.
+
+### Documentation
+
+**Help** inside the application: a 29-section annotator's manual, an FAQ, and a
+developer guide. They are plain Markdown in `tulana/annotation/docs/`.
 
 ---
 
@@ -250,7 +363,8 @@ python3 shelf.py add FILE --board WB --class 10 --lang Bengali
 ## Tests
 
 ```bash
-python3 check_install.py     22 — is this checkout complete and consistent
+python3 check_install.py     23 — is this checkout complete and consistent
+python3 test_annotation.py  123 — Setu: alignment, autosave, conflicts, exports, safety
 python3 test_pairs.py       113 — cross-page selection, cropping, autosave, every format
 python3 test_stress.py      138 — edge cases, malformed input, database safety
 python3 test_blocks.py      645 — every book in the layout corpus
@@ -258,7 +372,18 @@ python3 test_naming.py      265 — 32 boards × 23 languages × naming styles
 python3 windows_check.py      8 — cross-platform audit
 ```
 
-**1,191 checks**, run twice interleaved to prove they do not depend on order.
+**1,314 checks**, run twice interleaved to prove they do not depend on order.
+
+`test_annotation.py` gets its own database per test, so order never matters.
+Four of its checks were verified by deliberately breaking the thing they
+protect — removing the revision check, overwriting the parser's original text,
+writing to a legacy table, and creating the search index inside a caller's
+transaction — and confirming each one fails.
+
+Browser behaviour is not in that suite. Synchronised scrolling, the keyboard,
+zoom, session isolation and the conflict panel were verified with Playwright
+against a running server; re-check them by hand after a Gradio upgrade, because
+that is what breaks them.
 
 `test_stress.py` feeds in malformed JSON, zero-size pages, inverted boxes,
 non-numeric coordinates, null bytes and emoji; asks for pages beyond the end of
@@ -270,15 +395,18 @@ in future resolves end to end.
 
 ## The annotation database is protected
 
-`blocks.py`, `pairs.py` and `layout.py` create their own tables with
-`CREATE TABLE IF NOT EXISTS` and never write to `documents`, `projects`,
-`clips`, `pairs`, `labels`, `pair_labels`, `exports` or `audit`. No `ALTER`, no
-`DROP`.
+`blocks.py`, `pairs.py`, `layout.py` and everything under `annotation/` create
+their own tables with `CREATE TABLE IF NOT EXISTS` and never write to `documents`,
+`projects`, `clips`, `pairs`, `labels`, `pair_labels`, `exports` or `audit`. No
+`ALTER`, no `DROP`. Setu's tables all begin with `setu_`; `db.py` is not
+modified at all.
 
-This is proved two ways rather than asserted: the tests read each module's source
-for writes to those tables, and they seed a project and a pair, run everything,
-and hash all eight tables before and after. If a future change ever writes to one
-of them, the test fails.
+This is proved three ways rather than asserted. The tests parse each module's
+string literals looking for a write to a table not named `setu_*`; they grep the
+package for `DROP`, `TRUNCATE` and `ALTER ... DROP`; and they seed a document and
+an audit row, run every operation Setu has, and hash all eight tables before and
+after. Introducing such a write makes the suite fail — which was checked by
+introducing one.
 
 `shelf.py` is the deliberate exception — registering a document is its whole
 purpose — and it only inserts a row or updates the metadata columns of one it

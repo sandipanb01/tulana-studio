@@ -1,0 +1,191 @@
+/* Setu — styling for the Gradio annotation workspace.
+ *
+ * Passed to `demo.launch(css=...)`. In Gradio 6 the Blocks constructor ignores
+ * `css`; it moved to launch(). A version bump that lost this would leave the
+ * workspace functional but with collapsed editor panes, which is exactly the
+ * failure this file exists to prevent.
+ *
+ * Two rules govern everything here:
+ *
+ * 1. The two editor panes are the page. They get a fixed, generous height that
+ *    the annotator controls, they scroll internally, and nothing around them
+ *    is allowed to squeeze them. A Gradio Textbox left to itself either grows
+ *    without limit (pushing the controls off screen) or collapses to a few
+ *    lines (making a long passage unreadable). Both are fixed here.
+ *
+ * 2. Only status carries strong colour. An annotator looks at this for hours;
+ *    saturated panes are exhausting, and if everything is coloured then the
+ *    one thing that should catch the eye does not.
+ */
+
+:root {
+  --setu-text: 16px;          /* driven by the zoom buttons */
+  --setu-pane-h: 420px;       /* driven by the taller/shorter buttons */
+  --setu-teal: #0e7a72;
+  --setu-src: #2563eb;
+  --setu-tgt: #b45309;
+  --setu-indic: "Noto Sans", "Noto Sans Devanagari", "Noto Sans Bengali",
+                "Noto Sans Gurmukhi", "Noto Sans Gujarati", "Noto Sans Oriya",
+                "Noto Sans Tamil", "Noto Sans Telugu", "Noto Sans Kannada",
+                "Noto Sans Malayalam", "Noto Nastaliq Urdu", "Nirmala UI",
+                "Lohit Devanagari", Mangal, Shruti, Tunga, Latha, Gautami,
+                Kartika, Raavi, sans-serif;
+}
+
+.gradio-container { max-width: 100% !important; }
+
+/* ── the two editor panes ─────────────────────────────────────────────────
+ *
+ * height and max-height are both set, and both !important: Gradio writes an
+ * inline style on the textarea from its `lines`/`max_lines` props, and without
+ * both the pane either grows with its content or is clamped to something
+ * unusably short.
+ */
+
+#setu_src textarea,
+#setu_tgt textarea {
+  height: var(--setu-pane-h) !important;
+  max-height: var(--setu-pane-h) !important;
+  min-height: var(--setu-pane-h) !important;
+  overflow-y: auto !important;
+  resize: none !important;
+  font-family: var(--setu-indic) !important;
+  font-size: var(--setu-text) !important;
+  line-height: 1.65 !important;
+  padding: 14px 16px !important;
+  tab-size: 2;
+  white-space: pre-wrap;
+  word-break: break-word;
+  scroll-behavior: auto;       /* smooth scrolling fights synchronisation */
+}
+
+/* A 3px edge is enough to tell the two sides apart at a glance without
+   tinting the reading surface. */
+#setu_src textarea { border-left: 3px solid var(--setu-src) !important; }
+#setu_tgt textarea { border-left: 3px solid var(--setu-tgt) !important; }
+
+#setu_src textarea:focus,
+#setu_tgt textarea:focus {
+  outline: 2px solid var(--setu-teal) !important;
+  outline-offset: -2px;
+}
+
+/* Right-to-left targets. The class is applied from Python using the script
+   recorded for the book, never from a hard-coded language list. */
+.setu-rtl textarea {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* A side with no text at all: visibly empty rather than merely blank, so it
+   cannot be mistaken for text that failed to load. */
+.setu-empty textarea {
+  background-image: repeating-linear-gradient(45deg,
+    rgba(128, 128, 128, .05), rgba(128, 128, 128, .05) 8px,
+    transparent 8px, transparent 16px) !important;
+}
+
+/* ── the view toolbar ─────────────────────────────────────────────────── */
+
+#setu_viewbar { padding: 0 !important; }
+#setu_viewbar .setu-bar {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  padding: 6px 2px;
+}
+#setu_viewbar button {
+  font: inherit; font-size: 12px; padding: 4px 10px; border-radius: 6px;
+  border: 1px solid var(--border-color-primary, #d0d5dd);
+  background: var(--background-fill-primary, #fff);
+  color: var(--body-text-color, #111); cursor: pointer;
+}
+#setu_viewbar button:hover { border-color: var(--setu-teal); }
+#setu_viewbar button[data-on="1"] {
+  background: var(--setu-teal); border-color: var(--setu-teal); color: #fff;
+}
+#setu_viewbar .setu-sep { flex: 1; }
+#setu_viewbar .setu-hint { font-size: 11px; opacity: .65; }
+
+/* ── the save indicator ───────────────────────────────────────────────── */
+
+#setu_savestate { padding: 0 !important; }
+#setu_savestate .setu-save {
+  font-size: 13px; padding: 6px 10px; border-radius: 8px;
+  display: inline-flex; align-items: center; gap: 7px; font-weight: 600;
+}
+#setu_savestate .setu-save::before {
+  content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor;
+}
+.setu-save[data-state="saved"]   { color: #15803d; }
+.setu-save[data-state="saving"]  { color: #0e7a72; }
+.setu-save[data-state="dirty"]   { color: #b45309; }
+.setu-save[data-state="error"]   { color: #b91c1c; }
+.setu-save[data-state="conflict"]{ color: #7c3aed; }
+
+/* ── pair header and status ───────────────────────────────────────────── */
+
+#setu_pairhead { padding: 0 !important; }
+#setu_pairhead .setu-head {
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+  font-size: 13px; padding: 2px 0 6px;
+}
+#setu_pairhead .setu-seq { font-weight: 700; font-variant-numeric: tabular-nums; }
+#setu_pairhead .setu-loc { opacity: .75; }
+#setu_pairhead .setu-badge {
+  font-size: 11px; padding: 1px 8px; border-radius: 999px;
+  border: 1px solid var(--border-color-primary, #d0d5dd);
+}
+#setu_pairhead .setu-dot {
+  width: 10px; height: 10px; border-radius: 50%; display: inline-block;
+}
+
+#setu_status .wrap { gap: 4px !important; }
+#setu_status label { font-size: 13px !important; }
+
+/* Compact view: everything except the panes gives up room to them. */
+body.setu-compact #setu_pairhead .setu-head { padding: 0; font-size: 12px; }
+body.setu-compact .setu-secondary { display: none !important; }
+
+/* Focus mode: the navigation and the extras get out of the way entirely. */
+body.setu-focus #setu_sidebar,
+body.setu-focus .setu-secondary { display: none !important; }
+
+/* ── progress ─────────────────────────────────────────────────────────── */
+
+#setu_progress { padding: 0 !important; }
+#setu_progress .setu-prog { font-size: 12px; }
+#setu_progress .setu-track {
+  height: 6px; border-radius: 4px; margin-top: 4px; overflow: hidden;
+  background: var(--border-color-primary, #e1e5ec);
+}
+#setu_progress .setu-fill { height: 100%; background: var(--setu-teal); }
+#setu_progress table { font-size: 12px; width: 100%; }
+#setu_progress td { padding: 1px 4px; }
+
+/* ── the manual ───────────────────────────────────────────────────────── */
+
+.setu-doc { max-height: 70vh; overflow-y: auto; padding-right: 10px; }
+.setu-doc h1 { font-size: 1.5rem; }
+.setu-doc h2 { font-size: 1.15rem; margin-top: 1.5em; }
+.setu-doc table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+.setu-doc th, .setu-doc td {
+  border: 1px solid var(--border-color-primary, #d0d5dd);
+  padding: 4px 8px; text-align: left;
+}
+.setu-doc kbd {
+  border: 1px solid var(--border-color-primary, #d0d5dd); border-bottom-width: 2px;
+  border-radius: 4px; padding: 0 5px; font-size: .85em;
+}
+
+/* ── source verification ──────────────────────────────────────────────── */
+
+#setu_sourceimg img {
+  max-height: 60vh; object-fit: contain;
+  border: 1px solid var(--border-color-primary, #d0d5dd); border-radius: 6px;
+}
+
+/* ── narrow screens ───────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  :root { --setu-pane-h: 300px; }
+  #setu_sidebar { display: none; }
+}

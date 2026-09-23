@@ -35,18 +35,60 @@ REQUIRED = {
     "layout.py": "human layout annotation",
     "share_gradio.py": "the shareable link",
 }
+SETU_REQUIRED = {
+    "launch_annotation.py": "the annotation workspace entry point",
+    "annotation/__init__.py": "the annotation subsystem",
+    "annotation/api.py": "its HTTP endpoints",
+    "annotation/core/__init__.py": "the service layer",
+    "annotation/core/ids.py": "stable identifiers",
+    "annotation/core/models.py": "statuses, kinds, text normalisation",
+    "annotation/core/store.py": "connections, schema, migrations",
+    "annotation/core/schema.sql": "its tables — all additive",
+    "annotation/core/corpus.py": "the immutable source layer",
+    "annotation/core/align.py": "the alignment suggestion engine",
+    "annotation/core/workspace.py": "projects, navigation, sessions",
+    "annotation/core/annotate.py": "editing, autosave, version history",
+    "annotation/core/search.py": "search",
+    "annotation/core/exporters.py": "the export format registry",
+    "annotation/core/sources.py": "source verification via Tulana's cropping",
+    "annotation/ui/__init__.py": "the Gradio interface",
+    "annotation/ui/app.py": "layout and event wiring",
+    "annotation/ui/workspace.py": "the annotation callbacks",
+    "annotation/ui/panels.py": "saved work, download, manuals",
+    "annotation/ui/session.py": "per-session state",
+    "annotation/ui/render.py": "the HTML fragments",
+    "annotation/ui/static/annotation.css": "the workspace styles",
+    "annotation/ui/static/annotation.js": "scrolling, keyboard, zoom",
+    "annotation/docs/01_manual.md": "the annotator's manual",
+    "annotation/docs/02_faq.md": "the FAQ",
+    "annotation/docs/03_for_developers.md": "the developer guide",
+    "annotation/README.md": "the subsystem overview",
+}
 OPTIONAL = {
     "test_stress.py": "138 edge-case and database-safety checks",
     "test_blocks.py": "645 corpus-wide checks",
     "test_naming.py": "265 naming checks",
     "windows_check.py": "cross-platform audit",
     "sources.py": "archive unpacking",
+    "test_annotation.py": "123 checks for the annotation subsystem",
 }
 for name, what in REQUIRED.items():
     if (HERE / name).exists():
         ok(f"{name} present — {what}")
     else:
         bad(f"{name} is MISSING — {what}", f"copy {name} into {HERE}")
+# Setu is one unit: half of it deployed is worse than none of it, because the
+# interface loads and then fails on its first request.
+setu_missing = [n for n in SETU_REQUIRED if not (HERE / n).exists()]
+if not setu_missing:
+    ok(f"Setu complete — {len(SETU_REQUIRED)} files, the annotation subsystem")
+elif len(setu_missing) == len(SETU_REQUIRED):
+    notes.append("Setu is not installed (optional) — the bilingual annotation workspace")
+else:
+    for n in setu_missing:
+        bad(f"{n} is MISSING — {SETU_REQUIRED[n]}",
+            f"Setu is partly deployed; copy the whole setu/ folder into {HERE}")
+
 for name, what in OPTIONAL.items():
     if (HERE / name).exists():
         ok(f"{name} present — {what}")

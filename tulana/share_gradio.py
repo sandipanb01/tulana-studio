@@ -28,17 +28,28 @@ MOUNT = "/studio"
 PORT = config.free_port(int(os.environ.get("TULANA_PORT", "7862")))
 
 LANDING = """
-<div style="max-width:640px;margin:9vh auto;text-align:center;
+<div style="max-width:660px;margin:8vh auto;text-align:center;
             font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.6">
   <div style="font-size:44px;font-weight:700">तुलना <span style="color:#0e7a72">Studio</span></div>
-  <p style="color:#556;font-size:17px">Clip parallel passages from textbooks,
-     side by side, in any Indian language.</p>
-  <a href="./studio/" target="_blank" style="display:inline-block;margin-top:18px;
+  <p style="color:#556;font-size:17px">Build parallel corpora from Indian school
+     textbooks, side by side, in any Indian language.</p>
+
+  <a href="./studio/setu/" target="_blank" style="display:inline-block;margin-top:18px;
      background:#0e7a72;color:#fff;text-decoration:none;font-size:18px;font-weight:600;
-     padding:14px 34px;border-radius:10px">Open the clipping workspace →</a>
+     padding:14px 34px;border-radius:10px">Open Setu — the annotation workspace →</a>
+
+  <p style="color:#667;font-size:14px;margin-top:14px">
+     English on the left, the translation on the right, both editable.
+     Everything saves as you type.</p>
+
+  <p style="margin-top:30px">
+    <a href="./studio/" target="_blank" style="color:#0e7a72;font-size:14px">
+      Blocks, saved pairs and page images →</a>
+  </p>
+
   <p style="color:#889;font-size:13px;margin-top:26px">
-     Works on a phone or tablet as well as a laptop. Every pair you save is
-     written to the studio's database immediately.</p>
+     Works on a phone or tablet as well as a laptop. Every change is written to
+     the studio's database immediately.</p>
 </div>
 """
 
@@ -70,8 +81,8 @@ except ImportError:
 server_app.mount(MOUNT, studio_app)
 
 
-def at(base: str) -> str:
-    """Join a base URL to the mount point.
+def at(base: str, path: str = "") -> str:
+    """Join a base URL to the mount point, and optionally to a page under it.
 
     Gradio returns the share URL without a trailing slash and the local URL
     with one, depending on version. Concatenating blindly produced
@@ -79,18 +90,23 @@ def at(base: str) -> str:
     instruction."""
     if not base:
         return ""
-    return urljoin(base if base.endswith("/") else base + "/", MOUNT.lstrip("/") + "/")
+    root = urljoin(base if base.endswith("/") else base + "/", MOUNT.lstrip("/") + "/")
+    return urljoin(root, path.lstrip("/")) if path else root
 
 
-public_url = at(share_url)
-machine_url = at(local_url)
+public_url = at(share_url, "setu/")
+machine_url = at(local_url, "setu/")
+public_blocks = at(share_url)
 
 print(f"""
 {'=' * 70}
   Tulana Studio is live.
 
-  Public link (share this):
+  Public link (share this) — Setu, the annotation workspace:
       {public_url or '(tunnel unavailable — see note below)'}
+
+  Blocks, saved pairs and page images:
+      {public_blocks or '(tunnel unavailable)'}
 
   On this machine:
       {machine_url}
