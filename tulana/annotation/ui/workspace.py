@@ -94,10 +94,13 @@ def boards() -> list:
             n = int(b["n_languages"])
         except (KeyError, IndexError, TypeError, ValueError):
             n = 0
-        if n >= 2:
-            label = f"{b['name']} — {n} languages"
-        else:
-            label = f"{b['name']} — one language only, cannot be paired"
+        # Just the name. A count here totals every class the board publishes,
+        # so "Maharashtra State Board — 6 languages" was true of class 9 and
+        # class 10 together and of neither on its own — an ambiguity for the
+        # reader to resolve, about a number they never asked for. The two
+        # language dropdowns below state the truth for the exact selection.
+        # The one thing worth saying up front is when a board cannot be used.
+        label = b["name"] if n >= 2 else f"{b['name']} — only one language, cannot be paired"
         out.append((label, b["code"]))
     return out
 
@@ -249,9 +252,15 @@ def _books(board, cls, subject, language, exclude: str = "") -> list:
     with store.ro() as con:
         rows = corpus.CorpusRepo(con).books(board=board, cls=cls, subject=subject,
                                             language=language, exclude=exclude or "")
+    # The full title repeats the board, class, subject and language that were
+    # just chosen in the four dropdowns above — so it says nothing new, and it
+    # is long enough to be cut off mid-word by the width of the control. What
+    # actually distinguishes one entry from another here is the volume, so
+    # lead with that and keep the size as a hint of how much work it is.
     out = []
     for b in rows:
-        name = b["title"] or b["book"]
+        volume = (b["volume"] or "").strip()
+        name = volume or (b["title"] or b["book"])
         extra = f"{b['num_pages']} pages · {b['n_segments']:,} pieces of text"
         out.append((f"{name} — {extra}", b["book_key"]))
     return out
