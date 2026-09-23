@@ -136,7 +136,8 @@ def _annotate_tab(state: gr.State) -> dict:
                                  interactive=True, autoscroll=False)
             with gr.Row(elem_classes=["setu-secondary"]):
                 src_orig = gr.Button("Restore the original", size="sm")
-                src_check = gr.Button("Check the printed page", size="sm")
+                src_check = gr.Button("✂ Crop the printed page", size="sm",
+                                      elem_id="setu_src_crop")
         with gr.Column(scale=5):
             with gr.Row():
                 tgt = gr.Textbox(label="Target language", lines=18, max_lines=18,
@@ -144,7 +145,8 @@ def _annotate_tab(state: gr.State) -> dict:
                                  interactive=True, autoscroll=False)
             with gr.Row(elem_classes=["setu-secondary"]):
                 tgt_orig = gr.Button("Restore the original", size="sm")
-                tgt_check = gr.Button("Check the printed page", size="sm")
+                tgt_check = gr.Button("✂ Crop the printed page", size="sm",
+                                      elem_id="setu_tgt_crop")
 
     with gr.Row():
         status = gr.Radio(choices=ws.STATUS_CHOICES, value="pending",
@@ -187,9 +189,12 @@ def _annotate_tab(state: gr.State) -> dict:
                 interactive=False, wrap=True, row_count=(0, "dynamic"),
                 label="Click a row to open it")
 
-    with gr.Accordion("The printed page", open=False,
+    with gr.Accordion("✂ The printed page — crop of this exact text",
+                      open=False,
                       elem_classes=["setu-secondary"]) as source_acc:
-        source_msg = gr.Markdown("Use “Check the printed page” under either side.")
+        source_msg = gr.Markdown(
+            "Press “✂ Crop the printed page” under either side to see the "
+            "scan of exactly this piece of text, cut from the PDF.")
         source_img = gr.Image(label=None, show_label=False, elem_id="setu_sourceimg",
                               interactive=False, height=520)
 
