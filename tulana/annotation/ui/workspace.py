@@ -79,9 +79,34 @@ def _progress(pid: str) -> dict:
 # classes or languages; adding a textbook to the corpus makes it appear.
 
 def boards() -> list:
+    """Boards for the first dropdown, each saying how much it offers.
+
+    A board with one language cannot be annotated — there is nothing to read
+    beside the text. Saying so on the row is the difference between an
+    annotator choosing a different board and an annotator concluding the tool
+    is broken.
+    """
     with store.ro() as con:
-        return [(f"{b['name']}  ({b['n_books']} books)", b["code"])
-                for b in corpus.CorpusRepo(con).boards()]
+        rows = corpus.CorpusRepo(con).boards()
+    out = []
+    for b in rows:
+        try:
+            n = int(b["n_languages"])
+        except (KeyError, IndexError, TypeError, ValueError):
+            n = 0
+        if n >= 2:
+            label = f"{b['name']}  ({b['n_books']} books · {n} languages)"
+        else:
+            label = (f"{b['name']}  ({b['n_books']} books · one language only — "
+                     f"cannot be paired)")
+        out.append((label, b["code"]))
+    return out
+
+
+def first_board() -> str:
+    """The board the workspace opens on: the first pairable one."""
+    choices = boards()
+    return choices[0][1] if choices else None
 
 
 def on_board(board: str):
