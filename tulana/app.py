@@ -126,11 +126,25 @@ def interface_matches_backend() -> dict:
         report["missing"].append(f"static files unreadable: {e}")
         return report
 
-    # each entry: the backend feature, and the marker the interface must carry
+    # Each entry: a feature the interface is MEANT to offer, and the marker it
+    # must carry. Only things the interface is supposed to show belong here.
+    #
+    # Layout annotation and the library/diagnose view are deliberately absent
+    # from this interface — the layout section was dropped from the studio in
+    # the overhaul. The endpoints stay (`/api/layout/*` and
+    # `/api/library/diagnose` still answer, for scripts and for Setu), but
+    # there is no tab for them and there is not meant to be one. Asserting
+    # them here made a correct, fully-copied deployment report itself as
+    # half-finished on every start, which sent people looking for a problem
+    # that was not there.
     for feature, marker, where in (
-            ("layout annotation", 'data-page="Layout"', "static/index.html"),
-            ("layout annotation", "loadLayout", "static/app.js"),
-            ("missing-textbook diagnosis", "library/diagnose", "static/app.js")):
+            ("block selection",  'data-page="Blocks"',   "static/index.html"),
+            ("saved pairs",      'data-page="Pairs"',    "static/index.html"),
+            ("export",           'data-page="Export"',   "static/index.html"),
+            ("block selection",  "loadBlocks",           "static/app.js"),
+            ("saved pairs",      "loadPairs",            "static/app.js"),
+            ("export",           "loadExport",           "static/app.js"),
+            ("export formats",   "api/pairs/export",     "static/app.js")):
         blob = html if where.endswith("index.html") else js
         if marker not in blob:
             report["ok"] = False
