@@ -156,29 +156,7 @@ def _install_signpost(server_app, has_studio: bool) -> None:
     from starlette.routing import Mount
 
     mount_paths = {r.path for r in server_app.routes if isinstance(r, Mount)}
-
-    links = ['<li><a href="/">The annotation workspace</a></li>']
-    if has_studio:
-        links.append(f'<li><a href="{MOUNT}/">'
-                     f'Tulana Studio — blocks, saved pairs, page images</a></li>')
-
-    body = (
-        "<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'>"
-        "<meta name='viewport' content='width=device-width,initial-scale=1'>"
-        "<title>Not this address</title><style>"
-        "body{font:16px/1.6 system-ui,sans-serif;margin:0;padding:3rem 1.5rem;"
-        "background:#fbfaf7;color:#1c1b19}main{max-width:34rem;margin:0 auto}"
-        "h1{font-size:1.4rem;margin:0 0 .5rem}p{color:#55514b}"
-        "ul{padding-left:1.1rem}a{color:#0e7a72}code{background:#efece6;"
-        "padding:.1rem .3rem;border-radius:3px;font-size:.9em}"
-        "@media(prefers-color-scheme:dark){body{background:#17181a;color:#e8e6e3}"
-        "p{color:#a8a39c}code{background:#26282b}a{color:#4fd1c5}}"
-        "</style></head><body><main>"
-        "<h1>There is nothing at this address</h1>"
-        "<p>The server is running. This particular address is not one of its "
-        "pages — most often a link that lost a character, or one copied "
-        "without its trailing slash.</p><ul>" + "".join(links) + "</ul>"
-        "</main></body></html>")
+    body = _signpost_page(has_studio)
 
     @server_app.get("/{unmatched_path:path}", include_in_schema=False)
     def _signpost(unmatched_path: str):           # noqa: ANN202 - route handler
@@ -186,6 +164,72 @@ def _install_signpost(server_app, has_studio: bool) -> None:
         if path in mount_paths:
             return RedirectResponse(path + "/", status_code=307)
         return HTMLResponse(body, status_code=404)
+
+
+def _install_legacy_redirects(server_app) -> None:
+    """Send the addresses Setu used to occupy to the one it occupies now.
+
+    Must be called before the studio is mounted: Starlette tries routes in the
+    order they were registered, and a mount at ``/studio`` claims everything
+    beneath it.
+    """
+    from fastapi.responses import RedirectResponse
+
+    @server_app.get(f"{MOUNT}/setu", include_in_schema=False)
+    def _legacy_setu():                           # noqa: ANN202 - route handler
+        return RedirectResponse("/", status_code=307)
+
+    @server_app.get(MOUNT + "/setu/{rest:path}", include_in_schema=False)
+    def _legacy_setu_below(rest: str):            # noqa: ANN202 - route handler
+        return RedirectResponse("/", status_code=307)
+
+
+def _install_studio_fallback(studio_app) -> None:
+    """The same courtesy for addresses inside the mounted studio.
+
+    A request to ``/studio/anything-wrong`` is answered by the studio itself,
+    which never reaches the signpost on the outer server. Without this it
+    replies with bare ``{"detail":"Not Found"}``.
+
+    Addresses under ``api/`` are left alone. The interface reads the status
+    code and the JSON body of a failed call and shows its own message; handing
+    it a page of HTML instead would turn a clear "no such page" into a parse
+    error somewhere else entirely.
+    """
+    from fastapi.responses import HTMLResponse, JSONResponse
+
+    body = _signpost_page(True)
+
+    @studio_app.get("/{unmatched_path:path}", include_in_schema=False)
+    def _studio_signpost(unmatched_path: str):    # noqa: ANN202 - route handler
+        if unmatched_path.startswith("api/"):
+            return JSONResponse({"detail": "Not Found"}, status_code=404)
+        return HTMLResponse(body, status_code=404)
+
+
+def _signpost_page(has_studio: bool) -> str:
+    """The page shown for an address that is not one of ours."""
+    links = ['<li><a href="/">The annotation workspace</a></li>']
+    if has_studio:
+        links.append(f'<li><a href="{MOUNT}/">'
+                     f'Tulana Studio — blocks, saved pairs, page images</a></li>')
+
+    return (
+        "<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'>"
+        "<meta name='viewport' content='width=device-width,initial-scale=1'>"
+        "<title>Not this address</title><style>"
+        "body{font:16px/1.6 system-ui,sans-serif;margin:0;padding:3rem 1.5rem;"
+        "background:#fbfaf7;color:#1c1b19}main{max-width:34rem;margin:0 auto}"
+        "h1{font-size:1.4rem;margin:0 0 .5rem}p{color:#55514b}"
+        "ul{padding-left:1.1rem}a{color:#0e7a72}"
+        "@media(prefers-color-scheme:dark){body{background:#17181a;color:#e8e6e3}"
+        "p{color:#a8a39c}a{color:#4fd1c5}}"
+        "</style></head><body><main>"
+        "<h1>There is nothing at this address</h1>"
+        "<p>The server is running. This particular address is not one of its "
+        "pages — most often a link that lost a character, or one copied "
+        "without its trailing slash.</p><ul>" + "".join(links) + "</ul>"
+        "</main></body></html>")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -255,7 +299,25 @@ def main(argv: list[str] | None = None) -> int:
     try:
         from app import app as studio_app, initialise
         initialise()
+
+        # Where Setu used to live. Registered BEFORE the mount below, because
+        # Starlette matches routes in the order they were added and the mount
+        # would otherwise swallow the whole of `/studio/...` first.
+        #
+        # An earlier build served the workspace from FastAPI at
+        # `/studio/setu/`, and the landing page of the day pointed a large
+        # button at it. Those addresses are in people's notes, in browser
+        # history and in messages already sent to annotators. They must lead
+        # somewhere, and the somewhere is the root, which is where the
+        # workspace is now.
+        _install_legacy_redirects(server_app)
+
         server_app.mount(MOUNT, studio_app)
+
+        # Anything else under `/studio/` that does not exist answers inside
+        # the mounted application, before the signpost at the end of this
+        # function is ever consulted. Give that application its own.
+        _install_studio_fallback(studio_app)
 
         # Note for anyone tempted to also mount the studio's assets at the
         # server root, so that a page resolving "static/app.js" against "/"
