@@ -1,131 +1,48 @@
 #!/usr/bin/env python3
-"""Publish Tulana Studio on a public link.
+"""Publish Setu and the rest of Tulana Studio on a public link.
 
     python3 share_gradio.py
 
-Prints an https://….gradio.live address serving the studio itself. The link is
-a tunnel, not a copy: everything is still stored in this machine's `state/`
-folder, so restarting — and getting a new link — never loses a clipping.
+Prints an ``https://….gradio.live`` address. The link is a tunnel, not a copy:
+everything is still stored in this machine's ``state/`` folder, so restarting —
+and getting a new link — never loses an annotation.
+
+WHY THIS FILE IS FOUR LINES LONG
+--------------------------------
+It used to be a launcher in its own right: it built a small landing page, put
+the studio under ``/studio``, and pointed a button at ``/studio/setu/``, which
+is where the annotation workspace lived when it was served by FastAPI.
+
+The workspace is now a Gradio application in its own right, built by
+``annotation.ui.app.build()`` and served at the root of the server, with the
+older studio mounted beneath it at ``/studio``. This file was not updated when
+that changed, so it went on serving a landing page whose main button pointed at
+``/studio/setu/`` — an address that no longer exists. Anyone who started the
+system with this file got a page that looked right, a button that led to
+
+    {"detail":"Not Found"}
+
+and no annotation workspace anywhere, because this file never built one.
+
+Two launchers that must agree about where things live will eventually disagree,
+and the one people run is not always the one that was kept current. So this is
+no longer a launcher. ``launch_annotation.py`` is the single entry point, and
+this delegates to it — including every option it takes:
+
+    python3 share_gradio.py --no-share
+    python3 share_gradio.py --port 7900
+    python3 share_gradio.py --prepare
+
+``README.md`` and ``docs/05_admin.md`` still name this file, and so do people's
+notes, so the name keeps working.
 """
 import os
 import sys
-import time
-import webbrowser
-from urllib.parse import urljoin
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-import config  # noqa: E402
-
-try:
-    import gradio as gr
-except ImportError:
-    sys.exit("Gradio is not installed. Run:  pip install gradio")
-
-from app import app as studio_app  # noqa: E402
-
-MOUNT = "/studio"
-PORT = config.free_port(int(os.environ.get("TULANA_PORT", "7862")))
-
-LANDING = """
-<div style="max-width:660px;margin:8vh auto;text-align:center;
-            font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.6">
-  <div style="font-size:44px;font-weight:700">तुलना <span style="color:#0e7a72">Studio</span></div>
-  <p style="color:#556;font-size:17px">Build parallel corpora from Indian school
-     textbooks, side by side, in any Indian language.</p>
-
-  <a href="./studio/setu/" target="_blank" style="display:inline-block;margin-top:18px;
-     background:#0e7a72;color:#fff;text-decoration:none;font-size:18px;font-weight:600;
-     padding:14px 34px;border-radius:10px">Open Setu — the annotation workspace →</a>
-
-  <p style="color:#667;font-size:14px;margin-top:14px">
-     English on the left, the translation on the right, both editable.
-     Everything saves as you type.</p>
-
-  <p style="margin-top:30px">
-    <a href="./studio/" target="_blank" style="color:#0e7a72;font-size:14px">
-      Blocks, saved pairs and page images →</a>
-  </p>
-
-  <p style="color:#889;font-size:13px;margin-top:26px">
-     Works on a phone or tablet as well as a laptop. Every change is written to
-     the studio's database immediately.</p>
-</div>
-"""
-
-with gr.Blocks(title="Tulana Studio") as demo:
-    gr.HTML(LANDING)
-
-server_app, local_url, share_url = demo.launch(
-    server_name="0.0.0.0", server_port=PORT, share=True,
-    prevent_thread_lock=True, inbrowser=False)
-
-# A sub-application mounted onto a server that has already started never
-# receives startup events, so index explicitly — otherwise the studio comes up
-# with an empty textbook list and an interface waiting for data that never
-# arrives.
-# Index before mounting. This must not fail quietly: an empty dropdown with no
-# message is the hardest kind of problem to diagnose from a shared link.
-try:
-    from app import initialise
-    initialise()
-except ImportError:
-    # Older copies of app.py have no initialise(); scan directly so the studio
-    # is still usable rather than silently empty.
-    import db
-    import library
-    with db.tx() as _con:
-        _n = library.scan(_con, config.DATA_DIR, log=print)
-    print(f"[studio] {_n} textbook PDF(s) indexed from {config.DATA_DIR}")
-
-server_app.mount(MOUNT, studio_app)
+from launch_annotation import main  # noqa: E402
 
 
-def at(base: str, path: str = "") -> str:
-    """Join a base URL to the mount point, and optionally to a page under it.
-
-    Gradio returns the share URL without a trailing slash and the local URL
-    with one, depending on version. Concatenating blindly produced
-    `https://xxxx.gradio.livestudio/` — a dead link printed as the headline
-    instruction."""
-    if not base:
-        return ""
-    root = urljoin(base if base.endswith("/") else base + "/", MOUNT.lstrip("/") + "/")
-    return urljoin(root, path.lstrip("/")) if path else root
-
-
-public_url = at(share_url, "setu/")
-machine_url = at(local_url, "setu/")
-public_blocks = at(share_url)
-
-print(f"""
-{'=' * 70}
-  Tulana Studio is live.
-
-  Public link (share this) — Setu, the annotation workspace:
-      {public_url or '(tunnel unavailable — see note below)'}
-
-  Blocks, saved pairs and page images:
-      {public_blocks or '(tunnel unavailable)'}
-
-  On this machine:
-      {machine_url}
-
-  Textbooks: {config.DATA_DIR}
-  Your work: {config.STATE_DIR}
-{'=' * 70}
-""")
-if not share_url:
-    print("  The gradio.live tunnel could not be created — this machine may have\n"
-          "  no route to Gradio's tunnel service. The studio still works locally.\n")
-else:
-    try:
-        webbrowser.open(public_url)
-    except Exception:
-        pass
-
-try:
-    while True:
-        time.sleep(3600)
-except KeyboardInterrupt:
-    print("Shutting down.")
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))
