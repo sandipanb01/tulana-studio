@@ -23,7 +23,7 @@
   --setu-pane-h: 420px;       /* driven by the taller/shorter buttons */
   --setu-teal: #0e7a72;
   --setu-src: #2563eb;
-  --setu-tgt: #b45309;
+  --setu-tgt: #0f766e;   /* teal, paired with the blue source. No orange. */
   --setu-indic: "Noto Sans", "Noto Sans Devanagari", "Noto Sans Bengali",
                 "Noto Sans Gurmukhi", "Noto Sans Gujarati", "Noto Sans Oriya",
                 "Noto Sans Tamil", "Noto Sans Telugu", "Noto Sans Kannada",
@@ -117,7 +117,7 @@
 }
 .setu-save[data-state="saved"]   { color: #15803d; }
 .setu-save[data-state="saving"]  { color: #0e7a72; }
-.setu-save[data-state="dirty"]   { color: #b45309; }
+.setu-save[data-state="dirty"]   { color: #7c3aed; }
 .setu-save[data-state="error"]   { color: #b91c1c; }
 .setu-save[data-state="conflict"]{ color: #7c3aed; }
 
