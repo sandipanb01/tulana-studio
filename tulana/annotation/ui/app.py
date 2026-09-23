@@ -199,8 +199,11 @@ def _annotate_tab(state: gr.State) -> dict:
                                                src_book, tgt_book])
     subject.change(ws.on_subject, [board, klass, subject],
                    [src_lang, tgt_lang, src_book, tgt_book])
-    src_lang.change(ws.on_language, [board, klass, subject, src_lang, tgt_book],
-                    [src_book])
+    # The left language also re-filters the right-hand language list, so the
+    # language being read on one side is never offered on the other.
+    src_lang.change(ws.on_source_language,
+                    [board, klass, subject, src_lang, tgt_book],
+                    [src_book, tgt_lang])
     tgt_lang.change(ws.on_language, [board, klass, subject, tgt_lang, src_book],
                     [tgt_book])
 
