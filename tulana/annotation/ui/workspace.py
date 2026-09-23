@@ -102,12 +102,53 @@ def on_class(board: str, cls: str):
         return _clear_from_subject()
     with store.ro() as con:
         rows = corpus.CorpusRepo(con).subjects(board, cls)
-    choices = [(r["value"], r["value"]) for r in rows]
+    # Say on the label how many languages a subject holds. One language cannot
+    # be annotated against anything, and finding that out only after choosing
+    # it — from a right-hand list that offers the same single entry as the
+    # left — reads as a broken interface rather than a fact about the corpus.
+    choices = []
+    for r in rows:
+        # Works whether the row arrives as a dict or a sqlite3.Row; a silent
+        # zero here would mislabel every subject as having no language.
+        try:
+            n = int(r["n_languages"])
+        except (KeyError, IndexError, TypeError, ValueError):
+            n = 0
+        if n >= 2:
+            label = f"{r['value']}  ({n} languages)"
+        elif n == 1:
+            label = f"{r['value']}  (1 language only — nothing to compare)"
+        else:
+            label = f"{r['value']}  (no language recorded)"
+        choices.append((label, r["value"]))
     value = choices[0][1] if len(choices) == 1 else None
     out = gr.update(choices=choices, value=value, interactive=True)
     if value:
         return (out,) + on_subject(board, cls, value)
     return (out,) + _clear_from_langs()
+
+
+def _target_update(board: str, cls: str, subject: str, source_language: str):
+    """The right-hand language list: everything except what the left holds.
+
+    Annotating means reading one language beside another, so the language
+    already chosen on the left has no business in this list. When removing it
+    empties the list, the control says why on its own label instead of sitting
+    there empty — the corpus simply has nothing to compare against for this
+    board, class and subject.
+    """
+    with store.ro() as con:
+        rest = corpus.CorpusRepo(con).languages(board, cls, subject,
+                                                exclude=source_language or "")
+    if rest:
+        return gr.update(choices=[(l["value"], l["value"]) for l in rest],
+                         value=rest[0]["value"] if len(rest) == 1 else None,
+                         interactive=True,
+                         label="Language")
+    return gr.update(
+        choices=[], value=None, interactive=False,
+        label=("Language — this selection has only one language, "
+               "so there is nothing to compare it against"))
 
 
 def on_subject(board: str, cls: str, subject: str):
@@ -117,8 +158,14 @@ def on_subject(board: str, cls: str, subject: str):
         langs = corpus.CorpusRepo(con).languages(board, cls, subject)
     choices = [(f"{l['value']}", l["value"]) for l in langs]
     src_default = "English" if any(l["value"] == "English" for l in langs) else None
-    src = gr.update(choices=choices, value=src_default, interactive=True)
-    tgt = gr.update(choices=choices, value=None, interactive=True)
+    if src_default is None and len(langs) == 1:
+        # A corpus without an English edition here — West Bengal's single
+        # Bengali textbook, for instance. Select it rather than leaving the
+        # left side blank for no visible reason.
+        src_default = langs[0]["value"]
+    src = gr.update(choices=choices, value=src_default, interactive=True,
+                    label="Language")
+    tgt = _target_update(board, cls, subject, src_default)
     if src_default:
         books = _books(board, cls, subject, src_default)
         return (src, tgt,
@@ -128,6 +175,19 @@ def on_subject(board: str, cls: str, subject: str):
     return (src, tgt,
             gr.update(choices=[], value=None, interactive=False),
             gr.update(choices=[], value=None, interactive=False))
+
+
+def on_source_language(board: str, cls: str, subject: str, language: str,
+                       other_book: str):
+    """The left language changed: refresh its books AND the right-hand list.
+
+    Without the second half of this, choosing Marathi on the left left Marathi
+    still offered on the right.
+    """
+    books = on_language(board, cls, subject, language, other_book)
+    if not (board and cls and subject):
+        return books, gr.update(choices=[], value=None, interactive=False)
+    return books, _target_update(board, cls, subject, language)
 
 
 def on_language(board: str, cls: str, subject: str, language: str, other_book: str):
