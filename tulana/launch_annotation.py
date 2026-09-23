@@ -133,6 +133,61 @@ def at(base: str, path: str = "") -> str:
     return urljoin(root, path.lstrip("/")) if path else root
 
 
+def _install_signpost(server_app, has_studio: bool) -> None:
+    """Answer an unrecognised address with directions instead of raw JSON.
+
+    A wrong address on this server used to produce ``{"detail":"Not Found"}``
+    and nothing else — no indication of what the address should have been, or
+    that anything was running at all. An annotator who is sent a link with a
+    stray character, or who opens the studio link without its trailing slash,
+    sees a page that looks like the whole thing is broken.
+
+    Registered last, after Gradio's own routes and after the studio mount, so
+    it is reached only when nothing else matched; it cannot shadow a real page.
+
+    It must, however, take over one job that Starlette was doing. A mounted
+    application answers ``/studio/`` but not ``/studio``; Starlette normally
+    redirects the second to the first, and that redirect is itself a route
+    that this catch-all would otherwise swallow — turning a link that used to
+    work into a 404. So any address that names a mount exactly is redirected
+    to its slash form here, before the page below is considered.
+    """
+    from fastapi.responses import HTMLResponse, RedirectResponse
+    from starlette.routing import Mount
+
+    mount_paths = {r.path for r in server_app.routes if isinstance(r, Mount)}
+
+    links = ['<li><a href="/">The annotation workspace</a></li>']
+    if has_studio:
+        links.append(f'<li><a href="{MOUNT}/">'
+                     f'Tulana Studio — blocks, saved pairs, page images</a></li>')
+
+    body = (
+        "<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'>"
+        "<meta name='viewport' content='width=device-width,initial-scale=1'>"
+        "<title>Not this address</title><style>"
+        "body{font:16px/1.6 system-ui,sans-serif;margin:0;padding:3rem 1.5rem;"
+        "background:#fbfaf7;color:#1c1b19}main{max-width:34rem;margin:0 auto}"
+        "h1{font-size:1.4rem;margin:0 0 .5rem}p{color:#55514b}"
+        "ul{padding-left:1.1rem}a{color:#0e7a72}code{background:#efece6;"
+        "padding:.1rem .3rem;border-radius:3px;font-size:.9em}"
+        "@media(prefers-color-scheme:dark){body{background:#17181a;color:#e8e6e3}"
+        "p{color:#a8a39c}code{background:#26282b}a{color:#4fd1c5}}"
+        "</style></head><body><main>"
+        "<h1>There is nothing at this address</h1>"
+        "<p>The server is running. This particular address is not one of its "
+        "pages — most often a link that lost a character, or one copied "
+        "without its trailing slash.</p><ul>" + "".join(links) + "</ul>"
+        "</main></body></html>")
+
+    @server_app.get("/{unmatched_path:path}", include_in_schema=False)
+    def _signpost(unmatched_path: str):           # noqa: ANN202 - route handler
+        path = "/" + unmatched_path.strip("/")
+        if path in mount_paths:
+            return RedirectResponse(path + "/", status_code=307)
+        return HTMLResponse(body, status_code=404)
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Start the Setu annotation workspace.")
     ap.add_argument("--port", type=int, default=int(os.environ.get("TULANA_PORT", "7862")),
@@ -201,10 +256,22 @@ def main(argv: list[str] | None = None) -> int:
         from app import app as studio_app, initialise
         initialise()
         server_app.mount(MOUNT, studio_app)
+
+        # Note for anyone tempted to also mount the studio's assets at the
+        # server root, so that a page resolving "static/app.js" against "/"
+        # finds them: Gradio already owns `/static/{path:path}` for its own
+        # files. A mount there is shadowed by that route, never reached, and
+        # the request still ends in `{"detail":"Not Found"}` — it only looks
+        # like a fix. The trailing-slash redirect below, together with the
+        # <base> tag `app.index` emits, is what actually keeps asset URLs
+        # pointing inside `/studio/`.
+
         studio_url = at(share_url or local_url, MOUNT.lstrip("/") + "/")
     except Exception as exc:
         logging.getLogger("setu").warning(
             "the rest of Tulana Studio could not be mounted: %s", exc)
+
+    _install_signpost(server_app, bool(studio_url))
 
     public = at(share_url)
     local = at(local_url)
