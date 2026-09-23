@@ -57,11 +57,30 @@ class CorpusRepo(Repository):
 
     # -- cascade ----------------------------------------------------------
     def boards(self) -> list[dict]:
+        """Boards, the ones that can actually be annotated first.
+
+        Ordering this list alphabetically put Andhra Pradesh at the top, and
+        Andhra Pradesh holds a single language — its books are bilingual in one
+        file, so there is no second edition to read beside the first. Every
+        annotator therefore opened the workspace on a selection that could not
+        be annotated: no target language, no books, nothing to scroll, no
+        printed page to check. The interface looked broken and was not.
+
+        So: boards that offer two or more languages come first, the richest
+        first, and the count travels with the row so the list can say which is
+        which.
+        """
         return self.all(
             "SELECT board AS code, COALESCE(NULLIF(board_name,''), board) AS name,"
-            "       COUNT(*) AS n_books"
+            "       COUNT(*) AS n_books,"
+            "       COUNT(DISTINCT CASE WHEN language <> '' THEN language END)"
+            "           AS n_languages"
             "  FROM setu_book WHERE board <> ''"
-            " GROUP BY board, board_name ORDER BY name")
+            " GROUP BY board, board_name"
+            " ORDER BY (COUNT(DISTINCT CASE WHEN language <> '' THEN language END)"
+            "           >= 2) DESC,"
+            "          COUNT(DISTINCT CASE WHEN language <> '' THEN language END) DESC,"
+            "          name")
 
     def classes(self, board: str) -> list[dict]:
         return self.all(
