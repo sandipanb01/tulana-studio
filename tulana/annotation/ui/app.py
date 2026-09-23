@@ -70,6 +70,17 @@ def build() -> gr.Blocks:
         primary_hue=gr.themes.colors.teal,
         secondary_hue=gr.themes.colors.slate,
         neutral_hue=gr.themes.colors.slate,
+        # Soft ships Montserrat, a geometric display face meant for posters.
+        # It carries no Devanagari, Gujarati, Kannada, Tamil or Malayalam
+        # glyphs, so every Indian-language pane fell back to whatever the
+        # browser chose — different on each machine, and heavier than the
+        # English beside it. The system stack renders both sides with the
+        # fonts the operating system already ships for those scripts, which
+        # is what an annotator reading Marathi all day needs.
+        font=("system-ui", "-apple-system", "Segoe UI", "Roboto",
+              "Noto Sans", "Arial", "sans-serif"),
+        font_mono=("ui-monospace", "SFMono-Regular", "Consolas",
+                   "Liberation Mono", "monospace"),
     )
 
     with gr.Blocks(title="Setu — Tulana Studio", fill_width=True,
