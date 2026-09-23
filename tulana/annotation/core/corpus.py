@@ -70,19 +70,45 @@ class CorpusRepo(Repository):
             " GROUP BY class ORDER BY class", (board,))
 
     def subjects(self, board: str, cls: Any) -> list[dict]:
+        """Subjects for a board and class, with how many languages each has.
+
+        The language count is carried here because it decides whether the
+        selection can be annotated at all: annotating means reading one
+        language beside another, so a subject holding a single language is a
+        dead end. Knowing that before the languages are chosen lets the
+        interface say so rather than presenting a list of one.
+        """
         return self.all(
             "SELECT COALESCE(NULLIF(subject,''),'Mathematics') AS value,"
-            "       COUNT(*) AS n_books FROM setu_book"
+            "       COUNT(*) AS n_books,"
+            "       COUNT(DISTINCT CASE WHEN language <> '' THEN language END)"
+            "           AS n_languages"
+            "  FROM setu_book"
             " WHERE board = ? AND class IS ? GROUP BY value ORDER BY value",
             (board, _int_or_none(cls)))
 
-    def languages(self, board: str, cls: Any, subject: str) -> list[dict]:
-        return self.all(
-            "SELECT language AS value, script, COUNT(*) AS n_books FROM setu_book"
-            " WHERE board = ? AND class IS ? AND COALESCE(NULLIF(subject,''),'Mathematics') = ?"
-            "   AND language <> ''"
-            " GROUP BY language, script ORDER BY (language='English') DESC, language",
-            (board, _int_or_none(cls), subject))
+    def languages(self, board: str, cls: Any, subject: str,
+                  exclude: str = "") -> list[dict]:
+        """Languages available for a selection, optionally minus one.
+
+        ``exclude`` is what makes the two sides of the workspace different.
+        Both lists used to be built from the same query, so whatever was
+        chosen on the left was still offered on the right — and a corpus with
+        one language offered that language on both sides, which is not a pair
+        of anything.
+        """
+        sql = ["SELECT language AS value, script, COUNT(*) AS n_books"
+               "  FROM setu_book"
+               " WHERE board = ? AND class IS ?"
+               "   AND COALESCE(NULLIF(subject,''),'Mathematics') = ?"
+               "   AND language <> ''"]
+        args: list[Any] = [board, _int_or_none(cls), subject]
+        if exclude:
+            sql.append(" AND language <> ?")
+            args.append(exclude)
+        sql.append(" GROUP BY language, script"
+                   " ORDER BY (language='English') DESC, language")
+        return self.all("".join(sql), args)
 
     def books(self, board: str = "", cls: Any = None, subject: str = "",
               language: str = "", exclude: str = "") -> list[dict]:
