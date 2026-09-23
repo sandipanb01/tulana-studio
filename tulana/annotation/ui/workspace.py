@@ -161,6 +161,19 @@ def on_class(board: str, cls: str):
     return (out,) + _clear_from_langs()
 
 
+def all_indic_languages() -> list[str]:
+    """Every Indian language the corpus reader can recognise, in order.
+
+    Taken from ``config.LANG_TOKENS`` rather than written out again here, so
+    that teaching the reader a new language — a new code, a new spelling —
+    also puts it in this list. It covers all twenty-two languages of the
+    Eighth Schedule. English is excluded: it is the source side, not a target.
+    """
+    import config
+    names = {v for v in config.LANG_TOKENS.values() if v != "English"}
+    return sorted(names)
+
+
 def _target_update(board: str, cls: str, subject: str, source_language: str):
     """The right-hand language list: everything except what the left holds.
 
@@ -173,17 +186,30 @@ def _target_update(board: str, cls: str, subject: str, source_language: str):
     with store.ro() as con:
         rest = corpus.CorpusRepo(con).languages(board, cls, subject,
                                                 exclude=source_language or "")
-    if rest:
-        # Select one. Leaving it blank left the right-hand side empty and the
-        # workspace unopenable until the annotator noticed the dropdown.
-        return gr.update(choices=[(l["value"], l["value"]) for l in rest],
-                         value=rest[0]["value"],
-                         interactive=True,
+    ready = [l["value"] for l in rest]
+
+    # Every other Indian language the system already understands, listed after
+    # the ones that have a textbook. Two reasons to show them rather than hide
+    # them: an annotator can see at a glance which languages this corpus does
+    # not yet cover, and when a textbook for one of them is added it simply
+    # stops saying "no textbook yet" — nothing here has to change.
+    #
+    # They are labelled, not silently offered, because a language with no book
+    # is a dead end, and an unmarked dead end is exactly what made Andhra
+    # Pradesh look like a broken interface.
+    waiting = [n for n in all_indic_languages()
+               if n not in ready and n != (source_language or "")]
+
+    choices = [(n, n) for n in ready]
+    choices += [(f"{n} — no textbook yet", n) for n in waiting]
+
+    if ready:
+        return gr.update(choices=choices, value=ready[0], interactive=True,
                          label="Language")
     return gr.update(
-        choices=[], value=None, interactive=False,
-        label=("Language — this selection has only one language, "
-               "so there is nothing to compare it against"))
+        choices=choices, value=None, interactive=True,
+        label=("Language — no second language for this board, class and "
+               "subject yet"))
 
 
 def on_subject(board: str, cls: str, subject: str):
@@ -243,9 +269,12 @@ def on_language(board: str, cls: str, subject: str, language: str, other_book: s
     if not (board and cls and subject and language):
         return gr.update(choices=[], value=None, interactive=False)
     books = _books(board, cls, subject, language, exclude=other_book)
-    return gr.update(choices=books,
-                     value=books[0][1] if books else None,
-                     interactive=bool(books))
+    if not books:
+        return gr.update(
+            choices=[], value=None, interactive=False,
+            label=f"Textbook — none in {language} for this selection yet")
+    return gr.update(choices=books, value=books[0][1], interactive=True,
+                     label="Textbook")
 
 
 def _books(board, cls, subject, language, exclude: str = "") -> list:
