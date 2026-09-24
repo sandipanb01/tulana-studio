@@ -242,36 +242,3 @@ CREATE TABLE IF NOT EXISTS setu_export (
   created_at REAL
 );
 CREATE INDEX IF NOT EXISTS ix_setu_export_pid ON setu_export(pid, created_at DESC);
-
--- ── margin notes ──────────────────────────────────────────────────────────
---
--- Modelled on NB (MIT Haystack, MIT-licensed): a note belongs to a specific
--- place in the text rather than to a discussion board somewhere else, replies
--- hang off the note, and a note can ask for an answer.
---
--- It earns its place here because about a quarter of the rows in a typical
--- pair have text on one side and nothing on the other — the two editions were
--- cut into blocks differently — and until now an annotator who noticed that
--- had nowhere to put the observation. A note anchored to the row turns a
--- silent misalignment into a piece of work somebody else can pick up.
---
--- Additive, prefixed setu_, and referenced by rid only. Nothing that existed
--- before this table is read or written differently because of it.
-CREATE TABLE IF NOT EXISTS setu_margin (
-  mid         TEXT PRIMARY KEY,
-  pid         TEXT NOT NULL,
-  rid         TEXT NOT NULL,
-  seq         INTEGER,
-  side        TEXT DEFAULT '',          -- 'src', 'tgt', or '' for the pair
-  parent      TEXT DEFAULT '',          -- a reply points at another mid
-  author      TEXT DEFAULT '',
-  body        TEXT NOT NULL,
-  needs_reply INTEGER DEFAULT 0,
-  resolved    INTEGER DEFAULT 0,
-  resolved_by TEXT DEFAULT '',
-  created_at  REAL
-);
-CREATE INDEX IF NOT EXISTS ix_setu_margin_row ON setu_margin(rid, created_at);
-CREATE INDEX IF NOT EXISTS ix_setu_margin_pid ON setu_margin(pid, created_at DESC);
-CREATE INDEX IF NOT EXISTS ix_setu_margin_open
-  ON setu_margin(pid, needs_reply, resolved);
