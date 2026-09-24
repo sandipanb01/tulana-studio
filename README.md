@@ -1,452 +1,399 @@
 # Tulana Studio
 
-**Parallel corpora from Indian school textbooks.** An English edition and its
-Indian-language counterpart, opened side by side, corrected by a human, and
-exported in eleven formats.
+A workspace for building **parallel corpora from Indian school textbooks**. The
+English edition and its translation open side by side with the blocks a document
+parser has already found on each page. You check that the two sides say the same
+thing, correct the text where it is wrong, and export the result in whichever
+format the next tool needs.
 
-`Python 3.10+` · `SQLite` · `FastAPI` · `Gradio 6` · `PyMuPDF` · no build step
+Board-, class-, subject-, language- and script-agnostic. Adding a state board or
+a regional language is a row of data, never a code change.
 
----
+The project ships **two workspaces over one database**:
 
-## Contents
+| | | for |
+|---|---|---|
+| **सेतु Setu** | `/work/` | reading and correcting the two texts side by side — the annotator's daily tool |
+| **the studio** | `/studio/` | the page image with its blocks overlaid, and cutting parallel crops from the PDFs |
 
-1. [What this is](#what-this-is)
-2. [Quick start](#quick-start)
-3. [Tech stack](#tech-stack)
-4. [Architecture](#architecture)
-5. [Data model](#data-model)
-6. [Setu — the annotation workspace](#setu--the-annotation-workspace)
-7. [Browsing two editions that do not line up](#browsing-two-editions-that-do-not-line-up)
-8. [Exporting](#exporting)
-9. [Adding a board, class, subject, language or script](#adding-a-board-class-subject-language-or-script)
-10. [Tests](#tests)
-11. [Configuration](#configuration)
-12. [Troubleshooting](#troubleshooting)
-13. [Known limitations](#known-limitations)
-14. [Licence](#licence)
+They are the same corpus, the same `state/` folder and the same export machinery
+seen from two angles. Setu is where the text is judged; the studio is where the
+page is looked at. Most annotators only ever need Setu.
 
----
-
-## What this is
-
-A school textbook published in English and in Marathi is, in principle, a
-sentence-aligned parallel corpus that somebody has already paid to produce. In
-practice it is two PDFs that were typeset by different teams, scanned at
-different times, and parsed by a layout model that got some of it wrong.
-
-Tulana Studio is the workbench that turns the second thing into the first. It
-does three jobs:
-
-| Part | What it is for |
-|---|---|
-| **Setu** — सेतु, *bridge* | Two editions as **editable text**, side by side. An annotator fixes what the parser misread on either side and says whether the two halves match. This is where nearly all the work happens. |
-| **Studio** (`/studio`) | The original block-and-crop workbench: page images with the parser's blocks overlaid, rectangle selection across pages, parallel images cut from the PDFs at 300 DPI. |
-| **API** (`/api`) | An HTTP surface over the same services, for pipelines that do not want a browser. |
-
-Board-, class-, subject-, language- and script-agnostic throughout. Adding a
-state board or a regional language is a row of data, never a code change.
-
-**What ships in this repository:** 121 canonical parsed books (152 layout files,
-31 of them duplicate parses resolved to an alias), **132,678 text segments**
-across **11,573 pages**, 9 boards and 10 languages. The registry knows 32 boards,
-23 languages and 12 scripts, so the rest is a matter of adding files.
+> **About the figures in this document.** Numbers describing the *shipped
+> registries and the studio* are the project's own long-standing figures.
+> Numbers describing *the ingested Setu corpus and the test suites* were
+> re-measured on 25 September 2026 against `state/studio.db` and by running each
+> suite; they are marked **(measured)** and the measuring conditions are stated.
+> Where the two disagree, both are shown rather than one quietly overwriting the
+> other.
 
 ---
 
-## Quick start
-
-### On Google Colab — the fastest route, nothing installed
-
-```python
-%cd /content
-!git clone https://github.com/sandipanb01/tulana-studio.git || git -C tulana-studio pull
-%cd tulana-studio/tulana
-!pip install -q -r requirements.txt
-!pip install -q "gradio>=6.0" PyMuPDF
-!python -u launch_annotation.py --host 0.0.0.0
-```
-
-This prints an `https://….gradio.live` link. **Share that link** — annotators
-need nothing installed at all. Leave the cell running; stopping it ends the link.
-
-> **Colab discards the machine.** Before you finish for the day, download the
-> database — the code is on GitHub, the work is not:
-> ```python
-> from google.colab import files
-> files.download('/content/tulana-studio/tulana/state/studio.db')
-> ```
-
-The textbook PDFs are ~600 MB of Git LFS objects and are needed **only** for
-*Check the printed page*. Everything else — the text, the alignment, editing,
-saving, exporting — works without them. To fetch them:
-
-```python
-!apt-get install -y git-lfs -qq && git lfs install && git -C .. lfs pull
-```
-
-### Locally — Linux, macOS
+## Before anything else
 
 ```bash
 git clone https://github.com/sandipanb01/tulana-studio.git
 cd tulana-studio
-git lfs install && git lfs pull          # the PDFs; see the LFS note below
+git lfs install && git lfs pull      # the PDFs are LFS objects — see below
 cd tulana
 python3 -m pip install -r requirements.txt
-python3 -m pip install "gradio>=6.0"     # Setu only; the rest runs without it
-python3 check_install.py                 # says exactly what, if anything, is wrong
-python3 launch_annotation.py             # Setu, plus a link to share
+python3 check_install.py             # says exactly what, if anything, is wrong
 ```
 
-### Locally — Windows
+Then start **one** of the two, or both at once:
 
-Identical files; the interpreter is `py` (or `python`) rather than `python3`,
-because Debian and Ubuntu ship no `python` command at all. There is no
-PowerShell script to run, no bash, no Node, no build step, no database server
-and no external binaries.
-
-```powershell
-py -m pip install -r requirements.txt
-py -m pip install "gradio>=6.0"
-py check_install.py
-py launch_annotation.py
+```bash
+python3 launch_annotation.py         # both: Setu at /work/, the studio at /studio/
+python3 app.py                       # the studio alone — http://localhost:7862
 ```
 
-### Entry points
+`check_install.py` is the first thing to run after any clone, pull or push. It
+reports missing modules, an interface that does not match its backend, PDFs that
+are really Git LFS pointers, and a layout corpus it cannot find — each with the
+command that fixes it. **24 checks (measured.)**
 
-| Command | What it starts |
-|---|---|
-| `python3 launch_annotation.py` | **The usual one.** Setu, with the rest of the studio mounted underneath at `/studio`, and a public link. |
-| `python3 launch_annotation.py --no-share` | The same, this machine only. |
-| `python3 launch_annotation.py --port 7870` | A specific port. The port walks forward if it is busy. |
-| `python3 launch_annotation.py --prepare` | Rebuild the text layer before starting. |
-| `python3 app.py` | The original studio alone, without Setu. |
-| `python3 share_gradio.py` | A thin wrapper that delegates to `launch_annotation.py`. |
+`git lfs install` has **no `-q` flag.** Writing `git lfs install -q` fails with
+`unknown shorthand flag: 'q' in -q`, and in an `&&` chain that failure silently
+skips the `git lfs pull` that follows — so every PDF stays a pointer, no page
+renders, and the crop tool reports nothing to cut. One wrong flag, five symptoms.
 
-The first start prepares the textbook text — about a minute, once.
+### The PDFs are Git LFS objects, and this bites
 
-> ### The PDFs are Git LFS objects, and this bites
->
-> A clone **without** `git lfs pull` leaves a 132-byte text pointer where each
-> PDF should be. Right name, right extension, so `find … | wc -l` still counts
-> 150 and everything *looks* present. Pages then render blank with no obvious
-> cause. To check:
->
-> ```bash
-> find board_pdfs -name '*.pdf' | while read f; do
->   head -c 5 "$f" | grep -q '%PDF-' || echo "POINTER: $f"
-> done
-> ```
->
-> GitHub's free LFS allowance is 1 GB of storage and 1 GB of bandwidth a month.
-> **Two full clones exhaust it**, after which every clone silently receives
-> pointers again. If more than a couple of people will clone this, the PDFs
-> belong on shared storage rather than in Git.
+`board_pdfs/` holds 150 PDFs, about 600 MB, stored through Git LFS. A clone
+**without** `git lfs pull` leaves a 132-byte text pointer where each PDF should
+be:
+
+```
+version https://git-lfs.github.com/spec/v1
+oid sha256:798d2f27d45d2ccda3694005c2ed60bc0b413b8b299f3a5d4ade7c5867094896
+size 6254823
+```
+
+Right name, right extension, so `find … | wc -l` still counts 150 and everything
+*looks* present. The pages then render blank with no obvious cause.
+
+```bash
+find board_pdfs -name '*.pdf' | while read f; do
+  head -c 5 "$f" | grep -q '%PDF-' || echo "POINTER: $f"
+done
+```
+
+GitHub's free LFS allowance is 1 GB of storage and 1 GB of bandwidth a month.
+**Two full clones exhaust it**, after which every clone silently receives
+pointers again. If more than a couple of people will clone this, the PDFs belong
+on shared storage rather than in Git.
+
+**What still works without the PDFs.** Setu's text view, all editing, every
+answer, the database and all eleven exports need only the parsed layout — which
+is ordinary JSON in Git, not LFS. Only the page image, the block overlay and the
+cropped images need the PDFs. That is why Setu opens on text and treats the page
+picture as the optional second view: the tool has to be useful on a checkout
+where the LFS budget ran out.
 
 ---
 
-## Tech stack
-
-Chosen so that a linguist on a laptop and a researcher on a cluster run the same
-code, and so that the only thing needing a backup is one file.
-
-| Layer | Choice | Version | Why this and not the obvious alternative |
-|---|---|---|---|
-| **Language** | Python | **3.10+** (tested on 3.11) | `match`, PEP 604 union types, `dataclasses`. Nothing newer is required, so a 2022 institutional image still runs it. |
-| **Storage** | SQLite | 3.35+ (3.45 tested) | One file. No server to provision, no credentials to distribute, no ops. `RETURNING` and `ON CONFLICT DO UPDATE` need 3.35. Runs in WAL with `synchronous=FULL`, so *saved* means *on disk*. |
-| **Full-text search** | SQLite **FTS5** | built in | Searching 132,678 segments in both scripts without a search server. Degrades to `LIKE` if the interpreter was built without FTS5, and says so rather than failing. |
-| **Annotation UI** | **Gradio** | **6.28** | Gives a public HTTPS link with one flag, which is the whole deployment story for annotators who cannot install anything. Gradio 6 specifically: `css`/`js`/`head` moved from the `Blocks` constructor to `launch()`, and passing them to the constructor fails *silently*. |
-| **HTTP / API** | **FastAPI** + Uvicorn | 0.110+ / 0.29+ | Typed request models, automatic OpenAPI. Gradio mounts onto it, so both surfaces share one process and one port. |
-| **Validation** | **Pydantic v2** | 2.6+ | The API boundary. Nothing inside `core/` depends on it. |
-| **PDF & rendering** | **PyMuPDF** (`fitz`) | 1.24+ | Page rendering and region cropping at 300 DPI. Pure wheel, no system Poppler, no Ghostscript. |
-| **Images** | Pillow | 10+ | JPEG encoding of the cropped parallel regions. |
-| **Excel export** | openpyxl | 3.1+ | *Optional.* Absent → the format is shown as unavailable **with the install command**, rather than failing when somebody clicks Download. |
-| **Parquet export** | pyarrow | 14+ | *Optional*, same treatment. |
-| **Browser tests** | Playwright + Chromium | — | *Optional.* Scrolling, keyboard, session isolation — the things a Gradio upgrade breaks and a Python test cannot see. |
-| **Front-end** | Hand-written CSS + vanilla JS | — | Two files, no bundler, no `node_modules`, no build step. The interface must still start in five years on a machine with no network. |
-
-**Deliberately absent:** no Node, no Docker requirement, no message queue, no
-Redis, no ORM, no Alembic, no cloud dependency. Every dependency above is a pure
-wheel or ships with Python.
-
-```
-fastapi>=0.110     uvicorn[standard]>=0.29     pydantic>=2.6
-PyMuPDF>=1.24      Pillow>=10.0                requests>=2.31
-openpyxl>=3.1      pyarrow>=14.0               gradio>=6.0
-```
-
----
-
-## Architecture
-
-Three layers, one rule: **`core/` imports no UI library.** That is what makes
-the logic testable without a browser and the interface replaceable without
-touching the logic. A test enforces it.
-
-```
-                 ┌──────────────────────────────────────────┐
-  annotators ───▶│  annotation/ui/     Gradio Blocks         │
-                 │    app.py      layout and event wiring    │
-                 │    workspace.py  the annotate tab         │
-                 │    browse.py     the two-document browser │
-                 │    panels.py     review, export, manuals  │
-                 │    session.py    per-session state only   │
-                 └────────────────────┬─────────────────────┘
-                                      │
-  pipelines  ───▶ annotation/api.py ──┤   (same services, over HTTP)
-                                      │
-                 ┌────────────────────▼─────────────────────┐
-                 │  annotation/core/   no UI import, ever    │
-                 │    store.py     connections, tx, errors   │
-                 │    schema.sql   14 tables, all setu_*     │
-                 │    corpus.py    books, segments, outline  │
-                 │    align.py     the pairing heuristic     │
-                 │    workspace.py projects and rows         │
-                 │    annotate.py  edits, statuses, history  │
-                 │    search.py    FTS5                      │
-                 │    exporters.py 11 formats                │
-                 └────────────────────┬─────────────────────┘
-                                      │
-                 ┌────────────────────▼─────────────────────┐
-                 │  SQLite — state/studio.db                 │
-                 │  board_outputs/ parsed layout (read-only) │
-                 │  board_pdfs/    original PDFs (read-only) │
-                 └───────────────────────────────────────────┘
-```
-
-### Repository layout
+## Repository structure
 
 ```text
 tulana-studio/
-├── board_pdfs/                  original textbook PDFs (Git LFS, ~600 MB)
-├── board_outputs/output/        parsed layout, one JSON per book
+├── board_pdfs/                  the original textbook PDFs (Git LFS)
+│   ├── Boardwise_PDF_class10_Maths/CLASS-9/MH_EN_9_1.pdf
+│   ├── CLASS-10/KER_ML_10_1.pdf
+│   └── dataset/input/eng/10/1001.pdf
+│
+├── board_outputs/output/        the parsed layout, one JSON per book
+│   ├── Boardwise_PDF_class10_Maths/CLASS-9/MH_EN_9_1.json
+│   └── CLASS-10/KER_ML_10_1.json
+│
 └── tulana/                      the application
-    ├── launch_annotation.py     ← start here
-    ├── app.py  config.py  db.py  blocks.py  pairs.py  layout.py
-    ├── library.py  pdflib.py  shelf.py  sources.py
+    ├── app.py                   the studio (FastAPI, port 7862)
+    ├── launch_annotation.py     both workspaces on one port, with a share link
+    ├── config.py  db.py  library.py  pdflib.py  sources.py
+    ├── blocks.py                the parsed-layout corpus
+    ├── pairs.py                 saved pairs and export (studio)
+    ├── layout.py                layout annotation (API only)
+    ├── shelf.py                 register a newly added PDF
     ├── check_install.py         is this checkout complete?
-    ├── annotation/              Setu
-    │   ├── core/                services; imports no UI library
-    │   ├── ui/                  the Gradio workspace
-    │   │   └── static/annotation.css  annotation.js
-    │   ├── api.py               HTTP surface
-    │   └── docs/                manual · FAQ · developer guide
-    ├── test_annotation.py  test_browse.py  test_pairs.py
-    ├── test_stress.py  test_blocks.py  test_naming.py
-    └── windows_check.py
+    ├── test_*.py  windows_check.py  selftest.py
+    ├── share_gradio.py
+    ├── docs/                    the studio's six manuals
+    ├── static/                  the studio's front end
+    │
+    └── annotation/              सेतु Setu
+        ├── api.py               47 routes under /api/setu (measured)
+        ├── core/
+        │   ├── corpus.py        books, chapters, segments
+        │   ├── store.py         schema, revisions, pagination
+        │   ├── models.py        the seven statuses
+        │   ├── align.py         pairing the two editions
+        │   ├── annotate.py      answers and history
+        │   ├── exporters.py     eleven formats + the bundle
+        │   ├── sources.py       page images and crops from the PDFs
+        │   └── search.py  ids.py  workspace.py
+        ├── ui/
+        │   ├── app.py           the Gradio fallback interface
+        │   ├── browse.py        the two-document model
+        │   ├── workspace.py  panels.py  render.py  session.py
+        │   └── static/work/     the workspace served at /work/
+        │       └── index.html  app.js  style.css
+        └── docs/                01_manual.md  02_faq.md  03_for_developers.md
 ```
 
 **The two data folders are joined by `relpath`.** Each layout JSON names the PDF
-it was parsed from, and that path matches `board_pdfs/` exactly. The studio finds
-both folders itself — including `board_outputs/output/` nested a level deeper —
-and ignores the `__MACOSX/._*.json` resource forks a macOS zip leaves behind.
+it was parsed from, and that path matches `board_pdfs/` exactly. 152 books of
+layout; 144 of them map onto a PDF that is present.
 
-### Concurrency
+Both workspaces find both folders themselves — including `board_outputs/output/`
+nested a level deeper — and ignore the `__MACOSX/._*.json` resource forks a macOS
+zip leaves behind. `tulana/data` is optional; set `TULANA_DATA_DIR` if you keep
+the PDFs somewhere else.
 
-Every annotator's browser tab has its own `gr.State`. **There is no mutable
-module-level state anywhere in the interface** — not a cached current row, not a
-"last opened project", not a convenience handle to a connection. Each of those
-becomes cross-session contamination the moment two people use the link at once,
-and the failure is silent: person A simply starts seeing person B's textbook. A
-test asserts the absence by parsing the module for module-level assignments.
+**A note on five similarly-named files.** `tulana/app.py` is the studio;
+`tulana/annotation/ui/app.py` is Setu's interface. `annotation/core/workspace.py`
+holds logic and imports no Gradio; `annotation/ui/workspace.py` holds the
+handlers and does. `tulana/static/` is the studio's front end;
+`tulana/annotation/ui/static/` is Setu's. Copying one over the other is the
+single easiest way to break this checkout, and `check_install.py` is written to
+notice when it has happened.
 
 ---
 
-## Data model
+## सेतु Setu — the parallel workspace
 
-Fourteen tables, every one prefixed `setu_`, in four groups by how often they
-change.
-
-```
-immutable source        setu_book · setu_book_alias · setu_segment
-                        written once when the corpus is prepared, read for ever
-
-workspace               setu_project · setu_row
-                        one project = two books; one row = one bilingual pair
-
-editable state          setu_text · setu_status_rev
-                        present only once a side has actually been edited —
-                        absent means "still exactly what the parser extracted"
-
-history and bookkeeping setu_rev · setu_event · setu_session · setu_lock
-                        setu_export · setu_meta · setu_seg_fts
+```bash
+python3 launch_annotation.py
 ```
 
-Three properties matter more than the schema:
+Open `http://localhost:7862/`. It redirects to `/work/`. Four tabs: **Annotate ·
+Saved work · Download · Guide**.
 
-**The parser's original extraction is never modified.** `setu_segment.source_text`
-is what the machine read. An annotator's correction goes to `setu_text`, a
-different table. That is the whole reason the two are separate. The interface can
-therefore offer *restore the original* with no round trip, and provenance is never
-lost because somebody fixed a typo.
+Setu is **text first**. Two editions of the same textbook open as two columns of
+readable, scrollable text — not two page images. That is the view an annotator
+spends the day in, it works when the PDFs are pointers, and it is the view in
+which a translation can actually be compared sentence by sentence.
 
-**Every save carries the revision it was based on.** A save that would land on
-top of somebody else's is refused; both versions are shown side by side and the
-annotator chooses. Every version is kept in `setu_rev` for ever and nothing is
-pruned automatically.
+### Annotate
 
-**Tulana's eight original tables are never written to.** `documents`, `projects`,
-`clips`, `pairs`, `labels`, `pair_labels`, `exports`, `audit` — no `INSERT`, no
-`UPDATE`, no `DELETE`, no `ALTER`, no `DROP`, from anywhere under `annotation/`.
-This is proved three ways rather than asserted: the tests parse each module's
-string literals for a write to a table not named `setu_*`; they grep the package
-for `DROP`, `TRUNCATE` and `ALTER … DROP`; and they seed a document and an audit
-row, run every operation Setu has, and hash all eight tables before and after.
-Introducing such a write makes the suite fail — which was checked by introducing
-one.
+Pick a board, a class, a subject, then the language and edition on each side, and
+press **Open side by side**. The left column is usually English; the right is the
+language being checked.
 
----
+**The two sides are independent.** This is the heart of the design, and it comes
+from measurement rather than taste. Translated text is longer, editions are
+typeset differently, and chapters do not begin on the same page:
 
-## Setu — the annotation workspace
-
-Built for people who have never annotated before: plain words on every control,
-one obvious action per pair, nothing to configure before starting.
-
-### Five tabs
-
-| Tab | What it is for |
-|---|---|
-| **Annotate** | One pair at a time. Both sides editable, six answers, a note box. |
-| **Browse both books** | The two editions as **two independent documents**. See the next section. |
-| **Saved work** | Everything judged so far, filterable, click a row to reopen it. |
-| **Download** | Eleven formats, filtered by answer, chapter or completeness. |
-| **Help** | The annotator's manual, the FAQ and the developer guide, in-app. |
-
-### Opening two books
-
-Board → class → subject → language → book, **every list generated from what is
-actually in the database**, so no combination that does not exist can be chosen.
-Boards that cannot be paired at all — only one language present — are ordered
-last and labelled as such rather than offered as a dead end. The right-hand
-language list excludes whatever is selected on the left, and carries every Indic
-language for future-proofing, marking the ones with no textbook yet.
-
-### How the pairs are laid out
-
-Mathematics survives translation unchanged — `$2 \times 3 \times 7$` reads the
-same in Marathi as in English — so Setu anchors on shared formulas, then on
-shared section numbers, keeping only the set of anchors that do not cross.
-Measured against the page-parallel Maharashtra editions, anchored pairs land
-within one page **99–100%** of the time and cover about a third of a book; the
-rest is filled in reading order and **marked as the weaker guess it is**.
-
-Every pairing arrives as a *suggestion*, never a decision.
-
-### The six answers
-
-`Exact` · `Needs correction` · `Missing or incomplete` · `Structural mismatch` ·
-`Unclear` · `Not applicable`
-
-Defined once in `annotation/core/models.py`. Adding a seventh is one entry in one
-tuple.
-
-### Saving
-
-On leaving a box, on setting an answer, on moving to another pair, and every
-three seconds while typing. `synchronous=FULL`, so *saved* means *on disk*.
-Measured: **12 annotators × 58 saves in 0.23 s** — 7 ms median, 67 ms at the 95th
-percentile.
-
-### Keyboard
-
-<kbd>1</kbd>–<kbd>6</kbd> set the answer · <kbd>n</kbd> next unchecked ·
-<kbd>Alt</kbd>+<kbd>←</kbd>/<kbd>→</kbd> or <kbd>j</kbd>/<kbd>k</kbd> move ·
-<kbd>Ctrl</kbd>+<kbd>S</kbd> save now · <kbd>Ctrl</kbd>+<kbd>±</kbd> text size ·
-<kbd>Ctrl</kbd>+<kbd>0</kbd> reset the view.
-
-<kbd>Ctrl</kbd>+<kbd>Z</kbd> is left to the browser, whose undo stack is finer
-than anything the tool could add.
-
----
-
-## Browsing two editions that do not line up
-
-**This is the part most people need and do not expect to need.**
-
-The two editions were printed separately. They were typeset separately, they
-number their chapters differently, and several carry chapters the other does not
-have at all. Measured across this corpus, chapter-start page offsets between the
-English edition and its counterpart:
-
-| Board · class · language | Chapter page offsets | Chapters, English vs other |
+| textbook | chapter-start drift, English → translation | chapters |
 |---|---|---|
-| Karnataka · 10 · Kannada | −3, 0, +3, +6, +7, +8 | 13 vs 16 |
-| Punjab · 10 · Punjabi | 0, +10, +23, +26 | 43 vs 48 |
-| Gujarat · 10 · Gujarati | −114, −112, −111, −107 | 27 vs 20 |
-| Kerala · 10 · Malayalam | — | 11 vs 8 |
-| NCERT · 11 · Hindi | **no chapter matched by page at all** | — |
-| Tamil Nadu · 10 · Tamil | **no chapter matched by page at all** | — |
+| Karnataka 10 Kannada | −3, 0, +3, +6, +7, +8 | 13 vs 16 |
+| Punjab 10 Punjabi | 0, +10, +23, +26 | 43 vs 48 |
+| Gujarat 10 Gujarati | −114, −112, −111, −107 | 27 vs 20 |
+| Kerala 10 Malayalam | — | 11 vs 8 |
+| NCERT 11 Hindi | no chapter starts on the same page at all | |
+| Tamil Nadu 10 Tamil | no chapter starts on the same page at all | |
 
-None of that is a fault in the books. It is what happens when two editions are
-produced by two teams. But it means an interface built on *row n on the left is
-row n on the right* is simply wrong for most of this corpus.
+*(measured across the ingested corpus)*
 
-**Browse both books** reads the two editions straight out of `setu_segment` as
-two separate documents:
+A single page counter cannot express any of that. So each side gets its own
+chapter dropdown, its own page box with **‹** and **›**, and its own scrollbar —
+and there are **common controls** for moving both together when they do happen to
+agree. A checkbox, *Turn both pages together*, locks them at whatever offset they
+currently have; a live indicator shows what that offset is. **⇄ These two pages
+match** records the offset for the project, so the next session opens where this
+one left off.
 
-- **Each side has its own chapter list**, in that edition's own language and
-  numbering — so a chapter that exists on only one side is visible as such.
-- **Each side has its own page box** and its own <kbd>◀ Previous page</kbd> /
-  <kbd>Next page ▶</kbd>. Moving one side does not move the other.
-- **Each side scrolls on its own.**
-- <kbd>◀◀ Both back</kbd> and <kbd>Both forward ▶▶</kbd> move the two together,
-  keeping whatever gap you have put between them.
-- <kbd>⇄ Link these two pages</kbd> records the offset once you find two pages
-  that answer each other — *English is 3 pages ahead* — and from then on either
-  side moves the other by exactly that much. **The link is saved to the
-  workspace**, so the next annotator starts where you left off instead of
-  re-deriving it. The live offset is on screen at all times.
+Because two editions rarely have the same chapter list, Setu never assumes they
+do. It offers both lists, separately, and lets the annotator decide which chapter
+on the left belongs against which chapter on the right.
 
-Each block carries its kind (one of 23: paragraph, worked example, table, section
-title …), its page, and how it has been judged. A block the aligner never managed
-to pair is marked **not paired** and shaded — about **29%** of a typical project,
-because the two editions break their paragraphs in different places. Those are
-not errors to report; they are precisely what you are hunting for when a passage
-seems to have gone missing.
+**Two views.** *Text* is the default. *Page + blocks* shows the scanned page with
+the parser's blocks overlaid, labelled and coloured by type — the studio's view,
+inside Setu, for when the text alone is not enough to judge a table or a formula.
+The switch is one button and the selection survives it.
 
-Measured on the Maharashtra class 10 English ⇄ Gujarati project, 2,304 rows:
+**Two modes.** *Read* is the default, and nothing typed can change the text.
+*Correct it* makes each block editable in place. Type the correction, click away,
+and it saves — the row is outlined, marked *saved*, and tagged `corrected`
+immediately. There is no save button to forget.
 
-```
-both sides have text      1,641   71.2%
-one side only               663   28.8%
-of paired rows, same page 1,514   92.3%
-median segment length        89 characters
-```
+The editor is never the record. What is displayed is a view of the row; the row
+itself carries a revision number, and a save that arrives against a stale
+revision is rejected rather than silently overwriting someone else's correction.
+This is a lesson borrowed at some cost from other annotation tools, where making
+the visible textarea the canonical input has lost people their work.
 
-**Prior art this was built from.** POTATO (`davidjurgens/potato`) for the
-position box, the `done/total` tally and the heading-derived outline; PAWLS
-(`allenai/pawls`) by omission — it has no intra-document navigation, which is
-survivable for a two-page paper and fatal for a 250-page textbook; CMULAB
-(`neulab/cmulab`) for per-span status rather than done/not-done; DocLayNet
-(`DS4SD/DocLayNet`) for layout classes and for the finding that it carries **no
-reading order**, which is exactly why the *page*, not the block index, is the
-unit that survives across two editions.
+**Two tools, in the *Page + blocks* view.** *Click a block* takes what the parser
+found and brings its text with it. *Drag to crop* takes what **you** decide: draw
+a rectangle over the passage, drag inside it to move, the corner to resize, **×**
+to remove. A figure with its caption may be one passage to a reader and three
+blocks to the parser — and a hand-drawn diagram or a margin note was never a
+block at all, so no amount of clicking would reach it.
+
+**Seven answers**, bound to the number keys:
+
+| key | answer | means |
+|---|---|---|
+| `1` | Exact | the two sides say the same thing; nothing needs changing |
+| `2` | Needs correction | they mostly match, but the text is wrong somewhere — a typo, a wrong number, a garbled formula |
+| `3` | Missing or incomplete | part of the text is missing on one side, or one side is empty |
+| `4` | Structural mismatch | both have text, but they are not the same piece of the book |
+| `5` | Unclear | you cannot tell; leave it for a reviewer |
+| `6` | Not applicable | a page header, a caption, a decoration |
+| | Not checked yet | the state every row starts in |
+
+Zoom per pane, a draggable split, a filter by block type, an optional *Dim the
+rest*, and a legend built from the corpus itself. `n` jumps to the next block
+nobody has answered; `e` swaps Read and Correct it; `c` swaps Click and Crop;
+`←` and `→` turn both pages, `Alt` with them turns only the left and `Shift`
+only the right; `Ctrl` held down hides the block labels; `?` lists every
+shortcut. Every shortcut is suppressed while you are typing, so a `1` inside a
+correction is a digit and not an answer.
+
+### Saved work
+
+Everything answered, filterable by status, refreshable, and showing what was
+actually stored rather than what the interface believes it sent. The point is
+that a correction is verifiable within seconds of making it.
+
+### Download
+
+Eleven formats from the same rows **(measured — the registry in
+`annotation/core/exporters.py`)**:
+
+**JSONL** · **JSON** · **CSV** · **TSV** · **XML** · **plain text** ·
+**TMX** (OmegaT, memoQ, Trados) · **Moses/fairseq** · **Excel `.xlsx`** ·
+**Parquet** · **Hugging Face dataset**
+
+Plus **every format at once as a zip**, with a dataset card describing what the
+corpus is, how a row was made, and what the text is and is not. Scope the export
+to everything, to what has been answered, or to a single status.
+
+Export filenames are built from a sanitised stem, never from raw project text,
+and the written path is asserted to resolve inside `state/exports` — a project
+named `../../../../tmp/evil` exports to a file in the exports folder with a safe
+name, and there is a test that says so.
+
+### Guide
+
+The manual and the FAQ, served from `annotation/docs/`, with a navigation pane.
+Written for someone who has never annotated anything: what the four tabs do, what
+each of the seven answers means, what to do when the two sides plainly do not
+correspond, and why the page numbers on screen are one higher than the ones in
+the database.
+
+### What is saved, and when
+
+Every answer, every correction and every page link goes to SQLite as it happens.
+There is no in-memory draft that a closed tab loses.
+
+**Corrections never destroy the original.** `setu_segment.source_text` is what
+the parser read, and the annotation path never writes to it. A correction is a
+row in `setu_text` with its own revision, and `setu_rev` keeps the history. *Put
+back what the parser read* restores the original because the original was never
+gone. Provenance survives the annotator, which is the only way a corpus stays
+auditable.
 
 ---
 
-## Exporting
+## The studio — four tabs
 
-Eleven formats from the same rows, filtered by answer, chapter or completeness —
-or all of them at once as a zip with a dataset card.
+```bash
+python3 app.py            # or /studio/ under launch_annotation.py
+```
 
-| Key | Format | Who wants it |
-|---|---|---|
-| `jsonl` | JSON Lines | training pipelines — the default |
-| `json` | JSON | anything that wants one document |
-| `csv` / `tsv` | delimited | spreadsheets, quick inspection |
-| `xml` | XML | institutional archives |
-| `txt` | plain text | eyeballing |
-| `moses` | Moses / fairseq | MT training, two aligned files |
-| `tmx` | Translation Memory eXchange | OmegaT, memoQ, Trados |
-| `xlsx` | Excel | reviewers who do not use a terminal |
-| `parquet` | Apache Parquet | columnar analytics |
-| `huggingface` | 🤗 `datasets` | `load_dataset()` straight off disk |
+### Blocks
 
-Formats that can only represent true pairs **say so and report what they left
-out** — including them would shift every later line out of alignment.
+Choose a board and class, then the target language, then the two editions. Both
+pages open side by side with their blocks overlaid, each labelled and coloured
+by type, numbered in reading order.
 
-### What the text is
+**Two tools, because they answer different questions.**
 
-`source_text` is what the **parser** read. It is not a human transcription.
+*Click blocks* takes what the parser found and brings its text with it.
+Shift-click takes a range in reading order. *Drag to crop* takes what **you**
+decide: draw a rectangle over the passage, drag inside it to move, the corner to
+resize, **×** to remove.
+
+Both work across pages, both are kept automatically, both are cut as parallel
+images, and both can be used in the same pair. The extracted text of the
+selected blocks appears underneath, both languages at once.
+
+**Your selection survives turning the page.** Translated text is longer, so a
+passage that fits one English page often runs onto the next in Marathi — a
+selection confined to a single page could not express that alignment at all. The
+panel tells you when blocks are selected on pages you are not looking at, so
+nothing is ever silently included.
+
+Zoom per pane, a draggable split, a filter by block type. 30 block types come
+from the corpus itself.
+
+**The parallel images are cut as you go.** Every rectangle you draw, and the
+region around the blocks you clicked, is rendered from the original PDFs at
+300 DPI. One image per page a side touches — a single image cannot span a
+page break, and one that silently showed only the first page would be worse than
+two honest ones.
+
+**Nothing is lost if you stop.** The selection *and its images* are written to
+the server about a second and a half after you stop clicking, and again as the
+tab closes. It says *Kept automatically* — and says so plainly if it could not.
+A draft already has its pictures; nothing waits for a manual save.
+
+### Saved pairs
+
+Everything you have saved, **with the cropped images shown side by side**. That
+is the point: reading Devanagari against English in two columns of plain text
+tells you little, while the two passages as they appear in the books tell you
+immediately whether the alignment is right.
+
+Filter by textbook, language or status, or search the text in either language.
+Rename, approve, exclude, delete. Where a PDF was missing when a pair was saved,
+**Try again** cuts the images once it arrives.
+
+**Open in Blocks** puts the selection back on the pages it came from, so a
+correction is an adjustment rather than starting again.
+
+A pair keeps its own copy of the text, not just a reference to the blocks.
+Re-running the parser renumbers every block; a pair you approved must not
+quietly change what it says because the corpus was reloaded underneath it. It
+also keeps each block's page and reading position, and uses those to re-resolve
+a pair whose ids no longer exist.
+
+### Export
+
+Twelve formats from the same rows:
+
+**JSONL** · **JSON** · **CSV** · **TSV** · **plain text** · **TMX** (OmegaT,
+memoQ, Trados) · **XLIFF** · **Markdown** · **Moses/fairseq** · **COCO** ·
+**Hugging Face datasets** · **Cropped images**
+
+The images export is one folder per pair with a `manifest.jsonl` giving each
+file its pair, side, language, page, the fraction of the page it covers and the
+text found there. Every other format names the same files in `source_images`
+and `target_images`, so a JSONL row and its pictures match up without guessing
+the convention.
+
+Plus the full bundle — every format at once, the images, and a dataset card
+describing what the corpus is, how a pair was made, and what the text is and is
+not.
+
+Drafts are never exported. Pairs marked excluded are left out unless you ask.
+
+### Guide
+
+Six manuals, served from `tulana/docs/`.
+
+**Why two export lists.** The studio exports *pairs of cropped regions* — so it
+has COCO and an images folder, which only mean something when there are pictures.
+Setu exports *rows of judged text* — so it has Parquet and `.xlsx`, which only
+mean something when there are columns. Neither list is a subset of the other, and
+merging them would produce formats that are empty half the time.
+
+---
+
+## What the text is
+
+`source_text` is what the **parser** read inside a block, joined in reading
+order. It is not a human transcription.
 
 Say this plainly to anyone you give the corpus to: **the alignment is a human
 judgement and the characters are machine-read.** Treat the pairing as reliable
@@ -454,13 +401,122 @@ and the text as needing review before the corpus is used as a reference. The
 dataset card says the same.
 
 A block over a diagram carries no text, and a page without a usable text layer
-yields none. **Empty means *not recovered*, not *empty on the page*.**
+yields none. Empty means *not recovered*, not *empty on the page*.
+
+Setu adds a second layer on top of that: where an annotator has corrected a row,
+the export carries **both** — the machine-read original and the human-corrected
+text, with the revision that produced it. A consumer can take whichever it
+trusts, and can tell them apart, which is not true of a corpus that overwrites.
+
+---
+
+## The data model
+
+Three conventions run through both workspaces. Getting any of them wrong
+produces errors that look like something else entirely, so they are stated here.
+
+**A box travels as a fraction of the page.** `fx0, fy0, fx1, fy1` are in 0–1.
+Pixels exist only at the two endpoints: the parser measured against one raster
+(commonly 1654 × 2339, A4 at 200 DPI), the browser draws the page at whatever
+width the pane happens to be, and a crop is cut at 300 DPI. None of the three
+needs to know about the others. On screen the overlay is positioned against the
+image's **measured** `clientWidth`, never an assumed one, which is why it stays
+correct at any zoom and in any window.
+
+**Pages are stored 0-indexed and displayed 1-indexed.** `setu_segment.page`
+matches PyMuPDF's `doc[page]`, so page one of the book is `0`. This was verified
+across the whole corpus — `max(page) == num_pages - 1` for all 121 books, none of
+them 1-indexed. People count from one, so the conversion happens in exactly one
+place per interface: `to_display()` / `from_display()` in `browse.py`, `shown()` /
+`stored()` in `app.js`. `test_browse.py` contains eight tests whose only purpose
+is this off-by-one.
+
+**Blocks are typed twice.** `kind` is the coarse type used for colour and
+filtering — 23 values in the ingested corpus. `label` is the richer one the
+parser emits — 29 values, including *Solved-example*, *Sub-section-title* and
+*Question*. The underlying model is DocLayNet-trained; its official eleven
+classes (`Caption, Footnote, Formula, List-item, Page-footer, Page-header,
+Picture, Section-header, Table, Text, Title`) are visible underneath. DocLayNet's
+`precedence` field is the redundant-annotator index, **not** reading order —
+DocLayNet provides no reading order, so reading order here is synthesised from
+geometry and should be treated as a strong hint rather than ground truth.
+
+**The ingested corpus, measured 25 September 2026:**
+
+| | |
+|---|---|
+| books | 121 |
+| segments | 132,678 |
+| pages | 11,573 (11,553 carry at least one segment) |
+| boards | 9 — AP, GJ, KA, KL, MH, NCERT, PB, TN, WB |
+| languages | 10 — Bengali, English, Gujarati, Hindi, Kannada, Malayalam, Marathi, Punjabi, Tamil, Telugu |
+| classes | 9, 10, 11, 12 |
+| scripts | 9 |
+| block kinds | 23 · block labels 29 |
+| Setu tables | 14, plus an FTS5 index over segment text |
+
+That is what has been *ingested*. What the code *supports* is the shipped
+registry below — 32 boards and 23 languages — and nothing in the code names any
+of them.
+
+**One measured alignment, for calibration.** Maharashtra class 10,
+English ⇄ Gujarati, 2,304 rows: 1,641 two-sided (71.2%), 663 one-sided (28.8%),
+and of the paired rows 1,514 on the same page (92.3%). Median segment, 89
+characters. The one-sided quarter is structural, not a bug — this tool's job is
+to *surface* those rows for a human, not to silently invent a partner for them.
+
+---
+
+## A shareable link
+
+```bash
+python3 launch_annotation.py        # Setu and the studio, with a public link
+python3 share_gradio.py             # the studio alone
+```
+
+Either prints an `https://….gradio.live` address. **That bare address is the one
+to share** — it opens the annotator's workspace directly, with no path to append
+and nothing to explain. `/studio/` and `/work/` are reachable beneath it for
+anyone who wants the other tool, and `/?stay=1` opens the Gradio interface
+instead of redirecting, which is the fallback when a browser or a corporate proxy
+will not serve the static workspace.
+
+Annotators need nothing installed. The link is a tunnel — the database and images
+stay on the host, so a restart never loses work, only the address changes. Gradio
+links last about a week; for a permanent address, put the studio behind nginx.
+
+Both `/studio` and `/studio/` work, assets are fingerprinted so a deployed change
+cannot be served stale, and the port walks forward if 7862 is busy.
+
+### Running it on Colab
+
+A Colab cell ships with the repository. Three things in it are not obvious, and
+each was a real failure before it was a line of code:
+
+- **Never `git pull`.** It fails on a dirty tree and on a detached HEAD, which is
+  exactly the state a stopped-and-restarted notebook is in.
+  `git fetch -q origin main && git checkout -q -f -B main origin/main` recovers
+  from a dirty tree, a deleted file, a detached HEAD and no clone at all — and it
+  is *not* `git clean`, so an untracked `state/` full of annotations survives.
+- **Never `pkill -f`.** The pattern matches its own command line and the
+  invoking shell's, so it kills the cell that ran it. Stale servers are stopped
+  by walking `/proc/*/cmdline`, building the ancestor set from `PPid:`, and never
+  signalling an ancestor.
+- **The database stays local and is copied to Drive.** Drive's FUSE layer does
+  not provide the file locking SQLite needs, and WAL mode on it can corrupt.
+  `sqlite3.Connection.backup()` runs against a live database, so a copy is taken
+  every couple of minutes without stopping anyone's work.
+
+The cell scans the corpus once and caches the result to Drive behind a content
+hash, so a re-run does not re-fetch the LFS objects. (`git lfs ls-files -s` sums
+to **1,497 MB** — more than GitHub's whole monthly free allowance. One pull
+spends the month.)
 
 ---
 
 ## Adding a board, class, subject, language or script
 
-Nothing in the code names one. 32 boards, 23 languages and 12 scripts ship as
+Nothing in the code names one. **32 boards, 23 languages and 12 scripts** ship as
 seed data; more are added with `POST /api/registry` or a row in `config.py`.
 
 Name a file so the studio can place it. All of these work:
@@ -485,119 +541,237 @@ never in Hindi; `ৰ` is Assamese where Bengali writes `র`. Validated against 
 book whose language the file name already gives: **124 correct, 28 abstained,
 0 wrong.** Anything undecidable is left unset rather than guessed.
 
+Registering a PDF by hand:
+
 ```bash
 python3 shelf.py doctor
 python3 shelf.py add FILE --board WB --class 10 --lang Bengali
 ```
+
+A newly added board needs no migration on the Setu side either: `setu_book` keys
+a book by a derived `book_key`, a project is a pair of book keys, and every
+dropdown is a `SELECT DISTINCT` over what is present. A board added tomorrow
+appears in the interface the moment its PDF is registered and its layout ingested.
+`test_stress.py` invents an Odisha Class 8 Odia book to prove exactly this
+resolves end to end.
 
 ---
 
 ## Tests
 
 ```bash
-cd tulana
-python3 check_install.py     #  24 — is this checkout complete and consistent
-python3 test_annotation.py   # 123 — alignment, autosave, conflicts, exports, safety
-python3 test_browse.py       #  40 — the two-document browser
-python3 test_blocks.py       # 645 — every book in the layout corpus
-python3 test_naming.py       # 265 — 32 boards × 23 languages × naming styles
-python3 windows_check.py     #   8 — cross-platform audit
-python3 test_pairs.py        #  95 — cross-page selection, cropping, every format  ┐ need
-python3 test_stress.py       # 138 — edge cases, malformed input, database safety  ┘ the PDFs
+python3 check_install.py     is this checkout complete and consistent
+python3 test_pairs.py        cross-page selection, cropping, autosave, every format
+python3 test_stress.py       edge cases, malformed input, database safety
+python3 test_blocks.py       every book in the layout corpus
+python3 test_naming.py       32 boards × 23 languages × naming styles
+python3 windows_check.py     cross-platform audit
+python3 -m unittest test_annotation test_browse test_workspace   # Setu
 ```
 
-**Around 1,340 checks.** Each suite gets a fresh database per test, so order
-never matters, and the set is run twice interleaved to prove it.
+| suite | project baseline | measured 25 Sep 2026 | |
+|---|---|---|---|
+| `check_install.py` | 22 | **24** | grew with Setu |
+| `test_pairs.py` | 113 | **95** | fewer: crop checks need real PDFs |
+| `test_stress.py` | 138 | **121** | fewer: seeded-pair check needs real PDFs |
+| `test_blocks.py` | 645 | **645** | identical |
+| `test_naming.py` | 265 | **265** | identical |
+| `windows_check.py` | 8 | **8** | |
+| `test_annotation.py` | — | **123** | Setu core and API |
+| `test_browse.py` | — | **46** | the two-document model |
+| `test_workspace.py` | — | **19** | page geometry, proved against a real PDF |
+| | **1,191** | | the baseline, on a checkout with its PDFs |
 
-> **Three of these need the real PDFs**, not LFS pointers. Without them
-> `check_install.py` reports the pointers (which is its job), `test_pairs.py`
-> fails one cropping check with *"the PDFs may not be on disk"*, and
-> `test_stress.py` stops at `fitz.open`. That is the clone, not the code —
-> `git lfs pull` and re-run.
+The baseline suites are run twice interleaved to prove they do not depend on
+order.
 
-Five checks were verified **by deliberately breaking the thing they protect** —
-removing the revision check, overwriting the parser's original text, writing to a
-legacy table, creating the search index inside a caller's transaction, and
-returning the two browse columns the wrong way round. Each one fails when the
-protection is removed; the last was checked by swapping `panes["src"]` and
-`panes["tgt"]` in `browse.py`, which turns three tests red and nothing else.
+**The two failures in the measured column are both the LFS pointers**, on the
+sandbox this was measured in: `check_install.py` reports *150 of the PDFs checked
+are not real PDFs*, so `test_pairs.py` cannot cut an image and `test_stress.py`
+cannot seed a pair against a document that was never registered. The check that
+matters for data safety — *every pre-existing table is byte-identical after a
+full run* — passes. On a checkout where `git lfs pull` has succeeded, both suites
+run their full set.
+
+`windows_check.py` reports **5 passed, 3 issues** today. All three are the
+auditor matching deliberate attack strings inside the security tests
+(`"../../../../tmp/evil"` is a payload, not a path the code uses) and the
+presence of `run.sh`. They are left visible rather than silenced: an auditor
+tuned until it is quiet has stopped being an auditor.
 
 `test_stress.py` feeds in malformed JSON, zero-size pages, inverted boxes,
-non-numeric coordinates, null bytes and emoji; asks for pages beyond the end of a
-book and negative pages; selects 5,000 blocks at once; and invents an Odisha
-Class 8 Odia book to prove a board added in future resolves end to end.
+non-numeric coordinates, null bytes and emoji; asks for pages beyond the end of
+a book and negative pages; selects 5000 blocks at once; and checks box placement
+at 72 and 150 dpi.
 
-`test_browse.py` is the same instinct aimed at the browser: page numbers of
-`10**9`, `-10**9`, `"1e400"`, `None`, `{}` and `"3; DROP TABLE setu_row"`;
-`gr.Number`'s float `3.0`, which is what caught a real bug (`int("3.0")` raises);
-a corrupt stored page-link; corpus text containing `<script>`; and a project
-renamed to `../../etc/passwd` to prove the `setu_meta` key is derived from the
-project id and never from anything typed.
+`test_workspace.py` builds a real three-page A4 PDF with marks at known
+fractions of the page and asserts that asking for a fraction cuts the region it
+names — all four quadrants exact, unchanged at 150% zoom, and the three pages
+hashing differently so a page-number slip cannot pass. `test_browse.py` keeps
+eight tests whose only job is the 0-indexed/1-indexed boundary, including one
+that feeds the page box a float, because `gr.Number` sends `3.0` even with
+`precision=0` and `int("3.0")` raises.
 
-**Browser behaviour is not in those suites.** Independent scrolling, the
-keyboard, zoom, session isolation and the conflict panel are verified with
-Playwright against a running server — the two columns measured at 1270 px of
-content in a 693 px box, scrolled independently. Re-check them by hand after a
-Gradio upgrade, because that is what breaks them.
+---
+
+## The annotation database is protected
+
+`blocks.py`, `pairs.py` and `layout.py` create their own tables with
+`CREATE TABLE IF NOT EXISTS` and never write to `documents`, `projects`,
+`clips`, `pairs`, `labels`, `pair_labels`, `exports` or `audit`. No `ALTER`, no
+`DROP`.
+
+This is proved two ways rather than asserted: the tests read each module's source
+for writes to those tables, and they seed a project and a pair, run everything,
+and hash all eight tables before and after. If a future change ever writes to one
+of them, the test fails.
+
+**Setu is held to the same rule and tested the same way.** Every table it owns is
+prefixed `setu_`; `test_browse.py` and a source scan in `test_annotation.py`
+assert that no destructive DDL exists anywhere in the `annotation` package. The
+two families of tables share a file and never share a row.
+
+`shelf.py` is the deliberate exception — registering a document is its whole
+purpose — and it only inserts a row or updates the metadata columns of one it
+matched by path, so an existing document keeps its `id` and no saved work can be
+orphaned.
+
+**Earlier work is not deleted.** PDF clipping and hand-drawn layout annotation
+were removed from the *interface*, not from the database. Everything they saved
+is untouched and still reachable through the API.
+
+**User text never becomes a filesystem path.** Export names are sanitised and the
+resolved path is asserted to stay inside `state/exports`. The page-link key is
+derived from the project id, never from anything typed. Page and crop requests
+take numbers, clamp them to the book, and resolve into the page cache or fail
+with a sentence — never with a traceback and never outside the cache directory.
+
+---
+
+## Windows, Linux, macOS
+
+Python 3.10 or newer. **No PowerShell, no bash, no Node, no build step, no
+database server, no external binaries.** `.zip` and `.7z` are both read in pure
+Python.
+
+The interpreter is `py` (or `python`) on Windows and `python3` on Linux and
+macOS — Debian and Ubuntu ship no `python` command at all. That naming is the
+only difference; the files are identical.
+
+`windows_check.py` audits what works on Linux and fails on Windows: hard-coded
+POSIX paths, text files opened without an explicit encoding (Windows defaults to
+cp1252, which cannot read Devanagari), shell invocation, filenames that are
+illegal on Windows, and any OS-specific separator reaching the database.
 
 ---
 
 ## Configuration
 
-| Variable | Meaning | Default |
+| variable | meaning | default |
 |---|---|---|
 | `TULANA_DATA_DIR` | where the PDFs live | discovered |
 | `TULANA_STATE_DIR` | database, page cache, exports | `./state` |
+| `TULANA_DB` | the database file | `state/studio.db` |
+| `TULANA_CROPS` | the cropped images | `state/crops` |
+| `TULANA_EXPORTS` | written exports | `state/exports` |
+| `TULANA_PAGES` | rendered page cache | `state/pages` |
+| `TULANA_HOST` | bind address | `0.0.0.0` |
 | `TULANA_PORT` | preferred port | `7862` |
 | `TULANA_VIEW_DPI` | on-screen page resolution | `110` |
 | `TULANA_CROP_DPI` | resolution the parallel images are cut at | `300` |
 
-**Back up `state/`.** That folder is the annotators' work — the database and the
-cropped images in `state/crops`. The PDFs and the layout can always be fetched
-again; the annotations cannot.
+Back up `state/`. That folder is the annotators' work — the database and the
+cropped images in `state/crops`; the PDFs and the layout can always be fetched
+again.
 
 Crops are named by content hash, so the same passage cropped twice costs one
-file. `POST /api/pairs/crops/prune` reports what no pair refers to any more; add
-`?apply=true` to delete it.
+file. `POST /api/pairs/crops/prune` reports what no pair refers to any more;
+add `?apply=true` to delete it.
 
 ---
 
 ## Troubleshooting
 
-| Symptom | Cause and fix |
-|---|---|
-| Everything blank, no pages render | The PDFs are LFS pointers. `git lfs install && git lfs pull` |
-| The Blocks tab is empty | The layout corpus was not found. `check_install.py` says where it looked. |
-| A textbook missing from the dropdown | Usually not the file name — **the subject must match too.** A Malayalam *Science* book beside an English *Mathematics* book will never pair. `GET /api/blocks/mapping` names every book as mapped, missing or worth a look. |
-| Blocks but no page image | The layout covers that page and the PDF does not — a truncated copy or a different edition. The text is still usable. |
-| A block has no text | Diagrams carry none, and a page without a text layer yields none. |
-| `{"detail":"Not Found"}` | You opened `/studio/setu/`. That address belonged to an older build. Open the printed link itself; `/studio/` is the block-and-crop workbench. |
-| `address already in use` | The studio takes the next free port and prints which one. |
-| One column will not scroll | Both columns scroll independently; if one looks stuck, that page is short enough to fit. Try **Show the whole chapter at once**. |
-| The interface looks unstyled | Gradio 6 moved `css`/`js`/`head` from the `Blocks` constructor to `launch()`, and the constructor ignores them *silently*. |
+**Everything is blank and no pages render.** The PDFs are probably LFS pointers.
+`git lfs install && git lfs pull` — and note there is no `-q` flag on
+`git lfs install`; using one breaks the `&&` chain and skips the pull.
+
+**The Blocks tab is empty.** The layout corpus was not found.
+`check_install.py` says where it looked.
+
+**A textbook is missing from the dropdown.** `GET /api/blocks/mapping` names
+every book as mapped, missing or worth a look. The commonest cause is not the
+file name: the **subject must match too** — a Malayalam *Science* book beside an
+English *Mathematics* book will never pair.
+
+**A page shows blocks but no image.** The layout covers that page and the PDF
+does not — a truncated copy, or a different edition. The blocks and text are
+still usable, and Setu's Text view is unaffected.
+
+**A block has no text.** Diagrams carry none, and a page without a text layer
+yields none. Select it anyway if it belongs to the passage; its position is
+recorded and it still appears in the cropped image.
+
+**A pair has no image.** The PDF was not on disk when it was saved — usually
+`git lfs pull` away. Press **Try again** on the pair once it is there.
+
+**A change does not appear after deploying.** Assets are fingerprinted, so this
+should not happen. If a whole tab is missing, `check_install.py` says whether the
+Python or the interface was the half that did not get copied.
+
+**`address already in use`.** The studio takes the next free port and prints
+which one.
+
+**The share link opens Gradio, not the workspace.** The redirect could not reach
+`/work/`. Open the link with `/work/` appended; if that 404s, the static folder
+did not get copied — `launch_annotation.py` prints a loud notice saying so. A
+folder literally named `"   work"` with leading spaces renders identically to
+`work` in GitHub's file list and is a different directory; the launcher tolerates
+it and tells you to rename it.
+
+**The left and right pages show different chapters.** They are supposed to be
+able to. Use the per-side chapter dropdowns, set the two pages so they correspond,
+and press **⇄ These two pages match** to remember the offset.
+
+**An edit did not save.** The row flashes green when it does. If it did not, the
+revision was stale — someone else edited the same row — so reload and apply the
+correction to the current text.
 
 ---
 
-## Known limitations
+## Where things stand
 
-Stated plainly, because a tool that hides these costs more time than it saves.
+Stated plainly, because a corpus tool that oversells itself costs more than it
+saves.
 
-1. **About 29% of rows are one-sided**, and this is structural, not a bug to fix.
-   The two editions cut their paragraphs in different places, so a paragraph
-   whole on one side is two blocks on the other. A strictly 1:1 row model cannot
-   represent that. **Browse both books** lets an annotator *find* these; it does
-   not re-pair them. Splitting and re-attaching rows is the next real piece of
-   work.
-2. **Some editions cannot be paired by page at all** — NCERT class 11 Hindi and
-   Tamil Nadu class 10 Tamil share no chapter starting page with their English
-   counterparts.
-3. **Andhra Pradesh ships bilingual single-file PDFs**, both languages in one
-   book, and cannot be paired by this model at all.
-4. **The text is machine-read.** See *What the text is*, above.
-5. **Gradio share links last about a week.** For a permanent address, put the
-   studio behind nginx. The database and images stay on the host, so a restart
-   loses no work — only the address changes.
-6. **GitHub's free LFS allowance is exhausted by two full clones.**
+**Solid.** The two-document model and its independent navigation; the 0-indexed
+page boundary, verified on all 121 books; in-place editing with the original
+preserved and a full revision history; the block overlay's geometry, proved
+against a PDF with marks at known fractions; eleven Setu exports and twelve
+studio exports; the protection of the eight pre-existing tables, proved two ways;
+recovery from a dirty tree, a detached HEAD or a stopped Colab run without losing
+`state/`.
+
+**Structural, not fixable by this tool.** About 29% of rows in the measured
+project are one-sided. NCERT class 11 Hindi and Tamil Nadu class 10 Tamil share
+no chapter start with their English editions at all. Andhra Pradesh's bilingual
+single-file PDFs put both languages in one document and cannot be paired by a
+two-book model. Reading order is synthesised, because the parser does not supply
+one.
+
+**Not yet built.** A navigation pane that genuinely beats doccano's — the current
+one is per-side chapter and page, which is better for *this* problem but is not a
+general outline tree. The manual and FAQ render in the Guide tab from markdown
+rather than being first-class interactive sections. Multi-annotator behaviour on
+one shared link has not been load-tested.
+
+**Unverified here.** Every PDF in the environment this was last measured in is an
+LFS pointer, so the page overlay and the crop tool have been proved against a
+synthetic PDF built for the purpose — not against a real textbook scan. That
+check belongs to whoever has the PDFs.
 
 ---
 
+## License
+
+MIT.
