@@ -67,7 +67,7 @@ function toast(message, bad = false) {
  */
 const W = {
   pid: "", link: null, colors: {}, kinds: [],
-  tool: "click", mode: "read", lock: false,
+  tool: "click", mode: "read", view: "text", lock: false,
   side: {
     src: newSide("src"),
     tgt: newSide("tgt"),
@@ -204,7 +204,7 @@ async function openBooks() {
       W.lock = true;
       $("#lockPages").checked = true;
     }
-    ["#gChapter", "#gPage", "#gTool", "#gMode", "#gFilter"].forEach(id => { $(id).hidden = false; });
+    ["#gChapter", "#gPage", "#gView", "#gTool", "#gMode", "#gFilter"].forEach(id => { $(id).hidden = false; });
     $("#unlink").hidden = !W.link;
     await Promise.all([openPage("src"), openPage("tgt")]);
     refreshSelection();
@@ -298,7 +298,11 @@ function renderSide(s) {
   // Only ask for the image when the server has already said it can render it.
   // Letting an <img> discover a missing PDF by 404 works, but logs a red error
   // that reads like a fault to whoever opens the developer tools next.
-  if (st.imageAvailable) {
+  // Text first. The corpus this serves is a translation-checking corpus —
+  // what an annotator compares is the words, not the paper — and the scans are
+  // 1.5 GB of Git LFS that usually are not there. The page with its block
+  // outlines is a second view for when provenance is the question.
+  if (st.imageAvailable && W.view === "page") {
     host.classList.remove("textonly");
     host.innerHTML = `<img width="${w}" alt="" src="${API}/pages/${st.book}/${st.page}/image.png">`;
     const img = host.querySelector("img");
@@ -336,8 +340,10 @@ function renderText(s) {
     const state = !b.rid ? "lonely" : (b.status && b.status !== "pending" ? "done" : "pending");
     const faded = (only && b.kind !== only) || (dim && !on);
     const text = (b.text || "").trim();
+    const editable = W.mode === "edit" && b.rid;
     return `<div class="trow blk ${state}${on ? " on" : ""}${faded ? " dim" : ""}"` +
-      ` data-sid="${esc(b.sid)}" data-i="${i}"` +
+      ` data-sid="${esc(b.sid)}" data-i="${i}" data-rid="${esc(b.rid || "")}"` +
+      ` data-rev="${b.rev | 0}" data-side="${s}"` +
       ` style="--c:${W.colors[b.kind || "other"] || "#666"}">` +
       `<div class="tmeta"><span class="tkind">${esc(kindName(b.kind))}</span>` +
       `<span>page ${b.display_page}</span>` +
@@ -345,7 +351,8 @@ function renderText(s) {
       (b.edited ? `<span class="tedit">corrected</span>` : "") +
       (b.rid && b.status && b.status !== "pending"
         ? `<span class="tdone">${esc(statusLabel(b.status))}</span>` : "") +
-      `</div><div class="tbody">${text ? esc(text) : "<i>the parser found no text here</i>"}</div>` +
+      `</div><div class="tbody"${editable ? ' contenteditable="true" spellcheck="false"' : ""}>` +
+      `${text ? esc(text) : (editable ? "" : "<i>the parser found no text here</i>")}</div>` +
       `</div>`;
   }).join("");
 
@@ -422,6 +429,9 @@ for (const s of ["src", "tgt"]) {
   const host = $(s === "src" ? "#hostSrc" : "#hostTgt");
   host.addEventListener("click", ev => {
     if (W.tool !== "click") return;
+    // Clicking inside a box you are editing places the cursor. Selecting the
+    // block as well would fight the caret on every keystroke.
+    if (ev.target.closest('[contenteditable="true"]')) return;
     const el = ev.target.closest(".blk");
     if (!el) return;
     const st = S(s), sid = el.dataset.sid, i = +el.dataset.i;
@@ -661,6 +671,52 @@ for (const s of ["src", "tgt"]) {
   el.addEventListener("blur", () => { clearTimeout(saveTimer); saveText(s); });
 }
 
+/* An edit made in the column itself — the doccano-shaped gesture: the text you
+ * are reading is the text you correct, in the place you are reading it.
+ *
+ * The rules are the same as the panel editor's, because they are the same
+ * rules: the box is a view, setu_text is the record, and the save carries the
+ * revision the box was showing so it cannot land on somebody else's work.
+ */
+for (const side of ["src", "tgt"]) {
+  const host = $(side === "src" ? "#hostSrc" : "#hostTgt");
+  host.addEventListener("blur", async ev => {
+    const body = ev.target.closest && ev.target.closest(".tbody[contenteditable=true]");
+    if (!body) return;
+    const row = body.closest(".trow");
+    const rid = row && row.dataset.rid;
+    if (!rid) return;
+    const block = S(side).blocks.find(b => b.sid === row.dataset.sid);
+    if (!block) return;
+    const text = body.innerText.replace(/\u00a0/g, " ");
+    if (text === (block.text || "")) return;
+    try {
+      const out = await api(`/rows/${rid}`, {
+        method: "PATCH",
+        body: JSON.stringify({ [side]: text, [`${side}_rev`]: block.rev | 0,
+                               annotator: who(), reason: "edit" }),
+      });
+      const got = out && out[side];
+      block.text = text; block.edited = true;
+      if (got && got.rev != null) { block.rev = got.rev; row.dataset.rev = got.rev; }
+      row.classList.add("saved");
+      setTimeout(() => row.classList.remove("saved"), 1400);
+      const meta = row.querySelector(".tmeta");
+      if (meta && !meta.querySelector(".tedit")) {
+        const tag = document.createElement("span");
+        tag.className = "tedit"; tag.textContent = "corrected";
+        meta.appendChild(tag);
+      }
+      saveState("Saved.");
+      if (S(side).sel.has(block.sid)) refreshSelection();
+    } catch (e) {
+      saveState(e.status === 409
+        ? "Somebody else changed this while you were typing — nothing of yours was lost, it is in the history."
+        : e.message, true);
+    }
+  }, true);   // capture: blur does not bubble
+}
+
 async function saveText(s) {
   if (W.mode !== "edit") return;
   const el = $(s === "src" ? "#textSrc" : "#textTgt");
@@ -823,17 +879,24 @@ $("#unlink").onclick = async () => {
 };
 
 $$(".segbtn").forEach(b => b.onclick = () => {
-  const group = b.dataset.tool ? "tool" : "mode";
+  const group = b.dataset.tool ? "tool" : (b.dataset.view ? "view" : "mode");
   $$(`.segbtn[data-${group}]`).forEach(x => x.classList.toggle("on", x === b));
   W[group] = b.dataset[group];
-  if (group === "tool") {
+  if (group === "view") {
+    $("#viewHint").textContent = W.view === "page"
+      ? "The printed page with the parser's blocks drawn on it. Needs the scans."
+      : "The text of both editions, side by side. This is the view for checking translations.";
+    ["src", "tgt"].forEach(renderSide);
+    refreshSelection();
+  } else if (group === "tool") {
     $("#toolHint").textContent = W.tool === "crop"
       ? "Drag a rectangle over the page. Drag inside it to move it, the corner to resize, × to remove."
       : "Click a block to put its text below. Shift-click for a run, Ctrl-click to add one.";
   } else {
     $("#modeHint").textContent = W.mode === "edit"
-      ? "Correcting. Type in either box below — it saves itself when you look away."
+      ? "Correcting. Type straight into either column — it saves when you click away."
       : "Reading. Nothing you type can change the text.";
+    ["src", "tgt"].forEach(renderSide);
     refreshSelection();
   }
 });
