@@ -208,6 +208,78 @@ merely in the wrong place.
 If the text genuinely is not in the other edition — some books drop an exercise,
 or add one — then *Missing or incomplete* is right.
 
+## 10a. When the two editions are pages apart
+
+Sometimes the problem is not one pair. It is that the whole book has slipped.
+
+The two editions were printed separately. They were typeset separately, they
+number their chapters differently, and several of them carry chapters the other
+does not have at all. Measured across this corpus: the Karnataka class 10 pair
+runs between three pages behind and eight pages ahead depending on the chapter;
+the Punjab pair drifts from level to twenty-six pages apart; the Gujarat pair is
+about a hundred and eleven pages out from end to end. The NCERT class 11 and
+Tamil Nadu class 10 pairs share no chapter starting page at all. Chapter counts
+differ too — thirteen against sixteen, forty-three against forty-eight.
+
+None of that is a fault in the books. It is what happens when two editions are
+produced by two teams.
+
+**Browse both books** is the tab for it. It shows the two editions as two
+separate documents rather than as matched pairs:
+
+* Each side has **its own chapter list**, in that edition's own language and
+  numbering. You will sometimes see a chapter on one side that simply is not on
+  the other; that is real, and worth a note.
+* Each side has **its own page box** and its own **◀ Previous page** /
+  **Next page ▶**. Moving one side does not move the other.
+* Each side **scrolls on its own**.
+* **◀◀ Both back** and **Both forward ▶▶** move the two together, keeping
+  whatever gap you have put between them.
+
+So the case that used to be impossible now takes four clicks: you are looking at
+English page 2 and the other edition's page 2 and they are plainly not the same
+material; you step the English side forward until page 4 shows the passage you
+are reading on the right; and there they are, side by side.
+
+### Linking two pages
+
+Once you have found two pages that answer each other, press
+**⇄ Link these two pages**.
+
+Setu records the gap between them — "English is 3 pages ahead" — and from then
+on moving either side moves the other by exactly that much. The bar under the
+controls always tells you where you stand, whether or not you have linked
+anything: *English p64 is sitting beside p76 — an offset of −12.*
+
+The link is **saved**, not remembered for the afternoon. It belongs to the
+workspace, so the next annotator to open those two books starts where you left
+off instead of working it out again. **Unlink** removes it for everyone.
+
+If you move the sides after linking, the bar says so and offers to take the new
+offset; press **⇄ Link these two pages** again to keep it.
+
+### What the blocks tell you
+
+Each piece of text carries a small line above it: what kind of block it is
+(paragraph, worked example, table, section title — twenty-three kinds), which
+page it is on, and which pair it belongs to. A block the aligner never managed
+to pair is marked **not paired** and shaded. Those are not errors to report —
+about a quarter of this corpus is one-sided, because the two editions cut their
+paragraphs in different places — but they are exactly what you are hunting for
+when a passage seems to have gone missing.
+
+A block that has been judged shows its answer. A block that has not shows
+nothing, and the count above the column — *10 blocks · 3/10 judged* — tells you
+how much of the page is done.
+
+**Hide running heads, footers and page numbers** is on by default and strips the
+furniture. Turn it off if you are checking whether a running header was parsed
+correctly.
+
+**Show the whole chapter at once** turns one side from a single page into the
+whole chapter, with page dividers, for when you want to read rather than
+compare.
+
 ## 11. Notes
 
 The note box takes a sentence about why you chose what you chose. It is worth
