@@ -190,57 +190,166 @@ body.setu-focus .setu-secondary { display: none !important; }
   #setu_sidebar { display: none; }
 }
 
-/* ── reading both books side by side ──────────────────────────────────────
+
+/* ── browsing both books ───────────────────────────────────────────────────
  *
- * Each column is its own scroll container. That is the whole point: the
- * annotation panes above show one pair at a time and most pairs are a line
- * or two, so there is nothing to scroll and no way to look around when the
- * aligner leaves one side empty. Here you can.
+ * Two documents, each moved independently. The scrolling here was the single
+ * most-reported fault in the view this replaces, so it is worth saying exactly
+ * why it kept breaking and what is different now.
+ *
+ * A `gr.HTML` renders as a wrapper div carrying the elem_id, with Gradio's own
+ * `.html-container` / `.prose` inside it. Putting the height and overflow on
+ * the wrapper means competing with whatever Gradio's stylesheet says about
+ * those inner elements — and Gradio's rules are more specific, so `overflow-y`
+ * resolved to `visible` on whichever side lost the argument. The box got its
+ * height, the text spilled past it, and the column silently did not scroll.
+ *
+ * The scroller is now `.setu-doc-scroll`, a div written by browse.py inside
+ * the HTML Setu itself produces. Nothing of Gradio's targets that class, so
+ * there is no argument to lose. The wrapper is explicitly told to get out of
+ * the way rather than to scroll.
  */
 #setu_read_left, #setu_read_right {
-  /* !important throughout: Gradio's own rules win on specificity, and without
-   * it overflow-y resolves to `visible` — the box gets its height, the text
-   * spills past it, and the column silently does not scroll at all. That is
-   * the single thing this view exists to do, so it is pinned. */
-  height: 68vh !important;
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+  padding: 0 !important;
+  border: none !important;
+  background: none !important;
+}
+#setu_read_left > *, #setu_read_right > *,
+#setu_read_left .prose, #setu_read_right .prose {
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+.setu-doc {
+  border: 1px solid var(--setu-rule, #d0d5dd);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--body-background-fill, #fff);
+}
+.setu-doc-src { border-top: 3px solid var(--setu-src, #2563eb); }
+.setu-doc-tgt { border-top: 3px solid var(--setu-tgt, #0f766e); }
+
+/* The one rule this view exists for. Both sides get it from the same
+ * declaration, so they cannot diverge: if one scrolls, both scroll. */
+.setu-doc-scroll {
+  height: 66vh !important;
   min-height: 320px !important;
   overflow-y: auto !important;
   overflow-x: hidden !important;
-  border: 1px solid var(--setu-rule, #d0d5dd);
-  border-radius: 8px;
-  padding: 4px 10px;
-  background: var(--body-background-fill, #fff);
+  overscroll-behavior: contain;      /* scrolling a column stops at its end
+                                      * instead of dragging the page with it */
+  padding: 2px 12px 14px;
+  scroll-behavior: smooth;
 }
-#setu_read_left  { border-left: 3px solid var(--setu-src, #2563eb); }
-#setu_read_right { border-left: 3px solid var(--setu-tgt, #0f766e); }
+.setu-doc-scroll:focus-visible {
+  outline: 2px solid var(--setu-teal, #0e7a72);
+  outline-offset: -2px;
+}
 
-.setu-read-row {
-  padding: 7px 2px 9px;
+.setu-doc-head {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--setu-rule, #e1e5ec);
+  background: rgba(148, 163, 184, .09);
+  font-size: 12px;
+}
+.setu-doc-lang { font-weight: 600; letter-spacing: .01em; }
+.setu-doc-title { opacity: .72; flex: 1 1 auto; }
+.setu-doc-where { opacity: .6; font-variant-numeric: tabular-nums; }
+
+.setu-doc-tgt .setu-doc-lang,
+.setu-doc-tgt .setu-b-text { font-family: var(--setu-indic); }
+
+.setu-doc-empty { opacity: .6; padding: 22px 4px; }
+
+/* A page divider, drawn only when a whole chapter is shown at once — it is
+ * how you see where the page you were on sits inside the chapter. */
+.setu-pagemark {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  margin: 10px -12px 6px;
+  padding: 3px 12px;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  opacity: .75;
+  background: var(--body-background-fill, #fff);
   border-bottom: 1px solid var(--setu-rule, #e1e5ec);
 }
-.setu-read-row:last-child { border-bottom: none; }
 
-.setu-read-meta {
-  font-size: 11px;
-  letter-spacing: .02em;
-  opacity: .55;
-  margin-bottom: 2px;
+/* ── one block of text ─────────────────────────────────────────────────── */
+
+.setu-b {
+  padding: 8px 2px 10px;
+  border-bottom: 1px solid var(--setu-rule, #eceff4);
 }
+.setu-b:last-child { border-bottom: none; }
 
-.setu-read-text {
+.setu-b-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 11px;
+  opacity: .78;
+  margin-bottom: 3px;
+  font-variant-numeric: tabular-nums;
+}
+.setu-b-kind { opacity: .85; }
+.setu-b-pair { opacity: .55; }
+.setu-b-text {
   font-size: var(--setu-text, 16px);
-  line-height: 1.65;
+  line-height: 1.62;
   white-space: pre-wrap;
   word-break: break-word;
 }
+.setu-b-empty { opacity: .45; font-style: italic; }
 
-/* A gap on one side is information, not an error: it is where the two
- * editions were cut differently. Marked quietly so the eye can skip it. */
-.setu-read-missing { background: rgba(148, 163, 184, .10); }
-.setu-read-gap { opacity: .5; font-style: italic; }
+/* A block the aligner never paired. About a quarter of this corpus, and the
+ * thing the old view could not show at all — marked, not hidden. */
+.setu-b-lonely { background: rgba(148, 163, 184, .10); }
+.setu-b-unpaired {
+  border: 1px dashed var(--setu-rule, #b9c0cc);
+  border-radius: 999px;
+  padding: 0 7px;
+  opacity: .8;
+}
 
-.setu-read-empty { opacity: .6; padding: 18px 4px; }
+.setu-b-status {
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-weight: 600;
+  background: rgba(148, 163, 184, .18);
+}
+.setu-st-exact              { background: rgba(14, 122, 114, .18); }
+.setu-st-needs_correction   { background: rgba(37,  99, 235, .16); }
+.setu-st-incomplete         { background: rgba(120, 113, 108, .20); }
+.setu-st-structural_mismatch{ background: rgba(109,  40, 217, .16); }
+.setu-st-unclear            { background: rgba(100, 116, 139, .20); }
+.setu-st-not_applicable     { background: rgba(148, 163, 184, .14); }
+.setu-b-edited {
+  border-radius: 999px;
+  padding: 0 7px;
+  background: rgba(37, 99, 235, .13);
+}
+
+#setu_browse_bar  { align-items: flex-start; }
+#setu_browse_both { align-items: center; gap: 8px; }
+#setu_src_tally, #setu_tgt_tally { font-size: 12px; opacity: .72; }
+#setu_browse_note { font-size: 13px; }
 
 @media (prefers-color-scheme: dark) {
-  .setu-read-missing { background: rgba(148, 163, 184, .16); }
+  .setu-b-lonely  { background: rgba(148, 163, 184, .16); }
+  .setu-doc-head  { background: rgba(148, 163, 184, .12); }
+}
+
+@media (max-width: 900px) {
+  .setu-doc-scroll { height: 48vh !important; }
 }
