@@ -354,13 +354,44 @@ def main(argv: list[str] | None = None) -> int:
         # the page can call it without knowing where the studio is mounted.
         server_app.include_router(setu_router)
 
-        work_dir = Path(__file__).resolve().parent / "annotation" / "ui" / "static" / "work"
-        if work_dir.is_dir():
+        static = Path(__file__).resolve().parent / "annotation" / "ui" / "static"
+        work_dir = static / "work"
+
+        # A folder uploaded through GitHub's web editor can arrive with
+        # whitespace absorbed into its name — "   work" renders identically to
+        # "work" in the file listing and is a different directory on disk. The
+        # symptom is that /work/ serves nothing while the repository looks
+        # perfectly correct in a browser, which is a miserable thing to debug.
+        # If the real folder is missing but something that trims to its name is
+        # there, use it and say so loudly enough to be fixed.
+        if not work_dir.is_dir() and static.is_dir():
+            for candidate in static.iterdir():
+                if candidate.is_dir() and candidate.name.strip() == "work":
+                    print(f"\n  !! The workspace folder is named {candidate.name!r}, "
+                          f"not 'work'.\n"
+                          f"     Setu is using it anyway, but rename it in the "
+                          f"repository:\n"
+                          f"     annotation/ui/static/{candidate.name!r} -> "
+                          f"annotation/ui/static/work\n")
+                    work_dir = candidate
+                    break
+
+        if work_dir.is_dir() and (work_dir / "index.html").is_file():
             server_app.mount(WORK, StaticFiles(directory=str(work_dir), html=True),
                              name="setu-work")
             work_url = at(share_url or local_url, WORK.lstrip("/") + "/")
         else:
-            logging.getLogger("setu").warning("the workspace page is missing: %s", work_dir)
+            # Never a log line. A warning among a hundred Git LFS messages is a
+            # warning nobody reads, and the annotator is left looking at the
+            # older interface with no idea that a newer one failed to load.
+            have = sorted(p.name for p in static.iterdir()) if static.is_dir() else []
+            print("\n" + "!" * 72)
+            print("  THE WORKSPACE PAGE IS NOT INSTALLED.")
+            print(f"  Looked for: {static / 'work' / 'index.html'}")
+            print(f"  Found in that folder: {have or 'nothing'}")
+            print("  Setu is serving the older Gradio interface instead.")
+            print("  Put index.html, app.js and style.css in annotation/ui/static/work/")
+            print("!" * 72 + "\n")
     except Exception as exc:
         logging.getLogger("setu").warning("the workspace page could not be mounted: %s", exc)
 
