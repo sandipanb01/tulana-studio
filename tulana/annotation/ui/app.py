@@ -27,7 +27,7 @@ import gradio as gr
 import config
 
 from ..core import store
-from . import panels, render, session
+from . import browse, panels, render, session
 from . import workspace as ws
 
 log = logging.getLogger("annotation.ui.app")
@@ -96,14 +96,19 @@ def build() -> gr.Blocks:
         with gr.Tabs():
             with gr.Tab("Annotate", id="tab_annotate"):
                 pair = _annotate_tab(state)
-            with gr.Tab("Read side by side", id="tab_read"):
-                _reading_tab(state)
+            with gr.Tab("Browse both books", id="tab_read"):
+                reader = _reading_tab(state)
             with gr.Tab("Saved work", id="tab_review"):
                 _review_tab(state, pair)
             with gr.Tab("Download", id="tab_export"):
                 _export_tab(state)
             with gr.Tab("Help", id="tab_help"):
                 _help_tab()
+
+        # Opening a different pair of books reloads the browser, so the two
+        # tabs can never disagree about which textbooks are open.
+        pair["open_btn"].click(browse.open_books,
+                               [state, reader["bstate"]], reader["out_open"])
 
         for fn, inputs, outputs in _ON_LOAD:
             demo.load(fn, inputs, outputs)
@@ -114,39 +119,117 @@ def build() -> gr.Blocks:
 
 # ── reading both books side by side ────────────────────────────────────────
 
-def _reading_tab(state: gr.State) -> None:
-    """Two continuous columns, each scrolling by itself.
+def _reading_tab(state: gr.State) -> dict:
+    """Two textbooks, each driven independently, side by side.
 
-    The Annotate tab judges one pair at a time, which is right for deciding
-    but useless for orientation: most pairs are a line or two, so nothing
-    scrolls, and when the aligner leaves one side empty there is no way to
-    look around for the counterpart. Here each edition is one long column
-    with its own scrollbar.
+    The view this replaces drew the *pairs* as two columns, which quietly
+    assumed the two editions march together. Measured across this corpus they
+    do not — Gujarat class 10 runs 111 pages apart, NCERT class 11 and Tamil
+    Nadu class 10 share no chapter page at all — so an annotator who found that
+    English page 4 answers the other edition's page 2 had no way to put the two
+    pages next to each other.
+
+    Here each side has its own chapter list, its own page box and its own
+    scrollbar; a pair of common buttons moves both at once; and once two pages
+    are found to answer each other, *Link these two pages* records the offset
+    so both sides keep step from then on. The pairs are still consulted — a
+    block shows how it has been judged — but they no longer decide what is
+    shown opposite what.
     """
-    gr.Markdown("Both textbooks end to end. **Each side scrolls on its own** — "
-                "when a piece of text has no counterpart, scroll the other "
-                "column to find where it went.")
-    with gr.Row():
-        read_chapter = gr.Dropdown(label="Chapter", choices=[("Everything", "")],
-                                   value="", interactive=True, scale=3)
-        read_refresh = gr.Button("Show the text", variant="primary", scale=1)
-    read_note = gr.Markdown("")
-    with gr.Row():
-        with gr.Column(scale=5):
-            gr.Markdown("**Left — the source, usually English**")
-            read_left = gr.HTML('<div class="setu-read-empty">'
-                                'Open two textbooks in the Annotate tab, then '
-                                'press “Show the text”.</div>',
-                                elem_id="setu_read_left")
-        with gr.Column(scale=5):
-            gr.Markdown("**Right — the language you are checking**")
-            read_right = gr.HTML('<div class="setu-read-empty"></div>',
-                                 elem_id="setu_read_right")
+    bstate = gr.State(browse.blank())
 
-    read_refresh.click(panels.reading, [state, read_chapter],
-                       [read_left, read_right, read_note])
-    read_chapter.change(panels.reading, [state, read_chapter],
-                        [read_left, read_right, read_note])
+    gr.Markdown(
+        "Each edition moves on its own. Pick a chapter and a page on either "
+        "side, scroll each column separately, and when you find two pages that "
+        "answer each other press **Link these two pages** — after that both "
+        "sides move together.")
+
+    with gr.Row(elem_id="setu_browse_bar"):
+        with gr.Column(scale=6):
+            with gr.Row():
+                src_chapter = gr.Dropdown(
+                    label="Left — chapter", choices=[("Whole book", "")],
+                    value="", interactive=True, scale=4,
+                    elem_id="setu_src_chapter")
+                src_page = gr.Number(label="Page", value=0, precision=0,
+                                     minimum=0, step=1, scale=1,
+                                     elem_id="setu_src_page")
+            with gr.Row():
+                src_prev = gr.Button("◀ Previous page", size="sm", scale=1)
+                src_next = gr.Button("Next page ▶", size="sm", scale=1)
+            src_tally = gr.Markdown("", elem_id="setu_src_tally")
+        with gr.Column(scale=6):
+            with gr.Row():
+                tgt_chapter = gr.Dropdown(
+                    label="Right — chapter", choices=[("Whole book", "")],
+                    value="", interactive=True, scale=4,
+                    elem_id="setu_tgt_chapter")
+                tgt_page = gr.Number(label="Page", value=0, precision=0,
+                                     minimum=0, step=1, scale=1,
+                                     elem_id="setu_tgt_page")
+            with gr.Row():
+                tgt_prev = gr.Button("◀ Previous page", size="sm", scale=1)
+                tgt_next = gr.Button("Next page ▶", size="sm", scale=1)
+            tgt_tally = gr.Markdown("", elem_id="setu_tgt_tally")
+
+    with gr.Row(elem_id="setu_browse_both"):
+        both_prev = gr.Button("◀◀ Both back", size="sm", scale=1)
+        both_next = gr.Button("Both forward ▶▶", size="sm", scale=1)
+        link_btn = gr.Button("⇄ Link these two pages", variant="primary",
+                             size="sm", scale=2, elem_id="setu_link")
+        unlink_btn = gr.Button("Unlink", size="sm", scale=1)
+        reload_btn = gr.Button("↻ Reload both books", size="sm", scale=1)
+
+    with gr.Row():
+        whole_chapter = gr.Checkbox(
+            label="Show the whole chapter at once, not one page", value=False)
+        hide_noise = gr.Checkbox(
+            label="Hide running heads, footers and page numbers", value=True)
+
+    browse_note = gr.Markdown("", elem_id="setu_browse_note")
+
+    with gr.Row():
+        with gr.Column(scale=5):
+            read_left = gr.HTML(browse.EMPTY, elem_id="setu_read_left")
+        with gr.Column(scale=5):
+            read_right = gr.HTML(browse.EMPTY, elem_id="setu_read_right")
+
+    # Every handler returns this, in this order. Named once so a handler
+    # cannot put the target language's text into the English column by
+    # returning its values the wrong way round.
+    out = [bstate, read_left, read_right, src_page, tgt_page,
+           src_tally, tgt_tally, browse_note]
+    out_open = out + [src_chapter, tgt_chapter]
+
+    reload_btn.click(browse.open_books, [state, bstate], out_open)
+    _ON_LOAD.append((browse.open_books, [state, bstate], out_open))
+
+    src_chapter.change(lambda s, b, c: browse.jump_chapter(s, b, "src", c),
+                       [state, bstate, src_chapter], out)
+    tgt_chapter.change(lambda s, b, c: browse.jump_chapter(s, b, "tgt", c),
+                       [state, bstate, tgt_chapter], out)
+
+    src_page.submit(lambda s, b, p: browse.goto(s, b, "src", p),
+                    [state, bstate, src_page], out)
+    tgt_page.submit(lambda s, b, p: browse.goto(s, b, "tgt", p),
+                    [state, bstate, tgt_page], out)
+
+    src_prev.click(lambda s, b: browse.step(s, b, "src", -1), [state, bstate], out)
+    src_next.click(lambda s, b: browse.step(s, b, "src", 1), [state, bstate], out)
+    tgt_prev.click(lambda s, b: browse.step(s, b, "tgt", -1), [state, bstate], out)
+    tgt_next.click(lambda s, b: browse.step(s, b, "tgt", 1), [state, bstate], out)
+
+    both_prev.click(lambda s, b: browse.step_both(s, b, -1), [state, bstate], out)
+    both_next.click(lambda s, b: browse.step_both(s, b, 1), [state, bstate], out)
+
+    link_btn.click(browse.link_pages, [state, bstate], out)
+    unlink_btn.click(browse.unlink_pages, [state, bstate], out)
+
+    whole_chapter.change(browse.set_whole_chapter,
+                         [state, bstate, whole_chapter], out)
+    hide_noise.change(browse.set_hide_noise, [state, bstate, hide_noise], out)
+
+    return {"bstate": bstate, "out": out, "out_open": out_open}
 
 
 # ── the annotation tab ─────────────────────────────────────────────────────
@@ -259,7 +342,11 @@ def _annotate_tab(state: gr.State) -> dict:
     pair = {"state": state, "src": src, "tgt": tgt, "status": status, "note": note,
             "pairhead": pair_head, "savestate": save_state, "progress": progress,
             "chapter_filter": chapter, "conflict": conflict,
-            "source_img": source_img, "source_msg": source_msg}
+            "source_img": source_img, "source_msg": source_msg,
+            # Exposed so build() can chain "Open these two books" into the
+            # browse tab: opening a different pair of books must not leave the
+            # other tab showing the previous pair's text.
+            "open_btn": open_btn}
     pair_out = [pair[k] for k in _PAIR_OUT_NAMES]
     edit_in = [state, src, tgt, status, note]
 
