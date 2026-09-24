@@ -39,6 +39,7 @@ sys.path.insert(0, str(HERE))
 import config  # noqa: E402
 
 MOUNT = "/studio"
+WORK = "/work"
 
 
 def _log_setup(verbose: bool) -> None:
@@ -333,6 +334,36 @@ def main(argv: list[str] | None = None) -> int:
         logging.getLogger("setu").warning(
             "the rest of Tulana Studio could not be mounted: %s", exc)
 
+    # ── the workspace ──
+    #
+    # Setu's own interface: a static page talking to /api/setu, built the way
+    # Tulana Studio's Blocks tab is built. It is mounted here, on the app
+    # Gradio created, so the gradio.live tunnel carries it — the annotators'
+    # link and this page are the same address with /work/ on the end.
+    #
+    # Registered BEFORE the signpost, because that ends in a catch-all which
+    # would otherwise answer /work/ with a 404 page.
+    work_url = ""
+    try:
+        from fastapi.staticfiles import StaticFiles
+
+        from annotation.api import router as setu_router
+
+        # The router is already included on the studio app, which lives under
+        # /studio. Including it here too puts it at /api/setu on the root, so
+        # the page can call it without knowing where the studio is mounted.
+        server_app.include_router(setu_router)
+
+        work_dir = Path(__file__).resolve().parent / "annotation" / "ui" / "static" / "work"
+        if work_dir.is_dir():
+            server_app.mount(WORK, StaticFiles(directory=str(work_dir), html=True),
+                             name="setu-work")
+            work_url = at(share_url or local_url, WORK.lstrip("/") + "/")
+        else:
+            logging.getLogger("setu").warning("the workspace page is missing: %s", work_dir)
+    except Exception as exc:
+        logging.getLogger("setu").warning("the workspace page could not be mounted: %s", exc)
+
     _install_signpost(server_app, bool(studio_url))
 
     public = at(share_url)
@@ -343,13 +374,15 @@ def main(argv: list[str] | None = None) -> int:
   SETU IS RUNNING — the parallel textbook annotation workspace
 
   Share this link with your annotators:
-      {public or '(no public link — see the note below)'}
+      {(work_url or public or '(no public link — see the note below)')}
 
   On this machine:
-      {local}
+      {at(local_url, WORK.lstrip('/') + '/') if work_url else local}
 """ + (f"""  The rest of Tulana Studio (blocks, saved pairs, page images):
       {studio_url}
-""" if studio_url else "") + f"""
+""" if studio_url else "") + (f"""  The older Gradio interface, if you need it:
+      {public or local}
+""" if work_url else "") + f"""
   Textbooks : {config.DATA_DIR}
   Your work : {config.STATE_DIR}
 
