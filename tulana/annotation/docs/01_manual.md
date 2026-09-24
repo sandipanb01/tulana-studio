@@ -1,479 +1,290 @@
 # The annotator's manual
 
-Everything you need, in the order you will need it. You do not have to read it
-all before you start — sections 1 to 6 are enough for your first hour.
+You do not need to have annotated anything before, and you do not need to know
+what a database or a parser is. If you can read English and one Indian
+language, you can do this work. Everything below is written for somebody
+sitting down at Setu for the first time.
+
+Read sections 1 to 6. The rest is there for when you hit something.
 
 ---
 
-## 1. What Setu is for
+## 1. What you are being asked to do
 
-Setu shows you the same textbook twice: the English edition on the left, and
-the same book in an Indian language on the right.
+A school textbook is published twice — once in English, once in an Indian
+language. In principle the two books say the same thing on the same page. In
+practice they were typeset by different teams, printed at different times, and
+then read by a machine that got some of the words wrong.
 
-A machine has already read both books and pulled the text off the pages. It did
-a good job most of the time and a poor job some of the time. Your work is to:
+Your job has two halves:
 
-1. **Fix the text** where the machine misread the page.
-2. **Say whether the two sides match** — whether the right-hand text really is
-   the same piece of the book as the left-hand text.
+1. **Say whether the two sides really say the same thing.**
+2. **Correct what the machine misread**, on either side.
 
-That is the whole job. There is nothing to install, nothing to configure, and
-nothing you can break.
+That is all. You are not translating, not rewriting, not improving the
+textbook. You are checking a machine's work against the printed page.
 
-## 2. What you are looking at
+---
 
-The screen is a list of **pairs**. Each pair is one box with two halves:
+## 2. The screen
 
-- **Left** — the source, usually English.
-- **Right** — the target, the Indian-language edition.
+One screen, three parts, top to bottom.
 
-Both halves can be typed in. Below each pair is a row of buttons for saying
-what you think of it, and a box for a note.
+**Step 1 — choose two textbooks.** Four dropdowns and a button. Once you press
+**Open these two books** this folds itself away; click its title to bring it
+back.
 
-The little label at the top of each pair tells you where it came from:
+**The middle strip** holds three switches and, under them, where you are in
+each book:
 
-| Label | What it means |
-|---|---|
-| **suggested** | Setu found strong evidence these two go together — usually a formula that appears in both. |
-| **in order** | Setu placed these together because of where they sit between two suggested pairs. Less certain. |
-| **one side only** | Setu could not find a partner. One half is empty. |
-| **yours** | You changed this pair yourself. |
+* *Let me correct the text* — off to begin with. Leave it off while you read;
+  turn it on when you want to fix something.
+* *Show me the printed page* — puts the real scanned page above the text.
+* *Hide running heads, footers and page numbers* — on to begin with. These are
+  furniture, not text, and nobody needs to check them.
 
-Treat "suggested" as a good guess and "in order" as a guess. Neither is a fact
-until you have looked.
+**The two columns.** English on the left, the other language on the right. Each
+column shows the pieces of text the machine found on one page of that book, in
+reading order. Each column scrolls on its own.
 
-## 3. Your first pair
+Above each column: which chapter you are in, which page you are on, and
+**◀ Previous page** / **Next page ▶** for that side alone.
 
-1. Read the left text. Read the right text.
-2. If either one has an obvious mistake — a missing word, a broken formula, a
-   letter that should be a number — click into the box and fix it.
-3. Click the button that describes the pair. That is it; move to the next one.
+---
 
-You do not need to save. Setu saves while you type.
+## 3. Your first ten minutes
+
+1. Type your name in **Your name**. It goes on the work you do.
+2. Pick a board, a class and a subject. Pick a language on each side. Pick the
+   two books.
+3. Press **Open these two books**.
+4. Read the first page on both sides. Do they say the same thing?
+5. Under each piece of English text there is one question: **Do these two say
+   the same thing?** Answer it.
+6. Press **Next page ▶** under both columns, or **Both forward ▶▶** to move
+   them together.
+
+That is the whole loop. Everything else is for when it is not that simple.
+
+---
 
 ## 4. The six answers
 
-These are the only six things you can say about a pair. Pick the first one that
-fits.
+Under each piece of English text, pick one:
 
-**Exact** — the two sides say the same thing. Nothing needs changing.
-
-**Needs correction** — they match, but something in the text is wrong: a typo, a
-wrong digit, a garbled formula. Use this *after* you have fixed the text, so
-that somebody reviewing knows the pair was repaired rather than born perfect.
-
-**Missing or incomplete** — part of the text is missing on one side, or one side
-is empty and you could not find what belongs there.
-
-**Structural mismatch** — both sides have real text, but they are not the same
-piece of the book. Sometimes one edition puts a question and its answer in one
-block while the other splits them in two; that is a structural mismatch.
-
-**Unclear** — you cannot tell. Perhaps the scan is unreadable, perhaps you do
-not know the language well enough. Leave a note and move on. Somebody will come
-back to it. Using this is not a failure; guessing is.
-
-**Not applicable** — this does not need annotating at all. Page headers, picture
-captions, decoration, publisher addresses.
-
-To undo an answer, press the same button again. It goes back to unchecked.
-
-## 5. Fixing text
-
-Click into either box and type. Some rules:
-
-- **Keep the mathematics exactly as it is.** Text like `$x^2 + 3x = 0$` is a
-  formula. The dollar signs and backslashes matter. If a formula is wrong, fix
-  what is wrong inside it and leave the rest alone.
-- **Keep the table markup.** Text starting with `<table>` is a table. Change the
-  words inside the cells, not the tags.
-- **Do not translate.** You are correcting what the machine read off the page,
-  not producing a better translation. If the printed book says something odd,
-  the text should say the same odd thing.
-- **Do not tidy.** Extra line breaks, odd spacing and strange punctuation are
-  usually on the page too.
-
-If you make a mess of a box, click **Original** above it. That puts back
-exactly what the machine read, however many times you have edited since.
-
-## 6. Moving around
-
-**Previous** and **Next** step one pair at a time. **Next unchecked** skips
-everything anybody has already answered — it is the fastest way through a book.
-
-From the keyboard:
-
-| Key | What it does |
+| Answer | Use it when |
 |---|---|
-| <kbd>Alt</kbd>+<kbd>→</kbd> / <kbd>Alt</kbd>+<kbd>←</kbd> | next / previous pair |
-| <kbd>j</kbd> / <kbd>k</kbd> | the same, one hand |
-| <kbd>n</kbd> | next pair nobody has checked |
-| <kbd>1</kbd>…<kbd>6</kbd> | set the answer — the number is printed on each button |
-| <kbd>Ctrl</kbd>+<kbd>S</kbd> | save right now |
-| <kbd>Ctrl</kbd>+<kbd>+</kbd> / <kbd>Ctrl</kbd>+<kbd>−</kbd> | bigger / smaller text |
-| <kbd>Ctrl</kbd>+<kbd>0</kbd> | back to the normal view |
+| **Exact** | The two sides say the same thing. Small differences in punctuation or spacing do not matter. |
+| **Needs correction** | They are meant to be the same, and one side has been misread — a wrong letter, a missing word, a mangled number. Fix it, then choose this. |
+| **Missing or incomplete** | One side genuinely does not have this text. Some editions drop an exercise, or add one. |
+| **Structural mismatch** | The text exists on both sides but has been cut up differently — one edition made one paragraph of what the other made two. |
+| **Unclear** | You cannot tell. Say why in a note. |
+| **Not applicable** | Neither side is really text — a stray mark, or a page number the machine mistook for a sentence. |
 
-The number keys only work when you are **not** typing in a text box, so typing
-"1" into a paragraph can never change your answer by accident.
+The question is asked once, on the English side, because English is the
+reference. Answering it records the answer for both halves.
 
-<kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes your typing, exactly as in any other text
-box. Setu deliberately does not take that key over: your browser's own undo
-knows every keystroke you made, which is finer-grained than anything the tool
-could offer.
+You may change an answer at any time. Nothing is final.
 
-## 6a. Making the text comfortable to read
+---
 
-The grey bar above the two panes controls how they look. None of it changes
-your work — it is yours, it is remembered, and nobody else sees it.
+## 5. Correcting the text
 
-**Scrolling: linked / separate.** Linked is the default: scrolling one side
-scrolls the other to the same relative place, so the two stay together through
-a long passage. Press it to unlink them when the two sides are very different
-lengths and you want to read one on its own.
+Turn on **Let me correct the text**. Every piece of text becomes a box you can
+type in.
 
-**A−  A+  Reset** make the text smaller and larger. **− Height** and
-**+ Height** make the two boxes shorter and taller — useful on a small screen,
-or when you want to see a whole exercise at once.
+Fix only what the machine got wrong. Do not:
 
-**Compact** hides everything except the two texts. **Focus** hides the side
-panel as well. Both are good for long stretches of work; press again to bring
-things back.
+* translate anything
+* improve the wording
+* correct the textbook's own mistakes
+* add anything that is not printed on the page
 
-## 7. The sidebar
+If the printed page says something wrong, that is what the corpus should
+record. You are matching the paper, not fixing the book.
 
-**Show** — the coloured chips filter the list. Click "Not checked yet" to see
-only the pairs nobody has looked at. Click it again to turn the filter off. The
-number on each chip is how many pairs have that answer.
+**It saves itself.** When you click out of a box, it is saved, and a short line
+under the switches says so. You never press a save button, and there is no
+moment where your work is at risk.
 
-**Contents** — the book's chapters and sections. Click a chapter to work through
-only that chapter. The `12/340` beside each chapter is how many of its pairs
-have been checked.
+**The machine's reading is never thrown away.** What the parser originally read
+is kept separately, for ever. If you change something and want it back, press
+**Put back what the parser read**, which appears under any box you have
+changed.
 
-The contents follow the **left-hand** book. When the right-hand edition
-organises things differently, the sidebar still shows the left book's chapters,
-so the two of you are always looking at the same map.
+---
 
-## 8. Searching
+## 6. When the two books do not line up
 
-The search box takes more than words:
+This is the part that surprises people, so it has its own section.
 
-| What you type | What you get |
-|---|---|
-| `quadratic` | every pair containing that word, on either side |
-| `"perfect square"` | that exact phrase |
-| `संच` | works in any script — type in the language you are reading |
-| `page 42` | everything on page 42 of either book |
-| `chapter 3` | everything in chapter 3 |
-| `1.2` | section, exercise or practice set 1.2 |
-| `#450` | pair number 450 |
+The two editions were printed separately. Measured across this corpus:
 
-Search looks at both the original text and your corrections, so a typo you have
-already fixed is still findable by its new spelling.
+* Karnataka class 10 Kannada runs between 3 pages behind and 8 pages ahead,
+  depending on the chapter.
+* Punjab class 10 Punjabi drifts from level to 26 pages apart.
+* Gujarat class 10 Gujarati is about 111 pages out from end to end.
+* NCERT class 11 Hindi and Tamil Nadu class 10 Tamil share **no** chapter
+  starting page at all with their English editions.
 
-## 8a. Checking the printed page
+Chapter counts differ too — 13 against 16, 43 against 48, 27 against 20.
 
-Sometimes the text alone cannot answer the question: is that a 5 or an S? Does
-that table really have four columns? Under each pane there is **Check the
-printed page**. It shows you the piece of the scanned book that the text came
-from, with a little of the page around it so you can see where you are.
+**None of that is a fault.** It is what happens when two teams produce two
+editions. So Setu does not assume the two books march together.
 
-It opens below the two panes and does not touch your text — you can leave it
-open while you keep typing.
+### Moving the two sides apart
 
-If it says the PDF has not been downloaded, that is normal on a new
-installation: the scanned books are large and are fetched separately. Tell
-whoever set up the server; the text side of your work is unaffected.
+Each side has its own chapter list, its own page box and its own
+**◀ Previous page** / **Next page ▶**. Moving one does not move the other.
 
-## 9. When a pair has the wrong partner
+So when English page 2 and the other edition's page 2 are plainly not the same
+material, step the English side forward until you find the page that *is* the
+same. Four clicks, and the two passages are side by side.
 
-This happens. The aligner is a guess, and on about one pair in twenty it guesses
-wrong.
-
-When that happens, mark it **Structural mismatch** and write a short note
-saying what you saw. The pairing itself is fixed by whoever maintains the
-corpus, using the tools in the rest of Tulana Studio; your note is what tells
-them where to look.
-
-## 10. When one side is empty
-
-An empty side means Setu could not find a partner. It does not mean the text
-does not exist.
-
-Before you mark it *Missing or incomplete*, press **Next** and **Previous**
-once each. Very often the partner is sitting in the neighbouring pair, one step
-away, and what you are really looking at is a **Structural mismatch** between
-the two — which is a more useful answer, because it says the text exists and is
-merely in the wrong place.
-
-If the text genuinely is not in the other edition — some books drop an exercise,
-or add one — then *Missing or incomplete* is right.
-
-## 10a. When the two editions are pages apart
-
-Sometimes the problem is not one pair. It is that the whole book has slipped.
-
-The two editions were printed separately. They were typeset separately, they
-number their chapters differently, and several of them carry chapters the other
-does not have at all. Measured across this corpus: the Karnataka class 10 pair
-runs between three pages behind and eight pages ahead depending on the chapter;
-the Punjab pair drifts from level to twenty-six pages apart; the Gujarat pair is
-about a hundred and eleven pages out from end to end. The NCERT class 11 and
-Tamil Nadu class 10 pairs share no chapter starting page at all. Chapter counts
-differ too — thirteen against sixteen, forty-three against forty-eight.
-
-None of that is a fault in the books. It is what happens when two editions are
-produced by two teams.
-
-**Browse both books** is the tab for it. It shows the two editions as two
-separate documents rather than as matched pairs:
-
-* Each side has **its own chapter list**, in that edition's own language and
-  numbering. You will sometimes see a chapter on one side that simply is not on
-  the other; that is real, and worth a note.
-* Each side has **its own page box** and its own **◀ Previous page** /
-  **Next page ▶**. Moving one side does not move the other.
-* Each side **scrolls on its own**.
-* **◀◀ Both back** and **Both forward ▶▶** move the two together, keeping
-  whatever gap you have put between them.
-
-So the case that used to be impossible now takes four clicks: you are looking at
-English page 2 and the other edition's page 2 and they are plainly not the same
-material; you step the English side forward until page 4 shows the passage you
-are reading on the right; and there they are, side by side.
-
-### Linking two pages
+### Linking them
 
 Once you have found two pages that answer each other, press
-**⇄ Link these two pages**.
+**⇄ These two pages match**.
 
-Setu records the gap between them — "English is 3 pages ahead" — and from then
-on moving either side moves the other by exactly that much. The bar under the
-controls always tells you where you stand, whether or not you have linked
-anything: *English p64 is sitting beside p76 — an offset of −12.*
+Setu works out the distance between them — *the English edition runs 3 pages
+ahead* — and from then on moving either side moves the other by exactly that
+much. The line under the buttons always tells you where you stand, whether or
+not you have linked anything.
 
-The link is **saved**, not remembered for the afternoon. It belongs to the
-workspace, so the next annotator to open those two books starts where you left
-off instead of working it out again. **Unlink** removes it for everyone.
+**The link is saved**, and it belongs to the two books rather than to you. The
+next person to open them starts where you left off instead of working it out
+again. **Unlink** removes it.
 
-If you move the sides after linking, the bar says so and offers to take the new
-offset; press **⇄ Link these two pages** again to keep it.
+### Moving both at once
 
-### What the blocks tell you
+**◀◀ Both back** and **Both forward ▶▶** move the two sides together, keeping
+whatever distance you have put between them — linked or not.
 
-Each piece of text carries a small line above it: what kind of block it is
-(paragraph, worked example, table, section title — twenty-three kinds), which
-page it is on, and which pair it belongs to. A block the aligner never managed
-to pair is marked **not paired** and shaded. Those are not errors to report —
-about a quarter of this corpus is one-sided, because the two editions cut their
-paragraphs in different places — but they are exactly what you are hunting for
-when a passage seems to have gone missing.
+---
 
-A block that has been judged shows its answer. A block that has not shows
-nothing, and the count above the column — *10 blocks · 3/10 judged* — tells you
-how much of the page is done.
+## 7. The small grey line above each piece of text
 
-**Hide running heads, footers and page numbers** is on by default and strips the
-furniture. Turn it off if you are checking whether a running header was parsed
-correctly.
+It says three or four things:
 
-**Show the whole chapter at once** turns one side from a single page into the
-whole chapter, with page dividers, for when you want to read rather than
-compare.
+* **What kind of thing it is** — paragraph, worked example, table, section
+  title, and so on. There are 23 kinds. This is often the whole explanation for
+  why two sides look different: a caption on one side and a paragraph on the
+  other will never match.
+* **Which page it is on** — the number printed on that page of that book.
+* **How it stands** — either your answer, or *as the parser read it*, meaning
+  nobody has touched it yet, or *corrected by hand* if somebody has.
+* **no counterpart found** — this piece of text was never paired with anything.
+  See section 8.
+
+---
+
+## 8. Text with no counterpart
+
+About a quarter of the text in a typical pair of books has nothing opposite it.
+Those pieces are shaded and marked **no counterpart found**.
+
+This is usually not missing text. It is text that was *cut differently*: a
+paragraph whole on one side is two pieces on the other, so the machine could
+not line them up one to one.
+
+When you see one, look at the other column for the same words. Nine times out
+of ten they are there, a little above or below. That is a **Structural
+mismatch**, not **Missing or incomplete** — and saying so is more useful,
+because it records that the text exists and is merely in a different place.
+
+---
+
+## 9. Checking against the printed page
+
+Turn on **Show me the printed page**. The real scanned page appears above the
+text of each column, so you can read the machine's version against the paper.
+
+The page number above each column is the number printed on that page of that
+book, so it matches what you would turn to.
+
+If Setu says the page is not on this machine, that is normal — the scans are
+large and are often not downloaded. **The text does not depend on them.**
+Everything else works exactly as before.
+
+---
+
+## 10. Several people at once
+
+Everybody uses the same link and everybody gets their own session. What you are
+reading, where you are in the book and what you have typed are invisible to
+everyone else.
+
+If two people correct the same piece of text at the same time, the second one
+is told rather than silently overwritten, and nothing is lost — every version
+is kept.
+
+---
 
 ## 11. Notes
 
-The note box takes a sentence about why you chose what you chose. It is worth
-writing one whenever you pick *Unclear* or *Structural mismatch*, because the
-next person to look has no idea what you saw. Notes travel with the pair into
-every export.
+A note is worth writing whenever you choose **Unclear** or **Structural
+mismatch**, because the next person to look at it has no idea what you saw.
+Notes travel with the pair into every export.
 
-## 12. Saving, and why you never have to think about it
+---
 
-Setu saves about half a second after you stop typing. The bar along the bottom
-says "Saving…" and then "All changes saved".
+## 12. What is never changed
 
-Underneath, every save is also written to your own computer the instant you
-type it. So:
+* **The original PDFs.** Setu only reads them.
+* **What the parser first read.** Kept for ever, separately from your
+  corrections.
+* **Every version of every correction.** Nothing is ever pruned.
+* **Tulana's own earlier work** — the saved pairs and clippings from the block
+  tool. Setu adds its own tables and writes to nothing that existed before it.
 
-- **Closing the tab** is safe. Your work is already sent.
-- **A crash** is safe. Next time you open Setu it offers to restore anything
-  that never reached the server.
-- **Losing the network** is safe. The bar turns yellow, your edits keep being
-  stored locally, and Setu keeps trying. When the connection comes back
-  everything goes out.
-- **Turning off the computer mid-save** is safe. Setu asks the database to
-  flush every save to disk before it reports success, so "saved" means saved.
+---
 
-## 13. Version history
+## 13. Saved work, and downloading it
 
-Every version of every box is kept, for ever. Nothing is overwritten.
+**Saved work** lists everything judged so far in the open books. Click a row to
+go to the page it sits on.
 
-Open **What changed on this pair** below the buttons and press **Show the
-history**. You get every version with who made it and when, and a comparison
-against what the machine originally read.
+**Download** writes the annotations out in eleven formats — JSON Lines, JSON,
+CSV, TSV, XML, plain text, Moses, TMX, Excel, Parquet and a Hugging Face
+dataset — filtered by answer or by completeness, or all of them at once as a
+zip.
 
-**Restore the original**, above either pane, puts back exactly what the machine
-read — however many times you have edited since. Restoring is itself recorded,
-so you can undo an undo.
+Formats that can only hold true pairs say so, and report what they left out.
 
-## 14. When two people edit the same pair
+---
 
-Setu does not stop two people working on the same pair — locking people out
-causes more trouble than it prevents. Instead it refuses to let one person
-silently overwrite the other.
+## 14. Pacing
 
-If somebody saves a pair while you are typing in it, the line at the right says
-**Someone else changed this pair**, and both versions appear below the buttons,
-side by side. Two buttons let you choose: **Keep what I typed** or **Keep the
-saved version**. Nothing is lost either way, and both versions stay in the
-history.
+This is reading work, and reading work does not go faster by hurrying. A page
+where both sides agree takes a few seconds. A page where they do not can take
+several minutes of hunting, and that hunting is the valuable part — it is what
+nobody else can do.
 
-If you open the same pair in two tabs of your own browser, the same thing
-happens. The two tabs are treated as two people, which is the safe assumption.
+Take breaks. Nothing is lost when you stop, because nothing was ever waiting to
+be saved.
 
-## 15. What is never changed
+---
 
-The text the machine originally read is stored separately from your edits and is
-never modified, no matter how much you type. Every export carries both, in
-`source_original` and `target_original` columns beside your corrected
-`source_text` and `target_text`.
+## 15. When to stop and ask
 
-This means an experiment can always be re-run against the raw extraction, and a
-mistake made in this tool can never destroy the underlying data.
+* A whole book that looks like a different subject on the two sides.
+* Two editions where nothing lines up at any distance you try.
+* Text in a script you do not read.
+* Anything that makes you think *this cannot be right*.
 
-## 16. Progress
+Say so rather than guessing. A guess recorded as an answer is worse than a gap.
 
-The chip at the top right is the whole workspace: how many pairs have an answer,
-out of how many.
+---
 
-A pair counts as done once it has any answer, including *Unclear* and *Not
-applicable*. Only "Not checked yet" is unfinished.
+## 16. If something goes wrong
 
-## 17. Exporting
+Setu tells you in a sentence what happened and what it means for your work. It
+will not show you an error message full of code.
 
-The **Download** tab. Choose which pairs, then a format.
+The one thing worth knowing: **your saved work is on the machine running Setu,
+not in your browser.** Closing the tab, losing your connection or your laptop
+going to sleep loses nothing.
 
-| Format | Use it for |
-|---|---|
-| JSON Lines | training data; one object per line |
-| JSON | one document with everything |
-| CSV | opening in Excel |
-| TSV | tab-separated tools |
-| XML | tools that want structured markup |
-| Plain text | proofreading on paper |
-| Moses | the classic two-file parallel corpus |
-| TMX | translation tools such as OmegaT |
-| Excel | reviewing in a spreadsheet, with wrapped text |
-| Parquet | loading into pandas or Spark |
-| Hugging Face | pushing a dataset to the Hub |
-
-Formats marked **both sides only** — Moses, TMX, plain text, Hugging Face —
-describe *parallel* data and cannot represent a pair with an empty side. Those
-pairs are left out, and the download tells you how many. This is deliberate: a
-blank line in a Moses file shifts every later line out of alignment and quietly
-ruins the corpus.
-
-"Download every format as one zip" gives you all of them at once.
-
-## 18. Filtering an export
-
-Common things people want:
-
-- **Only finished work** — choose "Everything you have checked".
-- **Only the clean pairs** — choose "Only Exact".
-- **Only usable training data** — "Exact and Needs correction", and tick "Only
-  pairs that have text on both sides".
-- **One chapter** — pick it in **Jump to a chapter** first, then choose
-  "Only this chapter".
-
-## 19. Reading mathematics
-
-Roughly half the text in these books contains mathematics, written in a LaTeX-
-like notation.
-
-| You see | It means |
-|---|---|
-| `$...$` | a formula inside a line |
-| `$$...$$` | a formula on its own line |
-| `\frac{a}{b}` | a over b |
-| `x^2`, `x_1` | superscript, subscript |
-| `\times`, `\neq`, `\therefore` | ×, ≠, ∴ |
-| `\begin{matrix}...\end{matrix}` | a matrix |
-
-You do not need to understand it to work with it. Compare the two sides
-character by character: the mathematics is usually *identical* in both languages,
-so any difference is either a genuine difference in the books or a mistake by
-the machine.
-
-The ∑ mark in a pair's header means that side contains mathematics; ⊞ means it
-contains a table.
-
-## 19a. Reviewing what has been done
-
-The **Saved work** tab lists every pair in the open workbook, with its answer,
-when it was last changed and by whom. Filter it by answer, or to just the pairs
-somebody has edited, and sort it by most recently changed to see what a
-colleague did this morning. Click any row to open that pair back in
-**Annotate**.
-
-## 20. Working in your own script
-
-Type in whichever script you are reading. Setu stores everything as Unicode and
-normalises it so that the same word typed two different ways compares as the
-same word.
-
-For right-to-left scripts — Urdu, for instance — the box switches direction
-automatically, and the cursor and alignment go with it. That comes from the
-script recorded for the book, not from a list of languages, so a new one works
-the day its textbooks are added.
-
-If the text looks like a row of empty boxes, your computer is missing a font for
-that script rather than the text being missing. Installing Noto Sans for that
-language fixes it.
-
-## 21. Pacing
-
-An experienced annotator does 150–300 pairs an hour on a familiar book. Do not
-chase that number on your first day.
-
-Two habits that help:
-
-- Work chapter by chapter rather than roaming. Context carries over.
-- Use <kbd>n</kbd> to move to the next unchecked pair rather than scrolling. It
-  keeps you from re-reading the same pairs.
-
-## 22. When to stop and ask
-
-- The same kind of mistake appears in dozens of pairs — that is a parser problem
-  worth reporting, not dozens of individual fixes.
-- Whole pages are missing from one edition.
-- You are unsure whether something counts as *structural mismatch* or *missing*
-  — pick one, write a note, keep going. Consistency matters more than which one
-  you chose.
-
-## 23. Reviewing somebody else's work
-
-Filter by status to see only what you want to review, and use **View changes**
-to see what was altered from the machine's original. A reviewer changing a
-status is recorded in the history alongside the original annotator's.
-
-## 24. Your name
-
-Type it into the box at the top right. It is stored on this computer and
-attached to every change you save, so work can be attributed and questions can
-be asked later. It is a label, not a login — Setu has no passwords and no
-accounts.
-
-## 25. If something goes wrong
-
-- **"Could not save"** — the save will be retried. Press **Save changes** to
-  try immediately. Do not close the tab until it says saved.
-- **"Someone else changed this pair"** — see section 14. Nothing is lost.
-- **A pair looks wrong after a reload** — open **What changed on this pair**.
-  Every version is there and any of them can be put back.
-- **The page is blank** — reload it. If it is still blank, the server is
-  probably not running; tell whoever started it.
-- **The printed page will not show** — usually the scanned PDFs have not been
-  downloaded on the server. Your text work is unaffected.
-- **You think you lost work** — you almost certainly did not. Check the history
-  on that pair first.
+If a page will not load, turn to another page and back. If that does not help,
+tell whoever runs the server — and say which two books and which page, because
+that is what lets them find it.
