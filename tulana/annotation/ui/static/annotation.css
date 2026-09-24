@@ -191,119 +191,67 @@ body.setu-focus .setu-secondary { display: none !important; }
 }
 
 
-/* ── browsing both books ───────────────────────────────────────────────────
+
+/* ── the workspace: two books, page by page ────────────────────────────────
  *
- * Two documents, each moved independently. The scrolling here was the single
- * most-reported fault in the view this replaces, so it is worth saying exactly
- * why it kept breaking and what is different now.
- *
- * A `gr.HTML` renders as a wrapper div carrying the elem_id, with Gradio's own
- * `.html-container` / `.prose` inside it. Putting the height and overflow on
- * the wrapper means competing with whatever Gradio's stylesheet says about
- * those inner elements — and Gradio's rules are more specific, so `overflow-y`
- * resolved to `visible` on whichever side lost the argument. The box got its
- * height, the text spilled past it, and the column silently did not scroll.
- *
- * The scroller is now `.setu-doc-scroll`, a div written by browse.py inside
- * the HTML Setu itself produces. Nothing of Gradio's targets that class, so
- * there is no argument to lose. The wrapper is explicitly told to get out of
- * the way rather than to scroll.
+ * Each column is its own scroll container. The earlier version put the height
+ * and overflow on the Gradio wrapper that carries elem_id, which meant
+ * competing with Gradio's own rules about the elements inside it — and on one
+ * side those rules won, so `overflow-y` resolved to `visible`, the text spilled
+ * past the box, and that column silently did not scroll. The class is applied
+ * to a column Setu lays out itself, and the essentials are pinned.
  */
-#setu_read_left, #setu_read_right {
-  overflow: visible !important;
-  height: auto !important;
-  max-height: none !important;
-  padding: 0 !important;
-  border: none !important;
-  background: none !important;
-}
-#setu_read_left > *, #setu_read_right > *,
-#setu_read_left .prose, #setu_read_right .prose {
-  max-width: none !important;
-  margin: 0 !important;
-}
-
-.setu-doc {
-  border: 1px solid var(--setu-rule, #d0d5dd);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--body-background-fill, #fff);
-}
-.setu-doc-src { border-top: 3px solid var(--setu-src, #2563eb); }
-.setu-doc-tgt { border-top: 3px solid var(--setu-tgt, #0f766e); }
-
-/* The one rule this view exists for. Both sides get it from the same
- * declaration, so they cannot diverge: if one scrolls, both scroll. */
-.setu-doc-scroll {
-  height: 66vh !important;
-  min-height: 320px !important;
+#setu_col_src, #setu_col_tgt {
+  height: 70vh !important;
+  min-height: 340px !important;
   overflow-y: auto !important;
   overflow-x: hidden !important;
-  overscroll-behavior: contain;      /* scrolling a column stops at its end
-                                      * instead of dragging the page with it */
-  padding: 2px 12px 14px;
-  scroll-behavior: smooth;
+  overscroll-behavior: contain;   /* a column stops at its end instead of
+                                   * dragging the whole page with it */
+  border: 1px solid var(--setu-rule, #d0d5dd);
+  border-radius: 8px;
+  padding: 0 12px 16px;
+  background: var(--body-background-fill, #fff);
 }
-.setu-doc-scroll:focus-visible {
-  outline: 2px solid var(--setu-teal, #0e7a72);
-  outline-offset: -2px;
-}
+#setu_col_src { border-top: 3px solid var(--setu-src, #2563eb); }
+#setu_col_tgt { border-top: 3px solid var(--setu-tgt, #0f766e); }
 
-.setu-doc-head {
-  display: flex;
-  gap: 10px;
-  align-items: baseline;
-  flex-wrap: wrap;
-  padding: 7px 12px;
-  border-bottom: 1px solid var(--setu-rule, #e1e5ec);
-  background: rgba(148, 163, 184, .09);
-  font-size: 12px;
-}
-.setu-doc-lang { font-weight: 600; letter-spacing: .01em; }
-.setu-doc-title { opacity: .72; flex: 1 1 auto; }
-.setu-doc-where { opacity: .6; font-variant-numeric: tabular-nums; }
-
-.setu-doc-tgt .setu-doc-lang,
-.setu-doc-tgt .setu-b-text { font-family: var(--setu-indic); }
-
-.setu-doc-empty { opacity: .6; padding: 22px 4px; }
-
-/* A page divider, drawn only when a whole chapter is shown at once — it is
- * how you see where the page you were on sits inside the chapter. */
-.setu-pagemark {
+/* The heading strip stays put while the text moves under it, so you never
+ * lose track of which book and which page you are reading. */
+#setu_col_src .setu-doc-head, #setu_col_tgt .setu-doc-head {
   position: sticky;
   top: 0;
-  z-index: 2;
-  margin: 10px -12px 6px;
-  padding: 3px 12px;
-  font-size: 11px;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  opacity: .75;
+  z-index: 3;
+  margin: 0 -12px 8px;
+  padding: 7px 12px;
+  font-size: 12px;
   background: var(--body-background-fill, #fff);
   border-bottom: 1px solid var(--setu-rule, #e1e5ec);
 }
 
-/* ── one block of text ─────────────────────────────────────────────────── */
+/* The Indian-language column, in fonts the operating system already ships for
+ * those scripts. Without this the browser picks whatever it has, which differs
+ * on every machine and is usually heavier than the English beside it. */
+#setu_col_tgt .setu-b-text,
+#setu_col_tgt textarea { font-family: var(--setu-indic); }
+
+.setu-doc-empty { opacity: .62; padding: 20px 2px; font-size: 14px; }
+
+/* ── one block ─────────────────────────────────────────────────────────── */
 
 .setu-b {
-  padding: 8px 2px 10px;
+  padding: 9px 2px 11px;
   border-bottom: 1px solid var(--setu-rule, #eceff4);
 }
 .setu-b:last-child { border-bottom: none; }
 
-.setu-b-meta {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  flex-wrap: wrap;
-  font-size: 11px;
-  opacity: .78;
-  margin-bottom: 3px;
-  font-variant-numeric: tabular-nums;
+.setu-b-meta,
+.setu-b-meta p {
+  font-size: 11px !important;
+  opacity: .72;
+  margin: 10px 0 2px !important;
+  line-height: 1.4;
 }
-.setu-b-kind { opacity: .85; }
-.setu-b-pair { opacity: .55; }
 .setu-b-text {
   font-size: var(--setu-text, 16px);
   line-height: 1.62;
@@ -313,43 +261,71 @@ body.setu-focus .setu-secondary { display: none !important; }
 .setu-b-empty { opacity: .45; font-style: italic; }
 
 /* A block the aligner never paired. About a quarter of this corpus, and the
- * thing the old view could not show at all — marked, not hidden. */
+ * thing worth finding — marked, never hidden. */
 .setu-b-lonely { background: rgba(148, 163, 184, .10); }
-.setu-b-unpaired {
-  border: 1px dashed var(--setu-rule, #b9c0cc);
-  border-radius: 999px;
-  padding: 0 7px;
-  opacity: .8;
+
+/* The correcting box. Quiet until it has focus, so a page of them reads as
+ * text rather than as a form. */
+.setu-b-edit textarea {
+  font-size: var(--setu-text, 16px) !important;
+  line-height: 1.55 !important;
+  border-color: var(--setu-rule, #dfe3ea) !important;
+  background: rgba(148, 163, 184, .05) !important;
+}
+.setu-b-edit textarea:focus {
+  background: var(--body-background-fill, #fff) !important;
+  border-color: var(--setu-teal, #0e7a72) !important;
 }
 
-.setu-b-status {
-  border-radius: 999px;
-  padding: 1px 8px;
-  font-weight: 600;
-  background: rgba(148, 163, 184, .18);
-}
-.setu-st-exact              { background: rgba(14, 122, 114, .18); }
-.setu-st-needs_correction   { background: rgba(37,  99, 235, .16); }
-.setu-st-incomplete         { background: rgba(120, 113, 108, .20); }
-.setu-st-structural_mismatch{ background: rgba(109,  40, 217, .16); }
-.setu-st-unclear            { background: rgba(100, 116, 139, .20); }
-.setu-st-not_applicable     { background: rgba(148, 163, 184, .14); }
-.setu-b-edited {
-  border-radius: 999px;
-  padding: 0 7px;
-  background: rgba(37, 99, 235, .13);
+/* The one question asked of each pair. It sits under the English block it
+ * belongs to, and is asked once rather than twice in two places that could
+ * disagree on screen. */
+.setu-answer { margin-top: 2px !important; }
+.setu-answer label span { font-size: 11px !important; opacity: .75; }
+
+/* The printed page, when the PDF is on disk. Capped so it never pushes the
+ * text it is there to corroborate off the screen. */
+.setu-printed img {
+  max-height: 44vh !important;
+  object-fit: contain !important;
+  border: 1px solid var(--setu-rule, #d0d5dd);
+  border-radius: 6px;
 }
 
-#setu_browse_bar  { align-items: flex-start; }
-#setu_browse_both { align-items: center; gap: 8px; }
+#setu_modebar  { align-items: center; gap: 14px; }
+#setu_navbar   { align-items: flex-start; }
+#setu_bothbar  { align-items: center; gap: 8px; }
 #setu_src_tally, #setu_tgt_tally { font-size: 12px; opacity: .72; }
-#setu_browse_note { font-size: 13px; }
+#setu_offset   { font-size: 13px; }
+#setu_savestate { font-size: 12px; opacity: .8; min-height: 1.2em; }
 
 @media (prefers-color-scheme: dark) {
-  .setu-b-lonely  { background: rgba(148, 163, 184, .16); }
-  .setu-doc-head  { background: rgba(148, 163, 184, .12); }
+  .setu-b-lonely { background: rgba(148, 163, 184, .16); }
+}
+@media (max-width: 900px) {
+  #setu_col_src, #setu_col_tgt { height: 52vh !important; }
 }
 
-@media (max-width: 900px) {
-  .setu-doc-scroll { height: 48vh !important; }
+/* The one question, asked under each English block. Gradio renders a label as
+ * a filled teal chip, which is right for a form and wrong for something that
+ * repeats twenty times down a page — it competes with the text it is asking
+ * about. The span is nested several levels inside the block, not a child of a
+ * <label>, so it is reached by descendant rather than by child. */
+.setu-answer span {
+  font-size: 10.5px !important;
+  font-weight: 500 !important;
+  letter-spacing: .01em;
+  background: none !important;
+  background-color: transparent !important;
+  color: inherit !important;
+  opacity: .6;
+  padding: 0 !important;
+  margin-bottom: 1px !important;
 }
+.setu-answer input { font-size: 13px !important; padding: 4px 8px !important; }
+.setu-answer { margin-bottom: 12px !important; }
+
+/* Blocks are read one after another, so the vertical rhythm matters more than
+ * any single one of them looking generous. */
+.setu-b-edit { margin-bottom: 2px !important; }
+.setu-b-edit textarea { padding: 7px 9px !important; }
