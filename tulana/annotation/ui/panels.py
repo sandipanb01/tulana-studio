@@ -235,3 +235,39 @@ def read_doc(name: str) -> str:
         log.warning("refused document request: %r", name)
         return "That page could not be found."
     return candidate.read_text(encoding="utf-8")
+
+
+def goto_from_review(state: Any, bs: Any, table: Any, evt: gr.SelectData):
+    """Move the workspace to the page the clicked row sits on.
+
+    There is one place to work now, so a row in this table is a destination
+    rather than a thing to open: it puts both sides on the pages that row's
+    two halves came from, and leaves the annotator there.
+    """
+    from . import browse
+    st = session.ensure(state)
+    bs = browse.ensure(bs)
+    if not session.has_project(st) or not bs.get("pid"):
+        return bs
+    # evt.index is the cell that was clicked, (row, column) — a position in
+    # the table, not a pair number. The pair number is what that row holds in
+    # its first column, so it is read from the table rather than guessed.
+    try:
+        rows = table.values.tolist() if hasattr(table, "values") else list(table)
+        seq = int(rows[int(evt.index[0])][0])
+    except (TypeError, ValueError, IndexError, AttributeError):
+        return bs
+    try:
+        with store.ro() as con:
+            row = workspace.WorkspaceRepo(con).at_seq(st["pid"], seq)
+    except Exception:
+        log.exception("could not find the row behind that table click")
+        return bs
+    if not row:
+        return bs
+    for side, column in (("src", "src_pg"), ("tgt", "tgt_pg")):
+        page = row.get(column)
+        if page is not None:
+            bs[f"{side}_page"] = max(bs[f"{side}_lo"],
+                                     min(bs[f"{side}_hi"], int(page)))
+    return bs
