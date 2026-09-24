@@ -96,6 +96,8 @@ def build() -> gr.Blocks:
         with gr.Tabs():
             with gr.Tab("Annotate", id="tab_annotate"):
                 pair = _annotate_tab(state)
+            with gr.Tab("Read side by side", id="tab_read"):
+                _reading_tab(state)
             with gr.Tab("Saved work", id="tab_review"):
                 _review_tab(state, pair)
             with gr.Tab("Download", id="tab_export"):
@@ -108,6 +110,43 @@ def build() -> gr.Blocks:
         _ON_LOAD.clear()
 
     return demo
+
+
+# ── reading both books side by side ────────────────────────────────────────
+
+def _reading_tab(state: gr.State) -> None:
+    """Two continuous columns, each scrolling by itself.
+
+    The Annotate tab judges one pair at a time, which is right for deciding
+    but useless for orientation: most pairs are a line or two, so nothing
+    scrolls, and when the aligner leaves one side empty there is no way to
+    look around for the counterpart. Here each edition is one long column
+    with its own scrollbar.
+    """
+    gr.Markdown("Both textbooks end to end. **Each side scrolls on its own** — "
+                "when a piece of text has no counterpart, scroll the other "
+                "column to find where it went.")
+    with gr.Row():
+        read_chapter = gr.Dropdown(label="Chapter", choices=[("Everything", "")],
+                                   value="", interactive=True, scale=3)
+        read_refresh = gr.Button("Show the text", variant="primary", scale=1)
+    read_note = gr.Markdown("")
+    with gr.Row():
+        with gr.Column(scale=5):
+            gr.Markdown("**Left — the source, usually English**")
+            read_left = gr.HTML('<div class="setu-read-empty">'
+                                'Open two textbooks in the Annotate tab, then '
+                                'press “Show the text”.</div>',
+                                elem_id="setu_read_left")
+        with gr.Column(scale=5):
+            gr.Markdown("**Right — the language you are checking**")
+            read_right = gr.HTML('<div class="setu-read-empty"></div>',
+                                 elem_id="setu_read_right")
+
+    read_refresh.click(panels.reading, [state, read_chapter],
+                       [read_left, read_right, read_note])
+    read_chapter.change(panels.reading, [state, read_chapter],
+                        [read_left, read_right, read_note])
 
 
 # ── the annotation tab ─────────────────────────────────────────────────────
