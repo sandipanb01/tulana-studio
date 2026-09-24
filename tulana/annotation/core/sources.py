@@ -256,3 +256,143 @@ def prune_cache(keep_bytes: int = 256 * 1024 * 1024) -> dict:
                 continue
     return {"files": len(files), "removed": removed, "freed_bytes": freed,
             "remaining_bytes": total - freed}
+
+
+# ── whole pages, for the block overlay ─────────────────────────────────────
+#
+# `for_segment` above answers "show me where this piece of text came from" and
+# deliberately clamps its context to a fifth of a page: it is a verification
+# crop, not a page. The block overlay needs the opposite — the entire page,
+# once, at a resolution that is comfortable to read on screen, with every
+# block drawn on top of it.
+#
+# The two share everything below the box: the same PDF lookup that tolerates a
+# reorganised corpus, the same Git LFS pointer check, the same content-keyed
+# cache written through a temporary name so a second annotator never reads a
+# half-written file.
+
+#: On-screen resolution for a whole page. Tulana's own viewer uses 110; this
+#: is a little higher because Setu's panes are narrower than the studio's.
+PAGE_DPI = int(getattr(config, "SOURCE_PAGE_DPI", 130) or 130)
+
+
+def page_image(con, book_key: str, page: Any, *, dpi: int | None = None) -> SourceView:
+    """Render one whole page of one book.
+
+    Never raises. A missing PDF, a Git LFS pointer, a page past the end of the
+    file and a machine with no PyMuPDF are all ordinary states of this corpus,
+    and each comes back as a sentence an annotator can act on.
+
+    ``page`` is the **stored** page number, counting from zero, which is what
+    ``setu_segment.page`` holds and what PyMuPDF indexes by. The interface is
+    responsible for showing it as ``page + 1``.
+    """
+    ok, why = available()
+    if not ok:
+        return SourceView(False, message=why)
+
+    try:
+        n = int(page)
+    except (TypeError, ValueError):
+        return SourceView(False, message="That is not a page number.")
+    if n < 0:
+        return SourceView(False, message="That is not a page number.")
+
+    book = Repository(con).one(
+        "SELECT book_key, relpath, book, title, num_pages FROM setu_book"
+        "  WHERE book_key = ?", (book_key,))
+    if not book:
+        return SourceView(False, message="No such textbook.")
+
+    label = book["title"] or book["book"] or book_key
+    pdf = _find_pdf(book["relpath"])
+    if pdf is None:
+        return SourceView(
+            False, page=n, book=label, relpath=book["relpath"],
+            message=(f"The scanned pages of “{label}” are not on this machine. "
+                     f"The text is unaffected. If the PDFs are stored with Git "
+                     f"LFS, run:  git lfs pull"))
+    if _is_lfs_pointer(pdf):
+        return SourceView(
+            False, page=n, book=label, relpath=book["relpath"],
+            message=(f"“{label}” has not been downloaded — the file here is a "
+                     f"Git LFS pointer, not the book. The text is unaffected. "
+                     f"To fetch the scans, run:  git lfs pull"))
+
+    res = max(60, min(300, int(dpi or PAGE_DPI)))
+    out = _cached_path(book["relpath"], n, (0.0, 0.0, 1.0, 1.0), res)
+    if out.exists():
+        return SourceView(True, out, page=n, book=label, relpath=book["relpath"])
+
+    try:
+        png, _w, _h = _render(pdf, n, (0.0, 0.0, 1.0, 1.0), res)
+    except Exception as exc:
+        log.info("page image failed for %s p%s (%s): %s", book_key, n, pdf, exc)
+        return SourceView(
+            False, page=n, book=label, relpath=book["relpath"],
+            message=(f"Page {n + 1} of “{label}” could not be drawn. The text "
+                     f"is unaffected — carry on."))
+
+    tmp = out.with_name(out.name + f".{threading.get_ident()}.part")
+    try:
+        tmp.write_bytes(png)
+        tmp.replace(out)
+    except OSError as exc:                       # pragma: no cover - disk full
+        tmp.unlink(missing_ok=True)
+        log.warning("could not cache a page image: %s", exc)
+        return SourceView(False, page=n, book=label,
+                          message=f"The page could not be saved for display ({exc}).")
+    return SourceView(True, out, page=n, book=label, relpath=book["relpath"])
+
+
+def region(con, book_key: str, page: Any, box: Any, *,
+           dpi: int | None = None) -> SourceView:
+    """Cut one rectangle out of one page — the crop tool's whole job.
+
+    ``box`` is ``(x0, y0, x1, y1)`` as **fractions of the page**, which is the
+    form every box travels in throughout Tulana: it survives any DPI and any
+    rescale, so what the annotator dragged on a 130 dpi image is cut correctly
+    from a 300 dpi render without either knowing about the other.
+    """
+    ok, why = available()
+    if not ok:
+        return SourceView(False, message=why)
+    try:
+        n = int(page)
+        x0, y0, x1, y1 = (max(0.0, min(1.0, float(v))) for v in list(box)[:4])
+    except (TypeError, ValueError, IndexError):
+        return SourceView(False, message="That is not a rectangle on a page.")
+    if x1 - x0 < 0.004 or y1 - y0 < 0.004:
+        return SourceView(False, message="That rectangle is too small to cut.")
+
+    book = Repository(con).one(
+        "SELECT relpath, book, title FROM setu_book WHERE book_key = ?", (book_key,))
+    if not book:
+        return SourceView(False, message="No such textbook.")
+    label = book["title"] or book["book"] or book_key
+    pdf = _find_pdf(book["relpath"])
+    if pdf is None or _is_lfs_pointer(pdf):
+        return SourceView(False, page=n, book=label,
+                          message=(f"The scanned pages of “{label}” are not on "
+                                   f"this machine, so nothing can be cut from "
+                                   f"them. Run:  git lfs pull"))
+
+    res = max(72, min(400, int(dpi or 300)))
+    out = _cached_path(book["relpath"], n, (x0, y0, x1, y1), res)
+    if out.exists():
+        return SourceView(True, out, page=n, book=label, relpath=book["relpath"])
+    try:
+        png, _w, _h = _render(pdf, n, (x0, y0, x1, y1), res)
+    except Exception as exc:
+        log.info("crop failed for %s p%s %s: %s", book_key, n, (x0, y0, x1, y1), exc)
+        return SourceView(False, page=n, book=label,
+                          message="That region could not be cut from the page.")
+    tmp = out.with_name(out.name + f".{threading.get_ident()}.part")
+    try:
+        tmp.write_bytes(png)
+        tmp.replace(out)
+    except OSError as exc:                       # pragma: no cover
+        tmp.unlink(missing_ok=True)
+        return SourceView(False, page=n, book=label,
+                          message=f"The crop could not be saved ({exc}).")
+    return SourceView(True, out, page=n, book=label, relpath=book["relpath"])
