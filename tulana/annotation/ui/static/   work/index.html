@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>सेतु Setu — parallel textbook annotation</title>
+<link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+<header class="bar">
+  <span class="brand"><b>सेतु</b> Setu</span>
+  <nav class="tabs">
+    <button class="tab on" data-tab="Work">Annotate</button>
+    <button class="tab" data-tab="Saved">Saved work</button>
+    <button class="tab" data-tab="Get">Download</button>
+    <button class="tab" data-tab="Guide">Guide</button>
+  </nav>
+  <div class="bar-right">
+    <span id="progress" class="pill" hidden></span>
+    <input id="who" class="who" placeholder="Your name" autocomplete="off">
+    <button id="help" class="ghost" title="Keyboard shortcuts">?</button>
+  </div>
+</header>
+
+<!-- ══════════════════════════ ANNOTATE ══════════════════════════ -->
+<section class="page on" id="pageWork">
+  <aside id="side">
+    <button id="sideToggle" class="ghost only-narrow">☰ Controls</button>
+
+    <div class="grp">
+      <h3>Textbook</h3>
+      <select id="board"></select>
+      <select id="klass" disabled></select>
+      <select id="subject" disabled></select>
+      <div class="two">
+        <div>
+          <label class="tiny">Left — usually English</label>
+          <select id="srcLang" disabled></select>
+          <select id="srcBook" disabled></select>
+        </div>
+        <div>
+          <label class="tiny">Right — the language you check</label>
+          <select id="tgtLang" disabled></select>
+          <select id="tgtBook" disabled></select>
+        </div>
+      </div>
+      <button id="open" class="btn primary wide">Open side by side</button>
+      <p id="corpus" class="tiny muted"></p>
+    </div>
+
+    <div class="grp" id="gChapter" hidden>
+      <h3>Chapter</h3>
+      <select id="srcChapter"></select>
+      <select id="tgtChapter"></select>
+      <p class="tiny muted">Each edition has its own chapters. They rarely
+        agree — pick one on each side.</p>
+    </div>
+
+    <div class="grp" id="gPage" hidden>
+      <h3>Page</h3>
+      <div class="pagerow">
+        <button id="prevBoth" class="ghost" title="Both back (Alt+←)">‹</button>
+        <input id="srcPage" type="number" min="1" step="1">
+        <input id="tgtPage" type="number" min="1" step="1">
+        <button id="nextBoth" class="ghost" title="Both forward (Alt+→)">›</button>
+      </div>
+      <label class="chk"><input type="checkbox" id="lockPages"> Turn both pages together</label>
+      <p id="offset" class="tiny muted"></p>
+      <button id="link" class="btn wide">⇄ These two pages match</button>
+      <button id="unlink" class="btn wide ghost" hidden>Unlink</button>
+    </div>
+
+    <div class="grp" id="gTool" hidden>
+      <h3>Tool</h3>
+      <div class="seg">
+        <button class="segbtn on" data-tool="click">Click a block</button>
+        <button class="segbtn" data-tool="crop">Drag to crop</button>
+      </div>
+      <p id="toolHint" class="tiny muted"></p>
+    </div>
+
+    <div class="grp" id="gMode" hidden>
+      <h3>Text</h3>
+      <div class="seg">
+        <button class="segbtn on" data-mode="read">Read</button>
+        <button class="segbtn" data-mode="edit">Correct it</button>
+      </div>
+      <p id="modeHint" class="tiny muted">Reading. Nothing you type can change
+        the text.</p>
+    </div>
+
+    <div class="grp" id="gFilter" hidden>
+      <h3>Show only</h3>
+      <select id="kindFilter"><option value="">All kinds of block</option></select>
+      <label class="chk"><input type="checkbox" id="dim"> Dim the rest</label>
+      <label class="chk"><input type="checkbox" id="noise"> Include headers and page numbers</label>
+      <label class="chk"><input type="checkbox" id="order" checked> Reading order</label>
+      <div id="legend" class="legend"></div>
+    </div>
+  </aside>
+
+  <div id="main">
+    <div id="panes">
+      <div class="pane" id="paneSrc">
+        <div class="phead">
+          <b id="titleSrc">Left</b>
+          <span id="whereSrc" class="muted"></span>
+          <span class="spacer"></span>
+          <button class="ghost z" data-zoom="src" data-by="-1">−</button>
+          <span id="zoomSrc" class="muted">100%</span>
+          <button class="ghost z" data-zoom="src" data-by="1">+</button>
+          <button class="ghost z" data-zoom="src" data-by="0" title="Fit">⤢</button>
+        </div>
+        <div class="scroll" id="scrollSrc"><div class="host" id="hostSrc"></div></div>
+      </div>
+      <div id="split"></div>
+      <div class="pane" id="paneTgt">
+        <div class="phead">
+          <b id="titleTgt">Right</b>
+          <span id="whereTgt" class="muted"></span>
+          <span class="spacer"></span>
+          <button class="ghost z" data-zoom="tgt" data-by="-1">−</button>
+          <span id="zoomTgt" class="muted">100%</span>
+          <button class="ghost z" data-zoom="tgt" data-by="1">+</button>
+          <button class="ghost z" data-zoom="tgt" data-by="0" title="Fit">⤢</button>
+        </div>
+        <div class="scroll" id="scrollTgt"><div class="host" id="hostTgt"></div></div>
+      </div>
+    </div>
+
+    <div id="work">
+      <div id="selInfo" class="tiny muted">Nothing selected — click a block on
+        either page.</div>
+      <div class="texts">
+        <div class="tcol">
+          <div class="tlabel"><span id="lblSrc">Left</span>
+            <button id="origSrc" class="ghost tiny" hidden>Put back what the parser read</button></div>
+          <div id="textSrc" class="ttext" contenteditable="false" spellcheck="false"></div>
+        </div>
+        <div class="tcol">
+          <div class="tlabel"><span id="lblTgt">Right</span>
+            <button id="origTgt" class="ghost tiny" hidden>Put back what the parser read</button></div>
+          <div id="textTgt" class="ttext indic" contenteditable="false" spellcheck="false"></div>
+        </div>
+      </div>
+      <div class="answerrow" id="answerRow" hidden>
+        <span class="tiny">Do these two say the same thing?</span>
+        <div id="answers" class="answers"></div>
+        <input id="note" class="note" placeholder="Note (optional) — why did you choose that?">
+        <span id="saveState" class="tiny muted"></span>
+      </div>
+      <div id="crops" class="crops"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ SAVED WORK ══════════════════════════ -->
+<section class="page" id="pageSaved">
+  <div class="pad">
+    <div class="row">
+      <select id="savedFilter">
+        <option value="">Everything</option>
+        <option value="__done">Everything I have answered</option>
+        <option value="pending">Not checked yet</option>
+        <option value="exact">Exact</option>
+        <option value="needs_correction">Needs correction</option>
+        <option value="incomplete">Missing or incomplete</option>
+        <option value="structural_mismatch">Structural mismatch</option>
+        <option value="unclear">Unclear</option>
+        <option value="not_applicable">Not applicable</option>
+      </select>
+      <button id="savedRefresh" class="btn">Refresh</button>
+      <span id="savedNote" class="tiny muted"></span>
+    </div>
+    <div id="savedList" class="cards"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ DOWNLOAD ══════════════════════════ -->
+<section class="page" id="pageGet">
+  <div class="pad">
+    <p class="muted">Everything answered in the two books that are open.</p>
+    <div class="row">
+      <select id="fmt"></select>
+      <select id="scope">
+        <option value="">Everything</option>
+        <option value="__done">Only what has been answered</option>
+        <option value="exact">Only “Exact”</option>
+        <option value="needs_correction">Only “Needs correction”</option>
+      </select>
+      <button id="download" class="btn primary">Download</button>
+      <button id="downloadAll" class="btn">Every format, as a zip</button>
+    </div>
+    <p id="getNote" class="tiny muted"></p>
+  </div>
+</section>
+
+<!-- ══════════════════════════ GUIDE ══════════════════════════ -->
+<section class="page" id="pageGuide">
+  <div class="pad guide">
+    <nav id="docNav" class="docnav"></nav>
+    <article id="doc" class="doc"></article>
+  </div>
+</section>
+
+<div id="toast" class="toast" hidden></div>
+
+<div id="keys" class="modal" hidden>
+  <div class="sheet">
+    <h3>Keyboard</h3>
+    <table>
+      <tr><td><kbd>1</kbd>–<kbd>6</kbd></td><td>answer the selected pair</td></tr>
+      <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>turn the page (both, if locked)</td></tr>
+      <tr><td><kbd>Alt</kbd>+<kbd>←</kbd>/<kbd>→</kbd></td><td>turn the left page only</td></tr>
+      <tr><td><kbd>Shift</kbd>+<kbd>←</kbd>/<kbd>→</kbd></td><td>turn the right page only</td></tr>
+      <tr><td><kbd>n</kbd></td><td>next block nobody has answered</td></tr>
+      <tr><td><kbd>e</kbd></td><td>switch between Read and Correct it</td></tr>
+      <tr><td><kbd>c</kbd></td><td>switch between Click and Crop</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td>clear the selection</td></tr>
+      <tr><td><kbd>+</kbd> <kbd>−</kbd></td><td>zoom both pages</td></tr>
+      <tr><td><kbd>Ctrl</kbd></td><td>hold to hide the block labels</td></tr>
+    </table>
+    <button class="btn wide" onclick="document.getElementById('keys').hidden=true">Close</button>
+  </div>
+</div>
+
+<script src="app.js?v=3"></script>
+</body>
+</html>
