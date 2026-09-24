@@ -142,6 +142,59 @@ different lengths. On a very uneven pair, unlink them.
 **How do I see the actual page from the book?**
 **Check the printed page**, under either side.
 
+## Browsing the two books apart
+
+**The two textbooks do not line up at all. Page 2 on the left is nothing like
+page 2 on the right.**
+That is normal, and more common than you would think. The two editions were
+printed by different teams; several pairs in this corpus run more than a hundred
+pages apart, and some share no chapter starting page at all. Go to **Browse both
+books**, where each side moves independently, and put the two pages next to each
+other yourself.
+
+**How do I move one side without moving the other?**
+In **Browse both books**, each side has its own page box and its own
+**◀ Previous page** / **Next page ▶**. They are independent unless you have
+linked them.
+
+**How do I move both at once?**
+**◀◀ Both back** and **Both forward ▶▶**, under the two sides. They keep
+whatever gap the two sides are currently sitting at.
+
+**I found the two pages that match. How do I keep them together?**
+Press **⇄ Link these two pages**. From then on moving either side moves the
+other by the same amount.
+
+**Does the link survive me closing the tab?**
+Yes. It is saved to the workspace, so the next person to open those two books
+starts where you left off. **Unlink** removes it, for everyone.
+
+**How do I know how far apart they are?**
+The line under the controls always says: *English p64 is sitting beside p76 — an
+offset of −12.*
+
+**The chapter lists on the two sides are different lengths.**
+They often are. One edition may carry a chapter the other does not, or number
+them differently. Both lists are shown exactly as each book has them; that is
+the point.
+
+**Can I work on chapter 3 on the left and something else on the right?**
+Yes. The chapter is chosen per side.
+
+**Why is a block marked "not paired"?**
+The aligner found nothing opposite it. About a quarter of this corpus is like
+that, because the two editions break their paragraphs in different places. It is
+information, not an error — and it is the thing this view exists to let you find.
+
+**One of the columns will not scroll.**
+Both columns scroll independently; if one appears stuck it is because that page
+is short enough to fit. Try a page with more text on it, or turn on **Show the
+whole chapter at once**.
+
+**The page I am on is blank.**
+Some pages are a single full-page illustration, and Setu holds only text. Step
+to the next page.
+
 ## Navigation and search
 
 **How do I get to a specific page?**
