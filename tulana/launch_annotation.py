@@ -405,14 +405,16 @@ def main(argv: list[str] | None = None) -> int:
   SETU IS RUNNING — the parallel textbook annotation workspace
 
   Share this link with your annotators:
-      {(work_url or public or '(no public link — see the note below)')}
+      {public or '(no public link — see the note below)'}
 
   On this machine:
-      {at(local_url, WORK.lstrip('/') + '/') if work_url else local}
+      {local}
 """ + (f"""  The rest of Tulana Studio (blocks, saved pairs, page images):
       {studio_url}
-""" if studio_url else "") + (f"""  The older Gradio interface, if you need it:
-      {public or local}
+""" if studio_url else "") + (f"""  The workspace itself, if a link ever lands somewhere else:
+      {work_url}
+  The older Gradio interface, only if the workspace will not load:
+      {(public or local).rstrip('/')}/?stay=1
 """ if work_url else "") + f"""
   Textbooks : {config.DATA_DIR}
   Your work : {config.STATE_DIR}
