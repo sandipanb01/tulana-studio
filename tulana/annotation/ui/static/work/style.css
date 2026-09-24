@@ -276,3 +276,63 @@ kbd { border: 1px solid var(--rule); border-radius: 4px; padding: 1px 5px; font-
   #split { display: none; }
   .texts { grid-template-columns: 1fr; }
 }
+
+/* ── no scan on disk: the text, laid out to be read ────────────────────────
+ *
+ * The ordinary state of a Git LFS checkout, and the permanent one once the
+ * monthly allowance is spent. The first version drew a dashed page of the
+ * right proportions with the blocks outlined on it — honest, and almost
+ * useless: a title page carries two blocks, so the annotator faced a large
+ * empty box with two small outlines in it and nothing to read.
+ *
+ * The same blocks are a readable column here. Same class, same click handler,
+ * same selection — only the picture is missing.
+ */
+.host.textonly { display: block; width: 100%; }
+.host.textonly .trow { position: static; }
+
+.nosc {
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--teal);
+  background: var(--panel);
+  border-radius: 6px;
+  padding: 9px 12px;
+  margin-bottom: 10px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.nosc .tiny { opacity: .75; }
+
+.trow {
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--c, #666);
+  border-radius: 6px;
+  background: var(--panel);
+  padding: 8px 11px 10px;
+  margin-bottom: 7px;
+  cursor: pointer;
+}
+.trow:hover { border-color: var(--teal); }
+.trow.on {
+  background: color-mix(in srgb, var(--c, #666) 9%, var(--panel));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--c, #666) 40%, transparent);
+}
+.trow.dim { opacity: .3; }
+/* An unpaired block is the thing worth finding, so it is marked, not hidden. */
+.trow.lonely { background: rgba(148, 163, 184, .10); border-left-style: dotted; }
+
+.tmeta {
+  display: flex; gap: 9px; flex-wrap: wrap; align-items: center;
+  font-size: 10.5px; color: var(--muted); margin-bottom: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.tkind { color: var(--c, #666); font-weight: 600; }
+.tlonely { border: 1px dashed var(--rule); border-radius: 999px; padding: 0 6px; }
+.tdone { background: rgba(14, 122, 114, .16); color: var(--teal); border-radius: 999px; padding: 0 7px; font-weight: 600; }
+.tedit { background: rgba(37, 99, 235, .13); color: var(--src); border-radius: 999px; padding: 0 7px; }
+
+.tbody {
+  font-size: 15px; line-height: 1.6; white-space: pre-wrap; word-break: break-word;
+}
+#paneTgt .tbody, #paneTgt .ttext { font-family: var(--indic); }
+.tbody i { opacity: .5; }
