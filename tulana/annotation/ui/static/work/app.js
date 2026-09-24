@@ -299,17 +299,62 @@ function renderSide(s) {
   // Letting an <img> discover a missing PDF by 404 works, but logs a red error
   // that reads like a fault to whoever opens the developer tools next.
   if (st.imageAvailable) {
+    host.classList.remove("textonly");
     host.innerHTML = `<img width="${w}" alt="" src="${API}/pages/${st.book}/${st.page}/image.png">`;
     const img = host.querySelector("img");
     img.onload = () => { drawBlocks(s); drawCrop(s); };
+    drawBlocks(s);
+    drawCrop(s);
   } else {
-    const h = Math.round(w * (st.aspect || 1.414));
-    host.innerHTML = `<div class="blank" style="width:${w}px;height:${h}px">` +
-      esc(st.imageMessage || "The scan of this book is not on this machine — the blocks and the text are shown without it.") +
-      `</div>`;
+    renderText(s);
   }
-  drawBlocks(s);
-  drawCrop(s);
+}
+
+/* No scan on disk — which on a Git LFS checkout is the ordinary case, and on
+ * an exhausted LFS allowance is the permanent one.
+ *
+ * The first version of this drew a dashed rectangle of the right proportions
+ * with the blocks outlined on it. That is honest and it is almost useless: a
+ * title page carries two blocks, so the annotator faces a large empty box with
+ * two small outlines in it and nothing to read. The text is what they are here
+ * to check, and the text does not need the scan.
+ *
+ * So the same blocks are laid out as a readable column instead, in reading
+ * order, each one clickable exactly as its outline would have been — same
+ * dataset attributes, same handler, same selection. Only the picture is gone.
+ */
+function renderText(s) {
+  const st = S(s);
+  const host = $(s === "src" ? "#hostSrc" : "#hostTgt");
+  host.classList.add("textonly");
+  host.style.width = "100%";
+
+  const only = $("#kindFilter").value, dim = $("#dim").checked;
+  const rows = st.blocks.map((b, i) => {
+    if (only && b.kind !== only && !dim) return "";
+    const on = st.sel.has(b.sid);
+    const state = !b.rid ? "lonely" : (b.status && b.status !== "pending" ? "done" : "pending");
+    const faded = (only && b.kind !== only) || (dim && !on);
+    const text = (b.text || "").trim();
+    return `<div class="trow blk ${state}${on ? " on" : ""}${faded ? " dim" : ""}"` +
+      ` data-sid="${esc(b.sid)}" data-i="${i}"` +
+      ` style="--c:${W.colors[b.kind || "other"] || "#666"}">` +
+      `<div class="tmeta"><span class="tkind">${esc(kindName(b.kind))}</span>` +
+      `<span>page ${b.display_page}</span>` +
+      (b.rid ? `<span>pair #${b.row_seq}</span>` : `<span class="tlonely">no counterpart</span>`) +
+      (b.edited ? `<span class="tedit">corrected</span>` : "") +
+      (b.rid && b.status && b.status !== "pending"
+        ? `<span class="tdone">${esc(statusLabel(b.status))}</span>` : "") +
+      `</div><div class="tbody">${text ? esc(text) : "<i>the parser found no text here</i>"}</div>` +
+      `</div>`;
+  }).join("");
+
+  host.innerHTML =
+    `<div class="nosc">No scan of this book on this machine — showing the text. ` +
+    `Everything except the page picture and the crop tool works as usual.` +
+    `<br><span class="tiny">${esc(st.imageMessage || "")}</span></div>` +
+    (rows || `<div class="nosc">The parser found nothing on page ${shown(st.page)}. ` +
+      `Try the next page.</div>`);
 }
 
 /* The overlay. Everything here is a fraction times the MEASURED size of what
@@ -318,7 +363,8 @@ function renderSide(s) {
 function drawBlocks(s) {
   const st = S(s);
   const host = $(s === "src" ? "#hostSrc" : "#hostTgt");
-  const surface = host.querySelector("img") || host.querySelector(".blank");
+  if (host.classList.contains("textonly")) return;   // the column draws itself
+  const surface = host.querySelector("img");
   if (!surface) return;
   const W_ = surface.clientWidth || surface.offsetWidth;
   const H_ = surface.clientHeight || surface.offsetHeight;
@@ -402,13 +448,20 @@ for (const s of ["src", "tgt"]) {
   let mode = null, start = null;
 
   const at = ev => {
-    const surface = host.querySelector("img") || host.querySelector(".blank");
+    const surface = host.querySelector("img");
     const r = surface.getBoundingClientRect();
     return { x: (ev.clientX - r.left) / r.width, y: (ev.clientY - r.top) / r.height };
   };
 
   host.addEventListener("pointerdown", ev => {
     if (W.tool !== "crop") return;
+    // Nothing to cut from when there is no scan. Say so once rather than
+    // letting a drag do nothing and look broken.
+    if (!host.querySelector("img")) {
+      toast("There is no scan of this page on this machine, so nothing can be "
+            + "cut from it. Run: git lfs pull", true);
+      return;
+    }
     if (ev.target.closest(".cx")) { S(s).crop = null; drawCrop(s); return; }
     mode = ev.target.closest(".grip") ? "resize" : (ev.target.closest(".crop") ? "move" : "draw");
     start = at(ev);
@@ -457,7 +510,7 @@ function drawCrop(s) {
   host.querySelectorAll(".crop").forEach(e => e.remove());
   const c = S(s).crop;
   if (!c) return;
-  const surface = host.querySelector("img") || host.querySelector(".blank");
+  const surface = host.querySelector("img");
   if (!surface) return;
   const W_ = surface.clientWidth, H_ = surface.clientHeight;
   const b = norm(c);
