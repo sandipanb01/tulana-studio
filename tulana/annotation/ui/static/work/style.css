@@ -336,3 +336,26 @@ kbd { border: 1px solid var(--rule); border-radius: 4px; padding: 1px 5px; font-
 }
 #paneTgt .tbody, #paneTgt .ttext { font-family: var(--indic); }
 .tbody i { opacity: .5; }
+
+/* ── correcting the text where you read it ────────────────────────────────
+ * The doccano gesture: the words you are checking are the words you fix, in
+ * the place you are checking them. No separate editor, nothing to open.
+ */
+.tbody[contenteditable="true"] {
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  padding: 6px 9px;
+  margin-top: 2px;
+  background: var(--bg);
+  min-height: 1.6em;
+}
+.tbody[contenteditable="true"]:focus {
+  outline: none;
+  border-color: var(--teal);
+  background: var(--panel);
+  box-shadow: 0 0 0 3px rgba(14, 122, 114, .12);
+}
+/* A save you can see. Two seconds of green beats a line of text somewhere
+ * else that nobody is looking at. */
+.trow.saved { border-color: var(--teal); background: rgba(14, 122, 114, .07); }
+.trow.saved .tmeta::after { content: "saved"; color: var(--teal); font-weight: 600; }
