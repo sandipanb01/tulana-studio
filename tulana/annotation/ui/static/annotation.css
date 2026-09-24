@@ -189,3 +189,58 @@ body.setu-focus .setu-secondary { display: none !important; }
   :root { --setu-pane-h: 300px; }
   #setu_sidebar { display: none; }
 }
+
+/* ── reading both books side by side ──────────────────────────────────────
+ *
+ * Each column is its own scroll container. That is the whole point: the
+ * annotation panes above show one pair at a time and most pairs are a line
+ * or two, so there is nothing to scroll and no way to look around when the
+ * aligner leaves one side empty. Here you can.
+ */
+#setu_read_left, #setu_read_right {
+  /* !important throughout: Gradio's own rules win on specificity, and without
+   * it overflow-y resolves to `visible` — the box gets its height, the text
+   * spills past it, and the column silently does not scroll at all. That is
+   * the single thing this view exists to do, so it is pinned. */
+  height: 68vh !important;
+  min-height: 320px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  border: 1px solid var(--setu-rule, #d0d5dd);
+  border-radius: 8px;
+  padding: 4px 10px;
+  background: var(--body-background-fill, #fff);
+}
+#setu_read_left  { border-left: 3px solid var(--setu-src, #2563eb); }
+#setu_read_right { border-left: 3px solid var(--setu-tgt, #0f766e); }
+
+.setu-read-row {
+  padding: 7px 2px 9px;
+  border-bottom: 1px solid var(--setu-rule, #e1e5ec);
+}
+.setu-read-row:last-child { border-bottom: none; }
+
+.setu-read-meta {
+  font-size: 11px;
+  letter-spacing: .02em;
+  opacity: .55;
+  margin-bottom: 2px;
+}
+
+.setu-read-text {
+  font-size: var(--setu-text, 16px);
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* A gap on one side is information, not an error: it is where the two
+ * editions were cut differently. Marked quietly so the eye can skip it. */
+.setu-read-missing { background: rgba(148, 163, 184, .10); }
+.setu-read-gap { opacity: .5; font-style: italic; }
+
+.setu-read-empty { opacity: .6; padding: 18px 4px; }
+
+@media (prefers-color-scheme: dark) {
+  .setu-read-missing { background: rgba(148, 163, 184, .16); }
+}
