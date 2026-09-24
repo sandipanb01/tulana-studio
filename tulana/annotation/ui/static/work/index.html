@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>सेतु Setu — parallel textbook annotation</title>
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -69,6 +69,16 @@
       <p id="offset" class="tiny muted"></p>
       <button id="link" class="btn wide">⇄ These two pages match</button>
       <button id="unlink" class="btn wide ghost" hidden>Unlink</button>
+    </div>
+
+    <div class="grp" id="gView" hidden>
+      <h3>View</h3>
+      <div class="seg">
+        <button class="segbtn on" data-view="text">Text</button>
+        <button class="segbtn" data-view="page">Page + blocks</button>
+      </div>
+      <p id="viewHint" class="tiny muted">The text of both editions, side by
+        side. This is the view for checking translations.</p>
     </div>
 
     <div class="grp" id="gTool" hidden>
@@ -225,6 +235,6 @@
   </div>
 </div>
 
-<script src="app.js?v=3"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>
