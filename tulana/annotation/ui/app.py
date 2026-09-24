@@ -27,7 +27,7 @@ import gradio as gr
 import config
 
 from ..core import store
-from . import browse, panels, render, session
+from . import browse, panels, session
 from . import workspace as ws
 
 log = logging.getLogger("annotation.ui.app")
@@ -38,13 +38,6 @@ log = logging.getLogger("annotation.ui.app")
 _ON_LOAD: list = []
 
 STATIC = Path(__file__).resolve().parent / "static"
-
-#: The pair-changed output list, in the order every such handler returns.
-#: Declared once, used by all of them, so a handler cannot put the target text
-#: into the English pane by returning its values in the wrong order.
-_PAIR_OUT_NAMES = ("state src tgt status note pairhead savestate progress "
-                   "chapter_filter conflict source_img source_msg").split()
-
 
 def assets() -> dict:
     """CSS, JS and head markup, read from disk at launch.
@@ -89,26 +82,20 @@ def build() -> gr.Blocks:
 
         gr.Markdown(
             "## सेतु  Setu — parallel textbook annotation\n"
-            "English on the left, the Indian-language edition on the right. "
-            "Correct either side, say whether they match, and move on. "
-            "Everything is saved as you go.")
+            "English on the left, the Indian-language edition on the right, "
+            "page by page. Correct what the machine misread, say whether the "
+            "two sides match, and turn the page. Everything is saved as you "
+            "go.")
 
         with gr.Tabs():
             with gr.Tab("Annotate", id="tab_annotate"):
-                pair = _annotate_tab(state)
-            with gr.Tab("Browse both books", id="tab_read"):
-                reader = _reading_tab(state)
+                shop = _workspace_tab(state)
             with gr.Tab("Saved work", id="tab_review"):
-                _review_tab(state, pair)
+                _review_tab(state, shop)
             with gr.Tab("Download", id="tab_export"):
                 _export_tab(state)
             with gr.Tab("Help", id="tab_help"):
                 _help_tab()
-
-        # Opening a different pair of books reloads the browser, so the two
-        # tabs can never disagree about which textbooks are open.
-        pair["open_btn"].click(browse.open_books,
-                               [state, reader["bstate"]], reader["out_open"])
 
         for fn, inputs, outputs in _ON_LOAD:
             demo.load(fn, inputs, outputs)
@@ -117,125 +104,30 @@ def build() -> gr.Blocks:
     return demo
 
 
-# ── reading both books side by side ────────────────────────────────────────
+# ── the workspace: two textbooks, page by page ─────────────────────────────
 
-def _reading_tab(state: gr.State) -> dict:
-    """Two textbooks, each driven independently, side by side.
+def _workspace_tab(state: gr.State) -> dict:
+    """Everything an annotator does, on one screen.
 
-    The view this replaces drew the *pairs* as two columns, which quietly
-    assumed the two editions march together. Measured across this corpus they
-    do not — Gujarat class 10 runs 111 pages apart, NCERT class 11 and Tamil
-    Nadu class 10 share no chapter page at all — so an annotator who found that
-    English page 4 answers the other edition's page 2 had no way to put the two
-    pages next to each other.
+    This replaces the two tabs that came before it — a pair editor and a
+    reading view — because keeping them apart made the annotator hold two
+    positions in their head at once: where they were in the book, and which
+    pair was open. The two disagreed constantly.
 
-    Here each side has its own chapter list, its own page box and its own
-    scrollbar; a pair of common buttons moves both at once; and once two pages
-    are found to answer each other, *Link these two pages* records the offset
-    so both sides keep step from then on. The pairs are still consulted — a
-    block shows how it has been judged — but they no longer decide what is
-    shown opposite what.
+    The page is now the unit. Each side shows the blocks the parser found on
+    the page you are looking at, in reading order. Tick *Let me correct the
+    text* and every block becomes editable where it stands; the answer for a
+    pair sits under the English block it belongs to. Nothing opens, nothing
+    closes.
+
+    The layout follows Tulana's own Blocks tab, which annotators already use
+    without being taught: four dropdowns and one button on the first screen,
+    everything else revealed once two books are open.
     """
     bstate = gr.State(browse.blank())
 
-    gr.Markdown(
-        "Each edition moves on its own. Pick a chapter and a page on either "
-        "side, scroll each column separately, and when you find two pages that "
-        "answer each other press **Link these two pages** — after that both "
-        "sides move together.")
-
-    with gr.Row(elem_id="setu_browse_bar"):
-        with gr.Column(scale=6):
-            with gr.Row():
-                src_chapter = gr.Dropdown(
-                    label="Left — chapter", choices=[("Whole book", "")],
-                    value="", interactive=True, scale=4,
-                    elem_id="setu_src_chapter")
-                src_page = gr.Number(label="Page", value=0, precision=0,
-                                     minimum=0, step=1, scale=1,
-                                     elem_id="setu_src_page")
-            with gr.Row():
-                src_prev = gr.Button("◀ Previous page", size="sm", scale=1)
-                src_next = gr.Button("Next page ▶", size="sm", scale=1)
-            src_tally = gr.Markdown("", elem_id="setu_src_tally")
-        with gr.Column(scale=6):
-            with gr.Row():
-                tgt_chapter = gr.Dropdown(
-                    label="Right — chapter", choices=[("Whole book", "")],
-                    value="", interactive=True, scale=4,
-                    elem_id="setu_tgt_chapter")
-                tgt_page = gr.Number(label="Page", value=0, precision=0,
-                                     minimum=0, step=1, scale=1,
-                                     elem_id="setu_tgt_page")
-            with gr.Row():
-                tgt_prev = gr.Button("◀ Previous page", size="sm", scale=1)
-                tgt_next = gr.Button("Next page ▶", size="sm", scale=1)
-            tgt_tally = gr.Markdown("", elem_id="setu_tgt_tally")
-
-    with gr.Row(elem_id="setu_browse_both"):
-        both_prev = gr.Button("◀◀ Both back", size="sm", scale=1)
-        both_next = gr.Button("Both forward ▶▶", size="sm", scale=1)
-        link_btn = gr.Button("⇄ Link these two pages", variant="primary",
-                             size="sm", scale=2, elem_id="setu_link")
-        unlink_btn = gr.Button("Unlink", size="sm", scale=1)
-        reload_btn = gr.Button("↻ Reload both books", size="sm", scale=1)
-
-    with gr.Row():
-        whole_chapter = gr.Checkbox(
-            label="Show the whole chapter at once, not one page", value=False)
-        hide_noise = gr.Checkbox(
-            label="Hide running heads, footers and page numbers", value=True)
-
-    browse_note = gr.Markdown("", elem_id="setu_browse_note")
-
-    with gr.Row():
-        with gr.Column(scale=5):
-            read_left = gr.HTML(browse.EMPTY, elem_id="setu_read_left")
-        with gr.Column(scale=5):
-            read_right = gr.HTML(browse.EMPTY, elem_id="setu_read_right")
-
-    # Every handler returns this, in this order. Named once so a handler
-    # cannot put the target language's text into the English column by
-    # returning its values the wrong way round.
-    out = [bstate, read_left, read_right, src_page, tgt_page,
-           src_tally, tgt_tally, browse_note]
-    out_open = out + [src_chapter, tgt_chapter]
-
-    reload_btn.click(browse.open_books, [state, bstate], out_open)
-    _ON_LOAD.append((browse.open_books, [state, bstate], out_open))
-
-    src_chapter.change(lambda s, b, c: browse.jump_chapter(s, b, "src", c),
-                       [state, bstate, src_chapter], out)
-    tgt_chapter.change(lambda s, b, c: browse.jump_chapter(s, b, "tgt", c),
-                       [state, bstate, tgt_chapter], out)
-
-    src_page.submit(lambda s, b, p: browse.goto(s, b, "src", p),
-                    [state, bstate, src_page], out)
-    tgt_page.submit(lambda s, b, p: browse.goto(s, b, "tgt", p),
-                    [state, bstate, tgt_page], out)
-
-    src_prev.click(lambda s, b: browse.step(s, b, "src", -1), [state, bstate], out)
-    src_next.click(lambda s, b: browse.step(s, b, "src", 1), [state, bstate], out)
-    tgt_prev.click(lambda s, b: browse.step(s, b, "tgt", -1), [state, bstate], out)
-    tgt_next.click(lambda s, b: browse.step(s, b, "tgt", 1), [state, bstate], out)
-
-    both_prev.click(lambda s, b: browse.step_both(s, b, -1), [state, bstate], out)
-    both_next.click(lambda s, b: browse.step_both(s, b, 1), [state, bstate], out)
-
-    link_btn.click(browse.link_pages, [state, bstate], out)
-    unlink_btn.click(browse.unlink_pages, [state, bstate], out)
-
-    whole_chapter.change(browse.set_whole_chapter,
-                         [state, bstate, whole_chapter], out)
-    hide_noise.change(browse.set_hide_noise, [state, bstate, hide_noise], out)
-
-    return {"bstate": bstate, "out": out, "out_open": out_open}
-
-
-# ── the annotation tab ─────────────────────────────────────────────────────
-
-def _annotate_tab(state: gr.State) -> dict:
-    with gr.Accordion("Choose a textbook", open=True) as chooser:
+    # ── step 1: which two books ──────────────────────────────────────────
+    with gr.Accordion("Step 1 — choose two textbooks", open=True) as chooser:
         with gr.Row():
             annotator = gr.Textbox(
                 label="Your name", placeholder="so your work can be attributed",
@@ -244,111 +136,202 @@ def _annotate_tab(state: gr.State) -> dict:
             # cascade below fills in and the annotator lands on two books.
             board = gr.Dropdown(label="State board", choices=ws.boards(),
                                 value=ws.first_board(), scale=2)
-            klass = gr.Dropdown(label="Class", choices=[], interactive=False, scale=1)
-            subject = gr.Dropdown(label="Subject", choices=[], interactive=False, scale=1)
+            klass = gr.Dropdown(label="Class", choices=[], interactive=False,
+                                scale=1)
+            subject = gr.Dropdown(label="Subject", choices=[],
+                                  interactive=False, scale=1)
         with gr.Row():
             with gr.Column():
                 gr.Markdown("**Left — the source, usually English**")
-                src_lang = gr.Dropdown(label="Language", choices=[], interactive=False)
-                src_book = gr.Dropdown(label="Textbook", choices=[], interactive=False)
+                src_lang = gr.Dropdown(label="Language", choices=[],
+                                       interactive=False)
+                src_book = gr.Dropdown(label="Textbook", choices=[],
+                                       interactive=False)
             with gr.Column():
                 gr.Markdown("**Right — the language you are checking**")
-                tgt_lang = gr.Dropdown(label="Language", choices=[], interactive=False)
-                tgt_book = gr.Dropdown(label="Textbook", choices=[], interactive=False)
+                tgt_lang = gr.Dropdown(label="Language", choices=[],
+                                       interactive=False)
+                tgt_book = gr.Dropdown(label="Textbook", choices=[],
+                                       interactive=False)
         open_btn = gr.Button("Open these two books", variant="primary",
                              elem_id="setu_open")
 
-    view_bar = gr.HTML(render.VIEW_BAR, elem_id="setu_viewbar")
-    pair_head = gr.HTML(render.pair_header(None), elem_id="setu_pairhead")
+    # ── step 2: the work ─────────────────────────────────────────────────
+    with gr.Row(elem_id="setu_modebar"):
+        editing = gr.Checkbox(label="Let me correct the text", value=False,
+                              elem_id="setu_editing")
+        show_page = gr.Checkbox(label="Show me the printed page", value=False,
+                                elem_id="setu_showpage")
+        hide_noise = gr.Checkbox(
+            label="Hide running heads, footers and page numbers", value=True)
 
-    with gr.Row():
-        with gr.Column(scale=5):
+    saved = gr.Markdown("", elem_id="setu_savestate")
+
+    with gr.Row(elem_id="setu_navbar"):
+        with gr.Column(scale=6):
             with gr.Row():
-                src = gr.Textbox(label="English", lines=18, max_lines=18,
-                                 elem_id="setu_src", buttons=["copy"],
-                                 interactive=True, autoscroll=False)
-            with gr.Row(elem_classes=["setu-secondary"]):
-                src_orig = gr.Button("Restore the original", size="sm")
-                src_check = gr.Button("✂ Crop the printed page", size="sm",
-                                      elem_id="setu_src_crop")
-        with gr.Column(scale=5):
+                src_chapter = gr.Dropdown(
+                    label="Left — chapter", choices=[("Whole book", "")],
+                    value="", interactive=True, scale=4,
+                    elem_id="setu_src_chapter")
+                src_page = gr.Number(label="Page", value=1, precision=0,
+                                     minimum=1, step=1, scale=1,
+                                     elem_id="setu_src_page")
             with gr.Row():
-                tgt = gr.Textbox(label="Target language", lines=18, max_lines=18,
-                                 elem_id="setu_tgt", buttons=["copy"],
-                                 interactive=True, autoscroll=False)
-            with gr.Row(elem_classes=["setu-secondary"]):
-                tgt_orig = gr.Button("Restore the original", size="sm")
-                tgt_check = gr.Button("✂ Crop the printed page", size="sm",
-                                      elem_id="setu_tgt_crop")
+                src_prev = gr.Button("◀ Previous page", size="sm")
+                src_next = gr.Button("Next page ▶", size="sm")
+            src_tally = gr.Markdown("", elem_id="setu_src_tally")
+        with gr.Column(scale=6):
+            with gr.Row():
+                tgt_chapter = gr.Dropdown(
+                    label="Right — chapter", choices=[("Whole book", "")],
+                    value="", interactive=True, scale=4,
+                    elem_id="setu_tgt_chapter")
+                tgt_page = gr.Number(label="Page", value=1, precision=0,
+                                     minimum=1, step=1, scale=1,
+                                     elem_id="setu_tgt_page")
+            with gr.Row():
+                tgt_prev = gr.Button("◀ Previous page", size="sm")
+                tgt_next = gr.Button("Next page ▶", size="sm")
+            tgt_tally = gr.Markdown("", elem_id="setu_tgt_tally")
 
-    with gr.Row():
-        status = gr.Radio(choices=ws.STATUS_CHOICES, value="pending",
-                          label="Are these the same text?", elem_id="setu_status",
-                          info=ws.STATUS_HELP)
-    with gr.Row():
-        note = gr.Textbox(label="Note (optional)", max_lines=2, scale=4,
-                          placeholder="Why did you choose that answer?")
-        save_state = gr.HTML(render.save_state("idle"), elem_id="setu_savestate")
+    with gr.Row(elem_id="setu_bothbar"):
+        both_prev = gr.Button("◀◀ Both back", size="sm", scale=1)
+        both_next = gr.Button("Both forward ▶▶", size="sm", scale=1)
+        link_btn = gr.Button("⇄ These two pages match", variant="primary",
+                             size="sm", scale=2, elem_id="setu_link")
+        unlink_btn = gr.Button("Unlink", size="sm", scale=1)
 
-    with gr.Row():
-        prev_btn = gr.Button("← Previous", elem_id="setu_prev")
-        next_btn = gr.Button("Next →", variant="primary", elem_id="setu_next")
-        pending_btn = gr.Button("Next unchecked", elem_id="setu_next_pending")
-        save_btn = gr.Button("Save changes", elem_id="setu_save")
+    offset_note = gr.Markdown("", elem_id="setu_offset")
 
-    conflict = gr.HTML("", elem_id="setu_conflict")
-    with gr.Row(elem_classes=["setu-secondary"]):
-        keep_mine = gr.Button("Keep what I typed", size="sm")
-        keep_theirs = gr.Button("Keep the saved version", size="sm")
+    # ── the two columns of blocks ────────────────────────────────────────
+    #
+    # Drawn with gr.render rather than as a fixed set of components, because
+    # a page carries however many blocks it carries — five on a chapter
+    # opening, forty in the middle of an exercise — and an interface built
+    # from a fixed number of boxes has to either cut the page short or
+    # show empty ones. Both sides are drawn in one pass so they can never come
+    # from two different moments.
 
-    with gr.Row(elem_classes=["setu-secondary"]):
-        with gr.Column(scale=2, elem_id="setu_sidebar"):
-            chapter = gr.Dropdown(label="Jump to a chapter", choices=[("Everything", "")],
-                                  value="", interactive=True)
-            show = gr.Dropdown(label="Only show",
-                               choices=[("Everything", ""),
-                                        ("Not checked yet", "pending"),
-                                        ("Needs correction", "needs_correction"),
-                                        ("Unclear", "unclear")],
-                               value="", interactive=True)
-            progress = gr.HTML(render.progress(None), elem_id="setu_progress")
-        with gr.Column(scale=5):
-            search_box = gr.Textbox(label="Search this textbook", max_lines=1,
-                                    placeholder="a word, or: page 42 · chapter 3 · #450")
-            search_note = gr.Markdown("")
-            results = gr.Dataframe(
-                headers=["Pair", "Answer", "Chapter", "English", "Target language"],
-                datatype=["number", "str", "str", "str", "str"],
-                interactive=False, wrap=True, row_count=(0, "dynamic"),
-                label="Click a row to open it")
+    @gr.render(inputs=[bstate, editing, show_page], show_progress="minimal")
+    def _columns(bs, is_editing, wants_page):
+        bs = browse.ensure(bs)
+        if not bs.get("pid"):
+            gr.Markdown("Choose two textbooks above and press "
+                        "**Open these two books**.",
+                        elem_classes=["setu-doc-empty"])
+            return
 
-    with gr.Accordion("✂ The printed page — crop of this exact text",
-                      open=False,
-                      elem_classes=["setu-secondary"]) as source_acc:
-        source_msg = gr.Markdown(
-            "Press “✂ Crop the printed page” under either side to see the "
-            "scan of exactly this piece of text, cut from the PDF.")
-        source_img = gr.Image(label=None, show_label=False, elem_id="setu_sourceimg",
-                              interactive=False, height=520)
+        data = browse.load(bs)
+        if data["error"]:
+            gr.Markdown(data["error"])
+            return
 
-    with gr.Accordion("What changed on this pair", open=False,
-                      elem_classes=["setu-secondary"]):
-        hist_btn = gr.Button("Show the history", size="sm")
-        hist_table = gr.Dataframe(
-            headers=["When", "What", "Version", "Who", "Why", "Size"],
-            interactive=False, wrap=True, row_count=(0, "dynamic"))
-        hist_diff = gr.Markdown("")
+        with gr.Row():
+            for side in ("src", "tgt"):
+                heading = (f"**{bs[f'{side}_lang'] or ('Left' if side == 'src' else 'Right')}**"
+                           f"  ·  {bs[f'{side}_title']}"
+                           f"  ·  page {browse.to_display(bs[f'{side}_page'])}"
+                           f" of {browse.to_display(bs[f'{side}_hi'])}")
+                with gr.Column(scale=5,
+                               elem_id=f"setu_col_{side}",
+                               elem_classes=["setu-doc", f"setu-doc-{side}"]):
+                    gr.Markdown(heading, elem_classes=["setu-doc-head"])
 
-    pair = {"state": state, "src": src, "tgt": tgt, "status": status, "note": note,
-            "pairhead": pair_head, "savestate": save_state, "progress": progress,
-            "chapter_filter": chapter, "conflict": conflict,
-            "source_img": source_img, "source_msg": source_msg,
-            # Exposed so build() can chain "Open these two books" into the
-            # browse tab: opening a different pair of books must not leave the
-            # other tab showing the previous pair's text.
-            "open_btn": open_btn}
-    pair_out = [pair[k] for k in _PAIR_OUT_NAMES]
-    edit_in = [state, src, tgt, status, note]
+                    if wants_page:
+                        path, message = browse.printed_page(bs, side)
+                        if path:
+                            gr.Image(value=path, show_label=False,
+                                     show_download_button=False,
+                                     elem_classes=["setu-printed"])
+                        else:
+                            # A missing PDF is the normal case on a Git LFS
+                            # checkout. Say so in a sentence and carry on —
+                            # the text does not depend on it.
+                            gr.Markdown(message,
+                                        elem_classes=["setu-doc-empty"])
+
+                    rows = data[side]
+                    if not rows:
+                        gr.Markdown(
+                            f"Page {browse.to_display(bs[f'{side}_page'])} has "
+                            f"no text in this edition — it may be a full-page "
+                            f"illustration. Step to the next page.",
+                            elem_classes=["setu-doc-empty"])
+                        continue
+
+                    for b in rows:
+                        _block(state, bs, b, side, is_editing, saved)
+
+    # ── wiring ───────────────────────────────────────────────────────────
+
+    nav_out = [bstate, src_page, tgt_page, src_tally, tgt_tally, offset_note]
+
+    def _after(bs):
+        """Everything the bar above the columns shows, from one state."""
+        data = browse.load(bs)
+        return (bs,
+                gr.update(value=browse.to_display(bs["src_page"]),
+                          minimum=browse.to_display(bs["src_lo"]),
+                          maximum=browse.to_display(bs["src_hi"])),
+                gr.update(value=browse.to_display(bs["tgt_page"]),
+                          minimum=browse.to_display(bs["tgt_lo"]),
+                          maximum=browse.to_display(bs["tgt_hi"])),
+                data["src_tally"], data["tgt_tally"], browse.offset_note(bs))
+
+    def _open(st, bs):
+        bs = browse.open_books(st, bs)
+        if not bs.get("pid"):
+            return (*_after(bs), gr.update(), gr.update())
+        with store.ro() as con:
+            src_ch = browse.chapter_choices(con, bs["src_book"])
+            tgt_ch = browse.chapter_choices(con, bs["tgt_book"])
+        return (*_after(bs),
+                gr.update(choices=src_ch, value=bs["src_chapter"]),
+                gr.update(choices=tgt_ch, value=bs["tgt_chapter"]))
+
+    open_out = nav_out + [src_chapter, tgt_chapter]
+
+    def _open_project(st, who, sb, tb):
+        """ws.open_books returns the old pair-editor's whole output tuple; this
+        workspace needs only the session it produced."""
+        return ws.open_books(st, who, sb, tb)[0]
+
+    open_btn.click(_open_project, [state, annotator, src_book, tgt_book],
+                   [state]) \
+            .then(_open, [state, bstate], open_out) \
+            .then(lambda: gr.update(open=False), None, [chooser])
+    _ON_LOAD.append((_open, [state, bstate], open_out))
+
+    src_chapter.change(lambda b, c: _after(browse.jump_chapter(b, "src", c)),
+                       [bstate, src_chapter], nav_out)
+    tgt_chapter.change(lambda b, c: _after(browse.jump_chapter(b, "tgt", c)),
+                       [bstate, tgt_chapter], nav_out)
+    src_page.submit(lambda b, v: _after(browse.goto(b, "src", v)),
+                    [bstate, src_page], nav_out)
+    tgt_page.submit(lambda b, v: _after(browse.goto(b, "tgt", v)),
+                    [bstate, tgt_page], nav_out)
+
+    src_prev.click(lambda b: _after(browse.step(b, "src", -1)), [bstate], nav_out)
+    src_next.click(lambda b: _after(browse.step(b, "src", 1)), [bstate], nav_out)
+    tgt_prev.click(lambda b: _after(browse.step(b, "tgt", -1)), [bstate], nav_out)
+    tgt_next.click(lambda b: _after(browse.step(b, "tgt", 1)), [bstate], nav_out)
+    both_prev.click(lambda b: _after(browse.step_both(b, -1)), [bstate], nav_out)
+    both_next.click(lambda b: _after(browse.step_both(b, 1)), [bstate], nav_out)
+
+    def _link(st, bs):
+        bs, message = browse.link_pages(st, bs)
+        return (*_after(bs), message)
+
+    link_btn.click(_link, [state, bstate], nav_out + [saved])
+    unlink_btn.click(lambda b: _after(browse.unlink_pages(b)), [bstate], nav_out)
+
+    def _set_noise(bs, hide):
+        bs = browse.ensure(bs)
+        bs["hide_noise"] = bool(hide)
+        return _after(bs)
+
+    hide_noise.change(_set_noise, [bstate, hide_noise], nav_out)
 
     # ── cascade ──
     board.change(ws.on_board, [board], [klass, subject, src_lang, tgt_lang,
@@ -365,71 +348,73 @@ def _annotate_tab(state: gr.State) -> dict:
     tgt_lang.change(ws.on_language, [board, klass, subject, tgt_lang, src_book],
                     [tgt_book])
 
-    open_btn.click(ws.open_books, [state, annotator, src_book, tgt_book], pair_out) \
-            .then(lambda: gr.update(open=False), None, [chooser])
-
-    # ── saving ──
-    #
-    # Four routes, one implementation. Blur catches the common case the instant
-    # an annotator looks away; the timer catches someone who types for minutes
-    # without leaving the box; navigation saves before it moves; and the button
-    # is there for people who want to press it.
-    save_out = [state, save_state, conflict]
-    # Progress is part of the answer to "did that register?", so a status
-    # change refreshes it rather than waiting for the next navigation.
-    status_out = save_out + [progress]
-    save_btn.click(lambda *a: ws.save(*a, reason="manual"), edit_in, save_out)
-    src.blur(lambda *a: ws.save(*a, reason="blur"), edit_in, save_out)
-    tgt.blur(lambda *a: ws.save(*a, reason="blur"), edit_in, save_out)
-    note.blur(lambda *a: ws.save(*a, reason="blur"), edit_in, save_out)
-    status.change(lambda *a: ws.save_and_count(*a, reason="status"), edit_in, status_out)
-
-    gr.Timer(3.0).tick(ws.autosave_tick, edit_in, save_out, show_progress="hidden")
-
-    # ── navigation ──
-    prev_btn.click(lambda *a: ws.move(*a, direction=-1), edit_in, pair_out)
-    next_btn.click(lambda *a: ws.move(*a, direction=1), edit_in, pair_out)
-    pending_btn.click(lambda *a: ws.move(*a, direction=1, only_pending=True),
-                      edit_in, pair_out)
-    chapter.input(ws.jump_to_chapter, edit_in + [chapter], pair_out)
-    show.input(ws.filter_status, edit_in + [show], pair_out)
-
-    # ── search ──
-    search_box.submit(ws.do_search, [state, search_box], [results, search_note])
-    results.select(ws.open_search_hit, edit_in, pair_out)
-
-    # ── conflicts ──
-    keep_mine.click(lambda s: ws.resolve_conflict(s, True), [state], pair_out)
-    keep_theirs.click(lambda s: ws.resolve_conflict(s, False), [state], pair_out)
-
-    # ── originals and source ──
-    src_orig.click(lambda s: ws.restore_original(s, "src"), [state], pair_out)
-    tgt_orig.click(lambda s: ws.restore_original(s, "tgt"), [state], pair_out)
-    src_check.click(lambda s: ws.show_source(s, "src"), [state],
-                    [source_img, source_msg]) \
-             .then(lambda: gr.update(open=True), None, [source_acc])
-    tgt_check.click(lambda s: ws.show_source(s, "tgt"), [state],
-                    [source_img, source_msg]) \
-             .then(lambda: gr.update(open=True), None, [source_acc])
-
-    hist_btn.click(ws.history, [state], [hist_table, hist_diff])
-
     # Gradio selects the first choice of a Dropdown by default, but selecting
     # it does not fire `change`. Without this the workspace opens showing a
     # board with an empty Class list beside it, and the only way forward is to
     # pick a different board and pick back. Running the cascade once on load
     # makes the first paint consistent with what is selected.
-    demo_load_targets = [klass, subject, src_lang, tgt_lang, src_book, tgt_book]
-    _ON_LOAD.append((ws.on_board, [board], demo_load_targets))
+    _ON_LOAD.append((ws.on_board, [board],
+                     [klass, subject, src_lang, tgt_lang, src_book, tgt_book]))
 
-    return pair
+    return {"bstate": bstate, "nav_out": nav_out, "after": _after,
+            "saved": saved}
 
 
-# ── the other tabs ─────────────────────────────────────────────────────────
+def _block(state: gr.State, bs: dict, b: dict, side: str,
+           is_editing: bool, saved: gr.Markdown) -> None:
+    """One block of text, as the annotator meets it.
 
-def _review_tab(state: gr.State, pair: dict) -> None:
-    gr.Markdown("Everything in the open workspace. Click a row to open it in "
-                "**Annotate**.")
+    In reading mode it is a paragraph with a grey line above it saying what
+    kind of thing it is, which page it is on, and how it stands. In correcting
+    mode the paragraph becomes a box.
+
+    The box is a *view*. The record is ``setu_text``, and the save carries the
+    revision the box was showing — POTATO's ``text_edit`` widget learned that
+    keeping the editor and the record as one thing loses edits, and this keeps
+    them apart.
+    """
+    rid = b.get("rid") or ""
+    if not is_editing or not rid:
+        gr.HTML(browse.read_only_html(b))
+        if not rid:
+            return
+    else:
+        gr.Markdown(browse.block_heading(b),
+                    elem_classes=["setu-b-meta"])
+        # interactive=True is not optional here. A component built inside
+        # gr.render is not inferred to be an input, so without it every
+        # correcting box renders disabled and the annotator cannot type.
+        box = gr.Textbox(value=b.get("current") or "", show_label=False,
+                         lines=2, max_lines=16, autoscroll=False,
+                         interactive=True, elem_classes=["setu-b-edit"])
+        rev = gr.State(b.get("rev") or 0)
+        rid_s = gr.State(rid)
+        side_s = gr.State(side)
+        # Saving on blur catches the common case the instant the annotator
+        # looks away, which is what makes "everything is saved as you go"
+        # true rather than aspirational.
+        box.blur(browse.save_text, [state, rid_s, side_s, box, rev], [saved])
+
+        if b.get("edited"):
+            undo = gr.Button("Put back what the parser read", size="sm",
+                             elem_classes=["setu-secondary"])
+            undo.click(browse.restore_original, [state, rid_s, side_s], [saved])
+
+    # The judgement belongs to the pair, and the English side is the reference,
+    # so it is asked once, on the left, rather than twice in two places that
+    # could disagree on screen.
+    if side == "src" and rid:
+        rid_a = gr.State(rid)
+        answer = gr.Dropdown(choices=browse.ANSWERS,
+                             value=b.get("status") or "pending",
+                             label="Do these two say the same thing?",
+                             interactive=True, elem_classes=["setu-answer"])
+        answer.change(browse.set_answer, [state, rid_a, answer], [saved])
+
+
+def _review_tab(state: gr.State, shop: dict) -> None:
+    gr.Markdown("Everything in the open workspace. Click a row to go to that "
+                "page in **Annotate**.")
     with gr.Row():
         show = gr.Dropdown(label="Show", choices=panels.REVIEW_FILTERS, value="",
                            scale=2)
@@ -449,10 +434,11 @@ def _review_tab(state: gr.State, pair: dict) -> None:
     page.change(panels.review, inputs, outputs)
     refresh.click(panels.review, inputs, outputs)
 
-    pair_out = [pair[k] for k in _PAIR_OUT_NAMES]
-    table.select(panels.open_from_review,
-                 [state, pair["src"], pair["tgt"], pair["status"], pair["note"]],
-                 pair_out)
+    # Clicking a row moves the workspace to the page that row sits on, rather
+    # than opening a separate editor: there is only one place to work now.
+    table.select(panels.goto_from_review, [state, shop["bstate"], table],
+                 [shop["bstate"]]) \
+         .then(shop["after"], [shop["bstate"]], shop["nav_out"])
 
 
 def _export_tab(state: gr.State) -> None:
