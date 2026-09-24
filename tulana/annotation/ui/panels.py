@@ -7,7 +7,6 @@ work in one tab cannot disturb what another annotator is editing.
 from __future__ import annotations
 
 import logging
-import html
 import time
 from pathlib import Path
 from typing import Any
@@ -96,97 +95,11 @@ def _snip(text: str, n: int = 70) -> str:
 
 # ── reading the two books side by side ─────────────────────────────────────
 #
-# The annotation tab shows one aligned pair at a time, and that is the right
-# shape for judging a pair. It is the wrong shape for finding your place: the
-# median pair in this corpus is 64 characters, so 92% of the time there is
-# nothing in a pane to scroll, and when the aligner puts a paragraph on one
-# side with nothing opposite — about a quarter of rows, because the two
-# editions were typeset and parsed with different block boundaries — there is
-# no way to look around and see where the counterpart actually went.
-#
-# This view exists for that. Each book becomes one continuous column that
-# scrolls on its own, so a misalignment is something you can scroll past
-# rather than something that stops you.
-
-READING_LIMIT = 1500
-
-
-def _reading_block(seq, page, text, kind, missing: bool) -> str:
-    """One piece of text in a reading column."""
-    body = html.escape(text or "").replace("\n", "<br>")
-    if missing:
-        body = '<span class="setu-read-gap">nothing here on this side</span>'
-    where = f"p{page}" if page else ""
-    return (f'<div class="setu-read-row{" setu-read-missing" if missing else ""}" '
-            f'data-seq="{seq}">'
-            f'<div class="setu-read-meta">#{seq}'
-            f'{" · " + html.escape(where) if where else ""}'
-            f'{" · " + html.escape(kind) if kind else ""}</div>'
-            f'<div class="setu-read-text">{body}</div></div>')
-
-
-def reading(state: Any, chapter: str = ""):
-    """Both editions as two independently scrolling columns.
-
-    Returns (left html, right html, note).
-    """
-    st = session.ensure(state)
-    if not session.has_project(st):
-        empty = '<div class="setu-read-empty">Open two textbooks first.</div>'
-        return empty, empty, "Open two textbooks in the Annotate tab first."
-
-    # WorkspaceRepo.rows caps a single call at 200 — the right limit for an
-    # API and for the review table, the wrong one for a column you scroll.
-    # Page through it rather than widen the cap for everybody.
-    kwargs: dict[str, Any] = {"order": "seq"}
-    if chapter:
-        kwargs["chapter_no"] = chapter
-
-    try:
-        collected: list = []
-        total = 0
-        with store.ro() as con:
-            repo = workspace.WorkspaceRepo(con)
-            while len(collected) < READING_LIMIT:
-                chunk = repo.rows(st["pid"], limit=200, offset=len(collected), **kwargs)
-                total = chunk["total"]
-                if not chunk["rows"]:
-                    break
-                collected.extend(chunk["rows"])
-                if len(collected) >= total:
-                    break
-        data = {"rows": collected[:READING_LIMIT], "total": total}
-    except NotFound:
-        empty = '<div class="setu-read-empty">That workspace is gone.</div>'
-        return empty, empty, "That workspace is no longer available."
-    except Exception:
-        log.exception("reading view failed")
-        empty = '<div class="setu-read-empty">Could not load the text.</div>'
-        return empty, empty, "The text could not be loaded."
-
-    left, right = [], []
-    paired = one_sided = 0
-    for r in data["rows"]:
-        stext = (r["src"]["text"] or "").strip()
-        ttext = (r["tgt"]["text"] or "").strip()
-        if stext and ttext:
-            paired += 1
-        elif stext or ttext:
-            one_sided += 1
-        left.append(_reading_block(r["seq"], r["src"].get("page"), stext,
-                                   r.get("kind", ""), not stext))
-        right.append(_reading_block(r["seq"], r["tgt"].get("page"), ttext,
-                                    r.get("kind", ""), not ttext))
-
-    shown = len(data["rows"])
-    note = (f"{shown:,} of {data['total']:,} pairs · {paired:,} have text on both "
-            f"sides · {one_sided:,} on one side only. Each column scrolls on "
-            f"its own — scroll either side to find where a counterpart went.")
-    if shown < data["total"]:
-        note += f" Showing the first {shown:,}; choose a chapter to narrow it."
-    return ("\n".join(left) or '<div class="setu-read-empty">Nothing here.</div>',
-            "\n".join(right) or '<div class="setu-read-empty">Nothing here.</div>',
-            note)
+# This used to be here, drawing the *pairs* as two long columns. It was wrong
+# in a way that could not be patched: it assumed row n on the left answers row
+# n on the right, and across this corpus that assumption fails by as much as
+# 111 pages. The replacement reads the two books independently out of
+# setu_segment and lives in `browse.py`.
 
 
 def format_choices() -> list:
