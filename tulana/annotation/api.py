@@ -37,7 +37,8 @@ import config
 import db as legacy_db
 
 from . import __version__
-from .core import annotate, corpus, exporters, ids, search, store, workspace
+from .core import (annotate, corpus, exporters, ids, search, sources, store,
+                   workspace)
 from .core.models import KINDS, STATUSES, normalise
 from .core.store import Conflict, Invalid, NotFound
 
@@ -622,3 +623,195 @@ def doc(name: str) -> Response:
         raise NotFound(f"no such document: {name}")
     return Response(candidate.read_text(encoding="utf-8"),
                     media_type="text/markdown; charset=utf-8")
+
+
+# ── the workspace: pages, blocks, images, crops ────────────────────────────
+#
+# Everything the block-overlay interface needs, and nothing it does not. The
+# rule these four endpoints keep is Tulana's own: **a box travels as a
+# fraction of the page.** The parser measured its boxes against a raster of
+# some size; the page is drawn here at some other size; the crop is cut at a
+# third. None of them needs to know about the others, because fx0..fy1 is
+# independent of all three.
+#
+# Pages count from zero throughout — setu_segment.page holds what the layout
+# JSON said, and PyMuPDF indexes the same way. The interface adds one before
+# showing a page number to a person and subtracts one before sending it back.
+
+@router.get("/pages/{book_key}/{page}/blocks")
+@guard
+def page_blocks(book_key: str, page: int, pid: str = "",
+                noise: str = "") -> dict:
+    """Every block on one page of one book, in reading order.
+
+    Joined to the pair rows of ``pid`` when one is given, so each block also
+    carries how it has been judged and what it has been corrected to. The join
+    is a LEFT join on purpose: a block the aligner never paired must still be
+    returned, because finding those is most of an annotator's work.
+    """
+    from .ui import browse
+
+    show_noise = str(noise).lower() in ("1", "true", "yes", "all")
+    with store.ro() as con:
+        book = store.Repository(con).one(
+            "SELECT book_key, book, title, relpath, num_pages, language, script"
+            "  FROM setu_book WHERE book_key = ?", (book_key,))
+        if not book:
+            raise NotFound(f"no such textbook: {book_key}")
+
+        out: list[dict] = []
+        for side in ("src", "tgt"):
+            rows = browse.blocks(con, pid=pid, book_key=book_key, side=side,
+                                 page=page, hide_noise=not show_noise,
+                                 limit=browse.PAGE_BLOCKS)
+            # A book can sit on either side of a project. Whichever side
+            # actually resolved to pair rows is the one worth returning; if
+            # neither did, the first is as good as the second.
+            if not out or any(r.get("rid") for r in rows):
+                out = rows
+                if any(r.get("rid") for r in rows):
+                    break
+            if not pid:
+                break
+
+        lo, hi = browse.page_range(con, book_key)
+        # The raster the parser measured against, so a page with no image can
+        # still be drawn as a blank of the right proportions.
+        shape = store.Repository(con).one(
+            "SELECT MAX(fx1) AS w, MAX(fy1) AS h FROM setu_segment"
+            "  WHERE book_key = ? AND page = ?", (book_key, page))
+        image = sources.page_image(con, book_key, page)
+
+    return {
+        "book": {"book_key": book["book_key"], "book": book["book"],
+                 "title": book["title"], "language": book["language"],
+                 "script": book["script"], "num_pages": book["num_pages"]},
+        "page": page,
+        "display_page": page + 1,
+        "first_page": lo, "last_page": hi,
+        "image_available": image.ok,
+        "image_message": "" if image.ok else image.message,
+        "aspect": 1.414,
+        "extent": {"w": (shape or {}).get("w") or 1.0,
+                   "h": (shape or {}).get("h") or 1.0},
+        "blocks": [
+            {"sid": b["sid"], "seq": b["seq"], "page": b["page"],
+             "display_page": b["display_page"],
+             "kind": b["kind"], "label": b["label"],
+             "fx0": b["fx0"], "fy0": b["fy0"], "fx1": b["fx1"], "fy1": b["fy1"],
+             "source_text": b["source_text"] or "",
+             "text": b["current"], "rev": b["rev"],
+             "has_math": bool(b["has_math"]), "has_table": bool(b["has_table"]),
+             "chapter_no": b["chapter_no"], "chapter": b["chapter"],
+             "rid": b["rid"], "row_seq": b["row_seq"], "status": b["status"],
+             "note": b["note"], "edited": bool(b["edited"])}
+            for b in out],
+    }
+
+
+@router.get("/pages/{book_key}/{page}/image.png")
+@guard
+def page_image(book_key: str, page: int, dpi: int = Query(0, ge=0, le=300)):
+    """One whole page of one book, as a PNG.
+
+    Asked for only when ``page_blocks`` has already said ``image_available``.
+    Letting an ``<img>`` discover a missing PDF by 404 works, but logs a red
+    error that reads like a fault to whoever opens the developer tools next.
+    """
+    with store.ro() as con:
+        view = sources.page_image(con, book_key, page, dpi=dpi or None)
+    if not view.ok or not view.path:
+        raise NotFound(view.message or "that page cannot be shown")
+    return FileResponse(view.path, media_type="image/png",
+                        headers={"Cache-Control": "public, max-age=86400"})
+
+
+@router.get("/pages/{book_key}/{page}/crop.png")
+@guard
+def page_crop(book_key: str, page: int,
+              x0: float = Query(...), y0: float = Query(...),
+              x1: float = Query(...), y1: float = Query(...),
+              dpi: int = Query(300, ge=72, le=400)):
+    """Cut one rectangle out of one page, at print resolution.
+
+    The rectangle arrives as fractions of the page, which is why what was
+    dragged over a 130 dpi image on screen comes back correctly cut from a
+    300 dpi render.
+    """
+    with store.ro() as con:
+        view = sources.region(con, book_key, page, (x0, y0, x1, y1), dpi=dpi)
+    if not view.ok or not view.path:
+        raise Invalid(view.message or "that region cannot be cut")
+    return FileResponse(view.path, media_type="image/png",
+                        headers={"Cache-Control": "public, max-age=3600"})
+
+
+@router.get("/projects/{pid}/outline")
+@guard
+def project_outline(pid: str) -> dict:
+    """Both books' chapter lists, each in its own language and numbering.
+
+    Two lists, not one. The editions disagree about how many chapters there
+    are — 13 against 16, 43 against 48, 27 against 20 across this corpus — so
+    a single shared table of contents would be wrong for at least one side.
+    """
+    from .ui import browse
+
+    with store.ro() as con:
+        proj = workspace.WorkspaceRepo(con).project(pid)
+        out = {}
+        for side in ("src", "tgt"):
+            book_key = proj[f"{side}_book"]
+            lo, hi = browse.page_range(con, book_key)
+            chapters = []
+            for ch in corpus.CorpusRepo(con).outline(book_key):
+                first = ch.get("first_page")
+                chapters.append({
+                    "chapter_no": ch.get("chapter_no") or "",
+                    "chapter": ch.get("chapter") or "",
+                    "n": ch.get("n") or 0,
+                    "first_page": first,
+                    "display_page": None if first is None else first + 1})
+            out[side] = {
+                "book_key": book_key,
+                "title": proj.get(f"{side}_title") or "",
+                "language": proj.get(f"{side}_language") or "",
+                "script": proj.get(f"{side}_script") or "",
+                "first_page": lo, "last_page": hi,
+                "chapters": chapters}
+    return out
+
+
+@router.get("/projects/{pid}/link")
+@guard
+def get_page_link(pid: str) -> dict:
+    """The remembered distance between the two editions, if anyone found it."""
+    from .ui import browse
+    with store.ro() as con:
+        return {"link": browse.load_link(con, pid)}
+
+
+@router.post("/projects/{pid}/link")
+@guard
+def set_page_link(request: Request, pid: str, payload: dict = Body(...)) -> dict:
+    """Record — or clear — that two pages answer each other.
+
+    Saved against the project rather than against the person, because it is a
+    finding about the two editions: the next annotator to open them should
+    start where this one left off instead of deriving it again.
+    """
+    from .ui import browse
+    actor, _sess = _actor(request, str(payload.get("annotator", "")))
+    if payload.get("clear"):
+        with store.tx() as con:
+            browse.clear_link(con, pid)
+        return {"link": {}}
+    try:
+        src = int(payload["src_page"])
+        tgt = int(payload["tgt_page"])
+    except (KeyError, TypeError, ValueError):
+        raise Invalid("src_page and tgt_page are required")
+    with store.tx() as con:
+        browse.save_link(con, pid, offset=src - tgt, src_page=src,
+                         tgt_page=tgt, actor=actor)
+        return {"link": browse.load_link(con, pid)}
