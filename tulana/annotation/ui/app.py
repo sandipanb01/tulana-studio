@@ -101,6 +101,26 @@ def build() -> gr.Blocks:
             demo.load(fn, inputs, outputs)
         _ON_LOAD.clear()
 
+        # There is one interface, and it is the workspace at /work/. This page
+        # is what a bare share link lands on, so it forwards there rather than
+        # offering a second, different-looking tool — two interfaces for one
+        # job is the confusion this whole rebuild exists to end.
+        #
+        # Kept reachable at ?stay=1 so there is a way back if the workspace
+        # ever fails to load, and skipped when /work/ is not installed, which
+        # launch_annotation.py reports separately.
+        demo.load(None, None, None, js="""
+            () => {
+              try {
+                if (new URLSearchParams(location.search).has('stay')) return;
+                const base = location.pathname.replace(/\\/+$/, '');
+                fetch(base + '/work/', {method: 'HEAD'})
+                  .then(r => { if (r.ok) location.replace(base + '/work/'); })
+                  .catch(() => {});
+              } catch (e) {}
+            }
+        """)
+
     return demo
 
 
