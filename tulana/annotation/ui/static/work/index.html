@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="theme-color" content="#0e7a72">
 <title>सेतु Setu — parallel textbook annotation</title>
-<link rel="stylesheet" href="style.css?v=4">
+<!-- The emblem, the way the studio does it: the letter itself as the icon, so
+     a shared link carries सेतु in the browser tab rather than the host's mark. -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='25' font-size='24'>से</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e7a72'/><text y='25' x='2' font-size='23' fill='white'>से</text></svg>">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
 <header class="bar">
-  <span class="brand"><b>सेतु</b> Setu</span>
+  <span class="brand"><b class="deva">सेतु</b> Setu</span>
   <nav class="tabs">
     <button class="tab on" data-tab="Work">Annotate</button>
     <button class="tab" data-tab="Saved">Saved work</button>
@@ -27,6 +32,13 @@
 <section class="page on" id="pageWork">
   <aside id="side">
     <button id="sideToggle" class="ghost only-narrow">☰ Controls</button>
+
+    <div class="grp" id="gResume" hidden>
+      <h3>Continue where you left off</h3>
+      <select id="resume"></select>
+      <button id="resumeGo" class="btn primary wide">Open it again</button>
+      <p id="resumeNote" class="tiny muted"></p>
+    </div>
 
     <div class="grp">
       <h3>Textbook</h3>
@@ -60,10 +72,10 @@
     <div class="grp" id="gPage" hidden>
       <h3>Page</h3>
       <div class="pagerow">
-        <button id="prevBoth" class="ghost" title="Both back (Alt+←)">‹</button>
+        <button id="prevBoth" class="ghost" title="Both back (←)">‹</button>
         <input id="srcPage" type="number" min="1" step="1">
         <input id="tgtPage" type="number" min="1" step="1">
-        <button id="nextBoth" class="ghost" title="Both forward (Alt+→)">›</button>
+        <button id="nextBoth" class="ghost" title="Both forward (→)">›</button>
       </div>
       <label class="chk"><input type="checkbox" id="lockPages"> Turn both pages together</label>
       <p id="offset" class="tiny muted"></p>
@@ -167,12 +179,16 @@
 
 <!-- ══════════════════════════ SAVED WORK ══════════════════════════ -->
 <section class="page" id="pageSaved">
-  <div class="pad">
-    <div class="row">
-      <select id="savedFilter">
-        <option value="">Everything</option>
+  <div class="wrap">
+    <h2>Saved work</h2>
+    <p class="sub" id="savedStats">—</p>
+
+    <div class="filters">
+      <select id="sBook"><option value="">Every textbook</option></select>
+      <select id="sStatus">
+        <option value="">Every answer</option>
         <option value="__done">Everything I have answered</option>
-        <option value="pending">Not checked yet</option>
+        <option value="__pending">Not checked yet</option>
         <option value="exact">Exact</option>
         <option value="needs_correction">Needs correction</option>
         <option value="incomplete">Missing or incomplete</option>
@@ -180,27 +196,56 @@
         <option value="unclear">Unclear</option>
         <option value="not_applicable">Not applicable</option>
       </select>
-      <button id="savedRefresh" class="btn">Refresh</button>
-      <span id="savedNote" class="tiny muted"></span>
+      <select id="sChapter"><option value="">Every chapter</option></select>
+      <input id="sSearch" type="search" placeholder="Search the text, either language…">
+      <label class="chk"><input type="checkbox" id="sEdited"> only ones I corrected</label>
+      <button id="sRefresh" class="btn">Refresh</button>
     </div>
+
     <div id="savedList" class="cards"></div>
+    <div class="pager" id="savedPager" hidden>
+      <button id="sPrev" class="btn">‹ Newer</button>
+      <span id="sRange" class="tiny muted"></span>
+      <button id="sNext" class="btn">Older ›</button>
+    </div>
   </div>
 </section>
 
 <!-- ══════════════════════════ DOWNLOAD ══════════════════════════ -->
 <section class="page" id="pageGet">
-  <div class="pad">
-    <p class="muted">Everything answered in the two books that are open.</p>
-    <div class="row">
-      <select id="fmt"></select>
-      <select id="scope">
-        <option value="">Everything</option>
-        <option value="__done">Only what has been answered</option>
-        <option value="exact">Only “Exact”</option>
-        <option value="needs_correction">Only “Needs correction”</option>
-      </select>
-      <button id="download" class="btn primary">Download</button>
-      <button id="downloadAll" class="btn">Every format, as a zip</button>
+  <div class="wrap">
+    <h2>Download</h2>
+    <p class="sub" id="getStats">—</p>
+
+    <div class="card">
+      <label class="lbl">What to include</label>
+      <div class="filters">
+        <select id="xBook"></select>
+        <select id="xStatus">
+          <option value="">Everything</option>
+          <option value="__done">Only what has been answered</option>
+          <option value="exact">Only “Exact”</option>
+          <option value="needs_correction">Only “Needs correction”</option>
+          <option value="incomplete">Only “Missing or incomplete”</option>
+          <option value="structural_mismatch">Only “Structural mismatch”</option>
+        </select>
+        <select id="xChapter"><option value="">Every chapter</option></select>
+      </div>
+      <div id="xCount" class="tiny muted"></div>
+    </div>
+
+    <label class="lbl top">Choose a format</label>
+    <p class="tiny muted">If you are not sure which one, take the Excel
+      workbook — it opens in any spreadsheet program and needs nothing
+      installed.</p>
+    <div id="xFormats" class="fgrid"></div>
+
+    <div class="card top">
+      <b>Everything at once</b>
+      <p class="tiny muted">Every format above, plus a dataset card describing
+        what the corpus is, how a pair was made, and what the text is and is
+        not.</p>
+      <button id="xBundle" class="btn primary">Download the full bundle (.zip)</button>
     </div>
     <p id="getNote" class="tiny muted"></p>
   </div>
@@ -208,10 +253,8 @@
 
 <!-- ══════════════════════════ GUIDE ══════════════════════════ -->
 <section class="page" id="pageGuide">
-  <div class="pad guide">
-    <nav id="docNav" class="docnav"></nav>
-    <article id="doc" class="doc"></article>
-  </div>
+  <aside id="docNav" class="docnav"></aside>
+  <article id="doc" class="doc"></article>
 </section>
 
 <div id="toast" class="toast" hidden></div>
@@ -229,12 +272,15 @@
       <tr><td><kbd>c</kbd></td><td>switch between Click and Crop</td></tr>
       <tr><td><kbd>Esc</kbd></td><td>clear the selection</td></tr>
       <tr><td><kbd>+</kbd> <kbd>−</kbd></td><td>zoom both pages</td></tr>
+      <tr><td><kbd>?</kbd></td><td>show this list</td></tr>
       <tr><td><kbd>Ctrl</kbd></td><td>hold to hide the block labels</td></tr>
     </table>
-    <button class="btn wide" onclick="document.getElementById('keys').hidden=true">Close</button>
+    <p class="tiny muted">Shortcuts are switched off while you are typing, so a
+      “1” inside a correction is a digit and not an answer.</p>
+    <button class="btn wide" id="keysClose">Close</button>
   </div>
 </div>
 
-<script src="app.js?v=4"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>
