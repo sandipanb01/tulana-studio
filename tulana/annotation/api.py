@@ -37,8 +37,8 @@ import config
 import db as legacy_db
 
 from . import __version__
-from .core import (annotate, corpus, exporters, ids, search, sources, store,
-                   workspace)
+from .core import (annotate, corpus, exporters, ids, resume, search, sources,
+                   store, workspace)
 from .core.models import KINDS, STATUSES, normalise
 from .core.store import Conflict, Invalid, NotFound
 
@@ -93,8 +93,16 @@ def _actor(request: Request, annotator: str = "") -> tuple[str, str]:
     audit log, not how anything is permitted. They are length-capped here so a
     long one cannot bloat every row it touches.
     """
-    name = normalise(annotator or request.headers.get("x-setu-annotator", ""))[:120]
-    sess = normalise(request.headers.get("x-setu-session", ""))[:64]
+    # Two spellings are accepted because two clients send two. The workspace
+    # at /work/ sends X-Annotator; the Gradio interface sends X-Setu-Annotator.
+    # Reading only one of them is why exports were once logged with no name at
+    # all, which is a silent failure: the work is attributed to nobody and
+    # nothing complains.
+    header = (request.headers.get("x-setu-annotator")
+              or request.headers.get("x-annotator") or "")
+    name = normalise(annotator or header)[:120]
+    sess = normalise(request.headers.get("x-setu-session")
+                     or request.headers.get("x-session", ""))[:64]
     return name.strip(), sess.strip()
 
 
@@ -815,3 +823,55 @@ def set_page_link(request: Request, pid: str, payload: dict = Body(...)) -> dict
         browse.save_link(con, pid, offset=src - tgt, src_page=src,
                          tgt_page=tgt, actor=actor)
         return {"link": browse.load_link(con, pid)}
+
+
+# ── coming back to work you started ────────────────────────────────────────
+#
+# An annotator who closes the tab on Friday has to be able to find their work
+# on Monday. These three endpoints exist for that, and they all read across
+# every project rather than needing one to be open — a person returning after
+# a weekend has nothing open by definition.
+
+
+@router.get("/workbench")
+@guard
+def workbench(request: Request, annotator: str = "", limit: int = 40,
+              offset: int = 0) -> dict:
+    """Every textbook pair that has been opened, most recently worked on first."""
+    who, _ = _actor(request, annotator)
+    with store.ro() as con:
+        return resume.ResumeRepo(con).workbench(
+            annotator=who, limit=limit, offset=offset)
+
+
+@router.post("/projects/{pid}/place")
+@guard
+def save_place(request: Request, pid: str, payload: dict = Body(default={})) -> dict:
+    """Remember where this annotator is, so the next visit opens there.
+
+    The stored key is derived from the project id and a digest of the name;
+    nothing a person types ever becomes part of it.
+    """
+    who, _ = _actor(request, str(payload.get("annotator", "")))
+    with store.tx() as con:
+        if not workspace.WorkspaceRepo(con).project(pid):
+            raise NotFound(f"no such project: {pid}")
+        return {"place": resume.remember_place(con, pid, who,
+                                               payload.get("place") or payload)}
+
+
+@router.get("/saved")
+@guard
+def saved(pid: str = "", status: str = "", answered: str = "", search_text: str = "",
+          chapter_no: str = "", kind: str = "", edited: str = "",
+          limit: int = 40, offset: int = 0) -> dict:
+    """Answered and corrected rows, across one project or all of them."""
+    flag = None if edited == "" else edited.lower() in {"1", "true", "yes"}
+    with store.ro() as con:
+        repo = resume.ResumeRepo(con)
+        out = repo.saved_rows(pid=pid, status=status, answered=answered,
+                              search=search_text, chapter_no=chapter_no,
+                              kind=kind, edited=flag, limit=limit, offset=offset)
+        out["tally"] = repo.saved_tally(pid=pid)
+        out["projects"] = repo.projects_with_work()
+        return out
