@@ -2,7 +2,7 @@
 
 Layered, and each layer imports only from the ones below it::
 
-    exporters  search  annotate  workspace  align
+    exporters  search  annotate  workspace  align  resume
                       corpus
                       store
                   ids   models
@@ -13,7 +13,8 @@ API and the tests without any of them knowing about each other — and what make
 a different front end later a matter of writing one, not of rewriting this.
 """
 
-from . import align, annotate, corpus, exporters, ids, models, search, store, workspace  # noqa: F401
+from . import (align, annotate, corpus, exporters, ids, models,  # noqa: F401
+               resume, search, store, workspace)
 
 __all__ = ["align", "annotate", "corpus", "exporters", "ids", "models",
-           "search", "store", "workspace"]
+           "resume", "search", "store", "workspace"]
