@@ -173,13 +173,23 @@ const bookLabel = b =>
 
 /* ── opening two books ─────────────────────────────────────────────────── */
 
-async function openBooks() {
-  const src = $("#srcBook").value, tgt = $("#tgtBook").value;
+/* Opening two books, from the dropdowns or from a remembered session.
+ *
+ * `want` lets "Continue where you left off" reuse this exact path rather than
+ * keep a second one of its own: the server returns the SAME project for the
+ * same two books, so reopening IS opening. A resumed session that took its own
+ * route could drift into a state a fresh one never reaches, and that class of
+ * bug stays invisible until somebody's work is already inside it. */
+async function openBooks(want) {
+  const src = (want && want.src) || $("#srcBook").value;
+  const tgt = (want && want.tgt) || $("#tgtBook").value;
   if (!src || !tgt) return toast("Choose a book on each side first.", true);
   if (src === tgt) return toast("The two sides must be different books.", true);
 
-  $("#open").disabled = true;
-  $("#open").textContent = "Opening…";
+  const btn = want ? $("#resumeGo") : $("#open");
+  const said = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = "Opening…";
   try {
     const proj = await api("/projects", {
       method: "POST",
@@ -204,16 +214,29 @@ async function openBooks() {
       W.lock = true;
       $("#lockPages").checked = true;
     }
+    // A remembered position wins over the page link, because it is where this
+    // person actually was, while the link is where the project says the two
+    // editions correspond. Both are clamped to the book: a position saved
+    // before a re-ingest can name a page that no longer exists.
+    if (want && want.place) {
+      if (want.place.src_page != null)
+        S("src").page = clamp(want.place.src_page | 0, S("src").lo, S("src").hi);
+      if (want.place.tgt_page != null)
+        S("tgt").page = clamp(want.place.tgt_page | 0, S("tgt").lo, S("tgt").hi);
+    }
     ["#gChapter", "#gPage", "#gView", "#gTool", "#gMode", "#gFilter"].forEach(id => { $(id).hidden = false; });
     $("#unlink").hidden = !W.link;
     await Promise.all([openPage("src"), openPage("tgt")]);
     refreshSelection();
     loadProgress();
+    savedBooksFilled = false;              // the Saved tab's dropdown is stale
+    return true;
   } catch (e) {
     toast(e.message, true);
+    return false;
   } finally {
-    $("#open").disabled = false;
-    $("#open").textContent = "Open side by side";
+    btn.disabled = false;
+    btn.textContent = said;
   }
 }
 
@@ -643,8 +666,10 @@ async function setAnswer(status) {
       method: "POST",
       body: JSON.stringify({ status, note: $("#note").value, annotator: who() }),
     });
+    const note = $("#note").value;
     for (const s of ["src", "tgt"])
-      for (const b of S(s).blocks) if (b.rid === pair.rid) b.status = status;
+      for (const b of S(s).blocks)
+        if (b.rid === pair.rid) { b.status = status; b.note = note; }
     saveState("Saved.");
     refreshSelection();
     ["src", "tgt"].forEach(drawBlocksKeepingScroll);
@@ -813,6 +838,7 @@ async function turn(s, delta) {
   }
   await Promise.all(jobs);
   refreshSelection();
+  rememberPlace();
 }
 
 async function goTo(s, displayPage) {
@@ -829,12 +855,14 @@ async function goTo(s, displayPage) {
   }
   await Promise.all(jobs);
   refreshSelection();
+  rememberPlace();
 }
 
 async function turnBoth(delta) {
   for (const s of ["src", "tgt"]) S(s).page = clamp(S(s).page + delta, S(s).lo, S(s).hi);
   await Promise.all([openPage("src"), openPage("tgt")]);
   refreshSelection();
+  rememberPlace();
 }
 
 /* ── wiring ────────────────────────────────────────────────────────────── */
@@ -873,7 +901,9 @@ $("#link").onclick = async () => {
 $("#unlink").onclick = async () => {
   try {
     await api(`/projects/${W.pid}/link`, { method: "POST", body: JSON.stringify({ clear: true }) });
-    W.link = null; $("#unlink").hidden = true; renderOffset();
+    W.link = null; $("#unlink").hidden = true;
+    W.lock = false; $("#lockPages").checked = false;   // or they still move as one
+    renderOffset();
     toast("Unlinked. Each side moves on its own again.");
   } catch (e) { toast(e.message, true); }
 };
@@ -912,8 +942,15 @@ $$(".z").forEach(b => b.onclick = () => {
   renderSide(s);
 });
 
-$("#sideToggle").onclick = () => $("#side").classList.toggle("hidden");
+/* The toggle lives inside the sidebar, so hiding the sidebar hid the only
+ * way to get it back. It moves to the header while the sidebar is away. */
+$("#sideToggle").onclick = () => {
+  const away = $("#side").classList.toggle("hidden");
+  document.body.classList.toggle("side-away", away);
+};
 $("#help").onclick = () => { $("#keys").hidden = false; };
+$("#keysClose").onclick = () => { $("#keys").hidden = true; };
+$("#keys").onclick = e => { if (e.target.id === "keys") $("#keys").hidden = true; };
 
 /* the draggable split */
 (() => {
@@ -941,12 +978,15 @@ document.addEventListener("keydown", e => {
   if (typing) return;
 
   if (e.key >= "1" && e.key <= "6") { const a = ANSWERS[+e.key - 1]; if (a) setAnswer(a[0]); return; }
-  if (e.key === "ArrowLeft") { e.altKey ? turn("src", -1) : e.shiftKey ? turn("tgt", -1) : turnBoth(-1); return; }
-  if (e.key === "ArrowRight") { e.altKey ? turn("src", 1) : e.shiftKey ? turn("tgt", 1) : turnBoth(1); return; }
+  // turn() already carries the other side when the pages are locked, so a
+  // plain arrow honours the lock instead of overriding it.
+  if (e.key === "ArrowLeft") { e.altKey ? turn("src", -1) : e.shiftKey ? turn("tgt", -1) : turn("src", -1); return; }
+  if (e.key === "ArrowRight") { e.altKey ? turn("src", 1) : e.shiftKey ? turn("tgt", 1) : turn("src", 1); return; }
   if (e.key === "Escape") { ["src", "tgt"].forEach(s => { S(s).sel.clear(); markSelected(s); }); refreshSelection(); return; }
   if (e.key === "e") { $$(`.segbtn[data-mode]`).find(b => b.dataset.mode !== W.mode)?.click(); return; }
   if (e.key === "c") { $$(`.segbtn[data-tool]`).find(b => b.dataset.tool !== W.tool)?.click(); return; }
   if (e.key === "n") { nextUnanswered(); return; }
+  if (e.key === "?") { $("#keys").hidden = false; return; }
   if (e.key === "+" || e.key === "=") { ["src", "tgt"].forEach(s => { S(s).zoom = clamp(S(s).zoom + 0.25, 0.3, 4); renderSide(s); }); return; }
   if (e.key === "-") { ["src", "tgt"].forEach(s => { S(s).zoom = clamp(S(s).zoom - 0.25, 0.3, 4); renderSide(s); }); return; }
 });
@@ -977,132 +1017,557 @@ async function loadProgress() {
     $("#progress").textContent = `${(done || 0).toLocaleString()} / ${(p.total || 0).toLocaleString()} answered`;
   } catch { /* the bar is a courtesy, never a blocker */ }
 }
-
 /* tabs */
 $$(".tab").forEach(t => t.onclick = () => {
   $$(".tab").forEach(x => x.classList.toggle("on", x === t));
   $$(".page").forEach(p => p.classList.toggle("on", p.id === "page" + t.dataset.tab));
-  if (t.dataset.tab === "Saved") loadSaved();
-  if (t.dataset.tab === "Get") loadFormats();
+  if (t.dataset.tab === "Saved") loadSaved(0);
+  if (t.dataset.tab === "Get") loadGet();
   if (t.dataset.tab === "Guide") loadDocs();
 });
+function goTab(name) { ($$(".tab").find(t => t.dataset.tab === name) || {}).onclick?.(); }
 
-/* ── saved work ────────────────────────────────────────────────────────── */
+/* ── coming back to work you started ───────────────────────────────────────
+ *
+ * The problem this solves: an annotator answers three hundred pairs, closes
+ * the tab, and comes back on Monday. Their work is safe in the database — but
+ * finding it again meant remembering a board, a class, a subject and two
+ * editions, and picking the same two books out of a hundred and twenty. Get
+ * one wrong and you are staring at an empty project wondering where it went.
+ *
+ * So the first thing in the sidebar is a list of what has been worked on,
+ * newest first, with how far each one got. Choosing one reopens the two books
+ * AND puts the annotator back on the pages they were reading.
+ */
 
-async function loadSaved() {
-  if (!W.pid) { $("#savedList").innerHTML = `<p class="muted">Open two textbooks first.</p>`; return; }
-  const f = $("#savedFilter").value;
-  const q = f === "__done" ? "only_done=1" : (f ? `status=${encodeURIComponent(f)}` : "");
+let WORKBENCH = [];
+
+async function loadWorkbench() {
   try {
-    const data = await api(`/projects/${W.pid}/rows?limit=60&${q}`);
-    $("#savedNote").textContent = `${(data.total || 0).toLocaleString()} pairs`;
-    $("#savedList").innerHTML = (data.rows || []).map(r => `
-      <div class="card" data-src="${r.src && r.src.page != null ? r.src.page : ""}"
-           data-tgt="${r.tgt && r.tgt.page != null ? r.tgt.page : ""}">
-        <div class="top">
-          <b>#${r.seq}</b>
-          <span class="badge ${esc(r.status)}">${esc(statusLabel(r.status))}</span>
-          <span>${esc([r.chapter_no, r.chapter].filter(Boolean).join(" "))}</span>
-          <span class="spacer"></span>
-          <span>${r.src && r.src.page != null ? "p" + (r.src.page + 1) : "—"} ↔ ${r.tgt && r.tgt.page != null ? "p" + (r.tgt.page + 1) : "—"}</span>
-        </div>
-        <div class="two">
-          <div>${esc(snip(r.src && r.src.text))}</div>
-          <div>${esc(snip(r.tgt && r.tgt.text))}</div>
-        </div>
-      </div>`).join("") || `<p class="muted">Nothing here yet.</p>`;
-    $$("#savedList .card").forEach(card => card.onclick = async () => {
-      const a = card.dataset.src, b = card.dataset.tgt;
-      if (a !== "") S("src").page = clamp(+a, S("src").lo, S("src").hi);
-      if (b !== "") S("tgt").page = clamp(+b, S("tgt").lo, S("tgt").hi);
-      $$(".tab")[0].click();
-      await Promise.all([openPage("src"), openPage("tgt")]);
-      refreshSelection();
-    });
-  } catch (e) { toast(e.message, true); }
-}
-const snip = (t, n = 150) => { const s = (t || "").replace(/\s+/g, " "); return s.length > n ? s.slice(0, n) + "…" : s; };
-const statusLabel = k => (ANSWERS.find(a => a[0] === k) || [k, "Not checked yet"])[1];
-$("#savedFilter").onchange = loadSaved;
-$("#savedRefresh").onclick = loadSaved;
+    const { projects } = await api(`/workbench?annotator=${encodeURIComponent(who())}`);
+    WORKBENCH = projects || [];
+  } catch { WORKBENCH = []; }                 // a missing list is never fatal
 
-/* ── download ──────────────────────────────────────────────────────────── */
+  const withWork = WORKBENCH.filter(p => (p.answered || 0) > 0 || p.place?.src_page != null);
+  const show = withWork.length ? withWork : WORKBENCH;
+  $("#gResume").hidden = !show.length;
+  if (!show.length) return;
 
-let formatsLoaded = false;
-async function loadFormats() {
-  if (formatsLoaded) return;
-  try {
-    const { formats } = await api("/formats");
-    $("#fmt").innerHTML = formats.map(f =>
-      `<option value="${esc(f.key)}"${f.available ? "" : " disabled"}>` +
-      `${esc(f.label)} (.${esc(f.ext)})${f.available ? "" : " — needs " + esc(f.install || "an extra package")}` +
-      `</option>`).join("");
-    formatsLoaded = true;
-  } catch (e) { toast(e.message, true); }
+  // The sidebar is narrow, so the option carries a short name and the full
+  // one rides in the title, where a hover shows it without widening anything.
+  $("#resume").innerHTML = show.map(p =>
+    `<option value="${esc(p.pid)}" title="${esc(p.label || p.name || p.pid)}">` +
+    `${esc(shortLabel(p))}</option>`).join("");
+  describeResume();
 }
-$("#download").onclick = () => {
-  if (!W.pid) return toast("Open two textbooks first.", true);
-  const scope = $("#scope").value;
-  const q = scope === "__done" ? "only_done=1" : (scope ? `status=${encodeURIComponent(scope)}` : "");
-  window.location = `${API}/projects/${W.pid}/export.${$("#fmt").value}?${q}`;
-  $("#getNote").textContent = "The file should appear in your downloads.";
+
+/* "MH · 10 · English ⇄ Gujarati" fits; the full board name does not. */
+function shortLabel(p) {
+  const bits = [p.board || "", p.class ? `Class ${p.class}` : "",
+                [p.src_language, p.tgt_language].filter(Boolean).join(" ⇄ ")];
+  return bits.filter(Boolean).join(" · ") || p.name || p.pid;
+}
+
+function describeResume() {
+  const p = WORKBENCH.find(x => x.pid === $("#resume").value);
+  if (!p) { $("#resumeNote").textContent = ""; return; }
+  const bits = [p.where];
+  if (p.corrected) bits.push(`${p.corrected.toLocaleString()} corrected`);
+  if (p.place && p.place.src_page != null) {
+    bits.push(`you were on page ${shown(p.place.src_page)} ↔ ${shown(p.place.tgt_page ?? p.place.src_page)}`);
+  }
+  if (p.touched) bits.push(ago(p.touched));
+  $("#resumeNote").textContent = bits.filter(Boolean).join(" · ");
+}
+$("#resume").onchange = describeResume;
+
+function ago(ts) {
+  const s = Math.max(0, Date.now() / 1000 - (+ts || 0));
+  if (s < 90) return "just now";
+  if (s < 5400) return `${Math.round(s / 60)} minutes ago`;
+  if (s < 129600) return `${Math.round(s / 3600)} hours ago`;
+  const d = Math.round(s / 86400);
+  return d === 1 ? "yesterday" : `${d} days ago`;
+}
+
+$("#resumeGo").onclick = async () => {
+  const p = WORKBENCH.find(x => x.pid === $("#resume").value);
+  if (!p) return;
+  const ok = await openBooks({ src: p.src_book, tgt: p.tgt_book, place: p.place });
+  if (!ok) return;
+  if (W.view === "text" || W.view === "page") applyView(p.place && p.place.view);
+  const at = (p.place && p.place.src_page != null)
+    ? ` You were on page ${shown(S("src").page)}.` : "";
+  toast(`Back in ${p.label || p.name}. ${p.where}.${at}`);
 };
-$("#downloadAll").onclick = () => {
-  if (!W.pid) return toast("Open two textbooks first.", true);
-  window.location = `${API}/projects/${W.pid}/export-bundle.zip`;
+
+/* The view is restored only if it is one of the two that exist — a stored
+ * value from an older version is ignored rather than trusted. */
+function applyView(v) {
+  if (v !== "text" && v !== "page") return;
+  const b = $$(".segbtn[data-view]").find(x => x.dataset.view === v);
+  if (b && !b.classList.contains("on")) b.click();
+}
+
+/* Where the annotator is, remembered after they stop moving. Debounced,
+ * because a page turn is cheap and a write is not, and never awaited by
+ * anything the annotator is waiting for. */
+let placeTimer = null;
+function rememberPlace() {
+  if (!W.pid) return;
+  clearTimeout(placeTimer);
+  placeTimer = setTimeout(() => {
+    api(`/projects/${W.pid}/place`, {
+      method: "POST",
+      body: JSON.stringify({
+        place: {
+          src_page: S("src").page, tgt_page: S("tgt").page,
+          src_book: S("src").book, tgt_book: S("tgt").book,
+          view: W.view, mode: W.mode,
+        },
+      }),
+    }).catch(() => { /* a forgotten position is a nuisance, never an error */ });
+  }, 1200);
+}
+
+/* ── saved work ────────────────────────────────────────────────────────────
+ *
+ * Built to Tulana Studio's Saved-pairs shape, and for the same reason: an
+ * annotator reviewing their own work needs to filter it, search it, and jump
+ * back to the passage it came from. The one difference that matters is that
+ * this reads across EVERY project, because someone returning to check what
+ * they did last week has no project open.
+ */
+
+const SAVED_PAGE = 25;
+let savedOffset = 0;
+let savedBooksFilled = false;
+
+function savedQuery(offset) {
+  const q = new URLSearchParams();
+  if ($("#sBook").value) q.set("pid", $("#sBook").value);
+  const st = $("#sStatus").value;
+  if (st === "__done") q.set("answered", "done");
+  else if (st === "__pending") q.set("answered", "pending");
+  else if (st) q.set("status", st);
+  if ($("#sChapter").value) q.set("chapter_no", $("#sChapter").value);
+  if ($("#sSearch").value.trim()) q.set("search_text", $("#sSearch").value.trim());
+  if ($("#sEdited").checked) q.set("edited", "true");
+  q.set("limit", SAVED_PAGE);
+  q.set("offset", Math.max(0, offset | 0));
+  return q;
+}
+
+async function loadSaved(offset) {
+  if (offset != null) savedOffset = Math.max(0, offset | 0);
+  const list = $("#savedList");
+  list.setAttribute("aria-busy", "true");
+  let data;
+  try {
+    data = await api(`/saved?${savedQuery(savedOffset)}`);
+  } catch (e) {
+    list.innerHTML = `<div class="card muted">That could not be loaded: ${esc(e.message)}</div>`;
+    list.removeAttribute("aria-busy");
+    return;
+  }
+  list.removeAttribute("aria-busy");
+
+  if (!savedBooksFilled) {
+    const projects = data.projects || [];
+    $("#sBook").innerHTML = `<option value="">Every textbook</option>` +
+      projects.map(p => `<option value="${esc(p.pid)}">${esc(projectLabel(p))}` +
+        `${p.answered ? ` — ${p.answered.toLocaleString()} answered` : ""}</option>`).join("");
+    if (W.pid && projects.some(p => p.pid === W.pid)) $("#sBook").value = W.pid;
+    savedBooksFilled = true;
+    fillSavedChapters();
+  }
+
+  const t = data.tally || {};
+  $("#savedStats").textContent = t.total
+    ? `${(t.answered || 0).toLocaleString()} of ${(t.total || 0).toLocaleString()} ` +
+      `pairs answered` + (t.corrected ? ` · ${t.corrected.toLocaleString()} corrected by hand` : "") +
+      ` · ${statusSentence(t.by_status || {})}`
+    : "Nothing here yet. Open two textbooks in the Annotate tab and start answering.";
+
+  const rows = data.rows || [];
+  const total = data.total || 0;
+  if (!rows.length) {
+    list.innerHTML = `<div class="card muted">${
+      total ? "No pair matches that filter." :
+      "Nothing has been answered yet — open two textbooks and start in the Annotate tab."
+    }</div>`;
+    $("#savedPager").hidden = true;
+    return;
+  }
+
+  list.innerHTML = rows.map(r => savedCard(r)).join("");
+  $$("#savedList .scard [data-act]").forEach(b => b.onclick = ev => {
+    ev.stopPropagation();
+    savedAction(b.dataset.act, b.closest(".scard").dataset);
+  });
+  $$("#savedList .scard").forEach(c => c.onclick = () => savedAction("open", c.dataset));
+
+  const from = savedOffset + 1, to = Math.min(savedOffset + rows.length, total);
+  $("#savedPager").hidden = total <= SAVED_PAGE;
+  $("#sRange").textContent = `${from.toLocaleString()}–${to.toLocaleString()} of ${total.toLocaleString()}`;
+  $("#sPrev").disabled = savedOffset <= 0;
+  $("#sNext").disabled = to >= total;
+}
+
+function projectLabel(p) {
+  const bits = [p.board, p.class ? `Class ${p.class}` : "", p.subject,
+                [p.src_language, p.tgt_language].filter(Boolean).join(" ⇄ ")];
+  return bits.filter(Boolean).join(" · ") || p.name || p.pid;
+}
+
+function statusSentence(by) {
+  const order = ["exact", "needs_correction", "incomplete",
+                 "structural_mismatch", "unclear", "not_applicable"];
+  const bits = order.filter(k => by[k]).map(k => `${by[k].toLocaleString()} ${statusLabel(k).toLowerCase()}`);
+  return bits.length ? bits.join(" · ") : "none answered yet";
+}
+
+function savedCard(r) {
+  const pages = `${r.src_display != null ? "p" + r.src_display : "—"} ↔ ` +
+                `${r.tgt_display != null ? "p" + r.tgt_display : "—"}`;
+  const chapter = [r.chapter_no, r.chapter].filter(Boolean).join(" ");
+  return `
+  <div class="scard ${r.status === "pending" ? "pending" : ""}"
+       data-rid="${esc(r.rid)}" data-pid="${esc(r.pid)}"
+       data-src="${r.src_page == null ? "" : r.src_page}"
+       data-tgt="${r.tgt_page == null ? "" : r.tgt_page}">
+    <div class="top">
+      <span class="seq">#${r.seq}</span>
+      <span class="badge ${esc(r.status)}">${esc(statusLabel(r.status))}</span>
+      ${r.edited ? `<span class="badge edited">corrected</span>` : ""}
+      ${chapter ? `<span class="muted">${esc(chapter)}</span>` : ""}
+      <span class="spacer"></span>
+      <span class="muted tiny">${esc(pages)}${r.kind ? " · " + esc(r.kind) : ""}
+        ${r.updated_by ? " · " + esc(r.updated_by) : ""}</span>
+    </div>
+    <div class="two">
+      <div class="scol">
+        <div class="lang tiny muted">${esc(r.src_language || "left")}</div>
+        <div class="body">${esc(snip(r.src_text)) || `<i class="muted">nothing on this side</i>`}</div>
+      </div>
+      <div class="scol">
+        <div class="lang tiny muted">${esc(r.tgt_language || "right")}</div>
+        <div class="body indic">${esc(snip(r.tgt_text)) || `<i class="muted">nothing on this side</i>`}</div>
+      </div>
+    </div>
+    ${r.note ? `<div class="note-shown tiny">Note: ${esc(r.note)}</div>` : ""}
+    <div class="acts">
+      <button class="btn sm" data-act="open">Open in Annotate</button>
+      ${r.status !== "pending"
+        ? `<button class="btn sm" data-act="clear">Undo my answer</button>` : ""}
+    </div>
+  </div>`;
+}
+
+async function savedAction(act, d) {
+  if (act === "clear") {
+    if (!confirm("Put this pair back to “Not checked yet”? Any text you "
+               + "corrected is kept — only the answer is removed.")) return;
+    try {
+      await api(`/rows/${d.rid}/status`, {
+        method: "POST", body: JSON.stringify({ status: "pending" }) });
+      toast("Answer removed — the pair is waiting again");
+      loadSaved();
+      refreshProgress();
+    } catch (e) { toast(e.message, true); }
+    return;
+  }
+  // "open" — put the annotator back on the two pages this pair came from.
+  if (d.pid && d.pid !== W.pid) {
+    const p = WORKBENCH.find(x => x.pid === d.pid);
+    if (p) { $("#resume").value = d.pid; goTab("Work"); return $("#resumeGo").click(); }
+    toast("Open that textbook in the Annotate tab first.", true);
+    return;
+  }
+  if (!W.pid) { toast("Open two textbooks in the Annotate tab first.", true); return; }
+  goTab("Work");
+  // openPage takes the page off the side's own state, so the page is set first
+  // and the side then redrawn. Passing it as a second argument silently did
+  // nothing at all — which looked exactly like the jump having worked.
+  const jobs = [];
+  for (const [side, want] of [["src", d.src], ["tgt", d.tgt]]) {
+    if (want === "" || want == null) continue;
+    const st = S(side);
+    st.page = clamp(parseInt(want, 10) || 0, st.lo, st.hi);
+    jobs.push(openPage(side));
+  }
+  if (!jobs.length) { toast("That pair sits on no page on either side.", true); return; }
+  await Promise.all(jobs);
+  refreshSelection();
+  rememberPlace();
+}
+
+function fillSavedChapters() {
+  const opts = $("#srcChapter") ? [...$("#srcChapter").options] : [];
+  const seen = new Set();
+  const rows = opts.map(o => o.value).filter(v => v && !seen.has(v) && seen.add(v));
+  if (!rows.length) return;
+  $("#sChapter").innerHTML = `<option value="">Every chapter</option>` +
+    opts.filter(o => o.value).map(o =>
+      `<option value="${esc(o.value)}">${esc(o.textContent)}</option>`).join("");
+}
+
+const snip = (t, n = 220) => {
+  const s = (t || "").replace(/\s+/g, " ").trim();
+  return s.length > n ? s.slice(0, n) + "…" : s;
+};
+const statusLabel = k => (ANSWERS.find(a => a[0] === k) || [k, "Not checked yet"])[1];
+
+let savedSearchTimer = null;
+$("#sSearch").oninput = () => {
+  clearTimeout(savedSearchTimer);
+  savedSearchTimer = setTimeout(() => loadSaved(0), 300);
+};
+["#sBook", "#sStatus", "#sChapter", "#sEdited"].forEach(sel => {
+  $(sel).onchange = () => loadSaved(0);
+});
+$("#sRefresh").onclick = () => loadSaved();
+$("#sPrev").onclick = () => loadSaved(savedOffset - SAVED_PAGE);
+$("#sNext").onclick = () => loadSaved(savedOffset + SAVED_PAGE);
+
+/* ── download ──────────────────────────────────────────────────────────────
+ *
+ * Tulana Studio's Export tab, with Setu's eleven formats: say what to include,
+ * see how many rows that is, then pick a shape. Each format describes itself
+ * so nobody has to know what TMX is before deciding they do not want it.
+ */
+
+let getLoaded = false;
+
+async function loadGet() {
+  try {
+    if (!getLoaded) {
+      const [{ formats }, saved] = await Promise.all([
+        api("/formats"), api("/saved?limit=1")]);
+      const projects = saved.projects || [];
+      $("#xBook").innerHTML = projects.map(p =>
+        `<option value="${esc(p.pid)}">${esc(projectLabel(p))}</option>`).join("")
+        || `<option value="">No textbook has been opened yet</option>`;
+      if (W.pid && projects.some(p => p.pid === W.pid)) $("#xBook").value = W.pid;
+
+      $("#xFormats").innerHTML = formats.map(f => `
+        <button class="fmt${f.available === false ? " off" : ""}" data-fmt="${esc(f.key)}"
+                ${f.available === false ? "disabled" : ""}>
+          <b>${esc(f.label || f.name || f.key)}</b><code>.${esc(f.ext || f.extension || f.key)}</code>
+          <span>${esc(f.description || FORMAT_HINT[f.key] || "")}</span>
+          ${f.available === false
+            ? `<em class="tiny">needs ${esc(f.install || "an extra package")}</em>` : ""}
+        </button>`).join("");
+      $$("#xFormats .fmt").forEach(b => b.onclick = () => download(b.dataset.fmt));
+      ["#xBook", "#xStatus", "#xChapter"].forEach(s => $(s).onchange = refreshGetCount);
+      getLoaded = true;
+    }
+    fillGetChapters();
+    await refreshGetCount();
+  } catch (e) { toast(e.message, true); }
+}
+
+/* Plain-language descriptions, for the formats whose own description is a
+ * one-word name that means nothing to a person who has not met it. */
+const FORMAT_HINT = {
+  xlsx: "An Excel workbook. Opens in Excel, LibreOffice or Google Sheets.",
+  csv: "A plain table. Opens in any spreadsheet, and in almost any program.",
+  tsv: "Like CSV, but separated by tabs instead of commas.",
+  json: "One structured file, for a programmer.",
+  jsonl: "One line of JSON per pair — the usual shape for training data.",
+  xml: "Structured text, for tools that expect XML.",
+  txt: "Just the two texts, one pair after another.",
+  tmx: "Translation memory. Opens in OmegaT, memoQ and Trados.",
+  moses: "Two matching text files, the shape machine-translation training wants.",
+  parquet: "A compact table for data tools like pandas or Spark.",
+  huggingface: "A ready-made dataset folder for the Hugging Face library.",
+};
+
+function getQuery() {
+  const q = new URLSearchParams();
+  const st = $("#xStatus").value;
+  if (st === "__done") q.set("only_done", "1");
+  else if (st) q.set("status", st);
+  if ($("#xChapter").value) q.set("chapter_no", $("#xChapter").value);
+  return q;
+}
+
+function getPid() { return $("#xBook").value || W.pid || ""; }
+
+async function refreshGetCount() {
+  const pid = getPid();
+  if (!pid) {
+    $("#getStats").textContent = "Nothing to download yet — open two textbooks first.";
+    $("#xCount").textContent = "";
+    return;
+  }
+  const q = new URLSearchParams(getQuery());
+  q.set("pid", pid); q.set("limit", "1");
+  try {
+    const d = await api(`/saved?${q}`);
+    const t = d.tally || {};
+    $("#getStats").textContent =
+      `${(t.answered || 0).toLocaleString()} of ${(t.total || 0).toLocaleString()} pairs answered` +
+      (t.corrected ? ` · ${t.corrected.toLocaleString()} corrected by hand` : "");
+    $("#xCount").textContent = `${(d.total || 0).toLocaleString()} pair(s) match — that is what a download will contain.`;
+  } catch (e) { $("#xCount").textContent = ""; }
+}
+
+function fillGetChapters() {
+  const opts = $("#srcChapter") ? [...$("#srcChapter").options].filter(o => o.value) : [];
+  if (!opts.length) return;
+  $("#xChapter").innerHTML = `<option value="">Every chapter</option>` +
+    opts.map(o => `<option value="${esc(o.value)}">${esc(o.textContent)}</option>`).join("");
+}
+
+function download(fmt) {
+  const pid = getPid();
+  if (!pid) return toast("Open two textbooks first.", true);
+  window.location = `${API}/projects/${pid}/export.${encodeURIComponent(fmt)}?${getQuery()}`;
+  $("#getNote").textContent = "The file should appear in your downloads in a moment.";
+}
+$("#xBundle").onclick = () => {
+  const pid = getPid();
+  if (!pid) return toast("Open two textbooks first.", true);
+  window.location = `${API}/projects/${pid}/export-bundle.zip?${getQuery()}`;
+  $("#getNote").textContent = "Building the bundle — a large book can take a minute.";
 };
 
 /* ── the guide ─────────────────────────────────────────────────────────── */
 
+/* The manual is long on purpose, so the navigation lists the sections inside
+ * the open document as well as the documents themselves. Someone looking for
+ * "what does Structural mismatch mean" reaches it in one click instead of
+ * scrolling a manual that was written to be read once from the top. */
 let docsLoaded = false;
+let docList = [];
+
 async function loadDocs() {
   if (docsLoaded) return;
   try {
     const { docs } = await api("/docs");
-    $("#docNav").innerHTML = docs.map((d, i) =>
-      `<button data-name="${esc(d.name)}"${i === 0 ? ' class="on"' : ""}>${esc(d.title)}</button>`).join("");
-    $$("#docNav button").forEach(b => b.onclick = () => {
-      $$("#docNav button").forEach(x => x.classList.toggle("on", x === b));
-      showDoc(b.dataset.name);
-    });
-    if (docs.length) showDoc(docs[0].name);
+    docList = docs || [];
+    if (!docList.length) {
+      $("#docNav").innerHTML = "";
+      $("#doc").innerHTML = `<p class="muted">No manual is installed on this server.</p>`;
+      return;
+    }
     docsLoaded = true;
+    await showDoc(docList[0].name);
   } catch (e) { toast(e.message, true); }
 }
+
 async function showDoc(name) {
-  const r = await fetch(`${API}/docs/${encodeURIComponent(name)}`);
-  $("#doc").innerHTML = markdown(await r.text());
+  let text;
+  try {
+    const r = await fetch(`${API}/docs/${encodeURIComponent(name)}`);
+    if (!r.ok) throw new Error(`that page could not be loaded (${r.status})`);
+    text = await r.text();
+  } catch (e) {
+    $("#doc").innerHTML = `<p class="muted">${esc(e.message)}</p>`;
+    return;
+  }
+  $("#doc").innerHTML = markdown(text);
+  $("#doc").scrollTop = 0;
+  buildDocNav(name);
 }
-/* Enough Markdown for the three manuals, and no dependency to go stale. */
+
+function buildDocNav(current) {
+  const heads = $$("#doc h2, #doc h3");
+  $("#docNav").innerHTML = docList.map(d => {
+    const on = d.name === current;
+    const inner = on ? heads.map(h =>
+      `<button class="sec${h.tagName === "H3" ? " deep" : ""}" data-to="${esc(h.id)}">${esc(h.textContent)}</button>`
+    ).join("") : "";
+    return `<button class="dl${on ? " on" : ""}" data-doc="${esc(d.name)}">${esc(d.title)}</button>${inner}`;
+  }).join("");
+
+  $$("#docNav .dl").forEach(b => b.onclick = () => showDoc(b.dataset.doc));
+  $$("#docNav .sec").forEach(b => b.onclick = () => {
+    const h = document.getElementById(b.dataset.to);
+    if (h) h.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
+/* Enough Markdown for the manuals, and no dependency to go stale.
+ *
+ * Three things it must get right that the first version did not: consecutive
+ * lines are ONE paragraph (a manual written in wrapped prose was coming out as
+ * a line per paragraph), list items are wrapped in a real <ul> or <ol>, and a
+ * blockquote is a blockquote. Everything is escaped before any tag is put
+ * around it, so a document can contain < and & without becoming markup. */
 function markdown(md) {
-  const lines = md.split("\n");
-  const out = []; let inTable = false, inCode = false;
+  const out = [];
+  let para = [], list = null, inCode = false, inTable = false;
+
   const inline = t => esc(t)
     .replace(/`([^`]+)`/g, "<code>$1</code>")
     .replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>")
-    .replace(/(^|[^*])\*([^*]+)\*/g, "$1<i>$2</i>")
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" rel="noopener">$1</a>');
-  for (const raw of lines) {
+    .replace(/(^|[^*])\*([^*\s][^*]*)\*/g, "$1<i>$2</i>")
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" rel="noopener">$1</a>');
+
+  const closePara = () => {
+    if (para.length) { out.push(`<p>${inline(para.join(" "))}</p>`); para = []; }
+  };
+  const closeList = () => { if (list) { out.push(`</${list}>`); list = null; } };
+  const closeTable = () => { if (inTable) { out.push("</table>"); inTable = false; } };
+  const closeAll = () => { closePara(); closeList(); closeTable(); };
+
+  for (const raw of md.split("\n")) {
     const l = raw.replace(/\s+$/, "");
-    if (l.startsWith("```")) { inCode = !inCode; out.push(inCode ? "<pre><code>" : "</code></pre>"); continue; }
+
+    if (l.startsWith("```")) {
+      closeAll();
+      inCode = !inCode;
+      out.push(inCode ? "<pre><code>" : "</code></pre>");
+      continue;
+    }
     if (inCode) { out.push(esc(raw)); continue; }
+
+    if (!l.trim()) { closeAll(); continue; }
+
     if (/^\|/.test(l)) {
+      closePara(); closeList();
+      if (/^[\s|:-]+$/.test(l)) continue;           // the |---|---| separator
       const cells = l.split("|").slice(1, -1);
-      if (/^[\s|:-]+$/.test(l)) continue;
       if (!inTable) { out.push("<table>"); inTable = true; }
       out.push("<tr>" + cells.map(c => `<td>${inline(c.trim())}</td>`).join("") + "</tr>");
       continue;
     }
-    if (inTable) { out.push("</table>"); inTable = false; }
-    if (/^#{1,4} /.test(l)) { const n = l.match(/^#+/)[0].length; out.push(`<h${n}>${inline(l.slice(n + 1))}</h${n}>`); continue; }
-    if (/^[-*] /.test(l)) { out.push(`<li>${inline(l.slice(2))}</li>`); continue; }
-    if (/^\d+\. /.test(l)) { out.push(`<li>${inline(l.replace(/^\d+\. /, ""))}</li>`); continue; }
-    if (/^---+$/.test(l)) { out.push("<hr>"); continue; }
-    out.push(l ? `<p>${inline(l)}</p>` : "");
+    closeTable();
+
+    if (/^#{1,6} /.test(l)) {
+      closeAll();
+      const n = l.match(/^#+/)[0].length;
+      const text = l.slice(n + 1);
+      out.push(`<h${n} id="${slug(text)}">${inline(text)}</h${n}>`);
+      continue;
+    }
+    if (/^(---+|\*\*\*+|___+)$/.test(l)) { closeAll(); out.push("<hr>"); continue; }
+    if (/^> ?/.test(l)) {
+      closeAll();
+      out.push(`<blockquote>${inline(l.replace(/^> ?/, ""))}</blockquote>`);
+      continue;
+    }
+
+    const bullet = l.match(/^\s*[-*+] +(.*)$/);
+    const number = l.match(/^\s*\d+[.)] +(.*)$/);
+    if (bullet || number) {
+      closePara(); 
+      const want = bullet ? "ul" : "ol";
+      if (list !== want) { closeList(); out.push(`<${want}>`); list = want; }
+      out.push(`<li>${inline((bullet || number)[1])}</li>`);
+      continue;
+    }
+    closeList();
+    para.push(l.trim());                   // an ordinary line joins the paragraph
   }
-  if (inTable) out.push("</table>");
+  closeAll();
   return out.join("\n");
 }
+
+const slug = t => String(t).toLowerCase().replace(/[^a-z0-9]+/g, "-")
+                           .replace(/^-|-$/g, "").slice(0, 60);
 
 /* ── start ─────────────────────────────────────────────────────────────── */
 
@@ -1119,5 +1584,14 @@ window.addEventListener("pagehide", () => { ["src", "tgt"].forEach(saveText); })
   } catch { /* the line is a courtesy */ }
   try { await loadBoards(); }
   catch (e) { toast("The textbook list could not be loaded: " + e.message, true); }
+
+  // What was worked on before, so somebody coming back on Monday does not have
+  // to reconstruct it from memory. Loaded after the dropdowns, because it is a
+  // convenience and must never delay the interface being usable.
+  loadWorkbench();
   refreshSelection();
 })();
+
+/* Typing a name is how work is attributed, so the resume list is rebuilt when
+ * it changes: what you were doing is per-person. */
+$("#who").addEventListener("change", () => loadWorkbench());
