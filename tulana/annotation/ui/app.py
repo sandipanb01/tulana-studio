@@ -48,7 +48,19 @@ def assets() -> dict:
     """
     css = (STATIC / "annotation.css").read_text(encoding="utf-8")
     js = (STATIC / "annotation.js").read_text(encoding="utf-8")
-    return {"css": css, "head": f"<script>\n{js}\n</script>"}
+    return {"css": css, "head": f"{FAVICON}\n<script>\n{js}\n</script>"}
+
+
+# The emblem, so a shared link carries सेतु in the browser tab rather than the
+# framework's own mark — the same trick the studio uses with त. Inline rather
+# than a file: a file would have to live somewhere Gradio is willing to serve
+# from, and this one cannot go missing or 404. The two letters are
+# percent-encoded because the whole SVG rides inside an href.
+FAVICON = (
+    '<link rel="icon" href="data:image/svg+xml,'
+    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>"
+    "<text y='25' font-size='24'>%E0%A4%B8%E0%A5%87</text></svg>\">"
+)
 
 
 def build() -> gr.Blocks:
