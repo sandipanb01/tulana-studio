@@ -180,7 +180,7 @@ def _install_legacy_redirects(server_app) -> None:
     def _legacy_setu():                           # noqa: ANN202 - route handler
         return RedirectResponse("/", status_code=307)
 
-    @server_app.get(MOUNT + "/setu/{rest:path}", include_in_schema=False)
+    @server_app.get(f"{MOUNT}/setu/{{rest:path}}", include_in_schema=False)
     def _legacy_setu_below(rest: str):            # noqa: ANN202 - route handler
         return RedirectResponse("/", status_code=307)
 
