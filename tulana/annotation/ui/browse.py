@@ -65,6 +65,7 @@ from typing import Any
 
 from ..core import corpus, store, workspace
 from ..core.models import KIND_BY_KEY, STATUS_BY_KEY, STATUSES
+from ..core.annotate import same_text
 from ..core.store import Conflict, Invalid, NotFound
 from . import session
 
@@ -186,16 +187,24 @@ def blocks(con, *, pid: str, book_key: str, side: str, page: Any = None,
     if side not in ("src", "tgt"):
         raise ValueError("side must be 'src' or 'tgt'")
     col = "src_sid" if side == "src" else "tgt_sid"
+    mate_col = "tgt_sid" if side == "src" else "src_sid"
 
+    # The partner ("mate") rides along with every block. Without it the screen
+    # could not tell an annotator the one thing they most need to know about a
+    # block: whether it is paired at all, and if so, on which page its partner
+    # sits. Showing "pair #1263" on a block with no partner is how an
+    # English-only row came to be answered "Exact".
     sql = [
         "SELECT s.sid, s.seq, s.page, s.kind, s.label, s.source_text,"
         "       s.fx0, s.fy0, s.fx1, s.fy1, s.has_math, s.has_table,"
         "       s.chapter_no, s.chapter,"
-        "       r.rid, r.seq AS row_seq, r.status, r.note, r.edited,"
-        "       t.text AS edited_text, t.rev AS rev"
+        "       r.rid, r.seq AS row_seq, r.status, r.note, r.edited AS row_edited,"
+        "       t.text AS edited_text, t.rev AS rev,"
+        "       m.sid AS mate_sid, m.page AS mate_page"
         "  FROM setu_segment s"
         f"  LEFT JOIN setu_row  r ON r.{col} = s.sid AND r.pid = ?"
         "  LEFT JOIN setu_text t ON t.rid = r.rid AND t.side = ?"
+        f"  LEFT JOIN setu_segment m ON m.sid = r.{mate_col}"
         " WHERE s.book_key = ?"]
     args: list[Any] = [pid, side, book_key]
     if page is not None:
@@ -214,6 +223,13 @@ def blocks(con, *, pid: str, book_key: str, side: str, page: Any = None,
         b["current"] = b["edited_text"] if b["edited_text"] is not None \
             else (b["source_text"] or "")
         b["rev"] = _int(b["rev"], 0)
+        # "Corrected" is about THIS block's text, not about the row: a fix to
+        # the Marathi side must not put a "corrected" badge on the English.
+        b["edited"] = b["edited_text"] is not None and not same_text(
+            b["edited_text"], b["source_text"] or "")
+        b["mate_display_page"] = None if b["mate_page"] is None \
+            else to_display(b["mate_page"])
+        b["paired"] = bool(b["rid"] and b["mate_sid"])
         out.append(b)
     return out
 
