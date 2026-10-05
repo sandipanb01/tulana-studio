@@ -103,6 +103,29 @@ def recall_place(con, pid: str, annotator: str) -> dict:
     return got if isinstance(got, dict) else {}
 
 
+#: A row answered as if it had two sides, when it has one. Selecting a block
+#: on each side of two DIFFERENT rows used to look like a pair on screen, and
+#: the answer then landed on a row whose other half was empty.
+_CONTRADICTION = ("(r.status IN ('exact', 'needs_correction', 'structural_mismatch')"
+                  " AND (r.src_sid IS NULL OR r.tgt_sid IS NULL))")
+
+#: A side that has a passage but whose saved correction is empty. Setu no
+#: longer saves these and repairs old ones at start-up; this catches anything
+#: that slipped through, so it is never invisible.
+_BLANK = ("EXISTS (SELECT 1 FROM setu_text bt WHERE bt.rid = r.rid"
+          " AND trim(bt.text, char(32, 9, 13, 10)) = ''"
+          " AND ((bt.side = 'src' AND r.src_sid IS NOT NULL)"
+          "   OR (bt.side = 'tgt' AND r.tgt_sid IS NOT NULL)))")
+
+ATTENTION = f"({_CONTRADICTION} OR {_BLANK})"
+
+
+def _like(text: str) -> str:
+    """A LIKE pattern that matches *text* literally — "100%" means 100%."""
+    t = str(text)[:200].replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
+    return f"%{t}%"
+
+
 class ResumeRepo(Repository):
     """Reads that span projects, for an annotator who has none open."""
 
@@ -187,7 +210,8 @@ class ResumeRepo(Repository):
     # ── what have I answered? ──────────────────────────────────────────────
     def saved_rows(self, *, pid: str = "", status: str = "", answered: str = "",
                    search: str = "", chapter_no: str = "", kind: str = "",
-                   edited: Any = None, limit: Any = 40, offset: Any = 0) -> dict:
+                   edited: Any = None, attention: Any = False,
+                   limit: Any = 40, offset: Any = 0) -> dict:
         """Answered and corrected rows, across one project or all of them.
 
         The Saved-work tab must work when nothing is open, so ``pid`` is
@@ -216,12 +240,14 @@ class ResumeRepo(Repository):
             where.append("r.edited = 1")
         elif edited is False:
             where.append("r.edited = 0")
+        if attention in (True, 1, "1", "true", "yes"):
+            where.append(ATTENTION)
 
         # Search runs over the text an annotator can actually see: the current
         # text of either side, which is the correction when one exists and the
         # parser's reading when it does not.
         if search:
-            needle = f"%{str(search)[:200]}%"
+            needle = _like(search)
             where.append(
                 """EXISTS (SELECT 1 FROM setu_text t
                             WHERE t.rid = r.rid AND t.text LIKE ? ESCAPE '\\')
@@ -240,8 +266,10 @@ class ResumeRepo(Repository):
                        r.edited, r.updated_at, r.updated_by,
                        p.name AS project, p.board, p.class, p.subject,
                        p.src_language, p.tgt_language,
+                       r.src_sid, r.tgt_sid,
                        ss.source_text AS src_source, ts.source_text AS tgt_source,
-                       st.text AS src_edited, tt.text AS tgt_edited
+                       st.text AS src_edited, tt.text AS tgt_edited,
+                       {_CONTRADICTION} AS contradiction, {_BLANK} AS blank
                   FROM setu_row r
                   JOIN setu_project p ON p.pid = r.pid
              LEFT JOIN setu_segment ss ON ss.sid = r.src_sid
@@ -253,15 +281,41 @@ class ResumeRepo(Repository):
                  LIMIT ? OFFSET ?""", [*args, lim, off])
 
         for r in rows:
-            r["src_text"] = r.pop("src_edited", None) or r.pop("src_source", None) or ""
-            r["tgt_text"] = r.pop("tgt_edited", None) or r.pop("tgt_source", None) or ""
-            r.pop("src_source", None)
-            r.pop("tgt_source", None)
+            for side in ("src", "tgt"):
+                present = r.get(f"{side}_sid") is not None   # kept: "Open" selects it
+                edit = r.pop(f"{side}_edited", None)
+                source = r.pop(f"{side}_source", None)
+                # A saved correction is shown whenever one EXISTS — even an
+                # empty one — never swapped for the parser's text behind the
+                # annotator's back. "Is there a passage here at all?" is a
+                # separate question, answered by `present`.
+                r[f"{side}_present"] = present
+                r[f"{side}_text"] = "" if not present else (
+                    edit if edit is not None else (source or ""))
+                r[f"{side}_edited"] = bool(present and edit is not None
+                                           and edit.rstrip(" \t\r\n")
+                                           != (source or "").rstrip(" \t\r\n"))
             r["src_display"] = None if r.get("src_page") is None else int(r["src_page"]) + 1
             r["tgt_display"] = None if r.get("tgt_page") is None else int(r["tgt_page"]) + 1
+            r["attention"] = self._why(r)
+            r.pop("contradiction", None)
+            r.pop("blank", None)
 
         return {"rows": rows, "total": int(total.get("n") or 0),
                 "limit": lim, "offset": off}
+
+    @staticmethod
+    def _why(r: dict) -> str:
+        """A sentence saying why this row needs another look, or ''."""
+        if r.get("contradiction"):
+            missing = "right" if r.get("src_present") else "left"
+            return (f"Answered as a pair, but there is nothing on the {missing}. "
+                    f"Open it and pair it with its partner, or change the answer "
+                    f"to “Missing or incomplete”.")
+        if r.get("blank"):
+            return ("A side was saved empty. Open it and type the text, or put "
+                    "back what the parser read.")
+        return ""
 
     def saved_tally(self, *, pid: str = "") -> dict:
         """Counts by status, for the line above the list."""
@@ -275,8 +329,12 @@ class ResumeRepo(Repository):
         corrected = self.one(
             f"SELECT COUNT(*) AS n FROM setu_row r WHERE {where} AND r.edited = 1",
             args) or {"n": 0}
+        attention = self.one(
+            f"SELECT COUNT(*) AS n FROM setu_row r WHERE {where} AND {ATTENTION}",
+            args) or {"n": 0}
         return {"by_status": by, "total": total, "answered": answered,
-                "corrected": int(corrected.get("n") or 0)}
+                "corrected": int(corrected.get("n") or 0),
+                "attention": int(attention.get("n") or 0)}
 
     def projects_with_work(self) -> list[dict]:
         """The textbook dropdown for the Saved-work tab.
