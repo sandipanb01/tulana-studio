@@ -9,7 +9,7 @@
      a shared link carries सेतु in the browser tab rather than the host's mark. -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='25' font-size='24'>से</text></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e7a72'/><text y='25' x='2' font-size='23' fill='white'>से</text></svg>">
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -22,6 +22,7 @@
     <button class="tab" data-tab="Guide">Guide</button>
   </nav>
   <div class="bar-right">
+    <span id="saveDot" class="savedot ok" hidden aria-live="polite"></span>
     <span id="progress" class="pill" hidden></span>
     <input id="who" class="who" placeholder="Your name" autocomplete="off">
     <button id="help" class="ghost" title="Keyboard shortcuts">?</button>
@@ -166,6 +167,7 @@
           <div id="textTgt" class="ttext indic" contenteditable="false" spellcheck="false"></div>
         </div>
       </div>
+      <div class="pairbar" id="pairBar" hidden></div>
       <div class="answerrow" id="answerRow" hidden>
         <span class="tiny">Do these two say the same thing?</span>
         <div id="answers" class="answers"></div>
@@ -188,6 +190,7 @@
       <select id="sStatus">
         <option value="">Every answer</option>
         <option value="__done">Everything I have answered</option>
+        <option value="__attention">Needs attention</option>
         <option value="__pending">Not checked yet</option>
         <option value="exact">Exact</option>
         <option value="needs_correction">Needs correction</option>
@@ -259,6 +262,24 @@
 
 <div id="toast" class="toast" hidden></div>
 
+<!-- Two people changed the same passage. Both versions are shown and the
+     person decides; nothing is overwritten without being asked. -->
+<div id="conflict" class="modal" hidden>
+  <div class="sheet wide">
+    <h3>Someone else changed this passage while you were typing</h3>
+    <p class="tiny muted">Neither version has been thrown away. Choose which one
+      to keep; the other stays in the history.</p>
+    <div class="cfcols">
+      <div><label class="tiny">Theirs — what is saved now</label><div id="cfTheirs" class="cfbox"></div></div>
+      <div><label class="tiny">Yours — what you typed</label><div id="cfMine" class="cfbox"></div></div>
+    </div>
+    <div class="cfacts">
+      <button class="btn" id="cfTheirsBtn">Keep theirs</button>
+      <button class="btn primary" id="cfMineBtn">Keep mine</button>
+    </div>
+  </div>
+</div>
+
 <div id="keys" class="modal" hidden>
   <div class="sheet">
     <h3>Keyboard</h3>
@@ -267,7 +288,8 @@
       <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>turn the page (both, if locked)</td></tr>
       <tr><td><kbd>Alt</kbd>+<kbd>←</kbd>/<kbd>→</kbd></td><td>turn the left page only</td></tr>
       <tr><td><kbd>Shift</kbd>+<kbd>←</kbd>/<kbd>→</kbd></td><td>turn the right page only</td></tr>
-      <tr><td><kbd>n</kbd></td><td>next block nobody has answered</td></tr>
+      <tr><td><kbd>n</kbd></td><td>next pair nobody has answered — on either side</td></tr>
+      <tr><td><kbd>p</kbd></td><td>pair the block selected on the left with the one on the right</td></tr>
       <tr><td><kbd>e</kbd></td><td>switch between Read and Correct it</td></tr>
       <tr><td><kbd>c</kbd></td><td>switch between Click and Crop</td></tr>
       <tr><td><kbd>Esc</kbd></td><td>clear the selection</td></tr>
@@ -281,6 +303,6 @@
   </div>
 </div>
 
-<script src="app.js?v=6"></script>
+<script src="app.js?v=7"></script>
 </body>
 </html>
