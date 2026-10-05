@@ -79,9 +79,12 @@ def guard(fn):
             return _fail("forbidden", str(exc), 403)
         except Exception:
             log.exception("unhandled error in %s", fn.__name__)
+            # Said carefully: this can be the failure OF a save, so it must not
+            # claim the work is saved. The workspace keeps unsaved text on the
+            # page and in the browser, and says so itself.
             return _fail("server_error",
-                         "Something went wrong at our end. Your work is saved; "
-                         "reload the page and try again.", 500)
+                         "Something went wrong at our end. Try again in a "
+                         "moment.", 500)
     return wrapper
 
 
@@ -434,6 +437,70 @@ def row_merge(request: Request, rid: str, payload: dict = Body(...)) -> dict:
         return annotate.merge_rows(con, rid, other, annotator=actor, session=sess)
 
 
+@router.post("/projects/{pid}/pair")
+@guard
+def pair(request: Request, pid: str, payload: dict = Body(...)) -> dict:
+    """Pair one left-hand block with one right-hand block, from any pages.
+
+    The annotator's gesture for "the machine missed this one" and "the machine
+    paired this with the wrong one". Every row shape is handled in
+    annotate.pair_segments, inside one transaction: it all happens or none of
+    it does.
+    """
+    actor, sess = _actor(request, str(payload.get("annotator", "")))
+    src, tgt = str(payload.get("src_sid") or ""), str(payload.get("tgt_sid") or "")
+    if not ids.is_id(src, "sg") or not ids.is_id(tgt, "sg"):
+        raise Invalid("choose one block on the left and one on the right")
+    with store.tx() as con:
+        return annotate.pair_segments(con, pid, src, tgt, annotator=actor,
+                                      session=sess)
+
+
+@router.post("/rows/{rid}/unpair")
+@guard
+def unpair(request: Request, rid: str, payload: dict = Body(default={})) -> dict:
+    """"These two are not a pair": each side then stands alone."""
+    actor, sess = _actor(request, str((payload or {}).get("annotator", "")))
+    with store.tx() as con:
+        return annotate.unpair(con, rid, annotator=actor, session=sess)
+
+
+@router.get("/projects/{pid}/where")
+@guard
+def where(pid: str, sid: str = "") -> dict:
+    """Which row holds a passage now, and on which side.
+
+    A correction typed before a pairing changed can arrive addressed to a row
+    that no longer holds that passage — or no longer exists. The browser asks
+    here and re-sends it to the right place, instead of losing it.
+    """
+    if not ids.is_id(sid, "sg"):
+        raise Invalid("not a block identifier")
+    with store.ro() as con:
+        repo = store.Repository(con)
+        for side in ("src", "tgt"):
+            row = repo.one(f"SELECT r.rid, r.seq, t.rev FROM setu_row r"
+                           f" LEFT JOIN setu_text t ON t.rid = r.rid AND t.side = ?"
+                           f" WHERE r.pid = ? AND r.{side}_sid = ?", (side, pid, sid))
+            if row:
+                return {"rid": row["rid"], "side": side, "seq": row["seq"],
+                        "rev": int(row["rev"] or 0)}
+    raise NotFound("that block is not in any pair of this project")
+
+
+@router.post("/repair")
+@guard
+def repair(request: Request) -> dict:
+    """Put text back wherever an earlier version saved a passage empty.
+
+    Safe to run any number of times; runs once by itself at start-up.
+    """
+    actor, _ = _actor(request)
+    with store.tx() as con:
+        return annotate.repair_blank_corrections(
+            con, actor=f"setu repair{' for ' + actor if actor else ''}")
+
+
 # ── sessions and presence ──────────────────────────────────────────────────
 
 @router.post("/session")
@@ -712,7 +779,10 @@ def page_blocks(book_key: str, page: int, pid: str = "",
              "has_math": bool(b["has_math"]), "has_table": bool(b["has_table"]),
              "chapter_no": b["chapter_no"], "chapter": b["chapter"],
              "rid": b["rid"], "row_seq": b["row_seq"], "status": b["status"],
-             "note": b["note"], "edited": bool(b["edited"])}
+             "note": b["note"], "edited": bool(b["edited"]),
+             "paired": bool(b["paired"]), "mate_sid": b["mate_sid"],
+             "mate_page": b["mate_page"],
+             "mate_display_page": b["mate_display_page"]}
             for b in out],
     }
 
@@ -864,14 +934,16 @@ def save_place(request: Request, pid: str, payload: dict = Body(default={})) -> 
 @guard
 def saved(pid: str = "", status: str = "", answered: str = "", search_text: str = "",
           chapter_no: str = "", kind: str = "", edited: str = "",
-          limit: int = 40, offset: int = 0) -> dict:
+          attention: str = "", limit: int = 40, offset: int = 0) -> dict:
     """Answered and corrected rows, across one project or all of them."""
     flag = None if edited == "" else edited.lower() in {"1", "true", "yes"}
     with store.ro() as con:
         repo = resume.ResumeRepo(con)
         out = repo.saved_rows(pid=pid, status=status, answered=answered,
                               search=search_text, chapter_no=chapter_no,
-                              kind=kind, edited=flag, limit=limit, offset=offset)
+                              kind=kind, edited=flag,
+                              attention=attention.lower() in {"1", "true", "yes"},
+                              limit=limit, offset=offset)
         out["tally"] = repo.saved_tally(pid=pid)
         out["projects"] = repo.projects_with_work()
         return out
