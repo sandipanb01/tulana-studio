@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import difflib
 import logging
+import re
 import time
 from typing import Any
 
@@ -40,6 +41,40 @@ MAX_TEXT = 200_000
 
 #: Notes are for a sentence, not an essay.
 MAX_NOTE = 4_000
+
+#: Answers that compare two passages, and so mean nothing on a row that has
+#: only one. Marking an English-only row "Exact" is how a corpus ends up with
+#: pairs labelled exact whose other half is empty.
+TWO_SIDED_ANSWERS = frozenset({"exact", "needs_correction", "structural_mismatch"})
+
+#: Whitespace, plus the zero-width characters a browser can leave behind. Used
+#: only to decide whether a text is EMPTY — never to change one. (ZWJ and ZWNJ
+#: matter inside Indic words; a text made of nothing else is still empty.)
+_INVISIBLE = re.compile(r"[\s​‌‍⁠﻿]+")
+
+#: Trailing characters that are never content. A browser's editable box adds a
+#: line break when you click into it and out again; that must not count as a
+#: correction.
+_TRAIL = " \t\r\n"
+
+#: What an annotator is told when a passage is left empty. Clearing a box to
+#: retype it is a normal gesture; saving the emptiness as if it were the
+#: correction is how passages vanished from Saved work.
+BLANK_REFUSED = (
+    "A passage cannot be saved empty, so nothing was saved and the text is "
+    "unchanged. Type the corrected text instead. If this passage should not be "
+    "in the corpus, answer “Not applicable”; if the other book is missing it, "
+    "answer “Missing or incomplete”.")
+
+
+def is_blank(text: Any) -> bool:
+    """True when a text has nothing a reader could see in it."""
+    return not _INVISIBLE.sub("", text or "")
+
+
+def same_text(a: Any, b: Any) -> bool:
+    """Equal, ignoring trailing whitespace — which is never content."""
+    return (a or "").rstrip(_TRAIL) == (b or "").rstrip(_TRAIL)
 
 
 class AnnotateRepo(Repository):
@@ -113,25 +148,37 @@ def save_text(con, rid: str, side: str, text: Any, *, base_rev: Any = None,
     body = normalise(text)
     if len(body) > MAX_TEXT:
         raise Invalid(f"text is {len(body)} characters; the limit is {MAX_TEXT}")
+    if not force:
+        # Trailing whitespace is never content, and an editable box in a
+        # browser adds a line break just from being clicked into. A restore
+        # (force) puts the original back byte for byte, so it is left alone.
+        body = body.rstrip(_TRAIL)
 
     repo = AnnotateRepo(con)
     row = repo.row_for_update(rid)
     sid = row["src_sid"] if side == "src" else row["tgt_sid"]
     if sid is None:
         raise Invalid(
-            f"this row has nothing on the {'left' if side == 'src' else 'right'}; "
-            "attach a segment to it before editing")
+            f"this pair has nothing on the {'left' if side == 'src' else 'right'} "
+            "to correct. If the matching passage is on another page, select it "
+            "there and press Pair.")
 
     stored = repo.one("SELECT text, rev FROM setu_text WHERE rid = ? AND side = ?",
                       (rid, side))
     cur_text = stored["text"] if stored else repo.source_text(rid, side)
     cur_rev = int(stored["rev"]) if stored else 0
 
-    if body == cur_text:
+    if body == cur_text or (not force and same_text(body, cur_text)):
         # Autosave fires on a timer, so most saves are this one. Do nothing,
         # allocate no revision, and say so.
         return {"rid": rid, "side": side, "rev": cur_rev, "text": cur_text,
                 "changed": False, "saved_at": None}
+
+    if not force and is_blank(body) and not is_blank(repo.source_text(rid, side)):
+        # Clearing a box to retype it is normal. What a browser leaves in a
+        # cleared box is a lone line break, and that used to be saved as the
+        # correction — the passage then read as empty everywhere.
+        raise Invalid(BLANK_REFUSED)
 
     if not force:
         if base_rev is None:
@@ -150,7 +197,8 @@ def save_text(con, rid: str, side: str, text: Any, *, base_rev: Any = None,
                     current=cur_text, attempted=body, rev=cur_rev)
 
     now = time.time()
-    new_rev = cur_rev + 1
+    # Taken from the history as well as the live text — see _next_rev.
+    new_rev = _next_rev(con, rid, side)
     repo.run(
         "INSERT INTO setu_text(rid, side, text, rev, updated_at, updated_by)"
         " VALUES(?,?,?,?,?,?) ON CONFLICT(rid, side) DO UPDATE SET"
@@ -162,13 +210,9 @@ def save_text(con, rid: str, side: str, text: Any, *, base_rev: Any = None,
         " VALUES(?,?,?,?,?,?,?,?)",
         (rid, side, new_rev, body, annotator[:120], session[:64], reason[:32], now))
 
-    source = repo.source_text(rid, side)
-    other = "tgt" if side == "src" else "src"
-    other_text, _, _ = repo.current(rid, other)
-    other_source = repo.source_text(rid, other)
-    edited = int(body != source or other_text != other_source)
-    repo.run("UPDATE setu_row SET edited = ?, updated_at = ?, updated_by = ?"
-             " WHERE rid = ?", (edited, now, annotator[:120], rid))
+    edited = int(sync_edited(con, rid))
+    repo.run("UPDATE setu_row SET updated_at = ?, updated_by = ?"
+             " WHERE rid = ?", (now, annotator[:120], rid))
     repo.event("text.save", rid, {"side": side, "rev": new_rev,
                                   "chars": len(body), "reason": reason},
                actor=annotator, session=session)
@@ -216,6 +260,18 @@ def set_status(con, rid: str, status: Any = None, *, note: Any = None,
     cur_note = repo.scalar("SELECT note FROM setu_row WHERE rid = ?", (rid,), default="") or ""
     if note is None:
         new_note = cur_note
+
+    # "Exact" compares two passages. On a row with only one it records a pair
+    # that does not exist — which is what selecting a block on each side of two
+    # DIFFERENT rows used to produce. Refused only as a change, so a row that
+    # already carries such an answer can still have its note saved.
+    if new_status in TWO_SIDED_ANSWERS and new_status != row["status"] \
+            and not (row["src_sid"] and row["tgt_sid"]):
+        missing = "right" if row["src_sid"] else "left"
+        raise Invalid(
+            f"this pair has nothing on the {missing}, so it cannot be "
+            f"compared. If the matching passage is on another page, select it "
+            f"there and press Pair; otherwise answer “Missing or incomplete”.")
 
     if new_status == row["status"] and new_note == cur_note:
         return {"rid": rid, "status": new_status, "note": new_note, "changed": False}
@@ -281,14 +337,175 @@ def diff(con, rid: str, side: str, *, a: Any = 0, b: Any = None) -> dict:
             "diff": lines, "left": left, "right": right}
 
 
+# ── the bookkeeping every structural change needs ─────────────────────────
+#
+# A row is a pair of segment pointers plus the judgements made about that
+# pairing. Changing which segments a row points at is the riskiest thing Setu
+# does, so the bookkeeping lives here once and every operation uses it:
+#
+#   * a correction belongs to its SEGMENT, not to the row it happens to sit in,
+#     so when a segment moves between rows its correction moves with it;
+#   * history is append-only, and revision numbers come from the history, not
+#     from the live text (setu_rev is UNIQUE(rid, side, rev));
+#   * the "corrected" flag is derived, so it is recomputed, never patched;
+#   * a judgement was about one particular pairing, so when the pairing
+#     changes the judgement goes back to "Not checked yet" — kept in the
+#     status history, never thrown away;
+#   * pair numbers stay dense (0, 1, 2 …), exactly as a split already keeps them.
+
+def _next_rev(con, rid: str, side: str) -> int:
+    """The next free revision number for one side of one row.
+
+    Counted from the history as well as the live text. Once a side has been
+    detached and something attached again, setu_text starts from nothing while
+    setu_rev still holds every earlier revision — and counting from setu_text
+    alone collided with them, so pair → unpair → pair failed outright.
+    """
+    hist = con.execute("SELECT COALESCE(MAX(rev), 0) FROM setu_rev"
+                       " WHERE rid = ? AND side = ?", (rid, side)).fetchone()[0]
+    live = con.execute("SELECT COALESCE(MAX(rev), 0) FROM setu_text"
+                       " WHERE rid = ? AND side = ?", (rid, side)).fetchone()[0]
+    return int(max(hist or 0, live or 0)) + 1
+
+
+def sync_edited(con, rid: str) -> bool:
+    """Recompute the row's "corrected" flag from what is actually stored.
+
+    True only when a side that HAS a passage carries text different from what
+    the parser read. A flag left over from text that has since moved to another
+    row was how a pair could say "corrected" with nothing to show for it.
+    """
+    row = con.execute("SELECT src_sid, tgt_sid FROM setu_row WHERE rid = ?",
+                      (rid,)).fetchone()
+    if not row:
+        return False
+    edited = False
+    for side, sid in (("src", row[0]), ("tgt", row[1])):
+        if not sid:
+            continue
+        t = con.execute("SELECT text FROM setu_text WHERE rid = ? AND side = ?",
+                        (rid, side)).fetchone()
+        if t is None:
+            continue
+        src = con.execute("SELECT source_text FROM setu_segment WHERE sid = ?",
+                          (sid,)).fetchone()
+        if not same_text(t[0], (src[0] if src else "") or ""):
+            edited = True
+    con.execute("UPDATE setu_row SET edited = ? WHERE rid = ?", (int(edited), rid))
+    return edited
+
+
+def _move_text(con, from_rid: str, side: str, to_rid: str, *, actor: str,
+               session: str, reason: str) -> bool:
+    """Carry one side's correction from one row to another.
+
+    Both rows record it: the one it leaves gets a revision saying so, the one it
+    arrives in starts its history with it. A plain INSERT on arrival means a
+    programming mistake that would overwrite a correction fails loudly and
+    rolls the whole operation back, instead of losing somebody's text.
+    """
+    got = con.execute("SELECT text FROM setu_text WHERE rid = ? AND side = ?",
+                      (from_rid, side)).fetchone()
+    if not got:
+        return False
+    text, now = got[0], time.time()
+    out_rev = _next_rev(con, from_rid, side)
+    con.execute("INSERT INTO setu_rev(rid, side, rev, text, actor, session, reason, ts)"
+                " VALUES(?,?,?,?,?,?,?,?)",
+                (from_rid, side, out_rev, text, actor[:120], session[:64],
+                 f"{reason}-out"[:32], now))
+    con.execute("DELETE FROM setu_text WHERE rid = ? AND side = ?", (from_rid, side))
+    in_rev = _next_rev(con, to_rid, side)
+    con.execute("INSERT INTO setu_text(rid, side, text, rev, updated_at, updated_by)"
+                " VALUES(?,?,?,?,?,?)", (to_rid, side, text, in_rev, now, actor[:120]))
+    con.execute("INSERT INTO setu_rev(rid, side, rev, text, actor, session, reason, ts)"
+                " VALUES(?,?,?,?,?,?,?,?)",
+                (to_rid, side, in_rev, text, actor[:120], session[:64],
+                 f"{reason}-in"[:32], now))
+    return True
+
+
+def _drop_text(con, rid: str, side: str, *, actor: str, session: str,
+               reason: str) -> None:
+    """Clear one side's correction, recording it first. Never silent."""
+    got = con.execute("SELECT text FROM setu_text WHERE rid = ? AND side = ?",
+                      (rid, side)).fetchone()
+    if not got:
+        return
+    con.execute("INSERT INTO setu_rev(rid, side, rev, text, actor, session, reason, ts)"
+                " VALUES(?,?,?,?,?,?,?,?)",
+                (rid, side, _next_rev(con, rid, side), got[0], actor[:120],
+                 session[:64], reason[:32], time.time()))
+    con.execute("DELETE FROM setu_text WHERE rid = ? AND side = ?", (rid, side))
+
+
+def _reset_status(con, rid: str, *, actor: str, session: str, why: str) -> bool:
+    """A judgement was about one pairing; a different pairing starts unjudged."""
+    cur = con.execute("SELECT status, note FROM setu_row WHERE rid = ?", (rid,)).fetchone()
+    if not cur or cur[0] == DEFAULT_STATUS:
+        return False
+    now = time.time()
+    con.execute("UPDATE setu_row SET status = ?, updated_at = ?, updated_by = ?"
+                " WHERE rid = ?", (DEFAULT_STATUS, now, actor[:120], rid))
+    con.execute("INSERT INTO setu_status_rev(rid, status, note, actor, session, ts)"
+                " VALUES(?,?,?,?,?,?)",
+                (rid, DEFAULT_STATUS, cur[1] or "", actor[:120], session[:64], now))
+    Repository(con).event("status.reset", rid, {"was": cur[0], "why": why},
+                          actor=actor, session=session)
+    return True
+
+
+def _count_rows(con, pid: str) -> None:
+    con.execute("UPDATE setu_project SET n_rows = (SELECT COUNT(*) FROM setu_row"
+                " WHERE pid = ?) WHERE pid = ?", (pid, pid))
+
+
+def _delete_empty_row(con, rid: str) -> bool:
+    """Remove a row that points at nothing, and close the gap it leaves.
+
+    Only ever deletes a row with no passage on either side. Its history in
+    setu_rev and setu_status_rev is kept — those tables are append-only.
+    """
+    row = con.execute("SELECT pid, seq, src_sid, tgt_sid FROM setu_row WHERE rid = ?",
+                      (rid,)).fetchone()
+    if not row or row[2] or row[3]:
+        return False
+    pid, seq = row[0], row[1]
+    for side in ("src", "tgt"):
+        _drop_text(con, rid, side, actor="", session="", reason="orphan")
+    con.execute("DELETE FROM setu_row WHERE rid = ?", (rid,))
+    # Two steps through negative numbers, so UNIQUE(pid, seq) holds at every
+    # moment whatever order SQLite visits the rows in. The mirror of how
+    # _insert_after opens a gap.
+    con.execute("UPDATE setu_row SET seq = -(seq - 1) WHERE pid = ? AND seq > ?",
+                (pid, seq))
+    con.execute("UPDATE setu_row SET seq = -seq WHERE pid = ? AND seq < 0", (pid,))
+    _count_rows(con, pid)
+    return True
+
+
+def _seq_of(con, rid: str) -> int:
+    return int(con.execute("SELECT seq FROM setu_row WHERE rid = ?", (rid,)).fetchone()[0])
+
+
+def _settle(con, rids: list[str]) -> None:
+    """Locators and flags for every row an operation touched."""
+    for rid in dict.fromkeys(r for r in rids if r):
+        if con.execute("SELECT 1 FROM setu_row WHERE rid = ?", (rid,)).fetchone():
+            _refresh_locators(con, rid)
+            sync_edited(con, rid)
+
+
+# ── re-pointing one side ───────────────────────────────────────────────────
+
 def attach(con, rid: str, side: str, sid: Any, *, annotator: str = "",
            session: str = "") -> dict:
     """Point one side of a row at a different segment, or at nothing.
 
-    This is how an annotator fixes a structural mismatch: the aligner put the
-    wrong paragraph on the right, so they choose the right one. Any text they
-    had already typed on that side is kept in the history but no longer applies,
-    so it is cleared — recorded as a revision first, never silently dropped.
+    The low-level form, kept for the API. A correction made to the segment
+    that is leaving no longer applies to this row, so it is cleared — recorded
+    as a revision first, never silently dropped. The interface uses
+    :func:`pair_segments`, which carries corrections along instead.
     """
     side = side_of(side)
     repo = AnnotateRepo(con)
@@ -310,56 +527,177 @@ def attach(con, rid: str, side: str, sid: Any, *, annotator: str = "",
                 f"that segment is already on the {'left' if side=='src' else 'right'} "
                 f"of row {clash['rid']}; detach it there first")
 
-    stored = repo.one("SELECT text, rev FROM setu_text WHERE rid = ? AND side = ?",
-                      (rid, side))
-    if stored:
-        repo.run("INSERT INTO setu_rev(rid, side, rev, text, actor, session, reason, ts)"
-                 " VALUES(?,?,?,?,?,?,?,?)",
-                 (rid, side, int(stored["rev"]) + 1, stored["text"], annotator[:120],
-                  session[:64], "detach", time.time()))
-        repo.run("DELETE FROM setu_text WHERE rid = ? AND side = ?", (rid, side))
+    if new_sid == row[col]:
+        return WorkspaceRepo(con).row(rid)
 
+    _drop_text(con, rid, side, actor=annotator, session=session, reason="detach")
     now = time.time()
     repo.run(f"UPDATE setu_row SET {col} = ?, origin = 'manual', confidence = 0,"
              f" updated_at = ?, updated_by = ? WHERE rid = ?",
              (new_sid, now, annotator[:120], rid))
-    _refresh_locators(con, rid)
+    _reset_status(con, rid, actor=annotator, session=session, why="attach")
+    _settle(con, [rid])
     repo.event("row.attach", rid, {"side": side, "sid": new_sid},
                actor=annotator, session=session)
     return WorkspaceRepo(con).row(rid)
 
 
-def split_row(con, rid: str, *, annotator: str = "", session: str = "") -> dict:
-    """Break a paired row into two one-sided rows.
+# ── pairing, the operation the interface uses ──────────────────────────────
 
-    The commonest structural fix after "wrong partner": the two sides are both
-    real text but they are not each other's translation.
+def pair_segments(con, pid: str, src_sid: Any, tgt_sid: Any, *,
+                  annotator: str = "", session: str = "") -> dict:
+    """Make one left-hand passage and one right-hand passage a pair.
+
+    The gesture behind it: a block clicked on each side — on ANY page of each
+    book — and "Pair". Every shape the two rows can be in is handled here, so
+    the interface never has to know which primitive applies::
+
+        left block's row   right block's row   afterwards
+        ─────────────────  ──────────────────  ────────────────────────────────
+        (E, —)             (—, M)              (E, M); the right row is removed
+        (E, M_old)         (—, M)              (E, M); M_old alone, just after
+        (E, —)             (E_old, M)          (E, M); E_old alone, where it was
+        (E, M_old)         (E_old, M)          (E, M); both left alone
+        (E, M)             same row            nothing to do
+
+    Corrections travel with their passages. Every pairing whose composition
+    changes goes back to "Not checked yet", its old answer kept in the history.
+    Nothing is ever paired that the annotator did not pair: E_old and M_old are
+    never put together just because both happened to become free.
+
+    Must run inside a transaction; the API wraps it in one, so a failure at
+    any step leaves every row exactly as it was.
+    """
+    repo = AnnotateRepo(con)
+    proj = repo.one("SELECT pid, src_book, tgt_book FROM setu_project WHERE pid = ?",
+                    (str(pid or ""),))
+    if not proj:
+        raise NotFound(f"no such project: {pid}")
+    e = repo.one("SELECT sid, book_key, seq FROM setu_segment WHERE sid = ?",
+                 (str(src_sid or ""),))
+    m = repo.one("SELECT sid, book_key, seq FROM setu_segment WHERE sid = ?",
+                 (str(tgt_sid or ""),))
+    if not e or not m:
+        raise NotFound("one of those two blocks no longer exists — turn the page "
+                       "and back, then select them again")
+    if e["book_key"] != proj["src_book"]:
+        raise Invalid("the block chosen on the left is not from this project's "
+                      "left-hand book")
+    if m["book_key"] != proj["tgt_book"]:
+        raise Invalid("the block chosen on the right is not from this project's "
+                      "right-hand book")
+
+    def row_with(col: str, sid: str):
+        return repo.one(f"SELECT rid, seq, src_sid, tgt_sid FROM setu_row"
+                        f" WHERE pid = ? AND {col} = ?", (pid, sid))
+
+    r_s, r_t = row_with("src_sid", e["sid"]), row_with("tgt_sid", m["sid"])
+    if r_s and r_t and r_s["rid"] == r_t["rid"]:
+        return {"changed": False, "rid": r_s["rid"], "created": [], "removed": [],
+                "touched": [r_s["rid"]], "row": WorkspaceRepo(con).row(r_s["rid"])}
+
+    kw = {"actor": annotator, "session": session}
+    created: list[str] = []
+    removed: list[str] = []
+    touched: list[str] = []
+
+    # 1. The left block needs a row. Every block the aligner kept has one; a
+    #    header or page number shown with "include headers" may not.
+    if not r_s:
+        anchor = repo.one(
+            "SELECT r.seq FROM setu_row r JOIN setu_segment s ON s.sid = r.src_sid"
+            " WHERE r.pid = ? AND s.book_key = ? AND s.seq < ?"
+            " ORDER BY s.seq DESC LIMIT 1", (pid, proj["src_book"], e["seq"]))
+        rid_s = _insert_after(con, pid, anchor["seq"] if anchor else -1,
+                              src_sid=e["sid"], annotator=annotator)
+        created.append(rid_s)
+        r_s = row_with("src_sid", e["sid"])
+    rid_s = r_s["rid"]
+
+    # 2. Whatever the left block was paired with leaves, alone, right after it
+    #    — near where the aligner put it — carrying its own correction.
+    m_old = r_s["tgt_sid"]
+    if not m_old:
+        # A side with no passage should hold no text. Older versions could
+        # leave some behind; record it and clear it, so the passage arriving
+        # below can never collide with it.
+        _drop_text(con, rid_s, "tgt", reason="orphan", **kw)
+    if m_old:
+        rid_new = _insert_after(con, pid, _seq_of(con, rid_s), tgt_sid=m_old,
+                                annotator=annotator)
+        created.append(rid_new)
+        _move_text(con, rid_s, "tgt", rid_new, reason="unpair", **kw)
+        con.execute("UPDATE setu_row SET tgt_sid = NULL WHERE rid = ?", (rid_s,))
+
+    # 3. The right block leaves its old row, and arrives — with its correction.
+    now = time.time()
+    if r_t:
+        con.execute("UPDATE setu_row SET tgt_sid = NULL WHERE rid = ?", (r_t["rid"],))
+    con.execute("UPDATE setu_row SET tgt_sid = ?, origin = 'manual', confidence = 0,"
+                " updated_at = ?, updated_by = ? WHERE rid = ?",
+                (m["sid"], now, annotator[:120], rid_s))
+    if r_t:
+        _move_text(con, r_t["rid"], "tgt", rid_s, reason="pair", **kw)
+
+    # 4. What the right block leaves behind: nothing (removed), or an
+    #    English passage that now stands alone.
+    if r_t:
+        if _delete_empty_row(con, r_t["rid"]):
+            removed.append(r_t["rid"])
+        else:
+            touched.append(r_t["rid"])
+            _reset_status(con, r_t["rid"], why="its partner was paired elsewhere", **kw)
+
+    _reset_status(con, rid_s, why="paired by hand", **kw)
+    touched.insert(0, rid_s)
+    _count_rows(con, pid)
+    _settle(con, touched + created)
+    repo.event("row.pair", rid_s,
+               {"src_sid": e["sid"], "tgt_sid": m["sid"], "created": created,
+                "removed": removed, "released_tgt": m_old or "",
+                "released_src": (r_t or {}).get("src_sid") or ""},
+               actor=annotator, session=session)
+    return {"changed": True, "rid": rid_s, "created": created, "removed": removed,
+            "touched": touched, "row": WorkspaceRepo(con).row(rid_s)}
+
+
+def split_row(con, rid: str, *, annotator: str = "", session: str = "") -> dict:
+    """Break a paired row into two one-sided rows — "these are not a pair".
+
+    The right-hand passage moves to a new row straight after, carrying its
+    correction. The answer goes back to "Not checked yet": it was about a pair
+    that no longer exists.
     """
     repo = AnnotateRepo(con)
     row = repo.row_for_update(rid)
     if not row["src_sid"] or not row["tgt_sid"]:
-        raise Invalid("this row only has one side already")
-
-    tgt_sid = row["tgt_sid"]
-    stored = repo.one("SELECT text, rev FROM setu_text WHERE rid = ? AND side = 'tgt'",
-                      (rid,))
-    new_rid = _insert_after(con, row["pid"], row["seq"], tgt_sid=tgt_sid,
+        raise Invalid("this pair only has one side already, so there is "
+                      "nothing to unpair")
+    kw = {"actor": annotator, "session": session}
+    new_rid = _insert_after(con, row["pid"], row["seq"], tgt_sid=row["tgt_sid"],
                             annotator=annotator)
-    if stored:
-        save_text(con, new_rid, "tgt", stored["text"], base_rev=0,
-                  annotator=annotator, session=session, reason="split", force=True)
-    attach(con, rid, "tgt", None, annotator=annotator, session=session)
+    _move_text(con, rid, "tgt", new_rid, reason="unpair", **kw)
+    con.execute("UPDATE setu_row SET tgt_sid = NULL, origin = 'manual', confidence = 0,"
+                " updated_at = ?, updated_by = ? WHERE rid = ?",
+                (time.time(), annotator[:120], rid))
+    _reset_status(con, rid, why="unpaired", **kw)
+    _settle(con, [rid, new_rid])
     repo.event("row.split", rid, {"new_row": new_rid}, actor=annotator, session=session)
     return {"row": WorkspaceRepo(con).row(rid),
             "new_row": WorkspaceRepo(con).row(new_rid)}
+
+
+#: The name the interface uses for it.
+unpair = split_row
 
 
 def merge_rows(con, rid: str, other_rid: str, *, annotator: str = "",
                session: str = "") -> dict:
     """Pull the populated side of *other_rid* onto the empty side of *rid*.
 
-    The inverse of a split, and the fix for "the aligner left these two halves
-    of one pair sitting next to each other".
+    The inverse of a split. Kept for the API; implemented with the same
+    bookkeeping as :func:`pair_segments`, so the merged-away row's correction
+    arrives intact and pair numbers stay dense.
     """
     repo = AnnotateRepo(con)
     a = repo.row_for_update(rid)
@@ -373,23 +711,25 @@ def merge_rows(con, rid: str, other_rid: str, *, annotator: str = "",
         "src" if a["tgt_sid"] and not a["src_sid"] else "")
     if not side:
         raise Invalid("the row you are merging into already has both sides filled")
-    donor_sid = b["tgt_sid"] if side == "tgt" else b["src_sid"]
+    col = f"{side}_sid"
+    donor_sid = b[col]
     if not donor_sid:
         raise Invalid(f"the other row has nothing on its {side} side")
 
-    stored = repo.one("SELECT text FROM setu_text WHERE rid = ? AND side = ?",
-                      (other_rid, side))
-    attach(con, other_rid, side, None, annotator=annotator, session=session)
-    attach(con, rid, side, donor_sid, annotator=annotator, session=session)
-    if stored:
-        save_text(con, rid, side, stored["text"], base_rev=0, annotator=annotator,
-                  session=session, reason="merge", force=True)
+    kw = {"actor": annotator, "session": session}
+    _drop_text(con, rid, side, reason="orphan", **kw)
+    con.execute(f"UPDATE setu_row SET {col} = NULL WHERE rid = ?", (other_rid,))
+    con.execute(f"UPDATE setu_row SET {col} = ?, origin = 'manual', confidence = 0,"
+                f" updated_at = ?, updated_by = ? WHERE rid = ?",
+                (donor_sid, time.time(), annotator[:120], rid))
+    _move_text(con, other_rid, side, rid, reason="merge", **kw)
 
-    leftover = repo.one("SELECT src_sid, tgt_sid FROM setu_row WHERE rid = ?", (other_rid,))
-    removed = False
-    if leftover and not leftover["src_sid"] and not leftover["tgt_sid"]:
-        repo.run("DELETE FROM setu_row WHERE rid = ?", (other_rid,))
-        removed = True
+    removed = _delete_empty_row(con, other_rid)
+    if not removed:
+        _reset_status(con, other_rid, why="its partner was merged away", **kw)
+    _reset_status(con, rid, why="merged", **kw)
+    _count_rows(con, a["pid"])
+    _settle(con, [rid, other_rid])
     repo.event("row.merge", rid, {"from": other_rid, "side": side, "removed": removed},
                actor=annotator, session=session)
     return {"row": WorkspaceRepo(con).row(rid), "removed_row": other_rid if removed else ""}
@@ -415,10 +755,88 @@ def _insert_after(con, pid: str, seq: int, *, src_sid: str | None = None,
         " confidence, created_at, updated_at, updated_by)"
         " VALUES(?,?,?,?,?,?,'manual',0,?,?,?)",
         (rid, pid, new_seq, src_sid, tgt_sid, DEFAULT_STATUS, now, now, annotator[:120]))
-    repo.run("UPDATE setu_project SET n_rows = (SELECT COUNT(*) FROM setu_row WHERE pid = ?)"
-             " WHERE pid = ?", (pid, pid))
+    _count_rows(con, pid)
     _refresh_locators(con, rid)
     return rid
+
+
+# ── repairing what earlier versions let through ────────────────────────────
+
+#: Revision reasons that mark a DIFFERENT passage leaving this side of a row.
+#: History older than one of these belongs to that other passage, so a repair
+#: must never reach back past it.
+_DEPARTURES = ("detach", "orphan")
+
+
+def _last_good_text(con, rid: str, side: str) -> str | None:
+    """The newest non-empty text this side held for its CURRENT passage."""
+    for text, reason in con.execute(
+            "SELECT text, reason FROM setu_rev WHERE rid = ? AND side = ?"
+            " ORDER BY rev DESC", (rid, side)):
+        reason = reason or ""
+        if reason in _DEPARTURES or reason.endswith("-out"):
+            return None
+        if not is_blank(text):
+            return text
+    return None
+
+
+def repair_blank_corrections(con, *, actor: str = "setu (automatic repair)") -> dict:
+    """Put text back wherever a correction was saved empty.
+
+    Before this release, clearing a passage in the browser saved what the
+    browser left behind — a lone line break — as if it were the correction, and
+    the screen said "Saved." The passage then read as empty in Saved work and in
+    every export. Nothing was lost: every revision is in setu_rev.
+
+    What is put back is the annotator's OWN last non-empty text for that
+    passage if there is one, and the parser's original otherwise. The repair is
+    itself a revision, so it can be undone like any other edit. A side whose
+    original is also empty — a diagram, say — is left alone.
+    """
+    found = con.execute(
+        """SELECT t.rid, t.side, t.text, s.source_text
+             FROM setu_text t
+             JOIN setu_row r ON r.rid = t.rid
+        LEFT JOIN setu_segment s
+               ON s.sid = CASE t.side WHEN 'src' THEN r.src_sid ELSE r.tgt_sid END"""
+    ).fetchall()
+    fixed: list[dict] = []
+    for rid, side, text, source in found:
+        if not is_blank(text):
+            continue
+        mine = _last_good_text(con, rid, side)
+        restore_to = mine if mine is not None else (source or "")
+        if is_blank(restore_to):
+            continue
+        rev, now = _next_rev(con, rid, side), time.time()
+        con.execute("UPDATE setu_text SET text = ?, rev = ?, updated_at = ?, updated_by = ?"
+                    " WHERE rid = ? AND side = ?", (restore_to, rev, now, actor[:120],
+                                                    rid, side))
+        con.execute("INSERT INTO setu_rev(rid, side, rev, text, actor, session, reason, ts)"
+                    " VALUES(?,?,?,?,?,?,?,?)",
+                    (rid, side, rev, restore_to, actor[:120], "", "repair-blank", now))
+        sync_edited(con, rid)
+        fixed.append({"rid": rid, "side": side,
+                      "restored": "the annotator's last text" if mine is not None
+                                  else "the parser's original"})
+    if fixed:
+        Repository(con).event("repair.blank", "", {"fixed": len(fixed)}, actor=actor)
+    return {"fixed": len(fixed), "rows": fixed, "flags": resync_edited_flags(con)}
+
+
+def resync_edited_flags(con) -> int:
+    """Recompute every row's "corrected" flag. Returns how many were wrong."""
+    trail = "char(32, 9, 13, 10)"
+    differs = (
+        "EXISTS (SELECT 1 FROM setu_text t JOIN setu_segment s ON s.sid = setu_row.{c}"
+        " WHERE t.rid = setu_row.rid AND t.side = '{side}'"
+        f" AND rtrim(t.text, {trail}) <> rtrim(COALESCE(s.source_text, ''), {trail}))")
+    want = (f"({differs.format(c='src_sid', side='src')}"
+            f" OR {differs.format(c='tgt_sid', side='tgt')})")
+    cur = con.execute(f"UPDATE setu_row SET edited = {want}"
+                      f" WHERE COALESCE(edited, 0) <> {want}")
+    return int(cur.rowcount or 0)
 
 
 def _refresh_locators(con, rid: str) -> None:
