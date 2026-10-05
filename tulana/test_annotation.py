@@ -810,7 +810,14 @@ class TestExport(SetuCase):
         self.proj = self.project()
         self.pid = self.proj["pid"]
         repo = workspace.WorkspaceRepo(self.con)
-        for r in repo.rows(self.pid, limit=4)["rows"]:
+        # "Exact" compares two passages, so it goes on rows that have two.
+        # This fixture used to mark the first four rows whatever their shape,
+        # which is the very contradiction Setu now refuses: an "exact" pair
+        # whose other half is empty.
+        paired = [r for r in repo.rows(self.pid, limit=200)["rows"]
+                  if r["src"]["present"] and r["tgt"]["present"]][:4]
+        self.assertEqual(len(paired), 4, "the fixture needs four two-sided rows")
+        for r in paired:
             annotate.set_status(self.con, r["rid"], "exact", annotator="a")
 
     def test_every_available_format_writes_a_file(self):
