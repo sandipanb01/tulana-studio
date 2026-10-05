@@ -82,6 +82,31 @@ def _import_parsed_layout() -> bool:
     return bool(report["books"])
 
 
+def repair_saved_work() -> None:
+    """Put back text an earlier version saved as empty, and fix stale flags.
+
+    Earlier versions saved a cleared passage as a lone line break and said
+    "Saved." This finds every such passage and restores the annotator's own last
+    text for it, or the parser's original if they had none — as a new revision,
+    so nothing is overwritten and it can be undone. It also recomputes every
+    "corrected" flag from what is actually stored. Running it again finds
+    nothing, so it runs on every start rather than being something to remember.
+    """
+    from annotation.core import annotate, store
+    try:
+        with store.tx() as con:
+            out = annotate.repair_blank_corrections(con)
+    except Exception as exc:                     # never stops the server starting
+        print(f"[setu] the saved-work check could not run: {exc}")
+        return
+    if out["fixed"]:
+        print(f"[setu] put back the text of {out['fixed']} passage(s) that an "
+              f"earlier version had saved empty (each change is in the history)")
+    if out["flags"]:
+        print(f"[setu] corrected {out['flags']} “corrected” label(s) that no "
+              f"longer matched the saved text")
+
+
 def prepare(force: bool = False) -> bool:
     """Make sure the annotation text layer exists. Returns True if usable."""
     from annotation.core import corpus, store
@@ -256,6 +281,8 @@ def main(argv: list[str] | None = None) -> int:
 
     if not prepare(force=args.prepare):
         return 1
+
+    repair_saved_work()
 
     # Page images are regenerable and can accumulate; sweep once at start-up
     # rather than on a timer competing with an annotator's autosave.
