@@ -76,13 +76,351 @@ const W = {
 function newSide(which) {
   return {
     which, book: "", title: "", language: "", page: 0, lo: 0, hi: 0,
-    blocks: [], sel: new Set(), last: null, zoom: 1,
+    blocks: [], sel: new Set(), picked: new Map(), last: null, zoom: 1,
     imageAvailable: false, imageMessage: "", aspect: 1.414,
     chapters: [], crop: null, cropUrl: "",
   };
 }
 const S = s => W.side[s];
 const other = s => (s === "src" ? "tgt" : "src");
+
+/* ── the save pipeline ─────────────────────────────────────────────────────
+ *
+ * Every keystroke that changes a passage becomes a DRAFT, keyed by the pair
+ * (row) and side it belongs to. A draft is:
+ *
+ *   * what every editor on the page shows — the column above and the panel
+ *     below read the same draft, so the two can never disagree, and an older
+ *     copy can never quietly be sent over a newer one;
+ *   * what gets sent — one request at a time per passage, retried with growing
+ *     pauses when the connection or the server is down;
+ *   * what survives — kept in this browser's own storage until the server
+ *     confirms it, so a closed tab, a crash, a dropped connection or a server
+ *     restart loses nothing. Anything unsent is sent when the page next opens.
+ *
+ * Three things a draft is never allowed to do: be sent empty (a cleared box is
+ * someone about to retype, not a correction), be sent to the wrong passage
+ * (if the pairing changed underneath it, it asks the server where its passage
+ * lives now), or be dropped without the annotator being told.
+ */
+
+const DRAFT_KEY = "setu.drafts.v1";
+const DRAFTS = new Map();          // "rid|side" -> draft
+const flushTimers = new Map();     // "rid|side" -> timeout
+let storageOk = true;
+let warnedStorage = false;
+
+const dkey = (rid, side) => `${rid}|${side}`;
+const INVISIBLE = /[\s​‌‍⁠﻿]+/g;
+const isBlank = t => !String(t || "").replace(INVISIBLE, "");
+
+/* What an editable box really contains. A box emptied in Chrome holds a lone
+ * <br>, which innerText reports as "\n" — that is how passages used to be
+ * saved as empty. Trailing whitespace is never content either. */
+function cleanText(el) {
+  const t = String(el.innerText || "").replace(/ /g, " ");
+  return isBlank(t) ? "" : t.replace(/[ \t\r\n]+$/, "");
+}
+const sameText = (a, b) =>
+  String(a || "").replace(/[ \t\r\n]+$/, "") === String(b || "").replace(/[ \t\r\n]+$/, "");
+
+function loadDrafts() {
+  try {
+    const raw = localStorage.getItem(DRAFT_KEY);
+    if (!raw) return 0;
+    const list = JSON.parse(raw);
+    if (!Array.isArray(list)) return 0;
+    for (const d of list) {
+      if (!d || !d.rid || (d.side !== "src" && d.side !== "tgt") || typeof d.text !== "string") continue;
+      // Whatever it was doing when the page went away, it was not confirmed.
+      if (d.state === "saving" || d.state === "failed") d.state = "dirty";
+      d.tries = 0;
+      DRAFTS.set(dkey(d.rid, d.side), d);
+    }
+    return DRAFTS.size;
+  } catch { return 0; }
+}
+
+let persistTimer = null;
+function persistDrafts(now = false) {
+  const write = () => {
+    const keep = [...DRAFTS.values()]
+      .filter(d => d.state !== "saved")
+      .map(({ rid, side, sid, pid, text, base, state, server, err }) =>
+        ({ rid, side, sid, pid, text, base, state, server, err, at: Date.now() }));
+    try {
+      if (keep.length) localStorage.setItem(DRAFT_KEY, JSON.stringify(keep));
+      else localStorage.removeItem(DRAFT_KEY);
+      storageOk = true;
+    } catch {
+      storageOk = false;
+      if (!warnedStorage) {
+        warnedStorage = true;
+        toast("This browser will not let Setu keep a safety copy of unsaved text "
+            + "(private window, or storage full). Saving still works — but do not "
+            + "close the tab while the top bar says something is unsaved.", true);
+      }
+    }
+  };
+  clearTimeout(persistTimer);
+  if (now) write(); else persistTimer = setTimeout(write, 250);
+}
+
+function draftFor(rid, side) { return rid ? DRAFTS.get(dkey(rid, side)) : undefined; }
+
+/* The text a passage should be shown with: an unsaved draft wins over what the
+ * server last sent, because it is newer and it is the annotator's. */
+function textOf(block, side) {
+  const d = block && block.rid ? draftFor(block.rid, side) : null;
+  return d && d.state !== "refused" ? d.text : ((block && block.text) || "");
+}
+
+/* An editor changed. Record it, show it everywhere the same passage is on
+ * screen, and arrange for it to be sent. */
+function noteEdit(rid, side, sid, text, base, from) {
+  if (!rid) return;
+  const key = dkey(rid, side);
+  let d = DRAFTS.get(key);
+  if (!d) {
+    d = { rid, side, sid, pid: W.pid, text, base: base | 0, state: "dirty", tries: 0 };
+    DRAFTS.set(key, d);
+  }
+  d.text = text;
+  d.sid = d.sid || sid;
+  if (d.state !== "saving") d.state = "dirty";
+  d.err = "";
+  mirror(rid, side, text, from);
+  persistDrafts();
+  updateSaveDot();
+  if (isBlank(text)) {
+    clearTimeout(flushTimers.get(key));    // a cleared box is never sent
+    return;
+  }
+  scheduleFlush(key, 900);
+}
+
+function scheduleFlush(key, ms) {
+  clearTimeout(flushTimers.get(key));
+  flushTimers.set(key, setTimeout(() => flush(key), ms));
+}
+
+/* Every editor showing this passage, except the one being typed in, follows
+ * along — so the column and the panel below always say the same thing. */
+function mirror(rid, side, text, except) {
+  const sel = `[data-edit-rid="${CSS.escape(rid)}"][data-edit-side="${side}"]`;
+  document.querySelectorAll(sel).forEach(el => {
+    if (el === except || el === document.activeElement) return;
+    if (el.innerText !== text) el.innerText = text;
+  });
+}
+
+/* A fetch that hands back the response instead of throwing, so the save path
+ * can tell a conflict from a refusal from a dead connection. */
+function rawFetch(path, opts = {}) {
+  const headers = Object.assign({
+    "Content-Type": "application/json",
+    "X-Annotator": (() => { try { return localStorage.getItem("setu_who") || ""; } catch { return ""; } })(),
+  }, opts.headers || {});
+  return fetch(API + path, Object.assign({}, opts, { headers }));
+}
+const bodyMessage = b => {
+  const d = b && (b.detail || b.message);
+  return typeof d === "string" ? d : (d && d.message) || "";
+};
+
+async function flush(key, opts = {}) {
+  clearTimeout(flushTimers.get(key));
+  const d = DRAFTS.get(key);
+  if (!d || d.state === "saved" || d.state === "refused" || d.state === "conflict") return;
+  if (d.state === "saving") return;                   // the reply will look again
+  if (isBlank(d.text)) return;
+  const sent = d.text;
+  d.state = "saving";
+  updateSaveDot();
+  try {
+    const r = await rawFetch(`/rows/${encodeURIComponent(d.rid)}`, {
+      method: "PATCH", keepalive: !!opts.keepalive,
+      body: JSON.stringify({ [d.side]: sent, [`${d.side}_rev`]: d.base | 0,
+                             annotator: who(), reason: "edit" }),
+    });
+    let body = null;
+    try { body = await r.json(); } catch { /* not json */ }
+
+    if (r.ok) {
+      const got = body && body[d.side];
+      const rev = got && got.rev != null ? got.rev : d.base;
+      applySaved(d.rid, d.side, got && typeof got.text === "string" ? got.text : sent, rev);
+      d.tries = 0;
+      if (d.text === sent) {                         // nothing typed since it left
+        d.state = "saved";
+        DRAFTS.delete(key);
+        flashSaved(d.rid, d.side);
+      } else {
+        d.base = rev; d.state = "dirty";
+        scheduleFlush(key, 300);
+      }
+      lastSaved = Date.now();
+    } else if (r.status === 409) {
+      d.state = "conflict";
+      d.server = { text: body && typeof body.current === "string" ? body.current : "",
+                   rev: body && body.rev != null ? body.rev : d.base };
+      showConflict(d);
+    } else if (r.status === 404) {
+      // The pairing changed — this passage now lives in another row, or the
+      // row it was in was merged away. Find it and send it there.
+      if (!(await retarget(d))) {
+        d.state = "refused";
+        d.err = "This passage is no longer in any pair, so the change could not be "
+              + "saved. Your text is still in the box — copy it before moving on.";
+        showRefused(d);
+      }
+    } else if (r.status === 400) {
+      d.state = "refused";
+      d.err = bodyMessage(body) || "That change could not be saved.";
+      showRefused(d);
+    } else {
+      throw new Error(bodyMessage(body) || `the server answered ${r.status}`);
+    }
+  } catch (e) {
+    // Offline, server restarting, proxy hiccup. The draft is safe in this
+    // browser; try again, waiting longer each time, up to half a minute.
+    d.state = "failed";
+    d.tries = (d.tries | 0) + 1;
+    d.err = String(e && e.message || e);
+    scheduleFlush(key, Math.min(30000, 2000 * 2 ** Math.min(d.tries - 1, 4)));
+  } finally {
+    persistDrafts();
+    updateSaveDot();
+  }
+}
+
+async function flushAll(opts = {}) {
+  const keys = [...DRAFTS.keys()].filter(k => {
+    const d = DRAFTS.get(k);
+    return d && (d.state === "dirty" || d.state === "failed") && !isBlank(d.text);
+  });
+  if (opts.keepalive) persistDrafts(true);
+  await Promise.all(keys.map(k => flush(k, opts)));
+  // One wait for anything already in flight, so callers that are about to
+  // change a pairing do not race a save addressed to the old one.
+  for (let i = 0; i < 40 && [...DRAFTS.values()].some(d => d.state === "saving"); i++)
+    await new Promise(res => setTimeout(res, 50));
+}
+
+/* A draft addressed to a row that no longer holds its passage. */
+async function retarget(d) {
+  if (!d.sid || !d.pid) return false;
+  try {
+    const at = await api(`/projects/${encodeURIComponent(d.pid)}/where?sid=${encodeURIComponent(d.sid)}`);
+    if (!at || !at.rid || at.side !== d.side) return false;
+    DRAFTS.delete(dkey(d.rid, d.side));
+    Object.assign(d, { rid: at.rid, base: at.rev | 0, state: "dirty" });
+    DRAFTS.set(dkey(d.rid, d.side), d);
+    scheduleFlush(dkey(d.rid, d.side), 100);
+    return true;
+  } catch { return false; }
+}
+
+/* The server confirmed a save: every copy of that block on this page learns it. */
+function applySaved(rid, side, text, rev) {
+  for (const s of ["src", "tgt"]) {
+    const st = S(s);
+    const lists = [st.blocks, [...st.picked.values()]];
+    for (const list of lists) for (const b of list) {
+      if (b.rid !== rid || s !== side) continue;
+      b.text = text; b.rev = rev;
+      b.edited = !sameText(text, b.source_text || "");
+    }
+  }
+  const cached = ROWCACHE.get(rid);
+  if (cached && cached[side]) {
+    cached[side].text = text; cached[side].rev = rev;
+    cached[side].edited = !sameText(text, cached[side].source || "");
+  }
+  document.querySelectorAll(`[data-edit-rid="${CSS.escape(rid)}"][data-edit-side="${side}"]`)
+    .forEach(el => {
+      el.dataset.rev = rev;
+      const row = el.closest(".trow");
+      if (row) {
+        row.dataset.rev = rev;
+        const meta = row.querySelector(".tmeta");
+        const tag = meta && meta.querySelector(".tedit");
+        const edited = !sameText(text, (S(side).blocks.find(b => b.rid === rid) || {}).source_text || "");
+        if (meta && edited && !tag) {
+          const t = document.createElement("span"); t.className = "tedit"; t.textContent = "corrected";
+          meta.appendChild(t);
+        } else if (tag && !edited) tag.remove();
+      }
+    });
+  savedDirty = true;
+  // The panel's label ("corrected by hand") and its "Put back" button follow
+  // at once, instead of waiting for the pair to be selected again.
+  if ($("#textSrc").dataset.rid === rid || $("#textTgt").dataset.rid === rid) refreshSelection();
+}
+
+function flashSaved(rid, side) {
+  document.querySelectorAll(`.trow[data-rid="${CSS.escape(rid)}"][data-side="${side}"]`).forEach(row => {
+    row.classList.add("saved");
+    setTimeout(() => row.classList.remove("saved"), 1400);
+  });
+}
+
+/* The one line in the top bar that always tells the truth about saving. */
+let lastSaved = 0;
+function updateSaveDot() {
+  const el = $("#saveDot");
+  if (!el) return;
+  const all = [...DRAFTS.values()];
+  const need = all.filter(d => d.state === "conflict" || d.state === "refused").length;
+  const failing = all.filter(d => d.state === "failed").length;
+  const busy = all.filter(d => d.state === "saving" || d.state === "dirty").length;
+  let text, cls;
+  if (need) { text = `${need} change${need === 1 ? "" : "s"} need${need === 1 ? "s" : ""} you`; cls = "need"; }
+  else if (failing) { text = navigator.onLine === false
+      ? "Offline — kept on this computer" : "Not saved yet — trying again"; cls = "fail"; }
+  else if (busy) { text = "Saving…"; cls = "busy"; }
+  else { text = lastSaved ? "All changes saved" : "Nothing to save"; cls = "ok"; }
+  el.textContent = text;
+  el.className = "savedot " + cls;
+  el.hidden = !W.pid && !all.length;
+  el.title = storageOk ? "Unsaved text is also kept in this browser until the server confirms it."
+                       : "This browser will not keep a safety copy — keep the tab open until this says saved.";
+}
+const unsavedCount = () => [...DRAFTS.values()].filter(d => d.state !== "saved" && !isBlank(d.text)).length;
+
+/* ── when a save cannot simply go through ──────────────────────────────── */
+
+function showConflict(d) {
+  const box = $("#conflict");
+  if (!box) return;
+  box.dataset.key = dkey(d.rid, d.side);
+  $("#cfTheirs").textContent = d.server && d.server.text || "(empty)";
+  $("#cfMine").textContent = d.text;
+  box.hidden = false;
+}
+$("#cfMineBtn") && ($("#cfMineBtn").onclick = () => {
+  const d = DRAFTS.get($("#conflict").dataset.key);
+  $("#conflict").hidden = true;
+  if (!d) return;
+  // Mine goes on top of theirs as a new revision; theirs stays in the history.
+  d.base = d.server ? d.server.rev | 0 : d.base;
+  d.state = "dirty"; d.server = null;
+  flush(dkey(d.rid, d.side));
+});
+$("#cfTheirsBtn") && ($("#cfTheirsBtn").onclick = () => {
+  const key = $("#conflict").dataset.key, d = DRAFTS.get(key);
+  $("#conflict").hidden = true;
+  if (!d) return;
+  DRAFTS.delete(key);
+  if (d.server) { applySaved(d.rid, d.side, d.server.text, d.server.rev); mirror(d.rid, d.side, d.server.text, null); }
+  persistDrafts(); updateSaveDot(); refreshSelection();
+});
+
+function showRefused(d) {
+  saveState(d.err, true);
+  toast(d.err, true);
+}
+
 
 /* ── the cascade ───────────────────────────────────────────────────────── */
 
@@ -202,7 +540,7 @@ async function openBooks(want) {
       Object.assign(st, {
         book: o.book_key, title: o.title, language: o.language,
         lo: o.first_page, hi: o.last_page, chapters: o.chapters,
-        page: o.first_page, sel: new Set(), last: null, crop: null, cropUrl: "",
+        page: o.first_page, sel: new Set(), picked: new Map(), last: null, crop: null, cropUrl: "",
       });
       fillChapters(s);
     }
@@ -356,33 +694,53 @@ function renderText(s) {
   host.classList.add("textonly");
   host.style.width = "100%";
 
+  // A selected block on this page is the freshest copy of it.
+  for (const b of st.blocks) if (st.picked.has(b.sid)) st.picked.set(b.sid, b);
+
+  const mateLang = sideLang(other(s));
   const only = $("#kindFilter").value, dim = $("#dim").checked;
   const rows = st.blocks.map((b, i) => {
     if (only && b.kind !== only && !dim) return "";
     const on = st.sel.has(b.sid);
     const state = !b.rid ? "lonely" : (b.status && b.status !== "pending" ? "done" : "pending");
     const faded = (only && b.kind !== only) || (dim && !on);
-    const text = (b.text || "").trim();
+    const shownText = textOf(b, s);
+    const text = shownText.trim();
     const editable = W.mode === "edit" && b.rid;
-    return `<div class="trow blk ${state}${on ? " on" : ""}${faded ? " dim" : ""}"` +
+    const drafted = !!draftFor(b.rid, s);
+    // Where its partner is — the one fact that decides what to do with a
+    // block. "pair #1263" alone used to be shown on blocks that had no
+    // partner at all.
+    const partner = !b.rid
+      ? `<span class="tlonely">not in any pair</span>`
+      : b.paired
+        ? `<span>pair #${b.row_seq}${b.mate_display_page != null ? ` ↔ p${b.mate_display_page}` : ""}</span>`
+        : `<span>pair #${b.row_seq}</span><span class="tnomate">no ${esc(mateLang)} paired</span>`;
+    return `<div class="trow blk ${state}${on ? " on" : ""}${faded ? " dim" : ""}${b.rid && !b.paired ? " onesided" : ""}"` +
       ` data-sid="${esc(b.sid)}" data-i="${i}" data-rid="${esc(b.rid || "")}"` +
       ` data-rev="${b.rev | 0}" data-side="${s}"` +
       ` style="--c:${W.colors[b.kind || "other"] || "#666"}">` +
       `<div class="tmeta"><span class="tkind">${esc(kindName(b.kind))}</span>` +
-      `<span>page ${b.display_page}</span>` +
-      (b.rid ? `<span>pair #${b.row_seq}</span>` : `<span class="tlonely">no counterpart</span>`) +
-      (b.edited ? `<span class="tedit">corrected</span>` : "") +
+      `<span>page ${b.display_page}</span>` + partner +
+      ((b.edited || drafted) ? `<span class="tedit">corrected</span>` : "") +
       (b.rid && b.status && b.status !== "pending"
         ? `<span class="tdone">${esc(statusLabel(b.status))}</span>` : "") +
-      `</div><div class="tbody"${editable ? ' contenteditable="true" spellcheck="false"' : ""}>` +
-      `${text ? esc(text) : (editable ? "" : "<i>the parser found no text here</i>")}</div>` +
+      `</div><div class="tbody"` +
+      (editable ? ` contenteditable="true" spellcheck="false" data-edit-rid="${esc(b.rid)}"` +
+                  ` data-edit-side="${s}" data-sid="${esc(b.sid)}" data-rev="${b.rev | 0}"` : "") +
+      `>${text ? esc(shownText) : (editable ? "" : "<i>the parser found no text here</i>")}</div>` +
       `</div>`;
   }).join("");
 
-  host.innerHTML =
-    `<div class="nosc">No scan of this book on this machine — showing the text. ` +
-    `Everything except the page picture and the crop tool works as usual.` +
-    `<br><span class="tiny">${esc(st.imageMessage || "")}</span></div>` +
+  // The scan only matters in the page view, so in the text view nobody is
+  // told about it. It used to say "No scan of this book" above every page,
+  // which read like a fault when nothing was wrong.
+  const banner = (W.view === "page" && !st.imageAvailable)
+    ? `<div class="nosc">No scan of this page on this machine — showing the text instead. `
+      + `Everything except the page picture and the crop tool works as usual.`
+      + `<br><span class="tiny">${esc(st.imageMessage || "")}</span></div>`
+    : "";
+  host.innerHTML = banner +
     (rows || `<div class="nosc">The parser found nothing on page ${shown(st.page)}. ` +
       `Try the next page.</div>`);
 }
@@ -464,11 +822,18 @@ for (const s of ["src", "tgt"]) {
     } else if (ev.metaKey || ev.ctrlKey) {
       st.sel.has(sid) ? st.sel.delete(sid) : st.sel.add(sid);
       st.last = i;
+    } else if (st.sel.size === 1 && st.sel.has(sid)) {
+      // A second click on the selected block lets it go — the quickest way to
+      // say "not this one" without reaching for Esc.
+      st.sel.clear(); st.last = null;
     } else {
       // One block at a time is what an annotator almost always means, and it
       // is the only way the pair below can be unambiguous.
       st.sel.clear(); st.sel.add(sid); st.last = i;
     }
+    // Keep the block itself, so it is still known when its page has turned.
+    st.picked = new Map([...st.sel].map(x =>
+      [x, st.blocks.find(b => b.sid === x) || st.picked.get(x)]).filter(([, b]) => b));
     markSelected(s);
     refreshSelection();
   });
@@ -584,73 +949,205 @@ const ANSWERS = [
   ["unclear", "Unclear"], ["not_applicable", "Not applicable"],
 ];
 
+/* ── what is selected, and what it means ───────────────────────────────────
+ *
+ * A pair is a ROW. Clicking a block names the row it is in — and nothing else.
+ * Selecting a block on each side does NOT make them a pair: if they are in
+ * two different rows, the screen says so and offers "Pair these two". The
+ * first version showed any two selected blocks side by side as if they were a
+ * pair, and the answer then went to only one of them — usually one whose other
+ * half was empty.
+ *
+ * A selection survives turning the page, on purpose: the English passage is
+ * often on page 106 and its Marathi on page 108. `picked` keeps the selected
+ * block itself, so it is still known after its page has scrolled away.
+ */
+
+const ROWCACHE = new Map();       // rid -> the server's view of that row
+
 function selectedBlock(s) {
   const st = S(s);
   if (st.sel.size !== 1) return null;
   const sid = [...st.sel][0];
-  return st.blocks.find(b => b.sid === sid) || null;
+  return st.blocks.find(b => b.sid === sid) || st.picked.get(sid) || null;
 }
 
-/* The pair currently in view. A block on either side names a row, and that row
- * is what the answer belongs to. */
-function currentPair() {
-  for (const s of ["src", "tgt"]) {
-    const b = selectedBlock(s);
-    if (b && b.rid) return { rid: b.rid, from: s, block: b };
+/* What the two selections add up to. */
+function selectionState() {
+  const nL = S("src").sel.size, nR = S("tgt").sel.size;
+  const L = selectedBlock("src"), R = selectedBlock("tgt");
+  if (nL > 1 || nR > 1) return { kind: "many", L, R };
+  if (L && R) {
+    if (L.rid && L.rid === R.rid) return { kind: "pair", rid: L.rid, L, R };
+    return { kind: "mismatch", L, R };
   }
-  return null;
+  if (L) return { kind: "one", rid: L.rid || "", L, from: "src" };
+  if (R) return { kind: "one", rid: R.rid || "", R, from: "tgt" };
+  return { kind: "none" };
 }
 
-function refreshSelection() {
-  const counts = ["src", "tgt"].map(s => S(s).sel.size);
-  const pair = currentPair();
+/* The whole row, both sides, from the server — needed whenever the partner
+ * of the selected block is on a page that is not on screen. */
+async function fetchRow(rid, fresh = false) {
+  if (!rid) return null;
+  if (!fresh && ROWCACHE.has(rid)) return ROWCACHE.get(rid);
+  try {
+    const row = await api(`/rows/${encodeURIComponent(rid)}`);
+    ROWCACHE.set(rid, row);
+    return row;
+  } catch { return null; }
+}
 
+/* A block-shaped object for one side of a row, whether or not its page is on
+ * screen — so the panel can show and edit a partner on page 108 while page 106
+ * is the one being read. */
+function sideOfRow(row, s) {
+  if (!row || !row[s] || !row[s].present) return null;
+  const on = S(s).blocks.find(b => b.sid === row[s].sid);
+  if (on) return on;
+  return {
+    sid: row[s].sid, rid: row.rid, row_seq: row.seq, text: row[s].text,
+    source_text: row[s].source, rev: row[s].rev, edited: row[s].edited,
+    kind: row[s].kind, page: row[s].page,
+    display_page: row[s].page == null ? null : row[s].page + 1,
+    status: row.status, note: row.note, paired: !!(row.src.present && row.tgt.present),
+    offPage: true,
+  };
+}
+
+const sideLang = s => S(s).language || (s === "src" ? "English" : "the other language");
+const langName = s => S(s).language || (s === "src" ? "left-hand" : "right-hand");
+
+let selToken = 0;
+async function refreshSelection() {
+  const token = ++selToken;
+  const sel = selectionState();
+  const counts = ["src", "tgt"].map(s => S(s).sel.size);
+
+  // What each box in the panel shows, and the row it belongs to.
+  let row = null;
+  if (sel.kind === "pair" || (sel.kind === "one" && sel.rid)) {
+    row = await fetchRow(sel.rid, true);
+    if (token !== selToken) return;           // a newer click won the race
+  }
+  const show = { src: null, tgt: null };
+  if (sel.kind === "pair") { show.src = sel.L; show.tgt = sel.R; }
+  else if (sel.kind === "one") {
+    show[sel.from] = sel[sel.from === "src" ? "L" : "R"];
+    const mate = other(sel.from);
+    show[mate] = row ? sideOfRow(row, mate) : null;
+  } else if (sel.kind === "mismatch") { show.src = sel.L; show.tgt = sel.R; }
+
+  const editable = W.mode === "edit" && (sel.kind === "pair" || sel.kind === "one");
   for (const s of ["src", "tgt"]) {
-    const st = S(s);
     const el = $(s === "src" ? "#textSrc" : "#textTgt");
     const lbl = $(s === "src" ? "#lblSrc" : "#lblTgt");
     const orig = $(s === "src" ? "#origSrc" : "#origTgt");
-    let block = selectedBlock(s);
+    const b = show[s];
+    if (el === document.activeElement && b && el.dataset.editRid === b.rid) continue;   // never yank a box out from under the cursor
 
-    // When one side is selected and the other is not, show the counterpart
-    // from the pair rather than an empty box — that IS the parallel text.
-    if (!block && pair) {
-      const mate = S(s).blocks.find(b => b.rid === pair.rid);
-      block = mate || null;
-    }
-    el.dataset.sid = block ? block.sid : "";
-    el.dataset.rid = block ? (block.rid || "") : "";
-    el.dataset.rev = block ? (block.rev || 0) : "0";
-    el.classList.toggle("gap", !block);
-    if (!block) {
-      el.textContent = pair
-        ? "Nothing on this side — the machine found no counterpart here."
-        : "";
-      lbl.textContent = st.language || (s === "src" ? "Left" : "Right");
+    el.dataset.sid = b ? b.sid : "";
+    el.dataset.rid = b && b.rid ? b.rid : "";
+    el.dataset.editRid = b && b.rid && editable ? b.rid : "";
+    el.dataset.editSide = s;
+    el.dataset.rev = b ? (b.rev | 0) : 0;
+    el.classList.toggle("gap", !b);
+    el.classList.remove("nopartner");
+
+    if (!b) {
       orig.hidden = true;
-    } else {
-      el.textContent = block.text || "";
-      lbl.textContent = `${st.language || s} · page ${block.display_page} · ${kindName(block.kind)}` +
-        (block.rid ? ` · pair #${block.row_seq}` : " · no counterpart found") +
-        (block.edited ? " · corrected by hand" : " · as the parser read it");
-      orig.hidden = !block.edited || W.mode !== "edit";
+      el.contentEditable = "false";
+      lbl.textContent = langName(s);
+      if (sel.kind === "one" && sel.rid) {
+        el.classList.add("nopartner");
+        el.innerText = `No ${sideLang(s)} passage is paired with this one.\n\n`
+          + `If it is on another page, turn the ${s === "src" ? "left" : "right"}-hand `
+          + `page to it, click it, and press “Pair these two”.\n`
+          + `If the ${sideLang(s)} book really has nothing here, answer “Missing or incomplete”.`;
+      } else el.innerText = "";
+      continue;
     }
-    el.contentEditable = (W.mode === "edit" && block && block.rid) ? "true" : "false";
+
+    el.innerText = textOf(b, s);
+    const where = b.display_page != null ? `page ${b.display_page}` : "";
+    lbl.textContent = [langName(s), where, kindName(b.kind),
+      b.rid ? `pair #${b.row_seq}` : "not in any pair",
+      (b.edited || draftFor(b.rid, s)) ? "corrected by hand" : "as the parser read it"]
+      .filter(Boolean).join(" · ");
+    orig.hidden = !(editable && b.rid && (b.edited || draftFor(b.rid, s)));
+    el.contentEditable = editable && b.rid ? "true" : "false";
   }
 
-  $("#answerRow").hidden = !pair;
-  if (pair) {
-    $("#answers").innerHTML = ANSWERS.map(([k, label], i) =>
-      `<button class="ans${pair.block.status === k ? " on" : ""}" data-status="${k}">` +
-      `<kbd>${i + 1}</kbd>${esc(label)}</button>`).join("");
-    $("#note").value = pair.block.note || "";
-    $("#note").dataset.rid = pair.rid;
-  }
+  renderPairBar(sel, row);
+  renderAnswers(sel, row);
 
-  $("#selInfo").textContent = counts[0] + counts[1] === 0
-    ? (W.pid ? "Nothing selected — click a block on either page." : "Choose two textbooks and press “Open side by side”.")
-    : `selected: ${counts[0]} on the left, ${counts[1]} on the right` +
-      (pair ? ` · pair #${pair.block.row_seq}` : " · this block has no counterpart");
+  $("#selInfo").textContent =
+    sel.kind === "none" ? (W.pid ? "Nothing selected — click a block on either page."
+                                 : "Choose two textbooks and press “Open side by side”.")
+    : sel.kind === "many" ? `selected: ${counts[0]} on the left, ${counts[1]} on the right — `
+                          + "pairing and answering work one block per side; click a single block."
+    : sel.kind === "mismatch" ? "These two blocks are not paired with each other yet."
+    : sel.kind === "pair" ? `pair #${sel.L.row_seq} — both sides selected`
+    : sel.rid ? `pair #${(sel.L || sel.R).row_seq}` +
+                (row && row.src.present && row.tgt.present ? "" : ` · nothing on the ${sel.from === "src" ? "right" : "left"} yet`)
+    : "This block is not in any pair (headers and page numbers are left out). Select a block on the other side to pair it.";
+}
+
+/* The strip between the texts and the answers: "Pair these two", or "Unpair". */
+function renderPairBar(sel, row) {
+  const bar = $("#pairBar");
+  if (!bar) return;
+  bar.hidden = true; bar.innerHTML = "";
+  if (!W.pid) return;
+
+  if (sel.kind === "mismatch") {
+    const L = sel.L, R = sel.R, lose = [];
+    if (L.paired && L.mate_sid) lose.push(`the ${sideLang("src")} passage is now paired with another `
+      + `${sideLang("tgt")} passage${L.mate_display_page ? ` (page ${L.mate_display_page})` : ""}, which will be left on its own`);
+    if (R.paired && R.mate_sid) lose.push(`the ${sideLang("tgt")} passage is now paired with another `
+      + `${sideLang("src")} passage${R.mate_display_page ? ` (page ${R.mate_display_page})` : ""}, which will be left on its own`);
+    bar.innerHTML =
+      `<div class="pb-text"><b>These two are not a pair yet.</b> ` +
+      `Left is page ${L.display_page}${L.rid ? `, pair #${L.row_seq}` : ""}; ` +
+      `right is page ${R.display_page}${R.rid ? `, pair #${R.row_seq}` : ""}. ` +
+      `If they say the same thing, pair them — pages do not have to match.` +
+      (lose.length ? `<br><span class="tiny">Pairing them means ${esc(lose.join("; and "))}. ` +
+                     `Answers already given to those pairs go back to “Not checked yet” (kept in the history).</span>` : "") +
+      `</div><button class="btn primary" id="doPair">⇄ Pair these two <kbd>p</kbd></button>`;
+    bar.hidden = false;
+    $("#doPair").onclick = pairSelected;
+    return;
+  }
+  if ((sel.kind === "pair" || sel.kind === "one") && row && row.src.present && row.tgt.present) {
+    bar.innerHTML =
+      `<div class="pb-text tiny muted">Paired: ${esc(sideLang("src"))} page ${row.src.page + 1} ↔ ` +
+      `${esc(sideLang("tgt"))} page ${row.tgt.page + 1}${row.origin === "manual" ? " · paired by hand" : ""}.` +
+      ` If these are not translations of each other, unpair them.</div>` +
+      `<button class="btn ghost" id="doUnpair">Unpair</button>`;
+    bar.hidden = false;
+    $("#doUnpair").onclick = () => unpairRow(row);
+  }
+}
+
+/* The answers, with the ones that compare two passages switched off when
+ * there is only one passage to look at. */
+const TWO_SIDED = new Set(["exact", "needs_correction", "structural_mismatch"]);
+function renderAnswers(sel, row) {
+  const ok = (sel.kind === "pair" || sel.kind === "one") && sel.rid && row;
+  $("#answerRow").hidden = !ok;
+  if (!ok) return;
+  const both = row.src.present && row.tgt.present;
+  $("#answers").innerHTML = ANSWERS.map(([k, label], i) => {
+    const off = !both && TWO_SIDED.has(k);
+    return `<button class="ans${row.status === k ? " on" : ""}${off ? " off" : ""}" data-status="${k}"` +
+      (off ? ` title="There is only one passage here, so there is nothing to compare it with. Pair it first, or answer Missing or incomplete."` : "") +
+      `><kbd>${i + 1}</kbd>${esc(label)}</button>`;
+  }).join("");
+  const note = $("#note");
+  if (note !== document.activeElement || note.dataset.rid !== row.rid) {
+    note.value = row.note || "";
+    note.dataset.rid = row.rid;
+  }
 }
 
 $("#answers").addEventListener("click", ev => {
@@ -659,130 +1156,219 @@ $("#answers").addEventListener("click", ev => {
 });
 
 async function setAnswer(status) {
-  const pair = currentPair();
-  if (!pair) return;
+  const sel = selectionState();
+  if (!((sel.kind === "pair" || sel.kind === "one") && sel.rid)) {
+    if (sel.kind === "mismatch") toast("Pair the two blocks first — press “Pair these two” — then answer.", true);
+    return;
+  }
+  const row = await fetchRow(sel.rid);
+  if (row && TWO_SIDED.has(status) && !(row.src.present && row.tgt.present)) {
+    toast(`There is nothing on the ${row.src.present ? "right" : "left"} to compare with. `
+        + "If the partner is on another page, select it and pair them; "
+        + "otherwise answer “Missing or incomplete”.", true);
+    return;
+  }
+  await flushNote();
   try {
-    await api(`/rows/${pair.rid}/status`, {
+    const out = await api(`/rows/${encodeURIComponent(sel.rid)}/status`, {
       method: "POST",
       body: JSON.stringify({ status, note: $("#note").value, annotator: who() }),
     });
-    const note = $("#note").value;
-    for (const s of ["src", "tgt"])
-      for (const b of S(s).blocks)
-        if (b.rid === pair.rid) { b.status = status; b.note = note; }
-    saveState("Saved.");
-    refreshSelection();
-    ["src", "tgt"].forEach(drawBlocksKeepingScroll);
-    loadProgress();
-  } catch (e) { saveState(e.message, true); }
-}
-const drawBlocksKeepingScroll = s => drawBlocks(s);
-
-/* ── editing ───────────────────────────────────────────────────────────
- *
- * The box on screen is a VIEW. The record is setu_text, and a save carries the
- * revision the box was showing, so it cannot land on top of somebody else's
- * work. POTATO's text_edit widget lost edits by treating the editor as the
- * record; this keeps the two apart.
- */
-let saveTimer = null;
-for (const s of ["src", "tgt"]) {
-  const el = $(s === "src" ? "#textSrc" : "#textTgt");
-  el.addEventListener("input", () => {
-    saveState("…");
-    clearTimeout(saveTimer);
-    saveTimer = setTimeout(() => saveText(s), 1400);
-  });
-  el.addEventListener("blur", () => { clearTimeout(saveTimer); saveText(s); });
-}
-
-/* An edit made in the column itself — the doccano-shaped gesture: the text you
- * are reading is the text you correct, in the place you are reading it.
- *
- * The rules are the same as the panel editor's, because they are the same
- * rules: the box is a view, setu_text is the record, and the save carries the
- * revision the box was showing so it cannot land on somebody else's work.
- */
-for (const side of ["src", "tgt"]) {
-  const host = $(side === "src" ? "#hostSrc" : "#hostTgt");
-  host.addEventListener("blur", async ev => {
-    const body = ev.target.closest && ev.target.closest(".tbody[contenteditable=true]");
-    if (!body) return;
-    const row = body.closest(".trow");
-    const rid = row && row.dataset.rid;
-    if (!rid) return;
-    const block = S(side).blocks.find(b => b.sid === row.dataset.sid);
-    if (!block) return;
-    const text = body.innerText.replace(/\u00a0/g, " ");
-    if (text === (block.text || "")) return;
-    try {
-      const out = await api(`/rows/${rid}`, {
-        method: "PATCH",
-        body: JSON.stringify({ [side]: text, [`${side}_rev`]: block.rev | 0,
-                               annotator: who(), reason: "edit" }),
-      });
-      const got = out && out[side];
-      block.text = text; block.edited = true;
-      if (got && got.rev != null) { block.rev = got.rev; row.dataset.rev = got.rev; }
-      row.classList.add("saved");
-      setTimeout(() => row.classList.remove("saved"), 1400);
-      const meta = row.querySelector(".tmeta");
-      if (meta && !meta.querySelector(".tedit")) {
-        const tag = document.createElement("span");
-        tag.className = "tedit"; tag.textContent = "corrected";
-        meta.appendChild(tag);
-      }
-      saveState("Saved.");
-      if (S(side).sel.has(block.sid)) refreshSelection();
-    } catch (e) {
-      saveState(e.status === 409
-        ? "Somebody else changed this while you were typing — nothing of yours was lost, it is in the history."
-        : e.message, true);
+    if (out && out.row) ROWCACHE.set(sel.rid, out.row);
+    for (const s of ["src", "tgt"]) {
+      for (const b of [...S(s).blocks, ...S(s).picked.values()])
+        if (b.rid === sel.rid) { b.status = status; b.note = $("#note").value; }
     }
-  }, true);   // capture: blur does not bubble
-}
-
-async function saveText(s) {
-  if (W.mode !== "edit") return;
-  const el = $(s === "src" ? "#textSrc" : "#textTgt");
-  const rid = el.dataset.rid, sid = el.dataset.sid;
-  if (!rid) return;
-  const block = S(s).blocks.find(b => b.sid === sid);
-  if (!block) return;
-  const text = el.innerText.replace(/ /g, " ");
-  if (text === (block.text || "")) return;
-  try {
-    const out = await api(`/rows/${rid}`, {
-      method: "PATCH",
-      body: JSON.stringify({
-        [s]: text, [`${s}_rev`]: block.rev | 0,
-        annotator: who(), reason: "edit",
-      }),
+    document.querySelectorAll(`.trow[data-rid="${CSS.escape(sel.rid)}"] .tdone`).forEach(e => e.remove());
+    document.querySelectorAll(`.trow[data-rid="${CSS.escape(sel.rid)}"] .tmeta`).forEach(meta => {
+      if (status === "pending") return;
+      const t = document.createElement("span"); t.className = "tdone"; t.textContent = statusLabel(status);
+      meta.appendChild(t);
     });
-    const side = out && out[s];
-    block.text = text;
-    block.edited = true;
-    if (side && side.rev != null) { block.rev = side.rev; el.dataset.rev = side.rev; }
     saveState("Saved.");
-    drawBlocks(s);
+    savedDirty = true;
+    refreshSelection();
+    ["src", "tgt"].forEach(drawBlocks);
+    loadProgress();
+  } catch (e) { saveState(e.message, true); toast(e.message, true); }
+}
+
+/* The note saves itself too — it used to be sent only when an answer was
+ * clicked, so a note typed after answering was lost on moving on. */
+let noteTimer = null;
+$("#note").addEventListener("input", () => {
+  clearTimeout(noteTimer);
+  noteTimer = setTimeout(flushNote, 1200);
+});
+$("#note").addEventListener("blur", () => flushNote());
+async function flushNote() {
+  clearTimeout(noteTimer);
+  const el = $("#note"), rid = el.dataset.rid;
+  if (!rid) return;
+  const cached = ROWCACHE.get(rid);
+  if (cached && (cached.note || "") === el.value) return;
+  try {
+    const out = await api(`/rows/${encodeURIComponent(rid)}/status`, {
+      method: "POST", body: JSON.stringify({ note: el.value, annotator: who() }),
+    });
+    if (out && out.row) ROWCACHE.set(rid, out.row);
+    for (const s of ["src", "tgt"])
+      for (const b of [...S(s).blocks, ...S(s).picked.values()]) if (b.rid === rid) b.note = el.value;
+    savedDirty = true;
+  } catch (e) { saveState("The note could not be saved: " + e.message, true); }
+}
+
+/* ── pairing and unpairing ─────────────────────────────────────────────── */
+
+async function pairSelected() {
+  const sel = selectionState();
+  if (sel.kind !== "mismatch") return;
+  const L = sel.L, R = sel.R;
+  const btn = $("#doPair");
+  if (btn) { btn.disabled = true; btn.textContent = "Pairing…"; }
+  try {
+    // Nothing may still be on its way to a row that is about to change.
+    await flushAll();
+    const out = await api(`/projects/${encodeURIComponent(W.pid)}/pair`, {
+      method: "POST",
+      body: JSON.stringify({ src_sid: L.sid, tgt_sid: R.sid, annotator: who() }),
+    });
+    ROWCACHE.clear();
+    await reloadKeepingSelection([L.sid], [R.sid]);
+    savedDirty = true;
+    loadProgress();
+    toast(out && out.changed === false ? "Those two were already a pair."
+      : "Paired. Now answer: do these two say the same thing?");
   } catch (e) {
-    if (e.status === 409) {
-      saveState("Somebody else changed this while you were typing — nothing of yours was thrown away, it is in the history. Turn the page and back to see theirs.", true);
-    } else {
-      saveState(e.message, true);
-    }
+    toast(e.message, true);
+    if (btn) { btn.disabled = false; btn.textContent = "⇄ Pair these two"; }
   }
 }
+
+async function unpairRow(row) {
+  if (!confirm(`Unpair #${row.seq}?\n\nThe ${sideLang("src")} and the ${sideLang("tgt")} `
+      + "will each stand on their own until you pair them with something else. "
+      + "Corrections stay with their text; the answer goes back to “Not checked yet”.")) return;
+  try {
+    await flushAll();
+    await api(`/rows/${encodeURIComponent(row.rid)}/unpair`, {
+      method: "POST", body: JSON.stringify({ annotator: who() }) });
+    ROWCACHE.clear();
+    await reloadKeepingSelection([row.src.sid], []);
+    savedDirty = true;
+    loadProgress();
+    toast("Unpaired. Now select its real partner on the other side, or answer “Missing or incomplete”.");
+  } catch (e) { toast(e.message, true); }
+}
+
+/* Reload both visible pages after the pairing changed, and put the selection
+ * back on the same blocks — whatever pages they are on. */
+async function reloadKeepingSelection(srcSids, tgtSids) {
+  for (const [s, sids] of [["src", srcSids], ["tgt", tgtSids]]) {
+    const st = S(s);
+    st.sel = new Set(sids.filter(Boolean));
+    st.picked = new Map();
+  }
+  await Promise.all([openPage("src"), openPage("tgt")]);
+  for (const s of ["src", "tgt"]) {
+    const st = S(s);
+    for (const sid of st.sel) {
+      const b = st.blocks.find(x => x.sid === sid);
+      if (b) st.picked.set(sid, b);
+      else {                                    // its page is not on screen
+        try {
+          const at = await api(`/projects/${encodeURIComponent(W.pid)}/where?sid=${encodeURIComponent(sid)}`);
+          const r = await fetchRow(at.rid, true);
+          const sb = sideOfRow(r, s);
+          if (sb) st.picked.set(sid, sb);
+        } catch { st.sel.delete(sid); }
+      }
+    }
+    markSelected(s);
+  }
+  refreshSelection();
+}
+
+/* ── editing ───────────────────────────────────────────────────────────────
+ *
+ * Two places to type — the column above and the panel below — and one rule
+ * for both: what is typed becomes the passage's draft, the draft is what both
+ * places show, and the draft is what gets sent. See "the save pipeline".
+ */
+
+function editorBase(el) {
+  const rid = el.dataset.editRid, s = el.dataset.editSide;
+  const d = draftFor(rid, s);
+  return d ? d.base : (el.dataset.rev | 0);
+}
+
+/* Paste as plain text. A rich paste brings hidden markup with it, and
+ * innerText of that is not what the person saw. */
+document.addEventListener("paste", ev => {
+  const el = ev.target.closest && ev.target.closest('[contenteditable="true"][data-edit-rid]');
+  if (!el) return;
+  ev.preventDefault();
+  const text = (ev.clipboardData || window.clipboardData).getData("text/plain") || "";
+  if (!document.execCommand || !document.execCommand("insertText", false, text)) {
+    const r = window.getSelection().getRangeAt(0);
+    r.deleteContents(); r.insertNode(document.createTextNode(text)); r.collapse(false);
+    el.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+}, true);
+
+document.addEventListener("input", ev => {
+  const el = ev.target.closest && ev.target.closest('[contenteditable="true"][data-edit-rid]');
+  if (!el || !el.dataset.editRid) return;
+  const text = cleanText(el);
+  noteEdit(el.dataset.editRid, el.dataset.editSide, el.dataset.sid || "", text, editorBase(el), el);
+  saveState(text ? "…" : "The passage is empty. Type the corrected text — an empty "
+    + "passage is never saved, and leaving it empty puts the text back.", !text);
+}, true);
+
+/* Leaving a box: send it now. Left empty: put the last saved text back and
+ * say so — the old behaviour saved the emptiness and said "Saved." */
+document.addEventListener("blur", ev => {
+  const el = ev.target.closest && ev.target.closest('[contenteditable="true"][data-edit-rid]');
+  if (!el || !el.dataset.editRid) return;
+  const rid = el.dataset.editRid, s = el.dataset.editSide, key = dkey(rid, s);
+  const d = DRAFTS.get(key);
+  if (!d) return;
+  if (isBlank(d.text)) {
+    DRAFTS.delete(key);
+    clearTimeout(flushTimers.get(key));
+    const b = [...S(s).blocks, ...S(s).picked.values()].find(x => x.rid === rid)
+           || sideOfRow(ROWCACHE.get(rid), s);
+    const back = (b && b.text) || "";
+    el.innerText = back;
+    mirror(rid, s, back, el);
+    persistDrafts(); updateSaveDot();
+    saveState("The passage was left empty, so nothing was saved and the text is back. "
+      + "To mark it as wrong, use an answer instead.", true);
+    return;
+  }
+  flush(key);
+}, true);
+
+async function saveText() { await flushAll(); }   // kept: older callers flush everything
 
 for (const s of ["src", "tgt"]) {
   $(s === "src" ? "#origSrc" : "#origTgt").addEventListener("click", async () => {
     const el = $(s === "src" ? "#textSrc" : "#textTgt");
     const rid = el.dataset.rid;
     if (!rid) return;
+    // A restore replaces whatever was being typed, so the draft goes first.
+    const key = dkey(rid, s);
+    DRAFTS.delete(key); clearTimeout(flushTimers.get(key)); persistDrafts(true); updateSaveDot();
     try {
-      await api(`/rows/${rid}/restore`, {
+      const out = await api(`/rows/${encodeURIComponent(rid)}/restore`, {
         method: "POST", body: JSON.stringify({ side: s, rev: 0, annotator: who() }),
       });
+      ROWCACHE.delete(rid);
+      const got = out && (out[s] || out);
+      if (got && typeof got.text === "string") {
+        applySaved(rid, s, got.text, got.rev | 0);
+        mirror(rid, s, got.text, null);
+      }
       await openPage(s);
       refreshSelection();
       saveState("Put back what the parser read.");
@@ -932,7 +1518,11 @@ $$(".segbtn").forEach(b => b.onclick = () => {
 });
 $("#toolHint").textContent = "Click a block to put its text below. Shift-click for a run, Ctrl-click to add one.";
 
-["#kindFilter", "#dim", "#order"].forEach(id => $(id).onchange = () => ["src", "tgt"].forEach(drawBlocks));
+/* The filters apply at once in both views. In the text view drawBlocks does
+ * nothing — the column draws itself — so the filter used to wait for the next
+ * page turn, and passages seemed to vanish for no reason. */
+["#kindFilter", "#dim", "#order"].forEach(id => $(id).onchange = () =>
+  ["src", "tgt"].forEach(s => { if (!S(s).book) return; W.view === "page" ? drawBlocks(s) : renderSide(s); }));
 $("#noise").onchange = async () => { await Promise.all([openPage("src"), openPage("tgt")]); refreshSelection(); };
 
 $$(".z").forEach(b => b.onclick = () => {
@@ -982,7 +1572,8 @@ document.addEventListener("keydown", e => {
   // plain arrow honours the lock instead of overriding it.
   if (e.key === "ArrowLeft") { e.altKey ? turn("src", -1) : e.shiftKey ? turn("tgt", -1) : turn("src", -1); return; }
   if (e.key === "ArrowRight") { e.altKey ? turn("src", 1) : e.shiftKey ? turn("tgt", 1) : turn("src", 1); return; }
-  if (e.key === "Escape") { ["src", "tgt"].forEach(s => { S(s).sel.clear(); markSelected(s); }); refreshSelection(); return; }
+  if (e.key === "Escape") { ["src", "tgt"].forEach(s => { S(s).sel.clear(); S(s).picked.clear(); markSelected(s); }); refreshSelection(); return; }
+  if (e.key === "p") { if (selectionState().kind === "mismatch") pairSelected(); return; }
   if (e.key === "e") { $$(`.segbtn[data-mode]`).find(b => b.dataset.mode !== W.mode)?.click(); return; }
   if (e.key === "c") { $$(`.segbtn[data-tool]`).find(b => b.dataset.tool !== W.tool)?.click(); return; }
   if (e.key === "n") { nextUnanswered(); return; }
@@ -996,16 +1587,25 @@ document.addEventListener("keyup", e => {
 
 /* POTATO's jump-to-next-unannotated, over this page then onward. */
 async function nextUnanswered() {
-  const st = S("src");
-  const here = st.blocks.find(b => b.rid && (!b.status || b.status === "pending") && !st.sel.has(b.sid));
-  if (here) {
-    st.sel.clear(); st.sel.add(here.sid);
-    st.last = st.blocks.indexOf(here);
-    markSelected("src"); refreshSelection();
-    return;
-  }
-  if (st.page < st.hi) { await turn("src", 1); nextUnanswered(); }
-  else toast("Nothing left unanswered on this side of the book.");
+  if (!W.pid) return;
+  await flushAll();
+  const sel = selectionState();
+  const here = (sel.L || sel.R || {}).row_seq;
+  const from = Number.isFinite(here) ? here : -1;
+  try {
+    const { row } = await api(`/projects/${encodeURIComponent(W.pid)}/next?seq=${from}&direction=1&status=pending`);
+    if (!row) { toast("Nothing left unanswered after this point in the book."); return; }
+    const full = await fetchRow(row.rid, true);
+    if (!full) return;
+    for (const s of ["src", "tgt"]) {
+      if (full[s].present && full[s].page != null) S(s).page = clamp(full[s].page, S(s).lo, S(s).hi);
+    }
+    await reloadKeepingSelection(full.src.present ? [full.src.sid] : [],
+                                 full.tgt.present ? [full.tgt.sid] : []);
+    rememberPlace();
+    const on = $(`.trow[data-rid="${CSS.escape(row.rid)}"]`);
+    if (on) on.scrollIntoView({ block: "center" });
+  } catch (e) { toast(e.message, true); }
 }
 
 async function loadProgress() {
@@ -1021,8 +1621,8 @@ async function loadProgress() {
 $$(".tab").forEach(t => t.onclick = () => {
   $$(".tab").forEach(x => x.classList.toggle("on", x === t));
   $$(".page").forEach(p => p.classList.toggle("on", p.id === "page" + t.dataset.tab));
-  if (t.dataset.tab === "Saved") loadSaved(0);
-  if (t.dataset.tab === "Get") loadGet();
+  if (t.dataset.tab === "Saved") flushAll().then(() => loadSaved(0));
+  if (t.dataset.tab === "Get") flushAll().then(loadGet);
   if (t.dataset.tab === "Guide") loadDocs();
 });
 function goTab(name) { ($$(".tab").find(t => t.dataset.tab === name) || {}).onclick?.(); }
@@ -1149,6 +1749,7 @@ function savedQuery(offset) {
   const st = $("#sStatus").value;
   if (st === "__done") q.set("answered", "done");
   else if (st === "__pending") q.set("answered", "pending");
+  else if (st === "__attention") q.set("attention", "1");
   else if (st) q.set("status", st);
   if ($("#sChapter").value) q.set("chapter_no", $("#sChapter").value);
   if ($("#sSearch").value.trim()) q.set("search_text", $("#sSearch").value.trim());
@@ -1177,15 +1778,24 @@ async function loadSaved(offset) {
     $("#sBook").innerHTML = `<option value="">Every textbook</option>` +
       projects.map(p => `<option value="${esc(p.pid)}">${esc(projectLabel(p))}` +
         `${p.answered ? ` — ${p.answered.toLocaleString()} answered` : ""}</option>`).join("");
-    if (W.pid && projects.some(p => p.pid === W.pid)) $("#sBook").value = W.pid;
     savedBooksFilled = true;
     fillSavedChapters();
+    // The list just fetched covers every textbook. If a textbook is open, the
+    // dropdown is set to it — so fetch again for that one, or the dropdown and
+    // the list below it would disagree.
+    if (W.pid && projects.some(p => p.pid === W.pid)) {
+      $("#sBook").value = W.pid;
+      return loadSaved(0);
+    }
   }
 
   const t = data.tally || {};
+  const opt = $('#sStatus option[value="__attention"]');
+  if (opt) opt.textContent = `Needs attention${t.attention ? ` (${t.attention})` : ""}`;
   $("#savedStats").textContent = t.total
     ? `${(t.answered || 0).toLocaleString()} of ${(t.total || 0).toLocaleString()} ` +
       `pairs answered` + (t.corrected ? ` · ${t.corrected.toLocaleString()} corrected by hand` : "") +
+      (t.attention ? ` · ${t.attention.toLocaleString()} need attention` : "") +
       ` · ${statusSentence(t.by_status || {})}`
     : "Nothing here yet. Open two textbooks in the Annotate tab and start answering.";
 
@@ -1231,33 +1841,48 @@ function savedCard(r) {
   const pages = `${r.src_display != null ? "p" + r.src_display : "—"} ↔ ` +
                 `${r.tgt_display != null ? "p" + r.tgt_display : "—"}`;
   const chapter = [r.chapter_no, r.chapter].filter(Boolean).join(" ");
+  const corrected = r.src_edited || r.tgt_edited;
+  // A side with no passage says so in words. "nothing on this side" read as
+  // though the annotator's text had been lost.
+  const body = (side, lang) => {
+    if (!r[`${side}_present`])
+      return `<div class="body missing">No ${esc(lang)} passage is paired with this one.</div>`;
+    const t = snip(r[`${side}_text`]);
+    if (!t) return `<div class="body missing bad">Saved empty — open it to put the text back.</div>`;
+    return `<div class="body${side === "tgt" ? " indic" : ""}">${esc(t)}</div>`;
+  };
   return `
-  <div class="scard ${r.status === "pending" ? "pending" : ""}"
+  <div class="scard ${r.status === "pending" ? "pending" : ""}${r.attention ? " attn" : ""}"
        data-rid="${esc(r.rid)}" data-pid="${esc(r.pid)}"
        data-src="${r.src_page == null ? "" : r.src_page}"
-       data-tgt="${r.tgt_page == null ? "" : r.tgt_page}">
+       data-tgt="${r.tgt_page == null ? "" : r.tgt_page}"
+       data-src-sid="${esc(r.src_sid || "")}" data-tgt-sid="${esc(r.tgt_sid || "")}">
     <div class="top">
       <span class="seq">#${r.seq}</span>
       <span class="badge ${esc(r.status)}">${esc(statusLabel(r.status))}</span>
-      ${r.edited ? `<span class="badge edited">corrected</span>` : ""}
+      ${corrected ? `<span class="badge edited">corrected</span>` : ""}
+      ${!(r.src_present && r.tgt_present) ? `<span class="badge onesided">one side only</span>` : ""}
       ${chapter ? `<span class="muted">${esc(chapter)}</span>` : ""}
       <span class="spacer"></span>
       <span class="muted tiny">${esc(pages)}${r.kind ? " · " + esc(r.kind) : ""}
         ${r.updated_by ? " · " + esc(r.updated_by) : ""}</span>
     </div>
+    ${r.attention ? `<div class="attn-why tiny">⚠ ${esc(r.attention)}</div>` : ""}
     <div class="two">
       <div class="scol">
-        <div class="lang tiny muted">${esc(r.src_language || "left")}</div>
-        <div class="body">${esc(snip(r.src_text)) || `<i class="muted">nothing on this side</i>`}</div>
+        <div class="lang tiny muted">${esc(r.src_language || "left")}${r.src_edited ? " · corrected" : ""}</div>
+        ${body("src", r.src_language || "left-hand")}
       </div>
       <div class="scol">
-        <div class="lang tiny muted">${esc(r.tgt_language || "right")}</div>
-        <div class="body indic">${esc(snip(r.tgt_text)) || `<i class="muted">nothing on this side</i>`}</div>
+        <div class="lang tiny muted">${esc(r.tgt_language || "right")}${r.tgt_edited ? " · corrected" : ""}</div>
+        ${body("tgt", r.tgt_language || "right-hand")}
       </div>
     </div>
     ${r.note ? `<div class="note-shown tiny">Note: ${esc(r.note)}</div>` : ""}
     <div class="acts">
       <button class="btn sm" data-act="open">Open in Annotate</button>
+      ${r.attention && !(r.src_present && r.tgt_present) && TWO_SIDED.has(r.status)
+        ? `<button class="btn sm" data-act="missing">Change to “Missing or incomplete”</button>` : ""}
       ${r.status !== "pending"
         ? `<button class="btn sm" data-act="clear">Undo my answer</button>` : ""}
     </div>
@@ -1265,41 +1890,41 @@ function savedCard(r) {
 }
 
 async function savedAction(act, d) {
-  if (act === "clear") {
-    if (!confirm("Put this pair back to “Not checked yet”? Any text you "
+  if (act === "clear" || act === "missing") {
+    const status = act === "clear" ? "pending" : "incomplete";
+    if (act === "clear" && !confirm("Put this pair back to “Not checked yet”? Any text you "
                + "corrected is kept — only the answer is removed.")) return;
     try {
-      await api(`/rows/${d.rid}/status`, {
-        method: "POST", body: JSON.stringify({ status: "pending" }) });
-      toast("Answer removed — the pair is waiting again");
+      await api(`/rows/${encodeURIComponent(d.rid)}/status`, {
+        method: "POST", body: JSON.stringify({ status, annotator: who() }) });
+      ROWCACHE.delete(d.rid);
+      toast(act === "clear" ? "Answer removed — the pair is waiting again"
+                            : "Changed to “Missing or incomplete”.");
       loadSaved();
-      refreshProgress();
+      loadProgress();
     } catch (e) { toast(e.message, true); }
     return;
   }
-  // "open" — put the annotator back on the two pages this pair came from.
+  // "open" — the two pages this pair is on, with its blocks selected, so the
+  // panel shows it straight away.
   if (d.pid && d.pid !== W.pid) {
     const p = WORKBENCH.find(x => x.pid === d.pid);
-    if (p) { $("#resume").value = d.pid; goTab("Work"); return $("#resumeGo").click(); }
-    toast("Open that textbook in the Annotate tab first.", true);
-    return;
+    if (!p) { toast("Open that textbook in the Annotate tab first.", true); return; }
+    goTab("Work");
+    const ok = await openBooks({ src: p.src_book, tgt: p.tgt_book });
+    if (!ok) return;
   }
   if (!W.pid) { toast("Open two textbooks in the Annotate tab first.", true); return; }
   goTab("Work");
-  // openPage takes the page off the side's own state, so the page is set first
-  // and the side then redrawn. Passing it as a second argument silently did
-  // nothing at all — which looked exactly like the jump having worked.
-  const jobs = [];
   for (const [side, want] of [["src", d.src], ["tgt", d.tgt]]) {
     if (want === "" || want == null) continue;
     const st = S(side);
     st.page = clamp(parseInt(want, 10) || 0, st.lo, st.hi);
-    jobs.push(openPage(side));
   }
-  if (!jobs.length) { toast("That pair sits on no page on either side.", true); return; }
-  await Promise.all(jobs);
-  refreshSelection();
+  await reloadKeepingSelection([d.srcSid].filter(Boolean), [d.tgtSid].filter(Boolean));
   rememberPlace();
+  const firstOn = $(`.trow[data-rid="${CSS.escape(d.rid)}"]`);
+  if (firstOn) firstOn.scrollIntoView({ block: "center" });
 }
 
 function fillSavedChapters() {
@@ -1401,7 +2026,13 @@ async function refreshGetCount() {
     $("#xCount").textContent = "";
     return;
   }
-  const q = new URLSearchParams(getQuery());
+  // /saved speaks a slightly different language from the export endpoint;
+  // translate, so the count describes exactly what the download will contain.
+  const q = new URLSearchParams();
+  const st = $("#xStatus").value;
+  if (st === "__done") q.set("answered", "done");
+  else if (st) q.set("status", st);
+  if ($("#xChapter").value) q.set("chapter_no", $("#xChapter").value);
   q.set("pid", pid); q.set("limit", "1");
   try {
     const d = await api(`/saved?${q}`);
@@ -1571,8 +2202,32 @@ const slug = t => String(t).toLowerCase().replace(/[^a-z0-9]+/g, "-")
 
 /* ── start ─────────────────────────────────────────────────────────────── */
 
-window.addEventListener("resize", () => { ["src", "tgt"].forEach(s => { if (S(s).book) renderSide(s); }); });
-window.addEventListener("pagehide", () => { ["src", "tgt"].forEach(saveText); });
+/* The text column does not depend on the window's width, and redrawing it
+ * would take the cursor out of a box mid-word. Only the page picture is
+ * redrawn when the window changes size. */
+window.addEventListener("resize", () => {
+  if (W.view !== "page") return;
+  ["src", "tgt"].forEach(s => { if (S(s).book) renderSide(s); });
+});
+
+/* Leaving, by any route: send what is unsent with requests that outlive the
+ * page, and keep a copy in this browser in case they do not arrive. */
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") { flushNote(); flushAll({ keepalive: true }); }
+});
+window.addEventListener("pagehide", () => { flushNote(); flushAll({ keepalive: true }); });
+window.addEventListener("beforeunload", e => {
+  if (!unsavedCount()) return;
+  persistDrafts(true);
+  flushAll({ keepalive: true });
+  e.preventDefault(); e.returnValue = "";        // the browser asks "Leave site?"
+});
+window.addEventListener("online", () => {
+  for (const [k, d] of DRAFTS) if (d.state === "failed") scheduleFlush(k, 200);
+  updateSaveDot();
+});
+window.addEventListener("offline", updateSaveDot);
+let savedDirty = false;
 
 (async () => {
   try {
@@ -1590,6 +2245,18 @@ window.addEventListener("pagehide", () => { ["src", "tgt"].forEach(saveText); })
   // convenience and must never delay the interface being usable.
   loadWorkbench();
   refreshSelection();
+
+  // Anything typed last time that the server never confirmed is sent now.
+  const pending = loadDrafts();
+  if (pending) {
+    toast(`Sending ${pending} change${pending === 1 ? "" : "s"} from last time that had `
+        + "not reached the server yet…");
+    for (const [k, d] of DRAFTS) {
+      if (d.state === "conflict" && d.server) showConflict(d);
+      else if (d.state === "dirty") scheduleFlush(k, 600);
+    }
+  }
+  updateSaveDot();
 })();
 
 /* Typing a name is how work is attributed, so the resume list is rebuilt when
