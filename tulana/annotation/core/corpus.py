@@ -52,6 +52,13 @@ _TRAIL_NO = re.compile(r"[\s(](\d{1,2}(?:\.\d{1,3})*)\)?\s*$")
 NOISE_KINDS = frozenset({"header", "footer", "page_number", "figure"})
 
 
+#: Raw textbooks only. Aligned editions (see aligned.py) are each tied to ONE
+#: partner book, so offering them in the free cascade would invite pairing an
+#: aligned English book with a raw Marathi one, which means nothing. They are
+#: reached through the aligned-test-set picker instead.
+RAW = "dedup_key NOT LIKE 'aligned:%'"
+
+
 class CorpusRepo(Repository):
     """Read access to the immutable source layer."""
 
@@ -75,7 +82,7 @@ class CorpusRepo(Repository):
             "       COUNT(*) AS n_books,"
             "       COUNT(DISTINCT CASE WHEN language <> '' THEN language END)"
             "           AS n_languages"
-            "  FROM setu_book WHERE board <> ''"
+            f"  FROM setu_book WHERE board <> '' AND {RAW}"
             " GROUP BY board, board_name"
             " ORDER BY (COUNT(DISTINCT CASE WHEN language <> '' THEN language END)"
             "           >= 2) DESC,"
@@ -85,7 +92,7 @@ class CorpusRepo(Repository):
     def classes(self, board: str) -> list[dict]:
         return self.all(
             "SELECT class AS value, COUNT(*) AS n_books FROM setu_book"
-            " WHERE board = ? AND class IS NOT NULL"
+            f" WHERE board = ? AND class IS NOT NULL AND {RAW}"
             " GROUP BY class ORDER BY class", (board,))
 
     def subjects(self, board: str, cls: Any) -> list[dict]:
@@ -103,7 +110,7 @@ class CorpusRepo(Repository):
             "       COUNT(DISTINCT CASE WHEN language <> '' THEN language END)"
             "           AS n_languages"
             "  FROM setu_book"
-            " WHERE board = ? AND class IS ? GROUP BY value ORDER BY value",
+            f" WHERE board = ? AND class IS ? AND {RAW} GROUP BY value ORDER BY value",
             (board, _int_or_none(cls)))
 
     def languages(self, board: str, cls: Any, subject: str,
@@ -120,7 +127,7 @@ class CorpusRepo(Repository):
                "  FROM setu_book"
                " WHERE board = ? AND class IS ?"
                "   AND COALESCE(NULLIF(subject,''),'Mathematics') = ?"
-               "   AND language <> ''"]
+               f"   AND language <> '' AND {RAW}"]
         args: list[Any] = [board, _int_or_none(cls), subject]
         if exclude:
             sql.append(" AND language <> ?")
@@ -134,7 +141,7 @@ class CorpusRepo(Repository):
         """Books matching the cascade so far. Every filter is optional."""
         sql = ["SELECT book_key, book, title, language, script, volume, num_pages,"
                "       n_segments, pdf_present, relpath"
-               "  FROM setu_book WHERE 1=1"]
+               f"  FROM setu_book WHERE {RAW}"]
         args: list[Any] = []
         if board:
             sql.append(" AND board = ?"); args.append(board)
@@ -215,11 +222,15 @@ class CorpusRepo(Repository):
         return chapters
 
     def counts(self) -> dict:
+        raw = f"book_key IN (SELECT book_key FROM setu_book WHERE {RAW})"
         return {
-            "books": self.scalar("SELECT COUNT(*) FROM setu_book", default=0),
+            "books": self.scalar(f"SELECT COUNT(*) FROM setu_book WHERE {RAW}", default=0),
             "aliases": self.scalar("SELECT COUNT(*) FROM setu_book_alias", default=0),
-            "segments": self.scalar("SELECT COUNT(*) FROM setu_segment", default=0),
-            "pages": self.scalar("SELECT COALESCE(SUM(num_pages),0) FROM setu_book", default=0),
+            "segments": self.scalar(f"SELECT COUNT(*) FROM setu_segment WHERE {raw}", default=0),
+            "pages": self.scalar(f"SELECT COALESCE(SUM(num_pages),0) FROM setu_book WHERE {RAW}",
+                                 default=0),
+            "aligned_pairs": self.scalar(
+                "SELECT COUNT(*) FROM setu_book WHERE dedup_key LIKE 'aligned:%:src'", default=0),
         }
 
 
