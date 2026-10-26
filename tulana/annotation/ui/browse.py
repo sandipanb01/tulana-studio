@@ -65,7 +65,7 @@ from typing import Any
 
 from ..core import corpus, store, workspace
 from ..core.models import KIND_BY_KEY, STATUS_BY_KEY, STATUSES
-from ..core.annotate import same_text
+from ..core.annotate import MODEL_PREFIX, same_text
 from ..core.store import Conflict, Invalid, NotFound
 from . import session
 
@@ -199,12 +199,16 @@ def blocks(con, *, pid: str, book_key: str, side: str, page: Any = None,
         "       s.fx0, s.fy0, s.fx1, s.fy1, s.has_math, s.has_table,"
         "       s.chapter_no, s.chapter,"
         "       r.rid, r.seq AS row_seq, r.status, r.note, r.edited AS row_edited,"
-        "       t.text AS edited_text, t.rev AS rev,"
-        "       m.sid AS mate_sid, m.page AS mate_page"
+        "       t.text AS edited_text, t.rev AS rev, t.updated_by AS edited_by,"
+        "       m.sid AS mate_sid, m.page AS mate_page,"
+        "       h.relation AS hint_relation, h.confidence AS hint_confidence,"
+        "       h.note AS hint_note, h.flags AS hint_flags, h.parts AS hint_parts,"
+        "       h.pages AS hint_pages, h.page_status AS hint_status"
         "  FROM setu_segment s"
         f"  LEFT JOIN setu_row  r ON r.{col} = s.sid AND r.pid = ?"
         "  LEFT JOIN setu_text t ON t.rid = r.rid AND t.side = ?"
         f"  LEFT JOIN setu_segment m ON m.sid = r.{mate_col}"
+        "  LEFT JOIN setu_hint h ON h.sid = s.sid"
         " WHERE s.book_key = ?"]
     args: list[Any] = [pid, side, book_key]
     if page is not None:
@@ -225,13 +229,39 @@ def blocks(con, *, pid: str, book_key: str, side: str, page: Any = None,
         b["rev"] = _int(b["rev"], 0)
         # "Corrected" is about THIS block's text, not about the row: a fix to
         # the Marathi side must not put a "corrected" badge on the English.
-        b["edited"] = b["edited_text"] is not None and not same_text(
+        differs = b["edited_text"] is not None and not same_text(
             b["edited_text"], b["source_text"] or "")
+        by_model = str(b.get("edited_by") or "").startswith(MODEL_PREFIX)
+        b["edited"] = differs and not by_model
+        # The alignment model's own correction (aligned test set): shown as
+        # such, never as an annotator's.
+        b["model_edited"] = differs and by_model
+        b["hint"] = _hint(b)
         b["mate_display_page"] = None if b["mate_page"] is None \
             else to_display(b["mate_page"])
         b["paired"] = bool(b["rid"] and b["mate_sid"])
         out.append(b)
     return out
+
+
+def _hint(b: dict) -> dict | None:
+    """What the alignment model said about this passage, if it said anything."""
+    if not any(b.get(k) for k in ("hint_relation", "hint_confidence", "hint_note",
+                                  "hint_status")) and b.get("hint_flags") in (None, "", "[]"):
+        return None
+    try:
+        flags = json.loads(b.get("hint_flags") or "[]")
+    except (TypeError, ValueError):
+        flags = []
+    try:
+        pages = json.loads(b.get("hint_pages") or "[]")
+    except (TypeError, ValueError):
+        pages = []
+    return {"relation": b.get("hint_relation") or "", "confidence": b.get("hint_confidence") or "",
+            "note": b.get("hint_note") or "", "flags": flags if isinstance(flags, list) else [],
+            "parts": int(b.get("hint_parts") or 1),
+            "pages": [to_display(p) for p in pages if isinstance(p, int)],
+            "page_status": b.get("hint_status") or ""}
 
 
 def chapter_choices(con, book_key: str) -> list[tuple[str, str]]:
@@ -674,6 +704,10 @@ def block_heading(b: dict) -> str:
             bits.append(f"**{status_label(status)}**")
         if b.get("edited"):
             bits.append("corrected by hand")
+        elif b.get("model_edited"):
+            # The aligned test set: changed by the alignment model, not yet
+            # checked by anybody. Never to be read as a person's correction.
+            bits.append("corrected by the model — check it")
         else:
             # CMULAB's distinction: untouched text is the machine's reading,
             # not yet anybody's judgement.
