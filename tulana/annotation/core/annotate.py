@@ -52,6 +52,10 @@ TWO_SIDED_ANSWERS = frozenset({"exact", "needs_correction", "structural_mismatch
 #: matter inside Indic words; a text made of nothing else is still empty.)
 _INVISIBLE = re.compile(r"[\s​‌‍⁠﻿]+")
 
+#: Text written by an alignment model rather than a person carries this in
+#: setu_text.updated_by. Defined here, where "corrected" is decided.
+MODEL_PREFIX = "model:"
+
 #: Trailing characters that are never content. A browser's editable box adds a
 #: line break when you click into it and out again; that must not count as a
 #: correction.
@@ -372,8 +376,11 @@ def sync_edited(con, rid: str) -> bool:
     """Recompute the row's "corrected" flag from what is actually stored.
 
     True only when a side that HAS a passage carries text different from what
-    the parser read. A flag left over from text that has since moved to another
-    row was how a pair could say "corrected" with nothing to show for it.
+    the parser read, written by a PERSON. A flag left over from text that has
+    since moved to another row was how a pair could say "corrected" with nothing
+    to show for it. Text written by an alignment model (updated_by "model:…",
+    see aligned.py) is a machine's suggestion, not an annotator's correction,
+    and is reported separately as model_edited wherever it is shown.
     """
     row = con.execute("SELECT src_sid, tgt_sid FROM setu_row WHERE rid = ?",
                       (rid,)).fetchone()
@@ -383,9 +390,9 @@ def sync_edited(con, rid: str) -> bool:
     for side, sid in (("src", row[0]), ("tgt", row[1])):
         if not sid:
             continue
-        t = con.execute("SELECT text FROM setu_text WHERE rid = ? AND side = ?",
+        t = con.execute("SELECT text, updated_by FROM setu_text WHERE rid = ? AND side = ?",
                         (rid, side)).fetchone()
-        if t is None:
+        if t is None or str(t[1] or "").startswith(MODEL_PREFIX):
             continue
         src = con.execute("SELECT source_text FROM setu_segment WHERE sid = ?",
                           (sid,)).fetchone()
@@ -404,11 +411,16 @@ def _move_text(con, from_rid: str, side: str, to_rid: str, *, actor: str,
     programming mistake that would overwrite a correction fails loudly and
     rolls the whole operation back, instead of losing somebody's text.
     """
-    got = con.execute("SELECT text FROM setu_text WHERE rid = ? AND side = ?",
+    got = con.execute("SELECT text, updated_by FROM setu_text WHERE rid = ? AND side = ?",
                       (from_rid, side)).fetchone()
     if not got:
         return False
     text, now = got[0], time.time()
+    # Moving a passage is not writing it. A correction the alignment model made
+    # stays credited to the model when a person re-pairs the passage — or it
+    # would turn into "corrected by hand" without anybody having read it. The
+    # history still records who moved it.
+    author = got[1] if str(got[1] or "").startswith(MODEL_PREFIX) else actor
     out_rev = _next_rev(con, from_rid, side)
     con.execute("INSERT INTO setu_rev(rid, side, rev, text, actor, session, reason, ts)"
                 " VALUES(?,?,?,?,?,?,?,?)",
@@ -417,7 +429,7 @@ def _move_text(con, from_rid: str, side: str, to_rid: str, *, actor: str,
     con.execute("DELETE FROM setu_text WHERE rid = ? AND side = ?", (from_rid, side))
     in_rev = _next_rev(con, to_rid, side)
     con.execute("INSERT INTO setu_text(rid, side, text, rev, updated_at, updated_by)"
-                " VALUES(?,?,?,?,?,?)", (to_rid, side, text, in_rev, now, actor[:120]))
+                " VALUES(?,?,?,?,?,?)", (to_rid, side, text, in_rev, now, author[:120]))
     con.execute("INSERT INTO setu_rev(rid, side, rev, text, actor, session, reason, ts)"
                 " VALUES(?,?,?,?,?,?,?,?)",
                 (to_rid, side, in_rev, text, actor[:120], session[:64],
@@ -831,6 +843,7 @@ def resync_edited_flags(con) -> int:
     differs = (
         "EXISTS (SELECT 1 FROM setu_text t JOIN setu_segment s ON s.sid = setu_row.{c}"
         " WHERE t.rid = setu_row.rid AND t.side = '{side}'"
+        f" AND COALESCE(t.updated_by, '') NOT LIKE '{MODEL_PREFIX}%'"
         f" AND rtrim(t.text, {trail}) <> rtrim(COALESCE(s.source_text, ''), {trail}))")
     want = (f"({differs.format(c='src_sid', side='src')}"
             f" OR {differs.format(c='tgt_sid', side='tgt')})")
