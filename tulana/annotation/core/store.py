@@ -40,7 +40,7 @@ log = logging.getLogger("setu.store")
 HERE = Path(__file__).parent.resolve()
 SCHEMA_PATH = HERE / "schema.sql"
 
-SCHEMA_VERSION = 3
+SCHEMA_VERSION = 4
 
 #: How long a connection waits for a writer to finish before giving up. The
 #: worst honest case measured on this corpus is a project build, which holds
@@ -153,6 +153,9 @@ def _migrate(con: sqlite3.Connection) -> None:
         # the column is already declared, which it will be on a fresh install.
         _add_column(con, "setu_row", "reviewed_by", "TEXT DEFAULT ''")
         _add_column(con, "setu_row", "reviewed_at", "REAL")
+    # 4: setu_hint, for pairs imported from the aligned test set. Created by
+    # schema.sql's CREATE TABLE IF NOT EXISTS on every connection, so there is
+    # nothing to do here beyond recording the version.
 
     con.execute("INSERT INTO setu_meta(key, value) VALUES('schema_version', ?)"
                 " ON CONFLICT(key) DO UPDATE SET value=excluded.value",
