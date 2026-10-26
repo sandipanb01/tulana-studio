@@ -507,3 +507,32 @@ body.side-away #sideToggle {
          background: var(--bg); }
 .cfacts { display: flex; gap: 8px; justify-content: flex-end; }
 @media (max-width: 700px) { .cfcols { grid-template-columns: 1fr; } }
+
+/* ── the aligned test set ──────────────────────────────────────────────────
+ * The model's work is shown in indigo, a person's in blue: one glance says
+ * who changed a passage. Notes from the model are grey — information, not an
+ * alarm — except a page the model could not align, which needs a person. */
+:root { --model: #4338ca; }
+#gAligned { border: 1px solid rgba(67, 56, 202, .22); border-radius: 8px;
+            padding: 10px 11px; background: rgba(67, 56, 202, .04); }
+#gAligned h3 { color: var(--model); }
+#gAligned select { width: 100%; }
+.tmodel { background: rgba(67, 56, 202, .11); color: var(--model); border-radius: 999px; padding: 0 7px; }
+.thint { border: 1px solid var(--rule); border-radius: 999px; padding: 0 6px; }
+.tflag { background: rgba(100, 116, 139, .14); color: #334155; border-radius: 999px;
+         padding: 0 7px; cursor: help; }
+.twarn { background: rgba(180, 35, 24, .09); color: var(--warn); border-radius: 999px;
+         padding: 0 7px; font-weight: 600; }
+.badge.model { background: rgba(67, 56, 202, .11); color: var(--model); font-weight: 600; }
+
+/* The model's notes on whatever is selected, between the texts and the answers. */
+.hintbox { margin: 8px 0 2px; padding: 8px 12px; border-radius: 8px;
+           border: 1px solid rgba(67, 56, 202, .22); background: rgba(67, 56, 202, .04);
+           font-size: 12.5px; line-height: 1.5; max-height: 190px; overflow: auto; }
+.hintbox > b { color: var(--model); display: block; margin-bottom: 2px; }
+.hintbox ul { margin: 0; padding-left: 18px; }
+.hintbox li { margin: 2px 0; }
+.hintbox li.hmodel { color: var(--model); }
+.hintbox li.hwarn { color: var(--warn); font-weight: 600; }
+.hintbox li.hflag { font-family: var(--indic); }
+.hintbox .muted { font-size: 11.5px; }
