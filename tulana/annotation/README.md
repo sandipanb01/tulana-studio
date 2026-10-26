@@ -44,6 +44,7 @@ anything here.
 | `core/search.py` | FTS5 with a `LIKE` fallback |
 | `core/exporters.py` | the format registry |
 | `core/sources.py` | the bridge to Tulana's PDF cropping, for source verification |
+| `core/aligned.py` | importing `aligned-docMT-test/` — a model's pairs, for people to check |
 | `ui/app.py` | Gradio layout and event wiring — no annotation logic |
 | `ui/workspace.py` | every annotation callback |
 | `ui/session.py` | the per-session dictionary |
@@ -84,6 +85,15 @@ python3 test_annotation.py
 123 tests, each with its own database, about 75 seconds. The alignment-accuracy
 test measures against the real corpus when it is present and skips itself when
 it is not.
+
+```bash
+python3 test_aligned.py
+```
+
+The aligned test set: provenance (the OCR stays the source, the model's text is
+revision 1 and never counts as a person's), re-import, the rebuild guard, the
+two-language books, hostile files — and the real pairs against the dataset's own
+counts when the folder is present.
 
 Browser behaviour — synchronised scrolling, keyboard shortcuts, zoom, session
 isolation, the conflict panel — is not in that suite. It was verified with
