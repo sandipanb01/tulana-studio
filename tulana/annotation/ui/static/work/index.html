@@ -9,7 +9,7 @@
      a shared link carries सेतु in the browser tab rather than the host's mark. -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='25' font-size='24'>से</text></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e7a72'/><text y='25' x='2' font-size='23' fill='white'>से</text></svg>">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 
@@ -60,6 +60,16 @@
       </div>
       <button id="open" class="btn primary wide">Open side by side</button>
       <p id="corpus" class="tiny muted"></p>
+    </div>
+
+    <!-- The aligned test set: pairs a model has already matched (and lightly
+         corrected) for people to check. Shown only once it has been loaded. -->
+    <div class="grp" id="gAligned" hidden>
+      <h3>Aligned test set — check the model's pairs</h3>
+      <select id="aligned"></select>
+      <button id="alignedGo" class="btn wide">Open this pair</button>
+      <p id="alignedNote" class="tiny muted"></p>
+      <button id="alignedLoad" class="btn ghost wide tiny" hidden></button>
     </div>
 
     <div class="grp" id="gChapter" hidden>
@@ -167,6 +177,7 @@
           <div id="textTgt" class="ttext indic" contenteditable="false" spellcheck="false"></div>
         </div>
       </div>
+      <div class="hintbox" id="hintBox" hidden></div>
       <div class="pairbar" id="pairBar" hidden></div>
       <div class="answerrow" id="answerRow" hidden>
         <span class="tiny">Do these two say the same thing?</span>
@@ -303,6 +314,6 @@
   </div>
 </div>
 
-<script src="app.js?v=7"></script>
+<script src="app.js?v=8"></script>
 </body>
 </html>
