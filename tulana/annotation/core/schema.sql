@@ -227,6 +227,28 @@ CREATE TABLE IF NOT EXISTS setu_event (
 CREATE INDEX IF NOT EXISTS ix_setu_event_ts ON setu_event(ts DESC);
 CREATE INDEX IF NOT EXISTS ix_setu_event_target ON setu_event(target, ts DESC);
 
+-- ── what an alignment model said about each passage ────────────────────────
+--
+-- Filled only for pairs imported from the aligned document-MT test set
+-- (aligned-docMT-test/). One row per segment: whether the model judged the two
+-- sides equivalent or one of them partial, how sure it said it was, why it left
+-- a block unaligned, and the notes it left for a reviewer. Read-only after
+-- import. An annotator's own judgement and note stay in setu_row, untouched.
+CREATE TABLE IF NOT EXISTS setu_hint (
+  sid         TEXT PRIMARY KEY REFERENCES setu_segment(sid) ON DELETE CASCADE,
+  pair_id     TEXT NOT NULL,
+  align_id    TEXT DEFAULT '',
+  relation    TEXT DEFAULT '',          -- equivalent | partial
+  confidence  TEXT DEFAULT '',          -- high | medium | low (the model's own)
+  note        TEXT DEFAULT '',          -- no_counterpart | junk | page_furniture
+  flags       TEXT DEFAULT '[]',        -- JSON list of reviewer notes
+  parts       INTEGER DEFAULT 1,        -- >1 when the unit runs onto more pages
+  pages       TEXT DEFAULT '[]',        -- JSON list of the pages it covers
+  page_status TEXT DEFAULT ''           -- ok | retried_ok | alignment_failed | …
+);
+CREATE INDEX IF NOT EXISTS ix_setu_hint_align ON setu_hint(align_id);
+CREATE INDEX IF NOT EXISTS ix_setu_hint_pair ON setu_hint(pair_id);
+
 -- ── export artifacts ──────────────────────────────────────────────────────
 
 CREATE TABLE IF NOT EXISTS setu_export (
