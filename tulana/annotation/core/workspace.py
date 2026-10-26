@@ -16,6 +16,7 @@ tab" a thing Setu can actually detect rather than guess at.
 """
 from __future__ import annotations
 
+import json
 import logging
 import time
 from typing import Any, Iterable, Sequence
@@ -137,13 +138,21 @@ class WorkspaceRepo(Repository):
                        ts.source_text AS tgt_source, ts.page AS tgt_pg,
                        ts.kind AS tgt_kind, ts.has_math AS tgt_math,
                        ts.has_table AS tgt_table, ts.item_no AS tgt_item,
-                       st.text AS src_edit, st.rev AS src_rev,
-                       tt.text AS tgt_edit, tt.rev AS tgt_rev
+                       st.text AS src_edit, st.rev AS src_rev, st.updated_by AS src_edit_by,
+                       tt.text AS tgt_edit, tt.rev AS tgt_rev, tt.updated_by AS tgt_edit_by,
+                       hs.relation AS src_h_rel, hs.confidence AS src_h_conf,
+                       hs.note AS src_h_note, hs.flags AS src_h_flags, hs.parts AS src_h_parts,
+                       hs.pages AS src_h_pages, hs.page_status AS src_h_status,
+                       ht.relation AS tgt_h_rel, ht.confidence AS tgt_h_conf,
+                       ht.note AS tgt_h_note, ht.flags AS tgt_h_flags, ht.parts AS tgt_h_parts,
+                       ht.pages AS tgt_h_pages, ht.page_status AS tgt_h_status
                   FROM setu_row r
                   LEFT JOIN setu_segment ss ON ss.sid = r.src_sid
                   LEFT JOIN setu_segment ts ON ts.sid = r.tgt_sid
                   LEFT JOIN setu_text st ON st.rid = r.rid AND st.side = 'src'
                   LEFT JOIN setu_text tt ON tt.rid = r.rid AND tt.side = 'tgt'
+                  LEFT JOIN setu_hint hs ON hs.sid = r.src_sid
+                  LEFT JOIN setu_hint ht ON ht.sid = r.tgt_sid
                  WHERE {clause} ORDER BY {sort} LIMIT ? OFFSET ?""",
             args + [lim, off])
         return {"total": total, "limit": lim, "offset": off,
@@ -162,20 +171,29 @@ class WorkspaceRepo(Repository):
                       ts.has_table AS tgt_table, ts.item_no AS tgt_item,
                       ts.block_ids AS tgt_blocks, ts.fx0 AS tgt_fx0, ts.fy0 AS tgt_fy0,
                       ts.fx1 AS tgt_fx1, ts.fy1 AS tgt_fy1,
-                      st.text AS src_edit, st.rev AS src_rev,
-                      tt.text AS tgt_edit, tt.rev AS tgt_rev
+                      st.text AS src_edit, st.rev AS src_rev, st.updated_by AS src_edit_by,
+                      tt.text AS tgt_edit, tt.rev AS tgt_rev, tt.updated_by AS tgt_edit_by,
+                      hs.relation AS src_h_rel, hs.confidence AS src_h_conf,
+                      hs.note AS src_h_note, hs.flags AS src_h_flags, hs.parts AS src_h_parts,
+                      hs.pages AS src_h_pages, hs.page_status AS src_h_status,
+                      ht.relation AS tgt_h_rel, ht.confidence AS tgt_h_conf,
+                      ht.note AS tgt_h_note, ht.flags AS tgt_h_flags, ht.parts AS tgt_h_parts,
+                      ht.pages AS tgt_h_pages, ht.page_status AS tgt_h_status
                  FROM setu_row r
                  LEFT JOIN setu_segment ss ON ss.sid = r.src_sid
                  LEFT JOIN setu_segment ts ON ts.sid = r.tgt_sid
                  LEFT JOIN setu_text st ON st.rid = r.rid AND st.side = 'src'
                  LEFT JOIN setu_text tt ON tt.rid = r.rid AND tt.side = 'tgt'
+                 LEFT JOIN setu_hint hs ON hs.sid = r.src_sid
+                 LEFT JOIN setu_hint ht ON ht.sid = r.tgt_sid
                 WHERE r.rid = ?""", (rid,))
         if not row:
             raise NotFound(f"no such row: {rid}")
         return view(row, full=True)
 
     def neighbour(self, pid: str, seq: int, direction: int, status: str = "",
-                  chapter_no: str = "", kind: str = "") -> dict | None:
+                  chapter_no: str = "", kind: str = "",
+                  paired: bool = False) -> dict | None:
         """The next or previous row under the current filters.
 
         Index-backed: ``WHERE seq > ? ORDER BY seq LIMIT 1`` walks one row, not
@@ -186,6 +204,8 @@ class WorkspaceRepo(Repository):
         op, order = (">", "ASC") if direction >= 0 else ("<", "DESC")
         args: list[Any] = [pid, int(seq)]
         extra = self._filter_sql(status, chapter_no, kind, args)
+        if paired:                       # only rows with a passage on both sides
+            extra += " AND src_sid IS NOT NULL AND tgt_sid IS NOT NULL"
         return self.one(
             f"SELECT rid, seq FROM setu_row WHERE pid = ? AND seq {op} ?{extra}"
             f" ORDER BY seq {order} LIMIT 1", args)
@@ -353,19 +373,39 @@ def view(r: dict, full: bool = False) -> dict:
     def side(prefix: str) -> dict:
         source = r.get(f"{prefix}_source")
         edit = r.get(f"{prefix}_edit")
+        differs = edit is not None and edit != (source or "")
+        by_model = str(r.get(f"{prefix}_edit_by") or "").startswith("model:")
         out = {
             "sid": r.get(f"{prefix}_sid"),
             "present": r.get(f"{prefix}_sid") is not None,
             "source": source or "",
             "text": edit if edit is not None else (source or ""),
             "rev": int(r.get(f"{prefix}_rev") or 0),
-            "edited": edit is not None and edit != (source or ""),
+            "edited": differs and not by_model,
+            "model_edited": differs and by_model,
             "page": r.get(f"{prefix}_pg"),
             "kind": r.get(f"{prefix}_kind") or "",
             "item_no": r.get(f"{prefix}_item") or "",
             "has_math": bool(r.get(f"{prefix}_math")),
             "has_table": bool(r.get(f"{prefix}_table")),
         }
+        if any(r.get(f"{prefix}_h_{k}") for k in ("rel", "conf", "note", "status")) or \
+                r.get(f"{prefix}_h_flags") not in (None, "", "[]"):
+            def listed(key: str) -> list:
+                try:
+                    v = json.loads(r.get(key) or "[]")
+                except (TypeError, ValueError):
+                    v = []
+                return v if isinstance(v, list) else []
+            out["hint"] = {"relation": r.get(f"{prefix}_h_rel") or "",
+                           "confidence": r.get(f"{prefix}_h_conf") or "",
+                           "note": r.get(f"{prefix}_h_note") or "",
+                           "flags": [str(f) for f in listed(f"{prefix}_h_flags")],
+                           "parts": int(r.get(f"{prefix}_h_parts") or 1),
+                           # printed page numbers, as everywhere else on screen
+                           "pages": [p + 1 for p in listed(f"{prefix}_h_pages")
+                                     if isinstance(p, int)],
+                           "page_status": r.get(f"{prefix}_h_status") or ""}
         if full:
             out["box"] = {k: r.get(f"{prefix}_f{k}") for k in ("x0", "y0", "x1", "y1")}
             out["block_ids"] = r.get(f"{prefix}_blocks") or "[]"
@@ -400,6 +440,7 @@ def create_project(con, *, src_book: str, tgt_book: str, name: str = "",
         raise Invalid("the two sides must be different books")
     src = corpus.book(src_book)
     tgt = corpus.book(tgt_book)
+    _refuse_mixed_aligned(src, tgt)
 
     pid = ids.project_id(name or f"{src['book']}~{tgt['book']}", src_book, tgt_book)
     repo = WorkspaceRepo(con)
@@ -407,6 +448,12 @@ def create_project(con, *, src_book: str, tgt_book: str, name: str = "",
                         (src_book, tgt_book))
     if existing:
         return repo.project(existing["pid"])
+    if _aligned_mark(src) and build:
+        # An aligned pair's rows are the model's units, written by the importer.
+        # Laying Setu's own heuristic alignment over its books would replace the
+        # very thing it exists to check.
+        raise Invalid("this pair belongs to the aligned test set and is opened from "
+                      "the “Aligned test set” list; restart Setu to import it again")
 
     label = name.strip() or (
         f"{src.get('board_name') or src.get('board') or ''} "
@@ -441,6 +488,13 @@ def build_rows(con, pid: str, *, include_noise: bool = False,
     proj = repo.one("SELECT * FROM setu_project WHERE pid = ?", (pid,))
     if not proj:
         raise NotFound(f"no such project: {pid}")
+    if _aligned_mark(CorpusRepo(con).book(proj["src_book"])):
+        # Never, with or without force: the rows ARE the alignment model's
+        # pairs, and rebuilding would delete them (and the model's corrections
+        # with them) to put Setu's guesses in their place.
+        raise Invalid("this pair comes from the aligned test set — its pairs are the "
+                      "alignment model's and are never rebuilt. Fix single pairs with "
+                      "Pair and Unpair instead.")
 
     touched = repo.scalar(
         "SELECT COUNT(*) FROM setu_row WHERE pid = ? AND (status <> ? OR edited = 1)",
@@ -507,6 +561,27 @@ def build_rows(con, pid: str, *, include_noise: bool = False,
     repo.event("project.build", pid, report, actor=annotator)
     log.info("project %s: %s rows (%s anchored)", pid, len(batch), report["anchored"])
     return report
+
+
+def _aligned_mark(book: dict) -> str:
+    """'aligned:<pair_id>:<side>' for a book of the aligned test set, else ''."""
+    key = str((book or {}).get("dedup_key") or "")
+    return key if key.startswith("aligned:") else ""
+
+
+def _refuse_mixed_aligned(src: dict, tgt: dict) -> None:
+    """An aligned edition is only ever opened beside its own partner.
+
+    Each aligned book is one side of one model-aligned pair; beside any other
+    book it is a duplicate of a raw edition with the model's merges in it, and
+    a project made from that mixture would mean nothing.
+    """
+    a, b = _aligned_mark(src), _aligned_mark(tgt)
+    if not a and not b:
+        return
+    if not (a and b) or a.rsplit(":", 1)[0] != b.rsplit(":", 1)[0]:
+        raise Invalid("a book from the aligned test set can only be opened beside "
+                      "its own partner — choose the pair from the “Aligned test set” list")
 
 
 def _annotatable_kinds() -> list[str]:
