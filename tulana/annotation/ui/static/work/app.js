@@ -330,12 +330,14 @@ function applySaved(rid, side, text, rev) {
       if (b.rid !== rid || s !== side) continue;
       b.text = text; b.rev = rev;
       b.edited = !sameText(text, b.source_text || "");
+      b.model_edited = false;              // a person has saved it: theirs now
     }
   }
   const cached = ROWCACHE.get(rid);
   if (cached && cached[side]) {
     cached[side].text = text; cached[side].rev = rev;
     cached[side].edited = !sameText(text, cached[side].source || "");
+    cached[side].model_edited = false;
   }
   document.querySelectorAll(`[data-edit-rid="${CSS.escape(rid)}"][data-edit-side="${side}"]`)
     .forEach(el => {
@@ -346,6 +348,8 @@ function applySaved(rid, side, text, rev) {
         const meta = row.querySelector(".tmeta");
         const tag = meta && meta.querySelector(".tedit");
         const edited = !sameText(text, (S(side).blocks.find(b => b.rid === rid) || {}).source_text || "");
+        const byModel = meta && meta.querySelector(".tmodel");
+        if (byModel) byModel.remove();
         if (meta && edited && !tag) {
           const t = document.createElement("span"); t.className = "tedit"; t.textContent = "corrected";
           meta.appendChild(t);
@@ -524,7 +528,7 @@ async function openBooks(want) {
   if (!src || !tgt) return toast("Choose a book on each side first.", true);
   if (src === tgt) return toast("The two sides must be different books.", true);
 
-  const btn = want ? $("#resumeGo") : $("#open");
+  const btn = (want && want.btn) || (want ? $("#resumeGo") : $("#open"));
   const said = btn.textContent;
   btn.disabled = true;
   btn.textContent = "Opening…";
@@ -595,7 +599,7 @@ function fillChapters(s) {
 
 /* ── one page of one book ──────────────────────────────────────────────── */
 
-async function openPage(s) {
+async function openPage(s, hop = true) {
   const st = S(s);
   if (!st.book) return;
   const noise = $("#noise").checked ? "&noise=1" : "";
@@ -612,6 +616,20 @@ async function openPage(s) {
   st.lo = data.first_page; st.hi = data.last_page;
   st.title = data.book.title || data.book.book;
   st.language = data.book.language || "";
+  st.aligned = !!data.book.aligned;
+  st.prevPage = data.prev_page; st.nextPage = data.next_page;
+
+  // One side of the two-language Andhra Pradesh book has text on every other
+  // page only — the pages between belong to the other language. Landing on
+  // one of those (by typing its number, say) moves on to the nearest page
+  // that has this side's text, once, rather than showing an empty column.
+  if (hop && st.aligned && !st.blocks.length) {
+    const to = data.next_page != null ? data.next_page : data.prev_page;
+    if (to != null && to !== st.page) {
+      st.page = to;
+      return openPage(s, false);
+    }
+  }
 
   // The selection deliberately survives a page turn: a passage that fits one
   // English page often runs onto the next in the other language, and clearing
@@ -722,7 +740,9 @@ function renderText(s) {
       ` style="--c:${W.colors[b.kind || "other"] || "#666"}">` +
       `<div class="tmeta"><span class="tkind">${esc(kindName(b.kind))}</span>` +
       `<span>page ${b.display_page}</span>` + partner +
-      ((b.edited || drafted) ? `<span class="tedit">corrected</span>` : "") +
+      ((b.edited || drafted) ? `<span class="tedit">corrected</span>`
+        : b.model_edited ? `<span class="tmodel" title="The alignment model changed what the parser read. Check it — “Put back what the parser read” undoes it.">corrected by the model</span>` : "") +
+      hintTags(b) +
       (b.rid && b.status && b.status !== "pending"
         ? `<span class="tdone">${esc(statusLabel(b.status))}</span>` : "") +
       `</div><div class="tbody"` +
@@ -1008,6 +1028,7 @@ function sideOfRow(row, s) {
   return {
     sid: row[s].sid, rid: row.rid, row_seq: row.seq, text: row[s].text,
     source_text: row[s].source, rev: row[s].rev, edited: row[s].edited,
+    model_edited: !!row[s].model_edited, hint: row[s].hint || null,
     kind: row[s].kind, page: row[s].page,
     display_page: row[s].page == null ? null : row[s].page + 1,
     status: row.status, note: row.note, paired: !!(row.src.present && row.tgt.present),
@@ -1058,6 +1079,7 @@ async function refreshSelection() {
       orig.hidden = true;
       el.contentEditable = "false";
       lbl.textContent = langName(s);
+      lbl.title = "";
       if (sel.kind === "one" && sel.rid) {
         el.classList.add("nopartner");
         el.innerText = `No ${sideLang(s)} passage is paired with this one.\n\n`
@@ -1070,15 +1092,21 @@ async function refreshSelection() {
 
     el.innerText = textOf(b, s);
     const where = b.display_page != null ? `page ${b.display_page}` : "";
+    const byHand = b.edited || draftFor(b.rid, s);
     lbl.textContent = [langName(s), where, kindName(b.kind),
       b.rid ? `pair #${b.row_seq}` : "not in any pair",
-      (b.edited || draftFor(b.rid, s)) ? "corrected by hand" : "as the parser read it"]
+      byHand ? "corrected by hand"
+        : b.model_edited ? "corrected by the model — check it" : "as the parser read it"]
       .filter(Boolean).join(" · ");
-    orig.hidden = !(editable && b.rid && (b.edited || draftFor(b.rid, s)));
+    lbl.title = !byHand && b.model_edited
+      ? "The alignment model changed the parser's text here. If its change is wrong, "
+        + "fix it, or press “Put back what the parser read”." : "";
+    orig.hidden = !(editable && b.rid && (byHand || b.model_edited));
     el.contentEditable = editable && b.rid ? "true" : "false";
   }
 
   renderPairBar(sel, row);
+  renderHints(show, row);
   renderAnswers(sel, row);
 
   $("#selInfo").textContent =
@@ -1091,6 +1119,100 @@ async function refreshSelection() {
     : sel.rid ? `pair #${(sel.L || sel.R).row_seq}` +
                 (row && row.src.present && row.tgt.present ? "" : ` · nothing on the ${sel.from === "src" ? "right" : "left"} yet`)
     : "This block is not in any pair (headers and page numbers are left out). Select a block on the other side to pair it.";
+}
+
+/* ── what the alignment model said ─────────────────────────────────────────
+ *
+ * The aligned test set comes with the model's own notes: how sure it was,
+ * whether the two only partly match, blocks it found no partner for, pages it
+ * could not align at all, and reviewer flags for things it was not allowed to
+ * change. They are shown beside the text because they are exactly where a
+ * checker should look first — and only as notes: the answer is the person's.
+ */
+const NOTE_SAYS = {
+  no_counterpart: "the model found nothing that matches this in the other book",
+  junk: "the model thinks this is not real text (scanning noise)",
+  page_furniture: "the model thinks this is a page header, footer or number",
+};
+const NOTE_TAG = { no_counterpart: "model: no match", junk: "model: noise",
+                   page_furniture: "model: header/footer" };
+const PAGE_SAYS = {
+  alignment_failed: "the model could not align this page",
+  unparseable: "the model's answer for this page could not be read",
+  not_processed: "the model did not look at this page",
+};
+
+/* "[translation_divergence] [suggested fix not applied: …] words" → parts. */
+function flagParts(f) {
+  let text = String(f || "").trim(), kind = "";
+  const m = text.match(/^\[([a-z_ ]+)\]\s*/i);
+  if (m) { kind = m[1].trim(); text = text.slice(m[0].length); }
+  let fix = "";
+  const n = text.match(/^\[suggested fix not applied:\s*([^\]]*)\]\s*/i);
+  if (n) { fix = n[1].trim(); text = text.slice(n[0].length); }
+  const label = kind === "translation_divergence" ? "Possible translation difference"
+    : kind ? kind.replace(/_/g, " ").replace(/^./, c => c.toUpperCase()) : "Note";
+  return { label, fix, text };
+}
+
+/* The small tags in the text column. */
+function hintTags(b) {
+  const h = b.hint;
+  if (!h) return "";
+  const out = [];
+  if (PAGE_SAYS[h.page_status])
+    out.push(`<span class="twarn" title="${esc(PAGE_SAYS[h.page_status])} — pair its passages by hand">page not aligned by the model</span>`);
+  if (b.paired && h.relation === "partial")
+    out.push(`<span class="thint" title="The model says these two only partly say the same thing">model: partly the same</span>`);
+  if (b.paired && (h.confidence === "low" || h.confidence === "medium"))
+    out.push(`<span class="thint">model: ${esc(h.confidence)} confidence</span>`);
+  if (NOTE_TAG[h.note]) out.push(`<span class="thint" title="${esc(NOTE_SAYS[h.note])}">${esc(NOTE_TAG[h.note])}</span>`);
+  if (h.parts > 1 && (h.pages || []).length > 1)
+    out.push(`<span class="thint" title="One passage that runs over a page break; the model joined its parts">runs onto p${esc(h.pages.slice(1).join(", p"))}</span>`);
+  if ((h.flags || []).length)
+    out.push(`<span class="tflag" title="${esc(h.flags.map(f => { const x = flagParts(f); return x.label + ": " + x.text; }).join("\n\n"))}">⚑ ${h.flags.length === 1 ? "a note" : h.flags.length + " notes"} from the model</span>`);
+  return out.join("");
+}
+
+/* The box under the two texts, for whatever is selected. */
+function renderHints(show, row) {
+  const box = $("#hintBox");
+  if (!box) return;
+  const lines = [], seen = new Set();
+  const add = (html, key) => { if (!seen.has(key || html)) { seen.add(key || html); lines.push(html); } };
+  const two = !!(show.src && show.tgt && show.src.rid && show.src.rid === show.tgt.rid);
+  const h0 = (show.src && show.src.hint) || (show.tgt && show.tgt.hint) || null;
+
+  if (two && row && row.origin === "aligned" && h0) {
+    const how = h0.relation === "partial" ? "only partly the same — one says more than the other"
+                                          : "the same meaning";
+    add(`<li>The alignment model paired these as <b>${esc(how)}</b>` +
+        (h0.confidence ? `, with <b>${esc(h0.confidence)}</b> confidence` : "") +
+        `. That is its guess — your answer is what counts.</li>`, "pair");
+  }
+  for (const s of ["src", "tgt"]) {
+    const b = show[s];
+    if (!b) continue;
+    const h = b.hint || {}, lang = esc(sideLang(s));
+    if (b.model_edited && !b.edited && !draftFor(b.rid, s))
+      add(`<li class="hmodel">The model changed the ${lang} text from what the parser read. ` +
+          `Check its change; “Put back what the parser read” (in Correct it mode) undoes it.</li>`);
+    if (PAGE_SAYS[h.page_status])
+      add(`<li class="hwarn">${lang} page ${esc(b.display_page)}: ${esc(PAGE_SAYS[h.page_status])}, ` +
+          `so passages on it may be unpaired or wrongly paired — pair them by hand.</li>`);
+    if (NOTE_SAYS[h.note]) add(`<li>${lang}: ${esc(NOTE_SAYS[h.note])}.</li>`);
+    if (h.parts > 1 && (h.pages || []).length > 1)
+      add(`<li>The ${lang} passage runs over pages ${esc(h.pages.join(" and "))}; ` +
+          `the model joined the parts into one.</li>`);
+    for (const f of (h.flags || [])) {
+      const x = flagParts(f);
+      add(`<li class="hflag"><b>${esc(x.label)}:</b> ${esc(x.text)}` +
+          (x.fix ? ` <span class="muted">(a fix was suggested but not applied: ${esc(x.fix)})</span>` : "") +
+          `</li>`, "flag:" + x.text);
+    }
+  }
+  box.hidden = !lines.length;
+  box.innerHTML = lines.length ? `<b class="tiny">From the alignment model</b><ul>${lines.join("")}</ul>` : "";
 }
 
 /* The strip between the texts and the answers: "Pair these two", or "Unpair". */
@@ -1121,7 +1243,8 @@ function renderPairBar(sel, row) {
   if ((sel.kind === "pair" || sel.kind === "one") && row && row.src.present && row.tgt.present) {
     bar.innerHTML =
       `<div class="pb-text tiny muted">Paired: ${esc(sideLang("src"))} page ${row.src.page + 1} ↔ ` +
-      `${esc(sideLang("tgt"))} page ${row.tgt.page + 1}${row.origin === "manual" ? " · paired by hand" : ""}.` +
+      `${esc(sideLang("tgt"))} page ${row.tgt.page + 1}${row.origin === "manual" ? " · paired by hand"
+        : row.origin === "aligned" ? " · paired by the alignment model" : ""}.` +
       ` If these are not translations of each other, unpair them.</div>` +
       `<button class="btn ghost" id="doUnpair">Unpair</button>`;
     bar.hidden = false;
@@ -1331,6 +1454,11 @@ document.addEventListener("blur", ev => {
   const el = ev.target.closest && ev.target.closest('[contenteditable="true"][data-edit-rid]');
   if (!el || !el.dataset.editRid) return;
   const rid = el.dataset.editRid, s = el.dataset.editSide, key = dkey(rid, s);
+  // The panel's label ("corrected by hand", "corrected by the model") is not
+  // redrawn while its box has the cursor, so a save that landed mid-typing
+  // left it stale. Once the cursor has gone, it catches up.
+  if (el.id === "textSrc" || el.id === "textTgt")
+    setTimeout(() => { if (document.activeElement !== el) refreshSelection(); }, 0);
   const d = DRAFTS.get(key);
   if (!d) return;
   if (isBlank(d.text)) {
@@ -1411,15 +1539,26 @@ function renderOffset() {
   $("#offset").textContent = text;
 }
 
+/* The page one step away. In an aligned book a step goes to the next page
+ * that holds this side's text, so the two-language book (text on every other
+ * page) turns as naturally as any other; everywhere else it is plain ±1. */
+function stepFrom(st, delta) {
+  if (st.aligned && Math.abs(delta) === 1) {
+    const to = delta > 0 ? st.nextPage : st.prevPage;
+    return to == null ? st.page : clamp(to, st.lo, st.hi);
+  }
+  return clamp(st.page + delta, st.lo, st.hi);
+}
+
 async function turn(s, delta) {
   const st = S(s);
   const before = st.page;
-  st.page = clamp(st.page + delta, st.lo, st.hi);
+  st.page = stepFrom(st, delta);
   if (st.page === before) { toast(delta < 0 ? "Already the first page." : "Already the last page."); return; }
   const jobs = [openPage(s)];
   if (W.lock) {
     const o = S(other(s));
-    o.page = clamp(o.page + delta, o.lo, o.hi);
+    o.page = stepFrom(o, delta);
     jobs.push(openPage(other(s)));
   }
   await Promise.all(jobs);
@@ -1445,7 +1584,7 @@ async function goTo(s, displayPage) {
 }
 
 async function turnBoth(delta) {
-  for (const s of ["src", "tgt"]) S(s).page = clamp(S(s).page + delta, S(s).lo, S(s).hi);
+  for (const s of ["src", "tgt"]) S(s).page = stepFrom(S(s), delta);
   await Promise.all([openPage("src"), openPage("tgt")]);
   refreshSelection();
   rememberPlace();
@@ -1585,15 +1724,19 @@ document.addEventListener("keyup", e => {
   if (e.key === "Control") document.body.classList.remove("hidelabels");
 });
 
-/* POTATO's jump-to-next-unannotated, over this page then onward. */
-async function nextUnanswered() {
+/* POTATO's jump-to-next-unannotated, over this page then onward.
+ * `pairedOnly` skips rows with a passage on one side only — used when an
+ * aligned pair is first opened, so the first thing shown is one of the
+ * model's pairs rather than a cover page with nothing beside it. */
+async function nextUnanswered(pairedOnly = false) {
   if (!W.pid) return;
   await flushAll();
   const sel = selectionState();
   const here = (sel.L || sel.R || {}).row_seq;
   const from = Number.isFinite(here) ? here : -1;
   try {
-    const { row } = await api(`/projects/${encodeURIComponent(W.pid)}/next?seq=${from}&direction=1&status=pending`);
+    const { row } = await api(`/projects/${encodeURIComponent(W.pid)}/next?seq=${from}` +
+                              `&direction=1&status=pending${pairedOnly ? "&paired=1" : ""}`);
     if (!row) { toast("Nothing left unanswered after this point in the book."); return; }
     const full = await fetchRow(row.rid, true);
     if (!full) return;
@@ -1649,7 +1792,9 @@ async function loadWorkbench() {
   } catch { WORKBENCH = []; }                 // a missing list is never fatal
 
   const withWork = WORKBENCH.filter(p => (p.answered || 0) > 0 || p.place?.src_page != null);
-  const show = withWork.length ? withWork : WORKBENCH;
+  // An untouched aligned pair is not something anybody "left off" — those
+  // sixty-odd are in their own list below, and would otherwise bury this one.
+  const show = withWork.length ? withWork : WORKBENCH.filter(p => !p.aligned);
   $("#gResume").hidden = !show.length;
   if (!show.length) return;
 
@@ -1663,8 +1808,9 @@ async function loadWorkbench() {
 
 /* "MH · 10 · English ⇄ Gujarati" fits; the full board name does not. */
 function shortLabel(p) {
-  const bits = [p.board || "", p.class ? `Class ${p.class}` : "",
-                [p.src_language, p.tgt_language].filter(Boolean).join(" ⇄ ")];
+  const bits = [p.board || "", p.class ? `Class ${p.class}` : "", p.aligned ? p.part : "",
+                [p.src_language, p.tgt_language].filter(Boolean).join(" ⇄ "),
+                p.aligned ? "aligned set" : ""];
   return bits.filter(Boolean).join(" · ") || p.name || p.pid;
 }
 
@@ -1699,6 +1845,105 @@ $("#resumeGo").onclick = async () => {
   const at = (p.place && p.place.src_page != null)
     ? ` You were on page ${shown(S("src").page)}.` : "";
   toast(`Back in ${p.label || p.name}. ${p.where}.${at}`);
+};
+
+/* ── the aligned test set ──────────────────────────────────────────────────
+ *
+ * Sixty-two book pairs that an alignment model has already matched, passage
+ * by passage. Each one opens like any two books — same columns, same answers,
+ * same autosave — except that the pairs are already made and the model's
+ * notes are shown beside them. The job is to check, not to build.
+ */
+let ALIGNED = [];
+
+async function loadAligned() {
+  let data;
+  try { data = await api("/aligned"); }
+  catch { $("#gAligned").hidden = true; return; }   // a missing list is never fatal
+  ALIGNED = data.pairs || [];
+  const waiting = ((data.status || {}).waiting || []).length;
+  $("#gAligned").hidden = !ALIGNED.length && !waiting;
+  const load = $("#alignedLoad");
+  load.hidden = !waiting;
+  load.textContent = `Load ${waiting} pair${waiting === 1 ? "" : "s"} from the folder (about a minute)`;
+  if (!ALIGNED.length) {
+    $("#aligned").innerHTML = `<option value="">Not loaded yet</option>`;
+    $("#aligned").disabled = $("#alignedGo").disabled = true;
+    $("#alignedNote").textContent = "The aligned test set is on this machine but has not been "
+      + "loaded. Press the button below — it is done once.";
+    return;
+  }
+  $("#aligned").disabled = $("#alignedGo").disabled = false;
+  const keep = $("#aligned").value;
+  // Grouped by board, because that is how anybody would look for one.
+  const groups = new Map();
+  for (const p of ALIGNED) {
+    const g = p.board_name || p.board || "Other";
+    if (!groups.has(g)) groups.set(g, []);
+    groups.get(g).push(p);
+  }
+  $("#aligned").innerHTML = [...groups].map(([g, ps]) =>
+    `<optgroup label="${esc(g)}">` + ps.map(p =>
+      `<option value="${esc(p.pid)}" title="${esc(p.name || p.pair_id)}">` +
+      `${esc(alignedLabel(p))}</option>`).join("") + `</optgroup>`).join("");
+  if (keep && ALIGNED.some(p => p.pid === keep)) $("#aligned").value = keep;
+  describeAligned();
+}
+
+/* The board is the group heading, and every pair has English on the left,
+ * so an option names only what tells it apart: "Class 10 · Part 1 · Marathi".
+ * The sidebar is narrow; the full name is in the option's title. */
+function alignedLabel(p) {
+  const bits = [p.class ? `Class ${p.class}` : "", p.part,
+                p.src_language === "English" ? p.tgt_language
+                                             : `${p.src_language} ⇄ ${p.tgt_language}`];
+  const done = p.answered || 0;
+  return bits.filter(Boolean).join(" · ") +
+    (done ? ` — ${done.toLocaleString()} checked` : "");
+}
+
+function describeAligned() {
+  const p = ALIGNED.find(x => x.pid === $("#aligned").value);
+  if (!p) { $("#alignedNote").textContent = ""; return; }
+  const units = p.units || 0, done = p.answered || 0, total = p.n_rows || 0;
+  const bits = [`${units.toLocaleString()} passages paired by the model`];
+  if (total > units) bits.push(`${(total - units).toLocaleString()} left on their own`);
+  if (p.flagged) bits.push(`${p.flagged.toLocaleString()} with a note from the model`);
+  bits.push(done ? `${done.toLocaleString()} of ${total.toLocaleString()} checked` : "none checked yet");
+  $("#alignedNote").textContent = bits.join(" · ") + ` · ${p.pair_id}`;
+}
+$("#aligned").onchange = describeAligned;
+
+$("#alignedGo").onclick = async () => {
+  const p = ALIGNED.find(x => x.pid === $("#aligned").value);
+  if (!p) return;
+  // Back where this person was in it, if they have been in it before.
+  const mine = WORKBENCH.find(x => x.pid === p.pid);
+  const place = mine && mine.place && mine.place.src_page != null ? mine.place : null;
+  const ok = await openBooks({ src: p.src_book, tgt: p.tgt_book, place, btn: $("#alignedGo") });
+  if (!ok) return;
+  if (place) {
+    toast(`Back in ${p.pair_id}, on page ${shown(S("src").page)}.`);
+  } else {
+    // First time in: straight to the first of the model's pairs nobody has checked.
+    await nextUnanswered(true);
+    toast("Each pair was made by the alignment model. Check it, answer it, press n for the next.");
+  }
+};
+
+$("#alignedLoad").onclick = async () => {
+  const b = $("#alignedLoad"), said = b.textContent;
+  b.disabled = true; b.textContent = "Loading… this takes about a minute";
+  try {
+    const rep = await api("/aligned/import", { method: "POST",
+                                               body: JSON.stringify({ annotator: who() }) });
+    const bad = (rep.errors || []).length;
+    toast(`Loaded ${rep.imported || 0} pair${rep.imported === 1 ? "" : "s"}` +
+          (bad ? ` — ${bad} could not be read (see the console where Setu runs)` : "") + ".", !!bad);
+    await loadAligned();
+    loadWorkbench();
+  } catch (e) { toast(e.message, true); }
+  finally { b.disabled = false; b.textContent = said; }
 };
 
 /* The view is restored only if it is one of the two that exist — a stored
@@ -1825,6 +2070,10 @@ async function loadSaved(offset) {
 }
 
 function projectLabel(p) {
+  // An aligned pair is named in full: there can be several for one board,
+  // class and language (Part 1, Part 2, NCERT chapter files), and each would
+  // otherwise read exactly like the others and like the textbook's own pair.
+  if (p.aligned && p.name) return p.name;
   const bits = [p.board, p.class ? `Class ${p.class}` : "", p.subject,
                 [p.src_language, p.tgt_language].filter(Boolean).join(" ⇄ ")];
   return bits.filter(Boolean).join(" · ") || p.name || p.pid;
@@ -1842,6 +2091,7 @@ function savedCard(r) {
                 `${r.tgt_display != null ? "p" + r.tgt_display : "—"}`;
   const chapter = [r.chapter_no, r.chapter].filter(Boolean).join(" ");
   const corrected = r.src_edited || r.tgt_edited;
+  const byModel = !corrected && (r.src_model_edited || r.tgt_model_edited);
   // A side with no passage says so in words. "nothing on this side" read as
   // though the annotator's text had been lost.
   const body = (side, lang) => {
@@ -1861,6 +2111,7 @@ function savedCard(r) {
       <span class="seq">#${r.seq}</span>
       <span class="badge ${esc(r.status)}">${esc(statusLabel(r.status))}</span>
       ${corrected ? `<span class="badge edited">corrected</span>` : ""}
+      ${byModel ? `<span class="badge model" title="Changed by the alignment model, not yet by a person">corrected by the model</span>` : ""}
       ${!(r.src_present && r.tgt_present) ? `<span class="badge onesided">one side only</span>` : ""}
       ${chapter ? `<span class="muted">${esc(chapter)}</span>` : ""}
       <span class="spacer"></span>
@@ -1870,11 +2121,13 @@ function savedCard(r) {
     ${r.attention ? `<div class="attn-why tiny">⚠ ${esc(r.attention)}</div>` : ""}
     <div class="two">
       <div class="scol">
-        <div class="lang tiny muted">${esc(r.src_language || "left")}${r.src_edited ? " · corrected" : ""}</div>
+        <div class="lang tiny muted">${esc(r.src_language || "left")}${r.src_edited ? " · corrected"
+          : r.src_model_edited ? " · corrected by the model" : ""}</div>
         ${body("src", r.src_language || "left-hand")}
       </div>
       <div class="scol">
-        <div class="lang tiny muted">${esc(r.tgt_language || "right")}${r.tgt_edited ? " · corrected" : ""}</div>
+        <div class="lang tiny muted">${esc(r.tgt_language || "right")}${r.tgt_edited ? " · corrected"
+          : r.tgt_model_edited ? " · corrected by the model" : ""}</div>
         ${body("tgt", r.tgt_language || "right-hand")}
       </div>
     </div>
@@ -2244,6 +2497,7 @@ let savedDirty = false;
   // to reconstruct it from memory. Loaded after the dropdowns, because it is a
   // convenience and must never delay the interface being usable.
   loadWorkbench();
+  loadAligned();
   refreshSelection();
 
   // Anything typed last time that the server never confirmed is sent now.
