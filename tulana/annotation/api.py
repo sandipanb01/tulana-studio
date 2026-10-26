@@ -37,8 +37,8 @@ import config
 import db as legacy_db
 
 from . import __version__
-from .core import (annotate, corpus, exporters, ids, resume, search, sources,
-                   store, workspace)
+from .core import (aligned, annotate, corpus, exporters, ids, resume, search,
+                   sources, store, workspace)
 from .core.models import KINDS, STATUSES, normalise
 from .core.store import Conflict, Invalid, NotFound
 
@@ -104,6 +104,11 @@ def _actor(request: Request, annotator: str = "") -> tuple[str, str]:
     header = (request.headers.get("x-setu-annotator")
               or request.headers.get("x-annotator") or "")
     name = normalise(annotator or header)[:120]
+    # "model:…" marks text an alignment model wrote. A person's name never
+    # carries it, so a correction can never be passed off as the model's —
+    # or the model's as a person's.
+    while name.lower().startswith("model:"):
+        name = name[6:].lstrip()
     sess = normalise(request.headers.get("x-setu-session")
                      or request.headers.get("x-session", ""))[:64]
     return name.strip(), sess.strip()
@@ -306,9 +311,12 @@ def do_search(pid: str, q: str = "", limit: int = 40, offset: int = 0,
 
 @router.get("/projects/{pid}/next")
 @guard
-def next_row(pid: str, seq: int = 0, direction: int = 1, status: str = "") -> dict:
+def next_row(pid: str, seq: int = 0, direction: int = 1, status: str = "",
+             paired: str = "") -> dict:
     with store.ro() as con:
-        found = workspace.WorkspaceRepo(con).neighbour(pid, seq, direction, status)
+        found = workspace.WorkspaceRepo(con).neighbour(
+            pid, seq, direction, status,
+            paired=str(paired).lower() in ("1", "true", "yes"))
     return {"row": found}
 
 
@@ -729,7 +737,7 @@ def page_blocks(book_key: str, page: int, pid: str = "",
     show_noise = str(noise).lower() in ("1", "true", "yes", "all")
     with store.ro() as con:
         book = store.Repository(con).one(
-            "SELECT book_key, book, title, relpath, num_pages, language, script"
+            "SELECT book_key, book, title, relpath, num_pages, language, script, dedup_key"
             "  FROM setu_book WHERE book_key = ?", (book_key,))
         if not book:
             raise NotFound(f"no such textbook: {book_key}")
@@ -750,6 +758,14 @@ def page_blocks(book_key: str, page: int, pid: str = "",
                 break
 
         lo, hi = browse.page_range(con, book_key)
+        # The nearest pages either way that hold any text of this book. One
+        # side of a two-language book (the aligned Andhra Pradesh pair) has
+        # text on every other page only, and turning onto the other
+        # language's page would show an empty column.
+        near = con.execute(
+            "SELECT (SELECT MAX(page) FROM setu_segment WHERE book_key = ? AND page < ?),"
+            "       (SELECT MIN(page) FROM setu_segment WHERE book_key = ? AND page > ?)",
+            (book_key, page, book_key, page)).fetchone()
         # The raster the parser measured against, so a page with no image can
         # still be drawn as a blank of the right proportions.
         shape = store.Repository(con).one(
@@ -760,10 +776,13 @@ def page_blocks(book_key: str, page: int, pid: str = "",
     return {
         "book": {"book_key": book["book_key"], "book": book["book"],
                  "title": book["title"], "language": book["language"],
-                 "script": book["script"], "num_pages": book["num_pages"]},
+                 "script": book["script"], "num_pages": book["num_pages"],
+                 "aligned": str(book.get("dedup_key") or "").startswith(aligned.MARK)},
         "page": page,
         "display_page": page + 1,
         "first_page": lo, "last_page": hi,
+        "prev_page": near[0] if near else None,
+        "next_page": near[1] if near else None,
         "image_available": image.ok,
         "image_message": "" if image.ok else image.message,
         "aspect": 1.414,
@@ -780,6 +799,7 @@ def page_blocks(book_key: str, page: int, pid: str = "",
              "chapter_no": b["chapter_no"], "chapter": b["chapter"],
              "rid": b["rid"], "row_seq": b["row_seq"], "status": b["status"],
              "note": b["note"], "edited": bool(b["edited"]),
+             "model_edited": bool(b.get("model_edited")), "hint": b.get("hint"),
              "paired": bool(b["paired"]), "mate_sid": b["mate_sid"],
              "mate_page": b["mate_page"],
              "mate_display_page": b["mate_display_page"]}
@@ -947,3 +967,31 @@ def saved(pid: str = "", status: str = "", answered: str = "", search_text: str 
         out["tally"] = repo.saved_tally(pid=pid)
         out["projects"] = repo.projects_with_work()
         return out
+
+
+# ── the aligned document-MT test set ───────────────────────────────────────
+#
+# aligned-docMT-test/ — 62 book pairs a model has already aligned and lightly
+# corrected, for people to verify. Imported once (launch_annotation does it at
+# start-up); each pair becomes a project whose rows are the model's units.
+
+
+@router.get("/aligned")
+@guard
+def aligned_pairs() -> dict:
+    """The imported pairs, with progress, and anything on disk not yet imported."""
+    with store.ro() as con:
+        st = aligned.status(con)
+        st.pop("dataset", None)          # a server path; the page has no use for it
+        return {"pairs": aligned.pairs(con), "status": st}
+
+
+@router.post("/aligned/import")
+@guard
+def aligned_import(request: Request) -> dict:
+    """Import whatever is on disk and not imported yet. Never touches a pair
+    that is already in, so it cannot overwrite anybody's work."""
+    actor, _ = _actor(request)
+    report = aligned.import_all(store.tx, actor=f"setu import{' by ' + actor if actor else ''}")
+    report.pop("dataset", None)              # a server path; the page has no use for it
+    return report
