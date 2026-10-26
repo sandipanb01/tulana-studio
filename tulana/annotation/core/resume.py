@@ -126,6 +126,14 @@ def _like(text: str) -> str:
     return f"%{t}%"
 
 
+def _aligned_part(r: dict) -> str:
+    """"Part 1", or an NCERT chapter file's code, for an aligned pair's label."""
+    from .aligned import MARK, part_of
+    key = str(r.get("src_dedup") or "")
+    pair_id = key[len(MARK):].rsplit(":", 1)[0] if key.startswith(MARK) else ""
+    return part_of(pair_id, str(r.get("src_volume") or ""))
+
+
 class ResumeRepo(Repository):
     """Reads that span projects, for an annotator who has none open."""
 
@@ -144,6 +152,7 @@ class ResumeRepo(Repository):
                       p.src_language, p.tgt_language, p.src_book, p.tgt_book,
                       p.n_rows, p.created_at, p.created_by,
                       sb.title AS src_title, sb.book AS src_book_name,
+                      sb.dedup_key AS src_dedup, sb.volume AS src_volume,
                       sb.board_name AS board_name, sb.num_pages AS src_pages,
                       sb.pdf_present AS src_pdf,
                       tb.title AS tgt_title, tb.book AS tgt_book_name,
@@ -172,6 +181,8 @@ class ResumeRepo(Repository):
             r["percent"] = round(done * 100.0 / total, 1) if total else 0.0
             r["remaining"] = max(0, total - done)
             r["place"] = recall_place(self.con, r["pid"], annotator)
+            r["aligned"] = str(r.get("src_dedup") or "").startswith("aligned:")
+            r["part"] = _aligned_part(r) if r["aligned"] else ""
             r["label"] = self._label(r)
             r["where"] = self._where(r)
 
@@ -193,6 +204,10 @@ class ResumeRepo(Repository):
         pair = " ⇄ ".join(x for x in (r.get("src_language"), r.get("tgt_language")) if x)
         if pair:
             bits.append(pair)
+        if str(r.get("src_dedup") or "").startswith("aligned:"):
+            if r.get("part"):
+                bits.insert(min(len(bits), 3), str(r["part"]))
+            bits.append("aligned test set")
         return " · ".join(b for b in bits if b)
 
     @staticmethod
@@ -269,6 +284,7 @@ class ResumeRepo(Repository):
                        r.src_sid, r.tgt_sid,
                        ss.source_text AS src_source, ts.source_text AS tgt_source,
                        st.text AS src_edited, tt.text AS tgt_edited,
+                       st.updated_by AS src_edit_by, tt.updated_by AS tgt_edit_by,
                        {_CONTRADICTION} AS contradiction, {_BLANK} AS blank
                   FROM setu_row r
                   JOIN setu_project p ON p.pid = r.pid
@@ -292,9 +308,12 @@ class ResumeRepo(Repository):
                 r[f"{side}_present"] = present
                 r[f"{side}_text"] = "" if not present else (
                     edit if edit is not None else (source or ""))
-                r[f"{side}_edited"] = bool(present and edit is not None
-                                           and edit.rstrip(" \t\r\n")
-                                           != (source or "").rstrip(" \t\r\n"))
+                differs = bool(present and edit is not None
+                               and edit.rstrip(" \t\r\n")
+                               != (source or "").rstrip(" \t\r\n"))
+                by_model = str(r.pop(f"{side}_edit_by", None) or "").startswith("model:")
+                r[f"{side}_edited"] = differs and not by_model
+                r[f"{side}_model_edited"] = differs and by_model
             r["src_display"] = None if r.get("src_page") is None else int(r["src_page"]) + 1
             r["tgt_display"] = None if r.get("tgt_page") is None else int(r["tgt_page"]) + 1
             r["attention"] = self._why(r)
@@ -342,10 +361,18 @@ class ResumeRepo(Repository):
         Every project, with how many rows have been answered in it, so the
         annotator can tell at a glance which one holds the work they want.
         """
-        return self.all(
+        # Projects somebody has answered in come first: the aligned test set
+        # adds sixty-odd projects at once, and the work a person is looking for
+        # must not be pushed below all of them.
+        rows = self.all(
             """SELECT p.pid, p.name, p.board, p.class, p.subject,
                       p.src_language, p.tgt_language, p.n_rows,
                       (SELECT COUNT(*) FROM setu_row r
-                        WHERE r.pid = p.pid AND r.status <> 'pending') AS answered
+                        WHERE r.pid = p.pid AND r.status <> 'pending') AS answered,
+                      CASE WHEN b.dedup_key LIKE 'aligned:%' THEN 1 ELSE 0 END AS aligned
                  FROM setu_project p
-                ORDER BY p.created_at DESC""")
+                 LEFT JOIN setu_book b ON b.book_key = p.src_book
+                ORDER BY (answered > 0) DESC, p.created_at DESC""")
+        for r in rows:
+            r["aligned"] = bool(r.get("aligned"))
+        return rows
