@@ -427,7 +427,7 @@ def _block(state: gr.State, bs: dict, b: dict, side: str,
         # true rather than aspirational.
         box.blur(browse.save_text, [state, rid_s, side_s, box, rev], [saved])
 
-        if b.get("edited"):
+        if b.get("edited") or b.get("model_edited"):
             undo = gr.Button("Put back what the parser read", size="sm",
                              elem_classes=["setu-secondary"])
             undo.click(browse.restore_original, [state, rid_s, side_s], [saved])
