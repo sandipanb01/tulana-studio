@@ -118,7 +118,10 @@ FIELDS = ("row_id", "seq", "status", "status_label", "origin", "confidence",
           "source_lang", "target_lang", "source_text", "target_text",
           "source_original", "target_original", "source_edited", "target_edited",
           "source_page", "target_page", "source_segment", "target_segment",
-          "board", "class", "subject", "updated_at", "updated_by")
+          "board", "class", "subject", "updated_at", "updated_by",
+          # For pairs from the aligned test set (empty otherwise): the model's
+          # unit id, whether the MODEL changed each side, and its reviewer notes.
+          "unit_id", "source_model_corrected", "target_model_corrected", "model_flags")
 
 
 def records(con, pid: str, *, status: str = "", chapter_no: str = "",
@@ -163,12 +166,17 @@ def records(con, pid: str, *, status: str = "", chapter_no: str = "",
                    r.src_sid, r.tgt_sid, r.src_page, r.tgt_page,
                    r.updated_at, r.updated_by,
                    ss.source_text AS src_source, ts.source_text AS tgt_source,
-                   st.text AS src_edit, tt.text AS tgt_edit
+                   st.text AS src_edit, tt.text AS tgt_edit,
+                   st.updated_by AS src_edit_by, tt.updated_by AS tgt_edit_by,
+                   COALESCE(NULLIF(hs.align_id, ''), ht.align_id, '') AS unit_id,
+                   hs.flags AS src_flags, ht.flags AS tgt_flags
               FROM setu_row r
               LEFT JOIN setu_segment ss ON ss.sid = r.src_sid
               LEFT JOIN setu_segment ts ON ts.sid = r.tgt_sid
               LEFT JOIN setu_text st ON st.rid = r.rid AND st.side = 'src'
               LEFT JOIN setu_text tt ON tt.rid = r.rid AND tt.side = 'tgt'
+              LEFT JOIN setu_hint hs ON hs.sid = r.src_sid
+              LEFT JOIN setu_hint ht ON ht.sid = r.tgt_sid
              WHERE {' AND '.join(where)} ORDER BY r.seq""", args)
 
     for r in cur:
@@ -176,6 +184,14 @@ def records(con, pid: str, *, status: str = "", chapter_no: str = "",
         tgt_source = r["tgt_source"] or ""
         src_text = r["src_edit"] if r["src_edit"] is not None else src_source
         tgt_text = r["tgt_edit"] if r["tgt_edit"] is not None else tgt_source
+        src_model = str(r["src_edit_by"] or "").startswith("model:")
+        tgt_model = str(r["tgt_edit_by"] or "").startswith("model:")
+        flags = []
+        for blob in (r["src_flags"], r["tgt_flags"]):
+            try:
+                flags += [f for f in json.loads(blob or "[]") if isinstance(f, str)]
+            except (TypeError, ValueError):
+                pass
         yield {
             "row_id": r["rid"], "seq": r["seq"], "status": r["status"],
             "status_label": STATUS_BY_KEY[r["status"]].label
@@ -187,13 +203,19 @@ def records(con, pid: str, *, status: str = "", chapter_no: str = "",
             "source_lang": proj["src_language"] or "", "target_lang": proj["tgt_language"] or "",
             "source_text": src_text, "target_text": tgt_text,
             "source_original": src_source, "target_original": tgt_source,
-            "source_edited": src_text != src_source,
-            "target_edited": tgt_text != tgt_source,
+            # "edited" means edited by a PERSON. A model's correction (aligned
+            # test set) is reported in its own column, never passed off as one.
+            "source_edited": src_text != src_source and not src_model,
+            "target_edited": tgt_text != tgt_source and not tgt_model,
             "source_page": r["src_page"], "target_page": r["tgt_page"],
             "source_segment": r["src_sid"] or "", "target_segment": r["tgt_sid"] or "",
             "board": proj["board_name"] or proj["board"] or "",
             "class": proj["cls"], "subject": proj["subj"] or "",
             "updated_at": r["updated_at"], "updated_by": r["updated_by"] or "",
+            "unit_id": r["unit_id"] or "",
+            "source_model_corrected": src_text != src_source and src_model,
+            "target_model_corrected": tgt_text != tgt_source and tgt_model,
+            "model_flags": " | ".join(dict.fromkeys(flags)),   # once each, in order
         }
 
 
