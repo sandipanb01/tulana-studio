@@ -536,3 +536,159 @@ body.side-away #sideToggle {
 .hintbox li.hwarn { color: var(--warn); font-weight: 600; }
 .hintbox li.hflag { font-family: var(--indic); }
 .hintbox .muted { font-size: 11.5px; }
+
+/* ── the aligned set without its scans: a blank page with the model's boxes ──
+ * Same colour on both pages = the two halves of one pair; red dashed = text
+ * the model could not pair; grey = no text, or a page not sent for alignment;
+ * thin dashed inside a box = the OCR blocks merged into it. The legend the
+ * aligner team's viewer uses, kept so the two read the same. */
+.blankpage { background: #fff; box-shadow: var(--shadow); border: 1px solid var(--rule); }
+.blk.ab { border-width: 2px; }
+/* A pair is always a solid line, answered or not (a tick on its label says
+ * which): dashed is kept for what the model could not pair, as in the viewer. */
+.blk.ab.pending, .blk.ab.done { border-style: solid; }
+.blk.ab.notal { border: 2px dashed #d92d20; background: rgba(217, 45, 32, .07); }
+.blk.ab.quiet { border: 1px dashed #98a2b3; background: transparent; }
+.blk.ab.quiet:hover { background: rgba(152, 162, 179, .12); }
+.mbr { position: absolute; border: 1px dashed rgba(102, 112, 133, .7); pointer-events: none; }
+.nal { color: #d92d20; font-weight: 600; }
+#onlyBadWrap { color: #b42318; }
+/* The rest of a passage begun on the page before: one quiet line that selects it. */
+.trow.cont { border-left-style: dashed; padding-top: 4px; padding-bottom: 4px; }
+.trow.cont .tbody { color: var(--muted); font-style: italic; font-size: 12px; }
+
+/* ══ a clear, quiet look — black on white, one accent, big type ══════════
+ *
+ * In the manner of a research lab's pages: white space, strong black
+ * headings, thin rules, and colour kept for what it means (a pair's colour,
+ * red for text the model could not pair, teal for work done). Sized for
+ * someone who reads slowly and has never used the tool: the passages default
+ * to 17px and grow with A+, the buttons are large, the first thing on the
+ * left is the list of books to check.
+ */
+:root {
+  --ink: #111111;
+  --muted: #4a4f57;
+  --rule: #e2e4e8;
+  --bg: #f6f6f4;
+  --txt: 17px;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .06);
+}
+body { font-size: 15px; }
+.bar { height: 58px; flex-basis: 58px; gap: 22px; padding: 0 20px;
+       border-bottom: 2px solid var(--ink); }
+.brand { font-size: 21px; letter-spacing: 0; }
+.brand b { font-weight: 800; }
+.tab { font-size: 15px; font-weight: 600; color: var(--muted); border-radius: 0;
+       padding: 17px 4px 14px; margin: 0 8px; border-bottom: 3px solid transparent; }
+.tab:hover { background: none; color: var(--ink); }
+.tab.on { color: var(--ink); background: none; border-bottom-color: var(--ink); }
+.who { font-size: 15px; padding: 7px 10px; width: 170px; }
+.fs { display: inline-flex; gap: 2px; }
+.fs .ghost { font-weight: 700; font-size: 15px; padding: 4px 9px; border: 1px solid var(--rule);
+             color: var(--ink); background: #fff; }
+.fs .ghost:disabled { opacity: .35; cursor: default; }
+.pill { font-size: 13px; padding: 4px 12px; }
+
+#side { flex-basis: 310px; padding: 18px 16px; }
+.grp { margin-bottom: 22px; }
+.grp h3 { font-size: 12.5px; letter-spacing: .09em; color: var(--ink); font-weight: 800;
+          margin-bottom: 9px; }
+.lead { margin: 0 0 10px; font-size: 14.5px; line-height: 1.45; color: var(--ink); }
+#side select, #side input[type=number] { font-size: 15px; padding: 9px 10px; }
+#aligned { font-size: 15.5px; font-weight: 600; }
+.tiny { font-size: 12.5px; }
+.chk { font-size: 14px; margin: 7px 0; }
+.chk input { width: 18px; height: 18px; }
+.btn { font-size: 15px; padding: 9px 14px; border-radius: 4px; }
+.btn:hover { border-color: var(--ink); }
+.btn.primary { background: var(--ink); border-color: var(--ink); color: #fff; font-weight: 700; }
+.btn.primary:hover { background: #333; filter: none; }
+.btn.big { font-size: 17px; padding: 12px 14px; }
+.segbtn { font-size: 14px; padding: 10px 6px; }
+.segbtn.on { background: var(--ink); }
+.ghost:hover { background: #f0f0ee; color: var(--ink); }
+details.more { border-top: 1px solid var(--rule); padding-top: 12px; }
+details.more > summary { cursor: pointer; font-weight: 700; font-size: 13.5px; color: var(--ink);
+                         list-style: none; margin-bottom: 10px; }
+details.more > summary::-webkit-details-marker { display: none; }
+details.more > summary::before { content: "▸ "; }
+details.more[open] > summary::before { content: "▾ "; }
+
+.phead { font-size: 13px; padding: 8px 14px; }
+.phead b { font-weight: 700; }
+.tbody, .ttext { font-size: var(--txt); line-height: 1.65; }
+.tmeta { font-size: 12px; }
+#selInfo { font-size: 15px; font-weight: 600; }
+.tlabel { font-size: 12.5px; }
+.ans { font-size: 15px; padding: 9px 15px; border-radius: 6px; border-color: #c9ccd2; }
+.ans:hover { border-color: var(--ink); }
+.ans kbd { font-size: 11px; }
+.note { font-size: 15px; padding: 8px 10px; }
+.hintbox { font-size: 14px; }
+.toast { font-size: 15px; }
+
+/* The book's own formatting, drawn while reading (richHTML). */
+.tbody table, .ttext table { border-collapse: collapse; margin: 6px 0; white-space: normal; }
+.tbody td, .tbody th, .ttext td, .ttext th { border: 1px solid #9aa0a8; padding: 3px 9px;
+                                             vertical-align: top; }
+.tbody th, .ttext th { background: #f2f2f0; }
+
+/* Words written inside a box on a page drawn without its scan. The box's
+ * label sits above it, so the box itself is not clipped — the words are. */
+.blk .bx { position: absolute; inset: 1px 2px; overflow: hidden; line-height: 1.2;
+           color: #1f2328; pointer-events: none; word-break: break-word; }
+.blk.ab.quiet .bx { color: #8a9099; }
+.blk.ab.notal .bx { color: #8f1d14; }
+.blk .bx.cont { font-style: italic; color: var(--muted); }
+.blankpage { background: #fff; }
+
+/* ══ blue: one colour for everything you can press or have chosen ════════
+ *
+ * Black type on white and thin rules, as above, with one accent: a deep blue
+ * that stays readable at every size (white on it, and it on white, are both
+ * above 6:1). Every other colour keeps its meaning: a pair's own colour on
+ * the page, red for text the model could not pair, teal for an answer given
+ * and work saved (the manual says "the button turns solid teal"), indigo for
+ * the model's own changes.
+ */
+:root {
+  --accent: #1d4ed8;
+  --accent-ink: #1e3a8a;          /* pressed, hovered */
+  --accent-soft: #eaf1fe;
+  --accent-line: #bcd0fa;
+}
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid rgba(29, 78, 216, .55); outline-offset: 2px; }
+.bar { border-bottom-color: var(--accent); }
+.brand .deva { color: var(--accent); }
+.tab:hover { color: var(--accent); }
+.tab.on { color: var(--accent); border-bottom-color: var(--accent); }
+.pill { background: var(--accent-soft); color: var(--accent); }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.primary:hover { background: var(--accent-ink); border-color: var(--accent-ink); color: #fff; }
+.segbtn.on { background: var(--accent); color: #fff; }
+.ghost:hover { background: var(--accent-soft); color: var(--accent); }
+.fs .ghost:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.ans:hover { border-color: var(--accent); }
+.trow:hover { border-top-color: var(--accent-line); border-right-color: var(--accent-line);
+              border-bottom-color: var(--accent-line); }
+.scard:hover, .fmt:hover { border-color: var(--accent); }
+.fmt code { color: var(--accent); background: var(--accent-soft); }
+.docnav button:hover { background: var(--accent-soft); color: var(--accent); }
+.docnav .dl.on { background: var(--accent-soft); color: var(--accent); }
+.doc blockquote { border-left-color: var(--accent); background: var(--accent-soft); }
+.ttext[contenteditable=true]:focus { outline-color: var(--accent); }
+.tbody[contenteditable="true"]:focus { border-color: var(--accent); }
+#split:hover { background: var(--accent); }
+.crop { border-color: var(--accent); background: rgba(29, 78, 216, .12); }
+.crop .grip { background: var(--accent); }
+.nosc { border-left-color: var(--accent); }
+details.more > summary:hover { color: var(--accent); }
+/* The first thing on the left — the books to check — and the way back to
+ * your own work carry the accent; nothing else in the panel does. */
+#gAligned { border: 2px solid var(--accent-line); background: var(--accent-soft); }
+#gAligned h3 { color: var(--accent); }
+#gResume { background: #fff; border: 1px solid var(--accent-line); }
+#gResume h3 { color: var(--accent); }
