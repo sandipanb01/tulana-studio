@@ -51,7 +51,16 @@ SETU_REQUIRED = {
     "annotation/core/search.py": "search",
     "annotation/core/exporters.py": "the export format registry",
     "annotation/core/sources.py": "source verification via Tulana's cropping",
+    "annotation/core/aligned.py": "the aligned test set (data/aligned_v2) importer",
+    "annotation/core/resume.py": "where each annotator left off, saved work",
     "annotation/ui/__init__.py": "the Gradio interface",
+    "annotation/ui/browse.py": "the two-document model",
+    "annotation/ui/static/work/index.html": "the workspace page",
+    "annotation/ui/static/work/app.js": "the workspace's behaviour",
+    "annotation/ui/static/work/style.css": "the workspace's styles",
+    "annotation/ui/static/work/vendor/katex/katex.min.js": "typeset maths (KaTeX)",
+    "annotation/ui/static/work/vendor/katex/katex.min.css": "typeset maths (KaTeX)",
+    "annotation/ui/static/work/vendor/katex/contrib/auto-render.min.js": "typeset maths (KaTeX)",
     "annotation/ui/app.py": "layout and event wiring",
     "annotation/ui/workspace.py": "the annotation callbacks",
     "annotation/ui/panels.py": "saved work, download, manuals",
@@ -71,7 +80,32 @@ OPTIONAL = {
     "windows_check.py": "cross-platform audit",
     "sources.py": "archive unpacking",
     "test_annotation.py": "123 checks for the annotation subsystem",
+    "test_aligned.py": "the aligned test set: provenance, deliveries, hostile files",
+    "test_mapping.py": "boxes on the printed page: page areas, rotation, the right PDF",
+    "check_mapping.py": "audit every aligned page against its PDF (needs the PDFs)",
+    "aligned_viewer.py": "the aligner team's viewer for data/aligned_v2 (needs gradio)",
 }
+# One version of Setu, not a mix of two. Each file names something only this
+# version has, so a file left over from an earlier upload is caught by name —
+# the failure a hand upload makes, where every file is present and some are old.
+SETU_VERSION = "9 (data/aligned_v2, blue)"
+SETU_MARKERS = [
+    ("annotation/core/store.py", "SCHEMA_VERSION = 6"),
+    ("annotation/core/sources.py", "def page_area"),
+    ("annotation/core/schema.sql", "setu_seg_part"),
+    ("annotation/core/aligned.py", 'LOCATIONS = (("data", "aligned_v2")'),
+    ("annotation/core/workspace.py", "src_h_state"),
+    ("annotation/core/resume.py", "aligned_earlier"),
+    ("annotation/core/exporters.py", "_append_text"),
+    ("annotation/ui/browse.py", "hint_state"),
+    ("annotation/api.py", "attention_next"),
+    ("annotation/ui/static/work/index.html", "style.css?v=11"),
+    ("annotation/ui/static/work/app.js", "function richHTML"),
+    ("annotation/ui/static/work/style.css", "--accent: #1d4ed8"),
+    ("launch_annotation.py", "Setu needs Gradio 6"),
+    ("blocks.py", '"aligned-docMT-test", "aligned_v2"'),
+    ("aligned_viewer.py", "def pair_files_from"),
+]
 for name, what in REQUIRED.items():
     if (HERE / name).exists():
         ok(f"{name} present — {what}")
@@ -88,6 +122,35 @@ else:
     for n in setu_missing:
         bad(f"{n} is MISSING — {SETU_REQUIRED[n]}",
             f"Setu is partly deployed; copy the whole setu/ folder into {HERE}")
+
+if not setu_missing:
+    def _text(rel):
+        try:
+            return (HERE / rel).read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError):
+            return ""
+    # An optional file that is absent is not stale; one that is present must match.
+    stale = [rel for rel, marker in SETU_MARKERS if marker not in _text(rel)
+             and (rel not in OPTIONAL or (HERE / rel).exists())]
+    if stale:
+        for rel in stale:
+            bad(f"{rel} is from an earlier version of Setu than the files beside it",
+                f"copy {rel} again from Setu {SETU_VERSION}")
+    else:
+        ok(f"Setu files are all one version — {SETU_VERSION}")
+
+    # Setu is written for Gradio 6. Gradio 5 — the version the aligner team's
+    # viewer was written for — makes the launcher stop half-way, so say it here.
+    try:
+        import importlib.metadata as _md
+        _gv = _md.version("gradio")
+        _major = _gv.split(".")[0]
+        if _major.isdigit() and int(_major) >= 6:
+            ok(f"Gradio {_gv} — the version Setu needs")
+        else:
+            bad(f"Gradio {_gv} is installed; Setu needs Gradio 6", 'pip install -U "gradio>=6,<7"')
+    except Exception:
+        bad("Gradio is not installed; Setu needs it", "pip install -r requirements.txt")
 
 for name, what in OPTIONAL.items():
     if (HERE / name).exists():
