@@ -1073,41 +1073,6 @@ correction to the current text.
 
 ---
 
-## Where things stand
-
-Stated plainly, because a corpus tool that oversells itself costs more than it
-saves.
-
-**Solid.** The two-document model and its independent navigation; the 0-indexed
-page boundary, verified on all 121 books; in-place editing with the original
-preserved and a full revision history; the block overlay's geometry, proved
-against a PDF with marks at known fractions; eleven Setu exports and twelve
-studio exports; the protection of the eight pre-existing tables, proved two ways;
-recovery from a dirty tree, a detached HEAD or a stopped Colab run without losing
-`state/`.
-
-**Structural, not fixable by this tool.** About 29% of rows in the measured
-project are one-sided. NCERT class 11 Hindi and Tamil Nadu class 10 Tamil share
-no chapter start with their English editions at all. Andhra Pradesh's bilingual
-single-file PDFs put both languages in one document and cannot be paired by a
-two-book model. Reading order is synthesised, because the parser does not supply
-one.
-
-**Not yet built.** A navigation pane that genuinely beats doccano's — the current
-one is per-side chapter and page, which is better for *this* problem but is not a
-general outline tree. The manual and FAQ render in the Guide tab from markdown
-rather than being first-class interactive sections. Multi-annotator behaviour on
-one shared link has not been load-tested.
-
-**Unverified here.** Every PDF in the environment this was last measured in is an
-LFS pointer, so the page overlay and the crop tool have been proved against
-synthetic PDFs built for the purpose — CropBox, MediaBox, a scan set inside the
-page, rotation, two books with one file name — not against a real textbook scan.
-The aligned data itself is proved against the raw OCR box by box (above).
-`python3 check_mapping.py --every 1` checks every aligned page against its real
-PDF in about ten minutes, on a checkout where `git lfs pull` has run.
-
----
 
 ## License
 
