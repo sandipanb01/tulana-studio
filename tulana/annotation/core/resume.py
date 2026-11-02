@@ -57,9 +57,13 @@ def place_key(pid: str, annotator: str = "") -> str:
     pid = str(pid or "")
     if not _SAFE_KEY.match(pid):
         raise ValueError("project id is not an identifier")
+    return f"place:{pid}:{_who_tag(annotator)}"
+
+
+def _who_tag(annotator: str = "") -> str:
+    """Twelve hex characters standing for a typed name in a place key."""
     who = (annotator or "").strip().lower()
-    tag = hashlib.sha256(who.encode("utf-8")).hexdigest()[:12] if who else "anon"
-    return f"place:{pid}:{tag}"
+    return hashlib.sha256(who.encode("utf-8")).hexdigest()[:12] if who else "anon"
 
 
 def remember_place(con, pid: str, annotator: str, place: Any) -> dict:
@@ -128,10 +132,9 @@ def _like(text: str) -> str:
 
 def _aligned_part(r: dict) -> str:
     """"Part 1", or an NCERT chapter file's code, for an aligned pair's label."""
-    from .aligned import MARK, part_of
-    key = str(r.get("src_dedup") or "")
-    pair_id = key[len(MARK):].rsplit(":", 1)[0] if key.startswith(MARK) else ""
-    return part_of(pair_id, str(r.get("src_volume") or ""))
+    from .aligned import parse_mark, part_of
+    m = parse_mark(r.get("src_dedup"))
+    return part_of(m[1] if m else "", str(r.get("src_volume") or ""))
 
 
 class ResumeRepo(Repository):
@@ -144,15 +147,21 @@ class ResumeRepo(Repository):
 
         Ordered by real activity — the newest ``setu_row.updated_at`` in the
         project — and not by creation time, because the project you made first
-        is rarely the one you were in last.
+        is rarely the one you were in last. Projects with work in them (an
+        answer, a correction, or this annotator's place) come before the rest:
+        a delivery of the aligned set adds sixty-odd projects at once, all
+        "newer" than anything anybody did, and the page of results must not
+        be filled with those while the work somebody left off drops out of it.
         """
         lim, off = paginate(limit, offset, default=40, cap=200)
+        mine = _who_tag(annotator)
         rows = self.all(
             """SELECT p.pid, p.name, p.board, p.class, p.subject,
                       p.src_language, p.tgt_language, p.src_book, p.tgt_book,
                       p.n_rows, p.created_at, p.created_by,
                       sb.title AS src_title, sb.book AS src_book_name,
                       sb.dedup_key AS src_dedup, sb.volume AS src_volume,
+                      aset.label AS aligned_label, aset.current AS aligned_current,
                       sb.board_name AS board_name, sb.num_pages AS src_pages,
                       sb.pdf_present AS src_pdf,
                       tb.title AS tgt_title, tb.book AS tgt_book_name,
@@ -169,10 +178,16 @@ class ResumeRepo(Repository):
                  FROM setu_project p
                  JOIN setu_book sb ON sb.book_key = p.src_book
                  JOIN setu_book tb ON tb.book_key = p.tgt_book
-                ORDER BY COALESCE(
+                 LEFT JOIN setu_aligned_pair ap ON ap.pid = p.pid
+                 LEFT JOIN setu_aligned_set aset ON aset.set_id = ap.set_id
+                ORDER BY (EXISTS (SELECT 1 FROM setu_row r WHERE r.pid = p.pid
+                                   AND (r.status <> 'pending' OR r.edited = 1))
+                          OR EXISTS (SELECT 1 FROM setu_meta m
+                                      WHERE m.key = 'place:' || p.pid || ':' || ?)) DESC,
+                         COALESCE(
                     (SELECT MAX(r.updated_at) FROM setu_row r WHERE r.pid = p.pid),
                     p.created_at) DESC
-                LIMIT ? OFFSET ?""", (lim, off))
+                LIMIT ? OFFSET ?""", (mine, lim, off))
 
         for r in rows:
             total = int(r.get("n_rows") or 0)
@@ -183,6 +198,9 @@ class ResumeRepo(Repository):
             r["place"] = recall_place(self.con, r["pid"], annotator)
             r["aligned"] = str(r.get("src_dedup") or "").startswith("aligned:")
             r["part"] = _aligned_part(r) if r["aligned"] else ""
+            # A pair of an earlier delivery of the aligned set: still listed
+            # when somebody worked in it, and said to be the earlier one.
+            r["aligned_earlier"] = bool(r["aligned"] and r.get("aligned_current") == 0)
             r["label"] = self._label(r)
             r["where"] = self._where(r)
 
@@ -207,7 +225,12 @@ class ResumeRepo(Repository):
         if str(r.get("src_dedup") or "").startswith("aligned:"):
             if r.get("part"):
                 bits.insert(min(len(bits), 3), str(r["part"]))
-            bits.append("aligned test set")
+            what = "aligned test set"
+            if r.get("aligned_label"):
+                what += f", {r['aligned_label']}"
+            if r.get("aligned_current") == 0:
+                what += ", earlier delivery"
+            bits.append(what)
         return " · ".join(b for b in bits if b)
 
     @staticmethod
@@ -369,10 +392,16 @@ class ResumeRepo(Repository):
                       p.src_language, p.tgt_language, p.n_rows,
                       (SELECT COUNT(*) FROM setu_row r
                         WHERE r.pid = p.pid AND r.status <> 'pending') AS answered,
-                      CASE WHEN b.dedup_key LIKE 'aligned:%' THEN 1 ELSE 0 END AS aligned
+                      CASE WHEN b.dedup_key LIKE 'aligned:%' THEN 1 ELSE 0 END AS aligned,
+                      aset.label AS aligned_label, aset.current AS aligned_current
                  FROM setu_project p
                  LEFT JOIN setu_book b ON b.book_key = p.src_book
+                 LEFT JOIN setu_aligned_pair ap ON ap.pid = p.pid
+                 LEFT JOIN setu_aligned_set aset ON aset.set_id = ap.set_id
                 ORDER BY (answered > 0) DESC, p.created_at DESC""")
         for r in rows:
             r["aligned"] = bool(r.get("aligned"))
+            # A pair of an earlier delivery reads like the current one but for
+            # this, so it is said in so many words.
+            r["aligned_earlier"] = bool(r["aligned"] and r.pop("aligned_current", None) == 0)
         return rows
