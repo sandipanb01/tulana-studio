@@ -105,6 +105,8 @@ SETU_MARKERS = [
     ("launch_annotation.py", "Setu needs Gradio 6"),
     ("blocks.py", '"aligned-docMT-test", "aligned_v2"'),
     ("aligned_viewer.py", "def pair_files_from"),
+    # The fonts live inside the stylesheet; an older one points at a fonts/ folder that is gone.
+    ("annotation/ui/static/work/vendor/katex/katex.min.css", "data:font/woff2;base64,"),
 ]
 for name, what in REQUIRED.items():
     if (HERE / name).exists():
