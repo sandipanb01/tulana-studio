@@ -230,7 +230,7 @@ CREATE INDEX IF NOT EXISTS ix_setu_event_target ON setu_event(target, ts DESC);
 -- ── what an alignment model said about each passage ────────────────────────
 --
 -- Filled only for pairs imported from the aligned document-MT test set
--- (aligned-docMT-test/). One row per segment: whether the model judged the two
+-- (data/aligned_v2/). One row per segment: whether the model judged the two
 -- sides equivalent or one of them partial, how sure it said it was, why it left
 -- a block unaligned, and the notes it left for a reviewer. Read-only after
 -- import. An annotator's own judgement and note stay in setu_row, untouched.
@@ -244,10 +244,75 @@ CREATE TABLE IF NOT EXISTS setu_hint (
   flags       TEXT DEFAULT '[]',        -- JSON list of reviewer notes
   parts       INTEGER DEFAULT 1,        -- >1 when the unit runs onto more pages
   pages       TEXT DEFAULT '[]',        -- JSON list of the pages it covers
-  page_status TEXT DEFAULT ''           -- ok | retried_ok | alignment_failed | …
+  page_status TEXT DEFAULT '',          -- ok | retried_ok | alignment_failed | …
+  state       TEXT DEFAULT '',          -- aligned | unpaired | page_failed | not_processed | no_text | page_dropped
+  units       TEXT DEFAULT '[]',        -- JSON: the model's units joined into this passage
+  markup      INTEGER DEFAULT 0         -- 1: the model put back markup (maths, bold, tables) the OCR lost
 );
 CREATE INDEX IF NOT EXISTS ix_setu_hint_align ON setu_hint(align_id);
 CREATE INDEX IF NOT EXISTS ix_setu_hint_pair ON setu_hint(pair_id);
+
+-- One version of the aligned test set: a folder's contents, identified by a
+-- hash of them. A new delivery in the same folder is a new set; the pairs of
+-- the earlier one are kept, with everything done in them.
+CREATE TABLE IF NOT EXISTS setu_aligned_set (
+  set_id      TEXT PRIMARY KEY,
+  fingerprint TEXT NOT NULL UNIQUE,
+  level       TEXT DEFAULT '',          -- paragraph | unit
+  label       TEXT DEFAULT '',
+  folder      TEXT DEFAULT '',          -- the folder's NAME only, never a path
+  n_pairs     INTEGER DEFAULT 0,
+  n_segments  INTEGER DEFAULT 0,
+  n_units     INTEGER DEFAULT 0,        -- the model's units, before any merge
+  model       TEXT DEFAULT '',
+  prompt      TEXT DEFAULT '',
+  first_seen  REAL,
+  current     INTEGER DEFAULT 0
+);
+
+-- Which set, and which pair of it, a project was imported from — and the
+-- pair's alignment counts, in original OCR blocks (JSON: per side and total).
+CREATE TABLE IF NOT EXISTS setu_aligned_pair (
+  pid         TEXT PRIMARY KEY REFERENCES setu_project(pid) ON DELETE CASCADE,
+  set_id      TEXT NOT NULL,
+  pair_id     TEXT NOT NULL,
+  summary     TEXT DEFAULT '{}',
+  imported_at REAL,
+  UNIQUE (set_id, pair_id)
+);
+
+-- Per page of an aligned edition: the model's page status and how many of the
+-- page's OCR text blocks are aligned, unpaired, on a failed page, or were not
+-- sent. Drives the page header and "only pages with text not aligned".
+CREATE TABLE IF NOT EXISTS setu_page_meta (
+  book_key      TEXT NOT NULL REFERENCES setu_book(book_key) ON DELETE CASCADE,
+  page          INTEGER NOT NULL,
+  status        TEXT DEFAULT '',
+  text_blocks   INTEGER DEFAULT 0,
+  aligned       INTEGER DEFAULT 0,
+  unpaired      INTEGER DEFAULT 0,
+  page_failed   INTEGER DEFAULT 0,
+  not_processed INTEGER DEFAULT 0,
+  page_dropped  INTEGER DEFAULT 0,      -- v2: text on a page the aligner team dropped
+  drop_reason   TEXT DEFAULT '',        -- map_wrong | alignment_failed | nothing_matched | unparseable
+  width         REAL DEFAULT 0,         -- the page image the boxes were measured on
+  height        REAL DEFAULT 0,
+  PRIMARY KEY (book_key, page)
+);
+
+-- Where each part of an aligned passage lies, page by page, with the boxes of
+-- the OCR blocks merged into it — so a page can be drawn with a passage that
+-- began on the page before, and with the merges visible.
+CREATE TABLE IF NOT EXISTS setu_seg_part (
+  sid      TEXT NOT NULL REFERENCES setu_segment(sid) ON DELETE CASCADE,
+  book_key TEXT NOT NULL,
+  page     INTEGER NOT NULL,
+  part     INTEGER NOT NULL,            -- 1 for the page the passage starts on
+  fx0 REAL, fy0 REAL, fx1 REAL, fy1 REAL,
+  members  TEXT DEFAULT '[]',           -- JSON [[fx0, fy0, fx1, fy1], …]
+  PRIMARY KEY (sid, part)
+);
+CREATE INDEX IF NOT EXISTS ix_setu_seg_part_page ON setu_seg_part(book_key, page);
 
 -- ── export artifacts ──────────────────────────────────────────────────────
 
