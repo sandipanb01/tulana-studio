@@ -34,12 +34,20 @@ const clamp = (v, lo, hi) => (hi < lo ? lo : Math.max(lo, Math.min(hi, v)));
 /* Every call goes through here: the annotator's name rides along as a header
  * so the server can attribute the work, and the server's own `detail` becomes
  * the message a person reads instead of a status code. */
+/* Pages already fetched, kept for a moment, so that turning to the next page
+ * and back is instant. Any change (anything but a GET) empties it, and nothing
+ * is kept longer than PAGE_TTL, so what is shown is never stale for long. */
+const PAGECACHE = new Map();
+const PAGE_TTL = 20000;
+
 async function api(path, opts = {}) {
   opts.headers = Object.assign({
     "Content-Type": "application/json",
     "X-Annotator": localStorage.getItem("setu_who") || "",
   }, opts.headers || {});
+  if (opts.method && opts.method !== "GET") PAGECACHE.clear();
   const r = await fetch(API + path, opts);
+  if (opts.method && opts.method !== "GET") PAGECACHE.clear();
   const text = await r.text();
   let body = null;
   try { body = text ? JSON.parse(text) : null; } catch { /* not json */ }
@@ -68,6 +76,8 @@ function toast(message, bad = false) {
 const W = {
   pid: "", link: null, colors: {}, kinds: [],
   tool: "click", mode: "read", view: "text", lock: false,
+  onlyBad: false,      // aligned set: page buttons skip to text the model could not pair
+  math: true,          // typeset $…$ / $$…$$ while reading
   side: {
     src: newSide("src"),
     tgt: newSide("tgt"),
@@ -79,6 +89,7 @@ function newSide(which) {
     blocks: [], sel: new Set(), picked: new Map(), last: null, zoom: 1,
     imageAvailable: false, imageMessage: "", aspect: 1.414,
     chapters: [], crop: null, cropUrl: "",
+    aligned: false, meta: null, parts: [], attnPrev: null, attnNext: null,
   };
 }
 const S = s => W.side[s];
@@ -566,7 +577,7 @@ async function openBooks(want) {
       if (want.place.tgt_page != null)
         S("tgt").page = clamp(want.place.tgt_page | 0, S("tgt").lo, S("tgt").hi);
     }
-    ["#gChapter", "#gPage", "#gView", "#gTool", "#gMode", "#gFilter"].forEach(id => { $(id).hidden = false; });
+    ["#gChapter", "#gPage", "#gView", "#gTool", "#gMode", "#gFilter", "#gMore"].forEach(id => { $(id).hidden = false; });
     $("#unlink").hidden = !W.link;
     await Promise.all([openPage("src"), openPage("tgt")]);
     refreshSelection();
@@ -599,13 +610,13 @@ function fillChapters(s) {
 
 /* ── one page of one book ──────────────────────────────────────────────── */
 
-async function openPage(s, hop = true) {
+async function openPage(s, hop = true, dir = 1) {
   const st = S(s);
   if (!st.book) return;
   const noise = $("#noise").checked ? "&noise=1" : "";
   let data;
   try {
-    data = await api(`/pages/${st.book}/${st.page}/blocks?pid=${encodeURIComponent(W.pid)}${noise}`);
+    data = await pageData(st.book, st.page, noise);
   } catch (e) {
     toast(e.message, true);
     return;
@@ -618,13 +629,24 @@ async function openPage(s, hop = true) {
   st.language = data.book.language || "";
   st.aligned = !!data.book.aligned;
   st.prevPage = data.prev_page; st.nextPage = data.next_page;
+  // The aligned set's page data: how much of this page the model aligned, the
+  // nearest pages with text it could not pair, and every passage part on the
+  // page (with the OCR blocks merged into it) for drawing without a scan.
+  st.meta = data.page_meta || null;
+  st.attnPrev = data.attention_prev; st.attnNext = data.attention_next;
+  st.parts = data.parts || [];
+  $("#onlyBadWrap").hidden = !(S("src").aligned || S("tgt").aligned);
 
   // One side of the two-language Andhra Pradesh book has text on every other
   // page only — the pages between belong to the other language. Landing on
   // one of those (by typing its number, say) moves on to the nearest page
-  // that has this side's text, once, rather than showing an empty column.
-  if (hop && st.aligned && !st.blocks.length) {
-    const to = data.next_page != null ? data.next_page : data.prev_page;
+  // that has this side's text, once, rather than showing an empty column —
+  // onwards in the direction of travel, so turning back never bounces
+  // forward again. A page that holds anything of this side (the rest of a
+  // passage from the page before, a page number) is a page, and stays.
+  if (hop && st.aligned && !st.blocks.length && !st.parts.length) {
+    const ahead = data.next_page, behind = data.prev_page;
+    const to = dir < 0 ? (behind != null ? behind : ahead) : (ahead != null ? ahead : behind);
     if (to != null && to !== st.page) {
       st.page = to;
       return openPage(s, false);
@@ -638,6 +660,38 @@ async function openPage(s, hop = true) {
   renderSide(s);
   syncPageBoxes();
   renderOffset();
+  prefetchAround(s);
+}
+
+function pageUrl(book, page, noise) {
+  return `/pages/${book}/${page}/blocks?pid=${encodeURIComponent(W.pid)}${noise}`;
+}
+async function pageData(book, page, noise) {
+  const url = pageUrl(book, page, noise);
+  const hit = PAGECACHE.get(url);
+  if (hit && Date.now() - hit.at < PAGE_TTL) return hit.data;
+  const data = await api(url);
+  PAGECACHE.set(url, { at: Date.now(), data });
+  if (PAGECACHE.size > 80) PAGECACHE.delete(PAGECACHE.keys().next().value);
+  return data;
+}
+/* The pages either side of this one, fetched while the annotator reads it —
+ * and their scans, in the page view — so the next turn shows at once. */
+function prefetchAround(s) {
+  const st = S(s), book = st.book, noise = $("#noise").checked ? "&noise=1" : "";
+  setTimeout(() => {
+    if (st.book !== book) return;
+    const near = st.aligned ? [st.nextPage, st.prevPage]
+                            : [st.page + 1, st.page - 1];
+    for (const p of near) {
+      if (p == null || p < st.lo || p > st.hi) continue;
+      pageData(book, p, noise).then(d => {
+        if (W.view === "page" && d && d.image_available) {
+          const im = new Image(); im.src = `${API}/pages/${book}/${p}/image.png`;
+        }
+      }).catch(() => { /* only a head start */ });
+    }
+  }, 120);
 }
 
 function assignColours() {
@@ -670,9 +724,9 @@ function renderSide(s) {
 
   $(s === "src" ? "#titleSrc" : "#titleTgt").textContent =
     `${st.language || (s === "src" ? "Left" : "Right")} — ${st.title || ""}`;
-  $(s === "src" ? "#whereSrc" : "#whereTgt").textContent =
-    `page ${shown(st.page)} of ${shown(st.hi)} · ${st.blocks.length} blocks` +
-    (st.imageAvailable ? "" : " · no scan on disk");
+  $(s === "src" ? "#whereSrc" : "#whereTgt").innerHTML =
+    esc(`page ${shown(st.page)} of ${shown(st.hi)} · ${st.blocks.length} blocks`) +
+    pageCounts(st) + (st.imageAvailable ? "" : esc(" · no scan on disk"));
 
   // Only ask for the image when the server has already said it can render it.
   // Letting an <img> discover a missing PDF by 404 works, but logs a red error
@@ -688,9 +742,43 @@ function renderSide(s) {
     img.onload = () => { drawBlocks(s); drawCrop(s); };
     drawBlocks(s);
     drawCrop(s);
+  } else if (W.view === "page" && st.aligned && (st.parts.length || st.meta)) {
+    // The aligned set without its scans: the page drawn blank at its real
+    // proportions, with every passage as a box — same colour on both sides
+    // for the two halves of a pair, red where the model left text unpaired,
+    // dashed inside where it merged several OCR blocks into one. The view the
+    // aligner team's own viewer gives, with the boxes still clickable.
+    host.classList.remove("textonly");
+    const m = st.meta || {};
+    const ratio = m.width > 0 && m.height > 0 ? m.height / m.width : 1.414;
+    host.innerHTML = `<div class="blankpage" style="width:${w}px;height:${Math.round(w * ratio)}px"></div>`;
+    drawBlocks(s);
   } else {
     renderText(s);
   }
+}
+
+/* "13/14 aligned, 1 not aligned" — the model's count of this page's OCR text
+ * blocks, as the aligner team's viewer gives it. Empty for a raw textbook. */
+function pageCounts(st) {
+  const m = st.meta;
+  if (!m) return "";
+  const n = m.text_blocks || 0, bad = (m.unpaired || 0) + (m.page_failed || 0);
+  // A page the model was never sent: nothing on it is a fault or a to-do.
+  if (m.status === "not_processed" || (n && (m.not_processed || 0) >= n))
+    return esc(" · not sent for alignment");
+  // A page the aligner team left out: shown, explained, and not work.
+  if (m.status === "dropped_page_mismatch")
+    return esc(` · left out by the aligner team: ${DROP_SAYS[m.drop_reason] || DROP_SAYS.other}`);
+  let out = "";
+  if (n) {
+    out += esc(` · ${m.aligned || 0}/${n} aligned`);
+    if (bad) out += `, <b class="nal">${bad} not aligned</b>`;
+    if (m.not_processed) out += esc(`, ${m.not_processed} not sent for alignment`);
+    if (m.page_dropped) out += esc(`, ${m.page_dropped} left out`);
+  }
+  if (FAILED_PAGE.has(m.status)) out += ` · <b class="nal">${esc(PAGE_SAYS[m.status])}</b>`;
+  return out;
 }
 
 /* No scan on disk — which on a Git LFS checkout is the ordinary case, and on
@@ -748,9 +836,23 @@ function renderText(s) {
       `</div><div class="tbody"` +
       (editable ? ` contenteditable="true" spellcheck="false" data-edit-rid="${esc(b.rid)}"` +
                   ` data-edit-side="${s}" data-sid="${esc(b.sid)}" data-rev="${b.rev | 0}"` : "") +
-      `>${text ? esc(shownText) : (editable ? "" : "<i>the parser found no text here</i>")}</div>` +
+      `>${text ? (editable || !W.math ? esc(shownText) : richHTML(shownText))
+              : (editable ? "" : "<i>the parser found no text here</i>")}</div>` +
       `</div>`;
   }).join("");
+
+  // The rest of a passage begun on an earlier page (aligned set). Its whole
+  // text is shown where it starts; here it is one line that selects it, so
+  // the page is complete and nobody wonders where its first lines went.
+  const seen = new Set();
+  const conts = (st.aligned ? st.parts : []).filter(p =>
+    p.seg_page !== st.page && !seen.has(p.sid) && seen.add(p.sid)).map(p =>
+    `<div class="trow blk cont${st.sel.has(p.sid) ? " on" : ""}${p.rid ? "" : " lonely"}"` +
+    ` data-sid="${esc(p.sid)}" data-cont="1" data-side="${s}">` +
+    `<div class="tmeta"><span class="tkind">continued</span>` +
+    `<span>${p.rid ? `pair #${esc(p.row_seq)}` : "not in any pair"}</span></div>` +
+    `<div class="tbody tcont">The rest of a passage that starts on page ${shown(p.seg_page)}` +
+    ` — its whole text is shown there. Click to select it.</div></div>`).join("");
 
   // The scan only matters in the page view, so in the text view nobody is
   // told about it. It used to say "No scan of this book" above every page,
@@ -760,9 +862,10 @@ function renderText(s) {
       + `Everything except the page picture and the crop tool works as usual.`
       + `<br><span class="tiny">${esc(st.imageMessage || "")}</span></div>`
     : "";
-  host.innerHTML = banner +
-    (rows || `<div class="nosc">The parser found nothing on page ${shown(st.page)}. ` +
-      `Try the next page.</div>`);
+  host.innerHTML = banner + conts +
+    (rows || (conts ? "" : `<div class="nosc">The parser found nothing on page ${shown(st.page)}. ` +
+      `Try the next page.</div>`));
+  if (W.math && W.mode !== "edit") host.querySelectorAll(".tbody").forEach(typeset);
 }
 
 /* The overlay. Everything here is a fraction times the MEASURED size of what
@@ -772,11 +875,12 @@ function drawBlocks(s) {
   const st = S(s);
   const host = $(s === "src" ? "#hostSrc" : "#hostTgt");
   if (host.classList.contains("textonly")) return;   // the column draws itself
-  const surface = host.querySelector("img");
+  const surface = host.querySelector("img, .blankpage");
   if (!surface) return;
   const W_ = surface.clientWidth || surface.offsetWidth;
   const H_ = surface.clientHeight || surface.offsetHeight;
   if (!W_ || !H_) return;
+  if (st.aligned && st.parts.length) return drawParts(s, host, W_, H_);
 
   host.querySelectorAll(".blk").forEach(e => e.remove());
   const only = $("#kindFilter").value, dim = $("#dim").checked, order = $("#order").checked;
@@ -810,6 +914,94 @@ function drawBlocks(s) {
   host.appendChild(frag);
 }
 
+/* One colour per pair, the same on both pages — the way the aligner team's
+ * viewer shows which passage goes with which. Spread round the colour wheel by
+ * the pair's number (the viewer's step), so neighbours differ — but never in
+ * the red band, which means "not aligned" and nothing else. */
+const pairColour = seq => `hsl(${Math.round(20 + ((((seq | 0) + 1) * 0.17) % 1) * 320)} 72% 38%)`;
+const NOT_PAIRED = new Set(["unpaired", "page_failed"]);
+
+function drawParts(s, host, W_, H_) {
+  const st = S(s);
+  // No scan under the boxes: each box shows its own text, small, where it is
+  // printed — a page you can read rather than empty coloured frames.
+  const blank = !!host.querySelector(".blankpage");
+  host.querySelectorAll(".blk, .mbr").forEach(e => e.remove());
+  const only = $("#kindFilter").value, dim = $("#dim").checked;
+  const area = p => Math.max(0, p.box[2] - p.box[0]) * Math.max(0, p.box[3] - p.box[1]);
+  const frag = document.createDocumentFragment();
+  for (const p of st.parts.slice().sort((a, b) => area(b) - area(a))) {
+    const i = st.blocks.findIndex(b => b.sid === p.sid);
+    const b = i >= 0 ? st.blocks[i] : null;
+    const cont = p.seg_page !== st.page;         // the rest of a passage from an earlier page
+    // Not in this page's list and not a continuation: a header, footer or page
+    // number, left out as on every other page until "Include headers…" is on.
+    if (!b && !cont) continue;
+    const hidden = !!(only && b && b.kind !== only);
+    if (hidden && !dim) continue;
+    const bad = !(p.rid && p.paired) && NOT_PAIRED.has(p.state);
+    const colour = p.rid && p.paired ? pairColour(p.row_seq | 0) : (bad ? "#d92d20" : "#98a2b3");
+    const on = st.sel.has(p.sid);
+    const done = p.rid && p.status && p.status !== "pending";
+    const el = document.createElement("div");
+    el.className = "blk ab " + (!p.rid ? "lonely" : done ? "done" : "pending") +
+      (bad ? " notal" : "") + (!p.rid && !bad ? " quiet" : "") + (on ? " on" : "") +
+      ((hidden || (dim && !on)) ? " dim" : "");
+    el.style.cssText = `--c:${colour};left:${p.box[0] * W_}px;top:${p.box[1] * H_}px;` +
+      `width:${(p.box[2] - p.box[0]) * W_}px;height:${(p.box[3] - p.box[1]) * H_}px`;
+    el.dataset.sid = p.sid;
+    if (b) el.dataset.i = i;
+    else el.dataset.cont = "1";                  // clicking it selects the whole passage
+    const where = p.of > 1 ? ` · part ${p.part} of ${p.of}` +
+      (p.seg_page !== st.page ? ` (starts on page ${shown(p.seg_page)})` : "") : "";
+    el.title = (p.rid ? `pair #${p.row_seq}${p.paired ? "" : " · one side only"}`
+                      : "not in any pair") + where +
+      (bad ? " · the model could not pair this text" : "") +
+      (b ? `\n${(b.text || "").slice(0, 300)}` : "");
+    el.innerHTML = (p.rid
+      ? `<span class="lb">#${esc(p.row_seq)}${p.of > 1 ? ` ${esc(p.part)}/${esc(p.of)}` : ""}` +
+        `${done ? " ✓" : ""}${bad ? " · not aligned" : ""}</span>`
+      : (bad ? `<span class="lb">not aligned</span>` : "")) +
+      (blank ? boxText(b, p, st, (p.box[2] - p.box[0]) * W_, (p.box[3] - p.box[1]) * H_) : "");
+    frag.appendChild(el);
+    // The OCR blocks the model merged into this passage, dashed inside it.
+    for (const m of (p.members || [])) {
+      const mb = document.createElement("div");
+      mb.className = "mbr";
+      mb.style.cssText = `left:${m[0] * W_}px;top:${m[1] * H_}px;` +
+        `width:${(m[2] - m[0]) * W_}px;height:${(m[3] - m[1]) * H_}px`;
+      frag.appendChild(mb);
+    }
+  }
+  host.appendChild(frag);
+}
+
+/* The words inside a box on a page drawn without its scan, sized to fit the
+ * box: roughly as much text as the printed block holds, in the same space. */
+function boxText(b, p, st, w, h) {
+  let t = b ? String(b.text || "") : `↳ continues the passage from page ${shown(p.seg_page)}`;
+  t = t.replace(/\*\*/g, "").replace(/<[^<>]*>/g, " ").replace(/\s+/g, " ").trim();
+  if (!t || w < 14 || h < 7) return "";
+  const fs = Math.max(6, Math.min(15, Math.sqrt((w * h) / Math.max(t.length, 1)) * 0.92,
+                                   h * 0.8));
+  return `<span class="bx${b ? "" : " cont"}" style="font-size:${fs.toFixed(1)}px">${esc(t.slice(0, 1200))}</span>`;
+}
+
+/* A box whose passage starts on another page: select that passage itself, so
+ * the panel below shows the whole of it and its partner. */
+async function selectElsewhere(s, sid) {
+  const st = S(s);
+  try {
+    const at = await api(`/projects/${encodeURIComponent(W.pid)}/where?sid=${encodeURIComponent(sid)}`);
+    const r = at && at.rid ? await fetchRow(at.rid, true) : null;
+    const sb = r ? sideOfRow(r, s) : null;
+    if (!sb) { toast("That passage is not in any pair."); return; }
+    st.sel = new Set([sid]); st.picked = new Map([[sid, sb]]); st.last = null;
+    markSelected(s);
+    refreshSelection();
+  } catch (e) { toast(e.message, true); }
+}
+
 /* Toggling a class beats redrawing. A full redraw replaces every element, so
  * the one under the cursor is destroyed mid-click — and on a page with a
  * hundred blocks it is visibly slow for something that changed one box. */
@@ -835,6 +1027,7 @@ for (const s of ["src", "tgt"]) {
     if (ev.target.closest('[contenteditable="true"]')) return;
     const el = ev.target.closest(".blk");
     if (!el) return;
+    if (el.dataset.cont) { selectElsewhere(s, el.dataset.sid); return; }
     const st = S(s), sid = el.dataset.sid, i = +el.dataset.i;
     if (ev.shiftKey && st.last !== null) {
       const [a, b] = [Math.min(st.last, i), Math.max(st.last, i)];
@@ -1090,7 +1283,9 @@ async function refreshSelection() {
       continue;
     }
 
-    el.innerText = textOf(b, s);
+    if (editable && b.rid) el.innerText = textOf(b, s);
+    else if (W.math) el.innerHTML = richHTML(textOf(b, s));
+    else el.innerText = textOf(b, s);
     const where = b.display_page != null ? `page ${b.display_page}` : "";
     const byHand = b.edited || draftFor(b.rid, s);
     lbl.textContent = [langName(s), where, kindName(b.kind),
@@ -1108,6 +1303,7 @@ async function refreshSelection() {
   renderPairBar(sel, row);
   renderHints(show, row);
   renderAnswers(sel, row);
+  if (W.math && W.mode !== "edit") { typeset($("#textSrc")); typeset($("#textTgt")); typeset($("#hintBox")); }
 
   $("#selInfo").textContent =
     sel.kind === "none" ? (W.pid ? "Nothing selected — click a block on either page."
@@ -1119,6 +1315,106 @@ async function refreshSelection() {
     : sel.rid ? `pair #${(sel.L || sel.R).row_seq}` +
                 (row && row.src.present && row.tgt.present ? "" : ` · nothing on the ${sel.from === "src" ? "right" : "left"} yet`)
     : "This block is not in any pair (headers and page numbers are left out). Select a block on the other side to pair it.";
+}
+
+/* ── the text as the book prints it ───────────────────────────────────────
+ *
+ * The texts carry the book's formatting as markup: maths as LaTeX between
+ * dollar signs, **bold**, <br> line breaks, <table> tables, <sup>/<sub>. Read
+ * raw, a table is a run of tags. While reading (never while correcting, where
+ * the raw text is what is edited and saved), it is drawn as the book prints
+ * it: maths typeset (KaTeX, below), bold bold, tables as tables.
+ *
+ * Built from the text with an allow-list, never by handing the text to the
+ * browser as HTML: everything is escaped except the few tags below, written
+ * back WITHOUT any attribute but a numeric colspan/rowspan — so nothing in a
+ * passage can run, link, load or style anything. Maths is set aside first, so
+ * "$a<b$" is never mistaken for a tag.
+ */
+const RICH_TAGS = new Set(["table", "thead", "tbody", "tfoot", "tr", "td", "th", "br", "b",
+  "strong", "i", "em", "u", "sup", "sub", "ul", "ol", "li", "p", "caption"]);
+const escText = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;")
+  .replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+function richHTML(text) {
+  const src = String(text || "");
+  let out = "";
+  // $$…$$ and $…$ (not an escaped \$) stay text, for KaTeX to find.
+  const MATH = /\$\$[\s\S]+?\$\$|(?<!\\)\$(?:\\\$|[^$\n])+?\$/g;
+  let at = 0, m;
+  while ((m = MATH.exec(src))) {
+    out += richPlain(src.slice(at, m.index)) + escText(m[0]);
+    at = m.index + m[0].length;
+  }
+  return out + richPlain(src.slice(at));
+}
+function richPlain(t) {
+  // Line breaks between a table's tags are layout in the source, not text; in
+  // a table they would be pushed out above it as blank lines.
+  t = t.replace(/\s*(<\s*\/?\s*(?:table|thead|tbody|tfoot|tr|td|th|caption)\b[^<>]*>)\s*/gi, "$1");
+  let out = "", at = 0, m;
+  const TAG = /<\s*(\/?)\s*([a-zA-Z][a-zA-Z0-9]*)([^<>]*)>/g;
+  while ((m = TAG.exec(t))) {
+    out += richInline(t.slice(at, m.index));
+    const name = m[2].toLowerCase();
+    if (RICH_TAGS.has(name)) {
+      let attrs = "";
+      if (!m[1] && (name === "td" || name === "th")) {
+        for (const a of ["colspan", "rowspan"]) {
+          const v = new RegExp(`${a}\\s*=\\s*["']?(\\d{1,2})`, "i").exec(m[3]);
+          if (v) attrs += ` ${a}="${v[1]}"`;
+        }
+      }
+      out += name === "br" ? "<br>" : `<${m[1]}${name}${attrs}>`;
+    } else out += escText(m[0]);
+    at = m.index + m[0].length;
+  }
+  return out + richInline(t.slice(at));
+}
+const richInline = t => escText(t).replace(/\*\*(?=\S)([\s\S]*?\S)\*\*/g, "<b>$1</b>");
+
+/* ── typeset maths ─────────────────────────────────────────────────────────
+ *
+ * The text holds formulas as LaTeX between $…$ and $$…$$. Read raw, a fraction
+ * is "\frac{3}{2}" — legible, but slow to compare across two languages. While
+ * reading (never while correcting, where the raw text is what is edited), the
+ * formulas are typeset with KaTeX, the library the aligner team's viewer uses.
+ * It is served from Setu itself (vendor/katex), so it works with no outside
+ * network, and loaded only when first needed. If it cannot load, the raw text
+ * stays — nothing depends on it.
+ */
+let katexState = 0;                 // 0 not asked, 1 loading, 2 ready, -1 failed
+function needKatex() {
+  if (katexState) return;
+  katexState = 1;
+  const css = document.createElement("link");
+  css.rel = "stylesheet"; css.href = "vendor/katex/katex.min.css";
+  document.head.appendChild(css);
+  const load = src => new Promise((ok, bad) => {
+    const el = document.createElement("script");
+    el.src = src; el.onload = ok; el.onerror = bad;
+    document.head.appendChild(el);
+  });
+  load("vendor/katex/katex.min.js")
+    .then(() => load("vendor/katex/contrib/auto-render.min.js"))
+    .then(() => { katexState = 2; typesetAll(); })
+    .catch(() => { katexState = -1; });
+}
+function typeset(el) {
+  if (!el || !W.math || W.mode === "edit") return;
+  if (katexState !== 2) { needKatex(); return; }
+  if (el.isContentEditable) return;           // never inside something being edited
+  try {
+    window.renderMathInElement(el, {
+      delimiters: [{ left: "$$", right: "$$", display: true },
+                   { left: "$", right: "$", display: false }],
+      throwOnError: false, ignoredClasses: ["tmeta", "lb"],
+    });
+  } catch { /* the raw text stays */ }
+}
+function typesetAll() {
+  for (const s of ["src", "tgt"])
+    $$(s === "src" ? "#hostSrc .tbody" : "#hostTgt .tbody").forEach(typeset);
+  typeset($("#textSrc")); typeset($("#textTgt")); typeset($("#hintBox"));
 }
 
 /* ── what the alignment model said ─────────────────────────────────────────
@@ -1133,13 +1429,29 @@ const NOTE_SAYS = {
   no_counterpart: "the model found nothing that matches this in the other book",
   junk: "the model thinks this is not real text (scanning noise)",
   page_furniture: "the model thinks this is a page header, footer or number",
+  page_dropped: "this page was left out by the aligner team, so nothing on it is paired — it is not part of the work",
+  counterpart_page_dropped: "its English was on a page the aligner team left out, so it is not paired — it is not part of the work",
 };
 const NOTE_TAG = { no_counterpart: "model: no match", junk: "model: noise",
-                   page_furniture: "model: header/footer" };
+                   page_furniture: "model: header/footer",
+                   page_dropped: "left out", counterpart_page_dropped: "left out" };
+/* Why the aligner team's second delivery left an English page out. */
+const DROP_SAYS = {
+  map_wrong: "its translation was on a different page than expected",
+  alignment_failed: "the model could not align it",
+  nothing_matched: "nothing on it matched the translation",
+  unparseable: "the model's answer for it could not be read",
+  other: "its alignment could not be trusted",
+};
+/* A page the model was sent and could not align: its passages need pairing
+ * by hand. A page it was never sent (front or back matter, or a part the other
+ * book does not have) is not a fault and is never shown as one. */
+const FAILED_PAGE = new Set(["alignment_failed", "unparseable"]);
 const PAGE_SAYS = {
   alignment_failed: "the model could not align this page",
   unparseable: "the model's answer for this page could not be read",
   not_processed: "the model did not look at this page",
+  dropped_page_mismatch: "the aligner team left this page out",
 };
 
 /* "[translation_divergence] [suggested fix not applied: …] words" → parts. */
@@ -1160,13 +1472,22 @@ function hintTags(b) {
   const h = b.hint;
   if (!h) return "";
   const out = [];
-  if (PAGE_SAYS[h.page_status])
-    out.push(`<span class="twarn" title="${esc(PAGE_SAYS[h.page_status])} — pair its passages by hand">page not aligned by the model</span>`);
+  if (h.state === "page_dropped")
+    out.push(`<span class="thint" title="${esc(NOTE_SAYS[h.note] || NOTE_SAYS.page_dropped)}">left out — not to check</span>`);
+  else if (FAILED_PAGE.has(h.page_status) || h.state === "page_failed")
+    out.push(`<span class="twarn" title="${esc(PAGE_SAYS[h.page_status] || PAGE_SAYS.alignment_failed)} — pair its passages by hand">page not aligned by the model</span>`);
+  else if (h.state === "not_processed" || h.page_status === "not_processed")
+    out.push(`<span class="thint" title="This page was not sent for alignment: it lies outside the pair (front or back matter, or a part the other book does not have)">not sent for alignment</span>`);
+  else if (h.state === "unpaired" && !b.paired && !NOTE_TAG[h.note])
+    out.push(`<span class="thint" title="The model found nothing in the other book to pair this with">model: no match</span>`);
   if (b.paired && h.relation === "partial")
     out.push(`<span class="thint" title="The model says these two only partly say the same thing">model: partly the same</span>`);
   if (b.paired && (h.confidence === "low" || h.confidence === "medium"))
     out.push(`<span class="thint">model: ${esc(h.confidence)} confidence</span>`);
-  if (NOTE_TAG[h.note]) out.push(`<span class="thint" title="${esc(NOTE_SAYS[h.note])}">${esc(NOTE_TAG[h.note])}</span>`);
+  if (NOTE_TAG[h.note] && h.state !== "page_dropped")
+    out.push(`<span class="thint" title="${esc(NOTE_SAYS[h.note])}">${esc(NOTE_TAG[h.note])}</span>`);
+  if (h.markup)
+    out.push(`<span class="tmodel" title="The model put back formatting the scan lost — maths signs, bold, a table. Letters and numbers were not changed.">model: formatting put back</span>`);
   if (h.parts > 1 && (h.pages || []).length > 1)
     out.push(`<span class="thint" title="One passage that runs over a page break; the model joined its parts">runs onto p${esc(h.pages.slice(1).join(", p"))}</span>`);
   if ((h.flags || []).length)
@@ -1197,10 +1518,25 @@ function renderHints(show, row) {
     if (b.model_edited && !b.edited && !draftFor(b.rid, s))
       add(`<li class="hmodel">The model changed the ${lang} text from what the parser read. ` +
           `Check its change; “Put back what the parser read” (in Correct it mode) undoes it.</li>`);
-    if (PAGE_SAYS[h.page_status])
+    if (FAILED_PAGE.has(h.page_status))
       add(`<li class="hwarn">${lang} page ${esc(b.display_page)}: ${esc(PAGE_SAYS[h.page_status])}, ` +
           `so passages on it may be unpaired or wrongly paired — pair them by hand.</li>`);
     if (NOTE_SAYS[h.note]) add(`<li>${lang}: ${esc(NOTE_SAYS[h.note])}.</li>`);
+    else if (h.state === "unpaired" && !b.paired)
+      add(`<li>${lang}: the model found nothing in the other book to pair with this.</li>`);
+    if (h.state === "page_failed" && !FAILED_PAGE.has(h.page_status))
+      add(`<li class="hwarn">${lang} page ${esc(b.display_page)}: ${esc(PAGE_SAYS.alignment_failed)}, ` +
+          `so passages on it may be unpaired or wrongly paired — pair them by hand.</li>`);
+    if (h.state === "not_processed" || h.page_status === "not_processed")
+      add(`<li>${lang} page ${esc(b.display_page)} was not sent for alignment — it lies outside ` +
+          `the pair (front or back matter, or a part the other book does not have).</li>`);
+    if (h.markup)
+      add(`<li class="hmodel">The model put back formatting on the ${lang} text that the scan had ` +
+          `lost — maths signs, bold or a table. Its rules let it change no letter or number. ` +
+          `Check that it reads as the book prints it.</li>`, "markup:" + s);
+    if ((h.units || []).length > 1)
+      add(`<li title="${esc(h.units.join(" · "))}">This pair is one paragraph that joins ` +
+          `${h.units.length} of the model's smaller pairs — check it as one passage.</li>`, "units");
     if (h.parts > 1 && (h.pages || []).length > 1)
       add(`<li>The ${lang} passage runs over pages ${esc(h.pages.join(" and "))}; ` +
           `the model joined the parts into one.</li>`);
@@ -1544,7 +1880,8 @@ function renderOffset() {
  * page) turns as naturally as any other; everywhere else it is plain ±1. */
 function stepFrom(st, delta) {
   if (st.aligned && Math.abs(delta) === 1) {
-    const to = delta > 0 ? st.nextPage : st.prevPage;
+    const to = W.onlyBad ? (delta > 0 ? st.attnNext : st.attnPrev)
+                         : (delta > 0 ? st.nextPage : st.prevPage);
     return to == null ? st.page : clamp(to, st.lo, st.hi);
   }
   return clamp(st.page + delta, st.lo, st.hi);
@@ -1554,12 +1891,18 @@ async function turn(s, delta) {
   const st = S(s);
   const before = st.page;
   st.page = stepFrom(st, delta);
-  if (st.page === before) { toast(delta < 0 ? "Already the first page." : "Already the last page."); return; }
-  const jobs = [openPage(s)];
+  if (st.page === before) {
+    toast(W.onlyBad && st.aligned
+      ? `No page ${delta < 0 ? "before" : "after"} this one has text the model could not pair.`
+      : (delta < 0 ? "Already the first page." : "Already the last page."));
+    return;
+  }
+  const dir = Math.sign(delta) || 1;
+  const jobs = [openPage(s, true, dir)];
   if (W.lock) {
     const o = S(other(s));
     o.page = stepFrom(o, delta);
-    jobs.push(openPage(other(s)));
+    jobs.push(openPage(other(s), true, dir));
   }
   await Promise.all(jobs);
   refreshSelection();
@@ -1571,12 +1914,13 @@ async function goTo(s, displayPage) {
   const want = clamp(stored(displayPage), st.lo, st.hi);
   if (want === st.page) { syncPageBoxes(); return; }
   const delta = want - st.page;
+  const dir = Math.sign(delta) || 1;
   st.page = want;
-  const jobs = [openPage(s)];
+  const jobs = [openPage(s, true, dir)];
   if (W.lock) {
     const o = S(other(s));
     o.page = clamp(o.page + delta, o.lo, o.hi);
-    jobs.push(openPage(other(s)));
+    jobs.push(openPage(other(s), true, dir));
   }
   await Promise.all(jobs);
   refreshSelection();
@@ -1584,8 +1928,9 @@ async function goTo(s, displayPage) {
 }
 
 async function turnBoth(delta) {
+  const dir = Math.sign(delta) || 1;
   for (const s of ["src", "tgt"]) S(s).page = stepFrom(S(s), delta);
-  await Promise.all([openPage("src"), openPage("tgt")]);
+  await Promise.all([openPage("src", true, dir), openPage("tgt", true, dir)]);
   refreshSelection();
   rememberPlace();
 }
@@ -1608,6 +1953,47 @@ $("#tgtPage").onchange = () => goTo("tgt", $("#tgtPage").value);
 $("#prevBoth").onclick = () => turnBoth(-1);
 $("#nextBoth").onclick = () => turnBoth(1);
 $("#lockPages").onchange = e => { W.lock = e.target.checked; };
+$("#onlyBad").onchange = e => {
+  W.onlyBad = e.target.checked;
+  toast(W.onlyBad ? "‹ › now skip to pages where the model left text it could not pair."
+                  : "‹ › turn one page at a time again.");
+};
+try { W.math = localStorage.getItem("setu_math") !== "0"; } catch { W.math = true; }
+$("#mathOn").checked = W.math;
+// KaTeX fetched while the annotator settles in, so the first formula is instant.
+if (W.math) (window.requestIdleCallback || (f => setTimeout(f, 1200)))(() => needKatex());
+
+/* Text size of the passages and the answers — A− / A+ in the top bar,
+ * remembered on this computer. Larger than it used to be by default. */
+const TXT = [15, 17, 19, 22, 26, 30];
+let txtAt = 1;
+try {
+  const kept = localStorage.getItem("setu_txt");
+  if (kept !== null && /^\d$/.test(kept) && +kept < TXT.length) txtAt = +kept;
+} catch { /* the default */ }
+function applyTxt() {
+  document.documentElement.style.setProperty("--txt", `${TXT[txtAt]}px`);
+  $("#fsDown").disabled = txtAt === 0;
+  $("#fsUp").disabled = txtAt === TXT.length - 1;
+}
+function stepTxt(by) {
+  const to = Math.max(0, Math.min(TXT.length - 1, txtAt + by));
+  if (to === txtAt) return;
+  txtAt = to;
+  try { localStorage.setItem("setu_txt", String(txtAt)); } catch { /* only a convenience */ }
+  applyTxt();
+  ["src", "tgt"].forEach(s => { if (S(s).book) renderSide(s); });
+  toast(`Text size ${TXT[txtAt]}`);
+}
+$("#fsDown").onclick = () => stepTxt(-1);
+$("#fsUp").onclick = () => stepTxt(1);
+applyTxt();
+$("#mathOn").onchange = e => {
+  W.math = e.target.checked;
+  try { localStorage.setItem("setu_math", W.math ? "1" : "0"); } catch { /* only a convenience */ }
+  ["src", "tgt"].forEach(s => { if (S(s).book) renderSide(s); });
+  refreshSelection();
+};
 $("#srcChapter").onchange = e => { if (e.target.value) goTo("src", e.target.value); };
 $("#tgtChapter").onchange = e => { if (e.target.value) goTo("tgt", e.target.value); };
 
@@ -1639,7 +2025,9 @@ $$(".segbtn").forEach(b => b.onclick = () => {
   W[group] = b.dataset[group];
   if (group === "view") {
     $("#viewHint").textContent = W.view === "page"
-      ? "The printed page with the parser's blocks drawn on it. Needs the scans."
+      ? "The printed page with each passage outlined. Without the scans (books to check), "
+        + "each passage's words are written in its box: the same colour on both pages is one "
+        + "pair; red dashes are text the model could not pair; grey is left out."
       : "The text of both editions, side by side. This is the view for checking translations.";
     ["src", "tgt"].forEach(renderSide);
     refreshSelection();
@@ -1810,7 +2198,7 @@ async function loadWorkbench() {
 function shortLabel(p) {
   const bits = [p.board || "", p.class ? `Class ${p.class}` : "", p.aligned ? p.part : "",
                 [p.src_language, p.tgt_language].filter(Boolean).join(" ⇄ "),
-                p.aligned ? "aligned set" : ""];
+                p.aligned ? (p.aligned_earlier ? "aligned set, earlier delivery" : "aligned set") : ""];
   return bits.filter(Boolean).join(" · ") || p.name || p.pid;
 }
 
@@ -1854,19 +2242,34 @@ $("#resumeGo").onclick = async () => {
  * same autosave — except that the pairs are already made and the model's
  * notes are shown beside them. The job is to check, not to build.
  */
-let ALIGNED = [];
+let ALIGNED = [];      // the pairs of the delivery in the folder now
+let EARLIER = [];      // pairs of an earlier delivery that somebody worked in
+const ALL_ALIGNED = () => ALIGNED.concat(EARLIER);
+const num = n => (n || 0).toLocaleString();
 
 async function loadAligned() {
   let data;
   try { data = await api("/aligned"); }
   catch { $("#gAligned").hidden = true; return; }   // a missing list is never fatal
   ALIGNED = data.pairs || [];
-  const waiting = ((data.status || {}).waiting || []).length;
-  $("#gAligned").hidden = !ALIGNED.length && !waiting;
+  EARLIER = data.earlier || [];
+  const st = data.status || {}, cur = st.current || {};
+  const waiting = (st.waiting || []).length;
+  $("#gAligned").hidden = !ALIGNED.length && !waiting && !EARLIER.length;
+  // The books to check come first; the free choice of any two textbooks is
+  // folded away under them — open only when there is nothing to check.
+  $("#gOther").open = $("#gAligned").hidden;
+  $("#alignedSet").textContent = cur.label
+    ? `${cur.label[0].toUpperCase()}${cur.label.slice(1)}` +
+      (cur.n_segments ? ` · ${num(cur.n_segments)} pairs from the model` : "") +
+      (cur.n_units && cur.n_units !== cur.n_segments ? ` (${num(cur.n_units)} units before merging)` : "")
+    : "";
   const load = $("#alignedLoad");
   load.hidden = !waiting;
-  load.textContent = `Load ${waiting} pair${waiting === 1 ? "" : "s"} from the folder (about a minute)`;
-  if (!ALIGNED.length) {
+  load.textContent = st.new_set && ALIGNED.length
+    ? `A new delivery is in the folder — load it (${waiting} pairs, about a minute)`
+    : `Load ${waiting} pair${waiting === 1 ? "" : "s"} from the folder (about a minute)`;
+  if (!ALIGNED.length && !EARLIER.length) {
     $("#aligned").innerHTML = `<option value="">Not loaded yet</option>`;
     $("#aligned").disabled = $("#alignedGo").disabled = true;
     $("#alignedNote").textContent = "The aligned test set is on this machine but has not been "
@@ -1882,40 +2285,51 @@ async function loadAligned() {
     if (!groups.has(g)) groups.set(g, []);
     groups.get(g).push(p);
   }
+  const opt = p => `<option value="${esc(p.pid)}" title="${esc(p.name || p.pair_id)}">` +
+                   `${esc(alignedLabel(p))}</option>`;
   $("#aligned").innerHTML = [...groups].map(([g, ps]) =>
-    `<optgroup label="${esc(g)}">` + ps.map(p =>
-      `<option value="${esc(p.pid)}" title="${esc(p.name || p.pair_id)}">` +
-      `${esc(alignedLabel(p))}</option>`).join("") + `</optgroup>`).join("");
-  if (keep && ALIGNED.some(p => p.pid === keep)) $("#aligned").value = keep;
+    `<optgroup label="${esc(g)}">` + ps.map(opt).join("") + `</optgroup>`).join("") +
+    // Work done in an earlier delivery is never out of reach: those pairs stay
+    // listed — only the ones somebody answered or corrected something in.
+    (EARLIER.length ? `<optgroup label="Earlier delivery — pairs with work in them">` +
+      EARLIER.map(opt).join("") + `</optgroup>` : "");
+  if (keep && ALL_ALIGNED().some(p => p.pid === keep)) $("#aligned").value = keep;
   describeAligned();
 }
 
 /* The board is the group heading, and every pair has English on the left,
- * so an option names only what tells it apart: "Class 10 · Part 1 · Marathi".
- * The sidebar is narrow; the full name is in the option's title. */
+ * so an option names only what tells it apart: "Class 10 · Part 1 · Marathi —
+ * 98.9%". The sidebar is narrow; the full name is in the option's title. */
 function alignedLabel(p) {
-  const bits = [p.class ? `Class ${p.class}` : "", p.part,
+  const earlier = EARLIER.includes(p);
+  const bits = [earlier ? p.board : "", p.class ? `Class ${p.class}` : "", p.part,
                 p.src_language === "English" ? p.tgt_language
                                              : `${p.src_language} ⇄ ${p.tgt_language}`];
   const done = p.answered || 0;
-  return bits.filter(Boolean).join(" · ") +
-    (done ? ` — ${done.toLocaleString()} checked` : "");
+  const tail = [p.aligned_pct != null && !earlier ? `${p.aligned_pct}%` : "",
+                done ? `${num(done)} checked` : ""].filter(Boolean).join(" · ");
+  return bits.filter(Boolean).join(" · ") + (tail ? ` — ${tail}` : "");
 }
 
 function describeAligned() {
-  const p = ALIGNED.find(x => x.pid === $("#aligned").value);
+  const p = ALL_ALIGNED().find(x => x.pid === $("#aligned").value);
   if (!p) { $("#alignedNote").textContent = ""; return; }
   const units = p.units || 0, done = p.answered || 0, total = p.n_rows || 0;
-  const bits = [`${units.toLocaleString()} passages paired by the model`];
-  if (total > units) bits.push(`${(total - units).toLocaleString()} left on their own`);
-  if (p.flagged) bits.push(`${p.flagged.toLocaleString()} with a note from the model`);
-  bits.push(done ? `${done.toLocaleString()} of ${total.toLocaleString()} checked` : "none checked yet");
-  $("#alignedNote").textContent = bits.join(" · ") + ` · ${p.pair_id}`;
+  const bits = [`${num(units)} pairs made by the model`];
+  if (total > units) bits.push(`${num(total - units)} passages on their own`);
+  if (p.aligned_pct != null) bits.push(`${p.aligned_pct}% of the text aligned`);
+  if (p.not_aligned) bits.push(`${num(p.not_aligned)} OCR blocks it could not pair`);
+  if (p.flagged) bits.push(`${num(p.flagged)} with a note from the model`);
+  if (p.pages_dropped) bits.push(`${num(p.pages_dropped)} page${p.pages_dropped === 1 ? "" : "s"} left out by the aligner team`);
+  if (p.markup_restored) bits.push(`formatting put back in ${num(p.markup_restored)}`);
+  bits.push(done ? `${num(done)} of ${num(total)} checked` : "none checked yet");
+  $("#alignedNote").textContent = bits.join(" · ") + ` · ${p.pair_id}` +
+    (EARLIER.includes(p) ? ` · earlier delivery (${p.set_label || "unit-level"})` : "");
 }
 $("#aligned").onchange = describeAligned;
 
 $("#alignedGo").onclick = async () => {
-  const p = ALIGNED.find(x => x.pid === $("#aligned").value);
+  const p = ALL_ALIGNED().find(x => x.pid === $("#aligned").value);
   if (!p) return;
   // Back where this person was in it, if they have been in it before.
   const mine = WORKBENCH.find(x => x.pid === p.pid);
@@ -1939,6 +2353,7 @@ $("#alignedLoad").onclick = async () => {
                                                body: JSON.stringify({ annotator: who() }) });
     const bad = (rep.errors || []).length;
     toast(`Loaded ${rep.imported || 0} pair${rep.imported === 1 ? "" : "s"}` +
+          (rep.new_set ? " of the new delivery — anything done in the earlier one is kept" : "") +
           (bad ? ` — ${bad} could not be read (see the console where Setu runs)` : "") + ".", !!bad);
     await loadAligned();
     loadWorkbench();
@@ -2073,7 +2488,10 @@ function projectLabel(p) {
   // An aligned pair is named in full: there can be several for one board,
   // class and language (Part 1, Part 2, NCERT chapter files), and each would
   // otherwise read exactly like the others and like the textbook's own pair.
-  if (p.aligned && p.name) return p.name;
+  if (p.aligned && p.name)
+    return p.name + (p.aligned_earlier
+      ? ` · earlier delivery${p.aligned_label && !p.name.includes(p.aligned_label) ? ` (${p.aligned_label})` : ""}`
+      : "");
   const bits = [p.board, p.class ? `Class ${p.class}` : "", p.subject,
                 [p.src_language, p.tgt_language].filter(Boolean).join(" ⇄ ")];
   return bits.filter(Boolean).join(" · ") || p.name || p.pid;
@@ -2249,7 +2667,7 @@ async function loadGet() {
  * one-word name that means nothing to a person who has not met it. */
 const FORMAT_HINT = {
   xlsx: "An Excel workbook. Opens in Excel, LibreOffice or Google Sheets.",
-  csv: "A plain table. Opens in any spreadsheet, and in almost any program.",
+  csv: "A plain table, exactly as saved, for programs. For a spreadsheet, take the Excel workbook: a spreadsheet runs a CSV cell that starts with = as a formula.",
   tsv: "Like CSV, but separated by tabs instead of commas.",
   json: "One structured file, for a programmer.",
   jsonl: "One line of JSON per pair — the usual shape for training data.",
