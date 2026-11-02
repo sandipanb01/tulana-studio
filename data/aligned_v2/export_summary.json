@@ -1,0 +1,1264 @@
+[
+ {
+  "pair": "MH9_1_en-gu",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH9_1_en-gu/CLASS-9/MH_EN_9_1.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH9_1_en-gu/CLASS-9/MH_GU_9_1.json"
+  ],
+  "units": 1127,
+  "units_before_merge": 1421,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 148
+  },
+  "v2": {
+   "markup_restored": 98,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "MH10_1_en-gu",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH10_1_en-gu/CLASS-10/MH_EN_10_1.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH10_1_en-gu/CLASS-10/MH_GU_10_1.json"
+  ],
+  "units": 1284,
+  "units_before_merge": 1746,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 187,
+   "retried_ok": 1
+  },
+  "v2": {
+   "markup_restored": 121,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "MH9_1_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH9_1_en-hi/CLASS-9/MH_EN_9_1.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH9_1_en-hi/CLASS-9/MH_HI_9_1.json"
+  ],
+  "units": 1145,
+  "units_before_merge": 1431,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 148
+  },
+  "v2": {
+   "markup_restored": 125,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "MH10_1_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH10_1_en-hi/CLASS-10/MH_EN_10_1.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH10_1_en-hi/CLASS-10/MH_HI_10_1.json"
+  ],
+  "units": 1281,
+  "units_before_merge": 1760,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 188
+  },
+  "v2": {
+   "markup_restored": 103,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "MH9_1_en-ka",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH9_1_en-ka/CLASS-9/MH_EN_9_1.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH9_1_en-ka/CLASS-9/MH_KA_9_1.json"
+  ],
+  "units": 1122,
+  "units_before_merge": 1422,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 146,
+   "retried_ok": 2
+  },
+  "v2": {
+   "markup_restored": 106,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "MH10_1_en-ka",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH10_1_en-ka/CLASS-10/MH_EN_10_1.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH10_1_en-ka/CLASS-10/MH_KA_10_1.json"
+  ],
+  "units": 1279,
+  "units_before_merge": 1778,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 187,
+   "retried_ok": 1
+  },
+  "v2": {
+   "markup_restored": 99,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "MH9_1_en-mr",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH9_1_en-mr/CLASS-9/MH_EN_9_1.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH9_1_en-mr/CLASS-9/MH_MR_9_1.json"
+  ],
+  "units": 1134,
+  "units_before_merge": 1445,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 147,
+   "alignment_failed": 1
+  },
+  "v2": {
+   "markup_restored": 123,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "MH10_1_en-mr",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH10_1_en-mr/CLASS-10/MH_EN_10_1.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH10_1_en-mr/CLASS-10/MH_MR_10_1.json"
+  ],
+  "units": 1293,
+  "units_before_merge": 1766,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 188
+  },
+  "v2": {
+   "markup_restored": 115,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "MH9_1_en-te",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH9_1_en-te/CLASS-9/MH_EN_9_1.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH9_1_en-te/CLASS-9/MH_TE_9_1.json"
+  ],
+  "units": 1140,
+  "units_before_merge": 1435,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 148
+  },
+  "v2": {
+   "markup_restored": 112,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "MH10_1_en-te",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH10_1_en-te/CLASS-10/MH_EN_10_1.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH10_1_en-te/CLASS-10/MH_TE_10_1.json"
+  ],
+  "units": 1294,
+  "units_before_merge": 1763,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 188
+  },
+  "v2": {
+   "markup_restored": 115,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "MH10_2_en-mr",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH10_2_en-mr/CLASS-10/MH_EN_10_2.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/MH10_2_en-mr/CLASS-10/MH_MR_10_2.json"
+  ],
+  "units": 1309,
+  "units_before_merge": 1471,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 179,
+   "retried_ok": 1
+  },
+  "v2": {
+   "markup_restored": 160,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "KER10_1_en-ml",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/KER10_1_en-ml/CLASS-10/KER_EN_10_1.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/KER10_1_en-ml/CLASS-10/KER_ML_10_1.json"
+  ],
+  "units": 781,
+  "units_before_merge": 1392,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 151,
+   "retried_ok": 1
+  },
+  "v2": {
+   "markup_restored": 99,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "KER10_2_en-ml",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/KER10_2_en-ml/CLASS-10/KER_EN_10_2.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/KER10_2_en-ml/CLASS-10/KER_ML_10_2.json"
+  ],
+  "units": 753,
+  "units_before_merge": 1315,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 143,
+   "retried_ok": 1
+  },
+  "v2": {
+   "markup_restored": 90,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "AP10_sem1_en-te",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/AP10_sem1_en-te/CLASS-10/AP_EN-TEL_10_SEM1.json"
+  ],
+  "units": 967,
+  "units_before_merge": 1300,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 142
+  },
+  "v2": {
+   "markup_restored": 143,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "AP10_sem2_en-te",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/AP10_sem2_en-te/CLASS-10/AP_EN-TEL_10_SEM2.json"
+  ],
+  "units": 800,
+  "units_before_merge": 1159,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 122
+  },
+  "v2": {
+   "markup_restored": 108,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "KT10_1_en-kn",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/KT10_1_en-kn/CLASS-10/KT_EN_10_1.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/KT10_1_en-kn/CLASS-10/KT_Ka_10_1.json"
+  ],
+  "units": 852,
+  "units_before_merge": 1179,
+  "merge": "paragraph",
+  "overlap_drops": 57,
+  "status": {
+   "ok": 139,
+   "alignment_failed": 7,
+   "retried_ok": 6
+  },
+  "v2": {
+   "pages_dropped": 34,
+   "blocks_unlinked": 279,
+   "markup_restored": 101,
+   "units_removed": 131
+  }
+ },
+ {
+  "pair": "KT10_2_en-kn",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/KT10_2_en-kn/CLASS-10/KT_EN_10_2.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/KT10_2_en-kn/CLASS-10/KT_Ka_10_2.json"
+  ],
+  "units": 724,
+  "units_before_merge": 1028,
+  "merge": "paragraph",
+  "overlap_drops": 26,
+  "status": {
+   "ok": 113,
+   "alignment_failed": 6,
+   "retried_ok": 9
+  },
+  "v2": {
+   "pages_dropped": 25,
+   "blocks_unlinked": 196,
+   "markup_restored": 89,
+   "units_removed": 92
+  }
+ },
+ {
+  "pair": "PUN10_en-pa",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/PUN10_en-pa/CLASS-10/PUN_EN_10.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/PUN10_en-pa/CLASS-10/PUN_PU_10.json"
+  ],
+  "units": 2289,
+  "units_before_merge": 3345,
+  "merge": "paragraph",
+  "overlap_drops": 88,
+  "status": {
+   "ok": 330,
+   "retried_ok": 24,
+   "alignment_failed": 14
+  },
+  "v2": {
+   "pages_dropped": 60,
+   "blocks_unlinked": 596,
+   "markup_restored": 224,
+   "units_removed": 279
+  }
+ },
+ {
+  "pair": "PUN12_1_en-pa",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/PUN12_1_en-pa/CLASS-12/PUN_EN_12_1.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/PUN12_1_en-pa/CLASS-12/PUN_PU_12_1.json"
+  ],
+  "units": 994,
+  "units_before_merge": 1476,
+  "merge": "paragraph",
+  "overlap_drops": 120,
+  "status": {
+   "ok": 215,
+   "retried_ok": 22,
+   "alignment_failed": 10,
+   "unparseable": 2
+  },
+  "v2": {
+   "pages_dropped": 44,
+   "blocks_unlinked": 344,
+   "markup_restored": 126,
+   "units_removed": 154
+  }
+ },
+ {
+  "pair": "TM10_en-ta",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/TM10_en-ta/CLASS-10/TM_EN_10.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/TM10_en-ta/CLASS-10/TM_Ta_10.json"
+  ],
+  "units": 2592,
+  "units_before_merge": 3269,
+  "merge": "paragraph",
+  "overlap_drops": 120,
+  "status": {
+   "ok": 303,
+   "retried_ok": 31,
+   "alignment_failed": 18
+  },
+  "v2": {
+   "pages_dropped": 51,
+   "blocks_unlinked": 519,
+   "markup_restored": 227,
+   "units_removed": 248
+  }
+ },
+ {
+  "pair": "GUJ10_en-gu",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/GUJ10_en-gu/CLASS-10/GUJ_EN_10.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/GUJ10_en-gu/CLASS-10/GUJ_GJ_10.json"
+  ],
+  "units": 1008,
+  "units_before_merge": 1399,
+  "merge": "paragraph",
+  "overlap_drops": 59,
+  "status": {
+   "ok": 147,
+   "retried_ok": 12,
+   "alignment_failed": 11
+  },
+  "v2": {
+   "pages_dropped": 24,
+   "blocks_unlinked": 145,
+   "markup_restored": 155,
+   "units_removed": 68
+  }
+ },
+ {
+  "pair": "NCERT_1001_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1001_en-hi/dataset/input/eng/10/1001.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1001_en-hi/dataset/input/hin/10/1001.json"
+  ],
+  "units": 79,
+  "units_before_merge": 92,
+  "merge": "paragraph",
+  "overlap_drops": 3,
+  "status": {
+   "ok": 8,
+   "retried_ok": 1
+  },
+  "v2": {
+   "markup_restored": 10,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "NCERT_1002_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1002_en-hi/dataset/input/eng/10/1002.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1002_en-hi/dataset/input/hin/10/1002.json"
+  ],
+  "units": 86,
+  "units_before_merge": 123,
+  "merge": "paragraph",
+  "overlap_drops": 2,
+  "status": {
+   "ok": 14
+  },
+  "v2": {
+   "markup_restored": 10,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "NCERT_1003_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1003_en-hi/dataset/input/eng/10/1003.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1003_en-hi/dataset/input/hin/10/1003.json"
+  ],
+  "units": 81,
+  "units_before_merge": 131,
+  "merge": "paragraph",
+  "overlap_drops": 1,
+  "status": {
+   "ok": 11,
+   "alignment_failed": 3
+  },
+  "v2": {
+   "pages_dropped": 5,
+   "blocks_unlinked": 27,
+   "markup_restored": 6,
+   "units_removed": 13
+  }
+ },
+ {
+  "pair": "NCERT_1004_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1004_en-hi/dataset/input/eng/10/1004.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1004_en-hi/dataset/input/hin/10/1004.json"
+  ],
+  "units": 66,
+  "units_before_merge": 91,
+  "merge": "paragraph",
+  "overlap_drops": 4,
+  "status": {
+   "ok": 10,
+   "retried_ok": 1
+  },
+  "v2": {
+   "pages_dropped": 1,
+   "markup_restored": 10,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "NCERT_1005_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1005_en-hi/dataset/input/eng/10/1005.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1005_en-hi/dataset/input/hin/10/1005.json"
+  ],
+  "units": 173,
+  "units_before_merge": 278,
+  "merge": "paragraph",
+  "overlap_drops": 4,
+  "status": {
+   "ok": 23,
+   "retried_ok": 1
+  },
+  "v2": {
+   "pages_dropped": 4,
+   "blocks_unlinked": 51,
+   "markup_restored": 32,
+   "units_removed": 24
+  }
+ },
+ {
+  "pair": "NCERT_1006_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1006_en-hi/dataset/input/eng/10/1006.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1006_en-hi/dataset/input/hin/10/1006.json"
+  ],
+  "units": 148,
+  "units_before_merge": 214,
+  "merge": "paragraph",
+  "overlap_drops": 5,
+  "status": {
+   "ok": 25,
+   "alignment_failed": 1
+  },
+  "v2": {
+   "pages_dropped": 6,
+   "blocks_unlinked": 60,
+   "markup_restored": 16,
+   "units_removed": 26
+  }
+ },
+ {
+  "pair": "NCERT_1007_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1007_en-hi/dataset/input/eng/10/1007.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1007_en-hi/dataset/input/hin/10/1007.json"
+  ],
+  "units": 93,
+  "units_before_merge": 137,
+  "merge": "paragraph",
+  "overlap_drops": 6,
+  "status": {
+   "ok": 13,
+   "retried_ok": 1
+  },
+  "v2": {
+   "pages_dropped": 4,
+   "blocks_unlinked": 62,
+   "markup_restored": 9,
+   "units_removed": 30
+  }
+ },
+ {
+  "pair": "NCERT_1008_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1008_en-hi/dataset/input/eng/10/1008.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1008_en-hi/dataset/input/hin/10/1008.json"
+  ],
+  "units": 142,
+  "units_before_merge": 221,
+  "merge": "paragraph",
+  "overlap_drops": 2,
+  "status": {
+   "ok": 19,
+   "retried_ok": 1
+  },
+  "v2": {
+   "pages_dropped": 3,
+   "blocks_unlinked": 42,
+   "markup_restored": 16,
+   "units_removed": 19
+  }
+ },
+ {
+  "pair": "NCERT_1009_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1009_en-hi/dataset/input/eng/10/1009.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1009_en-hi/dataset/input/hin/10/1009.json"
+  ],
+  "units": 65,
+  "units_before_merge": 107,
+  "merge": "paragraph",
+  "overlap_drops": 3,
+  "status": {
+   "ok": 11
+  },
+  "v2": {
+   "markup_restored": 14,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "NCERT_1010_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1010_en-hi/dataset/input/eng/10/1010.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1010_en-hi/dataset/input/hin/10/1010.json"
+  ],
+  "units": 84,
+  "units_before_merge": 100,
+  "merge": "paragraph",
+  "overlap_drops": 2,
+  "status": {
+   "ok": 9,
+   "retried_ok": 1
+  },
+  "v2": {
+   "pages_dropped": 1,
+   "blocks_unlinked": 16,
+   "markup_restored": 14,
+   "units_removed": 8
+  }
+ },
+ {
+  "pair": "NCERT_1011_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1011_en-hi/dataset/input/eng/10/1011.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1011_en-hi/dataset/input/hin/10/1011.json"
+  ],
+  "units": 29,
+  "units_before_merge": 45,
+  "merge": "paragraph",
+  "overlap_drops": 1,
+  "status": {
+   "ok": 6,
+   "alignment_failed": 1
+  },
+  "v2": {
+   "pages_dropped": 1,
+   "markup_restored": 2,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "NCERT_1012_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1012_en-hi/dataset/input/eng/10/1012.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1012_en-hi/dataset/input/hin/10/1012.json"
+  ],
+  "units": 67,
+  "units_before_merge": 93,
+  "merge": "paragraph",
+  "overlap_drops": 1,
+  "status": {
+   "ok": 10
+  },
+  "v2": {
+   "blocks_unlinked": 11,
+   "pages_dropped": 1,
+   "markup_restored": 14,
+   "units_removed": 5
+  }
+ },
+ {
+  "pair": "NCERT_1013_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1013_en-hi/dataset/input/eng/10/1013.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1013_en-hi/dataset/input/hin/10/1013.json"
+  ],
+  "units": 194,
+  "units_before_merge": 301,
+  "merge": "paragraph",
+  "overlap_drops": 2,
+  "status": {
+   "ok": 31
+  },
+  "v2": {
+   "pages_dropped": 2,
+   "blocks_unlinked": 31,
+   "markup_restored": 26,
+   "units_removed": 15
+  }
+ },
+ {
+  "pair": "NCERT_1014_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1014_en-hi/dataset/input/eng/10/1014.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1014_en-hi/dataset/input/hin/10/1014.json"
+  ],
+  "units": 125,
+  "units_before_merge": 166,
+  "merge": "paragraph",
+  "overlap_drops": 2,
+  "status": {
+   "retried_ok": 3,
+   "ok": 13
+  },
+  "v2": {
+   "pages_dropped": 1,
+   "blocks_unlinked": 7,
+   "markup_restored": 22,
+   "units_removed": 3
+  }
+ },
+ {
+  "pair": "NCERT_1101_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1101_en-hi/dataset/input/eng/11/1101.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1101_en-hi/dataset/input/hin/11/1101.json"
+  ],
+  "units": 145,
+  "units_before_merge": 160,
+  "merge": "paragraph",
+  "overlap_drops": 8,
+  "status": {
+   "ok": 18,
+   "retried_ok": 1,
+   "alignment_failed": 4
+  },
+  "v2": {
+   "blocks_unlinked": 25,
+   "pages_dropped": 5,
+   "markup_restored": 14,
+   "units_removed": 12
+  }
+ },
+ {
+  "pair": "NCERT_1102_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1102_en-hi/dataset/input/eng/11/1102.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1102_en-hi/dataset/input/hin/11/1102.json"
+  ],
+  "units": 105,
+  "units_before_merge": 121,
+  "merge": "paragraph",
+  "overlap_drops": 9,
+  "status": {
+   "ok": 17,
+   "retried_ok": 1,
+   "alignment_failed": 1
+  },
+  "v2": {
+   "pages_dropped": 5,
+   "blocks_unlinked": 39,
+   "markup_restored": 18,
+   "units_removed": 19
+  }
+ },
+ {
+  "pair": "NCERT_1103_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1103_en-hi/dataset/input/eng/11/1103.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1103_en-hi/dataset/input/hin/11/1103.json"
+  ],
+  "units": 128,
+  "units_before_merge": 250,
+  "merge": "paragraph",
+  "overlap_drops": 14,
+  "status": {
+   "ok": 32,
+   "alignment_failed": 1
+  },
+  "v2": {
+   "pages_dropped": 1,
+   "markup_restored": 16,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "NCERT_1104_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1104_en-hi/dataset/input/eng/11/1104.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1104_en-hi/dataset/input/hin/11/1104.json"
+  ],
+  "units": 68,
+  "units_before_merge": 98,
+  "merge": "paragraph",
+  "overlap_drops": 4,
+  "status": {
+   "ok": 11,
+   "retried_ok": 1,
+   "alignment_failed": 1
+  },
+  "v2": {
+   "pages_dropped": 3,
+   "blocks_unlinked": 20,
+   "markup_restored": 3,
+   "units_removed": 10
+  }
+ },
+ {
+  "pair": "NCERT_1105_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1105_en-hi/dataset/input/eng/11/1105.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1105_en-hi/dataset/input/hin/11/1105.json"
+  ],
+  "units": 55,
+  "units_before_merge": 77,
+  "merge": "paragraph",
+  "overlap_drops": 0,
+  "status": {
+   "ok": 10,
+   "alignment_failed": 1
+  },
+  "v2": {
+   "blocks_unlinked": 32,
+   "pages_dropped": 4,
+   "markup_restored": 6,
+   "units_removed": 15
+  }
+ },
+ {
+  "pair": "NCERT_1106_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1106_en-hi/dataset/input/eng/11/1106.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1106_en-hi/dataset/input/hin/11/1106.json"
+  ],
+  "units": 107,
+  "units_before_merge": 165,
+  "merge": "paragraph",
+  "overlap_drops": 13,
+  "status": {
+   "ok": 22,
+   "alignment_failed": 3,
+   "retried_ok": 1
+  },
+  "v2": {
+   "pages_dropped": 3,
+   "markup_restored": 11,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "NCERT_1107_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1107_en-hi/dataset/input/eng/11/1107.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1107_en-hi/dataset/input/hin/11/1107.json"
+  ],
+  "units": 52,
+  "units_before_merge": 77,
+  "merge": "paragraph",
+  "overlap_drops": 2,
+  "status": {
+   "retried_ok": 1,
+   "ok": 8
+  },
+  "v2": {
+   "pages_dropped": 3,
+   "blocks_unlinked": 50,
+   "markup_restored": 1,
+   "units_removed": 24
+  }
+ },
+ {
+  "pair": "NCERT_1108_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1108_en-hi/dataset/input/eng/11/1108.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1108_en-hi/dataset/input/hin/11/1108.json"
+  ],
+  "units": 75,
+  "units_before_merge": 115,
+  "merge": "paragraph",
+  "overlap_drops": 3,
+  "status": {
+   "ok": 13,
+   "retried_ok": 1,
+   "alignment_failed": 2
+  },
+  "v2": {
+   "blocks_unlinked": 10,
+   "pages_dropped": 3,
+   "markup_restored": 10,
+   "units_removed": 4
+  }
+ },
+ {
+  "pair": "NCERT_1109_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1109_en-hi/dataset/input/eng/11/1109.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1109_en-hi/dataset/input/hin/11/1109.json"
+  ],
+  "units": 124,
+  "units_before_merge": 185,
+  "merge": "paragraph",
+  "overlap_drops": 9,
+  "status": {
+   "ok": 21,
+   "alignment_failed": 1,
+   "retried_ok": 3
+  },
+  "v2": {
+   "pages_dropped": 2,
+   "blocks_unlinked": 5,
+   "markup_restored": 19,
+   "units_removed": 2
+  }
+ },
+ {
+  "pair": "NCERT_1110_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1110_en-hi/dataset/input/eng/11/1110.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1110_en-hi/dataset/input/hin/11/1110.json"
+  ],
+  "units": 186,
+  "units_before_merge": 281,
+  "merge": "paragraph",
+  "overlap_drops": 12,
+  "status": {
+   "ok": 29,
+   "retried_ok": 3
+  },
+  "v2": {
+   "markup_restored": 20,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "NCERT_1111_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1111_en-hi/dataset/input/eng/11/1111.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1111_en-hi/dataset/input/hin/11/1111.json"
+  ],
+  "units": 48,
+  "units_before_merge": 61,
+  "merge": "paragraph",
+  "overlap_drops": 7,
+  "status": {
+   "ok": 9
+  },
+  "v2": {
+   "markup_restored": 8,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "NCERT_1112_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1112_en-hi/dataset/input/eng/11/1112.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1112_en-hi/dataset/input/hin/11/1112.json"
+  ],
+  "units": 203,
+  "units_before_merge": 301,
+  "merge": "paragraph",
+  "overlap_drops": 20,
+  "status": {
+   "ok": 35,
+   "retried_ok": 2,
+   "alignment_failed": 3
+  },
+  "v2": {
+   "pages_dropped": 7,
+   "blocks_unlinked": 45,
+   "markup_restored": 18,
+   "units_removed": 22
+  }
+ },
+ {
+  "pair": "NCERT_1113_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1113_en-hi/dataset/input/eng/11/1113.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1113_en-hi/dataset/input/hin/11/1113.json"
+  ],
+  "units": 163,
+  "units_before_merge": 329,
+  "merge": "paragraph",
+  "overlap_drops": 10,
+  "status": {
+   "ok": 29,
+   "retried_ok": 2,
+   "alignment_failed": 1
+  },
+  "v2": {
+   "blocks_unlinked": 30,
+   "pages_dropped": 3,
+   "markup_restored": 22,
+   "units_removed": 13
+  }
+ },
+ {
+  "pair": "NCERT_1114_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1114_en-hi/dataset/input/eng/11/1114.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1114_en-hi/dataset/input/hin/11/1114.json"
+  ],
+  "units": 157,
+  "units_before_merge": 268,
+  "merge": "paragraph",
+  "overlap_drops": 7,
+  "status": {
+   "ok": 21,
+   "retried_ok": 3,
+   "alignment_failed": 1
+  },
+  "v2": {
+   "pages_dropped": 4,
+   "blocks_unlinked": 44,
+   "markup_restored": 25,
+   "units_removed": 21
+  }
+ },
+ {
+  "pair": "NCERT_1201_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1201_en-hi/dataset/input/eng/12/1201.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1201_en-hi/dataset/input/hin/12/1201.json"
+  ],
+  "units": 97,
+  "units_before_merge": 104,
+  "merge": "paragraph",
+  "overlap_drops": 4,
+  "status": {
+   "ok": 14,
+   "retried_ok": 1,
+   "alignment_failed": 2
+  },
+  "v2": {
+   "pages_dropped": 2,
+   "markup_restored": 16,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "NCERT_1202_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1202_en-hi/dataset/input/eng/12/1202.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1202_en-hi/dataset/input/hin/12/1202.json"
+  ],
+  "units": 71,
+  "units_before_merge": 102,
+  "merge": "paragraph",
+  "overlap_drops": 6,
+  "status": {
+   "retried_ok": 1,
+   "ok": 14,
+   "alignment_failed": 1
+  },
+  "v2": {
+   "blocks_unlinked": 22,
+   "pages_dropped": 3,
+   "markup_restored": 5,
+   "units_removed": 8
+  }
+ },
+ {
+  "pair": "NCERT_1203_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1203_en-hi/dataset/input/eng/12/1203.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1203_en-hi/dataset/input/hin/12/1203.json"
+  ],
+  "units": 197,
+  "units_before_merge": 354,
+  "merge": "paragraph",
+  "overlap_drops": 16,
+  "status": {
+   "ok": 40,
+   "alignment_failed": 1,
+   "retried_ok": 1
+  },
+  "v2": {
+   "pages_dropped": 7,
+   "blocks_unlinked": 46,
+   "markup_restored": 31,
+   "units_removed": 21
+  }
+ },
+ {
+  "pair": "NCERT_1204_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1204_en-hi/dataset/input/eng/12/1204.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1204_en-hi/dataset/input/hin/12/1204.json"
+  ],
+  "units": 139,
+  "units_before_merge": 280,
+  "merge": "paragraph",
+  "overlap_drops": 9,
+  "status": {
+   "ok": 28
+  },
+  "v2": {
+   "blocks_unlinked": 27,
+   "pages_dropped": 2,
+   "markup_restored": 13,
+   "units_removed": 11
+  }
+ },
+ {
+  "pair": "NCERT_1205_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1205_en-hi/dataset/input/eng/12/1205.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1205_en-hi/dataset/input/hin/12/1205.json"
+  ],
+  "units": 237,
+  "units_before_merge": 370,
+  "merge": "paragraph",
+  "overlap_drops": 16,
+  "status": {
+   "retried_ok": 2,
+   "ok": 38,
+   "alignment_failed": 3
+  },
+  "v2": {
+   "pages_dropped": 4,
+   "blocks_unlinked": 14,
+   "markup_restored": 27,
+   "units_removed": 6
+  }
+ },
+ {
+  "pair": "NCERT_1206_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1206_en-hi/dataset/input/eng/12/1206.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1206_en-hi/dataset/input/hin/12/1206.json"
+  ],
+  "units": 235,
+  "units_before_merge": 357,
+  "merge": "paragraph",
+  "overlap_drops": 13,
+  "status": {
+   "ok": 35,
+   "alignment_failed": 3,
+   "retried_ok": 2
+  },
+  "v2": {
+   "pages_dropped": 4,
+   "blocks_unlinked": 18,
+   "markup_restored": 29,
+   "units_removed": 9
+  }
+ },
+ {
+  "pair": "NCERT_1211_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1211_en-hi/dataset/input/eng/12/1211.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1211_en-hi/dataset/input/hin/12/1211.json"
+  ],
+  "units": 267,
+  "units_before_merge": 568,
+  "merge": "paragraph",
+  "overlap_drops": 25,
+  "status": {
+   "ok": 60,
+   "alignment_failed": 4,
+   "retried_ok": 3
+  },
+  "v2": {
+   "pages_dropped": 8,
+   "blocks_unlinked": 43,
+   "markup_restored": 29,
+   "units_removed": 19
+  }
+ },
+ {
+  "pair": "NCERT_1212_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1212_en-hi/dataset/input/eng/12/1212.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1212_en-hi/dataset/input/hin/12/1212.json"
+  ],
+  "units": 45,
+  "units_before_merge": 57,
+  "merge": "paragraph",
+  "overlap_drops": 3,
+  "status": {
+   "ok": 8
+  },
+  "v2": {
+   "markup_restored": 7,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "NCERT_1213_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1213_en-hi/dataset/input/eng/12/1213.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1213_en-hi/dataset/input/hin/12/1213.json"
+  ],
+  "units": 187,
+  "units_before_merge": 430,
+  "merge": "paragraph",
+  "overlap_drops": 8,
+  "status": {
+   "ok": 35,
+   "retried_ok": 2,
+   "alignment_failed": 1
+  },
+  "v2": {
+   "blocks_unlinked": 16,
+   "pages_dropped": 3,
+   "markup_restored": 23,
+   "units_removed": 7
+  }
+ },
+ {
+  "pair": "NCERT_1214_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1214_en-hi/dataset/input/eng/12/1214.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1214_en-hi/dataset/input/hin/12/1214.json"
+  ],
+  "units": 189,
+  "units_before_merge": 249,
+  "merge": "paragraph",
+  "overlap_drops": 19,
+  "status": {
+   "ok": 35,
+   "retried_ok": 1,
+   "alignment_failed": 3
+  },
+  "v2": {
+   "pages_dropped": 8,
+   "blocks_unlinked": 45,
+   "markup_restored": 22,
+   "units_removed": 21
+  }
+ },
+ {
+  "pair": "NCERT_1215_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1215_en-hi/dataset/input/eng/12/1215.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1215_en-hi/dataset/input/hin/12/1215.json"
+  ],
+  "units": 79,
+  "units_before_merge": 147,
+  "merge": "paragraph",
+  "overlap_drops": 2,
+  "status": {
+   "ok": 13,
+   "alignment_failed": 3,
+   "retried_ok": 1
+  },
+  "v2": {
+   "pages_dropped": 5,
+   "blocks_unlinked": 16,
+   "markup_restored": 19,
+   "units_removed": 8
+  }
+ },
+ {
+  "pair": "NCERT_1216_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1216_en-hi/dataset/input/eng/12/1216.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1216_en-hi/dataset/input/hin/12/1216.json"
+  ],
+  "units": 73,
+  "units_before_merge": 105,
+  "merge": "paragraph",
+  "overlap_drops": 2,
+  "status": {
+   "ok": 11,
+   "alignment_failed": 1
+  },
+  "v2": {
+   "pages_dropped": 1,
+   "markup_restored": 18,
+   "units_removed": 0
+  }
+ },
+ {
+  "pair": "NCERT_1217_en-hi",
+  "files": [
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1217_en-hi/dataset/input/eng/12/1217.json",
+   "/projects/data/llmteam/translation/ujjwal/code/doc-mt-iitr-collaboration/data/aligned_v2/NCERT_1217_en-hi/dataset/input/hin/12/1217.json"
+  ],
+  "units": 160,
+  "units_before_merge": 299,
+  "merge": "paragraph",
+  "overlap_drops": 10,
+  "status": {
+   "ok": 32,
+   "alignment_failed": 1
+  },
+  "v2": {
+   "pages_dropped": 2,
+   "blocks_unlinked": 17,
+   "markup_restored": 32,
+   "units_removed": 8
+  }
+ }
+]

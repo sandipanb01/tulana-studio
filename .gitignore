@@ -1,15 +1,5 @@
-﻿studio/
-tulana/data/
-.venv/
+# annotator reports written by the viewer (names and comments); keep them out of the repo
+data/*/viewer_reports.jsonl
 __pycache__/
-*.pyc
-.gradio/
-*.db
-*.sqlite
-*.sqlite3
-.env
-*.zip
-*.7z
-*.rar
-.vscode/
-.idea/
+*.log
+.DS_Store
