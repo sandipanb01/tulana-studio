@@ -143,9 +143,11 @@ class WorkspaceRepo(Repository):
                        hs.relation AS src_h_rel, hs.confidence AS src_h_conf,
                        hs.note AS src_h_note, hs.flags AS src_h_flags, hs.parts AS src_h_parts,
                        hs.pages AS src_h_pages, hs.page_status AS src_h_status,
+                       hs.state AS src_h_state, hs.units AS src_h_units, hs.markup AS src_h_markup,
                        ht.relation AS tgt_h_rel, ht.confidence AS tgt_h_conf,
                        ht.note AS tgt_h_note, ht.flags AS tgt_h_flags, ht.parts AS tgt_h_parts,
-                       ht.pages AS tgt_h_pages, ht.page_status AS tgt_h_status
+                       ht.pages AS tgt_h_pages, ht.page_status AS tgt_h_status,
+                       ht.state AS tgt_h_state, ht.units AS tgt_h_units, ht.markup AS tgt_h_markup
                   FROM setu_row r
                   LEFT JOIN setu_segment ss ON ss.sid = r.src_sid
                   LEFT JOIN setu_segment ts ON ts.sid = r.tgt_sid
@@ -176,9 +178,11 @@ class WorkspaceRepo(Repository):
                       hs.relation AS src_h_rel, hs.confidence AS src_h_conf,
                       hs.note AS src_h_note, hs.flags AS src_h_flags, hs.parts AS src_h_parts,
                       hs.pages AS src_h_pages, hs.page_status AS src_h_status,
+                      hs.state AS src_h_state, hs.units AS src_h_units, hs.markup AS src_h_markup,
                       ht.relation AS tgt_h_rel, ht.confidence AS tgt_h_conf,
                       ht.note AS tgt_h_note, ht.flags AS tgt_h_flags, ht.parts AS tgt_h_parts,
-                      ht.pages AS tgt_h_pages, ht.page_status AS tgt_h_status
+                      ht.pages AS tgt_h_pages, ht.page_status AS tgt_h_status,
+                      ht.state AS tgt_h_state, ht.units AS tgt_h_units, ht.markup AS tgt_h_markup
                  FROM setu_row r
                  LEFT JOIN setu_segment ss ON ss.sid = r.src_sid
                  LEFT JOIN setu_segment ts ON ts.sid = r.tgt_sid
@@ -389,7 +393,7 @@ def view(r: dict, full: bool = False) -> dict:
             "has_math": bool(r.get(f"{prefix}_math")),
             "has_table": bool(r.get(f"{prefix}_table")),
         }
-        if any(r.get(f"{prefix}_h_{k}") for k in ("rel", "conf", "note", "status")) or \
+        if any(r.get(f"{prefix}_h_{k}") for k in ("rel", "conf", "note", "status", "state")) or \
                 r.get(f"{prefix}_h_flags") not in (None, "", "[]"):
             def listed(key: str) -> list:
                 try:
@@ -405,7 +409,13 @@ def view(r: dict, full: bool = False) -> dict:
                            # printed page numbers, as everywhere else on screen
                            "pages": [p + 1 for p in listed(f"{prefix}_h_pages")
                                      if isinstance(p, int)],
-                           "page_status": r.get(f"{prefix}_h_status") or ""}
+                           "page_status": r.get(f"{prefix}_h_status") or "",
+                           # aligned / unpaired / page_failed / not_processed / no_text
+                           "state": r.get(f"{prefix}_h_state") or "",
+                           # the model's units joined into this passage
+                           "units": [str(u) for u in listed(f"{prefix}_h_units")][:64],
+                           # the model put back markup the OCR had lost
+                           "markup": bool(r.get(f"{prefix}_h_markup"))}
         if full:
             out["box"] = {k: r.get(f"{prefix}_f{k}") for k in ("x0", "y0", "x1", "y1")}
             out["block_ids"] = r.get(f"{prefix}_blocks") or "[]"
