@@ -1,5 +1,25 @@
-# annotator reports written by the viewer (names and comments); keep them out of the repo
-data/*/viewer_reports.jsonl
+studio/
+tulana/data/
+.venv/
 __pycache__/
+*.pyc
+.gradio/
+*.db
+*.sqlite
+*.sqlite3
+.env
+*.zip
+*.7z
+*.rar
+.vscode/
+.idea/
+
+# Setu and the studio keep their database, exports and page cache here when
+# TULANA_STATE_DIR is not set: work, never source.
+tulana/state/
+
+# The aligned-pages viewer (tulana/aligned_viewer.py) saves annotators' names
+# and comments next to the data; they stay out of the repository.
+data/*/viewer_reports.jsonl
 *.log
 .DS_Store
