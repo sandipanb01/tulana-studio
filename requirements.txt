@@ -1,1 +1,45 @@
-gradio==5.49.1
+# tulana-studio — every Python package the repository uses, in one place.
+#
+#   python3 -m pip install -r requirements.txt          everything below
+#   python3 -m pip install -r tulana/requirements.txt   just enough to run Setu and the studio
+#
+# Annotators install nothing: they open the link Setu prints. Python 3.10 or
+# newer. A lower bound is the oldest version the code was written against;
+# only Gradio has an upper bound, because a new major version moves its API.
+
+# ── 1. Run Setu (tulana/launch_annotation.py) and Tulana Studio (tulana/app.py)
+gradio>=6.0,<7            # Setu's web app and its public gradio.live link; the aligned-pages viewer
+                          # (Setu needs Gradio 6; the viewer, written for 5.49.1, runs on 6 as well)
+fastapi>=0.110            # the HTTP API behind Setu and the studio
+uvicorn[standard]>=0.29   # the web server
+pydantic>=2.6             # request and response models
+PyMuPDF>=1.24             # opens the textbook PDFs, renders pages, cuts "as printed" pictures
+Pillow>=10.0              # page images and JPEG clippings
+requests>=2.31            # fetching textbook archives from a link
+
+# ── 2. Every download format Setu offers ─────────────────────────────────────
+openpyxl>=3.1             # Excel (.xlsx)
+pyarrow>=14.0             # Parquet
+
+# ── 3. Checking the work ─────────────────────────────────────────────────────
+numpy>=1.26               # tulana/check_mapping.py: do the OCR boxes land on the printed text?
+pytest>=8.0               # runs every tulana/test_*.py (they are unittest suites; python3 test_x.py works too)
+playwright>=1.44          # browser tests of the annotator interface; then: python3 -m playwright install chromium
+
+# ── 4. Research on the corpus and the annotations ───────────────────────────
+pandas>=2.1               # analysing exports: CSV, JSONL, Parquet, Excel
+sacrebleu>=2.4            # BLEU, chrF++ and TER for the parallel corpus (chrF++ suits Indic scripts)
+jiwer>=3.0                # character and word error rates (CER, WER) for OCR evaluation
+rapidfuzz>=3.6            # fast string similarity: OCR text against corrections, alignment checks
+regex>=2023.12            # Unicode-aware patterns; \X matches a whole akshara (grapheme cluster)
+indic-nlp-library>=0.92   # normalisation, tokenisation and script conversion for Indian languages
+scikit-learn>=1.4         # Cohen's kappa and other agreement statistics between two annotators
+krippendorff>=0.6         # Krippendorff's alpha: agreement among many annotators, missing answers allowed
+matplotlib>=3.8           # figures for papers and reports
+tqdm>=4.66                # progress bars for long corpus jobs
+
+# ── 5. Neural metrics and models — large downloads, so uncomment when needed ─
+# torch>=2.2                  # needed by everything in this section
+# transformers>=4.40          # IndicTrans2 and other multilingual models
+# sentence-transformers>=2.7  # LaBSE sentence embeddings: a second opinion on an alignment
+# unbabel-comet>=2.2          # COMET: learned quality scores for translations
