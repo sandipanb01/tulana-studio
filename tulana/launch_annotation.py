@@ -82,6 +82,54 @@ def _import_parsed_layout() -> bool:
     return bool(report["books"])
 
 
+def import_aligned_set() -> None:
+    """Bring in the aligned document-MT test set, if it is in the repository.
+
+    data/aligned_v2/ holds 62 book pairs a model has already aligned and
+    lightly corrected. Each becomes a project whose rows are the model's pairs,
+    for annotators to verify. A pair already imported is never touched again,
+    so this is quick after the first time and can never overwrite anybody's
+    work. A NEW delivery in the folder is recognised by its contents and
+    imported as a new set; the projects of the earlier one stay, with their
+    answers. The first import of a delivery takes about a minute.
+    """
+    from annotation.core import aligned, store
+    try:
+        with store.tx() as con:                  # pairs Setu v7 imported become a set first
+            aligned.adopt_legacy(con)
+        with store.ro() as con:
+            st = aligned.status(con)
+        what = f"aligned test set ({st['label']})" if st.get("label") else "aligned test set"
+        if not st["dataset"] or not st["waiting"]:
+            if st["dataset"]:
+                # The delivery in the folder is the one listed, even when it is
+                # one imported before (a folder put back to an earlier export).
+                if not st["new_set"]:
+                    with store.tx() as con:
+                        aligned.resolve_set(con, aligned.describe(Path(st["dataset"])))
+                print(f"[setu] {what}: {st['imported']} pair(s) ready")
+            return
+        news = "a new delivery — " if st.get("new_set") and st.get("known_sets") else ""
+        print(f"[setu] {what}: {news}importing {len(st['waiting'])} pair(s), "
+              f"about a minute, once")
+        rep = aligned.import_all(store.tx, log_fn=lambda m: print("[setu]", m))
+        with store.ro() as con:
+            kept = aligned.earlier_pairs(con)
+    except Exception as exc:                     # never stops the server starting
+        print(f"[setu] the aligned test set could not be imported: {exc}")
+        return
+    for e in rep["errors"][:5]:
+        print(f"[setu]   {e['pair']}: {e['error']}")
+    if len(rep["errors"]) > 5:
+        print(f"[setu]   … and {len(rep['errors']) - 5} more")
+    if rep["raw_missing"]:
+        print(f"[setu]   {len(rep['raw_missing'])} pair(s) had no raw book to rebuild the "
+              f"original OCR from; the delivered text was used as the source")
+    if kept:
+        print(f"[setu]   {len(kept)} pair(s) of an earlier delivery hold answers or "
+              f"corrections; they stay available, listed as the earlier delivery")
+
+
 def repair_saved_work() -> None:
     """Put back text an earlier version saved as empty, and fix stale flags.
 
@@ -276,12 +324,21 @@ def main(argv: list[str] | None = None) -> int:
     try:
         import gradio as gr
     except ImportError:
-        print("Gradio is not installed. Run:  pip install gradio")
+        print('Gradio is not installed. Run:  pip install "gradio>=6,<7"')
+        return 2
+    # Setu is written for Gradio 6, which takes the page's styles in launch().
+    # Gradio 5 (the aligner team's viewer pins 5.49.1) would stop with a
+    # TypeError half-way through starting; say what to do instead.
+    major = str(getattr(gr, "__version__", "0")).split(".")[0]
+    if not major.isdigit() or int(major) < 6:
+        print(f"Setu needs Gradio 6; this machine has Gradio {getattr(gr, '__version__', '?')}.\n"
+              f'Run:  pip install -U "gradio>=6,<7"   (the aligned-pages viewer works with it too)')
         return 2
 
     if not prepare(force=args.prepare):
         return 1
 
+    import_aligned_set()
     repair_saved_work()
 
     # Page images are regenerable and can accumulate; sweep once at start-up
