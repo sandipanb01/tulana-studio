@@ -758,13 +758,20 @@ def page_blocks(book_key: str, page: int, pid: str = "",
                 break
 
         lo, hi = browse.page_range(con, book_key)
+        is_aligned = str(book.get("dedup_key") or "").startswith(aligned.MARK)
         # The nearest pages either way that hold any text of this book. One
         # side of a two-language book (the aligned Andhra Pradesh pair) has
         # text on every other page only, and turning onto the other
-        # language's page would show an empty column.
+        # language's page would show an empty column. In an aligned book a
+        # page can also hold nothing but the rest of a passage begun on the
+        # page before, so there every part of every passage counts.
+        table = "setu_segment"
+        if is_aligned and con.execute("SELECT 1 FROM setu_seg_part WHERE book_key = ? LIMIT 1",
+                                      (book_key,)).fetchone():
+            table = "setu_seg_part"
         near = con.execute(
-            "SELECT (SELECT MAX(page) FROM setu_segment WHERE book_key = ? AND page < ?),"
-            "       (SELECT MIN(page) FROM setu_segment WHERE book_key = ? AND page > ?)",
+            f"SELECT (SELECT MAX(page) FROM {table} WHERE book_key = ? AND page < ?),"
+            f"       (SELECT MIN(page) FROM {table} WHERE book_key = ? AND page > ?)",
             (book_key, page, book_key, page)).fetchone()
         # The raster the parser measured against, so a page with no image can
         # still be drawn as a blank of the right proportions.
@@ -772,12 +779,30 @@ def page_blocks(book_key: str, page: int, pid: str = "",
             "SELECT MAX(fx1) AS w, MAX(fy1) AS h FROM setu_segment"
             "  WHERE book_key = ? AND page = ?", (book_key, page))
         image = sources.page_image(con, book_key, page)
+        # The aligned test set: the model's verdict on this page, the nearest
+        # pages with text it could not pair, and every passage part on the
+        # page (with the boxes merged into it) for drawing without a scan.
+        meta = aligned.page_meta(con, book_key, page) if is_aligned else None
+        attn = aligned.attention_near(con, book_key, page) if meta else (None, None)
+        parts = []
+        if is_aligned and pid:
+            side_of = con.execute("SELECT CASE WHEN src_book = ? THEN 'src' ELSE 'tgt' END"
+                                  "  FROM setu_project WHERE pid = ?", (book_key, pid)).fetchone()
+            if side_of:
+                parts = aligned.parts_on_page(con, book_key, page, pid, side_of[0])
 
     return {
         "book": {"book_key": book["book_key"], "book": book["book"],
                  "title": book["title"], "language": book["language"],
                  "script": book["script"], "num_pages": book["num_pages"],
-                 "aligned": str(book.get("dedup_key") or "").startswith(aligned.MARK)},
+                 "aligned": is_aligned},
+        "page_meta": meta,
+        "attention_prev": attn[0], "attention_next": attn[1],
+        "parts": [{"sid": p_["sid"], "part": p_["part"], "of": p_["of_parts"] or 1,
+                   "box": [p_["fx0"], p_["fy0"], p_["fx1"], p_["fy1"]],
+                   "members": p_["members"], "state": p_["state"] or "",
+                   "seg_page": p_["seg_page"], "rid": p_["rid"], "row_seq": p_["row_seq"],
+                   "status": p_["status"], "paired": p_["paired"]} for p_ in parts],
         "page": page,
         "display_page": page + 1,
         "first_page": lo, "last_page": hi,
@@ -971,7 +996,7 @@ def saved(pid: str = "", status: str = "", answered: str = "", search_text: str 
 
 # ── the aligned document-MT test set ───────────────────────────────────────
 #
-# aligned-docMT-test/ — 62 book pairs a model has already aligned and lightly
+# data/aligned_v2/ — 62 book pairs a model has already aligned and lightly
 # corrected, for people to verify. Imported once (launch_annotation does it at
 # start-up); each pair becomes a project whose rows are the model's units.
 
@@ -983,7 +1008,8 @@ def aligned_pairs() -> dict:
     with store.ro() as con:
         st = aligned.status(con)
         st.pop("dataset", None)          # a server path; the page has no use for it
-        return {"pairs": aligned.pairs(con), "status": st}
+        return {"pairs": aligned.pairs(con), "earlier": aligned.earlier_pairs(con),
+                "status": st}
 
 
 @router.post("/aligned/import")
