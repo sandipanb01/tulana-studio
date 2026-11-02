@@ -1,3 +1,7 @@
+# Just enough to run Setu (launch_annotation.py) and Tulana Studio (app.py).
+# Everything else the repository uses — the checks and tests, and the research
+# tools — is in ../requirements.txt.
+gradio>=6.0,<7        # Setu's web app and public link (Setu needs Gradio 6); the aligned-pages viewer
 fastapi>=0.110
 uvicorn[standard]>=0.29
 pydantic>=2.6
@@ -12,5 +16,5 @@ openpyxl>=3.1         # Setu: Excel (.xlsx) export
 pyarrow>=14.0         # Setu: Parquet export
 
 # Optional — the studio runs without these and says so.
-# gradio       # only for share_gradio.py (public link)
+# numpy        # only for check_mapping.py (the boxes against the real PDFs)
 # playwright   # only for browser testing
