@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
-<meta name="theme-color" content="#0e7a72">
+<meta name="theme-color" content="#1d4ed8">
 <title>सेतु Setu — parallel textbook annotation</title>
 <!-- The emblem, the way the studio does it: the letter itself as the icon, so
      a shared link carries सेतु in the browser tab rather than the host's mark. -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='25' font-size='24'>से</text></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e7a72'/><text y='25' x='2' font-size='23' fill='white'>से</text></svg>">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231d4ed8'/><text y='25' x='2' font-size='23' fill='white'>से</text></svg>">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
@@ -22,6 +22,10 @@
     <button class="tab" data-tab="Guide">Guide</button>
   </nav>
   <div class="bar-right">
+    <span class="fs" role="group" aria-label="Text size">
+      <button id="fsDown" class="ghost" title="Smaller text" aria-label="Smaller text">A−</button>
+      <button id="fsUp" class="ghost" title="Larger text" aria-label="Larger text">A+</button>
+    </span>
     <span id="saveDot" class="savedot ok" hidden aria-live="polite"></span>
     <span id="progress" class="pill" hidden></span>
     <input id="who" class="who" placeholder="Your name" autocomplete="off">
@@ -41,6 +45,20 @@
       <p id="resumeNote" class="tiny muted"></p>
     </div>
 
+    <!-- The aligned test set: pairs a model has already matched (and lightly
+         corrected) for people to check. Shown only once it has been loaded. -->
+    <div class="grp" id="gAligned" hidden>
+      <h3>Books to check</h3>
+      <p class="lead">Pick a book, press <b>Open</b>. Setu shows the first pair nobody has checked.</p>
+      <p id="alignedSet" class="tiny muted"></p>
+      <select id="aligned" aria-label="Book pair to check"></select>
+      <button id="alignedGo" class="btn primary wide big">Open</button>
+      <p id="alignedNote" class="tiny muted"></p>
+      <button id="alignedLoad" class="btn ghost wide tiny" hidden></button>
+    </div>
+
+    <details class="grp more" id="gOther">
+      <summary>Other textbooks — pair any two yourself</summary>
     <div class="grp">
       <h3>Textbook</h3>
       <select id="board"></select>
@@ -61,16 +79,7 @@
       <button id="open" class="btn primary wide">Open side by side</button>
       <p id="corpus" class="tiny muted"></p>
     </div>
-
-    <!-- The aligned test set: pairs a model has already matched (and lightly
-         corrected) for people to check. Shown only once it has been loaded. -->
-    <div class="grp" id="gAligned" hidden>
-      <h3>Aligned test set — check the model's pairs</h3>
-      <select id="aligned"></select>
-      <button id="alignedGo" class="btn wide">Open this pair</button>
-      <p id="alignedNote" class="tiny muted"></p>
-      <button id="alignedLoad" class="btn ghost wide tiny" hidden></button>
-    </div>
+    </details>
 
     <div class="grp" id="gChapter" hidden>
       <h3>Chapter</h3>
@@ -89,6 +98,8 @@
         <button id="nextBoth" class="ghost" title="Both forward (→)">›</button>
       </div>
       <label class="chk"><input type="checkbox" id="lockPages"> Turn both pages together</label>
+      <label class="chk" id="onlyBadWrap" hidden title="The ‹ › buttons and arrow keys skip to the
+next page where the alignment model left text it could not pair"><input type="checkbox" id="onlyBad"> Only pages with text not aligned</label>
       <p id="offset" class="tiny muted"></p>
       <button id="link" class="btn wide">⇄ These two pages match</button>
       <button id="unlink" class="btn wide ghost" hidden>Unlink</button>
@@ -102,15 +113,8 @@
       </div>
       <p id="viewHint" class="tiny muted">The text of both editions, side by
         side. This is the view for checking translations.</p>
-    </div>
-
-    <div class="grp" id="gTool" hidden>
-      <h3>Tool</h3>
-      <div class="seg">
-        <button class="segbtn on" data-tool="click">Click a block</button>
-        <button class="segbtn" data-tool="crop">Drag to crop</button>
-      </div>
-      <p id="toolHint" class="tiny muted"></p>
+      <label class="chk" title="While reading, show maths, bold and tables as the book prints them.
+“Correct it” always shows the plain text that is saved."><input type="checkbox" id="mathOn" checked> Show maths and tables as printed</label>
     </div>
 
     <div class="grp" id="gMode" hidden>
@@ -123,6 +127,17 @@
         the text.</p>
     </div>
 
+    <details class="grp more" id="gMore" hidden>
+      <summary>More options</summary>
+    <div class="grp" id="gTool" hidden>
+      <h3>Tool</h3>
+      <div class="seg">
+        <button class="segbtn on" data-tool="click">Click a block</button>
+        <button class="segbtn" data-tool="crop">Drag to crop</button>
+      </div>
+      <p id="toolHint" class="tiny muted"></p>
+    </div>
+
     <div class="grp" id="gFilter" hidden>
       <h3>Show only</h3>
       <select id="kindFilter"><option value="">All kinds of block</option></select>
@@ -131,6 +146,7 @@
       <label class="chk"><input type="checkbox" id="order" checked> Reading order</label>
       <div id="legend" class="legend"></div>
     </div>
+    </details>
   </aside>
 
   <div id="main">
@@ -314,6 +330,6 @@
   </div>
 </div>
 
-<script src="app.js?v=8"></script>
+<script src="app.js?v=11"></script>
 </body>
 </html>
