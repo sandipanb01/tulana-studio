@@ -44,7 +44,7 @@ anything here.
 | `core/search.py` | FTS5 with a `LIKE` fallback |
 | `core/exporters.py` | the format registry |
 | `core/sources.py` | the bridge to Tulana's PDF cropping, for source verification |
-| `core/aligned.py` | importing `aligned-docMT-test/` — a model's pairs, for people to check |
+| `core/aligned.py` | importing `data/aligned_v2/` — a model's pairs, for people to check; each delivery a set of its own |
 | `ui/app.py` | Gradio layout and event wiring — no annotation logic |
 | `ui/workspace.py` | every annotation callback |
 | `ui/session.py` | the per-session dictionary |
@@ -91,9 +91,18 @@ python3 test_aligned.py
 ```
 
 The aligned test set: provenance (the OCR stays the source, the model's text is
-revision 1 and never counts as a person's), re-import, the rebuild guard, the
+revision 1 and never counts as a person's), re-import, the rebuild guard,
+alignment states and page counts, the page view's data, deliveries as sets (a
+new delivery beside an earlier one's work, a Setu v7 database upgraded), the
 two-language books, hostile files — and the real pairs against the dataset's own
-counts when the folder is present.
+numbers when the folder is present: pairs per book pair, every page's counts,
+the share aligned by the aligner team's own formula, and every passage's source
+against the raw OCR.
+
+```bash
+python3 test_mapping.py      # the boxes land on the printed page: page areas, rotation, the right PDF
+python3 check_mapping.py     # every aligned page against its PDF, once the PDFs are pulled
+```
 
 Browser behaviour — synchronised scrolling, keyboard shortcuts, zoom, session
 isolation, the conflict panel — is not in that suite. It was verified with
