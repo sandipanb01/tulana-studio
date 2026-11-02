@@ -203,7 +203,8 @@ def blocks(con, *, pid: str, book_key: str, side: str, page: Any = None,
         "       m.sid AS mate_sid, m.page AS mate_page,"
         "       h.relation AS hint_relation, h.confidence AS hint_confidence,"
         "       h.note AS hint_note, h.flags AS hint_flags, h.parts AS hint_parts,"
-        "       h.pages AS hint_pages, h.page_status AS hint_status"
+        "       h.pages AS hint_pages, h.page_status AS hint_status,"
+        "       h.state AS hint_state, h.units AS hint_units, h.markup AS hint_markup"
         "  FROM setu_segment s"
         f"  LEFT JOIN setu_row  r ON r.{col} = s.sid AND r.pid = ?"
         "  LEFT JOIN setu_text t ON t.rid = r.rid AND t.side = ?"
@@ -247,7 +248,8 @@ def blocks(con, *, pid: str, book_key: str, side: str, page: Any = None,
 def _hint(b: dict) -> dict | None:
     """What the alignment model said about this passage, if it said anything."""
     if not any(b.get(k) for k in ("hint_relation", "hint_confidence", "hint_note",
-                                  "hint_status")) and b.get("hint_flags") in (None, "", "[]"):
+                                  "hint_status", "hint_state")) \
+            and b.get("hint_flags") in (None, "", "[]"):
         return None
     try:
         flags = json.loads(b.get("hint_flags") or "[]")
@@ -257,11 +259,21 @@ def _hint(b: dict) -> dict | None:
         pages = json.loads(b.get("hint_pages") or "[]")
     except (TypeError, ValueError):
         pages = []
+    try:
+        units = json.loads(b.get("hint_units") or "[]")
+    except (TypeError, ValueError):
+        units = []
     return {"relation": b.get("hint_relation") or "", "confidence": b.get("hint_confidence") or "",
             "note": b.get("hint_note") or "", "flags": flags if isinstance(flags, list) else [],
             "parts": int(b.get("hint_parts") or 1),
             "pages": [to_display(p) for p in pages if isinstance(p, int)],
-            "page_status": b.get("hint_status") or ""}
+            "page_status": b.get("hint_status") or "",
+            # aligned / unpaired / page_failed / not_processed / no_text
+            "state": b.get("hint_state") or "",
+            # the model's units joined into this passage (paragraph-level export)
+            "units": [str(u) for u in units][:64] if isinstance(units, list) else [],
+            # the model put back markup (maths, bold, tables) the OCR had lost (v2)
+            "markup": bool(b.get("hint_markup"))}
 
 
 def chapter_choices(con, book_key: str) -> list[tuple[str, str]]:
