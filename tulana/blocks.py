@@ -216,7 +216,13 @@ def infer_from_text(sample: str) -> dict:
     return out
 
 
-JUNK_PARTS = ("__MACOSX", ".git", "node_modules", "state", ".ipynb_checkpoints")
+JUNK_PARTS = ("__MACOSX", ".git", "node_modules", "state", ".ipynb_checkpoints",
+              # The aligned test set repeats the raw books' names and paths —
+              # MH_EN_10_1 five times — with merged blocks and corrected text.
+              # It is imported separately (annotation/core/aligned.py); read as
+              # raw corpus it would be duplicate, different books. It lives in
+              # data/aligned_v2 now; the older folder name is kept.
+              "aligned-docMT-test", "aligned_v2")
 
 
 def _is_junk(p: Path) -> bool:
@@ -235,7 +241,10 @@ def _looks_like_layout(f: Path) -> bool:
         head = json.loads(f.read_text(encoding="utf-8"))
     except Exception:
         return False
-    return isinstance(head, dict) and "pages" in head and "relpath" in head
+    # An aligned file has the raw shape plus an "alignment" block. It is not
+    # raw corpus, wherever it happens to sit.
+    return (isinstance(head, dict) and "pages" in head and "relpath" in head
+            and "alignment" not in head)
 
 
 def find_corpus(root: Path = None) -> Path | None:
@@ -319,6 +328,8 @@ def ingest(con, corpus: Path = None, data_dir: Path = None, log=print) -> dict:
             problems.append(f"{f.name}: not readable JSON ({str(e)[:60]})")
             continue
         if not isinstance(d, dict) or "pages" not in d or "relpath" not in d:
+            continue
+        if "alignment" in d:            # an aligned export, wherever it sits: not raw corpus
             continue
         rel = str(d["relpath"]).replace("\\", "/")
         meta = library.infer(Path(rel), Path("."))
