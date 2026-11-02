@@ -121,7 +121,11 @@ FIELDS = ("row_id", "seq", "status", "status_label", "origin", "confidence",
           "board", "class", "subject", "updated_at", "updated_by",
           # For pairs from the aligned test set (empty otherwise): the model's
           # unit id, whether the MODEL changed each side, and its reviewer notes.
-          "unit_id", "source_model_corrected", "target_model_corrected", "model_flags")
+          "unit_id", "source_model_corrected", "target_model_corrected", "model_flags",
+          # The model's own units joined into this passage, when the delivery
+          # merged them into paragraphs (space-separated), so a pair can be
+          # traced back to the finer unit-level data.
+          "model_units")
 
 
 def records(con, pid: str, *, status: str = "", chapter_no: str = "",
@@ -169,7 +173,8 @@ def records(con, pid: str, *, status: str = "", chapter_no: str = "",
                    st.text AS src_edit, tt.text AS tgt_edit,
                    st.updated_by AS src_edit_by, tt.updated_by AS tgt_edit_by,
                    COALESCE(NULLIF(hs.align_id, ''), ht.align_id, '') AS unit_id,
-                   hs.flags AS src_flags, ht.flags AS tgt_flags
+                   hs.flags AS src_flags, ht.flags AS tgt_flags,
+                   hs.units AS src_units, ht.units AS tgt_units
               FROM setu_row r
               LEFT JOIN setu_segment ss ON ss.sid = r.src_sid
               LEFT JOIN setu_segment ts ON ts.sid = r.tgt_sid
@@ -216,7 +221,16 @@ def records(con, pid: str, *, status: str = "", chapter_no: str = "",
             "source_model_corrected": src_text != src_source and src_model,
             "target_model_corrected": tgt_text != tgt_source and tgt_model,
             "model_flags": " | ".join(dict.fromkeys(flags)),   # once each, in order
+            "model_units": " ".join(_units(r["src_units"]) or _units(r["tgt_units"])),
         }
+
+
+def _units(blob: Any) -> list[str]:
+    try:
+        v = json.loads(blob or "[]")
+    except (TypeError, ValueError):
+        return []
+    return [str(u) for u in v if isinstance(u, str)] if isinstance(v, list) else []
 
 
 def _paired(rows: Iterable[dict]) -> Iterator[dict]:
@@ -256,7 +270,9 @@ def _json(rows: Iterable[dict], fh, meta: dict) -> int:
 
 
 @register("csv", "CSV", "csv", "text/csv",
-          note="Opens in Excel. Written with a BOM so Indic text is not mangled.")
+          note="Exactly as saved, for programs. Written with a BOM so Indic text is not"
+               " mangled. For Excel, take the workbook: Excel runs a CSV cell that"
+               " starts with = as a formula.")
 def _csv(rows: Iterable[dict], fh, meta: dict) -> int:
     return _delimited(rows, fh, ",")
 
@@ -396,7 +412,7 @@ def _xlsx(rows: Iterable[dict], fh, meta: dict) -> int:
         cell.font = Font(bold=True)
     n = 0
     for r in rows:
-        ws.append([_cell(r.get(f)) for f in FIELDS])
+        _append_text(ws, [_cell(r.get(f)) for f in FIELDS])
         n += 1
     for col, width in (("A", 20), ("O", 60), ("P", 60)):
         ws.column_dimensions[col].width = width
@@ -408,9 +424,23 @@ def _xlsx(rows: Iterable[dict], fh, meta: dict) -> int:
     info = wb.create_sheet("About")
     info.append(["field", "value"])
     for k, v in meta.items():
-        info.append([k, _cell(v)])
+        _append_text(info, [k, _cell(v)])
     wb.save(fh)
     return n
+
+
+def _append_text(ws, values: list) -> None:
+    """Append one row, every string kept as text.
+
+    openpyxl stores a string that starts with "=" as a formula, and Excel then
+    runs it: a passage of maths ("= (1 + 80) + (2 + 79)") opens as #NAME?, and
+    text somebody typed could do worse. Stored as text, it shows exactly as
+    written — the words themselves are never changed.
+    """
+    ws.append(values)
+    for cell in ws[ws.max_row]:
+        if cell.data_type == "f":
+            cell.data_type = "s"
 
 
 def _cell(v: Any) -> Any:
