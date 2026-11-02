@@ -40,7 +40,7 @@ log = logging.getLogger("setu.store")
 HERE = Path(__file__).parent.resolve()
 SCHEMA_PATH = HERE / "schema.sql"
 
-SCHEMA_VERSION = 4
+SCHEMA_VERSION = 6
 
 #: How long a connection waits for a writer to finish before giving up. The
 #: worst honest case measured on this corpus is a project build, which holds
@@ -156,6 +156,19 @@ def _migrate(con: sqlite3.Connection) -> None:
     # 4: setu_hint, for pairs imported from the aligned test set. Created by
     # schema.sql's CREATE TABLE IF NOT EXISTS on every connection, so there is
     # nothing to do here beyond recording the version.
+    if have < 5:
+        # 5: versions of the aligned test set (setu_aligned_set/_pair), page
+        # counts (setu_page_meta) and passage parts (setu_seg_part) are new
+        # tables, made by schema.sql. setu_hint, made by version 4, gains the
+        # block's alignment state and the model units merged into it.
+        _add_column(con, "setu_hint", "state", "TEXT DEFAULT ''")
+        _add_column(con, "setu_hint", "units", "TEXT DEFAULT '[]'")
+    if have < 6:
+        # 6: the aligner team's v2 delivery — pages it dropped (counted per
+        # page, with the reason) and the markup its model put back.
+        _add_column(con, "setu_hint", "markup", "INTEGER DEFAULT 0")
+        _add_column(con, "setu_page_meta", "page_dropped", "INTEGER DEFAULT 0")
+        _add_column(con, "setu_page_meta", "drop_reason", "TEXT DEFAULT ''")
 
     con.execute("INSERT INTO setu_meta(key, value) VALUES('schema_version', ?)"
                 " ON CONFLICT(key) DO UPDATE SET value=excluded.value",
