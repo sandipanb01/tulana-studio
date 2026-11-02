@@ -219,6 +219,68 @@ Choose "Only what has been answered" in the second box at the top of the Downloa
 **The Download tab says the bundle holds a "dataset card". Where is it?**
 There is no separate card. The bundle is a zip with one folder for each format. The only description inside is a short README file in the Hugging Face dataset, which is a zip inside the zip.
 
+## The aligned test set
+
+**What is the aligned test set, and how do I open it?**
+It is 62 pairs of books in which a computer model has already matched each English paragraph with its translation and corrected some misreadings. The work is to check the model's pairs. At the top of the left panel, use the group **Books to check**: choose a pair and press **Open**. Setu selects the first pair nobody has checked, and from then on everything works as usual. Manual section 14 explains it all.
+
+**The group says "Not loaded yet". What do I do?**
+Press the button under it that says **Load … pairs from the folder**, and wait about a minute for the message. It is done once, and it does not touch any work already done. If the group is not there at all, this copy of Setu does not have the collection's folder (data/aligned_v2). Ask whoever runs Setu.
+
+**What does "corrected by the model" mean? Is the text right?**
+It means the model changed what the parser read, and nobody has checked the change yet. It is usually a good correction, but it is not guaranteed. Read it against the other language. If it is right, answer as usual. If it is wrong, fix it in **Correct it** mode, or press **Put back what the parser read** to undo the model's change. The model's version stays in the history either way.
+
+**Does the model's correction count as my correction?**
+No. Setu keeps them apart. "only ones I corrected" in **Saved work** does not list the model's changes, the cards say "corrected by the model", and downloads have their own columns for it (source_model_corrected and target_model_corrected). Your own corrections are marked "corrected" as everywhere else.
+
+**What do the model's notes ("Possible translation difference") mean?**
+They are places where the model thought a person should look, usually because the two books seem to say something different, or because it wanted to change something and its rules did not let it. Read the place the note names. If it is a misreading, correct it. If the books really differ, leave the printed text as it is, answer **Needs correction**, **Missing or incomplete** or **Structural mismatch**, and write what you found in the note box. Point at a "⚑" tag on a card to read its note there.
+
+**What does the percentage after a pair's name mean?**
+It is the share of the parser's blocks of text, in both books together, that the model put into a pair, leaving out pages it was never sent. "98.5%" means that 1.5% of the text is waiting to be paired by hand. It is the same figure the aligner team's own viewer gives.
+
+**What do "9/10 aligned, 1 not aligned" above a column mean?**
+Of the ten blocks of text the parser found on that page, the model paired nine and could not pair one. The red words point at work for you: pair that text by hand, or answer **Missing or incomplete** if the other book really has nothing. Tick **Only pages with text not aligned** to make the page buttons and arrow keys go straight from one such page to the next.
+
+**What does "page not aligned by the model" mean?**
+The model was sent that page and could not align it. The passages on it are not paired. Pair them by hand (manual section 5), or answer **Missing or incomplete** where the other book really has nothing. A grey "not sent for alignment" is different: the model never saw that page (a cover, the contents, the answers at the back, or a chapter the other book does not have), nothing is wrong, and its text is not on your list.
+
+**A pair is a whole paragraph. Is that right?**
+Yes. The model matched smaller pieces first, and then joined the pieces of one paragraph into one pair, so that a paragraph is checked as one passage. The box **From the alignment model** says when a pair was joined from several pieces. Check the whole paragraph against the whole paragraph.
+
+**A page starts with a grey card that says "continued". What is it?**
+The first lines of that page are the end of a passage that starts on the page before. The whole passage is shown on the page where it starts. Click the card to select it.
+
+**Why do formulas look like the printed book in one mode and like code in another?**
+In **Read** mode Setu shows the code as the book prints it: maths between dollar signs typeset, `**bold**` in bold, tables as tables. In **Correct it** mode it shows the code, so that you can see and change every character. A formula shown in red is one whose code could not be typeset, usually because a symbol was misread. Untick **Show maths and tables as printed** under **View** to see the code everywhere. This never changes the saved text.
+
+**The text is too small. Can I make it bigger?**
+Yes. Press **A+** at the top right, as often as you like; **A−** makes it smaller again. Setu remembers the size on this computer.
+
+**What does "left out — not to check" mean?**
+The aligner team took that page out of the collection, because they could not trust its alignment: the model looked for its translation on the wrong page, could not align it, or found nothing that matched. The reason is written above the column. The page is still shown, in grey, but nothing on it is on your list. The translation of anything that was on such a page carries the same tag. Leave it, unless your supervisor asks otherwise.
+
+**What does "model: formatting put back" mean?**
+The scan of the translation had lost formatting the English has — a maths sign, bold type, a table — and the model put it back, under a rule that let it change no letter and no number. Check that the passage reads as the book prints it. If it does not, correct it, or press **Put back what the parser read**.
+
+**What is Page + blocks for in the aligned test set?**
+It shows each page with the model's boxes on it: the two halves of a pair in the same colour on both pages, text the model could not pair in red dashes, text that is left out in grey, and the parser's blocks that the model joined as thin dashes inside a box. When the scans are on the computer that runs Setu, the boxes are drawn on the printed page. When they are not, the page is drawn blank at its real shape and each box holds its passage's words, so no box is empty. Click a box to select it.
+
+**The model paired the wrong passages. Can I change it?**
+Yes, exactly as in any other book: **Unpair**, then select the right passage on each side and press **⇄ Pair these two** (manual section 5). If the model had corrected one of those passages, its text keeps the label "corrected by the model".
+
+**Why does the page number jump by two in the Andhra Pradesh books?**
+Those two books are printed with English on one page and the Telugu translation on the next. Setu shows the English pages in the left column and the Telugu pages in the right, and the page buttons step to the next page of that column's language.
+
+**Why does an NCERT entry say "1211" and not a chapter number?**
+NCERT pairs are single chapters, and the code is the name of the chapter's file in the collection. It is not the chapter number: for example, 1211 is Chapter 7 of the Class 12 book.
+
+**A new version of the aligned test set was loaded. Where is my work?**
+Where it was. A new version is loaded as new pairs, and nothing in the old version is deleted or changed. The old pairs that somebody answered or corrected are listed at the bottom of the dropdown, under **Earlier delivery — pairs with work in them**, and Saved work, Download and Continue where you left off call them "earlier delivery". Answers are not copied into the new version, because its passages are cut differently. Ask your supervisor which version to work in.
+
+**Some headers and pictures are "not in any pair". Should I pair them?**
+No. As in every other pair of books, headers, footers, page numbers, pictures and blocks without text are left out of the list of pairs to check unless the model paired them. They stay visible when you tick **Include headers and page numbers**. Ask your supervisor before pairing one by hand.
+
 ## Practical questions
 
 **How long does a book take?**
